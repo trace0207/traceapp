@@ -14,6 +14,9 @@
 		8A508FFE1B9D5D700067B9E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A508FFD1B9D5D700067B9E9 /* Images.xcassets */; };
 		8A5090011B9D5D700067B9E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A508FFF1B9D5D700067B9E9 /* LaunchScreen.xib */; };
 		8A50900D1B9D5D700067B9E9 /* tracedemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50900C1B9D5D700067B9E9 /* tracedemoTests.m */; };
+		BBA455FB1B9D6FD80094C525 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA455F91B9D6FD80094C525 /* Images.xcassets */; };
+		BBA455FF1B9D70880094C525 /* TKMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA455FD1B9D70880094C525 /* TKMainController.m */; };
+		BBA456001B9D70880094C525 /* TKMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA455FE1B9D70880094C525 /* TKMainController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 		8A5090061B9D5D700067B9E9 /* tracedemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tracedemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A50900B1B9D5D700067B9E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A50900C1B9D5D700067B9E9 /* tracedemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tracedemoTests.m; sourceTree = "<group>"; };
+		BBA455F91B9D6FD80094C525 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BBA455FC1B9D70880094C525 /* TKMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainController.h; sourceTree = "<group>"; };
+		BBA455FD1B9D70880094C525 /* TKMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMainController.m; sourceTree = "<group>"; };
+		BBA455FE1B9D70880094C525 /* TKMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKMainController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,9 @@
 		8A508FEF1B9D5D700067B9E9 /* tracedemo */ = {
 			isa = PBXGroup;
 			children = (
+				BBA455FA1B9D6FD80094C525 /* controller */,
+				BBA455F71B9D6FD80094C525 /* sdk */,
+				BBA455F91B9D6FD80094C525 /* Images.xcassets */,
 				8A508FF41B9D5D700067B9E9 /* AppDelegate.h */,
 				8A508FF51B9D5D700067B9E9 /* AppDelegate.m */,
 				8A508FF71B9D5D700067B9E9 /* ViewController.h */,
@@ -117,6 +127,31 @@
 				8A50900B1B9D5D700067B9E9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBA455F71B9D6FD80094C525 /* sdk */ = {
+			isa = PBXGroup;
+			children = (
+				BBA455F81B9D6FD80094C525 /* net */,
+			);
+			path = sdk;
+			sourceTree = "<group>";
+		};
+		BBA455F81B9D6FD80094C525 /* net */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = net;
+			sourceTree = "<group>";
+		};
+		BBA455FA1B9D6FD80094C525 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BBA455FC1B9D70880094C525 /* TKMainController.h */,
+				BBA455FD1B9D70880094C525 /* TKMainController.m */,
+				BBA455FE1B9D70880094C525 /* TKMainController.xib */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A508FFC1B9D5D700067B9E9 /* Main.storyboard in Resources */,
+				BBA455FB1B9D6FD80094C525 /* Images.xcassets in Resources */,
 				8A5090011B9D5D700067B9E9 /* LaunchScreen.xib in Resources */,
 				8A508FFE1B9D5D700067B9E9 /* Images.xcassets in Resources */,
+				BBA456001B9D70880094C525 /* TKMainController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A508FF91B9D5D700067B9E9 /* ViewController.m in Sources */,
+				BBA455FF1B9D70880094C525 /* TKMainController.m in Sources */,
 				8A508FF61B9D5D700067B9E9 /* AppDelegate.m in Sources */,
 				8A508FF31B9D5D700067B9E9 /* main.m in Sources */,
 			);
@@ -416,6 +454,7 @@
 				8A5090121B9D5D700067B9E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A5090131B9D5D700067B9E9 /* Build configuration list for PBXNativeTarget "tracedemoTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +463,7 @@
 				8A5090151B9D5D700067B9E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
