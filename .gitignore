@@ -2,8 +2,10 @@ tracedemo/Pods/*
 
 tracedemo/Podfile.lock
 
-tracedemo/tracedemo.xcworkspace/xcuserdata/cmcc.xcuserdatad/UserInterfaceState.xcuserstate
+tracedemo/tracedemo.xcodeproj/xcuserdata/luotianjia.xcuserdatad/*
 
-tracedemo/tracedemo.xcodeproj/xcuserdata/cmcc.xcuserdatad/xcschemes/xcschememanagement.plist
+tracedemo/tracedemo.xcworkspace/xcuserdata/luotianjia.xcuserdatad/*
 
-tracedemo/tracedemo.xcodeproj/xcuserdata/cmcc.xcuserdatad/xcschemes/tracedemo.xcscheme
+tracedemo/tracedemo.xcodeproj/xcuserdata/cmcc.xcuserdatad/*
+
+tracedemo/tracedemo.xcworkspace/xcuserdata/cmcc.xcuserdatad/*
