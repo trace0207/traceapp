@@ -1,0 +1,9 @@
+tracedemo/Pods/*
+
+tracedemo/Podfile.lock
+
+tracedemo/tracedemo.xcworkspace/xcuserdata/cmcc.xcuserdatad/UserInterfaceState.xcuserstate
+
+tracedemo/tracedemo.xcodeproj/xcuserdata/cmcc.xcuserdatad/xcschemes/xcschememanagement.plist
+
+tracedemo/tracedemo.xcodeproj/xcuserdata/cmcc.xcuserdatad/xcschemes/tracedemo.xcscheme
