@@ -17,6 +17,7 @@
 		8A50900D1B9D5D700067B9E9 /* tracedemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50900C1B9D5D700067B9E9 /* tracedemoTests.m */; };
 		BBA455FF1B9D70880094C525 /* TKMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA455FD1B9D70880094C525 /* TKMainController.m */; };
 		BBA456001B9D70880094C525 /* TKMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA455FE1B9D70880094C525 /* TKMainController.xib */; };
+		BBB18C3A1BA2C9510018D422 /* MWLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB18C391BA2C9510018D422 /* MWLogFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,9 @@
 		BBA455FC1B9D70880094C525 /* TKMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainController.h; sourceTree = "<group>"; };
 		BBA455FD1B9D70880094C525 /* TKMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMainController.m; sourceTree = "<group>"; };
 		BBA455FE1B9D70880094C525 /* TKMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKMainController.xib; sourceTree = "<group>"; };
+		BBB18C371BA2C9510018D422 /* MWLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWLog.h; sourceTree = "<group>"; };
+		BBB18C381BA2C9510018D422 /* MWLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWLogFormatter.h; sourceTree = "<group>"; };
+		BBB18C391BA2C9510018D422 /* MWLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWLogFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 		8A508FEF1B9D5D700067B9E9 /* tracedemo */ = {
 			isa = PBXGroup;
 			children = (
+				BBB18C351BA2C9510018D422 /* sdk */,
 				BBA455FA1B9D6FD80094C525 /* controller */,
 				8A508FF41B9D5D700067B9E9 /* AppDelegate.h */,
 				8A508FF51B9D5D700067B9E9 /* AppDelegate.m */,
@@ -149,6 +154,24 @@
 				BBA455FE1B9D70880094C525 /* TKMainController.xib */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		BBB18C351BA2C9510018D422 /* sdk */ = {
+			isa = PBXGroup;
+			children = (
+				BBB18C361BA2C9510018D422 /* log */,
+			);
+			path = sdk;
+			sourceTree = "<group>";
+		};
+		BBB18C361BA2C9510018D422 /* log */ = {
+			isa = PBXGroup;
+			children = (
+				BBB18C371BA2C9510018D422 /* MWLog.h */,
+				BBB18C381BA2C9510018D422 /* MWLogFormatter.h */,
+				BBB18C391BA2C9510018D422 /* MWLogFormatter.m */,
+			);
+			path = log;
 			sourceTree = "<group>";
 		};
 		D2F8907D64CFFB14B8C31520 /* Frameworks */ = {
@@ -296,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A508FF91B9D5D700067B9E9 /* ViewController.m in Sources */,
+				BBB18C3A1BA2C9510018D422 /* MWLogFormatter.m in Sources */,
 				BBA455FF1B9D70880094C525 /* TKMainController.m in Sources */,
 				8A508FF61B9D5D700067B9E9 /* AppDelegate.m in Sources */,
 				8A508FF31B9D5D700067B9E9 /* main.m in Sources */,
