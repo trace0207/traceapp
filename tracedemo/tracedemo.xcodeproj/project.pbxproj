@@ -103,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				BBA455FA1B9D6FD80094C525 /* controller */,
-				BBA455F71B9D6FD80094C525 /* sdk */,
 				8A508FF41B9D5D700067B9E9 /* AppDelegate.h */,
 				8A508FF51B9D5D700067B9E9 /* AppDelegate.m */,
 				8A508FF71B9D5D700067B9E9 /* ViewController.h */,
@@ -140,21 +139,6 @@
 				8A50900B1B9D5D700067B9E9 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BBA455F71B9D6FD80094C525 /* sdk */ = {
-			isa = PBXGroup;
-			children = (
-				BBA455F81B9D6FD80094C525 /* net */,
-			);
-			path = sdk;
-			sourceTree = "<group>";
-		};
-		BBA455F81B9D6FD80094C525 /* net */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = net;
 			sourceTree = "<group>";
 		};
 		BBA455FA1B9D6FD80094C525 /* controller */ = {
