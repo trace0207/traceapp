@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TK_BaseAppDelegate.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : TK_BaseAppDelegate
 
-@property (strong, nonatomic) UIWindow *window;
+
 
 
 @end

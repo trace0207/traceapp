@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		7E1F3D43556451168FE97F1F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7E02E9AB012C0D49F6B86E /* libPods.a */; };
+		8A17B1061BA46CF500548CA7 /* TK_BaseAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B0E51BA46CF500548CA7 /* TK_BaseAppDelegate.m */; };
+		8A17B1071BA46CF500548CA7 /* MWLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B0EB1BA46CF500548CA7 /* MWLogFormatter.m */; };
+		8A17B1081BA46CF500548CA7 /* MMCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B0EE1BA46CF500548CA7 /* MMCenterTableViewCell.m */; };
+		8A17B1091BA46CF500548CA7 /* MMExampleCenterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B0F11BA46CF500548CA7 /* MMExampleCenterTableViewController.m */; };
+		8A17B10A1BA46CF500548CA7 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B0F31BA46CF500548CA7 /* MMExampleDrawerVisualStateManager.m */; };
+		8A17B10B1BA46CF500548CA7 /* MMExampleLeftSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B0F51BA46CF500548CA7 /* MMExampleLeftSideDrawerViewController.m */; };
+		8A17B10C1BA46CF500548CA7 /* MMExampleRightSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B0F71BA46CF500548CA7 /* MMExampleRightSideDrawerViewController.m */; };
+		8A17B10D1BA46CF500548CA7 /* MMExampleSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B0F91BA46CF500548CA7 /* MMExampleSideDrawerViewController.m */; };
+		8A17B10E1BA46CF500548CA7 /* MMExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B0FB1BA46CF500548CA7 /* MMExampleViewController.m */; };
+		8A17B10F1BA46CF500548CA7 /* MMLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B0FD1BA46CF500548CA7 /* MMLogoView.m */; };
+		8A17B1101BA46CF500548CA7 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B0FF1BA46CF500548CA7 /* MMNavigationController.m */; };
+		8A17B1111BA46CF500548CA7 /* MMSideDrawerSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B1011BA46CF500548CA7 /* MMSideDrawerSectionHeaderView.m */; };
+		8A17B1121BA46CF500548CA7 /* MMSideDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B1031BA46CF500548CA7 /* MMSideDrawerTableViewCell.m */; };
+		8A17B1131BA46CF500548CA7 /* MMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B1051BA46CF500548CA7 /* MMTableViewCell.m */; };
+		8A17B1171BA46EA600548CA7 /* UIColor+TK_Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A17B1161BA46EA600548CA7 /* UIColor+TK_Color.m */; };
 		8A508FF31B9D5D700067B9E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A508FF21B9D5D700067B9E9 /* main.m */; };
 		8A508FF61B9D5D700067B9E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A508FF51B9D5D700067B9E9 /* AppDelegate.m */; };
 		8A508FF91B9D5D700067B9E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A508FF81B9D5D700067B9E9 /* ViewController.m */; };
@@ -15,10 +30,8 @@
 		8A508FFE1B9D5D700067B9E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A508FFD1B9D5D700067B9E9 /* Images.xcassets */; };
 		8A5090011B9D5D700067B9E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A508FFF1B9D5D700067B9E9 /* LaunchScreen.xib */; };
 		8A50900D1B9D5D700067B9E9 /* tracedemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50900C1B9D5D700067B9E9 /* tracedemoTests.m */; };
-		8AF31C0F1BA2D25800D7FF89 /* TKMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF31C051BA2D25800D7FF89 /* TKMainController.m */; };
-		8AF31C101BA2D25800D7FF89 /* TKMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AF31C061BA2D25800D7FF89 /* TKMainController.xib */; };
-		8AF31C111BA2D25800D7FF89 /* TK_BaseAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF31C0A1BA2D25800D7FF89 /* TK_BaseAppDelegate.m */; };
-		8AF31C121BA2D25800D7FF89 /* MWLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF31C0E1BA2D25800D7FF89 /* MWLogFormatter.m */; };
+		8A552D711BA3D8230083E87E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A552D6F1BA3D8230083E87E /* MenuViewController.m */; };
+		8A552D721BA3D8230083E87E /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A552D701BA3D8230083E87E /* MenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +47,39 @@
 /* Begin PBXFileReference section */
 		4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5B7E02E9AB012C0D49F6B86E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A17B0E41BA46CF500548CA7 /* TK_BaseAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BaseAppDelegate.h; sourceTree = "<group>"; };
+		8A17B0E51BA46CF500548CA7 /* TK_BaseAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BaseAppDelegate.m; sourceTree = "<group>"; };
+		8A17B0E71BA46CF500548CA7 /* TK_SDK_PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_SDK_PrefixHeader.pch; sourceTree = "<group>"; };
+		8A17B0E91BA46CF500548CA7 /* MWLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWLog.h; sourceTree = "<group>"; };
+		8A17B0EA1BA46CF500548CA7 /* MWLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWLogFormatter.h; sourceTree = "<group>"; };
+		8A17B0EB1BA46CF500548CA7 /* MWLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWLogFormatter.m; sourceTree = "<group>"; };
+		8A17B0ED1BA46CF500548CA7 /* MMCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCenterTableViewCell.h; sourceTree = "<group>"; };
+		8A17B0EE1BA46CF500548CA7 /* MMCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCenterTableViewCell.m; sourceTree = "<group>"; };
+		8A17B0EF1BA46CF500548CA7 /* MMDrawerControllerKitchenSink-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerControllerKitchenSink-Prefix.pch"; sourceTree = "<group>"; };
+		8A17B0F01BA46CF500548CA7 /* MMExampleCenterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleCenterTableViewController.h; sourceTree = "<group>"; };
+		8A17B0F11BA46CF500548CA7 /* MMExampleCenterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleCenterTableViewController.m; sourceTree = "<group>"; };
+		8A17B0F21BA46CF500548CA7 /* MMExampleDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleDrawerVisualStateManager.h; sourceTree = "<group>"; };
+		8A17B0F31BA46CF500548CA7 /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
+		8A17B0F41BA46CF500548CA7 /* MMExampleLeftSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleLeftSideDrawerViewController.h; sourceTree = "<group>"; };
+		8A17B0F51BA46CF500548CA7 /* MMExampleLeftSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleLeftSideDrawerViewController.m; sourceTree = "<group>"; };
+		8A17B0F61BA46CF500548CA7 /* MMExampleRightSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleRightSideDrawerViewController.h; sourceTree = "<group>"; };
+		8A17B0F71BA46CF500548CA7 /* MMExampleRightSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleRightSideDrawerViewController.m; sourceTree = "<group>"; };
+		8A17B0F81BA46CF500548CA7 /* MMExampleSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleSideDrawerViewController.h; sourceTree = "<group>"; };
+		8A17B0F91BA46CF500548CA7 /* MMExampleSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleSideDrawerViewController.m; sourceTree = "<group>"; };
+		8A17B0FA1BA46CF500548CA7 /* MMExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleViewController.h; sourceTree = "<group>"; };
+		8A17B0FB1BA46CF500548CA7 /* MMExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleViewController.m; sourceTree = "<group>"; };
+		8A17B0FC1BA46CF500548CA7 /* MMLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLogoView.h; sourceTree = "<group>"; };
+		8A17B0FD1BA46CF500548CA7 /* MMLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLogoView.m; sourceTree = "<group>"; };
+		8A17B0FE1BA46CF500548CA7 /* MMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNavigationController.h; sourceTree = "<group>"; };
+		8A17B0FF1BA46CF500548CA7 /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
+		8A17B1001BA46CF500548CA7 /* MMSideDrawerSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSideDrawerSectionHeaderView.h; sourceTree = "<group>"; };
+		8A17B1011BA46CF500548CA7 /* MMSideDrawerSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSideDrawerSectionHeaderView.m; sourceTree = "<group>"; };
+		8A17B1021BA46CF500548CA7 /* MMSideDrawerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSideDrawerTableViewCell.h; sourceTree = "<group>"; };
+		8A17B1031BA46CF500548CA7 /* MMSideDrawerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSideDrawerTableViewCell.m; sourceTree = "<group>"; };
+		8A17B1041BA46CF500548CA7 /* MMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTableViewCell.h; sourceTree = "<group>"; };
+		8A17B1051BA46CF500548CA7 /* MMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTableViewCell.m; sourceTree = "<group>"; };
+		8A17B1151BA46EA600548CA7 /* UIColor+TK_Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TK_Color.h"; sourceTree = "<group>"; };
+		8A17B1161BA46EA600548CA7 /* UIColor+TK_Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TK_Color.m"; sourceTree = "<group>"; };
 		8A508FED1B9D5D700067B9E9 /* tracedemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tracedemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A508FF11B9D5D700067B9E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A508FF21B9D5D700067B9E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,14 +93,9 @@
 		8A5090061B9D5D700067B9E9 /* tracedemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tracedemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A50900B1B9D5D700067B9E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A50900C1B9D5D700067B9E9 /* tracedemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tracedemoTests.m; sourceTree = "<group>"; };
-		8AF31C041BA2D25800D7FF89 /* TKMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainController.h; sourceTree = "<group>"; };
-		8AF31C051BA2D25800D7FF89 /* TKMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMainController.m; sourceTree = "<group>"; };
-		8AF31C061BA2D25800D7FF89 /* TKMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKMainController.xib; sourceTree = "<group>"; };
-		8AF31C091BA2D25800D7FF89 /* TK_BaseAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BaseAppDelegate.h; sourceTree = "<group>"; };
-		8AF31C0A1BA2D25800D7FF89 /* TK_BaseAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BaseAppDelegate.m; sourceTree = "<group>"; };
-		8AF31C0C1BA2D25800D7FF89 /* MWLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWLog.h; sourceTree = "<group>"; };
-		8AF31C0D1BA2D25800D7FF89 /* MWLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWLogFormatter.h; sourceTree = "<group>"; };
-		8AF31C0E1BA2D25800D7FF89 /* MWLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWLogFormatter.m; sourceTree = "<group>"; };
+		8A552D6E1BA3D8230083E87E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		8A552D6F1BA3D8230083E87E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		8A552D701BA3D8230083E87E /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,9 +127,90 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8A17B0E21BA46CF500548CA7 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				8A17B1141BA46E7300548CA7 /* ExtendClass */,
+				8A17B0E31BA46CF500548CA7 /* AppDelegate */,
+				8A17B0E61BA46CF500548CA7 /* File */,
+				8A17B0E81BA46CF500548CA7 /* Log */,
+				8A17B0EC1BA46CF500548CA7 /* SlidMenu */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		8A17B0E31BA46CF500548CA7 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				8A17B0E41BA46CF500548CA7 /* TK_BaseAppDelegate.h */,
+				8A17B0E51BA46CF500548CA7 /* TK_BaseAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		8A17B0E61BA46CF500548CA7 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				8A17B0E71BA46CF500548CA7 /* TK_SDK_PrefixHeader.pch */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		8A17B0E81BA46CF500548CA7 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				8A17B0E91BA46CF500548CA7 /* MWLog.h */,
+				8A17B0EA1BA46CF500548CA7 /* MWLogFormatter.h */,
+				8A17B0EB1BA46CF500548CA7 /* MWLogFormatter.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		8A17B0EC1BA46CF500548CA7 /* SlidMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8A17B0ED1BA46CF500548CA7 /* MMCenterTableViewCell.h */,
+				8A17B0EE1BA46CF500548CA7 /* MMCenterTableViewCell.m */,
+				8A17B0EF1BA46CF500548CA7 /* MMDrawerControllerKitchenSink-Prefix.pch */,
+				8A17B0F01BA46CF500548CA7 /* MMExampleCenterTableViewController.h */,
+				8A17B0F11BA46CF500548CA7 /* MMExampleCenterTableViewController.m */,
+				8A17B0F21BA46CF500548CA7 /* MMExampleDrawerVisualStateManager.h */,
+				8A17B0F31BA46CF500548CA7 /* MMExampleDrawerVisualStateManager.m */,
+				8A17B0F41BA46CF500548CA7 /* MMExampleLeftSideDrawerViewController.h */,
+				8A17B0F51BA46CF500548CA7 /* MMExampleLeftSideDrawerViewController.m */,
+				8A17B0F61BA46CF500548CA7 /* MMExampleRightSideDrawerViewController.h */,
+				8A17B0F71BA46CF500548CA7 /* MMExampleRightSideDrawerViewController.m */,
+				8A17B0F81BA46CF500548CA7 /* MMExampleSideDrawerViewController.h */,
+				8A17B0F91BA46CF500548CA7 /* MMExampleSideDrawerViewController.m */,
+				8A17B0FA1BA46CF500548CA7 /* MMExampleViewController.h */,
+				8A17B0FB1BA46CF500548CA7 /* MMExampleViewController.m */,
+				8A17B0FC1BA46CF500548CA7 /* MMLogoView.h */,
+				8A17B0FD1BA46CF500548CA7 /* MMLogoView.m */,
+				8A17B0FE1BA46CF500548CA7 /* MMNavigationController.h */,
+				8A17B0FF1BA46CF500548CA7 /* MMNavigationController.m */,
+				8A17B1001BA46CF500548CA7 /* MMSideDrawerSectionHeaderView.h */,
+				8A17B1011BA46CF500548CA7 /* MMSideDrawerSectionHeaderView.m */,
+				8A17B1021BA46CF500548CA7 /* MMSideDrawerTableViewCell.h */,
+				8A17B1031BA46CF500548CA7 /* MMSideDrawerTableViewCell.m */,
+				8A17B1041BA46CF500548CA7 /* MMTableViewCell.h */,
+				8A17B1051BA46CF500548CA7 /* MMTableViewCell.m */,
+			);
+			path = SlidMenu;
+			sourceTree = "<group>";
+		};
+		8A17B1141BA46E7300548CA7 /* ExtendClass */ = {
+			isa = PBXGroup;
+			children = (
+				8A17B1151BA46EA600548CA7 /* UIColor+TK_Color.h */,
+				8A17B1161BA46EA600548CA7 /* UIColor+TK_Color.m */,
+			);
+			path = ExtendClass;
+			sourceTree = "<group>";
+		};
 		8A508FE41B9D5D700067B9E9 = {
 			isa = PBXGroup;
 			children = (
+				8A17B0E21BA46CF500548CA7 /* SDK */,
 				8A508FEF1B9D5D700067B9E9 /* tracedemo */,
 				8A5090091B9D5D700067B9E9 /* tracedemoTests */,
 				8A508FEE1B9D5D700067B9E9 /* Products */,
@@ -109,8 +231,6 @@
 		8A508FEF1B9D5D700067B9E9 /* tracedemo */ = {
 			isa = PBXGroup;
 			children = (
-				8AF31C031BA2D25800D7FF89 /* Controller */,
-				8AF31C071BA2D25800D7FF89 /* SDK */,
 				8A508FF41B9D5D700067B9E9 /* AppDelegate.h */,
 				8A508FF51B9D5D700067B9E9 /* AppDelegate.m */,
 				8A508FF71B9D5D700067B9E9 /* ViewController.h */,
@@ -119,6 +239,9 @@
 				8A508FFD1B9D5D700067B9E9 /* Images.xcassets */,
 				8A508FFF1B9D5D700067B9E9 /* LaunchScreen.xib */,
 				8A508FF01B9D5D700067B9E9 /* Supporting Files */,
+				8A552D6E1BA3D8230083E87E /* MenuViewController.h */,
+				8A552D6F1BA3D8230083E87E /* MenuViewController.m */,
+				8A552D701BA3D8230083E87E /* MenuViewController.xib */,
 			);
 			path = tracedemo;
 			sourceTree = "<group>";
@@ -147,44 +270,6 @@
 				8A50900B1B9D5D700067B9E9 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8AF31C031BA2D25800D7FF89 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				8AF31C041BA2D25800D7FF89 /* TKMainController.h */,
-				8AF31C051BA2D25800D7FF89 /* TKMainController.m */,
-				8AF31C061BA2D25800D7FF89 /* TKMainController.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		8AF31C071BA2D25800D7FF89 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				8AF31C081BA2D25800D7FF89 /* AppDelegate */,
-				8AF31C0B1BA2D25800D7FF89 /* Log */,
-			);
-			path = SDK;
-			sourceTree = "<group>";
-		};
-		8AF31C081BA2D25800D7FF89 /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				8AF31C091BA2D25800D7FF89 /* TK_BaseAppDelegate.h */,
-				8AF31C0A1BA2D25800D7FF89 /* TK_BaseAppDelegate.m */,
-			);
-			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		8AF31C0B1BA2D25800D7FF89 /* Log */ = {
-			isa = PBXGroup;
-			children = (
-				8AF31C0C1BA2D25800D7FF89 /* MWLog.h */,
-				8AF31C0D1BA2D25800D7FF89 /* MWLogFormatter.h */,
-				8AF31C0E1BA2D25800D7FF89 /* MWLogFormatter.m */,
-			);
-			path = Log;
 			sourceTree = "<group>";
 		};
 		D2F8907D64CFFB14B8C31520 /* Frameworks */ = {
@@ -278,9 +363,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A508FFC1B9D5D700067B9E9 /* Main.storyboard in Resources */,
-				8AF31C101BA2D25800D7FF89 /* TKMainController.xib in Resources */,
 				8A5090011B9D5D700067B9E9 /* LaunchScreen.xib in Resources */,
 				8A508FFE1B9D5D700067B9E9 /* Images.xcassets in Resources */,
+				8A552D721BA3D8230083E87E /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,12 +416,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A17B1171BA46EA600548CA7 /* UIColor+TK_Color.m in Sources */,
+				8A17B1121BA46CF500548CA7 /* MMSideDrawerTableViewCell.m in Sources */,
 				8A508FF91B9D5D700067B9E9 /* ViewController.m in Sources */,
-				8AF31C111BA2D25800D7FF89 /* TK_BaseAppDelegate.m in Sources */,
-				8AF31C0F1BA2D25800D7FF89 /* TKMainController.m in Sources */,
+				8A17B10A1BA46CF500548CA7 /* MMExampleDrawerVisualStateManager.m in Sources */,
+				8A17B1061BA46CF500548CA7 /* TK_BaseAppDelegate.m in Sources */,
+				8A552D711BA3D8230083E87E /* MenuViewController.m in Sources */,
+				8A17B1081BA46CF500548CA7 /* MMCenterTableViewCell.m in Sources */,
+				8A17B10F1BA46CF500548CA7 /* MMLogoView.m in Sources */,
+				8A17B1101BA46CF500548CA7 /* MMNavigationController.m in Sources */,
+				8A17B1111BA46CF500548CA7 /* MMSideDrawerSectionHeaderView.m in Sources */,
+				8A17B10D1BA46CF500548CA7 /* MMExampleSideDrawerViewController.m in Sources */,
+				8A17B10C1BA46CF500548CA7 /* MMExampleRightSideDrawerViewController.m in Sources */,
+				8A17B1131BA46CF500548CA7 /* MMTableViewCell.m in Sources */,
 				8A508FF61B9D5D700067B9E9 /* AppDelegate.m in Sources */,
+				8A17B1091BA46CF500548CA7 /* MMExampleCenterTableViewController.m in Sources */,
 				8A508FF31B9D5D700067B9E9 /* main.m in Sources */,
-				8AF31C121BA2D25800D7FF89 /* MWLogFormatter.m in Sources */,
+				8A17B10B1BA46CF500548CA7 /* MMExampleLeftSideDrawerViewController.m in Sources */,
+				8A17B1071BA46CF500548CA7 /* MWLogFormatter.m in Sources */,
+				8A17B10E1BA46CF500548CA7 /* MMExampleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +561,7 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SDK/File/TK_SDK_PrefixHeader.pch";
 				INFOPLIST_FILE = tracedemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -474,6 +573,7 @@
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SDK/File/TK_SDK_PrefixHeader.pch";
 				INFOPLIST_FILE = tracedemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
