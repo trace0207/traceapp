@@ -32,6 +32,12 @@
 		8A50900D1B9D5D700067B9E9 /* tracedemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50900C1B9D5D700067B9E9 /* tracedemoTests.m */; };
 		8A552D711BA3D8230083E87E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A552D6F1BA3D8230083E87E /* MenuViewController.m */; };
 		8A552D721BA3D8230083E87E /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A552D701BA3D8230083E87E /* MenuViewController.xib */; };
+		8A6434A41BAE9DAE00820545 /* TKMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6434A31BAE9DAE00820545 /* TKMenuViewController.m */; };
+		8A6434AB1BAE9DF600820545 /* TKMainNavigateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6434A71BAE9DF600820545 /* TKMainNavigateController.m */; };
+		8A6434AC1BAE9DF600820545 /* TKSubTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6434A91BAE9DF600820545 /* TKSubTabBarViewController.m */; };
+		8A6434AD1BAE9DF600820545 /* TKSubTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6434AA1BAE9DF600820545 /* TKSubTabBarViewController.xib */; };
+		8A6434B01BAE9E1700820545 /* TKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6434AF1BAE9E1700820545 /* TKTableViewController.m */; };
+		8A6434B71BAEEAC200820545 /* TKLeftMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6434B61BAEEAC200820545 /* TKLeftMenuController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +102,18 @@
 		8A552D6E1BA3D8230083E87E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		8A552D6F1BA3D8230083E87E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		8A552D701BA3D8230083E87E /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		8A6434A21BAE9DAE00820545 /* TKMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMenuViewController.h; sourceTree = "<group>"; };
+		8A6434A31BAE9DAE00820545 /* TKMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMenuViewController.m; sourceTree = "<group>"; };
+		8A6434A61BAE9DF600820545 /* TKMainNavigateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainNavigateController.h; sourceTree = "<group>"; };
+		8A6434A71BAE9DF600820545 /* TKMainNavigateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMainNavigateController.m; sourceTree = "<group>"; };
+		8A6434A81BAE9DF600820545 /* TKSubTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSubTabBarViewController.h; sourceTree = "<group>"; };
+		8A6434A91BAE9DF600820545 /* TKSubTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSubTabBarViewController.m; sourceTree = "<group>"; };
+		8A6434AA1BAE9DF600820545 /* TKSubTabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKSubTabBarViewController.xib; sourceTree = "<group>"; };
+		8A6434AE1BAE9E1700820545 /* TKTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewController.h; sourceTree = "<group>"; };
+		8A6434AF1BAE9E1700820545 /* TKTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableViewController.m; sourceTree = "<group>"; };
+		8A6434B21BAEBB8E00820545 /* TKGlobValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGlobValue.h; sourceTree = "<group>"; };
+		8A6434B51BAEEAC200820545 /* TKLeftMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKLeftMenuController.h; sourceTree = "<group>"; };
+		8A6434B61BAEEAC200820545 /* TKLeftMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKLeftMenuController.m; sourceTree = "<group>"; };
 		B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +148,8 @@
 		8A17B0E21BA46CF500548CA7 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				8A6434B11BAEBB5C00820545 /* Common */,
+				8A6434981BAE844200820545 /* TKUIKit */,
 				8A17B1141BA46E7300548CA7 /* ExtendClass */,
 				8A17B0E31BA46CF500548CA7 /* AppDelegate */,
 				8A17B0E61BA46CF500548CA7 /* File */,
@@ -194,6 +214,10 @@
 				8A17B1031BA46CF500548CA7 /* MMSideDrawerTableViewCell.m */,
 				8A17B1041BA46CF500548CA7 /* MMTableViewCell.h */,
 				8A17B1051BA46CF500548CA7 /* MMTableViewCell.m */,
+				8A6434A21BAE9DAE00820545 /* TKMenuViewController.h */,
+				8A6434A31BAE9DAE00820545 /* TKMenuViewController.m */,
+				8A6434B51BAEEAC200820545 /* TKLeftMenuController.h */,
+				8A6434B61BAEEAC200820545 /* TKLeftMenuController.m */,
 			);
 			path = SlidMenu;
 			sourceTree = "<group>";
@@ -270,6 +294,36 @@
 				8A50900B1B9D5D700067B9E9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A6434981BAE844200820545 /* TKUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				8A6434A51BAE9DF600820545 /* TKController */,
+			);
+			path = TKUIKit;
+			sourceTree = "<group>";
+		};
+		8A6434A51BAE9DF600820545 /* TKController */ = {
+			isa = PBXGroup;
+			children = (
+				8A6434A61BAE9DF600820545 /* TKMainNavigateController.h */,
+				8A6434A71BAE9DF600820545 /* TKMainNavigateController.m */,
+				8A6434A81BAE9DF600820545 /* TKSubTabBarViewController.h */,
+				8A6434A91BAE9DF600820545 /* TKSubTabBarViewController.m */,
+				8A6434AA1BAE9DF600820545 /* TKSubTabBarViewController.xib */,
+				8A6434AE1BAE9E1700820545 /* TKTableViewController.h */,
+				8A6434AF1BAE9E1700820545 /* TKTableViewController.m */,
+			);
+			path = TKController;
+			sourceTree = "<group>";
+		};
+		8A6434B11BAEBB5C00820545 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8A6434B21BAEBB8E00820545 /* TKGlobValue.h */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		D2F8907D64CFFB14B8C31520 /* Frameworks */ = {
@@ -365,6 +419,7 @@
 				8A508FFC1B9D5D700067B9E9 /* Main.storyboard in Resources */,
 				8A5090011B9D5D700067B9E9 /* LaunchScreen.xib in Resources */,
 				8A508FFE1B9D5D700067B9E9 /* Images.xcassets in Resources */,
+				8A6434AD1BAE9DF600820545 /* TKSubTabBarViewController.xib in Resources */,
 				8A552D721BA3D8230083E87E /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,16 +472,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A17B1171BA46EA600548CA7 /* UIColor+TK_Color.m in Sources */,
+				8A6434B01BAE9E1700820545 /* TKTableViewController.m in Sources */,
 				8A17B1121BA46CF500548CA7 /* MMSideDrawerTableViewCell.m in Sources */,
 				8A508FF91B9D5D700067B9E9 /* ViewController.m in Sources */,
+				8A6434B71BAEEAC200820545 /* TKLeftMenuController.m in Sources */,
 				8A17B10A1BA46CF500548CA7 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				8A17B1061BA46CF500548CA7 /* TK_BaseAppDelegate.m in Sources */,
 				8A552D711BA3D8230083E87E /* MenuViewController.m in Sources */,
 				8A17B1081BA46CF500548CA7 /* MMCenterTableViewCell.m in Sources */,
 				8A17B10F1BA46CF500548CA7 /* MMLogoView.m in Sources */,
 				8A17B1101BA46CF500548CA7 /* MMNavigationController.m in Sources */,
+				8A6434A41BAE9DAE00820545 /* TKMenuViewController.m in Sources */,
+				8A6434AC1BAE9DF600820545 /* TKSubTabBarViewController.m in Sources */,
 				8A17B1111BA46CF500548CA7 /* MMSideDrawerSectionHeaderView.m in Sources */,
 				8A17B10D1BA46CF500548CA7 /* MMExampleSideDrawerViewController.m in Sources */,
+				8A6434AB1BAE9DF600820545 /* TKMainNavigateController.m in Sources */,
 				8A17B10C1BA46CF500548CA7 /* MMExampleRightSideDrawerViewController.m in Sources */,
 				8A17B1131BA46CF500548CA7 /* MMTableViewCell.m in Sources */,
 				8A508FF61B9D5D700067B9E9 /* AppDelegate.m in Sources */,

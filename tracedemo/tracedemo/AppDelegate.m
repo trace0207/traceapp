@@ -14,6 +14,9 @@
 #import "MMExampleCenterTableViewController.h"
 #import "MMExampleRightSideDrawerViewController.h"
 #import "MMExampleDrawerVisualStateManager.h"
+#import "TKMainNavigateController.h"
+#import "TKLeftMenuController.h"
+#import "MMDrawerController.h"
 @interface AppDelegate ()
 
 @property (nonatomic,strong) MMDrawerController * drawerController;
@@ -26,8 +29,9 @@
 
 
 -(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-
+    
     [self showSlideMenuController];
+    //    [self showNavigateView];
     return YES;
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -63,59 +67,46 @@
 
 
 /**
- *  Description : 显示 侧滑菜单 
+ *  Description : 显示 侧滑菜单
  */
 -(void)showSlideMenuController{
+    // left Menu Controller
+    UIViewController * leftVC = [[TKLeftMenuController alloc] initWithMaxWidth:265 * TKScreenScale];
     
-    UIViewController * leftSideDrawerViewController = [[MMExampleLeftSideDrawerViewController alloc] init];
+    // App Main View controller
+    UIViewController * centerViewController = [[TKMainNavigateController alloc] init];
+    _drawerController = [[MMDrawerController alloc] initWithCenterViewController:centerViewController leftDrawerViewController:leftVC];
+    leftVC.mm_drawerController.maximumLeftDrawerWidth = 260 * TKScreenScale;
+    [self.drawerController
+     setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+         MMDrawerControllerDrawerVisualStateBlock block;
+         block = [MMDrawerVisualState slideVisualStateBlock];
+         if(block){
+             block(drawerController, drawerSide, percentVisible);
+         }
+     }];
     
-    UIViewController * centerViewController = [[MMExampleCenterTableViewController alloc] init];
     
-    UIViewController * rightSideDrawerViewController = [[MMExampleRightSideDrawerViewController alloc] init];
-    
-    UINavigationController * navigationController = [[MMNavigationController alloc] initWithRootViewController:centerViewController];
-    [navigationController setRestorationIdentifier:@"MMExampleCenterNavigationControllerRestorationKey"];
-    if(OSVersionIsAtLeastiOS7()){
-        UINavigationController * rightSideNavController = [[MMNavigationController alloc] initWithRootViewController:rightSideDrawerViewController];
-        [rightSideNavController setRestorationIdentifier:@"MMExampleRightNavigationControllerRestorationKey"];
-        UINavigationController * leftSideNavController = [[MMNavigationController alloc] initWithRootViewController:leftSideDrawerViewController];
-        [leftSideNavController setRestorationIdentifier:@"MMExampleLeftNavigationControllerRestorationKey"];
-        self.drawerController = [[MMDrawerController alloc]
-                                 initWithCenterViewController:navigationController
-                                 leftDrawerViewController:leftSideNavController
-                                 rightDrawerViewController:rightSideNavController];
-        [self.drawerController setShowsShadow:NO];
-    }
-    else{
-        self.drawerController = [[MMDrawerController alloc]
-                                 initWithCenterViewController:navigationController
-                                 leftDrawerViewController:leftSideDrawerViewController
-                                 rightDrawerViewController:rightSideDrawerViewController];
-    }
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.drawerController setRestorationIdentifier:@"MMDrawer"];
     [self.drawerController setMaximumRightDrawerWidth:200.0];
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     
-    [self.drawerController
-     setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
-         MMDrawerControllerDrawerVisualStateBlock block;
-         block = [[MMExampleDrawerVisualStateManager sharedManager]
-                  drawerVisualStateBlockForDrawerSide:drawerSide];
-         if(block){
-             block(drawerController, drawerSide, percentVisible);
-         }
-     }];
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    if(OSVersionIsAtLeastiOS7()){
-        UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
-                                              green:173.0/255.0
-                                               blue:234.0/255.0
-                                              alpha:1.0];
-        [self.window setTintColor:tintColor];
-    }
+    self.drawerController.showsShadow = NO;
+    
+    
     [self.window setRootViewController:self.drawerController];
+    
+}
 
+/**
+ *  <#Description#>: 显示主流导航试图
+ */
+-(void)showNavigateView{
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [TKMainNavigateController showNavigateControllerInWindow:self.window];
 }
 
 
