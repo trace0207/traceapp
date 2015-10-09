@@ -88,14 +88,11 @@
     
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.drawerController setRestorationIdentifier:@"MMDrawer"];
+//    [self.drawerController setRestorationIdentifier:@"MMDrawer"];
     [self.drawerController setMaximumRightDrawerWidth:200.0];
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-    
     self.drawerController.showsShadow = NO;
-    
-    
     [self.window setRootViewController:self.drawerController];
     
 }

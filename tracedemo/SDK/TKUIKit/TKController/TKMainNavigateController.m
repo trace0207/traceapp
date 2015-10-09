@@ -31,7 +31,7 @@
     
     
     subTabVC1.navigationItem.title = @"App主页";
-    subTabVC1.navigationItem.leftBarButtonItem
+//    subTabVC1.navigationItem.leftBarButtonItem;
     
     subTabVC1.view.backgroundColor = [UIColor greenColor];
     
