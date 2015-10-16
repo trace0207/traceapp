@@ -11,7 +11,7 @@
 @implementation UIColor (TK_Color)
 
 
-+ (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha
++ (UIColor *)TKcolorWithHexString:(NSString *)color alpha:(CGFloat)alpha
 {
     //删除字符串中的空格
     NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
@@ -31,6 +31,15 @@
     {
         cString = [cString substringFromIndex:1];
     }
+    
+    NSString * alphaString = @"FF";
+    
+    if([cString length ]== 8){
+    
+        alphaString = [cString substringToIndex:2];
+        cString = [cString substringFromIndex:2];
+    }
+    
     if ([cString length] != 6)
     {
         return [UIColor clearColor];
@@ -50,17 +59,26 @@
     NSString *bString = [cString substringWithRange:range];
     
     // Scan values
-    unsigned int r, g, b;
+    unsigned int r, g, b,a;
     [[NSScanner scannerWithString:rString] scanHexInt:&r];
     [[NSScanner scannerWithString:gString] scanHexInt:&g];
     [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    [[NSScanner scannerWithString:alphaString] scanHexInt:&a];
+    
+    CGFloat  alphaValue = (float)a/255.0f;
+    if(alpha == 1.0f){
+    
+//        DDLogInfo(@"get color alpha == %d",a);
+        alpha = alphaValue;
+    }
+    
     return [UIColor colorWithRed:((float)r / 255.0f) green:((float)g / 255.0f) blue:((float)b / 255.0f) alpha:alpha];
 }
 
 //默认alpha值为1
-+ (UIColor *)colorWithHexString:(NSString *)color
++ (UIColor *)TKcolorWithHexString:(NSString *)color
 {
-    return [self colorWithHexString:color alpha:1.0f];
+    return [self TKcolorWithHexString:color alpha:1.0f];
 }
 
 

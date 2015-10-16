@@ -38,6 +38,9 @@
 		8A6434AD1BAE9DF600820545 /* TKSubTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6434AA1BAE9DF600820545 /* TKSubTabBarViewController.xib */; };
 		8A6434B01BAE9E1700820545 /* TKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6434AF1BAE9E1700820545 /* TKTableViewController.m */; };
 		8A6434B71BAEEAC200820545 /* TKLeftMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6434B61BAEEAC200820545 /* TKLeftMenuController.m */; };
+		BB8D6E1E1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8D6E1D1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.m */; settings = {ASSET_TAGS = (); }; };
+		BBA9F6FD1BC8AFF90059CEB4 /* UIViewController+TKVCcategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA9F6FC1BC8AFF90059CEB4 /* UIViewController+TKVCcategory.m */; settings = {ASSET_TAGS = (); }; };
+		BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,13 @@
 		8A6434B51BAEEAC200820545 /* TKLeftMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKLeftMenuController.h; sourceTree = "<group>"; };
 		8A6434B61BAEEAC200820545 /* TKLeftMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKLeftMenuController.m; sourceTree = "<group>"; };
 		B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BB8D6E1C1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TKNavigationBarSetting.h"; sourceTree = "<group>"; };
+		BB8D6E1D1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TKNavigationBarSetting.m"; sourceTree = "<group>"; };
+		BBA9F6EF1BC7CE9C0059CEB4 /* TKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKConstants.h; sourceTree = "<group>"; };
+		BBA9F6F71BC7DC690059CEB4 /* TKColorDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKColorDefine.h; sourceTree = "<group>"; };
+		BBA9F6FB1BC8AFF90059CEB4 /* UIViewController+TKVCcategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TKVCcategory.h"; sourceTree = "<group>"; };
+		BBA9F6FC1BC8AFF90059CEB4 /* UIViewController+TKVCcategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TKVCcategory.m"; sourceTree = "<group>"; };
+		BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKLeftMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,8 +235,12 @@
 		8A17B1141BA46E7300548CA7 /* ExtendClass */ = {
 			isa = PBXGroup;
 			children = (
+				BBA9F6FB1BC8AFF90059CEB4 /* UIViewController+TKVCcategory.h */,
+				BBA9F6FC1BC8AFF90059CEB4 /* UIViewController+TKVCcategory.m */,
 				8A17B1151BA46EA600548CA7 /* UIColor+TK_Color.h */,
 				8A17B1161BA46EA600548CA7 /* UIColor+TK_Color.m */,
+				BB8D6E1C1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.h */,
+				BB8D6E1D1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.m */,
 			);
 			path = ExtendClass;
 			sourceTree = "<group>";
@@ -299,6 +313,7 @@
 		8A6434981BAE844200820545 /* TKUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				BBA9F6FE1BC8E41C0059CEB4 /* TKUIView */,
 				8A6434A51BAE9DF600820545 /* TKController */,
 			);
 			path = TKUIKit;
@@ -322,8 +337,18 @@
 			isa = PBXGroup;
 			children = (
 				8A6434B21BAEBB8E00820545 /* TKGlobValue.h */,
+				BBA9F6EF1BC7CE9C0059CEB4 /* TKConstants.h */,
+				BBA9F6F71BC7DC690059CEB4 /* TKColorDefine.h */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		BBA9F6FE1BC8E41C0059CEB4 /* TKUIView */ = {
+			isa = PBXGroup;
+			children = (
+				BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */,
+			);
+			path = TKUIView;
 			sourceTree = "<group>";
 		};
 		D2F8907D64CFFB14B8C31520 /* Frameworks */ = {
@@ -385,6 +410,7 @@
 				TargetAttributes = {
 					8A508FEC1B9D5D700067B9E9 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = PS3T6HBA6H;
 					};
 					8A5090051B9D5D700067B9E9 = {
 						CreatedOnToolsVersion = 6.4;
@@ -416,6 +442,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */,
 				8A508FFC1B9D5D700067B9E9 /* Main.storyboard in Resources */,
 				8A5090011B9D5D700067B9E9 /* LaunchScreen.xib in Resources */,
 				8A508FFE1B9D5D700067B9E9 /* Images.xcassets in Resources */,
@@ -481,6 +508,7 @@
 				8A552D711BA3D8230083E87E /* MenuViewController.m in Sources */,
 				8A17B1081BA46CF500548CA7 /* MMCenterTableViewCell.m in Sources */,
 				8A17B10F1BA46CF500548CA7 /* MMLogoView.m in Sources */,
+				BBA9F6FD1BC8AFF90059CEB4 /* UIViewController+TKVCcategory.m in Sources */,
 				8A17B1101BA46CF500548CA7 /* MMNavigationController.m in Sources */,
 				8A6434A41BAE9DAE00820545 /* TKMenuViewController.m in Sources */,
 				8A6434AC1BAE9DF600820545 /* TKSubTabBarViewController.m in Sources */,
@@ -490,6 +518,7 @@
 				8A17B10C1BA46CF500548CA7 /* MMExampleRightSideDrawerViewController.m in Sources */,
 				8A17B1131BA46CF500548CA7 /* MMTableViewCell.m in Sources */,
 				8A508FF61B9D5D700067B9E9 /* AppDelegate.m in Sources */,
+				BB8D6E1E1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.m in Sources */,
 				8A17B1091BA46CF500548CA7 /* MMExampleCenterTableViewController.m in Sources */,
 				8A508FF31B9D5D700067B9E9 /* main.m in Sources */,
 				8A17B10B1BA46CF500548CA7 /* MMExampleLeftSideDrawerViewController.m in Sources */,
@@ -621,11 +650,15 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SDK/File/TK_SDK_PrefixHeader.pch";
 				INFOPLIST_FILE = tracedemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.tracedemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.traceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
 			};
 			name = Debug;
 		};
@@ -634,11 +667,14 @@
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SDK/File/TK_SDK_PrefixHeader.pch";
 				INFOPLIST_FILE = tracedemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.tracedemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.traceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
 			};
 			name = Release;
 		};

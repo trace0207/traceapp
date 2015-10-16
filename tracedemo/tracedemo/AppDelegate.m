@@ -17,6 +17,7 @@
 #import "TKMainNavigateController.h"
 #import "TKLeftMenuController.h"
 #import "MMDrawerController.h"
+#import "TKConstants.h"
 @interface AppDelegate ()
 
 @property (nonatomic,strong) MMDrawerController * drawerController;
@@ -30,16 +31,20 @@
 
 -(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     
-    [self showSlideMenuController];
+    
     //    [self showNavigateView];
     return YES;
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [super application:application didFinishLaunchingWithOptions:launchOptions];
     // Override point for customization after application launch.
-    
-    self.window.backgroundColor = [UIColor whiteColor];
+    [self showSlideMenuController];
+     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+//    [NSThread sleepForTimeInterval:1.0];//  启动页停留 3 秒钟
+    
     return YES;
 }
 
@@ -66,33 +71,45 @@
 }
 
 
+
+#pragma mark -----Show  Controller detail -------
+
+
+
 /**
- *  Description : 显示 侧滑菜单
+ *  Description : 显示 侧滑菜单UI
  */
 -(void)showSlideMenuController{
     // left Menu Controller
-    UIViewController * leftVC = [[TKLeftMenuController alloc] initWithMaxWidth:265 * TKScreenScale];
-    
+    UIViewController * leftVC = [[TKLeftMenuController alloc] initWithMaxWidth:TK_C_slideWidth * TKScreenScale];
+//    UIViewController * leftVC = [[TKLeftMenuController alloc] init];
     // App Main View controller
     UIViewController * centerViewController = [[TKMainNavigateController alloc] init];
     _drawerController = [[MMDrawerController alloc] initWithCenterViewController:centerViewController leftDrawerViewController:leftVC];
-    leftVC.mm_drawerController.maximumLeftDrawerWidth = 260 * TKScreenScale;
+    leftVC.mm_drawerController.maximumLeftDrawerWidth = (TK_C_slideWidth - 1) * TKScreenScale;
     [self.drawerController
      setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
          MMDrawerControllerDrawerVisualStateBlock block;
-         block = [MMDrawerVisualState slideVisualStateBlock];
+         block = [MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:5.0];// 选择一种 滑动效果。
          if(block){
              block(drawerController, drawerSide, percentVisible);
+             
+         }else{
+             DDLogInfo(@"slideMenu Block is nil , you may get a error ");
          }
      }];
     
     
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    [self.drawerController setRestorationIdentifier:@"MMDrawer"];
-    [self.drawerController setMaximumRightDrawerWidth:200.0];
-    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+//    [self.drawerController setMaximumRightDrawerWidth:100.0];
+    [self.drawerController setMaximumLeftDrawerWidth:TK_C_slideWidth * TKScreenScale];
+    [self.drawerController setAnimationVelocity:1100];
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-    self.drawerController.showsShadow = NO;
+    self.drawerController.showsShadow = YES;
+    self.drawerController.shouldStretchDrawer = NO;
     [self.window setRootViewController:self.drawerController];
     
 }

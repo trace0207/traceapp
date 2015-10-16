@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 trace. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 
-@interface TKGlobValue : NSObject
+#ifndef TKGlobValue_h
+#define TKGlobValue_h
 
 
 //判定系统版本号
@@ -26,4 +26,4 @@
 #define TKScreenHeight   [[UIScreen mainScreen]bounds].size.height
 #define TKScreenScale    (TKScreenWidth/320)
 
-@end
+#endif

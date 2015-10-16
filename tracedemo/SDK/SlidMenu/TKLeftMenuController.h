@@ -16,7 +16,8 @@
  *  @param maxWidth 最大 屏幕宽度
  *
  *  @return self
- */
+ *///
+
 -(id)initWithMaxWidth : (NSInteger) maxWidth;
 
 @end

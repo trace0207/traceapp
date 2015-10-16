@@ -19,12 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _tableView = [[UITableView alloc] init];
-    [_tableView setDataSource:self];
-    [_tableView setDelegate:self];
-    _tableView.frame = self.view.frame;
+//    _tableView = [[UITableView alloc] init];
+    if(_tableView){
+        [_tableView setDataSource:self];
+        [_tableView setDelegate:self];
+    }
+    //    _tableView.frame = self.view.frame;
 //    [self.tableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
-    [self.view addSubview:_tableView];
+//    [self.view addSubview:_tableView];
 }
 
 - (void)didReceiveMemoryWarning {

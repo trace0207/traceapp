@@ -31,7 +31,8 @@
         return UIStatusBarStyleLightContent;
     }
     else {
-        return UIStatusBarStyleDefault;
+//        return UIStatusBarStyleDefault;
+        return UIStatusBarStyleLightContent;
     }
 }
 

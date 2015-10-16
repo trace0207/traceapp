@@ -78,11 +78,11 @@ typedef NS_ENUM(NSInteger, MMCenterViewControllerSection){
     [self setupRightMenuButton];
     
     if(OSVersionIsAtLeastiOS7()){
-        UIColor * barColor = [UIColor colorWithHexString:@"2288FF"];
+        UIColor * barColor = [UIColor TKcolorWithHexString:@"2288FF"];
         [self.navigationController.navigationBar setBarTintColor:barColor];
     }
     else {
-        UIColor * barColor = [UIColor colorWithHexString:@"2288FF"];
+        UIColor * barColor = [UIColor TKcolorWithHexString:@"2288FF"];
                               
         [self.navigationController.navigationBar setTintColor:barColor];
     }
@@ -94,7 +94,7 @@ typedef NS_ENUM(NSInteger, MMCenterViewControllerSection){
     
     
     UIView *backView = [[UIView alloc] init];
-    [backView setBackgroundColor:[UIColor colorWithHexString:@"2288FF"]];
+    [backView setBackgroundColor:[UIColor TKcolorWithHexString:@"2288FF"]];
     [self.tableView setBackgroundView:backView];
 }
 
