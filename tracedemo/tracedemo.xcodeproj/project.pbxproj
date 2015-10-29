@@ -38,11 +38,14 @@
 		8A6434AD1BAE9DF600820545 /* TKSubTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6434AA1BAE9DF600820545 /* TKSubTabBarViewController.xib */; };
 		8A6434B01BAE9E1700820545 /* TKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6434AF1BAE9E1700820545 /* TKTableViewController.m */; };
 		8A6434B71BAEEAC200820545 /* TKLeftMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6434B61BAEEAC200820545 /* TKLeftMenuController.m */; };
-		8A978A611BD3C8EF00C84ED2 /* BasePortraitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A978A5E1BD3C8EF00C84ED2 /* BasePortraitView.m */; settings = {ASSET_TAGS = (); }; };
-		8A978A621BD3C8EF00C84ED2 /* HFSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A978A601BD3C8EF00C84ED2 /* HFSegmentView.m */; settings = {ASSET_TAGS = (); }; };
-		BB8D6E1E1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8D6E1D1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.m */; settings = {ASSET_TAGS = (); }; };
-		BBA9F6FD1BC8AFF90059CEB4 /* UIViewController+TKVCcategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA9F6FC1BC8AFF90059CEB4 /* UIViewController+TKVCcategory.m */; settings = {ASSET_TAGS = (); }; };
-		BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */; settings = {ASSET_TAGS = (); }; };
+		8A978A611BD3C8EF00C84ED2 /* BasePortraitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A978A5E1BD3C8EF00C84ED2 /* BasePortraitView.m */; };
+		8A978A621BD3C8EF00C84ED2 /* HFSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A978A601BD3C8EF00C84ED2 /* HFSegmentView.m */; };
+		BB1A03141BE2113F0035770A /* TKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A03131BE2113F0035770A /* TKBaseViewController.m */; };
+		BB1A03181BE211720035770A /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A03161BE211720035770A /* TKHomePageViewController.m */; };
+		BB1A03191BE211720035770A /* TKHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1A03171BE211720035770A /* TKHomePageViewController.xib */; };
+		BB8D6E1E1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8D6E1D1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.m */; };
+		BBA9F6FD1BC8AFF90059CEB4 /* UIViewController+TKVCcategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA9F6FC1BC8AFF90059CEB4 /* UIViewController+TKVCcategory.m */; };
+		BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +127,11 @@
 		8A978A5F1BD3C8EF00C84ED2 /* HFSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSegmentView.h; sourceTree = "<group>"; };
 		8A978A601BD3C8EF00C84ED2 /* HFSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSegmentView.m; sourceTree = "<group>"; };
 		B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BB1A03121BE2113F0035770A /* TKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBaseViewController.h; sourceTree = "<group>"; };
+		BB1A03131BE2113F0035770A /* TKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBaseViewController.m; sourceTree = "<group>"; };
+		BB1A03151BE211720035770A /* TKHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKHomePageViewController.h; sourceTree = "<group>"; };
+		BB1A03161BE211720035770A /* TKHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKHomePageViewController.m; sourceTree = "<group>"; };
+		BB1A03171BE211720035770A /* TKHomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKHomePageViewController.xib; sourceTree = "<group>"; };
 		BB8D6E1C1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TKNavigationBarSetting.h"; sourceTree = "<group>"; };
 		BB8D6E1D1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TKNavigationBarSetting.m"; sourceTree = "<group>"; };
 		BBA9F6EF1BC7CE9C0059CEB4 /* TKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKConstants.h; sourceTree = "<group>"; };
@@ -335,6 +343,11 @@
 				8A6434AA1BAE9DF600820545 /* TKSubTabBarViewController.xib */,
 				8A6434AE1BAE9E1700820545 /* TKTableViewController.h */,
 				8A6434AF1BAE9E1700820545 /* TKTableViewController.m */,
+				BB1A03121BE2113F0035770A /* TKBaseViewController.h */,
+				BB1A03131BE2113F0035770A /* TKBaseViewController.m */,
+				BB1A03151BE211720035770A /* TKHomePageViewController.h */,
+				BB1A03161BE211720035770A /* TKHomePageViewController.m */,
+				BB1A03171BE211720035770A /* TKHomePageViewController.xib */,
 			);
 			path = TKController;
 			sourceTree = "<group>";
@@ -428,7 +441,7 @@
 				TargetAttributes = {
 					8A508FEC1B9D5D700067B9E9 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = PS3T6HBA6H;
+						DevelopmentTeam = JR9ACKVZRQ;
 					};
 					8A5090051B9D5D700067B9E9 = {
 						CreatedOnToolsVersion = 6.4;
@@ -463,6 +476,7 @@
 				BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */,
 				8A508FFC1B9D5D700067B9E9 /* Main.storyboard in Resources */,
 				8A5090011B9D5D700067B9E9 /* LaunchScreen.xib in Resources */,
+				BB1A03191BE211720035770A /* TKHomePageViewController.xib in Resources */,
 				8A508FFE1B9D5D700067B9E9 /* Images.xcassets in Resources */,
 				8A6434AD1BAE9DF600820545 /* TKSubTabBarViewController.xib in Resources */,
 				8A552D721BA3D8230083E87E /* MenuViewController.xib in Resources */,
@@ -517,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A17B1171BA46EA600548CA7 /* UIColor+TK_Color.m in Sources */,
+				BB1A03181BE211720035770A /* TKHomePageViewController.m in Sources */,
 				8A6434B01BAE9E1700820545 /* TKTableViewController.m in Sources */,
 				8A17B1121BA46CF500548CA7 /* MMSideDrawerTableViewCell.m in Sources */,
 				8A508FF91B9D5D700067B9E9 /* ViewController.m in Sources */,
@@ -539,6 +554,7 @@
 				8A17B1131BA46CF500548CA7 /* MMTableViewCell.m in Sources */,
 				8A508FF61B9D5D700067B9E9 /* AppDelegate.m in Sources */,
 				BB8D6E1E1BCE6FE300CD2DB0 /* UIViewController+TKNavigationBarSetting.m in Sources */,
+				BB1A03141BE2113F0035770A /* TKBaseViewController.m in Sources */,
 				8A17B1091BA46CF500548CA7 /* MMExampleCenterTableViewController.m in Sources */,
 				8A508FF31B9D5D700067B9E9 /* main.m in Sources */,
 				8A17B10B1BA46CF500548CA7 /* MMExampleLeftSideDrawerViewController.m in Sources */,
@@ -676,7 +692,7 @@
 				INFOPLIST_FILE = tracedemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.traceDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.tracedemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
 			};
@@ -692,7 +708,7 @@
 				INFOPLIST_FILE = tracedemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.traceDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.tracedemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
 			};

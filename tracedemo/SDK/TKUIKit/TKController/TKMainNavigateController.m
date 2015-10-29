@@ -32,7 +32,7 @@
     // 添加控制器
     // 首页
     TKSubTabBarViewController * subTabVC1  = [[TKSubTabBarViewController alloc] init];
-    subTabVC1.navigationItem.title = @"晒单";
+//    subTabVC1.navigationItem.title = @"晒单";
     
 //    
 //    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor redColor],NSForegroundColorAttributeName,[UIColor redColor],UITextAttributeTextShadowColor,[UIFont boldSystemFontOfSize:20.0],NSFontAttributeName,CGSizeMake(0, -1.0),UITextAttributeTextShadowOffset, nil];

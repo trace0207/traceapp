@@ -58,7 +58,7 @@
 - (void)setSegmentTitles:(NSArray *)titles
 {
     //默认选中第一个
-    UIImage * image = IMG(@"scheme_selected");
+    UIImage * image = IMG(@"tk_bg_select");
     CGSize rect = image.size;
     
     self.selectImageView.frame = CGRectMake(0, 0, rect.width, rect.height);
@@ -74,14 +74,14 @@
         btn.frame = CGRectMake(i * width, 0, width, self.frame.size.height);
         btn.tag = kSegmentBaseTag + i;
         
-        if (i == 0)
-        {
-            [btn setTitleColor:[UIColor mainStyleColor] forState:UIControlStateNormal];
-        }
-        else
-        {
-            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        }
+//        if (i == 0)
+//        {
+//            [btn setTitleColor:[UIColor mainStyleColor] forState:UIControlStateNormal];
+//        }
+//        else
+//        {
+//            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//        }
         [btn setTitle:[titles objectAtIndex:i] forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(segmentClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
@@ -90,36 +90,36 @@
 
 - (void)segmentClick:(UIButton *)btn
 {
-    if (btn.tag == mLastTag)
-    {
-        return;
-    }
-    
-    NSInteger index = btn.tag - kSegmentBaseTag;
-    
-    
-    WS(weakSelf)
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        CGRect rect = weakSelf.selectImageView.frame;
-        rect.origin.x = (btn.tag - kSegmentBaseTag) * weakSelf.selectImageView.frame.size.width;
-        weakSelf.selectImageView.frame = rect;
-        
-        UIButton * lastBtn = (UIButton *)[weakSelf viewWithTag:mLastTag];
-        [lastBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        UIButton * currentBtn = (UIButton *)[weakSelf viewWithTag:btn.tag];
-        [currentBtn setTitleColor:[UIColor mainStyleColor] forState:UIControlStateNormal];
-        
-        mLastTag = btn.tag;
-    }];
-    
-    
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(selectSegmentIndex:)])
-    {
-        [_delegate selectSegmentIndex:index];
-    }
+//    if (btn.tag == mLastTag)
+//    {
+//        return;
+//    }
+//    
+//    NSInteger index = btn.tag - kSegmentBaseTag;
+//    
+//    
+//    WS(weakSelf)
+//    
+//    [UIView animateWithDuration:0.5 animations:^{
+//        CGRect rect = weakSelf.selectImageView.frame;
+//        rect.origin.x = (btn.tag - kSegmentBaseTag) * weakSelf.selectImageView.frame.size.width;
+//        weakSelf.selectImageView.frame = rect;
+//        
+//        UIButton * lastBtn = (UIButton *)[weakSelf viewWithTag:mLastTag];
+//        [lastBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//        
+//        UIButton * currentBtn = (UIButton *)[weakSelf viewWithTag:btn.tag];
+//        [currentBtn setTitleColor:[UIColor mainStyleColor] forState:UIControlStateNormal];
+//        
+//        mLastTag = btn.tag;
+//    }];
+//    
+//    
+//    
+//    if (_delegate && [_delegate respondsToSelector:@selector(selectSegmentIndex:)])
+//    {
+//        [_delegate selectSegmentIndex:index];
+//    }
     
 }
 
@@ -129,7 +129,7 @@
 
 - (void)loadUI
 {
-    self.bgImageView.image = IMG(@"scheme_bg");
+    self.bgImageView.image = IMG(@"tk_bg_select");
 }
 
 
