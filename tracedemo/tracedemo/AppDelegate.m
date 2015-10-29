@@ -43,7 +43,7 @@
     [self.window makeKeyAndVisible];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-//    [NSThread sleepForTimeInterval:1.0];//  启动页停留 3 秒钟
+    [NSThread sleepForTimeInterval:1.5];//  启动页停留 3 秒钟
     
     return YES;
 }
