@@ -9,8 +9,11 @@
 #import "TKConstants.h"
 
 
-NSString * const baseURL = @"http://www.baidu.com";
+NSInteger const TK_C_slideWidth = 230;
+NSString * const TK_C_baseURL = @"http://www.baidu.com";
 
 @implementation TKConstants
+
+
 
 @end
