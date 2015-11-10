@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="THQ-Zz-7d8" customClass="HFMessageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="THQ-Zz-7d8" id="Ne1-mf-qTt">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head_default" translatesAutoresizingMaskIntoConstraints="NO" id="O8a-sG-H8G" customClass="BasePortraitView">
+                        <rect key="frame" x="15" y="15" width="30" height="30"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="CFn-10-0sG"/>
+                            <constraint firstAttribute="height" constant="30" id="elC-sV-sdf"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="祝智三" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XD8-fX-Tmq">
+                        <rect key="frame" x="60" y="13" width="177" height="18"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="31f-UG-3n6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOR-Id-NGX">
+                        <rect key="frame" x="60" y="32" width="177" height="12"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="jFL-A3-pCH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZb-V4-dMZ" customClass="MLEmojiLabel">
+                        <rect key="frame" x="245" y="15" width="60" height="60"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.9159200174825175" green="0.91814175407925391" blue="0.91445403554778537" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="4gs-Ee-kUa"/>
+                            <constraint firstAttribute="height" constant="60" id="ZW0-O2-bgH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-nE-ABk">
+                        <rect key="frame" x="245" y="15" width="60" height="60"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="S46-iY-jfQ"/>
+                            <constraint firstAttribute="width" constant="60" id="g6I-nG-eG8"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="good" translatesAutoresizingMaskIntoConstraints="NO" id="kHg-Hq-hG6">
+                        <rect key="frame" x="60" y="60" width="15" height="15"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="QTa-oW-KCD"/>
+                            <constraint firstAttribute="height" constant="15" id="mIm-IM-5A0"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efz-5I-vix" customClass="MLEmojiLabel">
+                        <rect key="frame" x="60" y="50" width="177" height="25"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SU6-yf-DkN">
+                        <rect key="frame" x="60" y="50" width="245" height="25"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="XD8-fX-Tmq" firstAttribute="leading" secondItem="O8a-sG-H8G" secondAttribute="trailing" constant="15" id="21h-HE-DyL"/>
+                    <constraint firstItem="dNd-nE-ABk" firstAttribute="top" secondItem="Ne1-mf-qTt" secondAttribute="top" constant="15" id="6Fn-Lq-xdu"/>
+                    <constraint firstItem="O8a-sG-H8G" firstAttribute="top" secondItem="Ne1-mf-qTt" secondAttribute="top" constant="15" id="6XP-t0-VNg"/>
+                    <constraint firstItem="tZb-V4-dMZ" firstAttribute="top" secondItem="Ne1-mf-qTt" secondAttribute="top" constant="15" id="Bf2-2w-0PB"/>
+                    <constraint firstAttribute="trailing" secondItem="tZb-V4-dMZ" secondAttribute="trailing" constant="15" id="Jcz-MR-Wts"/>
+                    <constraint firstItem="dNd-nE-ABk" firstAttribute="leading" secondItem="XD8-fX-Tmq" secondAttribute="trailing" constant="8" id="ML4-gn-saZ"/>
+                    <constraint firstItem="SU6-yf-DkN" firstAttribute="top" secondItem="nOR-Id-NGX" secondAttribute="bottom" constant="6" id="SnE-o8-XFc"/>
+                    <constraint firstItem="XD8-fX-Tmq" firstAttribute="top" secondItem="Ne1-mf-qTt" secondAttribute="top" constant="13" id="So7-tT-ySc"/>
+                    <constraint firstItem="SU6-yf-DkN" firstAttribute="leading" secondItem="Ne1-mf-qTt" secondAttribute="leading" constant="60" id="U8C-3l-hnC"/>
+                    <constraint firstItem="dNd-nE-ABk" firstAttribute="leading" secondItem="nOR-Id-NGX" secondAttribute="trailing" constant="8" id="UPy-bw-u6h"/>
+                    <constraint firstItem="dNd-nE-ABk" firstAttribute="leading" secondItem="Efz-5I-vix" secondAttribute="trailing" constant="8" id="XCT-PW-kfU"/>
+                    <constraint firstItem="Efz-5I-vix" firstAttribute="leading" secondItem="Ne1-mf-qTt" secondAttribute="leading" constant="60" id="YCo-Lt-MDj"/>
+                    <constraint firstItem="nOR-Id-NGX" firstAttribute="leading" secondItem="O8a-sG-H8G" secondAttribute="trailing" constant="15" id="YNv-eZ-3xb"/>
+                    <constraint firstAttribute="trailing" secondItem="SU6-yf-DkN" secondAttribute="trailing" constant="15" id="bXf-t0-ehC"/>
+                    <constraint firstItem="nOR-Id-NGX" firstAttribute="top" secondItem="XD8-fX-Tmq" secondAttribute="bottom" constant="1" id="c9e-pY-cLl"/>
+                    <constraint firstAttribute="bottom" secondItem="SU6-yf-DkN" secondAttribute="bottom" constant="14.5" id="csx-sz-Wn4"/>
+                    <constraint firstAttribute="trailing" secondItem="dNd-nE-ABk" secondAttribute="trailing" constant="15" id="kiT-cw-IuN"/>
+                    <constraint firstItem="O8a-sG-H8G" firstAttribute="leading" secondItem="Ne1-mf-qTt" secondAttribute="leading" constant="15" id="nW4-lD-BBf"/>
+                    <constraint firstItem="kHg-Hq-hG6" firstAttribute="top" secondItem="nOR-Id-NGX" secondAttribute="bottom" constant="16" id="p5Y-5o-eR2"/>
+                    <constraint firstItem="Efz-5I-vix" firstAttribute="top" secondItem="nOR-Id-NGX" secondAttribute="bottom" constant="6" id="pGt-1E-BBz"/>
+                    <constraint firstAttribute="bottom" secondItem="Efz-5I-vix" secondAttribute="bottom" constant="14.5" id="uh2-gq-MIK"/>
+                    <constraint firstItem="kHg-Hq-hG6" firstAttribute="leading" secondItem="Ne1-mf-qTt" secondAttribute="leading" constant="60" id="vx4-Rm-BvH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="mContentLabel" destination="Efz-5I-vix" id="vEL-Gf-VHr"/>
+                <outlet property="mDetailContentedLabelCover" destination="tZb-V4-dMZ" id="OLD-k3-ePk"/>
+                <outlet property="mDetailImage" destination="dNd-nE-ABk" id="b8G-Lg-Yc9"/>
+                <outlet property="mHeadImage" destination="O8a-sG-H8G" id="QH1-cf-wmE"/>
+                <outlet property="mNameLabel" destination="XD8-fX-Tmq" id="zKb-Pn-64d"/>
+                <outlet property="mPriseImage" destination="kHg-Hq-hG6" id="AWK-Bh-Apk"/>
+                <outlet property="mSystemLabel" destination="SU6-yf-DkN" id="UGS-tn-PRE"/>
+                <outlet property="mTimeLabel" destination="nOR-Id-NGX" id="KTb-ue-7pj"/>
+            </connections>
+            <point key="canvasLocation" x="233" y="327"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="good" width="13" height="14"/>
+        <image name="head_default" width="56" height="56"/>
+    </resources>
+</document>

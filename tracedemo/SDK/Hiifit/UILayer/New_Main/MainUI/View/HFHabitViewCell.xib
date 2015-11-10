@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HFHabitViewCell" rowHeight="91" id="KGk-i7-Jjw" customClass="HFHabitViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heabit" translatesAutoresizingMaskIntoConstraints="NO" id="cmb-OV-rJL" customClass="BasePortraitView">
+                        <rect key="frame" x="16" y="16" width="40" height="40"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="JxQ-Kq-31X"/>
+                            <constraint firstAttribute="width" constant="40" id="ecK-JO-wPX"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOH-Nf-5RB">
+                        <rect key="frame" x="72" y="15" width="0.0" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="170" id="2zD-9f-1vw"/>
+                            <constraint firstAttribute="height" constant="21" id="lK4-wB-R7S"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="Nt5-bG-ccb">
+                        <rect key="frame" x="80" y="19" width="13" height="13"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="13" id="2fw-Vo-gWN"/>
+                            <constraint firstAttribute="height" constant="13" id="W8j-8I-BeM"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已打卡" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-n7-4Ys">
+                        <rect key="frame" x="263" y="16" width="41" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="41" id="LvF-aF-qVB"/>
+                            <constraint firstAttribute="height" constant="21" id="Zre-Dj-F3J"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12321参与者" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raX-nJ-1Go">
+                        <rect key="frame" x="72" y="40" width="149" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="5nk-ag-MqG"/>
+                            <constraint firstAttribute="width" constant="149" id="OPT-OL-1o4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="FOH-Nf-5RB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="0UN-QK-WEm"/>
+                    <constraint firstItem="raX-nJ-1Go" firstAttribute="top" secondItem="FOH-Nf-5RB" secondAttribute="bottom" constant="4" id="0XT-Oq-AgJ"/>
+                    <constraint firstItem="Nt5-bG-ccb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="Uvx-Lb-Cak"/>
+                    <constraint firstItem="Nt5-bG-ccb" firstAttribute="leading" secondItem="FOH-Nf-5RB" secondAttribute="trailing" constant="8" id="bkd-5x-YLs"/>
+                    <constraint firstItem="raX-nJ-1Go" firstAttribute="leading" secondItem="cmb-OV-rJL" secondAttribute="trailing" constant="16" id="deD-UT-PMJ"/>
+                    <constraint firstAttribute="trailing" secondItem="Psw-n7-4Ys" secondAttribute="trailing" constant="16" id="emm-f2-VtF"/>
+                    <constraint firstItem="Psw-n7-4Ys" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="kc0-mZ-NfP"/>
+                    <constraint firstItem="cmb-OV-rJL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="m9U-Wj-hJp"/>
+                    <constraint firstItem="cmb-OV-rJL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="qJa-Ml-MgP"/>
+                    <constraint firstItem="FOH-Nf-5RB" firstAttribute="leading" secondItem="cmb-OV-rJL" secondAttribute="trailing" constant="16" id="rBL-V0-zrD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="clockImage" destination="Nt5-bG-ccb" id="NV6-XN-zlM"/>
+                <outlet property="finishedLabel" destination="Psw-n7-4Ys" id="uOE-TN-rUH"/>
+                <outlet property="habitLabel" destination="FOH-Nf-5RB" id="MVa-iE-sag"/>
+                <outlet property="headImage" destination="cmb-OV-rJL" id="4bg-vp-ta2"/>
+                <outlet property="peopleNumLabel" destination="raX-nJ-1Go" id="1Mh-T0-gAz"/>
+            </connections>
+            <point key="canvasLocation" x="275" y="152.5"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="204" id="0Cp-ex-rss" customClass="HFHabitViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="326" height="204"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Cp-ex-rss" id="V4u-da-aAC">
+                <rect key="frame" x="0.0" y="0.0" width="326" height="203.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加更多习惯，良好习惯养起来~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksJ-Zp-YXc">
+                        <rect key="frame" x="0.0" y="95" width="326" height="20"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Vi9-UB-Zqs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeF-gC-FhN">
+                        <rect key="frame" x="76" y="140" width="175" height="40"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="175" id="hth-TN-ZSB"/>
+                            <constraint firstAttribute="height" constant="40" id="wn1-Bv-GOy"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="new_addHabbit"/>
+                        <connections>
+                            <action selector="addHabitAction:" destination="0Cp-ex-rss" eventType="touchUpInside" id="Kxp-uF-Mu8"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="ksJ-Zp-YXc" firstAttribute="top" secondItem="V4u-da-aAC" secondAttribute="top" constant="95" id="0vX-Gy-uLi"/>
+                    <constraint firstItem="ZeF-gC-FhN" firstAttribute="leading" secondItem="V4u-da-aAC" secondAttribute="leading" constant="50" id="CfS-UT-wlR"/>
+                    <constraint firstItem="ksJ-Zp-YXc" firstAttribute="leading" secondItem="V4u-da-aAC" secondAttribute="leading" id="DVK-RC-BsQ"/>
+                    <constraint firstItem="ZeF-gC-FhN" firstAttribute="top" secondItem="ksJ-Zp-YXc" secondAttribute="bottom" constant="25" id="Sy9-6S-vcc"/>
+                    <constraint firstAttribute="trailing" secondItem="ZeF-gC-FhN" secondAttribute="trailing" constant="50" id="XwU-cW-qoD"/>
+                    <constraint firstAttribute="trailing" secondItem="ksJ-Zp-YXc" secondAttribute="trailing" id="kFz-bf-gDo"/>
+                    <constraint firstItem="ZeF-gC-FhN" firstAttribute="centerX" secondItem="V4u-da-aAC" secondAttribute="centerX" id="q4L-1d-8R5"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="CfS-UT-wlR"/>
+                        <exclude reference="XwU-cW-qoD"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="277" y="340"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="86" id="Sdm-KE-Wj6" customClass="HFHabitViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="325" height="86"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sdm-KE-Wj6" id="HPg-TD-zmJ">
+                <rect key="frame" x="0.0" y="0.0" width="325" height="85.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csG-XR-Tcq">
+                        <rect key="frame" x="75" y="25" width="175" height="40"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="175" id="afF-PC-odA"/>
+                            <constraint firstAttribute="height" constant="40" id="hgR-mx-wJB"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="new_findMoreBtn"/>
+                        <connections>
+                            <action selector="addHabitAction:" destination="Sdm-KE-Wj6" eventType="touchUpInside" id="kyq-mZ-pwY"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="csG-XR-Tcq" firstAttribute="centerX" secondItem="HPg-TD-zmJ" secondAttribute="centerX" id="LZo-aL-OEK"/>
+                    <constraint firstItem="csG-XR-Tcq" firstAttribute="leading" secondItem="HPg-TD-zmJ" secondAttribute="leading" constant="50" id="OgA-mF-8U9"/>
+                    <constraint firstAttribute="trailing" secondItem="csG-XR-Tcq" secondAttribute="trailing" constant="50" id="Y8i-G7-wWv"/>
+                    <constraint firstItem="csG-XR-Tcq" firstAttribute="top" secondItem="HPg-TD-zmJ" secondAttribute="top" constant="25" id="rIg-Ix-nVH"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="OgA-mF-8U9"/>
+                        <exclude reference="Y8i-G7-wWv"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="277.5" y="527"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="clock" width="13" height="13"/>
+        <image name="heabit" width="82" height="82"/>
+        <image name="new_addHabbit" width="175" height="40"/>
+        <image name="new_findMoreBtn" width="175" height="40"/>
+    </resources>
+</document>

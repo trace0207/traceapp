@@ -1,0 +1,146 @@
+/*
+ Localizable.strings
+ GuanHealth
+ 
+ Created by hermit on 15/3/11.
+ Copyright (c) 2015年 wensihaihui. All rights reserved.
+ */
+
+"HF_Common_App" = "嗨健康";
+"HF_Common_OK" = "确定";
+"HF_Common_Finish" = "完成";
+"HF_Common_Agreement" = "嗨健康用户注册协议";
+"HF_Common_Habit" = "习惯";
+"HF_Common_CheckNet" = "请检查您的网络设置！";
+"HF_Common_Last_Refresh" = "上次刷新";
+"HF_Common_Refresh_Time" = "刷新时间";
+"HF_Common_Down_Refresh" = "下拉刷新";
+"HF_Common_Up_Refresh" = "上拉加载更多";
+"HF_Common_Refreshing" = "加载中";
+"HF_Common_Now_Refresh" = "正在加载";
+"HF_Common_Free_Refresh" = "释放刷新";
+"HF_Common_Hot" = "热门";
+"HF_Common_Interest" = "兴趣";
+"HF_Common_Friends" = "好友";
+"HF_Common_Find" = "发现";
+"HF_Common_Add_Friends" = "添加好友";
+"HF_Common_Find_Password" = "找回密码";
+"HF_Common_Sudo" = "数独";
+"HF_Common_Restart" = "重新开始";
+"HF_Common_Game_Faild" = "游戏失败";
+"HF_Common_Faild_Tips" = "累计错误4次，挑战失败 ！点击确认后重新开始游戏";
+"HF_Common_My_Habits" = "我的习惯";
+"HF_Common_Edit" = "编辑";
+"HF_Common_Add" = "添加";
+"HF_Common_About_Us" = "关于我们";
+"HF_Common_Reply" = "回复";
+"HF_Common_Mood" = "心情";
+"HF_Common_Take_Comment" = "评论一下吧";
+"HF_Common_Take_Publish" = "发表";
+"HF_Common_Take_Cooperation" = "合作洽谈";
+"HF_Common_Feedback" = "意见反馈";
+"HF_Common_give_Suggest" = " 有什么想对我们说的？";
+"HF_Common_Words" = "字";
+"HF_Common_Follow_You" = "关注了我";
+"HF_Common_No_Messages" = "暂无消息";
+"HF_Common_Messages" = "消息";
+"HF_Common_Prise" = "赞";
+"HF_Common_Comment" = "评论";
+"HF_Common_New_Funs" = "新粉丝";
+"HF_Common_System_Notes" = "系统通知";
+"HF_Common_Net_Error" = "请检查您的网络设置！";
+"HF_Common_Phone_Null" = "手机号不能为空";
+"HF_Common_Input_Right_Phone" = "请正确填写您的手机号码！";
+"HF_Common_Password_Null" = "密码不能为空！";
+"HF_Common_Code_Null" = "验证不能为空！";
+"HF_Common_Code_Error" = "验证码格式不正确";
+"HF_Common_Password_Error" = "密码格式不正确！";
+"HF_Common_Tips" = "提示";
+"HF_Common_Module" = "模块";
+"HF_Common_Picture_Net_Error" = "网络不给力，图片下载失败";
+"HF_Common_Save_Error" = "保存失败";
+"HF_Common_Save_Success" = "成功保存到相册";
+"HF_Common_Check_Net" = "请检查您的网络设置！";
+"HF_Common_Say_Somethings" = "叨叨一下";
+"HF_Common_Sent" = "发送";
+"HF_Common_Post_Null" = "不能发表空内容";
+"HF_Common_Add_Pictures" = "添加图片";
+"HF_Common_Cancel" = "取消";
+"HF_Common_Take_Picture" = "拍照";
+"HF_Common_From_Habit" = "来自习惯";
+"HF_Common_From_Module" = "来自模块";
+"HF_Common_Photo_Album" = "相册";
+"HF_Common_More_Pictures" = "不能一次上传多余9张图片";
+"HF_Common_Next_Step" = "下一步";
+"HF_Common_Settings" = "设置";
+"HF_Common_Share" = "分享";
+"HF_Common_Share_To_Friends" = "分享给好友";
+"HF_Common_Sun" = "日";
+"HF_Common_Mon" = "一";
+"HF_Common_Tus" = "二";
+"HF_Common_Wen" = "三";
+"HF_Common_Thu" = "四";
+"HF_Common_Fri" = "五";
+"HF_Common_Sat" = "六";
+"HF_Common_Sun_M" = "周日";
+"HF_Common_Mon_M" = "周一";
+"HF_Common_Tus_M" = "周二";
+"HF_Common_Wen_M" = "周三";
+"HF_Common_Thu_M" = "周四";
+"HF_Common_Fri_M" = "周五";
+"HF_Common_Sat_M" = "周六";
+"HF_Common_Bind_Phone" = "手机号绑定";
+"HF_Common_Date_Never" = "从不";
+"HF_Common_Date_Work" = "工作日";
+"HF_Common_Date_EveryDay" = "每天";
+"HF_Home_Share_To_You" = "向你分享了";
+"HF_Home_Reply_You" = "评论了你";
+"HF_Home_Right_Now" = "刚刚";
+"HF_Home_More" = "更多";
+
+"HF_Find_World" = "世界";
+"HF_Find_Friends_Rank" = "好友排行";
+
+"HF_User_Center_Modify_Signature" = "修改签名";
+"HF_User_Center_Signature_Placehorder" = "写下你的个性签名吧";
+"HF_User_Center_Set_Birthday" = "你设置的生日为";
+"HF_User_Center_Modify_Name" = "修改名字";
+"HF_User_Center_Modify_Birthday" = "修改生日";
+"HF_User_Center_Modify_Heigth" = "修改身高";
+"HF_User_Center_Modify_Weigth" = "修改体重";
+"HF_User_Center_Info_Null" = "信息不能为空！";
+"HF_User_Center_Name_Null" = "昵称不能为空";
+"HF_User_Center_Unit_Height" = "单位（厘米）";
+"HF_User_Center_Unit_Weight" = "单位（千克）";
+
+"HF_Modules_My_Modules" = "我的嗨盒";
+"HF_Modules_Modules" = "嗨盒";
+"HF_Modules_Add_Modules_Tips" = "点击“＋”添加模块";
+
+"HF_Register_Weight" = "体重";
+"HF_Register_Height" = "身高";
+"HF_Register_Info" = "注册信息";
+"HF_Register_User_Register" = "用户注册";
+"HF_Register_Birth_Year" = "出生年";
+"HF_Register_Birth_Month" = "出生月";
+"HF_Register_Year" = "年";
+"HF_Register_Month" = "月";
+"HF_Register_Finished_Info_Tips" = "新用户必须完善信息才能正常使用！";
+"HF_Register_Forget_Password" = "找回密码";
+"HF_Register_Agree" = "同意";
+"HF_Register_Disagree" = "不同意";
+"HF_Register_Mobile_Tips" = "我们将发送验证码短信到这个号码，请注意查收";
+"HF_Register_Obey_Agreement" = "用户必须服从《嗨健康服务协议》！";
+
+"HF_Habit_Time_Settings" = "时间设置";
+"HF_Habit_Time_Repeat" = "重复提醒";
+"HF_Habit_Time_Alarm" = "提醒";
+"HF_Habit_Weeks_Settings" = "请设置提醒周期";
+"HF_Habit_Time_Hour" = "时";
+"HF_Habit_Time_Min" = "分";
+"HF_Habit_Go_In" = "进入习惯";
+"HF_Habit_Message_Tip" = "坚持就是胜利，加油!";
+"HF_Habit_No_AlarmClock" = "Come on!\n快来添加闹钟吧!";
+
+"HF_Share_Content" = "我在用嗨健康，哎哟不错哦~~如此酷炫的健康战斗小基地，小伙伴快来加入，让健康动次动次嗨起来~";
+"HF_Bind_Phone_Fail" = "绑定手机失败";

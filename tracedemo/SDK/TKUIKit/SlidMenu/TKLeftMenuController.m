@@ -11,7 +11,7 @@
 #import "TKColorDefine.h"
 #import "Masonry.h"
 
-@interface TKLeftMenuController ()
+@interface TKLeftMenuController ()<UITableViewDataSource,UITableViewDelegate>
 {
 
     NSInteger _maxWidth;// 定义 滑动菜单最大的滑动距离
@@ -81,7 +81,8 @@
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
-    
+    [self.tableView setDataSource:self];
+    [self.tableView setDelegate:self];
 }
 
 - (void)viewDidLoad {

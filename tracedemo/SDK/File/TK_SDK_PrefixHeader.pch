@@ -14,11 +14,79 @@
 
 #import "MWLog.h"
 #import "TKGlobValue.h"
+#import "UIColor+Extended.h"
+#import "Singleton.h"
+#import "HIIProxy.h"
+#import "MobClick.h"
+#import "GlobKey.h"
+#import "GlobConfig.h"
+#import "GlobInfo.h"
+#import "GlobUMengKey.h"
+
+
+
+//lib header
+#import "AFNetworking.h"
+#import "UIKit+AFNetworking.h"
+#import "NSDate+Helpers.h"
+#import "Masonry.h"
+#import "JSONAPI.h"
+
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+Add.h"
+#import "WCAlertView.h"
+#import "MF_Base64Additions.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "NSString+MD5.h"
+#import <ShareSDK/ShareSDK.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+#import "WeiboSDK.h"
+#import "WXApi.h"
+#import "SDWebImageManager.h"
+#import "HFAlertView.h"
+//#import "MobClick.h"
+//#import "FCModel.h"
+#import "UIView+Z_Order.h"
+#import "BasePortraitView.h"
+#import "BasePortraitButton.h"
+#import "UIView+Screenshot.h"
+#import "VPImageCropperViewController.h"
+#import "NSDate+HFHelper.h"
+
+//global header
+#import "NetHTTPClient.h"
+//#import "CoreDataHelper.h"
+//#import "Singleton.h"
+//#import "GlobConfig.h"
+//#import "GlobKey.h"
+//#import "GlobInfo.h"
+//#import "GlobEnum.h"
+//#import "GlobNotifyDefine.h"
+//#import "AppDelegate.h"
+#import "UIColor+Extended.h"
+#import "UIViewController+Customize.h"
+#import "UIKitTool.h"
+#import "HFDeviceInfo.h"
+#import "IParser.h"
+#import "ResponseData.h"
+#import "MWLog.h"
+#import "HFBigImageView.h"
+#import "BaseHFHttpClient.h"
+#import "HFHUDView.h"
+#import "HIIProxy.h"
+#import "GlobUMengKey.h"
+#import "MobClick.h"
+#import "BaseNavViewController.h"
+#import <MJRefresh.h>
+#import "HFGuideView.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
 
 
 #endif
 
-#define  IMG(x)          [UIImage imageNamed:x]
+
 
 static BOOL OSVersionIsAtLeastiOS7() {
     return (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1);

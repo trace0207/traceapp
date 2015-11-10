@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendsViewController">
+            <connections>
+                <outlet property="tableView" destination="od9-aL-TfL" id="cQe-rk-XZ5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="od9-aL-TfL">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="7V9-WB-NBz"/>
+                        <outlet property="delegate" destination="-1" id="I14-uK-JsY"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="od9-aL-TfL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hze-KP-0yN"/>
+                <constraint firstItem="od9-aL-TfL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QJS-3T-wx6"/>
+                <constraint firstAttribute="bottom" secondItem="od9-aL-TfL" secondAttribute="bottom" id="S7Q-1d-wAI"/>
+                <constraint firstAttribute="trailing" secondItem="od9-aL-TfL" secondAttribute="trailing" id="qwr-1j-dGZ"/>
+            </constraints>
+            <point key="canvasLocation" x="283" y="258"/>
+        </view>
+    </objects>
+</document>

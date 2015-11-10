@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HFCoopViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Z0a-Vr-XJC">
+                    <rect key="frame" x="130" y="96" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="jIC-Wq-9Mi"/>
+                        <constraint firstAttribute="width" constant="60" id="zAb-It-fAl"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="嗨健康" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1w-ja-nk4">
+                    <rect key="frame" x="132" y="164" width="57" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="CGu-IW-b3t"/>
+                        <constraint firstAttribute="width" constant="57" id="uT2-IK-f60"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.85999999999999999" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="©中移（杭州）信息技术有限公司" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBG-6l-kEU">
+                    <rect key="frame" x="70" y="193" width="181" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="181" id="DxR-8L-eMb"/>
+                        <constraint firstAttribute="height" constant="21" id="Gdv-Kj-2pH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="bo5-rF-GxA">
+                    <rect key="frame" x="16" y="283" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="05A-9D-569"/>
+                        <constraint firstAttribute="width" constant="24" id="2vE-tb-1JZ"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="400-10086-86" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0K-4W-sWe">
+                    <rect key="frame" x="78" y="244" width="151" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Zu2-W3-UFO"/>
+                        <constraint firstAttribute="width" constant="151" id="n8R-wO-qhI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="business@hiifit.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhM-jN-bng">
+                    <rect key="frame" x="78" y="284" width="151" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="151" id="ExX-qs-dOs"/>
+                        <constraint firstAttribute="height" constant="21" id="Y8m-z3-s6b"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="CkY-RX-vBX">
+                    <rect key="frame" x="16" y="243" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="GdA-aD-G0F"/>
+                        <constraint firstAttribute="height" constant="24" id="z4x-sF-16c"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lO-Dt-fGS">
+                    <rect key="frame" x="77" y="275" width="243" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.089999999999999997" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Pk8-Jf-cw2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="PhM-jN-bng" firstAttribute="leading" secondItem="bo5-rF-GxA" secondAttribute="trailing" constant="38" id="0ny-kt-Xs7"/>
+                <constraint firstItem="VBG-6l-kEU" firstAttribute="top" secondItem="R1w-ja-nk4" secondAttribute="bottom" constant="8" id="1d6-WT-06M"/>
+                <constraint firstItem="CkY-RX-vBX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="6OE-Yg-QoF"/>
+                <constraint firstItem="4lO-Dt-fGS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="77" id="8sx-5O-pJS"/>
+                <constraint firstItem="PhM-jN-bng" firstAttribute="top" secondItem="4lO-Dt-fGS" secondAttribute="bottom" constant="8" id="Ez7-oz-WJY"/>
+                <constraint firstItem="bo5-rF-GxA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="GBk-V3-qGy"/>
+                <constraint firstItem="R1w-ja-nk4" firstAttribute="top" secondItem="Z0a-Vr-XJC" secondAttribute="bottom" constant="8" id="GUD-3L-g2j"/>
+                <constraint firstAttribute="trailing" secondItem="4lO-Dt-fGS" secondAttribute="trailing" id="IH1-FZ-AHG"/>
+                <constraint firstItem="X0K-4W-sWe" firstAttribute="leading" secondItem="CkY-RX-vBX" secondAttribute="trailing" constant="38" id="NS4-vq-9qV"/>
+                <constraint firstAttribute="centerX" secondItem="R1w-ja-nk4" secondAttribute="centerX" id="Onf-Yx-DU6"/>
+                <constraint firstItem="bo5-rF-GxA" firstAttribute="top" secondItem="CkY-RX-vBX" secondAttribute="bottom" constant="16" id="PYz-Kg-wed"/>
+                <constraint firstItem="X0K-4W-sWe" firstAttribute="top" secondItem="VBG-6l-kEU" secondAttribute="bottom" constant="30" id="Wwp-qI-Gtp"/>
+                <constraint firstItem="Z0a-Vr-XJC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="96" id="ZX7-Kt-Tza"/>
+                <constraint firstAttribute="centerX" secondItem="VBG-6l-kEU" secondAttribute="centerX" id="afF-71-4dP"/>
+                <constraint firstItem="4lO-Dt-fGS" firstAttribute="top" secondItem="X0K-4W-sWe" secondAttribute="bottom" constant="10" id="bzC-l6-AUS"/>
+                <constraint firstItem="CkY-RX-vBX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="243" id="dd6-Fa-yJ0"/>
+                <constraint firstAttribute="centerX" secondItem="Z0a-Vr-XJC" secondAttribute="centerX" id="no2-9b-4fs"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="249" y="229"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="email" width="24" height="24"/>
+        <image name="logo" width="61" height="62"/>
+        <image name="phone" width="24" height="24"/>
+    </resources>
+</document>

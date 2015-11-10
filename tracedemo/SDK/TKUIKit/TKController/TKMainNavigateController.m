@@ -7,11 +7,22 @@
 //
 
 #import "TKMainNavigateController.h"
-#import "TKSubTabBarViewController.h"
+#import "TKHomePageViewController.h"
 #import "UIColor+TK_Color.h"
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
 #import "UIViewController+TKNavigationBarSetting.h"
+#import "HFNewMainViewController.h"
+#import "HFMomentsViewController.h"
+#import "UserInfoViewController.h"
+
+
+@interface TKMainNavigateController()<HomePageEventProtocol>
+{
+
+}
+
+@end
 
 
 @implementation TKMainNavigateController
@@ -31,49 +42,72 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor TKcolorWithHexString:TK_Color_white_background]];
     // 添加控制器
     // 首页
-    TKSubTabBarViewController * subTabVC1  = [[TKSubTabBarViewController alloc] init];
-//    subTabVC1.navigationItem.title = @"晒单";
-    
-//    
-//    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor redColor],NSForegroundColorAttributeName,[UIColor redColor],UITextAttributeTextShadowColor,[UIFont boldSystemFontOfSize:20.0],NSFontAttributeName,CGSizeMake(0, -1.0),UITextAttributeTextShadowOffset, nil];
-//    subTabVC1.navigationController.navigationBar.titleTextAttributes = dict;
-//    
-    UINavigationController * navc1 = [[UINavigationController alloc]initWithRootViewController:subTabVC1];
-    navc1.title = @"首页";
-    navc1.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
-    [self addChildViewController:navc1];
-    
-    
+    TKHomePageViewController * subTabVC1  = [[TKHomePageViewController alloc] init];
+    subTabVC1.tabBarItem.image=IMG(@"new_mainPageUnselected");
+    subTabVC1.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
+    subTabVC1.tabBarItem.title=@"首页";
     [self setupLeftMenuButton:subTabVC1];
-    [self setupNavigationRightButton:subTabVC1];
+//    [self setupNavigationRightButton:subTabVC1];
     
+    HFNewMainViewController * newMain = [[HFNewMainViewController alloc] init];
+    newMain.tabBarItem.title=@"搜索";
+    newMain.tabBarItem.image=IMG(@"new_mainPageUnselected");
+    newMain.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
     
-    TKSubTabBarViewController * subTabVC2  = [[TKSubTabBarViewController alloc] init];
-    subTabVC2.navigationItem.title = @"搜索";
-    UINavigationController * navc2 = [[UINavigationController alloc]initWithRootViewController:subTabVC2];
-    navc2.title = @"搜索";
-    navc2.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
-    [self addChildViewController:navc2];
+    HFMomentsViewController * newChat = [[HFMomentsViewController alloc] init];
+    newChat.tabBarItem.title = @"晒单";
+    newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
+    newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
     
-    TKSubTabBarViewController * subTabVC3  = [[TKSubTabBarViewController alloc] init];
-    UINavigationController * navc3 = [[UINavigationController alloc]initWithRootViewController:subTabVC3];
-    subTabVC3.title = @"晒单";
-    navc3.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
-    [self addChildViewController:navc3];
-    
-    TKSubTabBarViewController * subTabVC4  = [[TKSubTabBarViewController alloc] init];
-    UINavigationController * navc4 = [[UINavigationController alloc]initWithRootViewController:subTabVC4];
-    subTabVC4.title = @"消息";
-    navc4.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
-    [self addChildViewController:navc4];
+    UserInfoViewController * newUser = [[UserInfoViewController alloc] init];
+    newUser.tabBarItem.title = @"消息";
+    newUser.tabBarItem.image = IMG(@"new_myUnselected");
+    newUser.tabBarItem.selectedImage = IMG(@"new_mySelected");
     
 //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
     UINavigationController * navc5 = [[UINavigationController alloc]init];
     navc5.title = @"我";
     navc5.navigationItem.title = @"我的个人中心";
     navc5.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
+    
+    self.selectedIndex =0;
+    self.viewControllers = @[subTabVC1,newMain,newChat,newUser,navc5];
+    
     [self addChildViewController:navc5];
 }
+
+//
+//-(TKMainNavigateController*)getMainViewController{
+//    
+//    
+//    //        UIViewController *vc = [self.window rootViewController];
+//    TKMainNavigateController * tabBar = [[TKMainNavigateController alloc] init];
+//    tabBar.selectedIndex = 0;
+//    BaseNavViewController *nav = [[BaseNavViewController alloc]initWithRootViewController:tabBar];
+//    nav.navigationBar.translucent = NO;
+//    
+//    HFNewMainViewController * newMain = [[HFNewMainViewController alloc] init];
+//    newMain.tabBarItem.title=@"首页";
+//    newMain.tabBarItem.image=IMG(@"new_mainPageUnselected");
+//    newMain.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
+//    
+//    HFMomentsViewController * newChat = [[HFMomentsViewController alloc] init];
+//    newChat.tabBarItem.title = @"嗨圈";
+//    newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
+//    newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
+//    
+//    UserInfoViewController * newUser = [[UserInfoViewController alloc] init];
+//    newUser.tabBarItem.title = @"我的";
+//    newUser.tabBarItem.image = IMG(@"new_myUnselected");
+//    newUser.tabBarItem.selectedImage = IMG(@"new_mySelected");
+//    
+//    [[UITabBar appearance]setTintColor:[UIColor HFColorStyle_5]];
+//    //[[UITabBar appearance]setBarTintColor:[UIColor HFColorStyle_6]];
+//    
+//    tabBar.viewControllers=@[newMain,newChat,newUser];
+//    return tabBar;
+//    
+//}
 
 
 
@@ -105,6 +139,11 @@
 //    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
     
     DDLogInfo(@"RightBar icon click ");
+}
+
+#pragma mark - Bar delegate
+-(void)leftBarIconDidClick{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 @end

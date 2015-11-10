@@ -1,0 +1,35 @@
+//
+//  Menu.h
+//  menu
+//
+//  Created by zhuxiaoxia on 15/8/31.
+//  Copyright (c) 2015年 ChinaMobile. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+typedef NS_ENUM(NSInteger,HFMenuType) {
+    HFMenuTypeRight =   0,
+    HFMenuTypeLeft  =   1,
+    HFMenuTypeCenter=   2,
+};
+
+@protocol HFMenuDelegate <NSObject>
+
+@optional
+- (CGFloat)heightForCell;
+
+@required
+- (void)MenuDidSelectIndex:(NSInteger)index;
+
+@end
+
+@interface HFMenuControl : UIView
+
+@property (nonatomic, weak) id<HFMenuDelegate>delegate;
+
+- (instancetype)initWithTitles:(NSArray *)titles style:(HFMenuType)type;
+
+- (void)showMenu;
+
+@end

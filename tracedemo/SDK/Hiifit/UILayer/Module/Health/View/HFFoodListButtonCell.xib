@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C2043" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="KGk-i7-Jjw" customClass="HFFoodListButtonCell">
+            <rect key="frame" x="0.0" y="0.0" width="366" height="99"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="366" height="98.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpM-Z4-zYe">
+                        <rect key="frame" x="15" y="15" width="336" height="40"/>
+                        <animations/>
+                        <rect key="contentStretch" x="0.29999999999999999" y="0.0" width="0.39999999999999963" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="LKm-QC-ibg"/>
+                        </constraints>
+                        <state key="normal" title="查看明日健康食谱" backgroundImage="My_bigButton">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="watchNextAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XmD-Mq-QI4"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="bpM-Z4-zYe" secondAttribute="trailing" constant="15" id="13x-mX-hEZ"/>
+                    <constraint firstItem="bpM-Z4-zYe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="9fb-A6-CBm"/>
+                    <constraint firstItem="bpM-Z4-zYe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="OWS-do-ZwW"/>
+                    <constraint firstItem="bpM-Z4-zYe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="RH1-bh-L4R"/>
+                    <constraint firstItem="bpM-Z4-zYe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="caL-Rk-9Pv"/>
+                    <constraint firstAttribute="trailing" secondItem="bpM-Z4-zYe" secondAttribute="trailing" constant="15" id="wcZ-4O-Q01"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="13x-mX-hEZ"/>
+                        <exclude reference="9fb-A6-CBm"/>
+                        <exclude reference="OWS-do-ZwW"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="foodListBtn" destination="bpM-Z4-zYe" id="pY5-GK-Rbm"/>
+            </connections>
+            <point key="canvasLocation" x="338" y="283.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="My_bigButton" width="60" height="40"/>
+    </resources>
+</document>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HFBandViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="band_logo" translatesAutoresizingMaskIntoConstraints="NO" id="QKu-9a-AjF">
+                    <rect key="frame" x="265" y="158" width="70" height="66"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="bit-e8-EsS"/>
+                        <constraint firstAttribute="height" constant="66" id="dfw-T8-aaz"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎使用嗨健康手环" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ff-xw-K3u">
+                    <rect key="frame" x="205" y="237" width="190" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="190" id="FLe-zC-fC3"/>
+                        <constraint firstAttribute="height" constant="21" id="KQL-oH-fCy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5m-hg-QGV">
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="51"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="51" id="C5E-b7-viG"/>
+                        <constraint firstAttribute="width" constant="60" id="eNG-H1-LFH"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <state key="normal" image="back_cancel">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissAction:" destination="-1" eventType="touchUpInside" id="4iB-nF-37u"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEr-7s-uqX">
+                    <rect key="frame" x="239" y="482" width="123" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="9gg-jM-maT"/>
+                        <constraint firstAttribute="width" constant="123" id="Rpk-xe-Dtz"/>
+                    </constraints>
+                    <state key="normal" title="绑定手环" backgroundImage="button_bg_touming">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="bandAction:" destination="-1" eventType="touchUpInside" id="ixw-Ya-9DF"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.49803921568627452" green="0.73333333333333328" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="QKu-9a-AjF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="158" id="4eU-ue-hI6"/>
+                <constraint firstItem="G5m-hg-QGV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6QO-sp-CRV"/>
+                <constraint firstAttribute="centerX" secondItem="JEr-7s-uqX" secondAttribute="centerX" id="G5V-yl-fGU"/>
+                <constraint firstItem="G5m-hg-QGV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HH9-eM-DxY"/>
+                <constraint firstAttribute="centerX" secondItem="QKu-9a-AjF" secondAttribute="centerX" id="P7j-1s-kmq"/>
+                <constraint firstAttribute="centerX" secondItem="9ff-xw-K3u" secondAttribute="centerX" id="baj-rv-fef"/>
+                <constraint firstItem="9ff-xw-K3u" firstAttribute="top" secondItem="QKu-9a-AjF" secondAttribute="bottom" constant="13" id="cxZ-bv-bZ0"/>
+                <constraint firstAttribute="bottom" secondItem="JEr-7s-uqX" secondAttribute="bottom" constant="78" id="wzw-Ky-joh"/>
+            </constraints>
+            <point key="canvasLocation" x="342" y="292"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_cancel" width="12" height="12"/>
+        <image name="band_logo" width="73" height="66"/>
+        <image name="button_bg_touming" width="123" height="40"/>
+    </resources>
+</document>

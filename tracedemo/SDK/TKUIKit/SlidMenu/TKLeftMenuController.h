@@ -6,9 +6,11 @@
 //  Copyright (c) 2015年 trace. All rights reserved.
 //
 
-#import "TKTableViewController.h"
 
-@interface TKLeftMenuController : TKTableViewController
+@interface TKLeftMenuController : UIViewController
+
+
+@property (nonatomic,strong) UITableView * tableView;
 
 /**
  *  初始化 制定宽度的 menu

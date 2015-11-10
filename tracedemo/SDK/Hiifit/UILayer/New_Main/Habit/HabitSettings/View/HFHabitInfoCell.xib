@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="habit_info" rowHeight="92" id="KGk-i7-Jjw" customClass="HFHabitInfoCell">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="370" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5G-A3-5lJ">
+                        <rect key="frame" x="63" y="47" width="150" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="Mic-h2-54i"/>
+                            <constraint firstAttribute="height" constant="14" id="ivp-tn-gAC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.67000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjl-Y4-E4n">
+                        <rect key="frame" x="63" y="9" width="0.0" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="0jK-mW-8tb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z3A-Jx-cA9" customClass="BasePortraitView">
+                        <rect key="frame" x="15" y="20" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="3xi-YE-GGs"/>
+                            <constraint firstAttribute="width" constant="40" id="nXG-Kw-QDM"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pjl-Y4-E4n" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="32s-dt-N7G"/>
+                    <constraint firstItem="F5G-A3-5lJ" firstAttribute="leading" secondItem="z3A-Jx-cA9" secondAttribute="trailing" constant="8" id="4Lt-5N-PHV"/>
+                    <constraint firstItem="F5G-A3-5lJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="47" id="LVM-R2-dZE"/>
+                    <constraint firstItem="z3A-Jx-cA9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="adA-bh-WW0"/>
+                    <constraint firstAttribute="centerY" secondItem="z3A-Jx-cA9" secondAttribute="centerY" id="hwD-f7-R9V"/>
+                    <constraint firstItem="pjl-Y4-E4n" firstAttribute="leading" secondItem="z3A-Jx-cA9" secondAttribute="trailing" constant="8" id="pcg-3r-ygh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="habitView" destination="z3A-Jx-cA9" id="rfM-uz-aCO"/>
+                <outlet property="mHabitNameLabel" destination="pjl-Y4-E4n" id="A3V-bX-PYo"/>
+                <outlet property="mHabiterLabel" destination="F5G-A3-5lJ" id="1GB-mu-isq"/>
+            </connections>
+            <point key="canvasLocation" x="270" y="228"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="habit_des" rowHeight="66" id="iHC-SN-Zba" customClass="HFHabitInfoCell">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="66"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iHC-SN-Zba" id="cM6-tE-5Kq">
+                <rect key="frame" x="0.0" y="0.0" width="373" height="65"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请用一句话描述，最多20字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Yc-Nd-OED">
+                        <rect key="frame" x="15" y="10" width="343" height="45"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <outlet property="delegate" destination="iHC-SN-Zba" id="SQ2-UC-cD1"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="2Yc-Nd-OED" secondAttribute="bottom" constant="10" id="J3V-5I-5SN"/>
+                    <constraint firstItem="2Yc-Nd-OED" firstAttribute="leading" secondItem="cM6-tE-5Kq" secondAttribute="leading" constant="15" id="LxP-ra-2fs"/>
+                    <constraint firstItem="2Yc-Nd-OED" firstAttribute="top" secondItem="cM6-tE-5Kq" secondAttribute="top" constant="10" id="Su7-hu-a4L"/>
+                    <constraint firstAttribute="trailing" secondItem="2Yc-Nd-OED" secondAttribute="trailing" constant="15" id="dWI-xm-UW0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="mTextField" destination="2Yc-Nd-OED" id="tzU-6d-uCU"/>
+            </connections>
+            <point key="canvasLocation" x="271.5" y="343"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="203" id="ij4-EX-38d" customClass="HFHabitInfoCell">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="203"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ij4-EX-38d" id="uN7-j8-VpB">
+                <rect key="frame" x="0.0" y="0.0" width="370" height="202"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加提醒，将有助于你坚持习惯哦" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVN-zj-2Rp">
+                        <rect key="frame" x="18" y="88" width="334" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Lt0-oQ-qIB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.67000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XD7-hS-Mqf">
+                        <rect key="frame" x="98" y="123" width="175" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="175" id="GH9-kV-eFS"/>
+                            <constraint firstAttribute="height" constant="40" id="Rs8-l4-4nJ"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="newaddClock"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XD7-hS-Mqf" firstAttribute="top" secondItem="SVN-zj-2Rp" secondAttribute="bottom" constant="15" id="W1H-Ng-U8e"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="SVN-zj-2Rp" secondAttribute="trailing" constant="10" id="rth-gF-z7g"/>
+                    <constraint firstItem="SVN-zj-2Rp" firstAttribute="leading" secondItem="uN7-j8-VpB" secondAttribute="leadingMargin" constant="10" id="uA1-gq-jKd"/>
+                    <constraint firstItem="SVN-zj-2Rp" firstAttribute="top" secondItem="uN7-j8-VpB" secondAttribute="topMargin" constant="80" id="wtK-UH-UHM"/>
+                    <constraint firstItem="XD7-hS-Mqf" firstAttribute="centerX" secondItem="uN7-j8-VpB" secondAttribute="centerX" id="xB0-xK-Enc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="270" y="522.5"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="99" id="AAA-B5-xqo" customClass="HFHabitInfoCell">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="99"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AAA-B5-xqo" id="zo0-I6-o7j">
+                <rect key="frame" x="0.0" y="0.0" width="373" height="98"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eM-RN-YRH">
+                        <rect key="frame" x="99" y="15" width="175" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="175" id="D3I-VI-TRS"/>
+                            <constraint firstAttribute="height" constant="40" id="qQ5-GB-462"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="newaddClock"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4eM-RN-YRH" firstAttribute="top" secondItem="zo0-I6-o7j" secondAttribute="top" constant="15" id="N9X-JC-tX1"/>
+                    <constraint firstItem="4eM-RN-YRH" firstAttribute="centerX" secondItem="zo0-I6-o7j" secondAttribute="centerX" id="fso-hi-H3B"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="271.5" y="717.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="newaddClock" width="175" height="40"/>
+    </resources>
+</document>

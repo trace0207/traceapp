@@ -10,5 +10,6 @@
 #import "TKBaseViewController.h"
 
 @interface TKHomePageViewController : TKBaseViewController
+//@property(nonatomic,strong)
 
 @end

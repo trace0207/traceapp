@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C2043" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="164" id="KGk-i7-Jjw" customClass="HFEditHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My_headPortrait" translatesAutoresizingMaskIntoConstraints="NO" id="hLI-oH-Cfc">
+                        <rect key="frame" x="115" y="20" width="90" height="90"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="9Ij-eZ-KoR"/>
+                            <constraint firstAttribute="height" constant="90" id="bfk-sm-RyG"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRg-cg-Lnz">
+                        <rect key="frame" x="174" y="115" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="6kZ-2y-DlY"/>
+                            <constraint firstAttribute="height" constant="40" id="G9O-3e-VZZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="女" backgroundImage="My_roundBottomWhite">
+                            <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="chooseGirlBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="foM-8V-Qxi"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My_cameraRoundBottom" translatesAutoresizingMaskIntoConstraints="NO" id="TKh-W2-QGa">
+                        <rect key="frame" x="174" y="80" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="Jrc-81-wq8"/>
+                            <constraint firstAttribute="width" constant="25" id="ewx-K8-KlS"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My_camera" translatesAutoresizingMaskIntoConstraints="NO" id="Kmk-Kv-9mh">
+                        <rect key="frame" x="179" y="86" width="15" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="aom-8J-ixS"/>
+                            <constraint firstAttribute="width" constant="15" id="xyv-PA-M5U"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUr-T2-N7Y">
+                        <rect key="frame" x="115" y="20" width="90" height="90"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="L06-QG-LKS"/>
+                            <constraint firstAttribute="height" constant="90" id="fHV-HT-0fx"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="selectPicture:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gve-70-CqX"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UM-pi-Jd1">
+                        <rect key="frame" x="106" y="115" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="3Du-q7-gXT"/>
+                            <constraint firstAttribute="width" constant="40" id="OkL-Rc-THC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="男" backgroundImage="My_roundBottom">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="chooseBoyBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="atr-47-hLf"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hLI-oH-Cfc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="1EW-Uf-CZo"/>
+                    <constraint firstAttribute="bottom" secondItem="2UM-pi-Jd1" secondAttribute="bottom" constant="14" id="Bp8-GK-9Xm"/>
+                    <constraint firstItem="hLI-oH-Cfc" firstAttribute="trailing" secondItem="TKh-W2-QGa" secondAttribute="trailing" constant="6" id="C6i-qe-uJY"/>
+                    <constraint firstAttribute="centerX" secondItem="hLI-oH-Cfc" secondAttribute="centerX" id="Jcf-5D-wxn"/>
+                    <constraint firstItem="hLI-oH-Cfc" firstAttribute="bottom" secondItem="TKh-W2-QGa" secondAttribute="bottom" constant="5" id="L7p-b3-KQ4"/>
+                    <constraint firstItem="Kmk-Kv-9mh" firstAttribute="centerY" secondItem="TKh-W2-QGa" secondAttribute="centerY" constant="-0.5" id="LB6-rp-8SD"/>
+                    <constraint firstAttribute="centerX" secondItem="2UM-pi-Jd1" secondAttribute="centerX" constant="34" id="Me3-fC-ANe"/>
+                    <constraint firstAttribute="bottom" secondItem="nRg-cg-Lnz" secondAttribute="bottom" constant="14" id="Mj4-AI-bDq"/>
+                    <constraint firstItem="nUr-T2-N7Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="QH5-xN-F8U"/>
+                    <constraint firstItem="Kmk-Kv-9mh" firstAttribute="centerX" secondItem="TKh-W2-QGa" secondAttribute="centerX" id="Xnc-IO-Uzt"/>
+                    <constraint firstAttribute="centerX" secondItem="nRg-cg-Lnz" secondAttribute="centerX" constant="-34" id="Zis-HY-qDz"/>
+                    <constraint firstAttribute="centerX" secondItem="nUr-T2-N7Y" secondAttribute="centerX" id="eeY-rQ-JzJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="boyBtn" destination="2UM-pi-Jd1" id="HVi-mB-iV5"/>
+                <outlet property="girlBtn" destination="nRg-cg-Lnz" id="H8f-yM-mbk"/>
+                <outlet property="headerImage" destination="hLI-oH-Cfc" id="96T-KP-cUe"/>
+            </connections>
+            <point key="canvasLocation" x="445" y="364"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="My_camera" width="15" height="12"/>
+        <image name="My_cameraRoundBottom" width="25" height="25"/>
+        <image name="My_headPortrait" width="90" height="90"/>
+        <image name="My_roundBottom" width="40" height="40"/>
+        <image name="My_roundBottomWhite" width="40" height="40"/>
+    </resources>
+</document>

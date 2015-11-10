@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "TK_BaseAppDelegate.h"
 
+typedef void(^complete)(BOOL finished);
+
 @interface AppDelegate : TK_BaseAppDelegate
+@property (assign, nonatomic) BOOL appActiviting;
 
+- (void)goMainViewController;
+- (void)goLoginViewController;
+- (void)goGuideViewController;
 
+- (void)pushHabitDetailFromNotication:(UILocalNotification *)notification;
+- (void)goModuleDetail:(NSInteger)moduleId;
 
 
 @end

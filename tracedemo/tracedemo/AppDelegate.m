@@ -18,6 +18,8 @@
 #import "TKLeftMenuController.h"
 #import "MMDrawerController.h"
 #import "TKConstants.h"
+#import "BaseNavViewController.h"
+
 @interface AppDelegate ()
 
 @property (nonatomic,strong) MMDrawerController * drawerController;
@@ -43,7 +45,7 @@
     [self.window makeKeyAndVisible];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-    [NSThread sleepForTimeInterval:1.5];//  启动页停留 3 秒钟
+//    [NSThread sleepForTimeInterval:1.5];//  启动页停留 3 秒钟
     
     return YES;
 }
@@ -82,10 +84,10 @@
 -(void)showSlideMenuController{
     // left Menu Controller
     UIViewController * leftVC = [[TKLeftMenuController alloc] initWithMaxWidth:TK_C_slideWidth * TKScreenScale];
-//    UIViewController * leftVC = [[TKLeftMenuController alloc] init];
-    // App Main View controller
+    // main center controller
     UIViewController * centerViewController = [[TKMainNavigateController alloc] init];
-    _drawerController = [[MMDrawerController alloc] initWithCenterViewController:centerViewController leftDrawerViewController:leftVC];
+    BaseNavViewController *nav = [[BaseNavViewController alloc]initWithRootViewController:centerViewController];
+    _drawerController = [[MMDrawerController alloc] initWithCenterViewController:nav leftDrawerViewController:leftVC];
     leftVC.mm_drawerController.maximumLeftDrawerWidth = (TK_C_slideWidth - 1) * TKScreenScale;
     [self.drawerController
      setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
@@ -102,15 +104,14 @@
     
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    [self.drawerController setRestorationIdentifier:@"MMDrawer"];
-//    [self.drawerController setMaximumRightDrawerWidth:100.0];
     [self.drawerController setMaximumLeftDrawerWidth:TK_C_slideWidth * TKScreenScale];
     [self.drawerController setAnimationVelocity:1100];
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-    self.drawerController.showsShadow = YES;
+     self.drawerController.showsShadow = YES;
     self.drawerController.shouldStretchDrawer = NO;
     [self.window setRootViewController:self.drawerController];
+    [self configNavigationBar];
     
 }
 
@@ -121,6 +122,45 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [TKMainNavigateController showNavigateControllerInWindow:self.window];
+}
+
+
+
+
+- (void)goLoginViewController{
+}
+- (void)goGuideViewController{
+}
+
+- (void)goMainViewController{}
+
+- (void)pushHabitDetailFromNotication:(UILocalNotification *)notification{
+}
+- (void)goModuleDetail:(NSInteger)moduleId{
+}
+
+
+
+/**
+ 
+ 设置全局的导航样式
+ 
+ **/
+- (void)configNavigationBar
+{
+    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
+    
+    //    if ([UINavigationBar instancesRespondToSelector:@selector(setBarTintColor:)]) {
+    //        [[UINavigationBar appearance]setBarTintColor:[UIColor HFColorStyle_5]];
+    //    }
+    [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+    
+    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"bg_color"] forBarMetrics:UIBarMetricsDefault];
+    
+    if ([UINavigationBar instancesRespondToSelector:@selector(setShadowImage:)])
+    {
+        [[UINavigationBar appearance] setShadowImage:[[UIImage alloc]init]];
+    }
 }
 
 

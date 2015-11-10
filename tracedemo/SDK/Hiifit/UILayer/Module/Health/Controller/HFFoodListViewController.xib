@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HFFoodListViewController">
+            <connections>
+                <outlet property="mTableView" destination="Kih-ur-7dS" id="m9A-ry-2Jw"/>
+                <outlet property="mTitleBar" destination="aBa-l1-7iT" id="Hcv-q3-eQb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBa-l1-7iT" customClass="HFTitleBar">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="d70-A6-YnU"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="d70-A6-YnU"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="d70-A6-YnU"/>
+                        </mask>
+                    </variation>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Kih-ur-7dS">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="e9i-l9-5cT"/>
+                        <outlet property="delegate" destination="-1" id="seb-vO-7u5"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Kih-ur-7dS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0af-14-z17"/>
+                <constraint firstItem="aBa-l1-7iT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="JfG-EZ-XA2">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="Kih-ur-7dS" secondAttribute="trailing" id="R82-Cd-e3I"/>
+                <constraint firstAttribute="bottom" secondItem="Kih-ur-7dS" secondAttribute="bottom" id="Tg7-8s-HpK"/>
+                <constraint firstItem="Kih-ur-7dS" firstAttribute="top" secondItem="aBa-l1-7iT" secondAttribute="bottom" id="mdM-Nq-kYv"/>
+                <constraint firstAttribute="trailing" secondItem="aBa-l1-7iT" secondAttribute="trailing" id="pMF-kn-Gyh"/>
+                <constraint firstItem="aBa-l1-7iT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="u6v-hX-Clv"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="aBa-l1-7iT"/>
+                    <exclude reference="Kih-ur-7dS"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="0af-14-z17"/>
+                    <exclude reference="R82-Cd-e3I"/>
+                    <exclude reference="Tg7-8s-HpK"/>
+                    <exclude reference="mdM-Nq-kYv"/>
+                    <exclude reference="JfG-EZ-XA2"/>
+                    <exclude reference="pMF-kn-Gyh"/>
+                    <exclude reference="u6v-hX-Clv"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="aBa-l1-7iT"/>
+                    <include reference="Kih-ur-7dS"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="0af-14-z17"/>
+                    <include reference="R82-Cd-e3I"/>
+                    <include reference="Tg7-8s-HpK"/>
+                    <include reference="mdM-Nq-kYv"/>
+                    <include reference="JfG-EZ-XA2"/>
+                    <include reference="pMF-kn-Gyh"/>
+                    <include reference="u6v-hX-Clv"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
