@@ -21,14 +21,6 @@ typedef NS_ENUM(NSInteger, NewMainFunction)
     HFNewMainCellFunc_Habit,
 };
 
-
-@protocol HomePageEventProtocol <NSObject>
-
--(void)leftBarIconDidClick;
-
-@end
-
-
 @interface HFNewMainViewController : BaseViewController
 
 @end

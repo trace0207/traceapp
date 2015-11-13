@@ -16,6 +16,7 @@
 #import "SentPostViewController.h"
 #import "SDCycleScrollView.h"
 #import "HFMainActivityRes.h"
+#import "UIViewController+TKNavigationBarSetting.h"
 CGFloat const bannerScale = (750.0f/200.0f);
 
 
@@ -73,11 +74,18 @@ CGFloat const bannerScale = (750.0f/200.0f);
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self addRightBarItemWithCustomView:nil];
-    [self addLeftBarItemWithCustomView:nil];
-    [self.navigationController setNavigationTitleView:self.titleView];
-    [self.navigationController addLeftBarItemWithImageName:@"Hi_addFriends"];
-    [self.navigationController addRightBarItemWithImageName:@"edit"];
+    [self setNavigationTitleView:self.titleView];
+    
+    [self TKremoveRightBarButtonItem];
+    [self TKremoveLeftBarButtonItem];
+    [self TKsetLeftBarItemImage:[UIImage imageNamed:@"Hi_addFriends"]
+                      addTarget:self
+                         action:@selector(leftBarItemAction:)
+               forControlEvents:UIControlEventTouchUpInside];
+    [self TKsetRightBarItemImage:[UIImage imageNamed:@"edit" ]
+                      addTarget:self
+                         action:@selector(rightBarItemAction:)
+               forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -174,7 +182,7 @@ CGFloat const bannerScale = (750.0f/200.0f);
                            _T(@"HF_Common_Interest"),
                            _T(@"HF_Common_Friends"),
                            nil];
-        _titleView = [[HFTitleView alloc]initWithTitles:titles withScrollView:self.scrollView];
+        _titleView = [[HFTitleView alloc]initWithTitles:titles withScrollView:self.scrollView defaultColor:nil activeColor:nil];
         _titleView.delegate = self;
     }
     return _titleView;

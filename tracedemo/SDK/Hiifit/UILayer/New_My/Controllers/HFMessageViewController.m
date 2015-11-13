@@ -12,6 +12,7 @@
 #import "HFCommentViewController.h"
 #import "UserCenterViewController.h"
 #import "HFSystemMSGViewController.h"
+#import "UIViewController+TKNavigationBarSetting.h"
 #define kBaseMessageTableViewTag   100
 
 @interface HFMessageViewController ()<HFMessageDetailViewDelegate>
@@ -76,6 +77,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self TKremoveNavigationTitle];
+    [self TKremoveLeftBarButtonItem];
+    [self TKremoveRightBarButtonItem];
+    [self TKaddNavigationTitle:@"消息"];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "HFTitleView.h"
-CGFloat const titleWidth = 60;
+CGFloat const titleWidth = 80;
 
 @interface HFTitleView ()<UIScrollViewDelegate>
 {
@@ -22,30 +22,39 @@ CGFloat const titleWidth = 60;
 @implementation HFTitleView
 @synthesize delegate;
 
-- (instancetype)initWithTitles:(NSArray *)titles withScrollView:(UIScrollView *)scrollView
+- (instancetype)initWithTitles:(NSArray *)titles withScrollView:(UIScrollView *)scrollView defaultColor:(UIColor *)defaultcColor activeColor:(UIColor *)activeColor;
 {
     self = [super initWithFrame:CGRectMake(0, 0, titles.count*titleWidth, 44)];
     if (self) {
+        lastLineCenter_x = 0;
         self.backgroundColor = [UIColor clearColor];
         scrollView.delegate = self;
         mScrollView = scrollView;
-        indicatorView = [[UIView alloc]initWithFrame:CGRectMake(10, 42, 40, 2)];
-        indicatorView.backgroundColor = [UIColor whiteColor];
-        lastLineCenter_x = indicatorView.center.x;
+        indicatorView = [[UIView alloc]initWithFrame:CGRectMake(0, 42, titleWidth, 2)];
+        indicatorView.backgroundColor = activeColor;
+//        lastLineCenter_x = indicatorView.center.x;
         [self addSubview:indicatorView];
+        UIButton * defaultSelect;
         for (NSInteger i = 0; i < titles.count; i++) {
             UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(i*titleWidth, 0, titleWidth, 44)];
             btn.tag = i+100;
             NSString *text = [titles objectAtIndex:i];
             [btn setTitle:text forState:UIControlStateNormal];
-            [btn setTitleColor:[UIColor HFColorStyle_6] forState:UIControlStateNormal];
-            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+            [btn setTitleColor:defaultcColor forState:UIControlStateNormal];
+            [btn setTitleColor:activeColor forState:UIControlStateSelected];
+            [btn.titleLabel setTextAlignment:NSTextAlignmentCenter];
+//            [btn setBackgroundColor:[UIColor grayColor]];
             [btn addTarget:self action:@selector(selectTitleItem:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:btn];
             if (i == 0) {
-                btn.selected = YES;
+//                btn.selected = YES;
+                defaultSelect = btn;
+                
             }
         }
+        defaultSelect.selected = YES;
+        [self selectTitleItem:defaultSelect];
+        lastLineCenter_x = indicatorView.center.x;
     }
     return self;
 }
@@ -68,15 +77,17 @@ CGFloat const titleWidth = 60;
     UIButton *currentBtn = (UIButton *)[self viewWithTag:currentIndex+100];
     currentBtn.selected = YES;
     _currentIndex = currentIndex;
-    indicatorView.center = CGPointMake(currentBtn.center.x,indicatorView.center.y);
-    [mScrollView setContentOffset:CGPointMake(kScreenWidth*currentIndex, 0) animated:NO];
+//    indicatorView.center = CGPointMake(currentBtn.center.x,indicatorView.center.y);
+    [mScrollView setContentOffset:CGPointMake(kScreenWidth*currentIndex, 0) animated:YES];
+//    [mScrollView scrollRectToVisible:CGPointMake(kScreenWidth*currentIndex, 0) animated:YES];
 }
 
 #pragma - scroll view delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    indicatorView.center = CGPointMake((scrollView.contentOffset.x-lastOffset_x)*(titleWidth/kScreenWidth) + lastLineCenter_x, indicatorView.center.y);
+    CGFloat currentX = (scrollView.contentOffset.x-lastOffset_x)*(titleWidth/kScreenWidth) + lastLineCenter_x ;
+    indicatorView.center = CGPointMake(currentX, indicatorView.center.y);
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -91,7 +102,6 @@ CGFloat const titleWidth = 60;
             [self.delegate titleViewDidSelectedAtIndex:page clickMenuTap:NO];
         }
     }
-    
 }
 
 @end

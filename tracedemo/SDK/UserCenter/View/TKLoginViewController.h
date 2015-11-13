@@ -1,0 +1,32 @@
+//
+//  TKLoginViewController.h
+//  tracedemo
+//
+//  Created by cmcc on 15/11/11.
+//  Copyright © 2015年 trace. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+
+@protocol LoginDelegate <NSObject>
+
+@optional
+-(void)onRegisterClick;
+-(void)onLoginSuccess;
+-(void)onForgetPassword;
+
+@end
+
+@interface TKLoginViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet UITextField *userNameText;
+@property (strong, nonatomic) IBOutlet UITextField *passwordText;
+@property (weak,nonatomic) id<LoginDelegate> delegate;
+
+- (IBAction)loginBtn:(id)sender;
+- (IBAction)forgetPassword:(id)sender;
+- (IBAction)cancelBtn:(id)sender;
+- (IBAction)registerBtn:(id)sender;
+
+@end

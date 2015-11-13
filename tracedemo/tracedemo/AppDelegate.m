@@ -19,6 +19,7 @@
 #import "MMDrawerController.h"
 #import "TKConstants.h"
 #import "BaseNavViewController.h"
+#import "UIColor+TK_Color.h"
 
 @interface AppDelegate ()
 
@@ -87,6 +88,7 @@
     // main center controller
     UIViewController * centerViewController = [[TKMainNavigateController alloc] init];
     BaseNavViewController *nav = [[BaseNavViewController alloc]initWithRootViewController:centerViewController];
+    nav.navigationBar.translucent = NO;
     _drawerController = [[MMDrawerController alloc] initWithCenterViewController:nav leftDrawerViewController:leftVC];
     leftVC.mm_drawerController.maximumLeftDrawerWidth = (TK_C_slideWidth - 1) * TKScreenScale;
     [self.drawerController
@@ -122,6 +124,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [TKMainNavigateController showNavigateControllerInWindow:self.window];
+    
 }
 
 
@@ -148,14 +151,14 @@
  **/
 - (void)configNavigationBar
 {
-    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
+    UIColor * navColor = [UIColor TKcolorWithHexString:TK_Color_nav_background];
+    [[UINavigationBar appearance] setBackgroundColor:navColor];
+    [[UINavigationBar appearance] setBarTintColor:navColor];
+    [[UINavigationBar appearance] setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
+    [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor TKcolorWithHexString:TK_Color_nav_textDefault], NSForegroundColorAttributeName, nil]];
     
-    //    if ([UINavigationBar instancesRespondToSelector:@selector(setBarTintColor:)]) {
-    //        [[UINavigationBar appearance]setBarTintColor:[UIColor HFColorStyle_5]];
-    //    }
-    [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
-    
-    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"bg_color"] forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance] setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
+//    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"bg_color"] forBarMetrics:UIBarMetricsDefault];
     
     if ([UINavigationBar instancesRespondToSelector:@selector(setShadowImage:)])
     {

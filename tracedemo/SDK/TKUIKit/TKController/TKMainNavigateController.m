@@ -15,16 +15,15 @@
 #import "HFNewMainViewController.h"
 #import "HFMomentsViewController.h"
 #import "UserInfoViewController.h"
-
-
-@interface TKMainNavigateController()<HomePageEventProtocol>
+#import "HFMessageViewController.h"
+#import "TKUserCenter.h"
+#import "TKLoginViewController.h"
+#import "TKRegisterViewController.h"
+@interface TKMainNavigateController()<HomePageEventProtocol,UITabBarControllerDelegate,LoginDelegate>
 {
 
 }
-
 @end
-
-
 @implementation TKMainNavigateController
 
 +(TKMainNavigateController *)showNavigateControllerInWindow:(UIWindow *) window{
@@ -39,75 +38,48 @@
     [super viewDidLoad];
     
     // 设置导航背景颜色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor TKcolorWithHexString:TK_Color_white_background]];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor TKcolorWithHexString:TK_Color_BLUE]];
     // 添加控制器
     // 首页
     TKHomePageViewController * subTabVC1  = [[TKHomePageViewController alloc] init];
     subTabVC1.tabBarItem.image=IMG(@"new_mainPageUnselected");
     subTabVC1.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
     subTabVC1.tabBarItem.title=@"首页";
-    [self setupLeftMenuButton:subTabVC1];
-//    [self setupNavigationRightButton:subTabVC1];
+    subTabVC1.eventDelegate = self;
     
     HFNewMainViewController * newMain = [[HFNewMainViewController alloc] init];
     newMain.tabBarItem.title=@"搜索";
-    newMain.tabBarItem.image=IMG(@"new_mainPageUnselected");
-    newMain.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
+    newMain.tabBarItem.image=IMG(@"My_foodSearch");
+    newMain.tabBarItem.selectedImage = IMG(@"My_foodSearch");
     
     HFMomentsViewController * newChat = [[HFMomentsViewController alloc] init];
     newChat.tabBarItem.title = @"晒单";
     newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
     newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
     
-    UserInfoViewController * newUser = [[UserInfoViewController alloc] init];
+    
+    HFMessageViewController * newUser = [[HFMessageViewController alloc]init];
     newUser.tabBarItem.title = @"消息";
     newUser.tabBarItem.image = IMG(@"new_myUnselected");
     newUser.tabBarItem.selectedImage = IMG(@"new_mySelected");
     
 //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
-    UINavigationController * navc5 = [[UINavigationController alloc]init];
+    UserInfoViewController * navc5 = [[UserInfoViewController alloc] init];
     navc5.title = @"我";
-    navc5.navigationItem.title = @"我的个人中心";
     navc5.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
     
     self.selectedIndex =0;
     self.viewControllers = @[subTabVC1,newMain,newChat,newUser,navc5];
     
     [self addChildViewController:navc5];
-}
+    self.delegate = self;
+    
+    [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
+    
+    [self.tabBar setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
 
-//
-//-(TKMainNavigateController*)getMainViewController{
-//    
-//    
-//    //        UIViewController *vc = [self.window rootViewController];
-//    TKMainNavigateController * tabBar = [[TKMainNavigateController alloc] init];
-//    tabBar.selectedIndex = 0;
-//    BaseNavViewController *nav = [[BaseNavViewController alloc]initWithRootViewController:tabBar];
-//    nav.navigationBar.translucent = NO;
-//    
-//    HFNewMainViewController * newMain = [[HFNewMainViewController alloc] init];
-//    newMain.tabBarItem.title=@"首页";
-//    newMain.tabBarItem.image=IMG(@"new_mainPageUnselected");
-//    newMain.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
-//    
-//    HFMomentsViewController * newChat = [[HFMomentsViewController alloc] init];
-//    newChat.tabBarItem.title = @"嗨圈";
-//    newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
-//    newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
-//    
-//    UserInfoViewController * newUser = [[UserInfoViewController alloc] init];
-//    newUser.tabBarItem.title = @"我的";
-//    newUser.tabBarItem.image = IMG(@"new_myUnselected");
-//    newUser.tabBarItem.selectedImage = IMG(@"new_mySelected");
-//    
-//    [[UITabBar appearance]setTintColor:[UIColor HFColorStyle_5]];
-//    //[[UITabBar appearance]setBarTintColor:[UIColor HFColorStyle_6]];
-//    
-//    tabBar.viewControllers=@[newMain,newChat,newUser];
-//    return tabBar;
-//    
-//}
+    
+}
 
 
 
@@ -118,14 +90,20 @@
  **/
 -(void)setupLeftMenuButton:(UIViewController *)nv{
     
-    [nv TKaddLeftBarItemImage:[UIImage imageNamed:@"tk_icon_setting_b"] addTarget:self action:@selector(leftDrawerButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [nv TKsetLeftBarItemImage:[UIImage imageNamed:@"tk_icon_setting_b"]
+                    addTarget:self
+                       action:@selector(leftDrawerButtonPress:)
+             forControlEvents:UIControlEventTouchUpInside];
     
 }
 /**
  设置 导航左边按钮  相机
  **/
 -(void)setupNavigationRightButton:(UIViewController * )nv{
-    [nv TKaddRightBarItemImage:[UIImage imageNamed:@"tk_icon_camera_b"] addTarget:self action:@selector(rightNavigationBarIconPress:) forControlEvents:UIControlEventTouchUpInside];
+    [nv TKsetRightBarItemImage:[UIImage imageNamed:@"tk_icon_camera_b"]
+                     addTarget:self
+                        action:@selector(rightNavigationBarIconPress:)
+              forControlEvents:UIControlEventTouchUpInside];
     
 }
 
@@ -145,5 +123,48 @@
 -(void)leftBarIconDidClick{
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
+
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController NS_AVAILABLE_IOS(3_0)
+{
+    if([viewController isKindOfClass:[UserInfoViewController class]] && ![[TKUserCenter instance] isLogin]){
+        [self showLoginView];
+        return NO;
+    }else{
+        return YES;
+    }
+
+}
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    
+    DDLogInfo(@" shouldSelectViewController %@ ",viewController);
+}
+
+
+/**
+  弹出登录页
+ **/
+-(void)showLoginView{
+
+    TKLoginViewController * loginVC = [[TKLoginViewController alloc] initWithNibName:@"TKLoginViewController" bundle:nil];
+    loginVC.delegate = self;
+    [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+}
+
+
+#pragma mark ------- loginDelegate
+
+-(void)onRegisterClick{
+    TKRegisterViewController * regVC = [[TKRegisterViewController alloc]initWithNibName:@"TKRegisterViewController" bundle:nil];
+    [self.navigationController pushViewController:regVC animated:YES];
+//    [self.navigationController presentViewController:regVC animated:YES completion:nil];
+    
+}
+-(void)onLoginSuccess{
+}
+-(void)onForgetPassword{
+}
+
+
 
 @end

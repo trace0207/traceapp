@@ -28,6 +28,7 @@
 #import "UIViewController+Customize.h"
 #import "UIKitTool.h"
 #import "UIImageView+WebCache.h"
+#import "UIViewController+TKNavigationBarSetting.h"
 
 @interface UserInfoViewController()<HFDismissBandViewDelegate,HFMessageViewControllerDelegate>
 {
@@ -58,19 +59,19 @@
 {
     NSMutableDictionary *dic20 = [NSMutableDictionary dictionary];
     [dic20 setObject:@"My_message" forKey:KEY_IMG];
-    [dic20 setObject:@"消息" forKey:KEY_TXT];
+    [dic20 setObject:@"我的账户" forKey:KEY_TXT];
     
     NSMutableDictionary *dic21 = [NSMutableDictionary dictionary];
     [dic21 setObject:@"My_stepRecord" forKey:KEY_IMG];
-    [dic21 setObject:@"计步" forKey:KEY_TXT];
+    [dic21 setObject:@"晒单相册" forKey:KEY_TXT];
     
     NSMutableDictionary *dic22 = [NSMutableDictionary dictionary];
     [dic22 setObject:@"My_hiBox" forKey:KEY_IMG];
-    [dic22 setObject:@"嗨盒" forKey:KEY_TXT];
+    [dic22 setObject:@"我的卡券" forKey:KEY_TXT];
     
     NSMutableDictionary *dic23 = [NSMutableDictionary dictionary];
     [dic23 setObject:@"My_foodSearch" forKey:KEY_IMG];
-    [dic23 setObject:@"食物查询" forKey:KEY_TXT];
+    [dic23 setObject:@"附近买手" forKey:KEY_TXT];
     
     NSArray *array2 = [[NSArray alloc]initWithObjects:dic20,dic21,dic22,dic23, nil];
     
@@ -99,9 +100,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self addNavigationTitle:@"我的"];
-    [self addLeftBarItemWithTitle:nil];
-    [self addRightBarItemWithTitle:nil];
+    [self TKremoveLeftBarButtonItem];
+    [self TKremoveRightBarButtonItem];
+    [self TKremoveNavigationTitle];
+    [self TKaddNavigationTitle:@"个人中心"];
     UserRes *user = [GlobInfo shareInstance].usr;
     if (user.headPortraitUrl.length>0) {
         [self.headImageView sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];

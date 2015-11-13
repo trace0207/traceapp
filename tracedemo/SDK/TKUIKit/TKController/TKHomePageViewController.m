@@ -8,12 +8,25 @@
 
 #import "TKHomePageViewController.h"
 #import "HFSegmentView.h"
+#import "UIViewController+TKNavigationBarSetting.h"
+#import "SDCycleScrollView.h"
+#import "HFTitleView.h"
+#import "HFPostDetailView.h"
+#import "UIColor+TK_Color.h"
+#import "TKColorDefine.h"
 
-@interface TKHomePageViewController (){
+@interface TKHomePageViewController ()<HFTitleViewDelegate,BasePostDetailViewDelegate,SDCycleScrollViewDelegate>{
 
-    UIViewController * tab1;
-    UIViewController * tab2;
+    NSInteger mCurrentIndex;
+    NSMutableArray *mSourceArray;
+    NSMutableArray *mViewArray;
+    NSMutableArray *mOffsetArray;
 }
+
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) HFTitleView *titleView;
+@property (nonatomic, strong) NSMutableArray *activities;
+@property (nonatomic, strong) SDCycleScrollView *bannerView;
 
 @end
 
@@ -21,12 +34,68 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    tab1 = [[UIViewController alloc] init];
-    tab2 = [[UIViewController alloc] init];
-    [self addChildViewController:tab1];
-    [self addChildViewController:tab2];
-    // Do any additional setup after loading the view from its nib.
+    _scrollView = [[UIScrollView alloc]init];
+    _scrollView.pagingEnabled = YES;
+    _scrollView.alwaysBounceHorizontal = YES;
+    _scrollView.alwaysBounceVertical = NO;
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.showsVerticalScrollIndicator = NO;
+    _scrollView.scrollsToTop = NO;
+    _scrollView.backgroundColor = [UIColor HFColorStyle_6];
+    [_scrollView setContentSize:CGSizeMake(TKScreenWidth*2, CGRectGetHeight(_scrollView.frame))];
+    [self.view addSubview:_scrollView];
+    [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    for (NSInteger i = 0; i < 2; i++) {
+        HFPostDetailView *_tableView = [[HFPostDetailView alloc]initWithFrame:CGRectMake(i*kScreenWidth, 0, kScreenWidth, kScreenHeight-64-49)
+                                                           withTableViewStyle:UITableViewStylePlain];
+        _tableView.bSupportPullUpLoad = YES;
+        _tableView.delegate = self;
+        [_scrollView addSubview:_tableView];
+        [mViewArray addObject:_tableView];
+    }
+    
+    
+
+
 }
+
+
+-(void)leftDrawerButtonPress{
+
+    if(_eventDelegate){
+        [_eventDelegate leftBarIconDidClick];
+    }
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self TKremoveLeftBarButtonItem];
+    [self TKremoveRightBarButtonItem];
+    [self TKremoveNavigationTitle];
+    [self TKaddNavigationTitleView:[self titleView]];
+    [self TKsetLeftBarItemImage:[UIImage imageNamed:@"tk_icon_menu"]
+                      addTarget:self action:@selector(leftDrawerButtonPress)
+               forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (HFTitleView *)titleView
+{
+    if (!_titleView) {
+        NSArray *titles = [NSArray arrayWithObjects:@"晒 单",@"悬 赏",nil];
+        _titleView = [[HFTitleView alloc]initWithTitles:titles
+                                         withScrollView:self.scrollView
+                                           defaultColor:[UIColor TKcolorWithHexString:TK_Color_nav_textDefault]
+                                            activeColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
+//        _titleView.activeColor = [UIColor TKcolorWithHexString:TK_Color_nav_textActive];
+//        _titleView.defaultColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
+        _titleView.delegate = self;
+    }
+    return _titleView;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -34,123 +103,13 @@
 }
 
 
+#pragma mark ----------- delegate
+- (void)titleViewDidSelectedAtIndex:(NSInteger)index clickMenuTap:(BOOL)clicked{
 
-//
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    
-//    
-//    
-////    [self addDefaultLeftBarItem];
-////    
-////    [self addChildViewController:self.healthViewController];
-////    [self.view addSubview:self.healthViewController.view];
-//    //self.navigationItem.titleView = self.mSegView;
-//}
-
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [super viewWillAppear:animated];
-//    [self setNavigationTitleView:self.mSegView];
-//}
-//
-//- (void)viewDidDisappear:(BOOL)animated
-//{
-//    [super viewDidDisappear:animated];
-//    [self setNavigationTitleView:nil];
-//}
-//
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//}
-//
-//- (void)rightBarItemAction:(id)sender
-//{
-//    //进入到用户中心
-//    [MobClick event:AdvanceScheme_Communicate];
-//    HFPostBarController * post = [[HFPostBarController alloc] init];
-//    post.schemeId = self.adSchemeID;
-//    [self.navigationController pushViewController:post animated:YES];
-//}
-//
-//#pragma mark -
-//#pragma mark getter
-//
-//- (HFAdvanceHealthViewController *)healthViewController
-//{
-//    if (!_healthViewController)
-//    {
-//        _healthViewController = [[HFAdvanceHealthViewController alloc] init];
-//        _healthViewController.schemeID = self.adSchemeID;
-//        _healthViewController.bShowTest = self.bBeginUse;
-//    }
-//    return _healthViewController;
-//}
-//
-//- (WebViewController *)faqViewController
-//{
-//    if (!_faqViewController)
-//    {
-//        _faqViewController = [[WebViewController alloc] init];
-//        
-//        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-//        [dic setValue:KURLFAQ((long)self.adSchemeID) forKey:kParamURL];
-//        _faqViewController.param = dic;
-//        //   vc.moduleType = type;
-//        
-//    }
-//    return _faqViewController;
-//}
-//
-//- (HFSegmentView *)mSegView
-//{
-//    if (!_mSegView)
-//    {
-//        _mSegView = [[HFSegmentView alloc] initWithFrame:CGRectMake((kScreenWidth - 185) / 2, 28, 185, 28)];
-//        _mSegView.delegate = self;
-//        [_mSegView setSegmentTitles:@[@"调理方案",@"常见问题"]];
-//    }
-//    return _mSegView;
-//}
-//
-//#pragma mark -
-//#pragma mark HFSegmentViewDelegate
-//
-//- (void)selectSegmentIndex:(NSInteger)index
-//{
-//    if (index == 0)
-//    {
-//        [self addChildViewController:self.healthViewController];
-//        [self transitionFromViewController:self.faqViewController toViewController:self.healthViewController duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
-//            [self.healthViewController didMoveToParentViewController:self];
-//            [self.faqViewController willMoveToParentViewController:nil];
-//            [self.faqViewController removeFromParentViewController];
-//        }];
-//    }
-//    else
-//    {
-//        [MobClick event:AdvanceScheme_CommonProblem];
-//        [self addChildViewController:self.faqViewController];
-//        [self transitionFromViewController:self.healthViewController toViewController:self.faqViewController duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
-//            [self.faqViewController didMoveToParentViewController:self];
-//            [self.healthViewController willMoveToParentViewController:nil];
-//            [self.healthViewController removeFromParentViewController];
-//            self.faqViewController.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64);
-//        }];
-//    }
-//}
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
 }
-*/
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+}
 
 @end

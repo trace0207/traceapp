@@ -24,6 +24,7 @@
 #import "SetInfoViewController.h"
 #import "UserRes.h"
 #import "GlobNotifyDefine.h"
+#import "UIViewController+TKNavigationBarSetting.h"
 #define kActivityBannerScale 1.8f
 @interface HFNewMainViewController()<UITableViewDataSource,UITableViewDelegate,HFBannerCellDelegate,HFAdvanceSchemeCellDelegate,HFNewMainHeaderViewDelegate,HFHabitViewCellDelegate,HFPunchCardDelegate,HFMenuDelegate,HFActivityViewDelegate>
 {
@@ -67,7 +68,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     funcType = HFNewMainCellFunc_Scheme;
     group = dispatch_group_create();
-    [self initNetData];
+//    [self initNetData];
     
     
     //进行布局排版
@@ -80,35 +81,37 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self addRightBarItemWithCustomView:nil];
-    [self addLeftBarItemWithCustomView:nil];
-    
-    [self addNavigationTitle:@"嗨健康"];
-    [self addRightBarItemWithImageName:@"new_add"];
-    
-    if (bReload)
-    {
-        //进行数据请求
-        [self getAdvanceSchemeInfo];
-        [self getHabitsData];
-        WS(weakSelf)
-        dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-            NSLog(@"结束了整组的请求队列");
-            if (funcType == HFNewMainCellFunc_Scheme)
-            {
-                [weakSelf.schemeTableView reloadData];
-            }
-            else
-            {
-                [weakSelf.habitTableView reloadData];
-            }
-            
-        });
-    }
-    else
-    {
-        bReload = YES;
-    }
+    [self TKremoveNavigationTitle];
+    [self TKremoveRightBarButtonItem];
+    [self TKremoveLeftBarButtonItem];
+    [self TKaddNavigationTitle:@"搜索"];
+    [self TKsetRightBarItemImage:IMG(@"new_add")
+                       addTarget:self
+                          action:@selector(rightBarItemAction:)
+                forControlEvents:UIControlEventTouchUpInside];
+//    if (bReload)
+//    {
+//        //进行数据请求
+//        [self getAdvanceSchemeInfo];
+//        [self getHabitsData];
+//        WS(weakSelf)
+//        dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+//            NSLog(@"结束了整组的请求队列");
+//            if (funcType == HFNewMainCellFunc_Scheme)
+//            {
+//                [weakSelf.schemeTableView reloadData];
+//            }
+//            else
+//            {
+//                [weakSelf.habitTableView reloadData];
+//            }
+//            
+//        });
+//    }
+//    else
+//    {
+//        bReload = YES;
+//    }
     
 }
 

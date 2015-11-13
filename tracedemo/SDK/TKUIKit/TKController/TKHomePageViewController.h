@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "TKBaseViewController.h"
 
+
+
+@protocol HomePageEventProtocol <NSObject>
+
+-(void)leftBarIconDidClick;
+
+@end
+
 @interface TKHomePageViewController : TKBaseViewController
-//@property(nonatomic,strong)
+@property (nonatomic, weak)id<HomePageEventProtocol>eventDelegate;
 
 @end

@@ -19,37 +19,38 @@
 
 - (instancetype)init{
     self = [super init];
-    if (self)
-    {
-        [self reLayout];
-    }
+//    if (self)
+//    {
+//        [self reLayout];
+//    }
     return self;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        [self reLayout];
-        
-    }
+//    if (self) {
+//        // Custom initialization
+//        [self reLayout];
+//        
+//    }
     return self;
 }
 
-- (void)reLayout
-{
-    if (IOS7_OR_LATER) {
-        self.extendedLayoutIncludesOpaqueBars = NO;
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.modalPresentationCapturesStatusBarAppearance= NO;
-    }
-}
+//- (void)reLayout
+//{
+//    // 设置  xib 从导航底部开始布局
+//    if (IOS7_OR_LATER) {
+//        self.extendedLayoutIncludesOpaqueBars = NO;
+//        self.edgesForExtendedLayout = UIRectEdgeNone;
+//        self.modalPresentationCapturesStatusBarAppearance= NO;
+//    }
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor HFColorStyle_6];
+//    self.view.backgroundColor = [UIColor HFColorStyle_6];
 	// Do any additional setup after loading the view.
     //[[self view] setBackgroundColor:[UIColor whiteColor]];
     if (self.navigationController) {
@@ -62,9 +63,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (self.navigationController) {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-    }
+//    if (self.navigationController) {
+//        [self.navigationController setNavigationBarHidden:NO animated:YES];
+//    }
 }
 
 - (void)didReceiveMemoryWarning

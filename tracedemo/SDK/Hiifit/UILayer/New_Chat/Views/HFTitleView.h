@@ -16,8 +16,11 @@
 
 @interface HFTitleView : UIView
 
+//@property (nonatomic,strong)UIColor * activeColor;
+//@property (nonatomic,strong)UIColor * defaultColor;
+
 @property (nonatomic, weak) id<HFTitleViewDelegate>delegate;
 @property (nonatomic, assign) NSInteger currentIndex;
-- (instancetype)initWithTitles:(NSArray *)titles withScrollView:(UIScrollView *)scrollView;
+- (instancetype)initWithTitles:(NSArray *)titles withScrollView:(UIScrollView *)scrollView defaultColor:(UIColor *)defaultcColor activeColor:(UIColor *)activeColor;
 
 @end

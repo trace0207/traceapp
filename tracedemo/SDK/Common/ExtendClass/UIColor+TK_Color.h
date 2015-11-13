@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TKColorDefine.h"
 
 @interface UIColor (TK_Color)
 
