@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TK_BaseAppDelegate.h"
+#import "BaseNavViewController.h"
 
 typedef void(^complete)(BOOL finished);
 
@@ -21,6 +22,7 @@ typedef void(^complete)(BOOL finished);
 - (void)pushHabitDetailFromNotication:(UILocalNotification *)notification;
 - (void)goModuleDetail:(NSInteger)moduleId;
 
++(BaseNavViewController *)getMainNavigation;
 
 @end
 

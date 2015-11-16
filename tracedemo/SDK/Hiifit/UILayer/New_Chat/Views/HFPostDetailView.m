@@ -12,6 +12,7 @@
 #import "UserCenterViewController.h"
 #import "HFCaculateHeightModel.h"
 #import "GlobNotifyDefine.h"
+#import "AppDelegate.h"
 @interface HFPostDetailView()<UITableViewDelegate,UITableViewDataSource,PostCellDelegate,CLLRefreshHeadControllerDelegate,HFCommentViewControllerDelegate>
 {
     NSMutableArray * mSourceData;
@@ -106,8 +107,8 @@
     commentVC.delegate = self;
     commentVC.mWbType = data.type;
     commentVC.mDetailData = data;
-    BaseNavViewController * nav = (BaseNavViewController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-    [nav pushViewController:commentVC animated:YES];
+    //    BaseNavViewController * nav = (BaseNavViewController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+    [[AppDelegate getMainNavigation] pushViewController:commentVC animated:YES];
 }
 
 #pragma mark -
@@ -222,7 +223,7 @@
     }
     
     [self.mTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexpath] withRowAnimation:UITableViewRowAnimationAutomatic];
-  
+    
 }
 
 - (void)commentEventWithType:(COMMENT_OPERATE_TYPE)type withCell:(PostCell *)cell
@@ -238,7 +239,7 @@
         HFSubmitPraiseReq *req = [[HFSubmitPraiseReq alloc]init];
         req.weiboType = data.type;
         req.weiboId = data.weiboId;
-
+        
         [[[HIIProxy shareProxy]weiboProxy]submitPraiseType:req complete:^(ResponseData * responseData) {
             if ([responseData success]) {
                 data.praised = !data.praised;
@@ -270,8 +271,8 @@
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         [dic setObject:[NSNumber numberWithInteger:userId] forKey:kParamUserId];
         vc.param = dic;
-        BaseNavViewController * nav = (BaseNavViewController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-        [nav pushViewController:vc animated:YES];
+        //        BaseNavViewController * nav = (BaseNavViewController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+        [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     }
 }
 

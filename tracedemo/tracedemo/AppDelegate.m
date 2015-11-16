@@ -18,16 +18,18 @@
 #import "TKLeftMenuController.h"
 #import "MMDrawerController.h"
 #import "TKConstants.h"
-#import "BaseNavViewController.h"
 #import "UIColor+TK_Color.h"
 
-@interface AppDelegate ()
+@interface AppDelegate (){
+    
+    
+}
 
 @property (nonatomic,strong) MMDrawerController * drawerController;
 
 @end
 
-
+static BaseNavViewController * rootNavVC;
 
 @implementation AppDelegate
 
@@ -42,11 +44,11 @@
     [super application:application didFinishLaunchingWithOptions:launchOptions];
     // Override point for customization after application launch.
     [self showSlideMenuController];
-     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-//    [NSThread sleepForTimeInterval:1.5];//  启动页停留 3 秒钟
+    //    [NSThread sleepForTimeInterval:1.5];//  启动页停留 3 秒钟
     
     return YES;
 }
@@ -79,6 +81,15 @@
 
 
 
++(BaseNavViewController *)getMainNavigation{
+    
+    if(self){
+        
+        return rootNavVC;
+    }
+    return nil;
+}
+
 /**
  *  Description : 显示 侧滑菜单UI
  */
@@ -88,6 +99,7 @@
     // main center controller
     UIViewController * centerViewController = [[TKMainNavigateController alloc] init];
     BaseNavViewController *nav = [[BaseNavViewController alloc]initWithRootViewController:centerViewController];
+    rootNavVC = nav;
     nav.navigationBar.translucent = NO;
     _drawerController = [[MMDrawerController alloc] initWithCenterViewController:nav leftDrawerViewController:leftVC];
     leftVC.mm_drawerController.maximumLeftDrawerWidth = (TK_C_slideWidth - 1) * TKScreenScale;
@@ -110,7 +122,7 @@
     [self.drawerController setAnimationVelocity:1100];
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-     self.drawerController.showsShadow = YES;
+    self.drawerController.showsShadow = YES;
     self.drawerController.shouldStretchDrawer = NO;
     [self.window setRootViewController:self.drawerController];
     [self configNavigationBar];
@@ -157,8 +169,8 @@
     [[UINavigationBar appearance] setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
     [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor TKcolorWithHexString:TK_Color_nav_textDefault], NSForegroundColorAttributeName, nil]];
     
-//    [[UINavigationBar appearance] setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
-//    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"bg_color"] forBarMetrics:UIBarMetricsDefault];
+    //    [[UINavigationBar appearance] setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
+    //    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"bg_color"] forBarMetrics:UIBarMetricsDefault];
     
     if ([UINavigationBar instancesRespondToSelector:@selector(setShadowImage:)])
     {

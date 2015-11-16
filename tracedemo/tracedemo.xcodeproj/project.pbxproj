@@ -630,6 +630,11 @@
 		BB1A03141BE2113F0035770A /* TKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A03131BE2113F0035770A /* TKBaseViewController.m */; };
 		BB1A03181BE211720035770A /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A03161BE211720035770A /* TKHomePageViewController.m */; };
 		BB1A03191BE211720035770A /* TKHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1A03171BE211720035770A /* TKHomePageViewController.xib */; };
+		BB520D1C1BF9B3F20022BFA2 /* TK_GetOrdersAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D141BF9B3F20022BFA2 /* TK_GetOrdersAck.m */; };
+		BB520D1D1BF9B3F20022BFA2 /* TK_GetOrdersArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D161BF9B3F20022BFA2 /* TK_GetOrdersArg.m */; };
+		BB520D1E1BF9B3F20022BFA2 /* TKMainProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D191BF9B3F20022BFA2 /* TKMainProxy.m */; };
+		BB520D1F1BF9B3F20022BFA2 /* TKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D1B1BF9B3F20022BFA2 /* TKProxy.m */; };
+		BB520D211BF9B4540022BFA2 /* expression.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB520D201BF9B4540022BFA2 /* expression.plist */; };
 		BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */; };
 /* End PBXBuildFile section */
 
@@ -1823,6 +1828,15 @@
 		BB1A03151BE211720035770A /* TKHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKHomePageViewController.h; sourceTree = "<group>"; };
 		BB1A03161BE211720035770A /* TKHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKHomePageViewController.m; sourceTree = "<group>"; };
 		BB1A03171BE211720035770A /* TKHomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKHomePageViewController.xib; sourceTree = "<group>"; };
+		BB520D131BF9B3F20022BFA2 /* TK_GetOrdersAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetOrdersAck.h; sourceTree = "<group>"; };
+		BB520D141BF9B3F20022BFA2 /* TK_GetOrdersAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetOrdersAck.m; sourceTree = "<group>"; };
+		BB520D151BF9B3F20022BFA2 /* TK_GetOrdersArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetOrdersArg.h; sourceTree = "<group>"; };
+		BB520D161BF9B3F20022BFA2 /* TK_GetOrdersArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetOrdersArg.m; sourceTree = "<group>"; };
+		BB520D181BF9B3F20022BFA2 /* TKMainProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainProxy.h; sourceTree = "<group>"; };
+		BB520D191BF9B3F20022BFA2 /* TKMainProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMainProxy.m; sourceTree = "<group>"; };
+		BB520D1A1BF9B3F20022BFA2 /* TKProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKProxy.h; sourceTree = "<group>"; };
+		BB520D1B1BF9B3F20022BFA2 /* TKProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKProxy.m; sourceTree = "<group>"; };
+		BB520D201BF9B4540022BFA2 /* expression.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = expression.plist; sourceTree = "<group>"; };
 		BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKLeftMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1903,6 +1917,7 @@
 		8A17B0E61BA46CF500548CA7 /* File */ = {
 			isa = PBXGroup;
 			children = (
+				BB520D201BF9B4540022BFA2 /* expression.plist */,
 				8AB650191BF0CDE500D4C0A0 /* en.lproj */,
 				8AB6501C1BF0CDE500D4C0A0 /* zh-Hans.lproj */,
 				8A17B0E71BA46CF500548CA7 /* TK_SDK_PrefixHeader.pch */,
@@ -2080,6 +2095,7 @@
 		8A6B37401BF01B8F00E5C982 /* NetLayer */ = {
 			isa = PBXGroup;
 			children = (
+				BB520D111BF9B3F20022BFA2 /* TKProxy */,
 				8A6B37411BF01B8F00E5C982 /* Net */,
 				8A6B379F1BF01B8F00E5C982 /* NewNet */,
 				8A6B37BC1BF01B8F00E5C982 /* Proxy */,
@@ -4156,6 +4172,37 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BB520D111BF9B3F20022BFA2 /* TKProxy */ = {
+			isa = PBXGroup;
+			children = (
+				BB520D121BF9B3F20022BFA2 /* Model */,
+				BB520D171BF9B3F20022BFA2 /* ProxyImp */,
+				BB520D1A1BF9B3F20022BFA2 /* TKProxy.h */,
+				BB520D1B1BF9B3F20022BFA2 /* TKProxy.m */,
+			);
+			path = TKProxy;
+			sourceTree = "<group>";
+		};
+		BB520D121BF9B3F20022BFA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB520D131BF9B3F20022BFA2 /* TK_GetOrdersAck.h */,
+				BB520D141BF9B3F20022BFA2 /* TK_GetOrdersAck.m */,
+				BB520D151BF9B3F20022BFA2 /* TK_GetOrdersArg.h */,
+				BB520D161BF9B3F20022BFA2 /* TK_GetOrdersArg.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB520D171BF9B3F20022BFA2 /* ProxyImp */ = {
+			isa = PBXGroup;
+			children = (
+				BB520D181BF9B3F20022BFA2 /* TKMainProxy.h */,
+				BB520D191BF9B3F20022BFA2 /* TKMainProxy.m */,
+			);
+			path = ProxyImp;
+			sourceTree = "<group>";
+		};
 		BBA9F6FE1BC8E41C0059CEB4 /* TKUIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4338,6 +4385,7 @@
 				8A6B3F631BF01E4900E5C982 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				8A6B3BF61BF01D4400E5C982 /* WebViewController.xib in Resources */,
 				8A6B3CBC1BF01D4400E5C982 /* HFHabitRecordViewController.xib in Resources */,
+				BB520D211BF9B4540022BFA2 /* expression.plist in Resources */,
 				8A6B3C561BF01D4400E5C982 /* HFSportViewCell.xib in Resources */,
 				8A6B3CE41BF01D4400E5C982 /* HFEditInfoCell.xib in Resources */,
 				8A51DC4D1BF560E300D276AF /* TKSetPasswordViewController.xib in Resources */,
@@ -4603,6 +4651,7 @@
 				8A6B3C8E1BF01D4400E5C982 /* HFCoopViewController.m in Sources */,
 				8A6B392D1BF01B8F00E5C982 /* VercodeRes.m in Sources */,
 				8A6B39BF1BF01B8F00E5C982 /* HFModifySignatureReq.m in Sources */,
+				BB520D1D1BF9B3F20022BFA2 /* TK_GetOrdersArg.m in Sources */,
 				8A6B39471BF01B8F00E5C982 /* HFFriendsRankReq.m in Sources */,
 				8A6B3F191BF01E4900E5C982 /* NSString+Message.m in Sources */,
 				8A6B3C391BF01D4400E5C982 /* HFDayPickerModel.m in Sources */,
@@ -4675,6 +4724,7 @@
 				8A6B3C9E1BF01D4400E5C982 /* UserInfoCell.m in Sources */,
 				8A6B3C491BF01D4400E5C982 /* HFFoodListCell.m in Sources */,
 				8A6B39541BF01B8F00E5C982 /* HFAddHabitReq.m in Sources */,
+				BB520D1C1BF9B3F20022BFA2 /* TK_GetOrdersAck.m in Sources */,
 				8A6B3F2D1BF01E4900E5C982 /* BTScrollViewController.m in Sources */,
 				8A978A621BD3C8EF00C84ED2 /* HFSegmentView.m in Sources */,
 				8A6B3CBB1BF01D4400E5C982 /* HFHabitRecordViewController.m in Sources */,
@@ -4846,6 +4896,7 @@
 				8A6B3F421BF01E4900E5C982 /* MJPhotoBrowser.m in Sources */,
 				8A6B3C751BF01D4400E5C982 /* MainTableViewCell.m in Sources */,
 				8A6B39C11BF01B8F00E5C982 /* HFRegisterReq.m in Sources */,
+				BB520D1F1BF9B3F20022BFA2 /* TKProxy.m in Sources */,
 				8A508FF61B9D5D700067B9E9 /* AppDelegate.m in Sources */,
 				8A6B3C171BF01D4400E5C982 /* HFHistoryCell.m in Sources */,
 				8A6B3BF11BF01D4400E5C982 /* BaseTableViewController.m in Sources */,
@@ -4913,6 +4964,7 @@
 				8A6B39D91BF01B8F00E5C982 /* HFBandProxy.m in Sources */,
 				8A6B39391BF01B8F00E5C982 /* HFNetProcessHelper.m in Sources */,
 				8A6B3C7B1BF01D4400E5C982 /* SetPasswordViewController.m in Sources */,
+				BB520D1E1BF9B3F20022BFA2 /* TKMainProxy.m in Sources */,
 				8A6B396A1BF01B8F00E5C982 /* HFGetFollowsReq.m in Sources */,
 				8A6B3CC51BF01D4400E5C982 /* HFWeekdaySelectView.m in Sources */,
 				8A6B3F721BF01E4900E5C982 /* TRSDialScrollView.m in Sources */,
