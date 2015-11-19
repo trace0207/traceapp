@@ -8,14 +8,18 @@
 
 #import "HFMenuControl.h"
 #import "HFMenuCell.h"
+#import "UIImage+Scale.h"
+#import "Masonry.h"
+#import "UIColor+TK_Color.h"
 
 CGFloat const DefaultMenuWidth = 140;
 CGFloat const DefaultMenuHeight = 44;
 
 @interface HFMenuControl ()<UITableViewDataSource,UITableViewDelegate>
 {
-    NSArray *titlesArray;
+    NSMutableArray *titlesArray;
     CGRect menuRect;
+    NSInteger currentSelect; // 当前选中的类目
 }
 
 @property (strong, nonatomic) UITableView *mTableView;
@@ -24,23 +28,19 @@ CGFloat const DefaultMenuHeight = 44;
 @end
 
 @implementation HFMenuControl
-- (instancetype)initWithTitles:(NSArray *)titles style:(HFMenuType)type
+- (instancetype)initWithCategorys:(NSMutableArray *)categorys
 {
     self = [super initWithFrame:[UIScreen mainScreen].bounds];
+    currentSelect = 0;
     if (self) {
         
         self.backgroundColor = [UIColor clearColor];
-        titlesArray = [titles copy];
+        titlesArray = [categorys copy];
         UIButton *hiddenBtn = [[UIButton alloc]initWithFrame:self.frame];
         [hiddenBtn addTarget:self action:@selector(hiddenAction) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:hiddenBtn];
         CGFloat o_x = CGRectGetWidth(self.frame)-DefaultMenuWidth - 6;
-        if (type == HFMenuTypeCenter) {
-            o_x = (CGRectGetWidth(self.frame)-DefaultMenuWidth)/2;
-        }else if (type == HFMenuTypeLeft){
-            o_x = 0;
-        }
-        menuRect = CGRectMake(o_x, 74, DefaultMenuWidth, self.mMenuHeight*titles.count);
+        menuRect = CGRectMake(o_x, 74, DefaultMenuWidth, self.mMenuHeight*categorys.count);
     }
     return self;
 }
@@ -95,25 +95,31 @@ CGFloat const DefaultMenuHeight = 44;
         menuRect.origin.y -= 10;
         menuRect.size.height += 10;
         UIImageView * imageView = [[UIImageView alloc] initWithFrame:menuRect];
-        imageView.image = IMG(@"new_bounced");
+        imageView.image = [UIImage scaleWithImage:@"new_bounced"];
         [self addSubview:imageView];
         
-        UIImageView * line = [[UIImageView alloc] initWithFrame:CGRectMake(10, menuRect.size.height / 2 + 5, menuRect.size.width - 20, 1)];
-        line.image = IMG(@"pop_Line");
-        [imageView addSubview:line];
+//        UIImageView * line = [[UIImageView alloc] initWithFrame:CGRectMake(10, menuRect.size.height / 2 + 5, menuRect.size.width - 20, 1)];
+//        line.image = IMG(@"pop_Line");
+//        [imageView addSubview:line];
         
         
         menuRect.origin.y += 10;
         menuRect.size.height -= 10;
         CGRect r = menuRect;
         r.size.height = 0;
+
         _mTableView = [[UITableView alloc]initWithFrame:r];
-        [_mTableView registerClass:[HFMenuCell class] forCellReuseIdentifier:@"HFMenuCell"];
+//        [_mTableView registerClass:[HFMenuCell class] forCellReuseIdentifier:@"HFMenuCell"];
         _mTableView.backgroundColor = [UIColor clearColor];
         _mTableView.bounces = NO;
         _mTableView.delegate = self;
         _mTableView.dataSource = self;
-        _mTableView.separatorStyle =  UITableViewCellSeparatorStyleNone;
+//        _mTableView.alpha = 1.0;
+//        [_mTableView setSeparatorColor:[UIColor whiteColor]];
+//        [_mTableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+        
+        _mTableView.separatorStyle =  UITableViewCellSelectionStyleNone;
+//        self.alpha = 1.0;
         [self addSubview:_mTableView];
     }
     return _mTableView;
@@ -128,13 +134,44 @@ CGFloat const DefaultMenuHeight = 44;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HFMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HFMenuCell" forIndexPath:indexPath];
-    NSString *text = [titlesArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = text;
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = [UIColor clearColor];
+//    HFMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HFMenuCell" forIndexPath:indexPath];
+    HFMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HFMenuCell"];
+    UILabel * lable;
+    if(cell){
+    
+        lable = [cell viewWithTag:200];
+        
+    }else{
+    
+        cell = [[HFMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"HFMenuCell"];
+        lable = [[UILabel alloc] init];
+        [cell addSubview:lable];
+        [lable setTag:200];
+        lable.textAlignment = NSTextAlignmentCenter;
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+        [lable mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.center.equalTo (cell);
+            make.size.equalTo(cell);
+            
+        }];
+        cell.backgroundColor = [UIColor clearColor];
+    }
+    
+    if(currentSelect == indexPath.row){
+    
+        lable.textColor = [UIColor TKcolorWithHexString:TK_Color_nav_textActive];
+    }else{
+    
+//        lable.textColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
+        lable.textColor = [UIColor whiteColor];
+    }
+    
+    TK_ShareCategory * category = [titlesArray objectAtIndex:indexPath.row];
+    NSString *text = category.title;
+    lable.text = text;
+            //    cell.sbu electionStyle = UITableViewCellSelectionStyleNone;
+    cell.alpha = 1.0;
     return cell;
 }
 
@@ -144,6 +181,7 @@ CGFloat const DefaultMenuHeight = 44;
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(MenuDidSelectIndex:)]) {
         [self.delegate MenuDidSelectIndex:indexPath.row];
+        currentSelect = indexPath.row;
     }
     
     [self hiddenMenu:NO];

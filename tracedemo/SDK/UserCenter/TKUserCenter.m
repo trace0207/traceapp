@@ -8,7 +8,17 @@
 
 #import "TKUserCenter.h"
 
+@interface TKUser(){
+
+    
+}
+
+@property (nonatomic, copy,readwrite) NSString *userId;
+
+@end
 @implementation TKUser
+
+
 
 @end
 
@@ -16,13 +26,23 @@
 
 }
 
-@property(nonatomic,strong)TKUser * user;
+@property(nonatomic,strong,readwrite)TKUser * user;
 @end
 
 @implementation TKUserCenter
 
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
+
+
+-(TKUser *)user{
+
+    if(!self.user){
+    
+        self.user  = [[TKUser alloc] init];
+    }
+    return _user;
+}
 
 -(BOOL)isLogin{
     return false;
@@ -42,4 +62,20 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
     _user.userId = @"100000";
     _user.nickName = @"trace990";
 }
+
+-(TKUser *)getUser{
+
+    return _user;
+}
+
+-(TK_UserNormalViewModel *)userNormalVM{
+
+    if(!_userNormalVM){
+    
+        _userNormalVM = [[TK_UserNormalViewModel alloc] init];
+    }
+    return _userNormalVM;
+    
+}
+
 @end

@@ -635,6 +635,8 @@
 		BB520D1E1BF9B3F20022BFA2 /* TKMainProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D191BF9B3F20022BFA2 /* TKMainProxy.m */; };
 		BB520D1F1BF9B3F20022BFA2 /* TKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D1B1BF9B3F20022BFA2 /* TKProxy.m */; };
 		BB520D211BF9B4540022BFA2 /* expression.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB520D201BF9B4540022BFA2 /* expression.plist */; };
+		BB520D261BFACCC40022BFA2 /* TK_ShareCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D251BFACCC40022BFA2 /* TK_ShareCategory.m */; };
+		BB520D291BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D281BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m */; };
 		BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */; };
 /* End PBXBuildFile section */
 
@@ -1837,6 +1839,10 @@
 		BB520D1A1BF9B3F20022BFA2 /* TKProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKProxy.h; sourceTree = "<group>"; };
 		BB520D1B1BF9B3F20022BFA2 /* TKProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKProxy.m; sourceTree = "<group>"; };
 		BB520D201BF9B4540022BFA2 /* expression.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = expression.plist; sourceTree = "<group>"; };
+		BB520D241BFACCC40022BFA2 /* TK_ShareCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_ShareCategory.h; sourceTree = "<group>"; };
+		BB520D251BFACCC40022BFA2 /* TK_ShareCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_ShareCategory.m; sourceTree = "<group>"; };
+		BB520D271BFAD0FD0022BFA2 /* TK_UserNormalViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_UserNormalViewModel.h; sourceTree = "<group>"; };
+		BB520D281BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_UserNormalViewModel.m; sourceTree = "<group>"; };
 		BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKLeftMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -4149,6 +4155,8 @@
 		8AE10B771BF3236500C0C9A0 /* UserCenter */ = {
 			isa = PBXGroup;
 			children = (
+				BB520D231BFACC9D0022BFA2 /* ViewModel */,
+				BB520D221BFACC960022BFA2 /* Model */,
 				8AE10B7B1BF33B2000C0C9A0 /* View */,
 				8AE10B781BF3239A00C0C9A0 /* TKUserCenter.h */,
 				8AE10B791BF3239A00C0C9A0 /* TKUserCenter.m */,
@@ -4201,6 +4209,24 @@
 				BB520D191BF9B3F20022BFA2 /* TKMainProxy.m */,
 			);
 			path = ProxyImp;
+			sourceTree = "<group>";
+		};
+		BB520D221BFACC960022BFA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB520D241BFACCC40022BFA2 /* TK_ShareCategory.h */,
+				BB520D251BFACCC40022BFA2 /* TK_ShareCategory.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB520D231BFACC9D0022BFA2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB520D271BFAD0FD0022BFA2 /* TK_UserNormalViewModel.h */,
+				BB520D281BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BBA9F6FE1BC8E41C0059CEB4 /* TKUIView */ = {
@@ -4704,6 +4730,7 @@
 				8A6B395E1BF01B8F00E5C982 /* HFHabitIsLatestRes.m in Sources */,
 				8A6B39751BF01B8F00E5C982 /* HFMessageTypeInfoRes.m in Sources */,
 				8A6B3CCC1BF01D4400E5C982 /* HFAdvanceSchemeCell.m in Sources */,
+				BB520D291BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m in Sources */,
 				8A6B3C411BF01D4400E5C982 /* HFCollectionLayout.m in Sources */,
 				8A6B3C5A1BF01D4400E5C982 /* HFTopImageView.m in Sources */,
 				8A6B39921BF01B8F00E5C982 /* GetSportDataByDayArg.m in Sources */,
@@ -4943,6 +4970,7 @@
 				8A6B39101BF01B8F00E5C982 /* HabitRes.m in Sources */,
 				8A6B39641BF01B8F00E5C982 /* HFHabitUnSignReq.m in Sources */,
 				8A508FF31B9D5D700067B9E9 /* main.m in Sources */,
+				BB520D261BFACCC40022BFA2 /* TK_ShareCategory.m in Sources */,
 				8A6B3CA31BF01D4400E5C982 /* HFPraiseUsersViewController.m in Sources */,
 				8A2E62081BEC802700FBDB86 /* MMSideDrawerSectionHeaderView.m in Sources */,
 				8A6B3F391BF01E4900E5C982 /* FMResultSet.m in Sources */,

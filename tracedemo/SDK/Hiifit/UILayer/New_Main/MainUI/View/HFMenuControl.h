@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TK_ShareCategory.h"
 
 typedef NS_ENUM(NSInteger,HFMenuType) {
     HFMenuTypeRight =   0,
@@ -28,7 +29,7 @@ typedef NS_ENUM(NSInteger,HFMenuType) {
 
 @property (nonatomic, weak) id<HFMenuDelegate>delegate;
 
-- (instancetype)initWithTitles:(NSArray *)titles style:(HFMenuType)type;
+- (instancetype)initWithCategorys:(NSMutableArray *)categorys;
 
 - (void)showMenu;
 

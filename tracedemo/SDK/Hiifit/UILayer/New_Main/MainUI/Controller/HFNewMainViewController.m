@@ -85,10 +85,10 @@
     [self TKremoveRightBarButtonItem];
     [self TKremoveLeftBarButtonItem];
     [self TKaddNavigationTitle:@"搜索"];
-    [self TKsetRightBarItemImage:IMG(@"new_add")
-                       addTarget:self
-                          action:@selector(rightBarItemAction:)
-                forControlEvents:UIControlEventTouchUpInside];
+//    [self TKsetRightBarItemImage:IMG(@"new_add")
+//                       addTarget:self
+//                          action:@selector(rightBarItemAction:)
+//                forControlEvents:UIControlEventTouchUpInside];
 //    if (bReload)
 //    {
 //        //进行数据请求
@@ -757,7 +757,7 @@
 - (HFMenuControl *)menu
 {
     if (!_menu) {
-        _menu = [[HFMenuControl alloc]initWithTitles:@[@"添加调理方案",@"添加习惯"] style:HFMenuTypeRight];
+        _menu = [[HFMenuControl alloc]initWithCategorys:nil];
         _menu.delegate = self;
     }
     return _menu;

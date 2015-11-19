@@ -16,8 +16,10 @@
 #import "TKColorDefine.h"
 #import "TKProxy.h"
 #import "TK_GetOrdersAck.h"
+#import "HFMenuControl.h"
 
-@interface TKHomePageViewController ()<HFTitleViewDelegate,BasePostDetailViewDelegate,SDCycleScrollViewDelegate>{
+
+@interface TKHomePageViewController ()<HFTitleViewDelegate,BasePostDetailViewDelegate,SDCycleScrollViewDelegate,HFMenuDelegate>{
     
     NSInteger mCurrentIndex;
     NSMutableArray *mSourceArray;
@@ -30,13 +32,14 @@
 @property (nonatomic, strong) NSMutableArray *activities;
 @property (nonatomic, strong) SDCycleScrollView *bannerView;
 
+
 @end
 
 @implementation TKHomePageViewController
-
+static HFMenuControl * menu;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     mSourceArray = [[NSMutableArray alloc] init];
     mViewArray = [[NSMutableArray alloc] init];
     for (int i = 0; i < 2; i++) {
@@ -82,13 +85,34 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self TKremoveLeftBarButtonItem];
-    [self TKremoveRightBarButtonItem];
+//    [self TKremoveRightBarButtonItem];
     [self TKremoveNavigationTitle];
     [self TKaddNavigationTitleView:[self titleView]];
     [self TKsetLeftBarItemImage:[UIImage imageNamed:@"tk_icon_menu"]
                       addTarget:self action:@selector(leftDrawerButtonPress)
                forControlEvents:UIControlEventTouchUpInside];
+    
+    [self resetRightBarItem];
+    
 }
+
+
+
+/**
+ *  Description  右侧的 menu菜单
+ *
+ *  @param sender <#sender description#>
+ */
+-(void)rightBarItemAction:(id)sender{
+
+    if (!menu) {
+        NSMutableArray * array =  [[TKUserCenter instance].userNormalVM shareCategorys];
+        menu = [[HFMenuControl alloc]initWithCategorys:array];
+        menu.delegate = self;
+    }
+    [menu showMenu];
+}
+
 
 - (HFTitleView *)titleView
 {
@@ -101,6 +125,7 @@
         //        _titleView.activeColor = [UIColor TKcolorWithHexString:TK_Color_nav_textActive];
         //        _titleView.defaultColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
         _titleView.delegate = self;
+        mCurrentIndex = _titleView.currentIndex;
     }
     return _titleView;
 }
@@ -142,10 +167,35 @@
     
     mCurrentIndex = index;
     [self loadDataForPage];
+    [self resetRightBarItem];
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    
+    
+    [self resetRightBarItem];
 }
+
+
+/**
+ *  用于控制右侧的 过滤菜单 是否显示
+ */
+-(void)resetRightBarItem{
+    
+    if(mCurrentIndex == 0){
+    
+        [self TKsetRightBarItemImage:IMG(@"new_add")
+                           addTarget:self
+                              action:@selector(rightBarItemAction:)
+                    forControlEvents:UIControlEventTouchUpInside];
+        
+    }else{
+    
+        [self TKremoveRightBarButtonItem];
+    }
+    
+}
+
 
 
 #pragma mark --- BasePostDetailViewDelegate
@@ -361,6 +411,14 @@
     
     
 }
+
+
+#pragma mark ---   HomePage select menu delegate
+- (void)MenuDidSelectIndex:(NSInteger)index{
+
+    
+}
+
 
 
 @end

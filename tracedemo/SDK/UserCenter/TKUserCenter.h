@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TK_UserNormalViewModel.h"
 
 
 @interface TKUser : NSObject
-@property (nonatomic, copy) NSString *userId;
+@property (nonatomic, copy,readonly) NSString *userId;
 @property (nonatomic, copy) NSString *mobile;
 @property (nonatomic, copy) NSString *birthday;//用户生日yyyy-mm-dd
 @property (nonatomic, copy) NSString *userName;
@@ -21,12 +22,17 @@
 @end
 
 
+
 @interface TKUserCenter : NSObject
 
+
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(TKUserCenter, instance);
+
+@property (nonatomic,strong)TK_UserNormalViewModel * userNormalVM;
+
 -(void)initFromLocalHistory;
 -(BOOL)isLogin;
 -(void)onLoginSuccess:(TKUser *)user;
 -(void)doLogin:(NSString *)userName password:(NSString *)password;
-
+-(TKUser *)getUser;
 @end
