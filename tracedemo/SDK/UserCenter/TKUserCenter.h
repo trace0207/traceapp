@@ -29,6 +29,7 @@
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(TKUserCenter, instance);
 
 @property (nonatomic,strong)TK_UserNormalViewModel * userNormalVM;
+@property (nonatomic,strong)TKUser * tempUserData;
 
 -(void)initFromLocalHistory;
 -(BOOL)isLogin;

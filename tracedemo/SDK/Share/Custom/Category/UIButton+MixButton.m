@@ -44,5 +44,41 @@
 }
 
 
+- (void)setImage:(UIImage *)image
+        forState:(UIControlState)state
+  withOffsetLeft:(CGFloat)offset{
+
+    [self setImage:image forState:state];
+    [self setImageEdgeInsets:UIEdgeInsetsMake(0.0, offset, 0.0, 0.0)];
+
+
+}
+
+- (void)setImage:(UIImage *)image
+        forState:(UIControlState)state
+ withOffsetRight:(CGFloat)offset{
+    [self setImage:image forState:state];
+    [self setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, offset)];
+
+}
+
+
+- (void)setTitle:(NSString *)title
+        forState:(UIControlState)state
+  withOffsetLeft:(CGFloat)offset{
+    [self setTitle:title forState:state];
+    [self setTitleEdgeInsets:UIEdgeInsetsMake(0.0, offset, 0.0, 0.0)];
+}
+
+- (void)setTitle:(NSString *)title
+        forState:(UIControlState)state
+ withOffsetRight:(CGFloat)offset{
+    [self setTitle:title forState:state];
+    [self setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, offset)];
+
+
+}
+
+
 
 @end

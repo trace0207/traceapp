@@ -23,7 +23,7 @@
 
 #define TK_Color_nav_background  @"f0f0f0"
 #define TK_Color_nav_textActive @"f0004a"
-#define TK_Color_nav_textDefault @"666666"
+#define TK_Color_nav_textDefault @"333333"
 
 
 #endif /* TKColorDefine_h */

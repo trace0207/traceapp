@@ -130,7 +130,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(HF_HttpClient, httpClient);
         //
         //        }
         
-        realAck.recode =  HFNetDisable;// = - 10085, // 网络不可用
+        realAck.recode =  TKHTTPRequestError;// = - 10085, // 网络不可用
         realAck.msg = _T(@"HF_Common_CheckNet");
     }
      return realAck;

@@ -24,5 +24,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKProxy, proxy);
     return _mainProxy;
 }
 
+-(TKUserProxy *)userProxy{
+
+    if(!_userProxy){
+    
+        _userProxy = [[TKUserProxy alloc] init];
+        DDLogInfo(@"init UserProxy ");
+        
+    }
+    return _userProxy;
+}
+
 
 @end

@@ -10,6 +10,7 @@
 #import  "UIViewController+TKNavigationBarSetting.h"
 #import "UIColor+TK_Color.h"
 #import "TKSetPasswordViewController.h"
+#import "TKUserCenter.h"
 
 @interface TKRegisterViewController ()
 
@@ -27,23 +28,9 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillAppear:(BOOL)animated{
+-(NSString *)TK_getBarTitle{
 
-//    [self TKsetLeftBarItemImage:IMG(@"arrow_left")addTarget:self action:@selector(cancelEvent) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self TKsetLeftBarItemText:@"取消"
-                 withTextColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]
-                     addTarget:self
-                        action:@selector(cancelEvent)
-              forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    UILabel * lw = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 44)];
-    [lw setFont:[UIFont systemFontOfSize:18]];
-    [lw setText:@"注册"];
-    [lw setTextColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
-    [lw setTextAlignment:NSTextAlignmentCenter];
-    [self TKaddNavigationTitleView:lw];
+    return @"注册";
 }
 
 /*
@@ -56,13 +43,13 @@
 }
 */
 
--(void)cancelEvent{
-    [self.navigationController popViewControllerAnimated:YES];
-
-}
+//-(void)cancelEvent{
+//    [self.navigationController popViewControllerAnimated:YES];
+//
+//}
 
 - (IBAction)cancelBtn:(id)sender {
-    [self cancelEvent];
+    [self TKI_leftBarAction];
 }
 
 - (IBAction)countrySelectBtn:(id)sender {
@@ -70,6 +57,10 @@
 
 - (IBAction)nextStepBtn:(id)sender {
     
+    
+    
+    NSString * phone = _phoneNumberInputText.text;
+    [TKUserCenter instance].tempUserData.mobile = phone;
     TKSetPasswordViewController * passwordVC = [[TKSetPasswordViewController alloc] initWithNibName:@"TKSetPasswordViewController" bundle:nil];
     [self.navigationController pushViewController:passwordVC animated:YES];
     

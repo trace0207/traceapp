@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TKIBaseNavWithDefaultBackVC.h"
 
 
 @protocol LoginDelegate <NSObject>
@@ -18,7 +19,7 @@
 
 @end
 
-@interface TKLoginViewController : UIViewController
+@interface TKLoginViewController : TKIBaseNavWithDefaultBackVC
 
 @property (strong, nonatomic) IBOutlet UITextField *userNameText;
 @property (strong, nonatomic) IBOutlet UITextField *passwordText;

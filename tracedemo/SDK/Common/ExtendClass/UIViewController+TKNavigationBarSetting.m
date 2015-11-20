@@ -7,11 +7,16 @@
 //
 
 #import "UIViewController+TKNavigationBarSetting.h"
+#import "UIButton+MixButton.h"
+
+static const NSInteger TEXTFONT = 16;
 
 @implementation UIViewController (TKNavigationBarSetting)
 
 #define TK_NAV_BarIconWidth 28
 #define TK_NAV_BarIconHeight 28
+#define TK_NAV_Bar_Width  60*TKScreenScale
+
 
 /**
  *  设置 导航左侧的 image 菜单事件
@@ -44,7 +49,7 @@
            forControlEvents:(UIControlEvents)controlEvents{
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, TK_NAV_BarIconHeight)];
     [btn setTitle:text forState:UIControlStateNormal];
-    [[btn titleLabel] setFont:[UIFont systemFontOfSize:16]];
+    [[btn titleLabel] setFont:[UIFont systemFontOfSize:TEXTFONT]];
     [[btn titleLabel] setTextAlignment:NSTextAlignmentLeft];
     [btn setTitleColor:color forState:UIControlStateNormal];
     [btn addTarget:target action:action forControlEvents:controlEvents];
@@ -54,6 +59,79 @@
     }else{
         [self.navigationItem setLeftBarButtonItem:barItem];
     }
+
+    
+}
+
+
+-(void)TKsetMultipleLeftBarItem:(nonnull UIImage *)image
+                withDescription:(nonnull NSString *)text
+                   discripColor:(nonnull UIColor *)color
+                      addTarget:(nullable id)target
+                         action:(nonnull SEL)action
+               forControlEvents:(UIControlEvents)controlEvents{
+    
+    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, TK_NAV_Bar_Width, TK_NAV_BarIconHeight)];
+//    [btn setImage:image forState:UIControlStateNormal];
+    [btn addTarget:target action:action forControlEvents:controlEvents];
+    [btn setImage:image forState:UIControlStateNormal withOffsetLeft:-20.0];
+    [btn setTitle:text forState:UIControlStateNormal withOffsetLeft:-15.0];
+    [[btn titleLabel] setFont:[UIFont systemFontOfSize:TEXTFONT]];
+    [btn setTitleColor:color forState:UIControlStateNormal];
+    UIColor * color1 = [color colorWithAlphaComponent:0.5];
+
+    [btn setTitleColor:color1 forState:UIControlStateSelected];
+//    [btn setBackgroundColor:[UIColor greenColor]];
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    if(self.tabBarController){
+        [self.tabBarController.navigationItem setLeftBarButtonItem:barItem];
+    }else{
+        [self.navigationItem setLeftBarButtonItem:barItem];
+    }
+    
+    
+//    UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, TK_NAV_Bar_Width, TK_NAV_BarIconHeight)];
+//    [btn1 setTitle:text forState:UIControlStateNormal];
+//    [[btn1 titleLabel] setFont:[UIFont systemFontOfSize:16]];
+//    [[btn1 titleLabel] setTextAlignment:NSTextAlignmentLeft];
+//    [btn1 setTitleColor:color forState:UIControlStateNormal];
+//    [btn1 addTarget:target action:action forControlEvents:controlEvents];
+//    UIBarButtonItem *barItem1 = [[UIBarButtonItem alloc]initWithCustomView:btn1];
+//    
+//    NSArray *items = @[barItem,barItem1];
+//    if(self.tabBarController){
+//        [self.tabBarController.navigationItem setLeftBarButtonItems:items];
+//    }else{
+//        [self.navigationItem setLeftBarButtonItems:items];
+//    }
+    
+    
+    
+    
+//    UIButton *barButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, TK_NAV_BarIconWidth, TK_NAV_BarIconHeight)];
+//    [barButton addTarget:self action:@selector(leftBarItemAction:) forControlEvents:UIControlEventTouchUpInside];
+//  
+//    if (navItem.leftBarButtonItems.count>0) {
+//        NSMutableArray *items = [NSMutableArray arrayWithArray:navItem.leftBarButtonItems];
+//        [items addObject:barItem];
+//        [navItem setLeftBarButtonItems:items];
+//    }else {
+//        [navItem setLeftBarButtonItem:barItem];
+//    }
+//
+//    
+//    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, TK_NAV_BarIconHeight)];
+//    [btn setTitle:text forState:UIControlStateNormal];
+//    [[btn titleLabel] setFont:[UIFont systemFontOfSize:16]];
+//    [[btn titleLabel] setTextAlignment:NSTextAlignmentLeft];
+//    [btn setTitleColor:color forState:UIControlStateNormal];
+//    [btn addTarget:target action:action forControlEvents:controlEvents];
+//    UIBarButtonItem *barItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+//    if(self.tabBarController){
+//        [self.tabBarController.navigationItem setLeftBarButtonItem:barItem];
+//    }else{
+//        [self.navigationItem setLeftBarButtonItem:barItem];
+//    }
 
     
 }
@@ -79,6 +157,36 @@
     }else{
         [self.navigationItem setRightBarButtonItem:barItem];
     }
+}
+
+
+/**
+ *  设置导航右侧的  title
+ *
+ *  @param NSString         text
+ *  @param target        sel target object
+ *  @param action        selector event
+ *  @param controlEvents UIControlEvent
+ */
+-(void)TKsetRightBarItemText:(nonnull NSString *)text
+               withTextColor:(nullable UIColor*)color
+                   addTarget:(nullable id)target
+                      action:(nonnull SEL)action
+            forControlEvents:(UIControlEvents)controlEvents
+{
+    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, TK_NAV_BarIconHeight)];
+    [btn setTitle:text forState:UIControlStateNormal];
+    [[btn titleLabel] setFont:[UIFont systemFontOfSize:TEXTFONT]];
+    [[btn titleLabel] setTextAlignment:NSTextAlignmentLeft];
+    [btn setTitleColor:color forState:UIControlStateNormal];
+    [btn addTarget:target action:action forControlEvents:controlEvents];
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    if(self.tabBarController){
+        [self.tabBarController.navigationItem setRightBarButtonItem:barItem];
+    }else{
+        [self.navigationItem setRightBarButtonItem:barItem];
+    }
+
 }
 
 

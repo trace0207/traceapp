@@ -148,7 +148,15 @@
 
     TKLoginViewController * loginVC = [[TKLoginViewController alloc] initWithNibName:@"TKLoginViewController" bundle:nil];
     loginVC.delegate = self;
-    [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+//    [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+    
+    CATransition* transition = [CATransition animation];
+    
+    transition.type = kCATransitionPush;//可更改为其他方式
+    transition.subtype = kCATransitionFromTop;//可更改为其他方式 [self.navigationController.view.layeraddAnimation:transition forKey:kCATransition];
+    
+    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+    [self.navigationController pushViewController:loginVC animated:NO];
 }
 
 

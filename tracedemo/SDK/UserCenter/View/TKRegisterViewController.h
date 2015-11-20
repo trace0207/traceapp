@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
-
-@interface TKRegisterViewController : BaseViewController
+#import "TKIBaseNavWithDefaultBackVC.h"
+@interface TKRegisterViewController : TKIBaseNavWithDefaultBackVC
 - (IBAction)cancelBtn:(id)sender;
 - (IBAction)countrySelectBtn:(id)sender;
 - (IBAction)nextStepBtn:(id)sender;

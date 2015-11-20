@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-3W-Ntb" userLabel="title">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-3W-Ntb" userLabel="title">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4b-Fb-1ab">
@@ -40,9 +40,6 @@
                                     <include reference="h1B-tV-K87"/>
                                 </mask>
                             </variation>
-                            <connections>
-                                <action selector="cancelBtn:" destination="-1" eventType="touchUpInside" id="rDS-BN-jD9"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJM-s9-yqH">
                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -65,9 +62,6 @@
                                     <include reference="v9n-u0-pDN"/>
                                 </mask>
                             </variation>
-                            <connections>
-                                <action selector="registerBtn:" destination="-1" eventType="touchUpInside" id="ePQ-n3-kY3"/>
-                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpZ-ur-T9R">
                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -134,7 +128,7 @@
                         </mask>
                     </variation>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndG-e4-Zgo">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndG-e4-Zgo">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <animations/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -390,11 +384,15 @@
                 <constraint firstAttribute="trailing" secondItem="mep-Td-UA8" secondAttribute="trailing" constant="8" id="VD4-Nz-Ghc"/>
                 <constraint firstAttribute="trailing" secondItem="vl8-aW-UJs" secondAttribute="trailing" constant="8" id="bcD-JS-ldy"/>
                 <constraint firstItem="wmF-3W-Ntb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="djU-Io-GFD"/>
-                <constraint firstItem="i9o-YG-1f3" firstAttribute="top" secondItem="ndG-e4-Zgo" secondAttribute="bottom" constant="12" id="hcz-0t-OQt"/>
+                <constraint firstItem="i9o-YG-1f3" firstAttribute="top" secondItem="ndG-e4-Zgo" secondAttribute="bottom" constant="12" id="hcz-0t-OQt">
+                    <variation key="heightClass=regular-widthClass=compact" constant="-1"/>
+                </constraint>
                 <constraint firstAttribute="trailing" secondItem="i9o-YG-1f3" secondAttribute="trailing" id="keH-jO-3Q8"/>
                 <constraint firstItem="i9o-YG-1f3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tXm-RZ-aJC"/>
                 <constraint firstItem="VNe-bW-LcS" firstAttribute="top" secondItem="i9o-YG-1f3" secondAttribute="bottom" constant="12" id="tt5-LV-yeb"/>
-                <constraint firstItem="ndG-e4-Zgo" firstAttribute="top" secondItem="wmF-3W-Ntb" secondAttribute="bottom" id="uBq-cz-hBF"/>
+                <constraint firstItem="ndG-e4-Zgo" firstAttribute="top" secondItem="wmF-3W-Ntb" secondAttribute="bottom" id="uBq-cz-hBF">
+                    <variation key="heightClass=regular-widthClass=compact" constant="-31"/>
+                </constraint>
                 <constraint firstItem="wmF-3W-Ntb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uzE-aq-5Ba"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

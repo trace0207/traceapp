@@ -40,8 +40,8 @@
 
 
 
--(void)TKaddMultipleLeftBarItem:(nonnull UIImage *)icon
-                      withDescription:(nonnull NSString *)discrip
+-(void)TKsetMultipleLeftBarItem:(nonnull UIImage *)icon
+                withDescription:(nonnull NSString *)discrip
                    discripColor:(nonnull UIColor *)color
                       addTarget:(nullable id)target
                          action:(nonnull SEL)action
@@ -58,6 +58,21 @@
                     addTarget:(nullable id)target
                        action:(nonnull SEL)action
              forControlEvents:(UIControlEvents)controlEvents;
+
+
+/**
+ *  设置导航右侧的  title
+ *
+ *  @param NSString         text
+ *  @param target        sel target object
+ *  @param action        selector event
+ *  @param controlEvents UIControlEvent
+ */
+-(void)TKsetRightBarItemText:(nonnull NSString *)text
+              withTextColor:(nullable UIColor*)color
+                  addTarget:(nullable id)target
+                     action:(nonnull SEL)action
+           forControlEvents:(UIControlEvents)controlEvents;
 
 
 /**

@@ -9,6 +9,8 @@
 #import "TKSetPasswordViewController.h"
 #import "UIViewController+TKNavigationBarSetting.h"
 #import "UIColor+TK_Color.h"
+#import "AppDelegate.h"
+#import "TKUserCenter.h"
 
 @interface TKSetPasswordViewController ()
 
@@ -18,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _registerPhoneNumber.text = [TKUserCenter instance].tempUserData.mobile;
+    _phoneNumberbottomText.text = [TKUserCenter instance].tempUserData.mobile;
     // Do any additional setup after loading the view.
 }
 
@@ -26,19 +30,10 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillAppear:(BOOL)animated{
 
-    [self TKremoveLeftBarButtonItem];
-    [self TKremoveNavigationTitle];
-    UIColor * color  = [UIColor TKcolorWithHexString:TK_Color_nav_textActive];
-    [self TKsetLeftBarItemText:@"返回"
-                 withTextColor:color
-                     addTarget:self action:@selector(cancelEvent) forControlEvents:UIControlEventTouchUpInside];
-}
+-(NSString *)TK_getBarTitle{
 
--(void)cancelEvent{
-
-    [self.navigationController popViewControllerAnimated:YES];
+    return @"设置密码";
 }
 
 
@@ -52,4 +47,11 @@
 }
 */
 
+- (IBAction)nextBtnAction:(id)sender {
+    
+    [[AppDelegate getMainNavigation] popToRootViewControllerAnimated:YES];
+    
+}
+- (IBAction)sortwareProtocol:(id)sender {
+}
 @end

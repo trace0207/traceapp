@@ -8,6 +8,9 @@
 
 #import "TKLoginViewController.h"
 #import "TKRegisterViewController.h"
+#import "UIViewController+TKNavigationBarSetting.h"
+#import "UIColor+TK_Color.h"
+#import "TKProxy.h"
 
 @interface TKLoginViewController ()
 
@@ -25,6 +28,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self TKsetRightBarItemText:@"注册"
+                  withTextColor:[UIColor TKcolorWithHexString:TK_Color_nav_textDefault]
+                      addTarget:self action:@selector(registerBtn:) forControlEvents:UIControlEventTouchUpInside];
+
+}
+
+-(NSString *)TK_getBarTitle{
+
+    return @"登录";
+}
+
+-(void)TKI_leftBarAction{
+    CATransition* transition = [CATransition animation];
+    transition.type = kCATransitionPush;//可更改为其他方式
+    transition.subtype = kCATransitionFromBottom;//可更改为其他方式 [self.navigationController.view.layeraddAnimation:transition forKey:kCATransition];
+    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
+
 /*
 #pragma mark - Navigation
 
@@ -35,9 +61,11 @@
 }
 */
 
+
+
+
 - (IBAction)cancelBtn:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
@@ -51,6 +79,12 @@
     
 }
 - (IBAction)loginBtn:(id)sender {
+    
+    [[TKProxy proxy].userProxy login:nil withValue:nil withBlock:^(HF_BaseAck * ack){
+        
+        TK_LoginAck * loginack = (TK_LoginAck *)ack;
+    
+    }];
 }
 
 - (IBAction)forgetPassword:(id)sender {

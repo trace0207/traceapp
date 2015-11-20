@@ -25,4 +25,24 @@ typedef NS_ENUM(NSInteger, buttonDirection) {
         forState:(UIControlState)state
       withOffset:(CGFloat)offset
        direction:(buttonDirection)direction;
+
+
+- (void)setImage:(UIImage *)image
+        forState:(UIControlState)state
+  withOffsetLeft:(CGFloat)offset;
+
+- (void)setImage:(UIImage *)image
+        forState:(UIControlState)state
+  withOffsetRight:(CGFloat)offset;
+
+
+- (void)setTitle:(NSString *)title
+        forState:(UIControlState)state
+  withOffsetLeft:(CGFloat)offset;
+
+- (void)setTitle:(NSString *)title
+        forState:(UIControlState)state
+ withOffsetRight:(CGFloat)offset;
+
+
 @end

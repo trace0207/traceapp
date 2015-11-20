@@ -37,15 +37,7 @@
     return self;
 }
 
-//- (void)reLayout
-//{
-//    // 设置  xib 从导航底部开始布局
-//    if (IOS7_OR_LATER) {
-//        self.extendedLayoutIncludesOpaqueBars = NO;
-//        self.edgesForExtendedLayout = UIRectEdgeNone;
-//        self.modalPresentationCapturesStatusBarAppearance= NO;
-//    }
-//}
+
 
 - (void)viewDidLoad
 {
@@ -63,9 +55,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    if (self.navigationController) {
-//        [self.navigationController setNavigationBarHidden:NO animated:YES];
-//    }
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

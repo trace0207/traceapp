@@ -37,12 +37,22 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 
 -(TKUser *)user{
 
-    if(!self.user){
+    if(!_user){
     
-        self.user  = [[TKUser alloc] init];
+        _user  = [[TKUser alloc] init];
     }
     return _user;
 }
+
+-(TKUser *)tempUserData{
+
+    if(!_tempUserData){
+    
+        _tempUserData = [[TKUser alloc] init];
+    }
+    return _tempUserData;
+}
+
 
 -(BOOL)isLogin{
     return false;

@@ -142,3 +142,8 @@
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 #endif
+
+typedef NS_ENUM(NSInteger, TKNetStateCode) {
+    TKNEtWorkError             = -10000,
+    TKHTTPRequestError         = -10001,
+};
