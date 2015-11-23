@@ -12,6 +12,9 @@
 
 @interface TKProxy : NSObject
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(TKProxy, proxy)
+// 主要的 proxy对象
 @property (nonatomic,strong)TKMainProxy * mainProxy;
+
+// 和用户相关的proxy对象 
 @property (nonatomic,strong)TKUserProxy * userProxy;
 @end
