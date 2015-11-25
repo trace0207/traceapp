@@ -647,6 +647,8 @@
 		BB5AE4161BFF0F8B00BA0167 /* TK_RegisterNewUserArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4151BFF0F8B00BA0167 /* TK_RegisterNewUserArg.m */; };
 		BB5AE4191BFF0FA000BA0167 /* TK_RegisterNewUserAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4181BFF0FA000BA0167 /* TK_RegisterNewUserAck.m */; };
 		BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */; };
+		BBBF89A81C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */; };
+		BBBF89AB1C04770B00CF9F2E /* TK_menuViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89AA1C04770B00CF9F2E /* TK_menuViewVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1871,6 +1873,10 @@
 		BB5AE4171BFF0FA000BA0167 /* TK_RegisterNewUserAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_RegisterNewUserAck.h; sourceTree = "<group>"; };
 		BB5AE4181BFF0FA000BA0167 /* TK_RegisterNewUserAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_RegisterNewUserAck.m; sourceTree = "<group>"; };
 		BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKLeftMenu.xib; sourceTree = "<group>"; };
+		BBBF89A61C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+TKI_ImageFill.h"; sourceTree = "<group>"; };
+		BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+TKI_ImageFill.m"; sourceTree = "<group>"; };
+		BBBF89A91C04770B00CF9F2E /* TK_menuViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_menuViewVC.h; sourceTree = "<group>"; };
+		BBBF89AA1C04770B00CF9F2E /* TK_menuViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_menuViewVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2014,6 +2020,8 @@
 				8A2E62161BEC804D00FBDB86 /* UIViewController+TKNavigationBarSetting.m */,
 				8A2E62191BEC804D00FBDB86 /* UIViewController+TKVCcategory.h */,
 				8A2E621A1BEC804D00FBDB86 /* UIViewController+TKVCcategory.m */,
+				BBBF89A61C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.h */,
+				BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */,
 			);
 			path = ExtendClass;
 			sourceTree = "<group>";
@@ -4215,6 +4223,8 @@
 				BB339B861BFEBA6E00680AEA /* TK_BaseNavSettingViewController.m */,
 				BB339B881BFED91800680AEA /* TKIBaseNavWithDefaultBackVC.h */,
 				BB339B891BFED91800680AEA /* TKIBaseNavWithDefaultBackVC.m */,
+				BBBF89A91C04770B00CF9F2E /* TK_menuViewVC.h */,
+				BBBF89AA1C04770B00CF9F2E /* TK_menuViewVC.m */,
 			);
 			path = ControllerImpl;
 			sourceTree = "<group>";
@@ -4381,7 +4391,7 @@
 				TargetAttributes = {
 					8A508FEC1B9D5D700067B9E9 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = PS3T6HBA6H;
+						DevelopmentTeam = JR9ACKVZRQ;
 					};
 					8A5090051B9D5D700067B9E9 = {
 						CreatedOnToolsVersion = 6.4;
@@ -4844,6 +4854,7 @@
 				8A6B391D1BF01B8F00E5C982 /* LoginRes.m in Sources */,
 				8A6B3C901BF01D4400E5C982 /* HFFeedbackController.m in Sources */,
 				8A6B39381BF01B8F00E5C982 /* HFLoadFileManager.m in Sources */,
+				BBBF89A81C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m in Sources */,
 				8A6B39781BF01B8F00E5C982 /* FinishSchemeArg.m in Sources */,
 				8A6B398E1BF01B8F00E5C982 /* GetSchemeDayInfoArg.m in Sources */,
 				8A6B39AF1BF01B8F00E5C982 /* CheckUpdateReq.m in Sources */,
@@ -4918,6 +4929,7 @@
 				8A6B3F3E1BF01E4900E5C982 /* ZBMessageManagerFaceView.m in Sources */,
 				8A6B39B11BF01B8F00E5C982 /* HFFeedbackReq.m in Sources */,
 				8A51DC471BF3759900D276AF /* TKRegisterViewController.m in Sources */,
+				BBBF89AB1C04770B00CF9F2E /* TK_menuViewVC.m in Sources */,
 				8A6B3CD81BF01D4400E5C982 /* SettingsViewController.m in Sources */,
 				8A6B3C371BF01D4400E5C982 /* HFUnlockViewController.m in Sources */,
 				8A6B39AB1BF01B8F00E5C982 /* SubSchemeHomeAck.m in Sources */,
@@ -5223,8 +5235,8 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: / / (FMZ824BRG9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: / / (FMZ824BRG9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5246,7 +5258,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6c4383df-1956-4c12-abe4-7677f69b15fe";
+				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
 			};
 			name = Debug;
 		};
@@ -5277,7 +5289,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6c4383df-1956-4c12-abe4-7677f69b15fe";
+				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
 			};
 			name = Release;
 		};

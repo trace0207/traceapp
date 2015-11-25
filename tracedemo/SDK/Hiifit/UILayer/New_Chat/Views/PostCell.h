@@ -28,7 +28,9 @@ typedef NS_ENUM(NSInteger, HFOperatePostType){
 @protocol PostCellDelegate <NSObject>
 @optional
 
-- (void)commentEventWithType:(COMMENT_OPERATE_TYPE)type withCell:(PostCell *)cell;
+- (void)commentEventWithType:(COMMENT_OPERATE_TYPE)type withCell:(UIView *)cell;
+
+- (void)commentEventWithType:(COMMENT_OPERATE_TYPE)type withCell:(UIView *)cell globPosition:(CGPoint)point;
 
 - (void)goUserCenterView:(NSInteger)userId;
 

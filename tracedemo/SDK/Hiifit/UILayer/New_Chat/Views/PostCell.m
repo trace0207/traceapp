@@ -88,10 +88,12 @@
 
 - (IBAction)commentAction:(UIButton *)sender
 {
-    if (delegate && [delegate respondsToSelector:@selector(commentEventWithType:withCell:)])
+    CGPoint point = [self convertPoint:sender.frame.origin toView:nil];
+    
+    if (delegate && [delegate respondsToSelector:@selector(commentEventWithType:withCell:globPosition:)])
     {
-        [delegate commentEventWithType:MSG_COMMENT_TYPE withCell:self];
-    }
+        [delegate commentEventWithType:1 withCell:self globPosition:point];
+    } 
 }
 
 - (IBAction)likeAction:(UIButton *)sender
@@ -99,7 +101,7 @@
     [MobClick event:EmotionPage_Parise_Click];
     if (delegate && [delegate respondsToSelector:@selector(commentEventWithType:withCell:)])
     {
-        [delegate commentEventWithType:MSG_LIKE_TYPE withCell:self];
+        [delegate commentEventWithType:MSG_LIKE_TYPE withCell:sender];
     }
 }
 

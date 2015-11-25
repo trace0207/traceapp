@@ -13,11 +13,18 @@
 #import "HFCaculateHeightModel.h"
 #import "GlobNotifyDefine.h"
 #import "AppDelegate.h"
-@interface HFPostDetailView()<UITableViewDelegate,UITableViewDataSource,PostCellDelegate,CLLRefreshHeadControllerDelegate,HFCommentViewControllerDelegate>
+#import "TK_menuViewVC.h"
+@interface HFPostDetailView()
+<UITableViewDelegate,UITableViewDataSource,
+PostCellDelegate,CLLRefreshHeadControllerDelegate,HFCommentViewControllerDelegate,
+TK_menuViewVCDelegate>
 {
     NSMutableArray * mSourceData;
-    
+
     CLLRefreshHeadController * refreshController;
+    
+    TK_menuViewVC * tkMenu ;
+    
 }
 @property(nonatomic,strong)NSArray * mSourceData;
 @end
@@ -45,6 +52,11 @@
 - (void)loadUI:(UITableViewStyle)style
 {
     mTableView = [[UITableView alloc]initWithFrame:self.bounds style:style];
+    
+    
+    
+    
+    
     mTableView.backgroundColor = [UIColor HFColorStyle_6];
     self.backgroundColor = [UIColor HFColorStyle_6];
     mTableView.delegate = self;
@@ -226,37 +238,75 @@
     
 }
 
-- (void)commentEventWithType:(COMMENT_OPERATE_TYPE)type withCell:(PostCell *)cell
-{
-    NSInteger index = [mTableView indexPathForCell:cell].row;
-    PostDetailData * data = [mSourceData objectAtIndex:index];
-    if (type == MSG_COMMENT_TYPE)
+
+-(void)commentEventWithType:(COMMENT_OPERATE_TYPE)type withCell:(UIView *)cell globPosition:(CGPoint)point{
+
+    if(!tkMenu)
     {
-        [self pushToCommentDetail:data];
-    }
-    else
-    {
-        HFSubmitPraiseReq *req = [[HFSubmitPraiseReq alloc]init];
-        req.weiboType = data.type;
-        req.weiboId = data.weiboId;
+        tkMenu = [[TK_menuViewVC alloc] init];
         
-        [[[HIIProxy shareProxy]weiboProxy]submitPraiseType:req complete:^(ResponseData * responseData) {
-            if ([responseData success]) {
-                data.praised = !data.praised;
-                if (data.praised)
-                {
-                    data.praiseNum++;
-                }
-                else
-                {
-                    data.praiseNum--;
-                }
-                [cell updateCellWithData:data];
-            }else {
-                [MBProgressHUD showError:responseData.msg toView:self];
-            }
-        }];
     }
+    
+    
+    NSInteger index = [mTableView indexPathForCell:(UITableViewCell *)cell].row;
+    PostDetailData * data = [mSourceData objectAtIndex:index];
+    
+    tkMenu.tempdata = data;
+    tkMenu.delegate  = self;
+    
+    [tkMenu showMenu:point];
+
+}
+
+- (void)commentEventWithType:(COMMENT_OPERATE_TYPE)type withCell:(UIView *)cell
+{
+    
+    if(!tkMenu)
+    {
+        tkMenu = [[TK_menuViewVC alloc] init];
+        
+    }
+    
+    CGPoint point = cell.frame.origin;
+    
+    DDLogInfo(@" get point  %f  and  %f",point.x,point.y);
+
+    
+    CGPoint globPoint = [cell convertPoint:point toView:self];
+    
+    DDLogInfo(@" get point  %f  and  %f",globPoint.x,globPoint.y);
+    
+    [tkMenu showMenu:globPoint];
+    
+//    NSInteger index = [mTableView indexPathForCell:cell].row;
+//    PostDetailData * data = [mSourceData objectAtIndex:index];
+//    if (type == MSG_COMMENT_TYPE)
+//    {
+//        [self pushToCommentDetail:data];
+//    }
+//    else
+//    {
+//        HFSubmitPraiseReq *req = [[HFSubmitPraiseReq alloc]init];
+//        req.weiboType = data.type;
+//        req.weiboId = data.weiboId;
+//        
+//        [[[HIIProxy shareProxy]weiboProxy]submitPraiseType:req complete:^(ResponseData * responseData) {
+//            if ([responseData success]) {
+//                data.praised = !data.praised;
+//                if (data.praised)
+//                {
+//                    data.praiseNum++;
+//                }
+//                else
+//                {
+//                    data.praiseNum--;
+//                }
+//                [cell updateCellWithData:data];
+//            }else {
+//                [MBProgressHUD showError:responseData.msg toView:self];
+//            }
+//        }];
+//    }
 }
 
 - (void)goUserCenterView:(NSInteger)userId
@@ -299,6 +349,23 @@
     } cancelTitle:@"取消" determineTitle:@"确定"];
     
     [alter show];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+    if(!tkMenu){
+    
+        [tkMenu hidWithAnima:NO];
+    }
+}
+
+#pragma mark----- TKMenuDelegate
+
+- (void)menuDidSelectIndex:(NSInteger)index withTempData:(NSObject * )data;{
+
+    
+    DDLogInfo(@" get temp data at index =  %ld   data = %@",index,data);
+    
 }
 
 @end
