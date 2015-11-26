@@ -14,6 +14,7 @@
 #import "GlobNotifyDefine.h"
 #import "AppDelegate.h"
 #import "TK_menuViewVC.h"
+#import "UIColor+TK_Color.h"
 @interface HFPostDetailView()
 <UITableViewDelegate,UITableViewDataSource,
 PostCellDelegate,CLLRefreshHeadControllerDelegate,HFCommentViewControllerDelegate,
@@ -243,10 +244,9 @@ TK_menuViewVCDelegate>
 
     if(!tkMenu)
     {
-        tkMenu = [[TK_menuViewVC alloc] init];
+        tkMenu = [[TK_menuViewVC alloc] initWithButtons:[self getMenuButtons]];
         
     }
-    
     
     NSInteger index = [mTableView indexPathForCell:(UITableViewCell *)cell].row;
     PostDetailData * data = [mSourceData objectAtIndex:index];
@@ -258,25 +258,46 @@ TK_menuViewVCDelegate>
 
 }
 
+
+-(NSArray *)getMenuButtons{
+    UIButton * btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn1 setTitle:@"赞" forState:UIControlStateNormal];
+    [btn1 setImage:IMG(@"tk_icon_good_b") forState:UIControlStateNormal];
+    UIButton * btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn2 setImage:IMG(@"new_comment") forState:UIControlStateNormal];
+    [btn2 setTitle:@"评论" forState:UIControlStateNormal];
+    
+    UIButton * btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn3 setImage:IMG(@"bad") forState:UIControlStateNormal];
+    [btn3 setTitle:@"悬赏" forState:UIControlStateNormal];
+    [TK_menuViewVC setDefaultBtnStyle:btn1];
+    [TK_menuViewVC setDefaultBtnStyle:btn2];
+    [TK_menuViewVC setDefaultBtnStyle:btn3];
+    NSArray * buttons = [[NSArray alloc] initWithObjects:btn1,btn2,btn3,nil];
+    
+    return buttons;
+}
+
+
 - (void)commentEventWithType:(COMMENT_OPERATE_TYPE)type withCell:(UIView *)cell
 {
-    
-    if(!tkMenu)
-    {
-        tkMenu = [[TK_menuViewVC alloc] init];
-        
-    }
-    
-    CGPoint point = cell.frame.origin;
-    
-    DDLogInfo(@" get point  %f  and  %f",point.x,point.y);
-
-    
-    CGPoint globPoint = [cell convertPoint:point toView:self];
-    
-    DDLogInfo(@" get point  %f  and  %f",globPoint.x,globPoint.y);
-    
-    [tkMenu showMenu:globPoint];
+//    
+//    if(!tkMenu)
+//    {
+//        tkMenu = [[TK_menuViewVC alloc] init];
+//        
+//    }
+//    
+//    CGPoint point = cell.frame.origin;
+//    
+//    DDLogInfo(@" get point  %f  and  %f",point.x,point.y);
+//
+//    
+//    CGPoint globPoint = [cell convertPoint:point toView:self];
+//    
+//    DDLogInfo(@" get point  %f  and  %f",globPoint.x,globPoint.y);
+//    
+//    [tkMenu showMenu:globPoint];
     
 //    NSInteger index = [mTableView indexPathForCell:cell].row;
 //    PostDetailData * data = [mSourceData objectAtIndex:index];
@@ -351,13 +372,13 @@ TK_menuViewVCDelegate>
     [alter show];
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-
-    if(!tkMenu){
-    
-        [tkMenu hidWithAnima:NO];
-    }
-}
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//
+//    if(!tkMenu){
+//    
+//        [tkMenu hidWithAnima:NO];
+//    }
+//}
 
 #pragma mark----- TKMenuDelegate
 

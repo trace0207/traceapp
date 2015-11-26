@@ -14,7 +14,7 @@
 #import "UIColor+TK_Color.h"
 #import "Masonry.h"
 
-static CGFloat DefaultMenuWidth = 130;
+static CGFloat DefaultMenuWidth = 180;
 //static CGFloat DefaultButtonWidth = 65;
 static CGFloat DefaultMenuHeight = 36;
 
@@ -36,7 +36,7 @@ static CGFloat DefaultMenuHeight = 36;
 
 @property (strong, nonatomic) UITableView *mTableView;
 @property (assign, nonatomic) CGFloat mMenuHeight;
-@property (strong, nonatomic) NSArray * btns;
+@property (strong, nonatomic) NSArray * defaultBtns;
 
 @end
 
@@ -46,12 +46,17 @@ static CGFloat DefaultMenuHeight = 36;
 -(instancetype)init{
 
     self = [super initWithFrame:[UIScreen mainScreen].bounds];
-    
+    [self initDefaultViews];
+    [self addButnView:showContentView withButtons:self.defaultBtns];
+    return self;
+}
+
+
+-(void)initDefaultViews{
+
     UIButton *hiddenBtn = [[UIButton alloc]initWithFrame:self.frame];
-//    [hiddenBtn addTarget:self action:@selector(hiddenAction) forControlEvents:UIControlEventTouchUpInside];
+    //    [hiddenBtn addTarget:self action:@selector(hiddenAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:hiddenBtn];
-    
-    
     eventResponseAreaView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DefaultMenuWidth *2, DefaultMenuHeight * 2)];
     
     contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DefaultMenuWidth, DefaultMenuHeight)];
@@ -59,41 +64,44 @@ static CGFloat DefaultMenuHeight = 36;
     contentView.clipsToBounds = YES;
     
     showContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DefaultMenuWidth, DefaultMenuHeight)];
-    
     showContentView.layer.cornerRadius = 8.0f;
     showContentView.layer.masksToBounds = YES;
     showContentView.backgroundColor = [UIColor TKcolorWithHexString:TK_Color_black_main_1];
-
     eventResponseAreaView.backgroundColor = [UIColor clearColor];
     [self addSubview:eventResponseAreaView];
-    
-    [self addButnView:showContentView];
     [contentView addSubview:showContentView];
     [self addSubview:contentView];
-    
+
+}
+
+
+-(instancetype)initWithButtons:(NSArray *)buts
+{
+    self = [super initWithFrame:[UIScreen mainScreen].bounds];
+    [self initDefaultViews];
+    [self addButnView:showContentView withButtons:buts];
     return self;
 }
 
 
--(void)addButnView:(UIView * )view{
-    
-    CGFloat width = DefaultMenuWidth/self.btns.count;
-    
 
-    for(int i =0;i<self.btns.count;i++){
+-(void)addButnView:(UIView * )view withButtons:(NSArray *)btns
+{
     
-        UIButton * btn = self.btns[i];
+    CGFloat width = DefaultMenuWidth/btns.count;
+    
+    
+    for(int i =0;i< btns.count;i++)
+    {
         
-//        btn.backgroundColor = [UIColor redColor];
+        UIButton * btn = btns[i];
+        
+        //        btn.backgroundColor = [UIColor redColor];
         
         
         btn.tag = 100 +i;
-        
         [btn addTarget:self action:@selector(onBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        
-        
         [view addSubview:btn];
-        
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             
             make.top.mas_equalTo(0);
@@ -102,9 +110,9 @@ static CGFloat DefaultMenuHeight = 36;
             make.height.mas_equalTo(DefaultMenuHeight);
             
             
-//            make.center.mas_equalTo(CGPointMake(width*(i+0.5), DefaultMenuHeight/2));
-//            make.size.mas_equalTo(CGPointMake(width, DefaultMenuHeight));
-
+            //            make.center.mas_equalTo(CGPointMake(width*(i+0.5), DefaultMenuHeight/2));
+            //            make.size.mas_equalTo(CGPointMake(width, DefaultMenuHeight));
+            
         }];
         
         [btn updateConstraints];
@@ -128,9 +136,9 @@ static CGFloat DefaultMenuHeight = 36;
 }
 
 
--(NSArray *)btns{
+-(NSArray *)defaultBtns{
 
-    if(!_btns){
+    if(!_defaultBtns){
         
         UIButton * btn1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [btn1 setTitle:@"1" forState:UIControlStateNormal];
@@ -138,11 +146,11 @@ static CGFloat DefaultMenuHeight = 36;
         UIButton * btn2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [btn2 setTitle:@"2" forState:UIControlStateNormal];
     
-        _btns = [[NSArray alloc] initWithObjects:btn1,btn2,nil];
+        _defaultBtns = [[NSArray alloc] initWithObjects:btn1,btn2,nil];
         
     }
     
-    return _btns;
+    return _defaultBtns;
 }
 
 
@@ -184,6 +192,13 @@ static CGFloat DefaultMenuHeight = 36;
     } completion:^(BOOL finished) {
     }];
 }
+
+
+- (void)showMenu:(CGPoint)point withButtons:(NSArray *)btns withTempData:(NSObject *)tempData{
+
+    
+}
+
 
 
 - (void)hidWithAnima:(BOOL)ani{
@@ -233,7 +248,6 @@ static CGFloat DefaultMenuHeight = 36;
         UIView * clickView = [super hitTest:point withEvent:event];
         return clickView;
     }else if ([eventResponseAreaView pointInside:dismissPoint withEvent:event]) {
-    
         [self hiddenMenu:YES];
         return eventResponseAreaView;
     }else{
@@ -241,5 +255,20 @@ static CGFloat DefaultMenuHeight = 36;
         return nil;
     }
 }
+
+
++(void)setDefaultBtnStyle:(UIButton *)btn{
+
+    UIImage * defaultImage = [UIColor TKcreateImageWithColor:[UIColor TKcolorWithHexString:TK_Color_black_main]];
+    UIImage * activeImage = [UIColor TKcreateImageWithColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
+    [btn setBackgroundImage:defaultImage forState:UIControlStateNormal];
+    [btn setBackgroundImage:activeImage forState:UIControlStateHighlighted];
+    [btn setTitleColor:[UIColor TKcolorWithHexString:TK_Color_white_main] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor TKcolorWithHexString:TK_Color_Wite] forState:UIControlStateHighlighted];
+    [btn.titleLabel setFont:[UIFont fontWithName:@"Futura-Mediumltalic" size:8]];
+    [btn setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, -5)];
+    [btn setImageEdgeInsets:UIEdgeInsetsMake(0.0, -1.0, 0.0, 0.0)];
+}
+
 
 @end

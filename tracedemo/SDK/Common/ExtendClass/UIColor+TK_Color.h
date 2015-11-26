@@ -22,4 +22,11 @@
 + (UIColor *)TKcolorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
 
 
+/**
+ * 将UIColor变换为UIImage
+ *
+ **/
++ (UIImage *)TKcreateImageWithColor:(UIColor *)color;
+
+
 @end

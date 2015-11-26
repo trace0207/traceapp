@@ -25,10 +25,19 @@
 @property (nonatomic, weak) id<TK_menuViewVCDelegate>delegate;
 @property (nonatomic, weak) NSObject * tempdata;// 用来缓存数据的
 
+
+- (instancetype)initWithButtons:(NSArray * )buts;
+
 - (instancetype)initWithCategorys:(NSMutableArray *)categorys;
 
 - (void)showMenu:(CGPoint)point;
 
 - (void)hidWithAnima:(BOOL)ani;
+
+- (void)showMenu:(CGPoint)point withButtons:(NSArray *)btns withTempData:(NSObject *)tempData;
+
+
++(void)setDefaultBtnStyle:(UIButton *)btn;
+
 
 @end
