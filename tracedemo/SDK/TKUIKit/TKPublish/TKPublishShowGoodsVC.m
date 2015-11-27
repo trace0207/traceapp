@@ -27,17 +27,36 @@
    CGRect  screenSize =  CGRectMake(0,0,TKScreenWidth, TKScreenHeight);
     
     _rootScrollView = [[UIScrollView alloc] initWithFrame:screenSize];
-    [self.view addSubview:_rootScrollView];
     _mainContentView.frame = CGRectMake(0, 0, TKScreenWidth,TKScreenHeight);
     [_rootScrollView addSubview:_mainContentView];
     _rootScrollView.directionalLockEnabled = YES;
     _rootScrollView.alwaysBounceVertical = YES;
     _rootScrollView.showsVerticalScrollIndicator = NO;
     
+    [self.view addSubview:_rootScrollView];
+    [_rootScrollView addSubview:_mainContentView];
+    
 //    _rootScrollView.backgroundColor = [UIColor blueColor];
     
     [self resetContentSize];
-    [self loadImageViewField];
+     [self loadImageViewField];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+   
+    [self performSelector:@selector(update) withObject:nil afterDelay:3.0];
+
+}
+
+-(void)update
+{
+    [_picContainer mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(400);// pictureWidth;
+    }];
+    [_picContainer updateConstraints];
+    [_picContainer layoutIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -108,30 +127,28 @@
     _picturesArr = [[NSMutableArray alloc]init];
     PictureCell *cell = [[PictureCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PictureCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell.addBtn addTarget:self action:@selector(addPictureAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [cell.addBtn addTarget:self action:@selector(addPictureAction:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [_picContainer addSubview:cell];
+//    
+// 
+//    [cell mas_makeConstraints:^(MASConstraintMaker *make) {
+//       
+//        make.width.equalTo(_picContainer);
+//        make.height.equalTo(_picContainer);
+//        make.top.equalTo(_picContainer);
+//        make.left.equalTo(_picContainer);
+//        
+//    }];
+//    
+//   
+//    
+//    
+//    [cell setPicturesToCell:_picturesArr];
     
-    [_picContainer addSubview:cell];
-    
- 
-    [cell mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.width.equalTo(_picContainer);
-        make.height.equalTo(_picContainer);
-        make.top.equalTo(_picContainer);
-        make.left.equalTo(_picContainer);
-        
-    }];
-    
-   
     
     
-    [cell setPicturesToCell:_picturesArr];
-    
-    [_picContainer mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(pictureWidth+120);// pictureWidth;
-    }];
-    
-    [_picContainer updateConstraints];
+//    [_picContainer updateConstraints];
     
 }
 

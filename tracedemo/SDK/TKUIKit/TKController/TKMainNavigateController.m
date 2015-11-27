@@ -21,6 +21,7 @@
 #import "TKRegisterViewController.h"
 #import "SentPostViewController.h"
 #import "TKPublishShowGoodsVC.h"
+#import "TestViewController.h"
 @interface TKMainNavigateController()<HomePageEventProtocol,UITabBarControllerDelegate,LoginDelegate>
 {
 
@@ -140,6 +141,12 @@
         [self showGoodsPage];
         return NO;
     }
+    else if([viewController isKindOfClass:[HFNewMainViewController class]])
+    {
+
+        [self showSearchVC];
+        return NO;
+    }
     else
     {
         return YES;
@@ -182,6 +189,13 @@
 
     [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
     [self.navigationController pushViewController:vc animated:NO];
+}
+
+-(void)showSearchVC
+{
+    
+    TestViewController * vc = [[TestViewController alloc]initWithNibName:@"TestViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

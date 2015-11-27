@@ -627,6 +627,8 @@
 		8AE10B7A1BF3239A00C0C9A0 /* TKUserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE10B791BF3239A00C0C9A0 /* TKUserCenter.m */; };
 		8AE10B7E1BF33B3E00C0C9A0 /* TKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE10B7D1BF33B3E00C0C9A0 /* TKLoginViewController.m */; };
 		8AE10B821BF33BAA00C0C9A0 /* TKLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE10B811BF33BAA00C0C9A0 /* TKLoginViewController.xib */; };
+		BB15064E1C0876E500F97A7B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15064C1C0876E500F97A7B /* TestViewController.m */; };
+		BB15064F1C0876E500F97A7B /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB15064D1C0876E500F97A7B /* TestViewController.xib */; };
 		BB1A03141BE2113F0035770A /* TKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A03131BE2113F0035770A /* TKBaseViewController.m */; };
 		BB1A03181BE211720035770A /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A03161BE211720035770A /* TKHomePageViewController.m */; };
 		BB1A03191BE211720035770A /* TKHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1A03171BE211720035770A /* TKHomePageViewController.xib */; };
@@ -1838,6 +1840,9 @@
 		8AE10B7D1BF33B3E00C0C9A0 /* TKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKLoginViewController.m; sourceTree = "<group>"; };
 		8AE10B811BF33BAA00C0C9A0 /* TKLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKLoginViewController.xib; sourceTree = "<group>"; };
 		B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BB15064B1C0876E500F97A7B /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		BB15064C1C0876E500F97A7B /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		BB15064D1C0876E500F97A7B /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		BB1A03121BE2113F0035770A /* TKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBaseViewController.h; sourceTree = "<group>"; };
 		BB1A03131BE2113F0035770A /* TKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBaseViewController.m; sourceTree = "<group>"; };
 		BB1A03151BE211720035770A /* TKHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKHomePageViewController.h; sourceTree = "<group>"; };
@@ -1937,6 +1942,7 @@
 		8A17B0E21BA46CF500548CA7 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				BB15064A1C0876D000F97A7B /* Test */,
 				8AE10B771BF3236500C0C9A0 /* UserCenter */,
 				8A6B3E341BF01E4900E5C982 /* Share */,
 				8A6B39DF1BF01D4400E5C982 /* Hiifit */,
@@ -4222,6 +4228,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BB15064A1C0876D000F97A7B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				BB15064B1C0876E500F97A7B /* TestViewController.h */,
+				BB15064C1C0876E500F97A7B /* TestViewController.m */,
+				BB15064D1C0876E500F97A7B /* TestViewController.xib */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		BB339B841BFEBA6E00680AEA /* ControllerImpl */ = {
 			isa = PBXGroup;
 			children = (
@@ -4448,6 +4464,7 @@
 				8A6B3C5F1BF01D4400E5C982 /* HFBoxTableViewCell.xib in Resources */,
 				8A6B3F5E1BF01E4900E5C982 /* ShareSDKLocalizable.strings in Resources */,
 				8A6B3C231BF01D4400E5C982 /* HFLanchViewController.xib in Resources */,
+				BB15064F1C0876E500F97A7B /* TestViewController.xib in Resources */,
 				8AE10B821BF33BAA00C0C9A0 /* TKLoginViewController.xib in Resources */,
 				8A6B3C121BF01D4400E5C982 /* HFBindingViewController.xib in Resources */,
 				8A6B3C681BF01D4400E5C982 /* GameViewController.xib in Resources */,
@@ -4997,6 +5014,7 @@
 				8A6B39521BF01B8F00E5C982 /* HFUploadArg.m in Sources */,
 				8A6B39321BF01B8F00E5C982 /* RequestParameters.m in Sources */,
 				8A6B39251BF01B8F00E5C982 /* PostRes.m in Sources */,
+				BB15064E1C0876E500F97A7B /* TestViewController.m in Sources */,
 				8A6B39511BF01B8F00E5C982 /* HFBandRemindSetArg.m in Sources */,
 				8A6B39971BF01B8F00E5C982 /* GetSuggestAck.m in Sources */,
 				8A6B3C711BF01D4400E5C982 /* HFHabitHeaderCell.m in Sources */,

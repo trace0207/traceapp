@@ -19,6 +19,7 @@
 //@property (strong, nonatomic) IBOutlet UILabel *locationShowLabel;
 //@property (strong, nonatomic) IBOutlet UIImageView *locationArrow;
 @property (strong, nonatomic) IBOutlet UIView *mainContentView;
+@property (strong, nonatomic) IBOutlet UIView *testView;
 
 @property (nonatomic, strong)          NSMutableArray  *picturesArr;
 @end
