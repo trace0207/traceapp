@@ -19,6 +19,8 @@
 #import "TKUserCenter.h"
 #import "TKLoginViewController.h"
 #import "TKRegisterViewController.h"
+#import "SentPostViewController.h"
+#import "TKPublishShowGoodsVC.h"
 @interface TKMainNavigateController()<HomePageEventProtocol,UITabBarControllerDelegate,LoginDelegate>
 {
 
@@ -53,7 +55,7 @@
     newMain.tabBarItem.image=IMG(@"My_foodSearch");
     newMain.tabBarItem.selectedImage = IMG(@"My_foodSearch");
     
-    HFMomentsViewController * newChat = [[HFMomentsViewController alloc] init];
+    TKPublishShowGoodsVC * newChat = [[TKPublishShowGoodsVC alloc] init];
     newChat.tabBarItem.title = @"晒单";
     newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
     newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
@@ -131,7 +133,15 @@
     if([viewController isKindOfClass:[UserInfoViewController class]] && ![[TKUserCenter instance] isLogin]){
         [self showLoginView];
         return NO;
-    }else{
+    }
+    else if([viewController isKindOfClass:[TKPublishShowGoodsVC class]])
+    {
+    
+        [self showGoodsPage];
+        return NO;
+    }
+    else
+    {
         return YES;
     }
 
@@ -159,6 +169,21 @@
     [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
     [self.navigationController pushViewController:loginVC animated:NO];
 }
+
+
+-(void)showGoodsPage
+{
+    
+    TKPublishShowGoodsVC * vc = [[TKPublishShowGoodsVC alloc] initWithNibName:@"TKPublishShowGoodsVC" bundle:nil];
+    CATransition* transition = [CATransition animation];
+
+    transition.type = kCATransitionPush;//可更改为其他方式
+    transition.subtype = kCATransitionFromTop;//可更改为其他方式 [self.navigationController.view.layeraddAnimation:transition forKey:kCATransition];
+
+    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+    [self.navigationController pushViewController:vc animated:NO];
+}
+
 
 
 #pragma mark ------- loginDelegate

@@ -78,4 +78,9 @@
     
 }
 
+-(void)TKI_setBarLeftActiveText:(NSString *)text{
+
+    
+}
+
 @end

@@ -649,6 +649,8 @@
 		BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */; };
 		BBBF89A81C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */; };
 		BBBF89AB1C04770B00CF9F2E /* TK_menuViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89AA1C04770B00CF9F2E /* TK_menuViewVC.m */; };
+		BBBF89B01C06B12200CF9F2E /* TKPublishShowGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89AE1C06B12200CF9F2E /* TKPublishShowGoodsVC.m */; };
+		BBBF89B11C06B12200CF9F2E /* TKPublishShowGoodsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBF89AF1C06B12200CF9F2E /* TKPublishShowGoodsVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1877,6 +1879,9 @@
 		BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+TKI_ImageFill.m"; sourceTree = "<group>"; };
 		BBBF89A91C04770B00CF9F2E /* TK_menuViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_menuViewVC.h; sourceTree = "<group>"; };
 		BBBF89AA1C04770B00CF9F2E /* TK_menuViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_menuViewVC.m; sourceTree = "<group>"; };
+		BBBF89AD1C06B12200CF9F2E /* TKPublishShowGoodsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPublishShowGoodsVC.h; sourceTree = "<group>"; };
+		BBBF89AE1C06B12200CF9F2E /* TKPublishShowGoodsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPublishShowGoodsVC.m; sourceTree = "<group>"; };
+		BBBF89AF1C06B12200CF9F2E /* TKPublishShowGoodsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKPublishShowGoodsVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2101,6 +2106,7 @@
 		8A6434981BAE844200820545 /* TKUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				BBBF89AC1C06B0D400CF9F2E /* TKPublish */,
 				8A2E61E11BEC802700FBDB86 /* SlidMenu */,
 				BBA9F6FE1BC8E41C0059CEB4 /* TKUIView */,
 				8A6434A51BAE9DF600820545 /* TKController */,
@@ -4309,6 +4315,16 @@
 			path = TKUIView;
 			sourceTree = "<group>";
 		};
+		BBBF89AC1C06B0D400CF9F2E /* TKPublish */ = {
+			isa = PBXGroup;
+			children = (
+				BBBF89AD1C06B12200CF9F2E /* TKPublishShowGoodsVC.h */,
+				BBBF89AE1C06B12200CF9F2E /* TKPublishShowGoodsVC.m */,
+				BBBF89AF1C06B12200CF9F2E /* TKPublishShowGoodsVC.xib */,
+			);
+			path = TKPublish;
+			sourceTree = "<group>";
+		};
 		D2F8907D64CFFB14B8C31520 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -4513,6 +4529,7 @@
 				8A6B3C1E1BF01D4400E5C982 /* libIwownBLE.bundle in Resources */,
 				8AB650201BF0CDE600D4C0A0 /* Localizable.strings in Resources */,
 				8A6B3CCA1BF01D4400E5C982 /* HFSchemeListViewController.xib in Resources */,
+				BBBF89B11C06B12200CF9F2E /* TKPublishShowGoodsVC.xib in Resources */,
 				8A6B3C731BF01D4400E5C982 /* HFSchemeCell.xib in Resources */,
 				8A6B3C521BF01D4400E5C982 /* HFIntroduceCell.xib in Resources */,
 				8A6B3C7C1BF01D4400E5C982 /* SetPasswordViewController.xib in Resources */,
@@ -4587,6 +4604,7 @@
 				8A6B39B91BF01B8F00E5C982 /* HFCheckVercodeReq.m in Sources */,
 				8A6B39501BF01B8F00E5C982 /* BindingArg.m in Sources */,
 				8A2E621F1BEC804D00FBDB86 /* TKConstants.m in Sources */,
+				BBBF89B01C06B12200CF9F2E /* TKPublishShowGoodsVC.m in Sources */,
 				BB339B871BFEBA6E00680AEA /* TK_BaseNavSettingViewController.m in Sources */,
 				8A6B3F301BF01E4900E5C982 /* RBCustomDatePickerView.m in Sources */,
 				BB1A03181BE211720035770A /* TKHomePageViewController.m in Sources */,

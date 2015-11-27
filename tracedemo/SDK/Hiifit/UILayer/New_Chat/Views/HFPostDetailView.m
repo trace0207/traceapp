@@ -260,7 +260,8 @@ TK_menuViewVCDelegate>
 
 
 -(NSArray *)getMenuButtons{
-    UIButton * btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+//    UIButton * btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton * btn1 = [[UIButton alloc]init];
     [btn1 setTitle:@"赞" forState:UIControlStateNormal];
     [btn1 setImage:IMG(@"tk_icon_good_b") forState:UIControlStateNormal];
     UIButton * btn2 = [UIButton buttonWithType:UIButtonTypeCustom];

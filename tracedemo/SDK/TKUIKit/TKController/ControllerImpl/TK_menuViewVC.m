@@ -116,11 +116,16 @@ static CGFloat DefaultMenuHeight = 36;
         }];
         
         [btn updateConstraints];
-        
-        
+        // 增加分割线
+        if(i != 0)
+        {
+            UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(width * i, DefaultMenuHeight/4, 1, DefaultMenuHeight/2)];
+            label.backgroundColor = [UIColor TKcolorWithHexString:TK_Color_white_main];
+            [view addSubview:label];
+        }
     }
-    
 }
+
 
 -(void)onBtnClick:(UIButton *)btn{
     
@@ -257,18 +262,18 @@ static CGFloat DefaultMenuHeight = 36;
 }
 
 
-+(void)setDefaultBtnStyle:(UIButton *)btn{
-
++(void)setDefaultBtnStyle:(UIButton *)btn
+{
     UIImage * defaultImage = [UIColor TKcreateImageWithColor:[UIColor TKcolorWithHexString:TK_Color_black_main]];
     UIImage * activeImage = [UIColor TKcreateImageWithColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
     [btn setBackgroundImage:defaultImage forState:UIControlStateNormal];
     [btn setBackgroundImage:activeImage forState:UIControlStateHighlighted];
     [btn setTitleColor:[UIColor TKcolorWithHexString:TK_Color_white_main] forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor TKcolorWithHexString:TK_Color_Wite] forState:UIControlStateHighlighted];
-    [btn.titleLabel setFont:[UIFont fontWithName:@"Futura-Mediumltalic" size:8]];
+    //    [btn setTitleColor:[UIColor TKcolorWithHexString:TK_Color_Wite] forState:UIControlStateHighlighted];
+    
+    btn.titleLabel.font = [UIFont systemFontOfSize:12.0];
     [btn setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, -5)];
     [btn setImageEdgeInsets:UIEdgeInsetsMake(0.0, -1.0, 0.0, 0.0)];
 }
-
 
 @end
