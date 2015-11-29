@@ -7,6 +7,8 @@
 //
 #define ZHToobarHeight 40
 #import "ZHPickView.h"
+#import "TK_ShareCategory.h"
+#import "TKUserCenter.h"
 
 @interface ZHPickView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 @property(nonatomic,copy)NSString *plistName;
@@ -14,6 +16,9 @@
 @property(nonatomic,assign)BOOL isLevelArray;
 @property(nonatomic,assign)BOOL isLevelString;
 @property(nonatomic,assign)BOOL isLevelDic;
+@property(nonatomic,assign)BOOL isTKType;
+@property(nonatomic,assign)BOOL isTKGoodsType;
+
 @property(nonatomic,strong)NSDictionary *levelTwoDic;
 @property(nonatomic,strong)UIToolbar *toolbar;
 @property(nonatomic,strong)UIPickerView *pickerView;
@@ -27,7 +32,6 @@
 @property(nonatomic,copy)NSMutableArray *state;
 @property(nonatomic,copy)NSMutableArray *city;
 @property (nonatomic, assign) NSInteger heightOrWeight;
-
 @end
 
 @implementation ZHPickView
@@ -67,9 +71,14 @@
             array = [self getHeightArray];
             self.pickerStyle = HF_Height;
         }
-        if (picker == HF_Weight) {
+        else if (picker == HF_Weight) {
             self.pickerStyle = HF_Weight;
             array = [self getWeightArray];
+        }else if(TK_GoodsType == picker)
+        {
+         
+            self.pickerStyle = HF_Weight;
+            array = [TKUserCenter instance].userNormalVM.shareCategorys;
         }
         self.plistArray = array;
         //[self addBackgroundView];
@@ -231,7 +240,7 @@
 #pragma mark piackView 数据源方法
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     
-    NSInteger component;
+    NSInteger component = 10;
     if (_isLevelArray) {
         component=_plistArray.count;
     } else if (_isLevelString){

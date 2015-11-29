@@ -11,8 +11,9 @@
 
 typedef NS_ENUM (NSInteger, HFPicker){
     HF_Weight = 1,
-    HF_Height,
-    HF_BirthDay
+    HF_Height = 2,
+    HF_BirthDay = 3,
+    TK_GoodsType = 4
 };
 
 @class ZHPickView;
@@ -41,6 +42,7 @@ typedef NS_ENUM (NSInteger, HFPicker){
  *  @return 带有toolbar的pickview
  */
 -(instancetype)initPickviewWithPlistName:(NSString *)plistName isHaveNavControler:(BOOL)isHaveNavControler;
+
 /**
  *  通过plistName添加一个pickView
  *

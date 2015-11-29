@@ -629,6 +629,8 @@
 		8AE10B821BF33BAA00C0C9A0 /* TKLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE10B811BF33BAA00C0C9A0 /* TKLoginViewController.xib */; };
 		BB15064E1C0876E500F97A7B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15064C1C0876E500F97A7B /* TestViewController.m */; };
 		BB15064F1C0876E500F97A7B /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB15064D1C0876E500F97A7B /* TestViewController.xib */; };
+		BB1506521C0A935D00F97A7B /* TK_PicAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1506511C0A935D00F97A7B /* TK_PicAddView.m */; };
+		BB1506551C0AD1F100F97A7B /* TKClearView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1506541C0AD1F100F97A7B /* TKClearView.m */; };
 		BB1A03141BE2113F0035770A /* TKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A03131BE2113F0035770A /* TKBaseViewController.m */; };
 		BB1A03181BE211720035770A /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A03161BE211720035770A /* TKHomePageViewController.m */; };
 		BB1A03191BE211720035770A /* TKHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1A03171BE211720035770A /* TKHomePageViewController.xib */; };
@@ -1843,6 +1845,10 @@
 		BB15064B1C0876E500F97A7B /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		BB15064C1C0876E500F97A7B /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		BB15064D1C0876E500F97A7B /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		BB1506501C0A935D00F97A7B /* TK_PicAddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_PicAddView.h; sourceTree = "<group>"; };
+		BB1506511C0A935D00F97A7B /* TK_PicAddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PicAddView.m; sourceTree = "<group>"; };
+		BB1506531C0AD1F100F97A7B /* TKClearView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKClearView.h; sourceTree = "<group>"; };
+		BB1506541C0AD1F100F97A7B /* TKClearView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKClearView.m; sourceTree = "<group>"; };
 		BB1A03121BE2113F0035770A /* TKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBaseViewController.h; sourceTree = "<group>"; };
 		BB1A03131BE2113F0035770A /* TKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBaseViewController.m; sourceTree = "<group>"; };
 		BB1A03151BE211720035770A /* TKHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKHomePageViewController.h; sourceTree = "<group>"; };
@@ -4180,6 +4186,8 @@
 				8A978A5E1BD3C8EF00C84ED2 /* BasePortraitView.m */,
 				8A978A5F1BD3C8EF00C84ED2 /* HFSegmentView.h */,
 				8A978A601BD3C8EF00C84ED2 /* HFSegmentView.m */,
+				BB1506531C0AD1F100F97A7B /* TKClearView.h */,
+				BB1506541C0AD1F100F97A7B /* TKClearView.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -4337,6 +4345,8 @@
 				BBBF89AD1C06B12200CF9F2E /* TKPublishShowGoodsVC.h */,
 				BBBF89AE1C06B12200CF9F2E /* TKPublishShowGoodsVC.m */,
 				BBBF89AF1C06B12200CF9F2E /* TKPublishShowGoodsVC.xib */,
+				BB1506501C0A935D00F97A7B /* TK_PicAddView.h */,
+				BB1506511C0A935D00F97A7B /* TK_PicAddView.m */,
 			);
 			path = TKPublish;
 			sourceTree = "<group>";
@@ -4632,6 +4642,7 @@
 				8A6B3C8A1BF01D4400E5C982 /* FriendsViewController.m in Sources */,
 				8A6B393C1BF01B8F00E5C982 /* TK_BaseJsonModel.m in Sources */,
 				8A6B3F4E1BF01E4900E5C982 /* QuadCurveMenuItem.m in Sources */,
+				BB1506521C0A935D00F97A7B /* TK_PicAddView.m in Sources */,
 				8A6B3CC71BF01D4400E5C982 /* HFDateHeaderView.m in Sources */,
 				BB5AE40A1BFF0EF200BA0167 /* TK_LoginAck.m in Sources */,
 				8A6B39061BF01B8F00E5C982 /* ActivitiesData.m in Sources */,
@@ -4694,6 +4705,7 @@
 				8A6B3C441BF01D4400E5C982 /* HFCoverFlowView.m in Sources */,
 				8A6B39CD1BF01B8F00E5C982 /* HFPostBarPersonalReq.m in Sources */,
 				8A6B391B1BF01B8F00E5C982 /* HomePageRes.m in Sources */,
+				BB1506551C0AD1F100F97A7B /* TKClearView.m in Sources */,
 				8A6B39071BF01B8F00E5C982 /* ActivitiesRes.m in Sources */,
 				8A6B3CD11BF01D4400E5C982 /* HFMenuControl.m in Sources */,
 				8A6B399A1BF01B8F00E5C982 /* GetUserDietaryByDayArg.m in Sources */,
