@@ -17,6 +17,7 @@
 #import "TKProxy.h"
 #import "TK_GetOrdersAck.h"
 #import "HFMenuControl.h"
+#import "TKPublishRewardVC.h"
 
 
 @interface TKHomePageViewController ()<HFTitleViewDelegate,BasePostDetailViewDelegate,SDCycleScrollViewDelegate,HFMenuDelegate>{
@@ -77,19 +78,30 @@ static HFMenuControl * menu;
 
 -(void)leftDrawerButtonPress{
     
+    /**
+     *  弹出侧滑菜单
+     */
     if(_eventDelegate){
         [_eventDelegate leftBarIconDidClick];
     }
     
 }
 
+
+-(void)goToRewardPage:(NSObject *)data
+{
+    TKPublishRewardVC * vc = [[TKPublishRewardVC alloc] initWithNibName:@"TKPublishShowGoodsVC" bundle:nil];
+    [[AppDelegate getMainNavigation]pushViewController:vc animated:YES];
+}
+
+
 -(void)viewWillAppear:(BOOL)animated{
     [self TKremoveLeftBarButtonItem];
 //    [self TKremoveRightBarButtonItem];
     [self TKremoveNavigationTitle];
     [self TKaddNavigationTitleView:[self titleView]];
-    [self TKsetLeftBarItemImage:[UIImage imageNamed:@"tk_icon_menu"]
-                      addTarget:self action:@selector(leftDrawerButtonPress)
+    [self TKsetRightBarItemImage:[UIImage imageNamed:@"tk_icon_camera_b"]
+                       addTarget:self action:@selector(goToRewardPage:)
                forControlEvents:UIControlEventTouchUpInside];
     
     [self resetRightBarItem];
@@ -184,14 +196,14 @@ static HFMenuControl * menu;
     
     if(mCurrentIndex == 0){
     
-        [self TKsetRightBarItemImage:IMG(@"new_add")
+        [self TKsetLeftBarItemImage:IMG(@"new_add")
                            addTarget:self
                               action:@selector(rightBarItemAction:)
                     forControlEvents:UIControlEventTouchUpInside];
         
     }else{
     
-        [self TKremoveRightBarButtonItem];
+        [self TKremoveLeftBarButtonItem];
     }
     
 }
@@ -413,7 +425,7 @@ static HFMenuControl * menu;
 }
 
 
-#pragma mark ---   HomePage select menu delegate
+#pragma mark ---   HFMenuDelegate
 - (void)MenuDidSelectIndex:(NSInteger)index{
 
     

@@ -30,6 +30,23 @@ CGFloat const DefaultMenuHeight = 44;
 @implementation HFMenuControl
 - (instancetype)initWithCategorys:(NSMutableArray *)categorys
 {
+//    self = [super initWithFrame:[UIScreen mainScreen].bounds];
+//    currentSelect = 0;
+//    if (self) {
+//        
+//        self.backgroundColor = [UIColor clearColor];
+//        titlesArray = [categorys copy];
+//        UIButton *hiddenBtn = [[UIButton alloc]initWithFrame:self.frame];
+//        [hiddenBtn addTarget:self action:@selector(hiddenAction) forControlEvents:UIControlEventTouchUpInside];
+//        [self addSubview:hiddenBtn];
+//        CGFloat o_x = CGRectGetWidth(self.frame)-DefaultMenuWidth - 6;
+//        menuRect = CGRectMake(o_x, 74, DefaultMenuWidth, self.mMenuHeight*categorys.count);
+//    }
+    return [self initWithCategorys:categorys fromLeft:YES];
+}
+
+
+-(instancetype)initWithCategorys:(NSMutableArray *)categorys fromLeft:(Boolean)fromLeft{
     self = [super initWithFrame:[UIScreen mainScreen].bounds];
     currentSelect = 0;
     if (self) {
@@ -39,11 +56,20 @@ CGFloat const DefaultMenuHeight = 44;
         UIButton *hiddenBtn = [[UIButton alloc]initWithFrame:self.frame];
         [hiddenBtn addTarget:self action:@selector(hiddenAction) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:hiddenBtn];
-        CGFloat o_x = CGRectGetWidth(self.frame)-DefaultMenuWidth - 6;
+        
+        CGFloat o_x = 5;
+        if(!fromLeft)
+        {
+        
+            o_x = CGRectGetWidth(self.frame)-DefaultMenuWidth - 5;
+        }
+        
         menuRect = CGRectMake(o_x, 74, DefaultMenuWidth, self.mMenuHeight*categorys.count);
     }
     return self;
+    
 }
+
 
 - (void)hiddenAction
 {

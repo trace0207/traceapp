@@ -21,6 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [NSObject new];
+//    [[NSObject alloc] init];
+    
+    
     // Do any additional setup after loading the view from its nib.
     
    UIView  * view =  [[UIView alloc] init];

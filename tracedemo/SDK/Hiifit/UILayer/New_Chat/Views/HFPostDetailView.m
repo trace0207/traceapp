@@ -15,6 +15,7 @@
 #import "AppDelegate.h"
 #import "TK_menuViewVC.h"
 #import "UIColor+TK_Color.h"
+#import "TKPublishRewardVC.h"
 @interface HFPostDetailView()
 <UITableViewDelegate,UITableViewDataSource,
 PostCellDelegate,CLLRefreshHeadControllerDelegate,HFCommentViewControllerDelegate,
@@ -381,12 +382,19 @@ TK_menuViewVCDelegate>
 //    }
 //}
 
-#pragma mark----- TKMenuDelegate
+#pragma mark----- TK_menuViewVCDelegate
 
 - (void)menuDidSelectIndex:(NSInteger)index withTempData:(NSObject * )data;{
 
     
     DDLogInfo(@" get temp data at index =  %ld   data = %@",index,data);
+    
+    if(index == 2)// 悬赏
+    {
+        TKPublishRewardVC * vc = [[TKPublishRewardVC alloc] initWithNibName:@"TKPublishShowGoodsVC" bundle:nil];
+        [[AppDelegate getMainNavigation]pushViewController:vc animated:YES];
+    }
+    
     
 }
 

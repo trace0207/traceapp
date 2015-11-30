@@ -11,5 +11,6 @@
 @interface TestViewController : TKBaseViewController
 //@property (strong, nonatomic) IBOutlet UIView *aView;
 @property (strong, nonatomic) IBOutlet UIView *Bview;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *height;
 
 @end

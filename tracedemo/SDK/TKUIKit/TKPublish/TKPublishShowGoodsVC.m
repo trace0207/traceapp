@@ -83,11 +83,11 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 
 
 -(void)TKI_leftBarAction{
-    CATransition* transition = [CATransition animation];
-    transition.type = kCATransitionPush;//可更改为其他方式
-    transition.subtype = kCATransitionFromBottom;//可更改为其他方式 [self.navigationController.view.layeraddAnimation:transition forKey:kCATransition];
-    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
-    [self.navigationController popViewControllerAnimated:NO];
+//    CATransition* transition = [CATransition animation];
+//    transition.type = kCATransitionPush;//可更改为其他方式
+//    transition.subtype = kCATransitionFromBottom;//可更改为其他方式 [self.navigationController.view.layeraddAnimation:transition forKey:kCATransition];
+//    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /**

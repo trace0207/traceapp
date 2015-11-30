@@ -29,7 +29,10 @@ typedef NS_ENUM(NSInteger,HFMenuType) {
 
 @property (nonatomic, weak) id<HFMenuDelegate>delegate;
 
+
 - (instancetype)initWithCategorys:(NSMutableArray *)categorys;
+
+- (instancetype)initWithCategorys:(NSMutableArray *)categorys fromLeft:(Boolean)fromLeft;
 
 - (void)showMenu;
 
