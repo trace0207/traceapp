@@ -29,4 +29,11 @@
 + (UIImage *)TKcreateImageWithColor:(UIColor *)color;
 
 
+/*
+ 主题色
+ */
++ (UIColor *)tkMainActiveColor;
+
+
+
 @end

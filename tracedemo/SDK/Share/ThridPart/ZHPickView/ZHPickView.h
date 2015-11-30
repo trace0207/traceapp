@@ -22,6 +22,7 @@ typedef NS_ENUM (NSInteger, HFPicker){
 
 @optional
 -(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString cell:(HFEditInfoCell *)cell;
+-(void)tkTooBarComplete:(NSObject *)obj;
 
 @end
 

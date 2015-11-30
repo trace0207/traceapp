@@ -111,7 +111,7 @@
     }
     if(pictures.count < self.maxCount)
     {
-        int index = pictures.count;
+        NSInteger index = pictures.count;
         CGRect picFrameForAdd= CGRectMake(self.paddingLeft + (index%4)*(self.picWidth + self.paddingLeft),
                                           (index/4)*(self.picHeight + self.paddingTop) + self.paddingTop, self.picWidth, self.picHeight);
         [self tkAddBtnWithFrame:picFrameForAdd];
@@ -204,7 +204,7 @@
 {
     if(_maxCount == 0)
     {
-        return 10;
+        return 9;
     }
     else return _maxCount;
 }

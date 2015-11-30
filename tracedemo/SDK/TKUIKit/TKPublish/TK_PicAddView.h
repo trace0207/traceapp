@@ -23,7 +23,7 @@
 @property (nonatomic,assign)CGFloat picHeight;
 @property (nonatomic,strong)NSString * defaultAddPicStr;
 @property (nonatomic,assign)NSInteger maxCount;
-@property (nonatomic,strong)id<TK_PicAddDelegate> tkAddDelegate;
+@property (nonatomic,weak)id<TK_PicAddDelegate> tkAddDelegate;
 
 
 -(instancetype)initDefaultAddWithFrame:(CGRect)frame;

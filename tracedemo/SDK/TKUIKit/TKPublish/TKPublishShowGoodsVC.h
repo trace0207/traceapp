@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *textCountView;
 @property (strong, nonatomic) IBOutlet UILabel *typeTextView;
 - (IBAction)typeBtnEvent:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *picLoadingView;
 
 @property (nonatomic, strong)          NSMutableArray  *picturesArr;
 @end

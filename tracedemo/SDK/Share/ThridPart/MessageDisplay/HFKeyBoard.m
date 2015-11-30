@@ -9,7 +9,7 @@
 #import "HFKeyBoard.h"
 #import "ZBMessageManagerFaceView.h"
 #import "HFInputView.h"
-@interface HFKeyBoard()<HFInputViewDelegate,ZBMessageManagerFaceViewDelegate, UITextViewDelegate>
+@interface HFKeyBoard()<HFInputViewDelegate,ZBMessageManagerFaceViewDelegate>
 {
     EmojiKeyBoardType mType;
     
@@ -25,6 +25,10 @@
 @property (nonatomic, strong) UIImageView * bgImageView;
 @property(nonatomic,strong)NSDictionary * faceMap;
 @end
+
+
+static NSInteger  faceTabHeight = 45;// 表情键盘高度
+static NSInteger  faceIconXY = 25; //  键盘的 icon
 
 
 @implementation HFKeyBoard
@@ -53,7 +57,7 @@
     {
         mType = HF_KeyBoard_Has_TextView;
         self.mTextView = textView;
-        self.mTextView.delegate = self;
+//        self.mTextView.delegate = self;
         [self.mTextView setUp];
         self.mFartherView = farView;
         [self addObserver];
@@ -65,16 +69,16 @@
 - (void)resetFrame
 {
     if (self.mTextView) {
-        self.mBgView.frame = CGRectMake(0, self.mFartherView.frame.size.height, kScreenWidth, 62);
+        self.mBgView.frame = CGRectMake(0, self.mFartherView.frame.size.height, kScreenWidth, faceTabHeight);
     }else{
-        self.mBgView.frame = CGRectMake(0, self.mFartherView.frame.size.height - 62, kScreenWidth, 62);
+        self.mBgView.frame = CGRectMake(0, self.mFartherView.frame.size.height - faceTabHeight, kScreenWidth, faceTabHeight);
     }
     
     self.bgImageView.frame = CGRectMake(0, 0, self.mBgView.frame.size.width, self.mBgView.frame.size.height);
     self.mBgView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     [self.mFartherView addSubview:self.mBgView];
     
-    self.mFaceSendButton.frame = CGRectMake(16, 16, 30, 30);
+    self.mFaceSendButton.frame = CGRectMake(10, 10, faceIconXY, faceIconXY);
     [self.mBgView addSubview:self.mFaceSendButton];
     self.mEmojiView.frame = CGRectMake(0, kScreenHeight, kScreenWidth, 196);
     [self.mFartherView addSubview:self.mEmojiView];

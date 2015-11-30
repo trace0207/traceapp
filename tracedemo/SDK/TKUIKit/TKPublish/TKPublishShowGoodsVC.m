@@ -12,19 +12,26 @@
 #import "CycleScrollView.h"
 #import "ZYQAssetPickerController.h"
 #import "ZHPickView.h"
+#import "HFKeyBoard.h"
+#import "TKUserCenter.h"
 
 
 static const NSInteger publishMaxPicSize =9;
+static NSString * textDefault = @"此时此刻，分享你的宝贝心得吧";
 
 
-@interface TKPublishShowGoodsVC ()<TK_PicAddDelegate,CycleScrollViewDelegate,UINavigationControllerDelegate,ZHPickViewDelegate,
-UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate>
+@interface TKPublishShowGoodsVC ()<TK_PicAddDelegate,CycleScrollViewDelegate,UINavigationControllerDelegate,ZHPickViewDelegate,ZHPickViewDelegate,
+UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
 {
     
     CGFloat pictureWidth;
     TK_PicAddView * picAddView;
+
+    TK_ShareCategory * shareCategory;
+
 }
 
+@property (nonatomic, strong) HFKeyBoard * keyBoard;
 @end
 
 @implementation TKPublishShowGoodsVC
@@ -32,6 +39,7 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _picLoadingView.hidden = YES;
     CGRect  screenSize =  CGRectMake(0,0,TKScreenWidth, TKScreenHeight);
     
     _rootScrollView = [[UIScrollView alloc] initWithFrame:screenSize];
@@ -49,32 +57,16 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
     
     _tabViewForCloseKeybord.clearDelegate = self;
     
-//    self.inputTextView.placeHolder = @"请输入内容";
-    
     self.inputTextView.delegate = self;
     self.inputTextView.font = [UIFont systemFontOfSize:16];
+    self.inputTextView.placeHolderTextColor = [UIColor grayColor];
+    self.inputTextView.placeHolder = textDefault;
     
+    self.keyBoard = [[HFKeyBoard alloc] initWithSuperView:self.view withTextView:self.inputTextView];
+    self.keyBoard.delegate = self;
+    self.inputTextView.delegate = self;
     
 }
-
-
-///**
-// *  输入框
-// *
-// *  @return <#return value description#>
-// */
-//- (UITextField *)titleField
-//{
-//    if (!_titleField) {
-//        _titleField = [[UITextField alloc] init];
-//        self.titleField.placeholder = @" 请输入标题(20个字符)";
-//        self.titleField.delegate = self;
-//        self.titleField.font = [UIFont systemFontOfSize:16];
-//        [_headerView addSubview:self.titleField];
-//    }
-//    return _titleField;
-//}
-
 
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -89,11 +81,6 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
     return @"发布晒单";
 }
 
--(void)TKI_rightBarAction{
-    
-    [[HFHUDView shareInstance] ShowTips:@"发布晒单成功" delayTime:1.0 atView:NULL];
-    [self TKI_leftBarAction];
-}
 
 -(void)TKI_leftBarAction{
     CATransition* transition = [CATransition animation];
@@ -149,6 +136,10 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 #pragma  mark ---------  addPick delegate
 -(void)onAddBtnAction
 {
+    if(!_picLoadingView.hidden)
+    {
+        return;
+    }
     if (_picturesArr.count >= 9) {
         HFAlertView *alter = [HFAlertView initWithTitle:_T(@"HF_Common_Tips") withMessage:_T(@"HF_Common_More_Pictures") commpleteBlock:^(NSInteger buttonIndex) {
             
@@ -234,37 +225,52 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 #pragma mark - ZYQAssetPickerControllerDelegate
 -(void)assetPickerController:(ZYQAssetPickerController *)picker didFinishPickingAssets:(NSArray *)assets
 {
+
+    dispatch_queue_t queue = dispatch_queue_create("getAlarmPhoto", nil);
+    // loading
+    _picLoadingView.hidden = NO;
+    [_picLoadingView startAnimating];
     
-    for (int i=0; i<assets.count; i++) {
-        ALAsset *asset = [assets objectAtIndexedSubscript:i];
-        
-        ALAssetRepresentation *assetRepresentation = [asset defaultRepresentation];
-        CGImageRef fullResImage = [assetRepresentation fullResolutionImage];
-        NSString *adjustment = [[assetRepresentation metadata] objectForKey:@"AdjustmentXMP"];
-        if (adjustment) {
-            NSData *xmpData = [adjustment dataUsingEncoding:NSUTF8StringEncoding];
-            CIImage *image = [CIImage imageWithCGImage:fullResImage];
+    dispatch_async(queue,^{
+    
+        for (int i=0; i<assets.count; i++) {
+            ALAsset *asset = [assets objectAtIndexedSubscript:i];
             
-            NSError *error = nil;
-            NSArray *filterArray = [CIFilter filterArrayFromSerializedXMP:xmpData
-                                                         inputImageExtent:image.extent
-                                                                    error:&error];
-            CIContext *context = [CIContext contextWithOptions:nil];
-            if (filterArray && !error) {
-                for (CIFilter *filter in filterArray) {
-                    [filter setValue:image forKey:kCIInputImageKey];
-                    image = [filter outputImage];
+            ALAssetRepresentation *assetRepresentation = [asset defaultRepresentation];
+            CGImageRef fullResImage = [assetRepresentation fullResolutionImage];
+            NSString *adjustment = [[assetRepresentation metadata] objectForKey:@"AdjustmentXMP"];
+            if (adjustment) {
+                NSData *xmpData = [adjustment dataUsingEncoding:NSUTF8StringEncoding];
+                CIImage *image = [CIImage imageWithCGImage:fullResImage];
+                
+                NSError *error = nil;
+                NSArray *filterArray = [CIFilter filterArrayFromSerializedXMP:xmpData
+                                                             inputImageExtent:image.extent
+                                                                        error:&error];
+                CIContext *context = [CIContext contextWithOptions:nil];
+                if (filterArray && !error) {
+                    for (CIFilter *filter in filterArray) {
+                        [filter setValue:image forKey:kCIInputImageKey];
+                        image = [filter outputImage];
+                    }
+                    fullResImage = [context createCGImage:image fromRect:[image extent]];
                 }
-                fullResImage = [context createCGImage:image fromRect:[image extent]];
             }
+            UIImage *result = [UIImage imageWithCGImage:fullResImage
+                                                  scale:[assetRepresentation scale]
+                                            orientation:(UIImageOrientation)[assetRepresentation orientation]];
+            
+            [_picturesArr addObject:[UIKitTool fixOrientation:result]];
         }
-        UIImage *result = [UIImage imageWithCGImage:fullResImage
-                                              scale:[assetRepresentation scale]
-                                        orientation:(UIImageOrientation)[assetRepresentation orientation]];
         
-        [_picturesArr addObject:[UIKitTool fixOrientation:result]];
-    }
-    [self tkReloadePic];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_picLoadingView stopAnimating];
+            _picLoadingView.hidden = YES;
+            [self tkReloadePic];
+        });
+
+    });
+    
 }
 
 #pragma UIImagePickerControllerDelegate
@@ -330,6 +336,16 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 //    if (textView.text.length>0) {
 //        [self.textView scrollRectToVisible:CGRectMake(0, textView.contentSize.height-15, textView.contentSize.width, 10) animated:NO];
 //    }
+    
+    if(textView.text.length > 0)
+    {
+        self.inputTextView.placeHolder = @"";
+    }
+    else
+    {
+        self.inputTextView.placeHolder = textDefault;
+    }
+    
     if (400-(int)textView.text.length>=0) {
         self.textCountView.text = [NSString stringWithFormat:@"还能输入%i个字符",400-(int)textView.text.length];
     }else{
@@ -339,10 +355,11 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    if ([text isEqualToString:@"\n"]) {
-        [textView resignFirstResponder];
-        return NO;
-    }
+//    if ([text isEqualToString:@"\n"]) {
+//        [textView resignFirstResponder];
+//        return NO;
+//    }
+    
     if (textView.text.length>=400 && text.length>0) {
         return NO;
     }
@@ -350,14 +367,55 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 }
 
 
+#pragma  mark  ZHPickViewDelegate
+
+-(void)tkTooBarComplete:(NSObject *)obj
+{
+    DDLogInfo(@"select complete %@",obj);
+    if(obj && [obj isKindOfClass:[TK_ShareCategory class]])
+    {
+        shareCategory = (TK_ShareCategory *)obj;
+        _typeTextView.text = shareCategory.title;
+    }
+}
+
+
+
+#pragma mark  private method
 - (IBAction)typeBtnEvent:(UIButton *)sender {
-    
-    CGFloat weight = [[[GlobInfo shareInstance] usr] weight];
-    ZHPickView * picker = [[ZHPickView alloc] initWithStyle:TK_GoodsType isHaveNavController:NO parameter:weight];
+    NSArray * array = [TKUserCenter instance].userNormalVM.shareCategorys;
+    ZHPickView * picker = [[ZHPickView alloc] initPickviewWithArray:array isHaveNavControler:YES];
     picker.delegate = self;
     picker.cell = nil;
     [picker show];
 
     
 }
+
+/*
+  发布晒单
+ */
+-(void)TKI_rightBarAction
+{
+    
+    if(!shareCategory)
+    {
+        [[HFHUDView shareInstance] ShowTips:@"请选择品类" delayTime:1.0 atView:NULL];
+        return;
+    }
+    else if(self.inputTextView.text.length == 0)
+    {
+        [[HFHUDView shareInstance] ShowTips:@"请输入描述信息" delayTime:1.0 atView:NULL];
+        return;
+    }else if(self.picturesArr.count == 0)
+    {
+        [[HFHUDView shareInstance] ShowTips:@"请选择图片" delayTime:1.0 atView:NULL];
+        return;
+    }
+    
+    [[HFHUDView shareInstance] ShowTips:@"发布晒单成功" delayTime:1.0 atView:NULL];
+    
+    [self TKI_leftBarAction];
+}
+
 @end

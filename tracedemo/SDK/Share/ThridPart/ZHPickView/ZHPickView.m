@@ -9,16 +9,20 @@
 #import "ZHPickView.h"
 #import "TK_ShareCategory.h"
 #import "TKUserCenter.h"
+#import "UIColor+TK_Color.h"
 
 @interface ZHPickView ()<UIPickerViewDelegate,UIPickerViewDataSource>
+
 @property(nonatomic,copy)NSString *plistName;
 @property(nonatomic,strong)NSArray *plistArray;
 @property(nonatomic,assign)BOOL isLevelArray;
 @property(nonatomic,assign)BOOL isLevelString;
 @property(nonatomic,assign)BOOL isLevelDic;
-@property(nonatomic,assign)BOOL isTKType;
-@property(nonatomic,assign)BOOL isTKGoodsType;
 
+@property(nonatomic,assign)BOOL isTKType;
+@property(nonatomic,strong)NSObject * resultData;
+
+@property(nonatomic,assign)BOOL isTKGoodsType;
 @property(nonatomic,strong)NSDictionary *levelTwoDic;
 @property(nonatomic,strong)UIToolbar *toolbar;
 @property(nonatomic,strong)UIPickerView *pickerView;
@@ -170,6 +174,12 @@
             _isLevelArray=NO;
             _levelTwoDic=levelTwo;
             [_dicKeyArray addObject:[_levelTwoDic allKeys] ];
+        }else if ([levelTwo isKindOfClass:[TK_ShareCategory class]])
+        {
+            _isLevelString=NO;
+            _isLevelArray=NO;
+            _isLevelDic=NO;
+            _isTKType = YES;
         }
     }
 }
@@ -223,13 +233,13 @@
     UIToolbar *toolbar=[[UIToolbar alloc] init];
     //toolbar.barTintColor = [UIColor whiteColor];
 
-    UIBarButtonItem *lefttem=[[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(remove)];
-    [lefttem setTintColor:[UIColor blackColor]];
+//    UIBarButtonItem *lefttem=[[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(remove)];
+//    [lefttem setTintColor:[UIColor blackColor]];
     UIBarButtonItem *centerSpace=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     
     UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(doneClick)];
-    [right setTintColor:[UIColor HFColorStyle_5]];
-    toolbar.items=@[centerSpace, lefttem, centerSpace, centerSpace, centerSpace, centerSpace, centerSpace, right, centerSpace];
+    [right setTintColor:[UIColor tkMainActiveColor]];
+    toolbar.items=@[centerSpace/**, lefttem*/, centerSpace, centerSpace, centerSpace, centerSpace, centerSpace, right, centerSpace];
     return toolbar;
 }
 -(void)setToolbarWithPickViewFrame{
@@ -240,13 +250,16 @@
 #pragma mark piackView 数据源方法
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     
-    NSInteger component = 10;
+    NSInteger component = 1;
     if (_isLevelArray) {
         component=_plistArray.count;
     } else if (_isLevelString){
         component=1;
     }else if(_isLevelDic){
         component=[_levelTwoDic allKeys].count*2;
+    }else if(_isTKType)
+    {
+        component=1;
     }
     return component;
 }
@@ -270,6 +283,9 @@
                     }
             }
         }
+    }else if(_isTKType)
+    {
+        rowArray = _plistArray;
     }
     return rowArray.count;
 }
@@ -296,6 +312,9 @@
                 }
             }
         }
+    }else if(_isTKType)
+    {
+       rowTitle  = ((TK_ShareCategory*)_plistArray[row]).title;
     }
     return rowTitle;
 }
@@ -334,6 +353,9 @@
                 _city =dicValueArray[row];
             }
         }
+    }else if(_isTKType)
+    {
+        _resultData = _plistArray[row];
     }
 }
 
@@ -379,6 +401,9 @@
               _resultString=[NSString stringWithFormat:@"%@%@",_state,_city];
            }
         }
+        
+        
+        
     }else if (_datePicker) {
         NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"yyyy年M月d日"];
@@ -386,6 +411,13 @@
     }
     if ([self.delegate respondsToSelector:@selector(toobarDonBtnHaveClick:resultString:cell:)]) {
         [self.delegate toobarDonBtnHaveClick:self resultString:_resultString cell:self.cell];
+    }else if([self.delegate respondsToSelector:@selector(tkTooBarComplete:)])
+    {
+        if(!_resultData && _plistArray.count >0)
+        {
+            _resultData = _plistArray[0];
+        }
+        [self.delegate tkTooBarComplete:_resultData];
     }
     [self removeFromSuperview];
 }

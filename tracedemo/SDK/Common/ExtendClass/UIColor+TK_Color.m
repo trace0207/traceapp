@@ -100,5 +100,13 @@
 }
 
 
+/*
+ 主题色
+ */
++ (UIColor *)tkMainActiveColor
+{
+    return [self TKcolorWithHexString:TK_Color_nav_textActive];
+}
+
 
 @end
