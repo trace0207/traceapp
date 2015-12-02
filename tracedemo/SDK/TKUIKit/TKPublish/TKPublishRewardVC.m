@@ -25,11 +25,18 @@
 }
 
 
+
+
+#pragma mark   extern Method
+
 -(NSString *)TK_getBarTitle{
     
     return @"发布悬赏";
 }
 
-
+-(BOOL)showKeyBoard
+{
+    return NO;
+}
 
 @end

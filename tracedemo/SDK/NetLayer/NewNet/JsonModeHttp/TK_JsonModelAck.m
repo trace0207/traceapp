@@ -10,4 +10,25 @@
 
 @implementation TK_JsonModelAck
 
+
+-(instancetype)init
+{
+    if(!self)
+    {
+        self = [super init];
+    }
+    return  self;
+}
+
+
+-(instancetype)initWithTKError:(NSError *)error
+{
+    if(!self)
+    {
+        self = [super init];
+    }
+    self.error = error;
+    return self;
+}
+
 @end

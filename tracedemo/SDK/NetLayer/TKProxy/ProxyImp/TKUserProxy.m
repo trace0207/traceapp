@@ -13,7 +13,7 @@
 
 -(void)login:(NSString *)userName withValue:(NSString *)value  withBlock:(hfAckBlock)block{
     TK_LoginArg * arg = [[TK_LoginArg alloc] init];
-    arg.ackClassName = NSStringFromClass([TK_LoginAck class]);
+//    arg.ackClassName = NSStringFromClass([TK_LoginAck class]);
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
     
 }

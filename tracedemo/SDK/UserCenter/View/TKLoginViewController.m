@@ -82,8 +82,10 @@
     
     [[TKProxy proxy].userProxy login:nil withValue:nil withBlock:^(HF_BaseAck * ack){
         
-        TK_LoginAck * loginack = (TK_LoginAck *)ack;
+//        HF_BaseAck * loginack = (HF_BaseAck *)ack;
+        NSInteger code = [ack recode];
     
+        DDLogInfo(@"loginAck code = %ld",code);
     }];
 }
 

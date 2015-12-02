@@ -26,17 +26,17 @@
     
     NSString * requestURL = [arg.baseUrl stringByAppendingString:arg.relativeUrl];
     DDLogDebug(@"\nRequest : 【%@】 \nParams:%@",requestURL,[arg toDictionary]);
-    Class ackClass = NSClassFromString(arg.ackClassName);
+    Class ackClass = [arg getAckClass]; //NSClassFromString(arg.ackClassName);
     
-    // 对参数校验
-    if(![ackClass isSubclassOfClass:TK_JsonModelAck.class]){
-        
-        NSError * classError = [[NSError alloc] initWithDomain:@"ClassError" code:TK_CLASS_ERROR userInfo:nil];
-        TK_JsonModelAck * ack = [[TK_JsonModelAck alloc]init];
-        ack.error = classError;
-        block(ack);
-        return;
-    }
+//    // 对参数校验
+//    if(![ackClass isSubclassOfClass:TK_JsonModelAck.class]){
+//        
+//        NSError * classError = [[NSError alloc] initWithDomain:@"ClassError" code:TK_CLASS_ERROR userInfo:nil];
+//        TK_JsonModelAck * ack = [[TK_JsonModelAck alloc]init];
+//        ack.error = classError;
+//        block(ack);
+//        return;
+//    }
         // 发送请求
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:arg.method URLString:requestURL parameters:[arg toDictionary] error:nil];
     request.timeoutInterval = [arg timeout];

@@ -15,13 +15,13 @@
     
     NSString * className = NSStringFromClass(argClass);
     
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"HttpAction" ofType:@"plist"];
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"TKHttpAction" ofType:@"plist"];
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
    
    
     NSString * value =[data objectForKey:className];
     if(!value){
-        value = @"/error";
+        value = @"/error.html";
     }
     return value;
 }

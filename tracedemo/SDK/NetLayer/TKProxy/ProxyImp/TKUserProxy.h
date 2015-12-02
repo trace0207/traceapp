@@ -11,7 +11,7 @@
 #import "TK_GetVerifyCodeArg.h"
 #import "TK_RegisterNewUserAck.h"
 #import "TK_RegisterNewUserArg.h"
-#import "TK_LoginAck.h"
+//#import "TK_LoginAck.h"
 #import "TK_LoginArg.h"
 
 @interface TKUserProxy : NSObject

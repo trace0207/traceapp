@@ -7,6 +7,7 @@
 //
 
 #import "HF_BaseArg.h"
+#import "ActionTools.h"
 
 @implementation HF_BaseArg
 
@@ -15,15 +16,21 @@
     if (self)
     {
         self = [super init];
-        _deviceid = [GlobInfo shareInstance].deviceid;
+        _deviceId = [GlobInfo shareInstance].deviceid;
         _behaviorInfo = [GlobInfo shareInstance].behaviorInfo;
         _showToastStr = @"YES";
         _showLoadingStr = @"NO";
     }
-    self.ackClassName = NSStringFromClass([HF_BaseAck class]);
-    self.baseUrl = kBaseURL;
+//    self.ackClassName = NSStringFromClass([HF_BaseAck class]);
+    self.baseUrl = TKBaseURL;
     self.method = @"POST";
+    self.relativeUrl = [ActionTools getRelativePathByArgClass:[self class]];
     return self;
+}
+
+-(Class)getDefaultAckClass
+{
+    return [HF_BaseAck class];
 }
 
 @end

@@ -10,4 +10,12 @@
 
 @interface TK_RegisterNewUserArg : HF_BaseArg
 
+@property (nonatomic,strong)NSString * mobile;
+
+@property (nonatomic,strong)NSString * password;
+
+@property (nonatomic,strong)NSString * inviteCode;
+
+@property (nonatomic,strong)NSString * sms;
+
 @end

@@ -143,6 +143,11 @@
 
 #endif
 
+
+// 服务器地址
+#define TKBaseURL  [TKProxy proxy].tkBaseUrl;
+
+
 typedef NS_ENUM(NSInteger, TKNetStateCode) {
     TKNEtWorkError             = -10000,
     TKHTTPRequestError         = -10001,

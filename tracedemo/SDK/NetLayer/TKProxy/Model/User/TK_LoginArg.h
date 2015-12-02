@@ -10,7 +10,7 @@
 
 @interface TK_LoginArg : HF_BaseArg
 
-@property (nonatomic,copy)NSString * userName;
+@property (nonatomic,copy)NSString * mobile;
 @property (nonatomic,copy)NSString * password;
 
 @end

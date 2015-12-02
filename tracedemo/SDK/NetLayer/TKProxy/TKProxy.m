@@ -7,11 +7,23 @@
 //
 
 #import "TKProxy.h"
+#import "TKMainProxy.h"
+#import "TKUserProxy.h"
 
 @implementation TKProxy
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKProxy, proxy);
 
+
+
+-(NSString *)tkBaseUrl
+{
+    if(!_tkBaseUrl)
+    {
+        return @"http:www.baidu";
+    }
+    else return _tkBaseUrl;
+}
 
 
 -(TKMainProxy *)mainProxy{

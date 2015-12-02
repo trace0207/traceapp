@@ -81,6 +81,8 @@
     [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
     
     [self.tabBar setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
+    
+    [self loadEmojIcon];
 
     
 }
@@ -211,6 +213,28 @@
 -(void)onLoginSuccess{
 }
 -(void)onForgetPassword{
+}
+
+#pragma mark  private Method
+
+-(void)loadEmojIcon
+{
+    
+    dispatch_queue_t queue = dispatch_queue_create("loadEmojIcon", nil);
+    
+    dispatch_async(queue, ^{
+//        DDLogInfo(@"loading emoj begin at %@",[NSDate date]);
+        for(NSInteger i=0;i<100;i++)
+        {
+            NSString *imageStr = [NSString stringWithFormat:@"emoji_%ld.png",i];
+            [UIImage imageNamed:imageStr];
+        }
+        
+//        DDLogInfo(@"loading emoj begin at %@",[NSDate date]);
+
+    });
+    
+   
 }
 
 

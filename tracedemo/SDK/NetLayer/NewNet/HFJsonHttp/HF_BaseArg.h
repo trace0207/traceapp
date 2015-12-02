@@ -10,9 +10,8 @@
 
 @interface HF_BaseArg : TK_JsonModelArg
 
-@property(nonatomic,strong)NSString * deviceid;
+@property(nonatomic,strong)NSString * deviceId;
 @property(nonatomic, copy)NSString * behaviorInfo;
-@property(nonatomic, copy)NSString * moduleCode;
 @property(nonatomic,strong)NSString <Ignore> *showToastStr;
 @property(nonatomic,strong)NSString <Ignore> *showLoadingStr;
 

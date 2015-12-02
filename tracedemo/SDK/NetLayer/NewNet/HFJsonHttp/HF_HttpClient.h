@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, HF_RequestError) {
 @interface HF_HttpClient : TK_JsonModelHttpClient
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(HF_HttpClient, httpClient);
+@property (nonatomic, assign) BOOL ISNetReachable;
 
 -(void)sendRequestForHiifit:(HF_BaseArg *)arg withBolck:(hfAckBlock)block;
 

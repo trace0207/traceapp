@@ -17,4 +17,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(TKProxy, proxy)
 
 // 和用户相关的proxy对象
 @property (nonatomic,strong)TKUserProxy * userProxy;
+
+
+@property (nonatomic,strong)NSString * tkBaseUrl;
+
 @end

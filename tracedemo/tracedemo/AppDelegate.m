@@ -30,6 +30,7 @@
 @end
 
 static BaseNavViewController * rootNavVC;
+static AppDelegate * appDelegate;
 
 @implementation AppDelegate
 
@@ -50,6 +51,7 @@ static BaseNavViewController * rootNavVC;
     
     //    [NSThread sleepForTimeInterval:1.5];//  启动页停留 3 秒钟
     
+    appDelegate = self;
     return YES;
 }
 
@@ -88,6 +90,11 @@ static BaseNavViewController * rootNavVC;
         return rootNavVC;
     }
     return nil;
+}
+
++(AppDelegate *)getAppDelegate
+{
+    return appDelegate;
 }
 
 /**

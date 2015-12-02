@@ -18,4 +18,8 @@
 @property(nonatomic,strong)NSString <Ignore> *method;
 @property(nonatomic) CGFloat timeout;
 
+-(Class)getAckClass;
+
+-(Class)getDefaultAckClass;
+
 @end

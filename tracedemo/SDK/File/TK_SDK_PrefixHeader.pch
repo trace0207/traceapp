@@ -22,6 +22,7 @@
 #import "GlobConfig.h"
 #import "GlobInfo.h"
 #import "GlobUMengKey.h"
+#import "TKProxy.h"
 
 
 

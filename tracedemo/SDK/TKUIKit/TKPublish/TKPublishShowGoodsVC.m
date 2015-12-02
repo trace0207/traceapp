@@ -14,10 +14,15 @@
 #import "ZHPickView.h"
 #import "HFKeyBoard.h"
 #import "TKUserCenter.h"
+#import "TK_PublishMakeSureView.h"
 
 
 static const NSInteger publishMaxPicSize =9;
 static NSString * textDefault = @"此时此刻，分享你的宝贝心得吧";
+
+
+
+
 
 
 @interface TKPublishShowGoodsVC ()<TK_PicAddDelegate,CycleScrollViewDelegate,UINavigationControllerDelegate,ZHPickViewDelegate,ZHPickViewDelegate,
@@ -26,8 +31,10 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
     
     CGFloat pictureWidth;
     TK_PicAddView * picAddView;
-
     TK_ShareCategory * shareCategory;
+    UITextField * editTextField;
+    CGFloat  scrollOffest;
+    
 
 }
 
@@ -38,7 +45,6 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     _picLoadingView.hidden = YES;
     CGRect  screenSize =  CGRectMake(0,0,TKScreenWidth, TKScreenHeight);
     
@@ -54,17 +60,28 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
     [_rootScrollView addSubview:_mainContentView];
     [self loadImageViewField];
     _picturesArr = [[NSMutableArray alloc] init];
-    
+
     _tabViewForCloseKeybord.clearDelegate = self;
     
     self.inputTextView.delegate = self;
     self.inputTextView.font = [UIFont systemFontOfSize:16];
     self.inputTextView.placeHolderTextColor = [UIColor grayColor];
     self.inputTextView.placeHolder = textDefault;
+
+    if([self showKeyBoard])
+
+    {
+        self.keyBoard = [[HFKeyBoard alloc] initWithSuperView:self.view withTextView:self.inputTextView];
+        self.keyBoard.delegate = self;
+        self.inputTextView.delegate = self;
+    }
     
-    self.keyBoard = [[HFKeyBoard alloc] initWithSuperView:self.view withTextView:self.inputTextView];
-    self.keyBoard.delegate = self;
-    self.inputTextView.delegate = self;
+    self.countTextView.enabled = NO;
+    self.tagPriceTextView.delegate = self;
+    self.willByPrice.delegate = self;
+    self.goodColorView.delegate = self;
+    self.goodSizeView.delegate = self;
+    
     
 }
 
@@ -326,11 +343,19 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 
 -(void)onClearViewEvent
 {
-     [self.inputTextView resignFirstResponder];
+    if(editTextField)
+    {
+        [editTextField resignFirstResponder];
+        self.rootScrollView.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        editTextField = nil;
+    }else{
+        [self.inputTextView resignFirstResponder];
+    }
+    
 }
 
 
-#pragma mark - text view delegate
+#pragma mark - UITextViewDelegate
 - (void)textViewDidChange:(UITextView *)textView
 {
 //    if (textView.text.length>0) {
@@ -351,6 +376,8 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
     }else{
         self.textCountView.text = [NSString stringWithFormat:@"还能输入0个字符"];
     }
+    
+    
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
@@ -365,6 +392,64 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
     }
     return YES;
 }
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    
+    
+}
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    
+}
+
+
+#pragma mark - UITextFieldDelegate
+
+//开始编辑输入框的时候，软键盘出现，执行此事件
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+
+    CGRect rect =   [textField.superview convertRect:textField.frame toView:self.view];
+    int offset =  216 + rect.origin.y - self.view.frame.size.height + 85;
+    //rect.origin.y + 32 - (self.view.frame.size.height - 216.0);//键盘高度216
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    //将视图的Y坐标向上移动offset个单位，以使下面腾出地方用于软键盘的显示
+    if(offset > 0)
+    {
+       self.rootScrollView.frame = CGRectMake(0.0f, -offset, self.view.frame.size.width, self.view.frame.size.height);
+       scrollOffest = offset;
+    }
+    
+    editTextField = textField;
+    
+    
+    
+    [UIView commitAnimations];
+}
+
+//当用户按下return键或者按回车键，keyboard消失
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+//输入框编辑完成以后，将视图恢复到原始状态
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    editTextField  = nil;
+    
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.rootScrollView.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [UIView commitAnimations];
+    
+}
+
 
 
 #pragma  mark  ZHPickViewDelegate
@@ -398,24 +483,63 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 -(void)TKI_rightBarAction
 {
     
-    if(!shareCategory)
-    {
-        [[HFHUDView shareInstance] ShowTips:@"请选择品类" delayTime:1.0 atView:NULL];
-        return;
-    }
-    else if(self.inputTextView.text.length == 0)
-    {
-        [[HFHUDView shareInstance] ShowTips:@"请输入描述信息" delayTime:1.0 atView:NULL];
-        return;
-    }else if(self.picturesArr.count == 0)
-    {
-        [[HFHUDView shareInstance] ShowTips:@"请选择图片" delayTime:1.0 atView:NULL];
-        return;
-    }
+//    if(!shareCategory)
+//    {
+//        [[HFHUDView shareInstance] ShowTips:@"请选择品类" delayTime:1.0 atView:NULL];
+//        return;
+//    }
+//    else if(self.inputTextView.text.length == 0)
+//    {
+//        [[HFHUDView shareInstance] ShowTips:@"请输入描述信息" delayTime:1.0 atView:NULL];
+//        return;
+//    }else if(self.picturesArr.count == 0)
+//    {
+//        [[HFHUDView shareInstance] ShowTips:@"请选择图片" delayTime:1.0 atView:NULL];
+//        return;
+//    }
+    
+//    TK_makeSureAndPayVCViewController * vc = [[TK_makeSureAndPayVCViewController alloc] initWithNibName:@"TK_makeSureAndPayVCViewController" bundle:nil];
+//    
+//    vc.view.frame = self.view.frame;
+//    
+//    [self addChildViewController:vc];
+//    
+//
+//    [self tr]
+    
+    
+    TK_PublishMakeSureView * popView = [[TK_PublishMakeSureView alloc]init];
+//    popView.frame = self.view.frame;
+    
+    
+    [[AppDelegate getAppDelegate].window addSubview:popView];
     
     [[HFHUDView shareInstance] ShowTips:@"发布晒单成功" delayTime:1.0 atView:NULL];
     
-    [self TKI_leftBarAction];
+//    [self TKI_leftBarAction];
+}
+
+- (IBAction)countAddAction:(id)sender {
+    
+    NSInteger value = [_countTextView.text intValue];
+    value ++ ;
+//    NSString *text = [NSNumber numberWithLong:value].stringValue;
+    NSString * text = [NSString stringWithFormat: @"%ld", value];
+    _countTextView.text = text;
+}
+
+- (IBAction)countMinusAction:(id)sender {
+    NSInteger value =  [_countTextView.text intValue];
+    if(value <=1)
+    {
+        return;
+    }
+    _countTextView.text = [NSNumber numberWithLong:--value].stringValue;
+}
+
+-(BOOL)showKeyBoard
+{
+    return true;
 }
 
 @end

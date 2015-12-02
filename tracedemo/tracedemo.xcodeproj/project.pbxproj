@@ -99,7 +99,6 @@
 		8A6B393E1BF01B8F00E5C982 /* TK_JsonModelArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37B91BF01B8F00E5C982 /* TK_JsonModelArg.m */; };
 		8A6B393F1BF01B8F00E5C982 /* TK_JsonModelHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37BB1BF01B8F00E5C982 /* TK_JsonModelHttpClient.m */; };
 		8A6B39401BF01B8F00E5C982 /* HIIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37BE1BF01B8F00E5C982 /* HIIProxy.m */; };
-		8A6B39411BF01B8F00E5C982 /* ActionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37C11BF01B8F00E5C982 /* ActionTools.m */; };
 		8A6B39421BF01B8F00E5C982 /* HFActivityDetailRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37C41BF01B8F00E5C982 /* HFActivityDetailRes.m */; };
 		8A6B39431BF01B8F00E5C982 /* HFActivityListReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37C61BF01B8F00E5C982 /* HFActivityListReq.m */; };
 		8A6B39441BF01B8F00E5C982 /* HFActivityListRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37C81BF01B8F00E5C982 /* HFActivityListRes.m */; };
@@ -646,7 +645,6 @@
 		BB520D261BFACCC40022BFA2 /* TK_ShareCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D251BFACCC40022BFA2 /* TK_ShareCategory.m */; };
 		BB520D291BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D281BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m */; };
 		BB5AE4031BFF0C8F00BA0167 /* TKUserProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4021BFF0C8F00BA0167 /* TKUserProxy.m */; };
-		BB5AE40A1BFF0EF200BA0167 /* TK_LoginAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4091BFF0EF200BA0167 /* TK_LoginAck.m */; };
 		BB5AE40D1BFF0F0500BA0167 /* TK_LoginArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE40C1BFF0F0500BA0167 /* TK_LoginArg.m */; };
 		BB5AE4101BFF0F6500BA0167 /* TK_GetVerifyCodeArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE40F1BFF0F6500BA0167 /* TK_GetVerifyCodeArg.m */; };
 		BB5AE4131BFF0F7700BA0167 /* TK_GetVerifyCodeAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4121BFF0F7700BA0167 /* TK_GetVerifyCodeAck.m */; };
@@ -657,6 +655,12 @@
 		BBBF89AB1C04770B00CF9F2E /* TK_menuViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89AA1C04770B00CF9F2E /* TK_menuViewVC.m */; };
 		BBBF89B01C06B12200CF9F2E /* TKPublishShowGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89AE1C06B12200CF9F2E /* TKPublishShowGoodsVC.m */; };
 		BBBF89B11C06B12200CF9F2E /* TKPublishShowGoodsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBF89AF1C06B12200CF9F2E /* TKPublishShowGoodsVC.xib */; };
+		BBE328D41C0DC5DF0094ACEE /* TK_PublishMakeSureView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE328D31C0DC5DF0094ACEE /* TK_PublishMakeSureView.m */; };
+		BBE328D61C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE328D51C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib */; };
+		BBE32BA01C0E9C190094ACEE /* TKHttpAction.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBE32B9F1C0E9C190094ACEE /* TKHttpAction.plist */; };
+		BBE32BA31C0E9C510094ACEE /* ActionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BA21C0E9C510094ACEE /* ActionTools.m */; };
+		BBE32BA61C0ED1730094ACEE /* TK_ModifyUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BA51C0ED1730094ACEE /* TK_ModifyUserInfo.m */; };
+		BBE32BAB1C0ED6090094ACEE /* TK_LoginAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BAA1C0ED6090094ACEE /* TK_LoginAck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -857,8 +861,6 @@
 		8A6B37BB1BF01B8F00E5C982 /* TK_JsonModelHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_JsonModelHttpClient.m; sourceTree = "<group>"; };
 		8A6B37BD1BF01B8F00E5C982 /* HIIProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIIProxy.h; sourceTree = "<group>"; };
 		8A6B37BE1BF01B8F00E5C982 /* HIIProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIIProxy.m; sourceTree = "<group>"; };
-		8A6B37C01BF01B8F00E5C982 /* ActionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionTools.h; sourceTree = "<group>"; };
-		8A6B37C11BF01B8F00E5C982 /* ActionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionTools.m; sourceTree = "<group>"; };
 		8A6B37C31BF01B8F00E5C982 /* HFActivityDetailRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFActivityDetailRes.h; sourceTree = "<group>"; };
 		8A6B37C41BF01B8F00E5C982 /* HFActivityDetailRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFActivityDetailRes.m; sourceTree = "<group>"; };
 		8A6B37C51BF01B8F00E5C982 /* HFActivityListReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFActivityListReq.h; sourceTree = "<group>"; };
@@ -1879,8 +1881,6 @@
 		BB520D281BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_UserNormalViewModel.m; sourceTree = "<group>"; };
 		BB5AE4011BFF0C8F00BA0167 /* TKUserProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserProxy.h; sourceTree = "<group>"; };
 		BB5AE4021BFF0C8F00BA0167 /* TKUserProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserProxy.m; sourceTree = "<group>"; };
-		BB5AE4081BFF0EF200BA0167 /* TK_LoginAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_LoginAck.h; sourceTree = "<group>"; };
-		BB5AE4091BFF0EF200BA0167 /* TK_LoginAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_LoginAck.m; sourceTree = "<group>"; };
 		BB5AE40B1BFF0F0500BA0167 /* TK_LoginArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_LoginArg.h; sourceTree = "<group>"; };
 		BB5AE40C1BFF0F0500BA0167 /* TK_LoginArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_LoginArg.m; sourceTree = "<group>"; };
 		BB5AE40E1BFF0F6500BA0167 /* TK_GetVerifyCodeArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetVerifyCodeArg.h; sourceTree = "<group>"; };
@@ -1899,6 +1899,16 @@
 		BBBF89AD1C06B12200CF9F2E /* TKPublishShowGoodsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPublishShowGoodsVC.h; sourceTree = "<group>"; };
 		BBBF89AE1C06B12200CF9F2E /* TKPublishShowGoodsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPublishShowGoodsVC.m; sourceTree = "<group>"; };
 		BBBF89AF1C06B12200CF9F2E /* TKPublishShowGoodsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKPublishShowGoodsVC.xib; sourceTree = "<group>"; };
+		BBE328D21C0DC5DF0094ACEE /* TK_PublishMakeSureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_PublishMakeSureView.h; sourceTree = "<group>"; };
+		BBE328D31C0DC5DF0094ACEE /* TK_PublishMakeSureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PublishMakeSureView.m; sourceTree = "<group>"; };
+		BBE328D51C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_PublishMakeSureView.xib; sourceTree = "<group>"; };
+		BBE32B9F1C0E9C190094ACEE /* TKHttpAction.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TKHttpAction.plist; sourceTree = "<group>"; };
+		BBE32BA11C0E9C510094ACEE /* ActionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionTools.h; sourceTree = "<group>"; };
+		BBE32BA21C0E9C510094ACEE /* ActionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionTools.m; sourceTree = "<group>"; };
+		BBE32BA41C0ED1730094ACEE /* TK_ModifyUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_ModifyUserInfo.h; sourceTree = "<group>"; };
+		BBE32BA51C0ED1730094ACEE /* TK_ModifyUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_ModifyUserInfo.m; sourceTree = "<group>"; };
+		BBE32BA91C0ED6090094ACEE /* TK_LoginAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_LoginAck.h; sourceTree = "<group>"; };
+		BBE32BAA1C0ED6090094ACEE /* TK_LoginAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_LoginAck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2161,6 +2171,7 @@
 		8A6B37401BF01B8F00E5C982 /* NetLayer */ = {
 			isa = PBXGroup;
 			children = (
+				BBE32B9E1C0E9C190094ACEE /* Tool */,
 				BB520D111BF9B3F20022BFA2 /* TKProxy */,
 				8A6B37411BF01B8F00E5C982 /* Net */,
 				8A6B379F1BF01B8F00E5C982 /* NewNet */,
@@ -2346,8 +2357,6 @@
 		8A6B37BF1BF01B8F00E5C982 /* module */ = {
 			isa = PBXGroup;
 			children = (
-				8A6B37C01BF01B8F00E5C982 /* ActionTools.h */,
-				8A6B37C11BF01B8F00E5C982 /* ActionTools.m */,
 				8A6B37C21BF01B8F00E5C982 /* Activity */,
 				8A6B37DB1BF01B8F00E5C982 /* Band */,
 				8A6B37E81BF01B8F00E5C982 /* Habit */,
@@ -4281,6 +4290,8 @@
 		BB520D121BF9B3F20022BFA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BBE32BA81C0ED2820094ACEE /* Buyer */,
+				BBE32BA71C0ED2740094ACEE /* Client */,
 				BB5AE4041BFF0EB000BA0167 /* User */,
 				BB520D131BF9B3F20022BFA2 /* TK_GetOrdersAck.h */,
 				BB520D141BF9B3F20022BFA2 /* TK_GetOrdersAck.m */,
@@ -4322,8 +4333,6 @@
 		BB5AE4041BFF0EB000BA0167 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				BB5AE4081BFF0EF200BA0167 /* TK_LoginAck.h */,
-				BB5AE4091BFF0EF200BA0167 /* TK_LoginAck.m */,
 				BB5AE40B1BFF0F0500BA0167 /* TK_LoginArg.h */,
 				BB5AE40C1BFF0F0500BA0167 /* TK_LoginArg.m */,
 				BB5AE40E1BFF0F6500BA0167 /* TK_GetVerifyCodeArg.h */,
@@ -4334,6 +4343,10 @@
 				BB5AE4151BFF0F8B00BA0167 /* TK_RegisterNewUserArg.m */,
 				BB5AE4171BFF0FA000BA0167 /* TK_RegisterNewUserAck.h */,
 				BB5AE4181BFF0FA000BA0167 /* TK_RegisterNewUserAck.m */,
+				BBE32BA41C0ED1730094ACEE /* TK_ModifyUserInfo.h */,
+				BBE32BA51C0ED1730094ACEE /* TK_ModifyUserInfo.m */,
+				BBE32BA91C0ED6090094ACEE /* TK_LoginAck.h */,
+				BBE32BAA1C0ED6090094ACEE /* TK_LoginAck.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -4357,8 +4370,35 @@
 				BB1506511C0A935D00F97A7B /* TK_PicAddView.m */,
 				8AECCA681C0C8FA600CD789F /* TKPublishRewardVC.h */,
 				8AECCA691C0C8FA600CD789F /* TKPublishRewardVC.m */,
+				BBE328D21C0DC5DF0094ACEE /* TK_PublishMakeSureView.h */,
+				BBE328D31C0DC5DF0094ACEE /* TK_PublishMakeSureView.m */,
+				BBE328D51C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib */,
 			);
 			path = TKPublish;
+			sourceTree = "<group>";
+		};
+		BBE32B9E1C0E9C190094ACEE /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				BBE32BA11C0E9C510094ACEE /* ActionTools.h */,
+				BBE32BA21C0E9C510094ACEE /* ActionTools.m */,
+				BBE32B9F1C0E9C190094ACEE /* TKHttpAction.plist */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		BBE32BA71C0ED2740094ACEE /* Client */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		BBE32BA81C0ED2820094ACEE /* Buyer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buyer;
 			sourceTree = "<group>";
 		};
 		D2F8907D64CFFB14B8C31520 /* Frameworks */ = {
@@ -4485,6 +4525,7 @@
 				8A6B3F5E1BF01E4900E5C982 /* ShareSDKLocalizable.strings in Resources */,
 				8A6B3C231BF01D4400E5C982 /* HFLanchViewController.xib in Resources */,
 				BB15064F1C0876E500F97A7B /* TestViewController.xib in Resources */,
+				BBE32BA01C0E9C190094ACEE /* TKHttpAction.plist in Resources */,
 				8AE10B821BF33BAA00C0C9A0 /* TKLoginViewController.xib in Resources */,
 				8A6B3C121BF01D4400E5C982 /* HFBindingViewController.xib in Resources */,
 				8A6B3C681BF01D4400E5C982 /* GameViewController.xib in Resources */,
@@ -4530,6 +4571,7 @@
 				8A6B3CB51BF01D4400E5C982 /* HFReportView.xib in Resources */,
 				8A6B3CDC1BF01D4400E5C982 /* UserInfoViewController.xib in Resources */,
 				8A6B3C781BF01D4400E5C982 /* ForgetViewController.xib in Resources */,
+				BBE328D61C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib in Resources */,
 				8A6B3C9D1BF01D4400E5C982 /* HFSwitchCell.xib in Resources */,
 				8A6B3C2C1BF01D4400E5C982 /* HFFoodListViewController.xib in Resources */,
 				8A6B3F631BF01E4900E5C982 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -4654,7 +4696,6 @@
 				8A6B3F4E1BF01E4900E5C982 /* QuadCurveMenuItem.m in Sources */,
 				BB1506521C0A935D00F97A7B /* TK_PicAddView.m in Sources */,
 				8A6B3CC71BF01D4400E5C982 /* HFDateHeaderView.m in Sources */,
-				BB5AE40A1BFF0EF200BA0167 /* TK_LoginAck.m in Sources */,
 				8A6B39061BF01B8F00E5C982 /* ActivitiesData.m in Sources */,
 				8A6B3C4C1BF01D4400E5C982 /* HFGifPlayer.m in Sources */,
 				8A6B3C301BF01D4400E5C982 /* HFHealthViewController.m in Sources */,
@@ -4755,6 +4796,7 @@
 				8A6B3C5E1BF01D4400E5C982 /* HFBoxTableViewCell.m in Sources */,
 				8A6B39891BF01B8F00E5C982 /* GetQuizSubjectAgainArg.m in Sources */,
 				8A6B3F1F1BF01E4900E5C982 /* UIView+Screenshot.m in Sources */,
+				BBE32BAB1C0ED6090094ACEE /* TK_LoginAck.m in Sources */,
 				8A6B390F1BF01B8F00E5C982 /* HabitList.m in Sources */,
 				8A6B3CD31BF01D4400E5C982 /* HFAboutUsViewController.m in Sources */,
 				8A6B39151BF01B8F00E5C982 /* HFSubmitLikeData.m in Sources */,
@@ -4825,7 +4867,6 @@
 				8A6B3F3C1BF01E4900E5C982 /* ZBFaceView.m in Sources */,
 				8A6B397F1BF01B8F00E5C982 /* GetDiseaseIntroAck.m in Sources */,
 				8A6B39B71BF01B8F00E5C982 /* HFSensitiveWordsRes.m in Sources */,
-				8A6B39411BF01B8F00E5C982 /* ActionTools.m in Sources */,
 				8A6B39A01BF01B8F00E5C982 /* MainPageAdvanceSchemeAck.m in Sources */,
 				8A6B3C591BF01D4400E5C982 /* HFTestView.m in Sources */,
 				8A6B3F311BF01E4900E5C982 /* FCModel.m in Sources */,
@@ -4895,6 +4936,7 @@
 				BB5AE4191BFF0FA000BA0167 /* TK_RegisterNewUserAck.m in Sources */,
 				8A6B3CB71BF01D4400E5C982 /* PictureCell.m in Sources */,
 				8A6B3CD01BF01D4400E5C982 /* HFMenuCell.m in Sources */,
+				BBE32BA31C0E9C510094ACEE /* ActionTools.m in Sources */,
 				BB5AE4161BFF0F8B00BA0167 /* TK_RegisterNewUserArg.m in Sources */,
 				8A6B39191BF01B8F00E5C982 /* HiModuleListRes.m in Sources */,
 				8A6B394C1BF01B8F00E5C982 /* HFUploadResultReq.m in Sources */,
@@ -5017,6 +5059,7 @@
 				8AE10B7A1BF3239A00C0C9A0 /* TKUserCenter.m in Sources */,
 				8A6B3C071BF01D4400E5C982 /* HFProgressView.m in Sources */,
 				8A51DC4B1BF5606000D276AF /* TKSetPasswordViewController.m in Sources */,
+				BBE32BA61C0ED1730094ACEE /* TK_ModifyUserInfo.m in Sources */,
 				8A2E620C1BEC802700FBDB86 /* TKMenuViewController.m in Sources */,
 				8A6B395D1BF01B8F00E5C982 /* HFHabitIsLatestReq.m in Sources */,
 				8A6B3F271BF01E4900E5C982 /* HFProgressHUD.m in Sources */,
@@ -5086,6 +5129,7 @@
 				8A6B3F6D1BF01E4900E5C982 /* SIMenuTable.m in Sources */,
 				8A6B39091BF01B8F00E5C982 /* DataRes.m in Sources */,
 				8A6B3F4D1BF01E4900E5C982 /* QuadCurveMenu.m in Sources */,
+				BBE328D41C0DC5DF0094ACEE /* TK_PublishMakeSureView.m in Sources */,
 				8A6B392C1BF01B8F00E5C982 /* UserRes.m in Sources */,
 				8A6B3F401BF01E4900E5C982 /* MJPhoto.m in Sources */,
 				8A6B3C0E1BF01D4400E5C982 /* HFBandViewController.m in Sources */,

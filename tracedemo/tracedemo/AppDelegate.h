@@ -23,6 +23,6 @@ typedef void(^complete)(BOOL finished);
 - (void)goModuleDetail:(NSInteger)moduleId;
 
 +(BaseNavViewController *)getMainNavigation;
-
++(AppDelegate *)getAppDelegate;
 @end
 
