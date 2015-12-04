@@ -80,12 +80,14 @@
 }
 - (IBAction)loginBtn:(id)sender {
     
-    [[TKProxy proxy].userProxy login:nil withValue:nil withBlock:^(HF_BaseAck * ack){
+    //deviceId=123&mobile=18867102687&password=123456
+    [[TKProxy proxy].userProxy login:@"18867102687" withValue:@"123456" withBlock:^(HF_BaseAck * ack){
         
-//        HF_BaseAck * loginack = (HF_BaseAck *)ack;
-        NSInteger code = [ack recode];
-    
-        DDLogInfo(@"loginAck code = %ld",code);
+        if(ack.sucess){
+        
+            [[HFHUDView shareInstance] ShowTips:@"登录成功" delayTime:2.0 atView:NULL];
+        }
+        
     }];
 }
 

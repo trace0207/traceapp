@@ -39,7 +39,7 @@
 //    }
         // 发送请求
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:arg.method URLString:requestURL parameters:[arg toDictionary] error:nil];
-    request.timeoutInterval = [arg timeout];
+    request.timeoutInterval = arg.timeoutstr.integerValue;
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         DDLogDebug(@"\nAck : 【%@】 \nParams:%@",requestURL,responseObject);
         TK_JsonModelAck * ack = [self parserAckData:ackClass fromDictionary:responseObject];

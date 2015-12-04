@@ -105,7 +105,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(HF_HttpClient, httpClient);
                 
                 HF_BaseAck * hfAck = (HF_BaseAck *)ack;
                 
-                if(hfAck.recode != 1){
+                if(!hfAck.sucess){
                     [[HFHUDView shareInstance] ShowTips:hfAck.msg delayTime:1.0 atView:NULL];
                 }
             }

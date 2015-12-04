@@ -10,9 +10,19 @@
 
 @implementation HF_BaseAck
 
+
+-(instancetype)init
+{
+
+    self = [super init];
+    self.successCode = @"200";
+    return self;
+}
+
+
 - (BOOL)sucess
 {
-    if (self.recode == 1)
+    if (self.recode == self.successCode.integerValue)
     {
         return YES;
     }

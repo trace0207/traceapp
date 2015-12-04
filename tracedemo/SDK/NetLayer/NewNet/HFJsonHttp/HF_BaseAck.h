@@ -12,6 +12,7 @@
 
 @property (nonatomic, assign)   NSInteger        recode;     //返回码
 @property (nonatomic,   copy)   NSString         *msg;       //返回消息
+@property(nonatomic,strong)NSString <Ignore> *successCode;
 
 
 - (BOOL)sucess;

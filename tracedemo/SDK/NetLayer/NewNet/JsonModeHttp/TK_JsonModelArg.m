@@ -13,7 +13,7 @@
 -(instancetype)init{
 
     self = [super init];
-    _timeout = 20.0f;
+    _timeoutstr = @"20";
     return self;
 }
 

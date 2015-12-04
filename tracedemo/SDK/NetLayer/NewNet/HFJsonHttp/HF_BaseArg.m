@@ -17,7 +17,7 @@
     {
         self = [super init];
         _deviceId = [GlobInfo shareInstance].deviceid;
-        _behaviorInfo = [GlobInfo shareInstance].behaviorInfo;
+//        _behaviorInfo = [GlobInfo shareInstance].behaviorInfo;
         _showToastStr = @"YES";
         _showLoadingStr = @"NO";
     }

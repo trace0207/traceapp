@@ -661,6 +661,11 @@
 		BBE32BA31C0E9C510094ACEE /* ActionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BA21C0E9C510094ACEE /* ActionTools.m */; };
 		BBE32BA61C0ED1730094ACEE /* TK_ModifyUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BA51C0ED1730094ACEE /* TK_ModifyUserInfo.m */; };
 		BBE32BAB1C0ED6090094ACEE /* TK_LoginAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BAA1C0ED6090094ACEE /* TK_LoginAck.m */; };
+		BBE32BAE1C0ED7FB0094ACEE /* TK_CommentRewardArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BAD1C0ED7FB0094ACEE /* TK_CommentRewardArg.m */; };
+		BBE32BB11C0ED81D0094ACEE /* TK_CommentOrderArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BB01C0ED81D0094ACEE /* TK_CommentOrderArg.m */; };
+		BBE32BB41C0ED8400094ACEE /* TK_PraiseRewardArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BB31C0ED8400094ACEE /* TK_PraiseRewardArg.m */; };
+		BBE32BB71C0ED8580094ACEE /* TK_PraiseOrderArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BB61C0ED8580094ACEE /* TK_PraiseOrderArg.m */; };
+		BBE32BBA1C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BB91C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1909,6 +1914,16 @@
 		BBE32BA51C0ED1730094ACEE /* TK_ModifyUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_ModifyUserInfo.m; sourceTree = "<group>"; };
 		BBE32BA91C0ED6090094ACEE /* TK_LoginAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_LoginAck.h; sourceTree = "<group>"; };
 		BBE32BAA1C0ED6090094ACEE /* TK_LoginAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_LoginAck.m; sourceTree = "<group>"; };
+		BBE32BAC1C0ED7FB0094ACEE /* TK_CommentRewardArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_CommentRewardArg.h; sourceTree = "<group>"; };
+		BBE32BAD1C0ED7FB0094ACEE /* TK_CommentRewardArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_CommentRewardArg.m; sourceTree = "<group>"; };
+		BBE32BAF1C0ED81D0094ACEE /* TK_CommentOrderArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_CommentOrderArg.h; sourceTree = "<group>"; };
+		BBE32BB01C0ED81D0094ACEE /* TK_CommentOrderArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_CommentOrderArg.m; sourceTree = "<group>"; };
+		BBE32BB21C0ED8400094ACEE /* TK_PraiseRewardArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_PraiseRewardArg.h; sourceTree = "<group>"; };
+		BBE32BB31C0ED8400094ACEE /* TK_PraiseRewardArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PraiseRewardArg.m; sourceTree = "<group>"; };
+		BBE32BB51C0ED8580094ACEE /* TK_PraiseOrderArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_PraiseOrderArg.h; sourceTree = "<group>"; };
+		BBE32BB61C0ED8580094ACEE /* TK_PraiseOrderArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PraiseOrderArg.m; sourceTree = "<group>"; };
+		BBE32BB81C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_AppraiseBuyerArg.h; sourceTree = "<group>"; };
+		BBE32BB91C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_AppraiseBuyerArg.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4390,6 +4405,16 @@
 		BBE32BA71C0ED2740094ACEE /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				BBE32BAC1C0ED7FB0094ACEE /* TK_CommentRewardArg.h */,
+				BBE32BAD1C0ED7FB0094ACEE /* TK_CommentRewardArg.m */,
+				BBE32BAF1C0ED81D0094ACEE /* TK_CommentOrderArg.h */,
+				BBE32BB01C0ED81D0094ACEE /* TK_CommentOrderArg.m */,
+				BBE32BB21C0ED8400094ACEE /* TK_PraiseRewardArg.h */,
+				BBE32BB31C0ED8400094ACEE /* TK_PraiseRewardArg.m */,
+				BBE32BB51C0ED8580094ACEE /* TK_PraiseOrderArg.h */,
+				BBE32BB61C0ED8580094ACEE /* TK_PraiseOrderArg.m */,
+				BBE32BB81C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.h */,
+				BBE32BB91C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -4700,6 +4725,7 @@
 				8A6B3C4C1BF01D4400E5C982 /* HFGifPlayer.m in Sources */,
 				8A6B3C301BF01D4400E5C982 /* HFHealthViewController.m in Sources */,
 				8A6B3F711BF01E4900E5C982 /* SKTagView.m in Sources */,
+				BBE32BBA1C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m in Sources */,
 				8A6B3F2E1BF01E4900E5C982 /* CycleScrollView.m in Sources */,
 				8A6B3C011BF01D4400E5C982 /* HFThirdPartyCenter.m in Sources */,
 				8A6B39D71BF01B8F00E5C982 /* HabitProxy.m in Sources */,
@@ -4834,6 +4860,7 @@
 				8A6B3CA11BF01D4400E5C982 /* HFCommentViewController.m in Sources */,
 				8A6B3C421BF01D4400E5C982 /* HFConclusionView.m in Sources */,
 				8A6B390B1BF01B8F00E5C982 /* FriendsRes.m in Sources */,
+				BBE32BAE1C0ED7FB0094ACEE /* TK_CommentRewardArg.m in Sources */,
 				8A6B39C21BF01B8F00E5C982 /* HFSentVercodeReq.m in Sources */,
 				8A6B395C1BF01B8F00E5C982 /* HFHabitDeleteReq.m in Sources */,
 				8A6B3F4F1BF01E4900E5C982 /* Reachability.m in Sources */,
@@ -4885,6 +4912,7 @@
 				8A6B3CCB1BF01D4400E5C982 /* HFActivityView.m in Sources */,
 				8A6B3C1F1BF01D4400E5C982 /* MyBandViewController.m in Sources */,
 				8A6B39A31BF01B8F00E5C982 /* ModifySchemeStateArg.m in Sources */,
+				BBE32BB71C0ED8580094ACEE /* TK_PraiseOrderArg.m in Sources */,
 				8A6B3F6C1BF01E4900E5C982 /* SIMenuConfiguration.m in Sources */,
 				8A17B1061BA46CF500548CA7 /* TK_BaseAppDelegate.m in Sources */,
 				8A6B3CB11BF01D4400E5C982 /* HFMessageDetailView.m in Sources */,
@@ -4970,6 +4998,7 @@
 				8A6B3F361BF01E4900E5C982 /* FMDatabaseAdditions.m in Sources */,
 				8A6B3C3F1BF01D4400E5C982 /* HFCollectionCell.m in Sources */,
 				8A6B3C271BF01D4400E5C982 /* HFAdvanceSchemeContainerViewController.m in Sources */,
+				BBE32BB41C0ED8400094ACEE /* TK_PraiseRewardArg.m in Sources */,
 				8A6B3C0A1BF01D4400E5C982 /* HFActivityListCell.m in Sources */,
 				8A6B3CD61BF01D4400E5C982 /* HFMessageViewController.m in Sources */,
 				8A6B3CD71BF01D4400E5C982 /* HFSystemMSGViewController.m in Sources */,
@@ -5051,6 +5080,7 @@
 				8A6B39961BF01B8F00E5C982 /* GetSubSchemeSportArg.m in Sources */,
 				8A6B3C3C1BF01D4400E5C982 /* HFActionView.m in Sources */,
 				8A6B3F6F1BF01E4900E5C982 /* SKTag.m in Sources */,
+				BBE32BB11C0ED81D0094ACEE /* TK_CommentOrderArg.m in Sources */,
 				8A6B39C91BF01B8F00E5C982 /* HFGetPostListReq.m in Sources */,
 				8A2E62031BEC802700FBDB86 /* MMExampleRightSideDrawerViewController.m in Sources */,
 				8A6B3F3D1BF01E4900E5C982 /* ZBMessageInputView.m in Sources */,

@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>TK_LoginArg</key>
-	<string>/CloudHealth/req/mobile/common/scheme/sub-scheme-run!insertRunStepsRecord.action</string>
+	<string>/apollo/nologin/login!login.action</string>
 </dict>
 </plist>

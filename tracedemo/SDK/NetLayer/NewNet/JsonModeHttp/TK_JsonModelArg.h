@@ -16,7 +16,7 @@
 @property(nonatomic,strong)NSString <Ignore> *relativeUrl;
 @property(nonatomic,strong)NSString <Ignore> *ackClassName;
 @property(nonatomic,strong)NSString <Ignore> *method;
-@property(nonatomic) CGFloat timeout;
+@property(nonatomic,strong)NSString <Ignore> *timeoutstr;
 
 -(Class)getAckClass;
 
