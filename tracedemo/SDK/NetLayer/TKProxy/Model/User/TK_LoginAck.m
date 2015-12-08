@@ -8,6 +8,11 @@
 
 #import "TK_LoginAck.h"
 
+
+@implementation LoginAckData
+
+@end
+
 @implementation TK_LoginAck
 
 @end

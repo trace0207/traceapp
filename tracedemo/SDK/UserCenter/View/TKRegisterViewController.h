@@ -10,7 +10,6 @@
 #import "BaseViewController.h"
 #import "TKIBaseNavWithDefaultBackVC.h"
 @interface TKRegisterViewController : TKIBaseNavWithDefaultBackVC
-- (IBAction)cancelBtn:(id)sender;
 - (IBAction)countrySelectBtn:(id)sender;
 - (IBAction)nextStepBtn:(id)sender;
 - (IBAction)userProtocolBtn:(id)sender;

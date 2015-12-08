@@ -72,10 +72,12 @@ static const NSInteger TEXTFONT = 16;
                forControlEvents:(UIControlEvents)controlEvents{
     
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, TK_NAV_Bar_Width, TK_NAV_BarIconHeight)];
-//    [btn setImage:image forState:UIControlStateNormal];
+    [btn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [btn addTarget:target action:action forControlEvents:controlEvents];
-    [btn setImage:image forState:UIControlStateNormal withOffsetLeft:-20.0];
-    [btn setTitle:text forState:UIControlStateNormal withOffsetLeft:-15.0];
+    [btn setImage:image forState:UIControlStateNormal withOffsetLeft:-5.0f];
+    [btn setTitle:text forState:UIControlStateNormal withOffsetLeft:0.0];
+//    [btn setImage:image forState:UIControlStateNormal];
+//    [btn setTitle:text forState:UIControlStateNormal];
     [[btn titleLabel] setFont:[UIFont systemFontOfSize:TEXTFONT]];
     [btn setTitleColor:color forState:UIControlStateNormal];
     UIColor * color1 = [color colorWithAlphaComponent:0.5];
@@ -83,6 +85,9 @@ static const NSInteger TEXTFONT = 16;
     [btn setTitleColor:color1 forState:UIControlStateSelected];
 //    [btn setBackgroundColor:[UIColor greenColor]];
     UIBarButtonItem *barItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    
+//    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:target action:action];
+    
     if(self.tabBarController){
         [self.tabBarController.navigationItem setLeftBarButtonItem:barItem];
     }else{

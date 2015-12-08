@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TK_GetVerifyCodeAck.h"
-#import "TK_GetVerifyCodeArg.h"
 #import "TK_RegisterNewUserAck.h"
 #import "TK_RegisterNewUserArg.h"
 //#import "TK_LoginAck.h"
@@ -24,7 +22,7 @@
 /**
  获取验证码
  **/
--(void)getVerifyCode:(NSString *)phoneNumber whtiBlock:(hfAckBlock)block;
+-(void)getVerifyCode:(NSString *)phoneNumber type:(NSInteger)type  whtiBlock:(hfAckBlock)block;
 
 
 /**
@@ -33,6 +31,8 @@
 -(void)registerNewUser:(NSString *) verifyCode
             inviteCode:(NSString *)inviceCode
              userValue:(NSString *)userValue
+                mobile:(NSString *)mobile
              whtiBlock:(hfAckBlock)block;
+
 
 @end

@@ -11,6 +11,7 @@
 #import "UIColor+TK_Color.h"
 #import "AppDelegate.h"
 #import "TKUserCenter.h"
+#import "TKProxy.h"
 
 @interface TKSetPasswordViewController ()
 
@@ -23,6 +24,14 @@
     _registerPhoneNumber.text = [TKUserCenter instance].tempUserData.mobile;
     _phoneNumberbottomText.text = [TKUserCenter instance].tempUserData.mobile;
     // Do any additional setup after loading the view.
+    
+//    [TKUserCenter instance].
+    
+    [[TKProxy proxy].userProxy getVerifyCode:[TKUserCenter instance].tempUserData.mobile type:0 whtiBlock:^(HF_BaseAck * ack){
+    
+        DDLogInfo(@"--------- %@  ",ack);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +58,21 @@
 
 - (IBAction)nextBtnAction:(id)sender {
     
-    [[AppDelegate getMainNavigation] popToRootViewControllerAnimated:YES];
+//    [[AppDelegate getMainNavigation] popToRootViewControllerAnimated:YES];
+    
+    NSString * verifyCode = @"111111";
+    NSString * inviteCode = @"222222";
+    NSString * password = @"aaaaaa";
+    
+    [[TKProxy proxy].userProxy registerNewUser:verifyCode
+                                    inviteCode:inviteCode
+                                     userValue:password
+                                        mobile:[TKUserCenter instance].tempUserData.mobile
+                                     whtiBlock:^(HF_BaseAck * ack){
+        
+        DDLogInfo(@"--------- %@  ",ack);
+    }];
+    
     
 }
 - (IBAction)sortwareProtocol:(id)sender {

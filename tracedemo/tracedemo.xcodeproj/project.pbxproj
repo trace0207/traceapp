@@ -646,10 +646,9 @@
 		BB520D291BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D281BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m */; };
 		BB5AE4031BFF0C8F00BA0167 /* TKUserProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4021BFF0C8F00BA0167 /* TKUserProxy.m */; };
 		BB5AE40D1BFF0F0500BA0167 /* TK_LoginArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE40C1BFF0F0500BA0167 /* TK_LoginArg.m */; };
-		BB5AE4101BFF0F6500BA0167 /* TK_GetVerifyCodeArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE40F1BFF0F6500BA0167 /* TK_GetVerifyCodeArg.m */; };
-		BB5AE4131BFF0F7700BA0167 /* TK_GetVerifyCodeAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4121BFF0F7700BA0167 /* TK_GetVerifyCodeAck.m */; };
 		BB5AE4161BFF0F8B00BA0167 /* TK_RegisterNewUserArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4151BFF0F8B00BA0167 /* TK_RegisterNewUserArg.m */; };
 		BB5AE4191BFF0FA000BA0167 /* TK_RegisterNewUserAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4181BFF0FA000BA0167 /* TK_RegisterNewUserAck.m */; };
+		BB5DF0D21C15AADC0050B598 /* TK_VerifySMSArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DF0D11C15AADC0050B598 /* TK_VerifySMSArg.m */; };
 		BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */; };
 		BBBF89A81C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */; };
 		BBBF89AB1C04770B00CF9F2E /* TK_menuViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89AA1C04770B00CF9F2E /* TK_menuViewVC.m */; };
@@ -1888,14 +1887,12 @@
 		BB5AE4021BFF0C8F00BA0167 /* TKUserProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserProxy.m; sourceTree = "<group>"; };
 		BB5AE40B1BFF0F0500BA0167 /* TK_LoginArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_LoginArg.h; sourceTree = "<group>"; };
 		BB5AE40C1BFF0F0500BA0167 /* TK_LoginArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_LoginArg.m; sourceTree = "<group>"; };
-		BB5AE40E1BFF0F6500BA0167 /* TK_GetVerifyCodeArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetVerifyCodeArg.h; sourceTree = "<group>"; };
-		BB5AE40F1BFF0F6500BA0167 /* TK_GetVerifyCodeArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetVerifyCodeArg.m; sourceTree = "<group>"; };
-		BB5AE4111BFF0F7700BA0167 /* TK_GetVerifyCodeAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetVerifyCodeAck.h; sourceTree = "<group>"; };
-		BB5AE4121BFF0F7700BA0167 /* TK_GetVerifyCodeAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetVerifyCodeAck.m; sourceTree = "<group>"; };
 		BB5AE4141BFF0F8B00BA0167 /* TK_RegisterNewUserArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_RegisterNewUserArg.h; sourceTree = "<group>"; };
 		BB5AE4151BFF0F8B00BA0167 /* TK_RegisterNewUserArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_RegisterNewUserArg.m; sourceTree = "<group>"; };
 		BB5AE4171BFF0FA000BA0167 /* TK_RegisterNewUserAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_RegisterNewUserAck.h; sourceTree = "<group>"; };
 		BB5AE4181BFF0FA000BA0167 /* TK_RegisterNewUserAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_RegisterNewUserAck.m; sourceTree = "<group>"; };
+		BB5DF0D01C15AADC0050B598 /* TK_VerifySMSArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_VerifySMSArg.h; sourceTree = "<group>"; };
+		BB5DF0D11C15AADC0050B598 /* TK_VerifySMSArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_VerifySMSArg.m; sourceTree = "<group>"; };
 		BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKLeftMenu.xib; sourceTree = "<group>"; };
 		BBBF89A61C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+TKI_ImageFill.h"; sourceTree = "<group>"; };
 		BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+TKI_ImageFill.m"; sourceTree = "<group>"; };
@@ -4350,10 +4347,6 @@
 			children = (
 				BB5AE40B1BFF0F0500BA0167 /* TK_LoginArg.h */,
 				BB5AE40C1BFF0F0500BA0167 /* TK_LoginArg.m */,
-				BB5AE40E1BFF0F6500BA0167 /* TK_GetVerifyCodeArg.h */,
-				BB5AE40F1BFF0F6500BA0167 /* TK_GetVerifyCodeArg.m */,
-				BB5AE4111BFF0F7700BA0167 /* TK_GetVerifyCodeAck.h */,
-				BB5AE4121BFF0F7700BA0167 /* TK_GetVerifyCodeAck.m */,
 				BB5AE4141BFF0F8B00BA0167 /* TK_RegisterNewUserArg.h */,
 				BB5AE4151BFF0F8B00BA0167 /* TK_RegisterNewUserArg.m */,
 				BB5AE4171BFF0FA000BA0167 /* TK_RegisterNewUserAck.h */,
@@ -4362,6 +4355,8 @@
 				BBE32BA51C0ED1730094ACEE /* TK_ModifyUserInfo.m */,
 				BBE32BA91C0ED6090094ACEE /* TK_LoginAck.h */,
 				BBE32BAA1C0ED6090094ACEE /* TK_LoginAck.m */,
+				BB5DF0D01C15AADC0050B598 /* TK_VerifySMSArg.h */,
+				BB5DF0D11C15AADC0050B598 /* TK_VerifySMSArg.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -4803,6 +4798,7 @@
 				8A6B39241BF01B8F00E5C982 /* PostDetailRes.m in Sources */,
 				8A6B3C241BF01D4400E5C982 /* ChildSchemeViewController.m in Sources */,
 				8A6B39121BF01B8F00E5C982 /* HFCommentLikeListRes.m in Sources */,
+				BB5DF0D21C15AADC0050B598 /* TK_VerifySMSArg.m in Sources */,
 				8A6B3C5B1BF01D4400E5C982 /* HFUnlockCell.m in Sources */,
 				8A6B3C641BF01D4400E5C982 /* CellCreator.m in Sources */,
 				8A6B3CC01BF01D4400E5C982 /* HFHabitInfoCell.m in Sources */,
@@ -5010,7 +5006,6 @@
 				8A6B39131BF01B8F00E5C982 /* HFCommentUsersData.m in Sources */,
 				8A6B39C71BF01B8F00E5C982 /* HFDeleteWeiboReq.m in Sources */,
 				8A6B399C1BF01B8F00E5C982 /* GiveUpQuizConclusionArg.m in Sources */,
-				BB5AE4131BFF0F7700BA0167 /* TK_GetVerifyCodeAck.m in Sources */,
 				8A6B3C221BF01D4400E5C982 /* HFLanchViewController.m in Sources */,
 				8A6B39A61BF01B8F00E5C982 /* SaveDietaryInfoArg.m in Sources */,
 				8A6B3CDF1BF01D4400E5C982 /* HFAboutUsTableViewCell.m in Sources */,
@@ -5118,7 +5113,6 @@
 				8A6B3CD51BF01D4400E5C982 /* HFEditInfoViewController.m in Sources */,
 				8A6B394D1BF01B8F00E5C982 /* HFWorldRankReq.m in Sources */,
 				8A6B3F551BF01E4900E5C982 /* NSData+SDDataCache.m in Sources */,
-				BB5AE4101BFF0F6500BA0167 /* TK_GetVerifyCodeArg.m in Sources */,
 				8A6B3C861BF01D4400E5C982 /* SignThreeViewController.m in Sources */,
 				8A6B3CCE1BF01D4400E5C982 /* HFHabitViewCell.m in Sources */,
 				8A6B3C0C1BF01D4400E5C982 /* HFActivityListViewController.m in Sources */,

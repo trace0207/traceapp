@@ -7,13 +7,13 @@
 //
 
 #import "TKUserCenter.h"
+#import "TK_LoginAck.h"
+#import "GlobNotifyDefine.h"
 
 @interface TKUser(){
 
     
 }
-
-@property (nonatomic, copy,readwrite) NSString *userId;
 
 @end
 @implementation TKUser
@@ -55,16 +55,38 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 
 
 -(BOOL)isLogin{
-    return false;
+    return self.user && self.user.isLogin;
 }
 
 -(void)onLoginSuccess:(TKUser *)user{
     
+    self.user  = user;
+    self.user.isLogin = YES;
+    [[NSNotificationCenter defaultCenter] postNotificationName:TKUserLoginSuccess object:nil];
 }
+
+
 
 -(void)doLogin:(NSString *)userName password:(NSString *)password{
 
     
+    //deviceId=123&mobile=18867102687&password=123456
+    [[TKProxy proxy].userProxy login:@"18867102687" withValue:@"123456" withBlock:^(HF_BaseAck * ack){
+        if(ack.sucess){
+            TK_LoginAck * loginAck = (TK_LoginAck *)ack;
+            LoginAckData * loginData = (LoginAckData *)loginAck.data;
+            TKUser * user = [[TKUser alloc] init];
+            user.userId = loginData.id;
+            user.nickName = loginData.nickName;
+            user.mobile = loginData.mobile;
+            user.signature = loginData.signature;
+            user.headPortraitUrl = loginData.headerUrl;
+            [self performSelectorOnMainThread:@selector(onLoginSuccess:) withObject:user waitUntilDone:NO];
+
+        }
+        
+    }];
+
 }
 
 -(void)initFromLocalHistory{

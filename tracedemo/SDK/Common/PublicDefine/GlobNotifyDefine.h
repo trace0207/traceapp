@@ -26,4 +26,10 @@
 
 #define KUnBindBandNotication           @"kUnBindBandNotication"
 #define KBindBandNotication             @"kBindBandNotication"
+
+
+// 用户登录成功
+#define TKUserLoginSuccess              @"tk_userLoginSuccessed"
+#define TKUserLoginBackEvent            @"tk_userLoginBackEvent"
+
 #endif

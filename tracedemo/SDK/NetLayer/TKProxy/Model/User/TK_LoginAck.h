@@ -9,14 +9,13 @@
 #import "HF_BaseAck.h"
 
 
-@protocol LoginAckData <NSObject>
-@end
+//@protocol LoginAckData <NSObject>
+//@end
 
-@interface LoginAckData : TK_BaseJsonModel
+@interface LoginAckData:TK_BaseJsonModel
 
 @property (nonatomic, copy)   NSString  *address;//
 @property (nonatomic, copy)   NSString  *deviceId;//
-
 @property (nonatomic, copy)   NSString  *id;//
 @property (nonatomic, copy)   NSString  *inviteCode;//
 @property (nonatomic, copy)   NSString  *isActive;//
@@ -28,17 +27,15 @@
 @property (nonatomic, copy)   NSString  *registerTime;//
 @property (nonatomic, copy)   NSString  *signature;//
 @property (nonatomic, copy)   NSString  *version;//
-
-
-
-@property (nonatomic, assign)   NSInteger  *hongbao;//
+@property (nonatomic, copy)   NSString  *headerUrl;//
+@property (nonatomic, assign) NSInteger  hongbao;//
 
 @end
 
 
 @interface TK_LoginAck : HF_BaseAck
 
-@property (nonatomic,strong)id<LoginAckData> data;
+@property (nonatomic,strong)LoginAckData *data;
 
 /**
  * 

@@ -11,8 +11,10 @@
 #import "UIColor+TK_Color.h"
 #import "TKSetPasswordViewController.h"
 #import "TKUserCenter.h"
+#import "TKClearView.h"
 
-@interface TKRegisterViewController ()
+@interface TKRegisterViewController ()<TKClearViewDelegate>
+@property (strong, nonatomic) IBOutlet TKClearView *clearInputText;
 
 @end
 
@@ -20,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _clearInputText.clearDelegate = self;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -48,9 +51,6 @@
 //
 //}
 
-- (IBAction)cancelBtn:(id)sender {
-    [self TKI_leftBarAction];
-}
 
 - (IBAction)countrySelectBtn:(id)sender {
 }
@@ -67,5 +67,10 @@
 }
 
 - (IBAction)userProtocolBtn:(id)sender {
+}
+
+-(void)onClearViewEvent
+{
+    [_phoneNumberInputText resignFirstResponder];
 }
 @end

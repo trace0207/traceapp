@@ -7,7 +7,7 @@
 //
 
 #import "TKUserProxy.h"
-
+#import "TK_VerifySMSArg.h"
 @implementation TKUserProxy
 
 
@@ -20,10 +20,11 @@
     
 }
 
--(void)getVerifyCode:(NSString *)phoneNumber whtiBlock:(hfAckBlock)block{
+-(void)getVerifyCode:(NSString *)phoneNumber type:(NSInteger)type whtiBlock:(hfAckBlock)block{
     
-    TK_GetVerifyCodeArg * arg = [[TK_GetVerifyCodeArg alloc] init];
-    arg.ackClassName = NSStringFromClass([TK_GetVerifyCodeAck class]);
+    TK_VerifySMSArg * arg = [[TK_VerifySMSArg alloc] init];
+    arg.mobile = phoneNumber;
+    arg.codeType = type;
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
     
 }
@@ -31,9 +32,13 @@
 -(void)registerNewUser:(NSString *) verifyCode
             inviteCode:(NSString *)inviceCode
              userValue:(NSString *)userValue
+                mobile:(NSString *)mobile
              whtiBlock:(hfAckBlock)block{
     TK_RegisterNewUserArg * arg = [[TK_RegisterNewUserArg alloc] init];
-    arg.ackClassName = NSStringFromClass([TK_RegisterNewUserAck class]);
+    arg.mobile = mobile;
+    arg.inviteCode = inviceCode;
+    arg.sms = verifyCode;
+    arg.password = userValue;
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
     
 }

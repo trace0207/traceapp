@@ -11,8 +11,16 @@
 #import "UIViewController+TKNavigationBarSetting.h"
 #import "UIColor+TK_Color.h"
 #import "TKProxy.h"
+#import "TKUserCenter.h"
+#import "TK_LoginAck.h"
+#import "HFHUDView.h"
+#import "GlobNotifyDefine.h"
 
-@interface TKLoginViewController ()
+@interface TKLoginViewController ()<TKClearViewDelegate>
+{
+
+    
+}
 
 @end
 
@@ -21,6 +29,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _clearInputView.clearDelegate = self;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onLoginSuccess) name:TKUserLoginSuccess object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,12 +74,14 @@
 */
 
 
-
-
-- (IBAction)cancelBtn:(id)sender {
+-(void)dealloc
+{
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:TKUserLoginSuccess object:nil];
     
     
 }
+
 
 - (IBAction)registerBtn:(id)sender {
     
@@ -80,17 +94,24 @@
 }
 - (IBAction)loginBtn:(id)sender {
     
-    //deviceId=123&mobile=18867102687&password=123456
-    [[TKProxy proxy].userProxy login:@"18867102687" withValue:@"123456" withBlock:^(HF_BaseAck * ack){
-        
-        if(ack.sucess){
-        
-            [[HFHUDView shareInstance] ShowTips:@"登录成功" delayTime:2.0 atView:NULL];
-        }
-        
-    }];
+    [[TKUserCenter instance] doLogin:@"18867102687" password:@"123456"];
+}
+
+-(void)onLoginSuccess
+{
+    [self TKI_leftBarAction];
+    [[NSNotificationCenter defaultCenter] postNotificationName:TKUserLoginBackEvent object:nil];
 }
 
 - (IBAction)forgetPassword:(id)sender {
 }
+
+
+-(void)onClearViewEvent
+{
+
+    [_userNameText resignFirstResponder];
+    [_passwordText resignFirstResponder];
+}
+
 @end

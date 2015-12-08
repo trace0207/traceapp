@@ -512,6 +512,8 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 //    popView.frame = self.view.frame;
     
     
+    [self onClearViewEvent];
+    
     [[AppDelegate getAppDelegate].window addSubview:popView];
     
     [[HFHUDView shareInstance] ShowTips:@"发布晒单成功" delayTime:1.0 atView:NULL];

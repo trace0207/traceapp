@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TKIBaseNavWithDefaultBackVC.h"
-
+#import "TKClearView.h"
 
 @protocol LoginDelegate <NSObject>
 
@@ -24,10 +24,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *userNameText;
 @property (strong, nonatomic) IBOutlet UITextField *passwordText;
 @property (weak,nonatomic) id<LoginDelegate> delegate;
+@property (strong, nonatomic) IBOutlet TKClearView *clearInputView;
 
 - (IBAction)loginBtn:(id)sender;
 - (IBAction)forgetPassword:(id)sender;
-- (IBAction)cancelBtn:(id)sender;
-- (IBAction)registerBtn:(id)sender;
-
 @end

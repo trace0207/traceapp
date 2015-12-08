@@ -22,9 +22,14 @@
 #import "SentPostViewController.h"
 #import "TKPublishShowGoodsVC.h"
 #import "TestViewController.h"
+#import "GlobNotifyDefine.h"
+
+
+
 @interface TKMainNavigateController()<HomePageEventProtocol,UITabBarControllerDelegate,LoginDelegate>
 {
 
+    TK_LoginEvent temploginEvent;
 }
 @end
 @implementation TKMainNavigateController
@@ -83,7 +88,7 @@
     [self.tabBar setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
     
     [self loadEmojIcon];
-
+    [self registerNotification];
     
 }
 
@@ -133,8 +138,10 @@
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController NS_AVAILABLE_IOS(3_0)
 {
-    if([viewController isKindOfClass:[UserInfoViewController class]] && ![[TKUserCenter instance] isLogin]){
+    if([viewController isKindOfClass:[UserInfoViewController class]] && ![[TKUserCenter instance] isLogin])
+    {
         [self showLoginView];
+        temploginEvent = TK_GoToUserCenter;
         return NO;
     }
     else if([viewController isKindOfClass:[TKPublishShowGoodsVC class]])
@@ -165,7 +172,7 @@
   弹出登录页
  **/
 -(void)showLoginView{
-
+    
     TKLoginViewController * loginVC = [[TKLoginViewController alloc] initWithNibName:@"TKLoginViewController" bundle:nil];
     loginVC.delegate = self;
 //    [self.navigationController presentViewController:loginVC animated:YES completion:nil];
@@ -236,6 +243,29 @@
     
    
 }
+
+
+-(void)registerNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doLoginBack) name:TKUserLoginBackEvent object:nil];
+}
+
+-(void)doLoginBack
+{
+    if(temploginEvent == TK_GoToUserCenter)
+    {
+        self.selectedIndex = 3;
+        temploginEvent = TK_Default;
+    }
+    
+}
+
+-(void)dealloc
+{
+
+    [[NSNotificationCenter defaultCenter]removeObserver:self forKeyPath:TKUserLoginBackEvent];
+}
+
 
 
 

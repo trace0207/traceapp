@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "TKColorDefine.h"
 
+
+typedef NS_ENUM(NSInteger,TK_LoginEvent)
+{
+    TK_Default = 0,
+    TK_GoToUserCenter = 1,
+    
+};
+
 @interface TKMainNavigateController : UITabBarController
 
 

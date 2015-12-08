@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TKRegisterViewController">
             <connections>
+                <outlet property="clearInputText" destination="mNx-TT-cf1" id="MzP-WW-Hn7"/>
                 <outlet property="countryDisplayLabel" destination="i9o-YG-1f3" id="tMI-Av-bq1"/>
                 <outlet property="phoneNumberInputText" destination="k72-7a-4a0" id="Vde-pS-Xqj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="dIV-w1-E20"/>
@@ -323,6 +324,9 @@
                         </mask>
                     </variation>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNx-TT-cf1" customClass="TKClearView">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.95511758207070707" green="0.95511758207070707" blue="0.95511758207070707" alpha="1" colorSpace="calibratedRGB"/>
@@ -332,6 +336,7 @@
                 <constraint firstAttribute="trailing" secondItem="6KQ-Pr-GXs" secondAttribute="trailing" constant="41" id="C3a-A0-i72"/>
                 <constraint firstItem="XFh-ho-h2d" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="67" id="Dlc-Ua-Nri"/>
                 <constraint firstItem="i9o-YG-1f3" firstAttribute="top" secondItem="6KQ-Pr-GXs" secondAttribute="bottom" constant="14" id="Eyi-y0-amM"/>
+                <constraint firstItem="mNx-TT-cf1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Fub-VS-k9g"/>
                 <constraint firstAttribute="trailing" secondItem="XFh-ho-h2d" secondAttribute="trailing" constant="66" id="HyT-qc-WMu"/>
                 <constraint firstItem="A6n-25-asb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="JVd-iQ-oAV"/>
                 <constraint firstItem="VNe-bW-LcS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OqI-2z-Liu"/>
@@ -344,10 +349,13 @@
                 <constraint firstItem="6KQ-Pr-GXs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="41" id="e8z-S1-2Li"/>
                 <constraint firstAttribute="trailing" secondItem="A6n-25-asb" secondAttribute="trailing" constant="8" id="eOC-9w-bAw"/>
                 <constraint firstItem="c1o-60-QC9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fGR-rH-VRz"/>
+                <constraint firstAttribute="trailing" secondItem="mNx-TT-cf1" secondAttribute="trailing" id="hJa-SC-pJV"/>
+                <constraint firstAttribute="bottom" secondItem="mNx-TT-cf1" secondAttribute="bottom" id="k0B-Lg-qMh"/>
                 <constraint firstItem="mep-Td-UA8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="nbd-2z-HIq"/>
                 <constraint firstAttribute="trailing" secondItem="i9o-YG-1f3" secondAttribute="trailing" id="qr1-zl-U71"/>
                 <constraint firstItem="i9o-YG-1f3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vDr-e3-XrB"/>
                 <constraint firstAttribute="trailing" secondItem="VNe-bW-LcS" secondAttribute="trailing" id="xBN-Zp-EpX"/>
+                <constraint firstItem="mNx-TT-cf1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xnE-mI-Kgs"/>
                 <constraint firstAttribute="bottom" secondItem="c1o-60-QC9" secondAttribute="bottom" constant="20" id="zDb-A6-K1G"/>
                 <constraint firstAttribute="trailing" secondItem="mep-Td-UA8" secondAttribute="trailing" constant="8" id="zEI-Wi-V5j"/>
             </constraints>
@@ -361,8 +369,13 @@
                     <exclude reference="VNe-bW-LcS"/>
                     <exclude reference="mep-Td-UA8"/>
                     <exclude reference="A6n-25-asb"/>
+                    <exclude reference="mNx-TT-cf1"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="Fub-VS-k9g"/>
+                    <exclude reference="hJa-SC-pJV"/>
+                    <exclude reference="k0B-Lg-qMh"/>
+                    <exclude reference="xnE-mI-Kgs"/>
                     <exclude reference="C3a-A0-i72"/>
                     <exclude reference="PgX-sA-Jmh"/>
                     <exclude reference="e8z-S1-2Li"/>
@@ -395,8 +408,13 @@
                     <include reference="VNe-bW-LcS"/>
                     <include reference="mep-Td-UA8"/>
                     <include reference="A6n-25-asb"/>
+                    <include reference="mNx-TT-cf1"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="Fub-VS-k9g"/>
+                    <include reference="hJa-SC-pJV"/>
+                    <include reference="k0B-Lg-qMh"/>
+                    <include reference="xnE-mI-Kgs"/>
                     <include reference="C3a-A0-i72"/>
                     <include reference="PgX-sA-Jmh"/>
                     <include reference="e8z-S1-2Li"/>
