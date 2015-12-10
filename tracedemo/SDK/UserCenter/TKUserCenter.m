@@ -62,6 +62,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
     
     self.user  = user;
     self.user.isLogin = YES;
+    // TODO test 下面是测试代码
+    self.user.address = @"浙江省杭州市西湖区西溪路555号7号楼401";
+    self.user.signature = @"走自己的路，让别人的BB吧";
+    self.user.headPortraitUrl = TKDefaultHead;
     [[NSNotificationCenter defaultCenter] postNotificationName:TKUserLoginSuccess object:nil];
 }
 

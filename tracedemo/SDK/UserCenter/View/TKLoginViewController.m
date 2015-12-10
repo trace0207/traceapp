@@ -29,9 +29,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.navTitle = @"登录";
     _clearInputView.clearDelegate = self;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onLoginSuccess) name:TKUserLoginSuccess object:nil];
+    
+    _userNameText.text = @"18867102687";
+    _passwordText.text = @"123456";
     
 }
 
@@ -47,11 +50,6 @@
                   withTextColor:[UIColor TKcolorWithHexString:TK_Color_nav_textDefault]
                       addTarget:self action:@selector(registerBtn:) forControlEvents:UIControlEventTouchUpInside];
 
-}
-
--(NSString *)TK_getBarTitle{
-
-    return @"登录";
 }
 
 -(void)TKI_leftBarAction{
@@ -76,25 +74,19 @@
 
 -(void)dealloc
 {
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:TKUserLoginSuccess object:nil];
-    
-    
 }
 
 
-- (IBAction)registerBtn:(id)sender {
-    
-    [self dismissViewControllerAnimated:NO completion:nil];
-    if(self.delegate){
-    
-        [self.delegate onRegisterClick];
-    }
+- (void)registerBtn:(id)sender {
+    TKRegisterViewController * regVC = [[TKRegisterViewController alloc]initWithNibName:@"TKRegisterViewController" bundle:nil];
+    regVC.navTitle = @"注册";
+    [self.navigationController pushViewController:regVC animated:YES];
     
 }
 - (IBAction)loginBtn:(id)sender {
     
-    [[TKUserCenter instance] doLogin:@"18867102687" password:@"123456"];
+    [[TKUserCenter instance] doLogin:_userNameText.text password:_passwordText.text];
 }
 
 -(void)onLoginSuccess
@@ -104,6 +96,11 @@
 }
 
 - (IBAction)forgetPassword:(id)sender {
+    
+    TKRegisterViewController * regVC = [[TKRegisterViewController alloc]initWithNibName:@"TKRegisterViewController" bundle:nil];
+    regVC.navTitle = @"忘记密码";
+    regVC.isForgetPassword = YES;
+    [self.navigationController pushViewController:regVC animated:YES];
 }
 
 

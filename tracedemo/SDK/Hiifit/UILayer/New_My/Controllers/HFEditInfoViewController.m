@@ -14,6 +14,7 @@
 #import "HFBindPhoneNumViewController.h"
 #import "HFModifyInfoReq.h"
 #import "NSString+Message.h"
+#import "TKUserCenter.h"
 
 #define KEY_DES     @"description"
 #define KEY_TYPE    @"type"
@@ -53,7 +54,10 @@
 }
 - (void)initData
 {
-    UserRes *user = [GlobInfo shareInstance].usr;
+//    UserRes *user = [GlobInfo shareInstance].usr;
+    
+    TKUser * user = [[TKUserCenter instance]getUser];
+    
     [self.dataSource removeAllObjects];
     
     NSMutableDictionary *dic1 = [NSMutableDictionary dictionary];
@@ -75,17 +79,17 @@
     }
     [dic2 setObject:[NSNumber numberWithInteger:GZModifyTypeAge] forKey:KEY_TYPE];
     
-    NSMutableDictionary *dic4 = [NSMutableDictionary dictionary];
-    [dic4 setObject:@"身高" forKey:KEY_TXT];
-    [dic4 setObject:[user getHeight] forKey:KEY_DES];
-    [dic4 setObject:[NSNumber numberWithInteger:GZModifyHeight] forKey:KEY_TYPE];
+//    NSMutableDictionary *dic4 = [NSMutableDictionary dictionary];
+//    [dic4 setObject:@"身高" forKey:KEY_TXT];
+//    [dic4 setObject:[user getHeight] forKey:KEY_DES];
+//    [dic4 setObject:[NSNumber numberWithInteger:GZModifyHeight] forKey:KEY_TYPE];
+//    
+//    NSMutableDictionary *dic5 = [NSMutableDictionary dictionary];
+//    [dic5 setObject:@"体重" forKey:KEY_TXT];
+//    [dic5 setObject:[user getWeight] forKey:KEY_DES];
+//    [dic5 setObject:[NSNumber numberWithInteger:GZModifyWeight] forKey:KEY_TYPE];
     
-    NSMutableDictionary *dic5 = [NSMutableDictionary dictionary];
-    [dic5 setObject:@"体重" forKey:KEY_TXT];
-    [dic5 setObject:[user getWeight] forKey:KEY_DES];
-    [dic5 setObject:[NSNumber numberWithInteger:GZModifyWeight] forKey:KEY_TYPE];
-    
-    NSMutableArray * sectionZeroArray = [NSMutableArray arrayWithObjects:dic1, dic2, dic4, dic5, nil];
+    NSMutableArray * sectionZeroArray = [NSMutableArray arrayWithObjects:dic1, dic2, nil];
     
     NSMutableDictionary *dic6 = [NSMutableDictionary dictionary];
     [dic6 setObject:@"个性签名" forKey:KEY_TXT];

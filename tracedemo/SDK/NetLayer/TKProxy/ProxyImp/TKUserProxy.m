@@ -25,6 +25,7 @@
     TK_VerifySMSArg * arg = [[TK_VerifySMSArg alloc] init];
     arg.mobile = phoneNumber;
     arg.codeType = type;
+    arg.showLoadingStr = @"YES";
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
     
 }

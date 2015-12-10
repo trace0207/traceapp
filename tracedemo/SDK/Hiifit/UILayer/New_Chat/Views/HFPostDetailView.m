@@ -54,11 +54,6 @@ TK_menuViewVCDelegate>
 - (void)loadUI:(UITableViewStyle)style
 {
     mTableView = [[UITableView alloc]initWithFrame:self.bounds style:style];
-    
-    
-    
-    
-    
     mTableView.backgroundColor = [UIColor HFColorStyle_6];
     self.backgroundColor = [UIColor HFColorStyle_6];
     mTableView.delegate = self;

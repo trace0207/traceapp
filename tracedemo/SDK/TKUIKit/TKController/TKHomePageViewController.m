@@ -56,13 +56,14 @@ static HFMenuControl * menu;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.scrollsToTop = NO;
     _scrollView.backgroundColor = [UIColor HFColorStyle_6];
-    [_scrollView setContentSize:CGSizeMake(TKScreenWidth*2, CGRectGetHeight(_scrollView.frame))];
+    [_scrollView setContentSize:CGSizeMake(TKScreenWidth*2, CGRectGetHeight(self.view.frame))];
+
     [self.view addSubview:_scrollView];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     for (NSInteger i = 0; i < 2; i++) {
-        HFPostDetailView *_tableView = [[HFPostDetailView alloc]initWithFrame:CGRectMake(i*kScreenWidth, 0, kScreenWidth, kScreenHeight-64-49)
+        HFPostDetailView *_tableView = [[HFPostDetailView alloc]initWithFrame:CGRectMake(i*kScreenWidth, 0, kScreenWidth, CGRectGetHeight(self.view.frame)-49)
                                                            withTableViewStyle:UITableViewStylePlain];
         _tableView.bSupportPullUpLoad = YES;
         _tableView.delegate = self;
@@ -236,7 +237,7 @@ static HFMenuControl * menu;
         
         // TODO_start
         
-        NSArray * dataArray = [self imaginaryShowOrdersData];
+        NSArray * dataArray = [TKHomePageViewController imaginaryShowOrdersData];
         NSMutableArray * array = [mSourceArray objectAtIndex:mCurrentIndex];
         [array removeAllObjects];
         [array addObjectsFromArray:dataArray];
@@ -272,7 +273,7 @@ static HFMenuControl * menu;
 }
 
 
--(NSArray *)imaginaryShowOrdersData{
++(NSArray *)imaginaryShowOrdersData{
     
     /*
      

@@ -21,4 +21,6 @@
 @interface TKHomePageViewController : TKBaseViewController
 @property (nonatomic, weak)id<HomePageEventProtocol>eventDelegate;
 
++(NSArray *)imaginaryShowOrdersData;
+
 @end

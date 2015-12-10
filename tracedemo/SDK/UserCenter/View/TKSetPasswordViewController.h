@@ -12,6 +12,7 @@
 
 @interface TKSetPasswordViewController : TKIBaseNavWithDefaultBackVC
 - (IBAction)nextBtnAction:(id)sender;
+@property (assign,nonatomic) BOOL isForgetPassword;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumberbottomText;
 @property (weak, nonatomic) IBOutlet UITextField *verifyCodeInput;
 @property (weak, nonatomic) IBOutlet UITextField *inviteCodeInput;
@@ -19,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *verifyWaitTimeTipsText;
 @property (weak, nonatomic) IBOutlet UILabel *registerPhoneNumber;
 - (IBAction)sortwareProtocol:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *bottomBtn;
+@property (strong, nonatomic) IBOutlet UILabel *bottomLabel;
+
 
 
 @end

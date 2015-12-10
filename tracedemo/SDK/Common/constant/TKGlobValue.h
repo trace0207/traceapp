@@ -144,8 +144,13 @@
 #endif
 
 
+
+#pragma mark ------- TKLocal
+#define TKUserId  [[TKUserCenter instance] getUser].userId //  当前用户的  userId
 // 服务器地址
 #define TKBaseURL  [TKProxy proxy].tkBaseUrl;
+
+#define TKDefaultHead  @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg"
 
 
 typedef NS_ENUM(NSInteger, TKNetStateCode) {

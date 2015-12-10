@@ -29,7 +29,7 @@
 
 #pragma mark   extern Method
 
--(NSString *)TK_getBarTitle{
+-(NSString *)navTitle{
     
     return @"发布悬赏";
 }

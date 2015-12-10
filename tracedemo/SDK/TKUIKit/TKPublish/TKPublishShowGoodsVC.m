@@ -15,18 +15,13 @@
 #import "HFKeyBoard.h"
 #import "TKUserCenter.h"
 #import "TK_PublishMakeSureView.h"
+#import "TKPicSelectTool.h"
 
-
-static const NSInteger publishMaxPicSize =9;
 static NSString * textDefault = @"此时此刻，分享你的宝贝心得吧";
 
-
-
-
-
-
-@interface TKPublishShowGoodsVC ()<TK_PicAddDelegate,CycleScrollViewDelegate,UINavigationControllerDelegate,ZHPickViewDelegate,ZHPickViewDelegate,
-UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
+@interface TKPublishShowGoodsVC ()
+<TK_PicAddDelegate,TKPicSelectDelegate,CycleScrollViewDelegate,ZHPickViewDelegate,
+UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
 {
     
     CGFloat pictureWidth;
@@ -34,6 +29,7 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
     TK_ShareCategory * shareCategory;
     UITextField * editTextField;
     CGFloat  scrollOffest;
+    TKPicSelectTool * picTool;
     
 
 }
@@ -45,6 +41,7 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     _picLoadingView.hidden = YES;
     CGRect  screenSize =  CGRectMake(0,0,TKScreenWidth, TKScreenHeight);
     
@@ -92,9 +89,9 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
     [self TKI_setBarRightDefaultText:@"发布"];
 }
 
+-(NSString *)navTitle
+{
 
--(NSString *)TK_getBarTitle{
-    
     return @"发布晒单";
 }
 
@@ -112,10 +109,9 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
  */
 -(void)tkReloadePic
 {
-    
+    [_picLoadingView stopAnimating];
+    _picLoadingView.hidden = YES;
     [picAddView tkReloadWithDefaultPic:_picturesArr];
-    
-    
     // 更新 容器高度和 scrollView的 contentsize
     [self resetContentSize];
     
@@ -150,6 +146,24 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 }
 
 
+#pragma mark  TKPicSelectDelegate
+
+-(void)onImageSelect:(UIImage *)image
+{
+    [_picturesArr addObject:image];
+    [self tkReloadePic];
+}
+-(void)onImagesSelect:(NSArray *)images
+{
+    [_picturesArr addObjectsFromArray:images];
+    [self tkReloadePic];
+}
+
+-(void)onLoadingImage
+{
+    [_picLoadingView startAnimating];
+    _picLoadingView.hidden = NO;
+}
 #pragma  mark ---------  addPick delegate
 -(void)onAddBtnAction
 {
@@ -158,27 +172,31 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
         return;
     }
     if (_picturesArr.count >= 9) {
-        HFAlertView *alter = [HFAlertView initWithTitle:_T(@"HF_Common_Tips") withMessage:_T(@"HF_Common_More_Pictures") commpleteBlock:^(NSInteger buttonIndex) {
+        HFAlertView *alter = [HFAlertView initWithTitle:_T(@"HF_Common_Tips")
+                                            withMessage:_T(@"HF_Common_More_Pictures")
+                                         commpleteBlock:^(NSInteger buttonIndex) {
             
         } cancelTitle:nil determineTitle:_T(@"HF_Common_OK")];
         [alter show];
         return;
     }
-    //    [self.keyBoard tapBackgroud];
-    //    [self.titleField resignFirstResponder];
-    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:_T(@"HF_Common_Add_Pictures") delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        [sheet addButtonWithTitle:_T(@"HF_Common_Take_Picture")];
+    
+    if(!picTool)
+    {
+        picTool = [[TKPicSelectTool alloc]init];
+        picTool.selectDelegate = self;
+        picTool.viewController = self;
     }
-    [sheet addButtonWithTitle:_T(@"HF_Common_Photo_Album")];
-    [sheet setCancelButtonIndex:[sheet addButtonWithTitle:_T(@"HF_Common_Cancel")]];
-    [sheet showInView:self.view];
+    [picTool doSelectPic:@"添加图片" clipping:NO maxSelect:9-_picturesArr.count];
     
 }
 
 -(void)tkPreviewPicturesAtIndex:(NSInteger)index
 {
-    CycleScrollView *cycle = [[CycleScrollView alloc]initWithFrame:kScreenBounds cycleDirection:CycleDirectionLandscape pictures:_picturesArr startIndex:(int)index];
+    CycleScrollView *cycle = [[CycleScrollView alloc]initWithFrame:kScreenBounds
+                                                    cycleDirection:CycleDirectionLandscape
+                                                          pictures:_picturesArr
+                                                        startIndex:(int)index];
     cycle.alpha = 0;
     cycle.delegate = self;
     [[UIKitTool getAppdelegate].window addSubview:cycle];
@@ -190,141 +208,21 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
     
 }
 
-#pragma  mark  ActionSheet delegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (_picturesArr.count>= publishMaxPicSize) {
-        HFAlertView *alter = [HFAlertView initWithTitle:_T(@"HF_Common_Tips") withMessage:@"不能一次上传多于9张图片" commpleteBlock:^(NSInteger buttonIndex) {
-            
-        } cancelTitle:nil determineTitle:_T(@"HF_Common_OK")];
-        [alter show];
-        return;
-    }
-    NSString *title = [actionSheet buttonTitleAtIndex:buttonIndex];
-    if ([title isEqualToString:@"拍照"]) {
-        [self presentImagePickerController];
-    }else if ([title isEqualToString:@"相册"]){
-        [self presentPhotoLibrary];
-    }
-}
-
-
-- (void)presentImagePickerController
-{
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
-    imagePicker.delegate = self;
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    imagePicker.allowsEditing = YES;
-    [self presentViewController:imagePicker animated:YES completion:nil];
-}
-
-- (void)presentPhotoLibrary
-{
-    ZYQAssetPickerController *picker = [[ZYQAssetPickerController alloc] init];
-    picker.maximumNumberOfSelection = 9 - _picturesArr.count;
-    picker.assetsFilter = [ALAssetsFilter allPhotos];
-    picker.showEmptyGroups=NO;
-    picker.delegate = self;
-    picker.selectionFilter = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-        if ([[(ALAsset*)evaluatedObject valueForProperty:ALAssetPropertyType] isEqual:ALAssetTypeVideo])
-        {
-            NSTimeInterval duration = [[(ALAsset*)evaluatedObject valueForProperty:ALAssetPropertyDuration] doubleValue];
-            return duration >= 5;
-        } else {
-            return YES;
-        }
-    }];
-    [self presentViewController:picker animated:YES completion:NULL];
-}
-
-
-#pragma mark - ZYQAssetPickerControllerDelegate
--(void)assetPickerController:(ZYQAssetPickerController *)picker didFinishPickingAssets:(NSArray *)assets
-{
-
-    dispatch_queue_t queue = dispatch_queue_create("getAlarmPhoto", nil);
-    // loading
-    _picLoadingView.hidden = NO;
-    [_picLoadingView startAnimating];
-    
-    dispatch_async(queue,^{
-    
-        for (int i=0; i<assets.count; i++) {
-            ALAsset *asset = [assets objectAtIndexedSubscript:i];
-            
-            ALAssetRepresentation *assetRepresentation = [asset defaultRepresentation];
-            CGImageRef fullResImage = [assetRepresentation fullResolutionImage];
-            NSString *adjustment = [[assetRepresentation metadata] objectForKey:@"AdjustmentXMP"];
-            if (adjustment) {
-                NSData *xmpData = [adjustment dataUsingEncoding:NSUTF8StringEncoding];
-                CIImage *image = [CIImage imageWithCGImage:fullResImage];
-                
-                NSError *error = nil;
-                NSArray *filterArray = [CIFilter filterArrayFromSerializedXMP:xmpData
-                                                             inputImageExtent:image.extent
-                                                                        error:&error];
-                CIContext *context = [CIContext contextWithOptions:nil];
-                if (filterArray && !error) {
-                    for (CIFilter *filter in filterArray) {
-                        [filter setValue:image forKey:kCIInputImageKey];
-                        image = [filter outputImage];
-                    }
-                    fullResImage = [context createCGImage:image fromRect:[image extent]];
-                }
-            }
-            UIImage *result = [UIImage imageWithCGImage:fullResImage
-                                                  scale:[assetRepresentation scale]
-                                            orientation:(UIImageOrientation)[assetRepresentation orientation]];
-            
-            [_picturesArr addObject:[UIKitTool fixOrientation:result]];
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [_picLoadingView stopAnimating];
-            _picLoadingView.hidden = YES;
-            [self tkReloadePic];
-        });
-
-    });
-    
-}
-
-#pragma UIImagePickerControllerDelegate
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    indicatorView.center = CGPointMake(kScreenWidth/2, kScreenHeight/2);
-    [picker.view addSubview:indicatorView];
-    [indicatorView startAnimating];
-    [self dismissViewControllerAnimated:YES completion:^{
-        [indicatorView removeFromSuperview];
-    }];
-    
-    UIImage *image = [info objectForKeyedSubscript:UIImagePickerControllerOriginalImage];
-    UIImage *configImage = [UIKitTool fixOrientation:image];
-    [_picturesArr addObject:configImage];
-    [self tkReloadePic];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
 #pragma CycleScrollViewDelegate
 
-- (void)cycleScrollViewDelegate:(CycleScrollView *)cycleScrollView didSelectImageView:(NSMutableArray *)index
+- (void)cycleScrollViewDelegate:(CycleScrollView *)cycleScrollView
+             didSelectImageView:(NSMutableArray *)index
 {
-    [UIView animateKeyframesWithDuration:0.2f delay:0.0f options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
-        cycleScrollView.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-        if (finished) {
-            [cycleScrollView removeFromSuperview];
-        }
-    }];
+    [UIView animateKeyframesWithDuration:0.2f
+                                   delay:0.0f
+                                 options:UIViewKeyframeAnimationOptionLayoutSubviews
+                              animations:^{
+                                  cycleScrollView.alpha = 0.0f;
+                              } completion:^(BOOL finished) {
+                                  if (finished) {
+                                      [cycleScrollView removeFromSuperview];
+                                  }
+                              }];
     int flag = 0;
     for (int i = 0; i < index.count; i++) {
         NSString *str = [index objectAtIndex:i];
@@ -392,17 +290,6 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
     }
     return YES;
 }
-
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
-    
-    
-}
-- (void)textViewDidEndEditing:(UITextView *)textView
-{
-    
-}
-
 
 #pragma mark - UITextFieldDelegate
 
@@ -483,42 +370,25 @@ UIImagePickerControllerDelegate,ZYQAssetPickerControllerDelegate,UITextFieldDele
 -(void)TKI_rightBarAction
 {
     
-//    if(!shareCategory)
-//    {
-//        [[HFHUDView shareInstance] ShowTips:@"请选择品类" delayTime:1.0 atView:NULL];
-//        return;
-//    }
-//    else if(self.inputTextView.text.length == 0)
-//    {
-//        [[HFHUDView shareInstance] ShowTips:@"请输入描述信息" delayTime:1.0 atView:NULL];
-//        return;
-//    }else if(self.picturesArr.count == 0)
-//    {
-//        [[HFHUDView shareInstance] ShowTips:@"请选择图片" delayTime:1.0 atView:NULL];
-//        return;
-//    }
-    
-//    TK_makeSureAndPayVCViewController * vc = [[TK_makeSureAndPayVCViewController alloc] initWithNibName:@"TK_makeSureAndPayVCViewController" bundle:nil];
-//    
-//    vc.view.frame = self.view.frame;
-//    
-//    [self addChildViewController:vc];
-//    
-//
-//    [self tr]
-    
+    if(!shareCategory)
+    {
+        [[HFHUDView shareInstance] ShowTips:@"请选择品类" delayTime:1.0 atView:NULL];
+        return;
+    }
+    else if(self.inputTextView.text.length == 0)
+    {
+        [[HFHUDView shareInstance] ShowTips:@"请输入描述信息" delayTime:1.0 atView:NULL];
+        return;
+    }else if(self.picturesArr.count == 0)
+    {
+        [[HFHUDView shareInstance] ShowTips:@"请选择图片" delayTime:1.0 atView:NULL];
+        return;
+    }
     
     TK_PublishMakeSureView * popView = [[TK_PublishMakeSureView alloc]init];
-//    popView.frame = self.view.frame;
-    
-    
     [self onClearViewEvent];
-    
     [[AppDelegate getAppDelegate].window addSubview:popView];
-    
     [[HFHUDView shareInstance] ShowTips:@"发布晒单成功" delayTime:1.0 atView:NULL];
-    
-//    [self TKI_leftBarAction];
 }
 
 - (IBAction)countAddAction:(id)sender {

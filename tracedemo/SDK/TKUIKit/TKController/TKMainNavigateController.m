@@ -67,7 +67,9 @@
     newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
     
     
-    HFMessageViewController * newUser = [[HFMessageViewController alloc]init];
+    TKIBaseNavWithDefaultBackVC * newUser = [[TKIBaseNavWithDefaultBackVC alloc]init];
+    newUser.navTitle = @"消息中心";
+    newUser.hidDefaultBackBtn = YES;
     newUser.tabBarItem.title = @"消息";
     newUser.tabBarItem.image = IMG(@"new_myUnselected");
     newUser.tabBarItem.selectedImage = IMG(@"new_mySelected");
@@ -212,9 +214,6 @@
 #pragma mark ------- loginDelegate
 
 -(void)onRegisterClick{
-    TKRegisterViewController * regVC = [[TKRegisterViewController alloc]initWithNibName:@"TKRegisterViewController" bundle:nil];
-    [self.navigationController pushViewController:regVC animated:YES];
-//    [self.navigationController presentViewController:regVC animated:YES completion:nil];
     
 }
 -(void)onLoginSuccess{

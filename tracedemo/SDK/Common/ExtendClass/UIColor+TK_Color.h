@@ -35,5 +35,11 @@
 + (UIColor *)tkMainActiveColor;
 
 
+/**
+ 主背景色
+ **/
++ (UIColor *)tkMainBackgroundColor;
+
+
 
 @end

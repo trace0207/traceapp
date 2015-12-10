@@ -7,6 +7,7 @@
 //
 
 #import "TKIBaseNavWithDefaultBackVC.h"
+#import "UIColor+TK_Color.h"
 
 @interface TKIBaseNavWithDefaultBackVC ()
 
@@ -17,13 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor tkMainBackgroundColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear: animated];
-    [self TKI_setBarDefaultLeftBack];
-    NSString * title = [self TK_getBarTitle];
+    if(!self.hidDefaultBackBtn)
+    {
+        [self TKI_setBarDefaultLeftBack];
+    }else
+    {
+        [self.navigationController.navigationItem setHidesBackButton:YES];
+    }
+    NSString * title = self.navTitle;
     if(title != nil && title.length >0){
         [self TKaddNavigationTitle:title];
     }
@@ -35,9 +43,9 @@
 }
 
 
--(NSString *)TK_getBarTitle{
-
-    return @"";
+-(BOOL)hidDefaultBackBtn
+{
+    return _hidDefaultBackBtn;
 }
 
 @end

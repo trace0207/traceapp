@@ -29,6 +29,13 @@
 #import "UIKitTool.h"
 #import "UIImageView+WebCache.h"
 #import "UIViewController+TKNavigationBarSetting.h"
+#import "TKUserCenter.h"
+#import "TKUserPageViewController.h"
+#import "TKIBaseNavWithDefaultBackVC.h"
+#import "HFEditInfoViewController.h"
+#import "TKUserCenter.h"
+#import "TKEditUserInfoVC.h"
+
 
 @interface UserInfoViewController()<HFDismissBandViewDelegate,HFMessageViewControllerDelegate>
 {
@@ -57,36 +64,47 @@
 }
 - (void)initData
 {
+    
+    NSMutableDictionary *dic10 = [NSMutableDictionary dictionary];
+    [dic10 setObject:@"My_stepRecord" forKey:KEY_IMG];
+    [dic10 setObject:@"我的订单" forKey:KEY_TXT];
+    
+    
+    NSMutableDictionary *dic11 = [NSMutableDictionary dictionary];
+    [dic11 setObject:@"My_stepRecord" forKey:KEY_IMG];
+    [dic11 setObject:@"晒单相册" forKey:KEY_TXT];
+    
+    
+    NSArray *array1 = [[NSArray alloc]initWithObjects:dic10,dic11,nil];
+    
+    
     NSMutableDictionary *dic20 = [NSMutableDictionary dictionary];
     [dic20 setObject:@"My_message" forKey:KEY_IMG];
     [dic20 setObject:@"我的账户" forKey:KEY_TXT];
     
     NSMutableDictionary *dic21 = [NSMutableDictionary dictionary];
-    [dic21 setObject:@"My_stepRecord" forKey:KEY_IMG];
-    [dic21 setObject:@"晒单相册" forKey:KEY_TXT];
+    [dic21 setObject:@"My_hiBox" forKey:KEY_IMG];
+    [dic21 setObject:@"我的卡券" forKey:KEY_TXT];
     
     NSMutableDictionary *dic22 = [NSMutableDictionary dictionary];
-    [dic22 setObject:@"My_hiBox" forKey:KEY_IMG];
-    [dic22 setObject:@"我的卡券" forKey:KEY_TXT];
+    [dic22 setObject:@"My_foodSearch" forKey:KEY_IMG];
+    [dic22 setObject:@"附近买手" forKey:KEY_TXT];
     
-    NSMutableDictionary *dic23 = [NSMutableDictionary dictionary];
-    [dic23 setObject:@"My_foodSearch" forKey:KEY_IMG];
-    [dic23 setObject:@"附近买手" forKey:KEY_TXT];
+    NSMutableDictionary * dic23 = [NSMutableDictionary dictionary];
+    [dic23 setObject:@"My_activity" forKey:KEY_IMG];
+    [dic23 setObject:@"活动" forKey:KEY_TXT];
     
-    NSArray *array2 = [[NSArray alloc]initWithObjects:dic20,dic21,dic22,dic23, nil];
+    NSMutableDictionary * dic24 = [NSMutableDictionary dictionary];
+    [dic24 setObject:@"My_setting" forKey:KEY_IMG];
+    [dic24 setObject:@"设置" forKey:KEY_TXT];
     
-    NSMutableDictionary * activityDic = [NSMutableDictionary dictionary];
-    [activityDic setObject:@"My_activity" forKey:KEY_IMG];
-    [activityDic setObject:@"活动" forKey:KEY_TXT];
+    NSArray * array2 = [NSArray arrayWithObjects:dic20,dic21,dic22,dic23,dic24,nil];
     
-    NSMutableDictionary * setDic = [NSMutableDictionary dictionary];
-    [setDic setObject:@"My_setting" forKey:KEY_IMG];
-    [setDic setObject:@"设置" forKey:KEY_TXT];
+    NSArray * array0 = [NSArray arrayWithObjects: [NSMutableDictionary dictionary],nil];
     
-    NSArray * sectionTwoArray = [NSArray arrayWithObjects:activityDic, setDic, nil];
-    
+    [self.dataSource addObject:array0];
+    [self.dataSource addObject:array1];
     [self.dataSource addObject:array2];
-    [self.dataSource addObject:sectionTwoArray];
     
     self.tableView.backgroundColor = [UIColor HFColorStyle_6];
     [self.tableView reloadData];
@@ -103,8 +121,9 @@
     [self TKremoveLeftBarButtonItem];
     [self TKremoveRightBarButtonItem];
     [self TKremoveNavigationTitle];
-    [self TKaddNavigationTitle:@"个人中心"];
-    UserRes *user = [GlobInfo shareInstance].usr;
+    [self TKaddNavigationTitle:@"我"];
+    
+    TKUser * user = [[TKUserCenter instance]getUser];
     if (user.headPortraitUrl.length>0) {
         [self.headImageView sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];
         
@@ -112,7 +131,7 @@
         [self.headImageView setImage:IMG(@"user")];
     }
     self.headLabel.text = user.nickName;
-
+    
     self.mHiScore.text = [[NSNumber numberWithInteger:user.score]stringValue];
 }
 
@@ -149,19 +168,13 @@
 #pragma mark - tableview delegate and datasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.dataSource.count + 1;
+    return self.dataSource.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return 1;
-    }else if (section == 1){
-        NSArray *list = [self.dataSource objectAtIndex:section - 1];
-        return list.count;
-    }else{
-        NSArray * list = [self.dataSource objectAtIndex:section - 1];
-        return list.count;
-    }
+    
+    NSArray * list = [self.dataSource objectAtIndex:section];
+    return list.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -185,57 +198,70 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0  && indexPath.row == 0) {
-        [MobClick event:Myinfo_Head];
-        UserCenterViewController * userCenter = [[UserCenterViewController alloc] init];
-        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-        [dic setObject:[NSNumber numberWithInteger:[[[GlobInfo shareInstance] usr] id]] forKey:kParamUserId];
-        userCenter.param = dic;
-        [self.navigationController pushViewController:userCenter animated:YES];
-    }
-    if (indexPath.section == 1) {
-        if (indexPath.row == 0) {
-            [MobClick event:Home_Message_Icon_Click];
-            HFMessageViewController * messageViewController = [[HFMessageViewController alloc] init];
-            messageViewController.delegate = self;
-            messageViewController.mSourceMessageCountArr = self.mMessageArray;
-            [self.tabBarItem setBadgeValue:nil];
-            [self.navigationController pushViewController:messageViewController animated:YES];
-        }else if (indexPath.row == 1){
-            HFDevInfoViewController *vc = [[HFDevInfoViewController alloc]initWithNibName:@"HFDevInfoViewController" bundle:nil];
-            [self.navigationController pushViewController:vc animated:YES];
-        }else if (indexPath.row == 2){
-            //邀请体验代码
-            HFBoxViewController * boxVC = [[HFBoxViewController alloc] init];
-            [self.navigationController pushViewController:boxVC animated:YES];
-            
-        }else if (indexPath.row == 3) {
-            WebViewController * webVC = [[WebViewController alloc] init];
-            NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:kURLFoodSearch, kParamURL, nil];
-            webVC.param = dic;
-            [self.navigationController pushViewController:webVC animated:YES];
+        TKEditUserInfoVC * bvc = [[TKEditUserInfoVC alloc] init];
+        [self.navigationController pushViewController:bvc animated:YES];
+    }else
+        if (indexPath.section == 1) {
+            [self onTableRowSelectFromSectionOne:indexPath.row];
         }
-    }
-    if (indexPath.row == 3 && indexPath.section == 1) {
-        if (![kUserDefaults boolForKey:kParamFirstNew]) {
-            [kUserDefaults setBool:YES forKey:kParamFirstNew];
-            [kUserDefaults synchronize];
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:1];
-            [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-            [self updateMessageBoxIcon:unreadCount];
-        }
-    }
-
-    if (indexPath.section == 2) {
-        if (indexPath.row == 0) {
-            HFActivityListViewController * activityVC = [[HFActivityListViewController alloc] init];
-            [self.navigationController pushViewController:activityVC animated:YES];
-        }
-        if (indexPath.row == 1) {
-            SettingsViewController * setVC = [[SettingsViewController alloc] init];
-            [self.navigationController pushViewController:setVC animated:YES];
-        }
-    }
+        else
+            if (indexPath.section == 2) {
+                [self onTableRowSelectFromSectionTwo:indexPath.row];
+            }
 }
+
+
+
+-(void)onTableRowSelectFromSectionOne:(NSInteger)row
+{
+    if (row == 0) {
+        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
+        bvc.navTitle = @"我的订单";
+        [self.navigationController pushViewController:bvc animated:YES];
+    }else if (row == 1){ //  晒单相册
+        TKUserPageViewController * userPage = [[TKUserPageViewController alloc] init];
+        userPage.userId = TKUserId;
+        userPage.navTitle = @"我的晒单";
+        [self.navigationController pushViewController:userPage animated:YES];
+    }
+    
+}
+
+-(void)onTableRowSelectFromSectionTwo:(NSInteger)row
+{
+    if (row == 0) {
+        
+        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
+        bvc.navTitle = @"我的账户";
+        [self.navigationController pushViewController:bvc animated:YES];
+    }
+    if (row == 1) {
+        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
+        bvc.navTitle = @"我的卡券";
+        [self.navigationController pushViewController:bvc animated:YES];
+    }
+    else if (row == 2){
+        
+        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
+        bvc.navTitle = @"附近买手";
+        [self.navigationController pushViewController:bvc animated:YES];
+        
+    }
+    else if(row == 3)
+    {
+        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
+        bvc.navTitle = @"活动";
+        [self.navigationController pushViewController:bvc animated:YES];
+    }
+    else if (row == 4) {
+        SettingsViewController * setVC = [[SettingsViewController alloc] init];
+        [self.navigationController pushViewController:setVC animated:YES];
+        
+    }
+    
+}
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
@@ -246,22 +272,24 @@
         if (!cell) {
             cell = [[[NSBundle mainBundle]loadNibNamed:@"MyInfoCell" owner:self options:nil] objectAtIndex:1];
         }
-        NSArray *list = [self.dataSource objectAtIndex:indexPath.section - 1];
+        NSArray *list = [self.dataSource objectAtIndex:indexPath.section];
         NSDictionary *dic = [list objectAtIndex:indexPath.row];
         NSString *imageName = [dic objectForKey:KEY_IMG];
         NSString *text = [dic objectForKey:KEY_TXT];
         [cell.image setImage:[UIImage imageNamed:imageName]];
         [cell.titleLabel setText:text];
-        if (indexPath.section == 1 && indexPath.row == 0) {
-            [cell setUnreadCount:unreadCount];
-        }else {
-            [cell setUnreadCount:0];
-        }
-        if (indexPath.row == 3 && indexPath.section == 1) {
-            [cell judgeFirstLogin];
-        }else{
-            [cell hiddenImageNew];
-        }
+        [cell hiddenImageNew];
+        [cell setUnreadCount:0];
+        //        if (indexPath.section == 1 && indexPath.row == 0) {
+        //            [cell setUnreadCount:unreadCount];
+        //        }else {
+        //            [cell setUnreadCount:0];
+        //        }
+        //        if (indexPath.row == 3 && indexPath.section == 1) {
+        //            [cell judgeFirstLogin];
+        //        }else{
+        //            [cell hiddenImageNew];
+        //        }
         return cell;
     }
 }

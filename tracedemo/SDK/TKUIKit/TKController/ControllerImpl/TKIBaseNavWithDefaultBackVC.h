@@ -11,6 +11,7 @@
 
 @interface TKIBaseNavWithDefaultBackVC : TK_BaseNavSettingViewController
 
--(NSString *)TK_getBarTitle;
+@property (nonatomic,assign)BOOL hidDefaultBackBtn;
+@property (nonatomic,strong)NSString * navTitle;
 
 @end

@@ -109,4 +109,14 @@
 }
 
 
+
+/**
+ 主背景色
+ **/
++ (UIColor *)tkMainBackgroundColor
+{
+    return [self TKcolorWithHexString:TK_Color_white_background];
+}
+
+
 @end

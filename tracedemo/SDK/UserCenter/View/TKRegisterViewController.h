@@ -16,8 +16,10 @@
 
 
 
-
+@property (assign,nonatomic)BOOL isForgetPassword; // 是否是 找回密码
 @property (strong, nonatomic) IBOutlet UIView *countryDisplayLabel;
 @property (strong, nonatomic) IBOutlet UITextField *phoneNumberInputText;
+@property (strong, nonatomic) IBOutlet UILabel *bottomLabel;
+@property (strong, nonatomic) IBOutlet UIButton *bottomBtn;
 
 @end

@@ -48,13 +48,13 @@
 {
     [super setFrame:frame];
     self.clipsToBounds = YES;
-//    [self.layer setCornerRadius:frame.size.height/2]; // 设置圆形头 
+    [self.layer setCornerRadius:frame.size.height/2]; // 设置圆形头
     self.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (void)layoutSubviews
 {
-//    [self.layer setCornerRadius:self.frame.size.height/2];
+    [self.layer setCornerRadius:self.frame.size.height/2];
 }
 
 - (void)addAction:(SEL)selector forTarget:(id)target

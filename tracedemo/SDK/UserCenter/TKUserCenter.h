@@ -11,6 +11,7 @@
 
 
 @interface TKUser : NSObject
+@property (nonatomic, assign)CGFloat score;
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) NSString *mobile;
 @property (nonatomic, copy) NSString *birthday;//用户生日yyyy-mm-dd
@@ -19,6 +20,8 @@
 @property (nonatomic, copy) NSString *headPortraitUrl;  //头像
 @property (nonatomic, copy) NSString *signature;//签名
 @property (nonatomic, copy) NSString *deviceId;
+@property (nonatomic, copy) NSString *address;
+@property (nonatomic,assign)NSInteger sex;
 @property (nonatomic, assign)BOOL isLogin;
 @end
 

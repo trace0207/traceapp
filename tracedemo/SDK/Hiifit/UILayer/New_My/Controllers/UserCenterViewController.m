@@ -15,6 +15,7 @@
 #import "UserViewController.h"
 #import "HFPostDetailView.h"
 #import "HFEditInfoViewController.h"
+#import "TKUserCenter.h"
 
 @interface UserCenterViewController ()<PostCellDelegate,BasePostDetailViewDelegate>
 {
@@ -22,9 +23,9 @@
     UILabel *navTitleLabel;
     CGFloat headViewHeight;
 }
-@property (nonatomic, assign) NSInteger userId;
+@property (nonatomic, strong) NSString *userId;
 @property (nonatomic, assign) NSInteger pageOfset;
-@property (nonatomic, strong) HomeData *UserInfo;
+//@property (nonatomic, strong) HomeData *UserInfo;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) HFPostDetailView * mPostView;
 @end
@@ -34,18 +35,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor HFColorStyle_6];
-    if (_userId == kHiiFitId) {
-        headViewHeight = 215;
-    }else{
-        headViewHeight = 288;
-    }
-    
-    
+    headViewHeight = 288;
     navBarView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
     navBarView.backgroundColor = [UIColor HFColorStyle_5];
     navBarView.alpha = 0;
     navTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, kScreenWidth, 44)];
-    navTitleLabel.textColor = [UIColor whiteColor];
+    navTitleLabel.textColor = [UIColor blackColor];
     navTitleLabel.backgroundColor = [UIColor clearColor];
     navTitleLabel.font = [UIFont systemFontOfSize:20];
     navTitleLabel.textAlignment = NSTextAlignmentCenter;
@@ -58,25 +53,55 @@
     [backBtn addTarget:self action:@selector(leftBarItemAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:backBtn];
+    _userId = [self.param objectForKey:kParamUserId];
     
-    _userId = [[self.param objectForKey:kParamUserId]integerValue];
-    if (_userId > 0) {
-        [self endRefresh];
+    
+    if([_userId isEqualToString:TKUserId])
+    {
+        [self loadMyUserPage];
     }
+    
+    
+    
+    
+//    if (_userId > 0) {
+        [self endRefresh];
+//    }
 }
+
+
+-(void)loadMyUserPage
+{
+
+    TKUser * tkUser = [[TKUserCenter instance] getUser];
+    HomeData *UserInfo = [[HomeData alloc]init];
+    UserInfo.nickName = tkUser.nickName;
+    UserInfo.sex = (int)tkUser.sex;
+    UserInfo.signature = tkUser.signature;
+    UserInfo.fansCount = 100;
+    UserInfo.followCount = 200;
+    UserInfo.status = 1;
+    
+    [self setHomeInfo:UserInfo];
+    self.mPostView.hidden = NO;
+
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    UserRes *user = [GlobInfo shareInstance].usr;
-    if (_userId == user.id) {
-        [self.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"head_default"]];
-        self.sexImage.highlighted = [user isGirl];
-        self.signameLabel.text = user.signature;
-        self.nameLabel.text = [user nickName];
-        navTitleLabel.text = [user nickName];
-    }
+//    UserRes *user = [GlobInfo shareInstance].usr;
+    
+    
+//    if ([_userId isEqualToString:tkUser.userId]) {
+//        [self.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:tkUser.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"head_default"]];
+//        self.sexImage.highlighted = tkUser.sex == 1;
+//        self.signameLabel.text = tkUser.signature;
+//        self.nameLabel.text = [tkUser nickName];
+//        navTitleLabel.text = [tkUser nickName];
+//    }
 }
 
 - (void)dealloc
@@ -106,15 +131,15 @@
         [_mPostView sendToBack];
         self.headView.backgroundColor = [UIColor HFColorStyle_5];
         self.headView.frame = CGRectMake(0, 0, kScreenWidth, headViewHeight);
-        if (_userId != kHiiFitId) {
-            if (_userId == [GlobInfo shareInstance].usr.id) {
+     
+            if ([_userId isEqualToString:TKUserId]) {
                 [self.editBtn setTitle:@"编辑资料" forState:UIControlStateNormal];
                 self.mPostView.showDeleteBtn = YES;
             }else{
                 [self.editBtn setTitle:@"＋关注" forState:UIControlStateNormal];
                 [self.editBtn setTitle:@"取消关注" forState:UIControlStateSelected];
             }
-        }
+        
         [self.headImage.layer setBorderWidth:1];
         [self.headImage.layer setBorderColor:[UIColor whiteColor].CGColor];
         [_mPostView.mTableView setTableHeaderView:self.headView];
@@ -139,16 +164,15 @@
 
 - (void)setHomeInfo:(HomeData*)info
 {
-    if (_userId != kHiiFitId){
-        self.funsLable.text = [NSString stringWithFormat:@"%i",info.fansCount];
-        self.focusLable.text = [NSString stringWithFormat:@"%i",info.followCount];
-        if (info.status == 1) {
-            self.editBtn.selected = YES;
-        }else{
-            self.editBtn.selected = NO;
-        }
-        
+    
+    self.funsLable.text = [NSString stringWithFormat:@"%i",info.fansCount];
+    self.focusLable.text = [NSString stringWithFormat:@"%i",info.followCount];
+    if (info.status == 1) {
+        self.editBtn.selected = YES;
+    }else{
+        self.editBtn.selected = NO;
     }
+    
     
     if (info.headPortraitUrl.length>0) {
         [self.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:info.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"head_default"]];
@@ -171,7 +195,7 @@
     }else{
         [dic setObject:KEY_FANS forKey:kParamFrom];
     }
-    [dic setValue:[NSNumber numberWithInteger:_userId] forKey:kParamUserId];
+    [dic setValue:_userId forKey:kParamUserId];
     
     FriendsViewController *vc = [[FriendsViewController alloc]init];
     vc.param = dic;
@@ -181,29 +205,29 @@
 - (IBAction)seeBigImage:(UIButton *)sender
 {
     [MobClick event:User_Head_Click];
-    
-    NSString *urlStr = [UIKitTool getRawImage:_UserInfo.headPortraitUrl];
-    HFBigImageView *view = [[HFBigImageView alloc]initWithImage:_headImage.image withImageUrl:urlStr];
-    [view show];
+//    
+//    NSString *urlStr = [UIKitTool getRawImage:_UserInfo.headPortraitUrl];
+//    HFBigImageView *view = [[HFBigImageView alloc]initWithImage:_headImage.image withImageUrl:urlStr];
+//    [view show];
 }
 
 - (IBAction)editUserInfo:(UIButton *)sender {
     
-    if (!self.UserInfo) {
-        return;
-    }
-    if (_userId == [GlobInfo shareInstance].usr.id) {
+//    if (!self.UserInfo) {
+//        return;
+//    }
+    if ([_userId isEqualToString:TKUserId]){
         HFEditInfoViewController * editVC = [[HFEditInfoViewController alloc] init];
         [self.navigationController pushViewController:editVC animated:YES];
     }else{
-        WS(weakSelf);
-        [[[HIIProxy shareProxy]weiboProxy]followAction:_userId isFollow:!sender.selected completion:^(BOOL finished) {
-            if (finished) {
-                weakSelf.UserInfo.fansCount = sender.selected ? weakSelf.UserInfo.fansCount - 1:weakSelf.UserInfo.fansCount + 1;
-                weakSelf.UserInfo.status = sender.selected ? 0 : 1;
-                [weakSelf setHomeInfo:weakSelf.UserInfo];
-            }
-        }];
+//        WS(weakSelf);
+//        [[[HIIProxy shareProxy]weiboProxy]followAction:_userId isFollow:!sender.selected completion:^(BOOL finished) {
+//            if (finished) {
+//                weakSelf.UserInfo.fansCount = sender.selected ? weakSelf.UserInfo.fansCount - 1:weakSelf.UserInfo.fansCount + 1;
+//                weakSelf.UserInfo.status = sender.selected ? 0 : 1;
+//                [weakSelf setHomeInfo:weakSelf.UserInfo];
+//            }
+//        }];
     }
 }
 
@@ -212,7 +236,7 @@
     WS(weakSelf);
     HFGetPostsReq *req = [[HFGetPostsReq alloc]init];
     req.pageOffset = _pageOfset;
-    req.userId = _userId;
+//    req.userId = _userId;
     req.pageSize = kPageSize;
     
     [[[HIIProxy shareProxy]weiboProxy]getUserCenterPost:req completion:^(NSArray<PostDetailData> *postList, BOOL success) {
@@ -236,18 +260,18 @@
 - (void)endRefresh
 {
     WS(weakSelf)
-    [[[HIIProxy shareProxy]userProxy]getUserHomePage:_userId completion:^(HomeData *userInfo, BOOL success) {
-        if (success) {
-            weakSelf.mPostView.hidden = NO;
-            weakSelf.UserInfo = userInfo;
-            [weakSelf setHomeInfo:userInfo];
-        }
-        
-    }];
+//    [[[HIIProxy shareProxy]userProxy]getUserHomePage:_userId completion:^(HomeData *userInfo, BOOL success) {
+//        if (success) {
+//            weakSelf.mPostView.hidden = NO;
+//            weakSelf.UserInfo = userInfo;
+//            [weakSelf setHomeInfo:userInfo];
+//        }
+//        
+//    }];
     
     HFGetPostsReq *req = [[HFGetPostsReq alloc]init];
     req.pageOffset = 0;
-    req.userId = _userId;
+//    req.userId = _userId;
     req.pageSize = kPageSize;
     
     [[[HIIProxy shareProxy]weiboProxy]getUserCenterPost:req completion:^(NSArray<PostDetailData> *postList, BOOL success) {

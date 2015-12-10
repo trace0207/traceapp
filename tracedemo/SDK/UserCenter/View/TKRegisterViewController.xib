@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TKRegisterViewController">
             <connections>
+                <outlet property="bottomBtn" destination="XFh-ho-h2d" id="gVX-ry-w8u"/>
+                <outlet property="bottomLabel" destination="c1o-60-QC9" id="7YS-Od-3Wj"/>
                 <outlet property="clearInputText" destination="mNx-TT-cf1" id="MzP-WW-Hn7"/>
                 <outlet property="countryDisplayLabel" destination="i9o-YG-1f3" id="tMI-Av-bq1"/>
                 <outlet property="phoneNumberInputText" destination="k72-7a-4a0" id="Vde-pS-Xqj"/>
@@ -372,31 +374,31 @@
                     <exclude reference="mNx-TT-cf1"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="Fub-VS-k9g"/>
-                    <exclude reference="hJa-SC-pJV"/>
-                    <exclude reference="k0B-Lg-qMh"/>
-                    <exclude reference="xnE-mI-Kgs"/>
-                    <exclude reference="C3a-A0-i72"/>
-                    <exclude reference="PgX-sA-Jmh"/>
-                    <exclude reference="e8z-S1-2Li"/>
-                    <exclude reference="Eyi-y0-amM"/>
-                    <exclude reference="qr1-zl-U71"/>
-                    <exclude reference="vDr-e3-XrB"/>
-                    <exclude reference="OqI-2z-Liu"/>
-                    <exclude reference="biQ-uv-ymx"/>
-                    <exclude reference="xBN-Zp-EpX"/>
+                    <exclude reference="Dlc-Ua-Nri"/>
+                    <exclude reference="HyT-qc-WMu"/>
+                    <exclude reference="PbT-vQ-5di"/>
                     <exclude reference="7Np-ay-Ydu"/>
                     <exclude reference="nbd-2z-HIq"/>
                     <exclude reference="zEI-Wi-V5j"/>
+                    <exclude reference="C3a-A0-i72"/>
+                    <exclude reference="PgX-sA-Jmh"/>
+                    <exclude reference="e8z-S1-2Li"/>
                     <exclude reference="6BB-53-IMj"/>
                     <exclude reference="JVd-iQ-oAV"/>
                     <exclude reference="eOC-9w-bAw"/>
                     <exclude reference="R6o-Gy-GpW"/>
                     <exclude reference="fGR-rH-VRz"/>
                     <exclude reference="zDb-A6-K1G"/>
-                    <exclude reference="Dlc-Ua-Nri"/>
-                    <exclude reference="HyT-qc-WMu"/>
-                    <exclude reference="PbT-vQ-5di"/>
+                    <exclude reference="OqI-2z-Liu"/>
+                    <exclude reference="biQ-uv-ymx"/>
+                    <exclude reference="xBN-Zp-EpX"/>
+                    <exclude reference="Fub-VS-k9g"/>
+                    <exclude reference="hJa-SC-pJV"/>
+                    <exclude reference="k0B-Lg-qMh"/>
+                    <exclude reference="xnE-mI-Kgs"/>
+                    <exclude reference="Eyi-y0-amM"/>
+                    <exclude reference="qr1-zl-U71"/>
+                    <exclude reference="vDr-e3-XrB"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -411,31 +413,31 @@
                     <include reference="mNx-TT-cf1"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="Fub-VS-k9g"/>
-                    <include reference="hJa-SC-pJV"/>
-                    <include reference="k0B-Lg-qMh"/>
-                    <include reference="xnE-mI-Kgs"/>
-                    <include reference="C3a-A0-i72"/>
-                    <include reference="PgX-sA-Jmh"/>
-                    <include reference="e8z-S1-2Li"/>
-                    <include reference="Eyi-y0-amM"/>
-                    <include reference="qr1-zl-U71"/>
-                    <include reference="vDr-e3-XrB"/>
-                    <include reference="OqI-2z-Liu"/>
-                    <include reference="biQ-uv-ymx"/>
-                    <include reference="xBN-Zp-EpX"/>
+                    <include reference="Dlc-Ua-Nri"/>
+                    <include reference="HyT-qc-WMu"/>
+                    <include reference="PbT-vQ-5di"/>
                     <include reference="7Np-ay-Ydu"/>
                     <include reference="nbd-2z-HIq"/>
                     <include reference="zEI-Wi-V5j"/>
+                    <include reference="C3a-A0-i72"/>
+                    <include reference="PgX-sA-Jmh"/>
+                    <include reference="e8z-S1-2Li"/>
                     <include reference="6BB-53-IMj"/>
                     <include reference="JVd-iQ-oAV"/>
                     <include reference="eOC-9w-bAw"/>
                     <include reference="R6o-Gy-GpW"/>
                     <include reference="fGR-rH-VRz"/>
                     <include reference="zDb-A6-K1G"/>
-                    <include reference="Dlc-Ua-Nri"/>
-                    <include reference="HyT-qc-WMu"/>
-                    <include reference="PbT-vQ-5di"/>
+                    <include reference="OqI-2z-Liu"/>
+                    <include reference="biQ-uv-ymx"/>
+                    <include reference="xBN-Zp-EpX"/>
+                    <include reference="Fub-VS-k9g"/>
+                    <include reference="hJa-SC-pJV"/>
+                    <include reference="k0B-Lg-qMh"/>
+                    <include reference="xnE-mI-Kgs"/>
+                    <include reference="Eyi-y0-amM"/>
+                    <include reference="qr1-zl-U71"/>
+                    <include reference="vDr-e3-XrB"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="303" y="87"/>
