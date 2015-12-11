@@ -16,6 +16,7 @@
 #import "TK_menuViewVC.h"
 #import "UIColor+TK_Color.h"
 #import "TKPublishRewardVC.h"
+#import "TKUserPageViewController.h"
 @interface HFPostDetailView()
 <UITableViewDelegate,UITableViewDataSource,
 PostCellDelegate,CLLRefreshHeadControllerDelegate,HFCommentViewControllerDelegate,
@@ -335,11 +336,8 @@ TK_menuViewVCDelegate>
         {
             return;
         }
-        UserCenterViewController *vc = [[UserCenterViewController alloc]init];
-        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-        [dic setObject:[NSNumber numberWithInteger:userId] forKey:kParamUserId];
-        vc.param = dic;
-        //        BaseNavViewController * nav = (BaseNavViewController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+        TKUserPageViewController *vc = [[TKUserPageViewController alloc]init];
+        vc.userId = TKStrFromNumber(userId);
         [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     }
 }

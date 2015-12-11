@@ -36,10 +36,24 @@
 
 
 /**
+ 主题背景色 上面的text颜色
+ **/
++(UIColor *)tkMainTextColorForActiveBg;
+
+/**
+ 默认背景上面的text颜色
+ **/
++(UIColor *)tkMainTextColorForDefaultBg;
+
+
+/**
  主背景色
  **/
 + (UIColor *)tkMainBackgroundColor;
 
-
+/**
+ color转换成 Image
+ **/
++ (UIImage*) tkCreateImageWithColor: (UIColor*) color;
 
 @end

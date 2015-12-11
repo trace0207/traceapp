@@ -152,6 +152,15 @@
 
 #define TKDefaultHead  @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg"
 
+// 设置 image 头像
+#define TKSetHeadImageView(imageView,url)  \
+[imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:url]]  \
+              placeholderImage:[UIImage imageNamed:@"head_default"]];
+
+#define  TKStrFromNumber(number)   [NSNumber numberWithDouble:number].stringValue
+
+#define TKMainViewFream   [[UIScreen mainScreen] bounds]
+
 
 typedef NS_ENUM(NSInteger, TKNetStateCode) {
     TKNEtWorkError             = -10000,

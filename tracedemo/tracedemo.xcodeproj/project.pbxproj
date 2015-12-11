@@ -650,6 +650,8 @@
 		BB5AE4191BFF0FA000BA0167 /* TK_RegisterNewUserAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4181BFF0FA000BA0167 /* TK_RegisterNewUserAck.m */; };
 		BB5DF0D21C15AADC0050B598 /* TK_VerifySMSArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DF0D11C15AADC0050B598 /* TK_VerifySMSArg.m */; };
 		BB7568AE1C19C10C003339F1 /* TKPicSelectTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7568AD1C19C10C003339F1 /* TKPicSelectTool.m */; };
+		BB7568B11C1A4CA2003339F1 /* TKAppSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7568B01C1A4CA2003339F1 /* TKAppSettingViewController.m */; };
+		BB7568B91C1AC693003339F1 /* TKAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7568B81C1AC693003339F1 /* TKAboutUsViewController.m */; };
 		BB8B221F1C17BDE5002B4C51 /* TKUserPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8B221D1C17BDE5002B4C51 /* TKUserPageViewController.m */; };
 		BB8B22201C17BDE5002B4C51 /* TKUserPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */; };
 		BB8B22261C1979F8002B4C51 /* TKEditUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8B22251C1979F8002B4C51 /* TKEditUserInfoVC.m */; };
@@ -1901,6 +1903,10 @@
 		BB5DF0D11C15AADC0050B598 /* TK_VerifySMSArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_VerifySMSArg.m; sourceTree = "<group>"; };
 		BB7568AC1C19C10C003339F1 /* TKPicSelectTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPicSelectTool.h; sourceTree = "<group>"; };
 		BB7568AD1C19C10C003339F1 /* TKPicSelectTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPicSelectTool.m; sourceTree = "<group>"; };
+		BB7568AF1C1A4CA2003339F1 /* TKAppSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAppSettingViewController.h; sourceTree = "<group>"; };
+		BB7568B01C1A4CA2003339F1 /* TKAppSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAppSettingViewController.m; sourceTree = "<group>"; };
+		BB7568B71C1AC693003339F1 /* TKAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAboutUsViewController.h; sourceTree = "<group>"; };
+		BB7568B81C1AC693003339F1 /* TKAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAboutUsViewController.m; sourceTree = "<group>"; };
 		BB8B221C1C17BDE5002B4C51 /* TKUserPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserPageViewController.h; sourceTree = "<group>"; };
 		BB8B221D1C17BDE5002B4C51 /* TKUserPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserPageViewController.m; sourceTree = "<group>"; };
 		BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKUserPageViewController.xib; sourceTree = "<group>"; };
@@ -4284,6 +4290,10 @@
 				BB8B22271C1991B3002B4C51 /* TK_SettingCell.h */,
 				BB8B22281C1991B3002B4C51 /* TK_SettingCell.m */,
 				BB8B22291C1991B3002B4C51 /* TK_SettingCell.xib */,
+				BB7568AF1C1A4CA2003339F1 /* TKAppSettingViewController.h */,
+				BB7568B01C1A4CA2003339F1 /* TKAppSettingViewController.m */,
+				BB7568B71C1AC693003339F1 /* TKAboutUsViewController.h */,
+				BB7568B81C1AC693003339F1 /* TKAboutUsViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5182,10 +5192,12 @@
 				8A6B39271BF01B8F00E5C982 /* RegisterRes.m in Sources */,
 				8A6B39931BF01B8F00E5C982 /* GetSportPageDataAck.m in Sources */,
 				8A6B390C1BF01B8F00E5C982 /* GetSudoKuData.m in Sources */,
+				BB7568B11C1A4CA2003339F1 /* TKAppSettingViewController.m in Sources */,
 				8A6B3F1A1BF01E4900E5C982 /* SDWebImageManager+MJ.m in Sources */,
 				8A6B3BFA1BF01D4400E5C982 /* WKWebViewJavascriptBridge.m in Sources */,
 				8A6B39461BF01B8F00E5C982 /* HFActivityWindowArg.m in Sources */,
 				8A2E62061BEC802700FBDB86 /* MMLogoView.m in Sources */,
+				BB7568B91C1AC693003339F1 /* TKAboutUsViewController.m in Sources */,
 				8A6B3F561BF01E4900E5C982 /* SDCollectionViewCell.m in Sources */,
 				8A6B39D41BF01B8F00E5C982 /* HFUploadPostReq.m in Sources */,
 				8A6B3BF21BF01D4400E5C982 /* BaseView.m in Sources */,

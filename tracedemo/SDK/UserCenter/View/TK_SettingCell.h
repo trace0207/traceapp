@@ -13,8 +13,18 @@ extern const NSInteger kLeftLabelTag;
 extern const NSInteger kRightLabelTag;
 extern const NSInteger kLeftImageIconTag;
 extern const NSInteger kRightImageViewTag;
+extern const NSInteger kRightSwitchTag;
 
 @interface TK_SettingCell : UITableViewCell
+
+
+@property (nonatomic,strong)UILabel * leftLabel;
+@property (nonatomic,strong)UILabel * rightLabel;
+@property (nonatomic,strong)UIImageView * rightHeadImageView;
+@property (nonatomic,strong)UISwitch * rightSwitch;
+@property (nonatomic,strong)UIImageView * leftImageIcon;
+
+
 
 
 
@@ -27,10 +37,22 @@ extern const NSInteger kRightImageViewTag;
 
 
 /**
+ 加载默认的 带左边icon的 布局
+ **/
++(TK_SettingCell *)loadDefaultTextWithLeftIconType:(id)ower;
+
+/**
  
  加载 右边 大图片的  cell 
  
  **/
 +(TK_SettingCell *)loadRightImageViewType:(id)ower;
+
+
+/**
+ 开关 item
+ **/
++(TK_SettingCell *)loadSwitchType:(id)ower;
+
 
 @end

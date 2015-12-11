@@ -8,8 +8,8 @@
 
 #import "UserInfoViewController.h"
 #import "UserRes.h"
-#import "SettingsViewController.h"
-#import "MyInfoCell.h"
+#import "TKAppSettingViewController.h"
+#import "TK_SettingCell.h"
 #import "UserViewController.h"
 #import "HFCoopViewController.h"
 #import "HFFeedbackController.h"
@@ -35,6 +35,7 @@
 #import "HFEditInfoViewController.h"
 #import "TKUserCenter.h"
 #import "TKEditUserInfoVC.h"
+#import "UIColor+TK_Color.h"
 
 
 @interface UserInfoViewController()<HFDismissBandViewDelegate,HFMessageViewControllerDelegate>
@@ -74,8 +75,12 @@
     [dic11 setObject:@"My_stepRecord" forKey:KEY_IMG];
     [dic11 setObject:@"晒单相册" forKey:KEY_TXT];
     
+    NSMutableDictionary *dic12 = [NSMutableDictionary dictionary];
+    [dic12 setObject:@"My_stepRecord" forKey:KEY_IMG];
+    [dic12 setObject:@"我的私信" forKey:KEY_TXT];
     
-    NSArray *array1 = [[NSArray alloc]initWithObjects:dic10,dic11,nil];
+    
+    NSArray *array1 = [[NSArray alloc]initWithObjects:dic10,dic11,dic12,nil];
     
     
     NSMutableDictionary *dic20 = [NSMutableDictionary dictionary];
@@ -106,7 +111,7 @@
     [self.dataSource addObject:array1];
     [self.dataSource addObject:array2];
     
-    self.tableView.backgroundColor = [UIColor HFColorStyle_6];
+    self.tableView.backgroundColor = [UIColor tkMainBackgroundColor];
     [self.tableView reloadData];
 }
 
@@ -223,6 +228,11 @@
         userPage.userId = TKUserId;
         userPage.navTitle = @"我的晒单";
         [self.navigationController pushViewController:userPage animated:YES];
+    }else if (row == 2)
+    {
+        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
+        bvc.navTitle = @"我的私信";
+        [self.navigationController pushViewController:bvc animated:YES];
     }
     
 }
@@ -254,7 +264,7 @@
         [self.navigationController pushViewController:bvc animated:YES];
     }
     else if (row == 4) {
-        SettingsViewController * setVC = [[SettingsViewController alloc] init];
+        TKAppSettingViewController * setVC = [[TKAppSettingViewController alloc] init];
         [self.navigationController pushViewController:setVC animated:YES];
         
     }
@@ -268,28 +278,17 @@
         return self.headCell;
     }else{
         static NSString *identifier = @"MessageCell";
-        MyInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        TK_SettingCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (!cell) {
-            cell = [[[NSBundle mainBundle]loadNibNamed:@"MyInfoCell" owner:self options:nil] objectAtIndex:1];
+            cell =  [TK_SettingCell loadDefaultTextWithLeftIconType:self];
         }
         NSArray *list = [self.dataSource objectAtIndex:indexPath.section];
         NSDictionary *dic = [list objectAtIndex:indexPath.row];
         NSString *imageName = [dic objectForKey:KEY_IMG];
         NSString *text = [dic objectForKey:KEY_TXT];
-        [cell.image setImage:[UIImage imageNamed:imageName]];
-        [cell.titleLabel setText:text];
-        [cell hiddenImageNew];
-        [cell setUnreadCount:0];
-        //        if (indexPath.section == 1 && indexPath.row == 0) {
-        //            [cell setUnreadCount:unreadCount];
-        //        }else {
-        //            [cell setUnreadCount:0];
-        //        }
-        //        if (indexPath.row == 3 && indexPath.section == 1) {
-        //            [cell judgeFirstLogin];
-        //        }else{
-        //            [cell hiddenImageNew];
-        //        }
+        [cell.leftImageIcon setImage:[UIImage imageNamed:imageName]];
+        [cell.leftLabel setText:text];
+        cell.rightLabel.hidden = YES;
         return cell;
     }
 }

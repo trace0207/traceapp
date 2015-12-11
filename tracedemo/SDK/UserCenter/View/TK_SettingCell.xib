@@ -20,7 +20,7 @@
                             <constraint firstAttribute="width" constant="100" id="Fve-pb-xvC"/>
                             <constraint firstAttribute="height" constant="21" id="c1G-Br-8wD"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -29,7 +29,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="tfq-SU-9lG"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -52,28 +52,28 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" tag="9902" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z24-H5-h0Y">
-                        <rect key="frame" x="146" y="11" width="133" height="21"/>
+                        <rect key="frame" x="141" y="11" width="138" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="87c-Wk-6W5"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" tag="9903" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xai-nP-MZR">
-                        <rect key="frame" x="13" y="9" width="25" height="25"/>
+                        <rect key="frame" x="13" y="12" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="663-Dx-0i4"/>
-                            <constraint firstAttribute="width" constant="25" id="gLk-o4-1QM"/>
+                            <constraint firstAttribute="height" constant="20" id="663-Dx-0i4"/>
+                            <constraint firstAttribute="width" constant="20" id="gLk-o4-1QM"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" tag="9901" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDC-Ug-ga0">
-                        <rect key="frame" x="46" y="11" width="100" height="21"/>
+                        <rect key="frame" x="41" y="11" width="100" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="Dq5-Gn-62o"/>
                             <constraint firstAttribute="height" constant="21" id="cdO-Bb-Kb3"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -103,11 +103,11 @@
                             <constraint firstAttribute="width" constant="100" id="cpz-co-BRh"/>
                             <constraint firstAttribute="height" constant="21" id="xAU-XY-mf7"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" tag="9904" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hSu-I7-ry8">
+                    <imageView userInteractionEnabled="NO" tag="9904" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hSu-I7-ry8" customClass="BasePortraitView">
                         <rect key="frame" x="206" y="9" width="70" height="70"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="STH-4N-FOA"/>
@@ -123,6 +123,49 @@
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="195" y="426.5"/>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gH5-2L-hgb" customClass="TK_SettingCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gH5-2L-hgb" id="MIk-XT-XjA">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" tag="9903" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vCj-ez-F7d">
+                        <rect key="frame" x="13" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="hWT-1S-zJ9"/>
+                            <constraint firstAttribute="height" constant="20" id="lRA-hf-grx"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="9901" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJP-Qf-vyW">
+                        <rect key="frame" x="41" y="11" width="100" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="YU3-mq-WTE"/>
+                            <constraint firstAttribute="width" constant="100" id="iIj-pw-Jz2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" tag="9905" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iy2-NN-8vE">
+                        <rect key="frame" x="253" y="6" width="51" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="49" id="Kgk-ne-VHz"/>
+                            <constraint firstAttribute="height" constant="31" id="hhF-BK-Uq4"/>
+                        </constraints>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vCj-ez-F7d" firstAttribute="centerY" secondItem="MIk-XT-XjA" secondAttribute="centerY" id="49h-LI-0v1"/>
+                    <constraint firstItem="cJP-Qf-vyW" firstAttribute="centerY" secondItem="MIk-XT-XjA" secondAttribute="centerY" id="8eB-uy-UYK"/>
+                    <constraint firstItem="cJP-Qf-vyW" firstAttribute="leading" secondItem="vCj-ez-F7d" secondAttribute="trailing" constant="8" id="MER-lp-vfm"/>
+                    <constraint firstItem="vCj-ez-F7d" firstAttribute="leading" secondItem="MIk-XT-XjA" secondAttribute="leadingMargin" constant="5" id="ZUF-2m-XSb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="iy2-NN-8vE" secondAttribute="trailing" constant="10" id="fsC-b8-hD4"/>
+                    <constraint firstItem="iy2-NN-8vE" firstAttribute="centerY" secondItem="MIk-XT-XjA" secondAttribute="centerY" id="zKg-FG-1Mw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="195" y="570"/>
         </tableViewCell>
     </objects>
 </document>

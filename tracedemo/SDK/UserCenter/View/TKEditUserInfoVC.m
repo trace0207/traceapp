@@ -47,11 +47,6 @@
     self.navTitle = @"个人资料";
     [self initDefaultUIData];
     [self.view addSubview:self.tableView];
-    
-//    [self addRightBarItemWithTitle:@"保存"];
-    // Do any additional setup after loading the view.
-    
-    
 }
 
 
@@ -75,6 +70,7 @@
     UILabel * text =  [headView viewWithTag:kLeftLabelTag];
     text.text = @"头像";
     UIImageView * imageView = [headView viewWithTag:kRightImageViewTag];
+    imageView.backgroundColor = [UIColor whiteColor];
     headImageView = imageView;
     [imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]]
                   placeholderImage:[UIImage imageNamed:@"head_default"]];
@@ -217,14 +213,10 @@
 }
 
 
-
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row == 0)
     {
-    
         return [self getHeadView];
     }
     static NSString *identifier = @"TKSettingTableCell";
@@ -253,9 +245,6 @@
         return;
     }
     
-
-    
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -265,10 +254,16 @@
     }
     return 50;
 }
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-//    [self.textField resignFirstResponder];
+    return 10;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.01f;
+}
+
 #pragma mark - HFEditInfoCellDelegate
 #pragma mark - ZHPickViewDelegate
 -(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString cell:(HFEditInfoCell *)cell

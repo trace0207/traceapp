@@ -23,7 +23,7 @@
     UILabel *navTitleLabel;
     CGFloat headViewHeight;
 }
-@property (nonatomic, strong) NSString *userId;
+@property (nonatomic, assign) NSInteger userId;
 @property (nonatomic, assign) NSInteger pageOfset;
 //@property (nonatomic, strong) HomeData *UserInfo;
 @property (nonatomic, strong) NSMutableArray *dataSource;
@@ -52,14 +52,18 @@
     [backBtn setImage:IMG(@"icon_back") forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(leftBarItemAction:) forControlEvents:UIControlEventTouchUpInside];
     
+    
     [self.view addSubview:backBtn];
-    _userId = [self.param objectForKey:kParamUserId];
     
     
-    if([_userId isEqualToString:TKUserId])
+    _userId = ((NSNumber *)[self.param objectForKey:kParamUserId]).integerValue;
+    
+    
+    if([TKStrFromNumber(_userId) isEqualToString:TKUserId])
     {
         [self loadMyUserPage];
     }
+    
     
     
     
@@ -132,7 +136,7 @@
         self.headView.backgroundColor = [UIColor HFColorStyle_5];
         self.headView.frame = CGRectMake(0, 0, kScreenWidth, headViewHeight);
      
-            if ([_userId isEqualToString:TKUserId]) {
+            if ([TKStrFromNumber(_userId) isEqualToString:TKUserId]) {
                 [self.editBtn setTitle:@"编辑资料" forState:UIControlStateNormal];
                 self.mPostView.showDeleteBtn = YES;
             }else{
@@ -195,7 +199,7 @@
     }else{
         [dic setObject:KEY_FANS forKey:kParamFrom];
     }
-    [dic setValue:_userId forKey:kParamUserId];
+    [dic setValue:TKStrFromNumber(_userId) forKey:kParamUserId];
     
     FriendsViewController *vc = [[FriendsViewController alloc]init];
     vc.param = dic;
@@ -216,7 +220,7 @@
 //    if (!self.UserInfo) {
 //        return;
 //    }
-    if ([_userId isEqualToString:TKUserId]){
+    if ([TKStrFromNumber(_userId) isEqualToString:TKUserId]){
         HFEditInfoViewController * editVC = [[HFEditInfoViewController alloc] init];
         [self.navigationController pushViewController:editVC animated:YES];
     }else{

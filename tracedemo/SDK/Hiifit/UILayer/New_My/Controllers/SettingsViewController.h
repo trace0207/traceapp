@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import "TKIBaseNavWithDefaultBackVC.h"
 
-@interface SettingsViewController : BaseViewController
+@interface SettingsViewController : TKIBaseNavWithDefaultBackVC
 
 @end

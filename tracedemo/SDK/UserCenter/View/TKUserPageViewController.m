@@ -14,6 +14,7 @@
 {
 
     CGFloat headViewHeight;
+
    
 }
 
@@ -36,6 +37,7 @@
     [self.mPostView.mTableView setTableHeaderView:self.tableHeadView];
     [self.view addSubview:self.mPostView];
     [self.mPostView reloadData:self.dataSource];
+//    self.mPostView.backgroundColor = [UIColor redColor];
 }
 
 - (void)viewDidLoad {
@@ -44,8 +46,7 @@
     
     [self setDefaultValue];
     [self loadRefreshTableView];
-    
-   
+    [self refreshHeadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,23 +54,37 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+-(void)refreshHeadData
+{
+    TKUser * user = nil;
+    if([self.userId isEqual:TKUserId])
+    {
+        user = [[TKUserCenter instance] getUser];
+    }
+    else
+    {
+        user = [[TKUser alloc] init];
+    }
+    
+    self.signatureView.text = user.signature;
+    self.nickNameView.text = user.nickName;
+    
+//    [imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]]
+//                  placeholderImage:[UIImage imageNamed:@"head_default"]];
+    
+    TKSetHeadImageView(self.headImageView, user.headPortraitUrl);
+    
 }
-*/
-
 
 
 - (HFPostDetailView *)mPostView
 {
     if (!_mPostView) {
         
-        _mPostView = [[HFPostDetailView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) withTableViewStyle:UITableViewStylePlain];
+        CGFloat height = TKScreenHeight - 64; //CGRectGetHeight(self.view.frame);
+        _mPostView = [[HFPostDetailView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,height) withTableViewStyle:UITableViewStylePlain];
         _mPostView.bSupportPullUpLoad = YES;
         _mPostView.pageSize = kPageSize;
         _mPostView.bNeedPushUserCenter = NO;

@@ -109,6 +109,21 @@
 }
 
 
+/**
+ 主题背景色 上面的text颜色
+ **/
++(UIColor *)tkMainTextColorForActiveBg
+{
+    return [self TKcolorWithHexString:TK_Color_Wite];
+}
+
+/**
+ 默认背景上面的text颜色
+ **/
++(UIColor *)tkMainTextColorForDefaultBg
+{
+    return [self TKcolorWithHexString:TK_Color_white_main];
+}
 
 /**
  主背景色
@@ -116,6 +131,22 @@
 + (UIColor *)tkMainBackgroundColor
 {
     return [self TKcolorWithHexString:TK_Color_white_background];
+}
+
+
+/**
+ color转换成 Image
+ **/
++(UIImage*) tkCreateImageWithColor: (UIColor*) color
+{
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 

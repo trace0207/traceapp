@@ -65,7 +65,7 @@
     [bottomView addSubview:label3];
     label3.textAlignment = NSTextAlignmentCenter;
     label3.font = [UIFont systemFontOfSize:11.0f];
-    label3.text = @"邮箱:hiiservice@hiifit.com";
+    label3.text = @"邮箱:luotianjia@icloud.com";
     [label3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(bottomView.mas_centerX).with.offset(0);
         make.bottom.equalTo(bottomView.mas_bottom).with.offset(-15);
@@ -77,7 +77,7 @@
     [label2 setTextColor:[UIColor HFColorStyle_7]];
     label2.textAlignment = NSTextAlignmentCenter;
     label2.font = [UIFont systemFontOfSize:11.0f];
-    label2.text = @"电话：400-10086-86";
+    label2.text = @"电话：18867101952";
     [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(bottomView.mas_centerX).with.offset(-0);
         make.bottom.equalTo(bottomView.mas_bottom).with.offset(-15);
@@ -85,7 +85,7 @@
     }];
 
     UILabel * label1 = [[UILabel alloc] init];
-    label1.text = @"中移杭州技术科技有限公司";
+    label1.text = @"版权个人所有，翻版必究";
     label1.textColor = [UIColor HFColorStyle_7];
     label1.font = [UIFont systemFontOfSize:11.0f];
     label1.textAlignment = NSTextAlignmentCenter;
@@ -145,19 +145,19 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
         WebViewController * webVC = [[WebViewController alloc] init];
-        NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:kURLFunctionPage, kParamURL, nil];
+        NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"http://www.baidu.com", kParamURL, nil];
         webVC.param = dic;
         [self.navigationController pushViewController:webVC animated:YES];
     }
     if (indexPath.row == 1) {
         WebViewController * web = [[WebViewController alloc] init];
-        NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"http://weibo.com/u/3554757421?from=myfollow_all", kParamURL, nil];
+        NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"http://www.baidu.com", kParamURL, nil];
         web.param = dic;
         [self.navigationController pushViewController:web animated:YES];
     }
     if (indexPath.row == 2) {
         WebViewController * webView = [[WebViewController alloc] init];
-        NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"http://183.131.13.104/CloudHealth/web/declare.html", kParamURL, nil];
+        NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"http://www.baidu.com", kParamURL, nil];
         webView.param = dic;
         [self.navigationController pushViewController:webView animated:YES];
     }
@@ -170,18 +170,9 @@
 - (NSMutableArray *)dicArray
 {
     if (!_dicArray) {
-        _dicArray = [NSMutableArray arrayWithObjects:@"功能介绍", @"关注嗨健康微博", @"用户隐私协议", nil];
+        _dicArray = [NSMutableArray arrayWithObjects:@"功能介绍", @"官方网站", @"软件许可及服务协议", nil];
     }
     return _dicArray;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

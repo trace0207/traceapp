@@ -19,7 +19,7 @@
 #define TK_Color_black_main_1  @"666666"
 #define TK_Color_white_main  @"66FFFFFF"
 #define TK_Color_separator_white  @"33E8E8E8"
-#define TK_Color_white_background   @"f1f1f1"
+#define TK_Color_white_background   @"ebeded"
 
 
 #define TK_Color_nav_background  @"f0f0f0"
