@@ -419,8 +419,6 @@
 		8A6B3C8D1BF01D4400E5C982 /* HFBindPhoneNumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B2B1BF01D4400E5C982 /* HFBindPhoneNumViewController.xib */; };
 		8A6B3C8E1BF01D4400E5C982 /* HFCoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3B2D1BF01D4400E5C982 /* HFCoopViewController.m */; };
 		8A6B3C8F1BF01D4400E5C982 /* HFCoopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B2E1BF01D4400E5C982 /* HFCoopViewController.xib */; };
-		8A6B3C901BF01D4400E5C982 /* HFFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3B301BF01D4400E5C982 /* HFFeedbackController.m */; };
-		8A6B3C911BF01D4400E5C982 /* HFFeedbackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B311BF01D4400E5C982 /* HFFeedbackController.xib */; };
 		8A6B3C921BF01D4400E5C982 /* HFPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3B331BF01D4400E5C982 /* HFPrivacyViewController.m */; };
 		8A6B3C931BF01D4400E5C982 /* HFPrivacyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B341BF01D4400E5C982 /* HFPrivacyViewController.xib */; };
 		8A6B3C941BF01D4400E5C982 /* ModifySignatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3B361BF01D4400E5C982 /* ModifySignatureController.m */; };
@@ -494,8 +492,6 @@
 		8A6B3CD81BF01D4400E5C982 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3BC21BF01D4400E5C982 /* SettingsViewController.m */; };
 		8A6B3CD91BF01D4400E5C982 /* UserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3BC41BF01D4400E5C982 /* UserCenterViewController.m */; };
 		8A6B3CDA1BF01D4400E5C982 /* UserCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3BC51BF01D4400E5C982 /* UserCenterViewController.xib */; };
-		8A6B3CDB1BF01D4400E5C982 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3BC71BF01D4400E5C982 /* UserInfoViewController.m */; };
-		8A6B3CDC1BF01D4400E5C982 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3BC81BF01D4400E5C982 /* UserInfoViewController.xib */; };
 		8A6B3CDD1BF01D4400E5C982 /* HFAboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3BCC1BF01D4400E5C982 /* HFAboutUsCell.m */; };
 		8A6B3CDE1BF01D4400E5C982 /* HFAboutUsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3BCD1BF01D4400E5C982 /* HFAboutUsCell.xib */; };
 		8A6B3CDF1BF01D4400E5C982 /* HFAboutUsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3BCF1BF01D4400E5C982 /* HFAboutUsTableViewCell.m */; };
@@ -619,6 +615,7 @@
 		8A6B3FA81BF0898300E5C982 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6B3FA71BF0898300E5C982 /* AdSupport.framework */; };
 		8A6B3FAA1BF08A1200E5C982 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6B3FA91BF08A1200E5C982 /* libz.1.2.5.tbd */; };
 		8A6B3FAC1BF08A2600E5C982 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6B3FAB1BF08A2600E5C982 /* libicucore.tbd */; };
+		8A80E1EF1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A80E1EE1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.m */; };
 		8A978A611BD3C8EF00C84ED2 /* BasePortraitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A978A5E1BD3C8EF00C84ED2 /* BasePortraitView.m */; };
 		8A978A621BD3C8EF00C84ED2 /* HFSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A978A601BD3C8EF00C84ED2 /* HFSegmentView.m */; };
 		8AB6501F1BF0CDE600D4C0A0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AB6501A1BF0CDE500D4C0A0 /* Localizable.strings */; };
@@ -628,6 +625,18 @@
 		8AE10B821BF33BAA00C0C9A0 /* TKLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE10B811BF33BAA00C0C9A0 /* TKLoginViewController.xib */; };
 		8AECCA671C09608F00CD789F /* TestA.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA661C09608F00CD789F /* TestA.m */; };
 		8AECCA6A1C0C8FA600CD789F /* TKPublishRewardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA691C0C8FA600CD789F /* TKPublishRewardVC.m */; };
+		8AECCA731C1B192300CD789F /* TK_SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA6D1C1B192300CD789F /* TK_SettingCell.m */; };
+		8AECCA741C1B192300CD789F /* TK_SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AECCA6E1C1B192300CD789F /* TK_SettingCell.xib */; };
+		8AECCA751C1B192300CD789F /* TKAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA701C1B192300CD789F /* TKAboutUsViewController.m */; };
+		8AECCA761C1B192300CD789F /* TKAppSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA721C1B192300CD789F /* TKAppSettingViewController.m */; };
+		8AECCA7A1C1B195B00CD789F /* HFFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA781C1B195B00CD789F /* HFFeedbackController.m */; };
+		8AECCA7B1C1B195B00CD789F /* HFFeedbackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AECCA791C1B195B00CD789F /* HFFeedbackController.xib */; };
+		8AECCA7E1C1D212000CD789F /* TKUserDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */; };
+		8AECCA821C1D29AE00CD789F /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA801C1D29AE00CD789F /* UserInfoViewController.m */; };
+		8AECCA831C1D29AE00CD789F /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AECCA811C1D29AE00CD789F /* UserInfoViewController.xib */; };
+		8AECCA871C1D2C1000CD789F /* TKTableSectionM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA861C1D2C1000CD789F /* TKTableSectionM.m */; };
+		8AECCA8A1C1D2F8D00CD789F /* TKTableViewRowM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA891C1D2F8D00CD789F /* TKTableViewRowM.m */; };
+		8AECCA8D1C1D377700CD789F /* TKTableViewVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA8C1C1D377700CD789F /* TKTableViewVM.m */; };
 		BB15064E1C0876E500F97A7B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15064C1C0876E500F97A7B /* TestViewController.m */; };
 		BB15064F1C0876E500F97A7B /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB15064D1C0876E500F97A7B /* TestViewController.xib */; };
 		BB1506521C0A935D00F97A7B /* TK_PicAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1506511C0A935D00F97A7B /* TK_PicAddView.m */; };
@@ -650,13 +659,9 @@
 		BB5AE4191BFF0FA000BA0167 /* TK_RegisterNewUserAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4181BFF0FA000BA0167 /* TK_RegisterNewUserAck.m */; };
 		BB5DF0D21C15AADC0050B598 /* TK_VerifySMSArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DF0D11C15AADC0050B598 /* TK_VerifySMSArg.m */; };
 		BB7568AE1C19C10C003339F1 /* TKPicSelectTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7568AD1C19C10C003339F1 /* TKPicSelectTool.m */; };
-		BB7568B11C1A4CA2003339F1 /* TKAppSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7568B01C1A4CA2003339F1 /* TKAppSettingViewController.m */; };
-		BB7568B91C1AC693003339F1 /* TKAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7568B81C1AC693003339F1 /* TKAboutUsViewController.m */; };
 		BB8B221F1C17BDE5002B4C51 /* TKUserPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8B221D1C17BDE5002B4C51 /* TKUserPageViewController.m */; };
 		BB8B22201C17BDE5002B4C51 /* TKUserPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */; };
 		BB8B22261C1979F8002B4C51 /* TKEditUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8B22251C1979F8002B4C51 /* TKEditUserInfoVC.m */; };
-		BB8B222A1C1991B3002B4C51 /* TK_SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8B22281C1991B3002B4C51 /* TK_SettingCell.m */; };
-		BB8B222B1C1991B3002B4C51 /* TK_SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8B22291C1991B3002B4C51 /* TK_SettingCell.xib */; };
 		BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */; };
 		BBBF89A81C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */; };
 		BBBF89AB1C04770B00CF9F2E /* TK_menuViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89AA1C04770B00CF9F2E /* TK_menuViewVC.m */; };
@@ -1466,9 +1471,6 @@
 		8A6B3B2C1BF01D4400E5C982 /* HFCoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCoopViewController.h; sourceTree = "<group>"; };
 		8A6B3B2D1BF01D4400E5C982 /* HFCoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCoopViewController.m; sourceTree = "<group>"; };
 		8A6B3B2E1BF01D4400E5C982 /* HFCoopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFCoopViewController.xib; sourceTree = "<group>"; };
-		8A6B3B2F1BF01D4400E5C982 /* HFFeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFFeedbackController.h; sourceTree = "<group>"; };
-		8A6B3B301BF01D4400E5C982 /* HFFeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFFeedbackController.m; sourceTree = "<group>"; };
-		8A6B3B311BF01D4400E5C982 /* HFFeedbackController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFFeedbackController.xib; sourceTree = "<group>"; };
 		8A6B3B321BF01D4400E5C982 /* HFPrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPrivacyViewController.h; sourceTree = "<group>"; };
 		8A6B3B331BF01D4400E5C982 /* HFPrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPrivacyViewController.m; sourceTree = "<group>"; };
 		8A6B3B341BF01D4400E5C982 /* HFPrivacyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFPrivacyViewController.xib; sourceTree = "<group>"; };
@@ -1598,9 +1600,6 @@
 		8A6B3BC31BF01D4400E5C982 /* UserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterViewController.h; sourceTree = "<group>"; };
 		8A6B3BC41BF01D4400E5C982 /* UserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterViewController.m; sourceTree = "<group>"; };
 		8A6B3BC51BF01D4400E5C982 /* UserCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCenterViewController.xib; sourceTree = "<group>"; };
-		8A6B3BC61BF01D4400E5C982 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
-		8A6B3BC71BF01D4400E5C982 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
-		8A6B3BC81BF01D4400E5C982 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
 		8A6B3BCB1BF01D4400E5C982 /* HFAboutUsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFAboutUsCell.h; sourceTree = "<group>"; };
 		8A6B3BCC1BF01D4400E5C982 /* HFAboutUsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFAboutUsCell.m; sourceTree = "<group>"; };
 		8A6B3BCD1BF01D4400E5C982 /* HFAboutUsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFAboutUsCell.xib; sourceTree = "<group>"; };
@@ -1846,6 +1845,8 @@
 		8A6B3FA71BF0898300E5C982 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8A6B3FA91BF08A1200E5C982 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		8A6B3FAB1BF08A2600E5C982 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		8A80E1ED1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserDetailInfoTableVM.h; sourceTree = "<group>"; };
+		8A80E1EE1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserDetailInfoTableVM.m; sourceTree = "<group>"; };
 		8A978A5D1BD3C8EF00C84ED2 /* BasePortraitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePortraitView.h; sourceTree = "<group>"; };
 		8A978A5E1BD3C8EF00C84ED2 /* BasePortraitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePortraitView.m; sourceTree = "<group>"; };
 		8A978A5F1BD3C8EF00C84ED2 /* HFSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSegmentView.h; sourceTree = "<group>"; };
@@ -1861,6 +1862,27 @@
 		8AECCA661C09608F00CD789F /* TestA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestA.m; sourceTree = "<group>"; };
 		8AECCA681C0C8FA600CD789F /* TKPublishRewardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPublishRewardVC.h; sourceTree = "<group>"; };
 		8AECCA691C0C8FA600CD789F /* TKPublishRewardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPublishRewardVC.m; sourceTree = "<group>"; };
+		8AECCA6C1C1B192300CD789F /* TK_SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_SettingCell.h; sourceTree = "<group>"; };
+		8AECCA6D1C1B192300CD789F /* TK_SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_SettingCell.m; sourceTree = "<group>"; };
+		8AECCA6E1C1B192300CD789F /* TK_SettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_SettingCell.xib; sourceTree = "<group>"; };
+		8AECCA6F1C1B192300CD789F /* TKAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAboutUsViewController.h; sourceTree = "<group>"; };
+		8AECCA701C1B192300CD789F /* TKAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAboutUsViewController.m; sourceTree = "<group>"; };
+		8AECCA711C1B192300CD789F /* TKAppSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAppSettingViewController.h; sourceTree = "<group>"; };
+		8AECCA721C1B192300CD789F /* TKAppSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAppSettingViewController.m; sourceTree = "<group>"; };
+		8AECCA771C1B195B00CD789F /* HFFeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFFeedbackController.h; sourceTree = "<group>"; };
+		8AECCA781C1B195B00CD789F /* HFFeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFFeedbackController.m; sourceTree = "<group>"; };
+		8AECCA791C1B195B00CD789F /* HFFeedbackController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFFeedbackController.xib; sourceTree = "<group>"; };
+		8AECCA7C1C1D212000CD789F /* TKUserDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserDetailInfoViewController.h; sourceTree = "<group>"; };
+		8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserDetailInfoViewController.m; sourceTree = "<group>"; };
+		8AECCA7F1C1D29AE00CD789F /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		8AECCA801C1D29AE00CD789F /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		8AECCA811C1D29AE00CD789F /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
+		8AECCA851C1D2C1000CD789F /* TKTableSectionM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableSectionM.h; sourceTree = "<group>"; };
+		8AECCA861C1D2C1000CD789F /* TKTableSectionM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableSectionM.m; sourceTree = "<group>"; };
+		8AECCA881C1D2F8D00CD789F /* TKTableViewRowM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewRowM.h; sourceTree = "<group>"; };
+		8AECCA891C1D2F8D00CD789F /* TKTableViewRowM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableViewRowM.m; sourceTree = "<group>"; };
+		8AECCA8B1C1D377700CD789F /* TKTableViewVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewVM.h; sourceTree = "<group>"; };
+		8AECCA8C1C1D377700CD789F /* TKTableViewVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableViewVM.m; sourceTree = "<group>"; };
 		B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BB15064B1C0876E500F97A7B /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		BB15064C1C0876E500F97A7B /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
@@ -1903,18 +1925,11 @@
 		BB5DF0D11C15AADC0050B598 /* TK_VerifySMSArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_VerifySMSArg.m; sourceTree = "<group>"; };
 		BB7568AC1C19C10C003339F1 /* TKPicSelectTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPicSelectTool.h; sourceTree = "<group>"; };
 		BB7568AD1C19C10C003339F1 /* TKPicSelectTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPicSelectTool.m; sourceTree = "<group>"; };
-		BB7568AF1C1A4CA2003339F1 /* TKAppSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAppSettingViewController.h; sourceTree = "<group>"; };
-		BB7568B01C1A4CA2003339F1 /* TKAppSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAppSettingViewController.m; sourceTree = "<group>"; };
-		BB7568B71C1AC693003339F1 /* TKAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAboutUsViewController.h; sourceTree = "<group>"; };
-		BB7568B81C1AC693003339F1 /* TKAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAboutUsViewController.m; sourceTree = "<group>"; };
 		BB8B221C1C17BDE5002B4C51 /* TKUserPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserPageViewController.h; sourceTree = "<group>"; };
 		BB8B221D1C17BDE5002B4C51 /* TKUserPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserPageViewController.m; sourceTree = "<group>"; };
 		BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKUserPageViewController.xib; sourceTree = "<group>"; };
 		BB8B22241C1979F8002B4C51 /* TKEditUserInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEditUserInfoVC.h; sourceTree = "<group>"; };
 		BB8B22251C1979F8002B4C51 /* TKEditUserInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEditUserInfoVC.m; sourceTree = "<group>"; };
-		BB8B22271C1991B3002B4C51 /* TK_SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_SettingCell.h; sourceTree = "<group>"; };
-		BB8B22281C1991B3002B4C51 /* TK_SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_SettingCell.m; sourceTree = "<group>"; };
-		BB8B22291C1991B3002B4C51 /* TK_SettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_SettingCell.xib; sourceTree = "<group>"; };
 		BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKLeftMenu.xib; sourceTree = "<group>"; };
 		BBBF89A61C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+TKI_ImageFill.h"; sourceTree = "<group>"; };
 		BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+TKI_ImageFill.m"; sourceTree = "<group>"; };
@@ -2168,6 +2183,7 @@
 		8A6434981BAE844200820545 /* TKUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8AECCA841C1D2BD600CD789F /* ViewModel */,
 				BB7568AB1C19C0F5003339F1 /* CommonKit */,
 				BBBF89AC1C06B0D400CF9F2E /* TKPublish */,
 				8A2E61E11BEC802700FBDB86 /* SlidMenu */,
@@ -3404,9 +3420,6 @@
 				8A6B3B2C1BF01D4400E5C982 /* HFCoopViewController.h */,
 				8A6B3B2D1BF01D4400E5C982 /* HFCoopViewController.m */,
 				8A6B3B2E1BF01D4400E5C982 /* HFCoopViewController.xib */,
-				8A6B3B2F1BF01D4400E5C982 /* HFFeedbackController.h */,
-				8A6B3B301BF01D4400E5C982 /* HFFeedbackController.m */,
-				8A6B3B311BF01D4400E5C982 /* HFFeedbackController.xib */,
 				8A6B3B321BF01D4400E5C982 /* HFPrivacyViewController.h */,
 				8A6B3B331BF01D4400E5C982 /* HFPrivacyViewController.m */,
 				8A6B3B341BF01D4400E5C982 /* HFPrivacyViewController.xib */,
@@ -3686,9 +3699,6 @@
 				8A6B3BC31BF01D4400E5C982 /* UserCenterViewController.h */,
 				8A6B3BC41BF01D4400E5C982 /* UserCenterViewController.m */,
 				8A6B3BC51BF01D4400E5C982 /* UserCenterViewController.xib */,
-				8A6B3BC61BF01D4400E5C982 /* UserInfoViewController.h */,
-				8A6B3BC71BF01D4400E5C982 /* UserInfoViewController.m */,
-				8A6B3BC81BF01D4400E5C982 /* UserInfoViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -4273,6 +4283,10 @@
 		8AE10B7B1BF33B2000C0C9A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8AECCA7F1C1D29AE00CD789F /* UserInfoViewController.h */,
+				8AECCA801C1D29AE00CD789F /* UserInfoViewController.m */,
+				8AECCA811C1D29AE00CD789F /* UserInfoViewController.xib */,
+				8AECCA6B1C1B192300CD789F /* AppSetting */,
 				8AE10B811BF33BAA00C0C9A0 /* TKLoginViewController.xib */,
 				8AE10B7C1BF33B3E00C0C9A0 /* TKLoginViewController.h */,
 				8AE10B7D1BF33B3E00C0C9A0 /* TKLoginViewController.m */,
@@ -4287,15 +4301,40 @@
 				BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */,
 				BB8B22241C1979F8002B4C51 /* TKEditUserInfoVC.h */,
 				BB8B22251C1979F8002B4C51 /* TKEditUserInfoVC.m */,
-				BB8B22271C1991B3002B4C51 /* TK_SettingCell.h */,
-				BB8B22281C1991B3002B4C51 /* TK_SettingCell.m */,
-				BB8B22291C1991B3002B4C51 /* TK_SettingCell.xib */,
-				BB7568AF1C1A4CA2003339F1 /* TKAppSettingViewController.h */,
-				BB7568B01C1A4CA2003339F1 /* TKAppSettingViewController.m */,
-				BB7568B71C1AC693003339F1 /* TKAboutUsViewController.h */,
-				BB7568B81C1AC693003339F1 /* TKAboutUsViewController.m */,
+				8AECCA7C1C1D212000CD789F /* TKUserDetailInfoViewController.h */,
+				8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8AECCA6B1C1B192300CD789F /* AppSetting */ = {
+			isa = PBXGroup;
+			children = (
+				8AECCA771C1B195B00CD789F /* HFFeedbackController.h */,
+				8AECCA781C1B195B00CD789F /* HFFeedbackController.m */,
+				8AECCA791C1B195B00CD789F /* HFFeedbackController.xib */,
+				8AECCA6C1C1B192300CD789F /* TK_SettingCell.h */,
+				8AECCA6D1C1B192300CD789F /* TK_SettingCell.m */,
+				8AECCA6E1C1B192300CD789F /* TK_SettingCell.xib */,
+				8AECCA6F1C1B192300CD789F /* TKAboutUsViewController.h */,
+				8AECCA701C1B192300CD789F /* TKAboutUsViewController.m */,
+				8AECCA711C1B192300CD789F /* TKAppSettingViewController.h */,
+				8AECCA721C1B192300CD789F /* TKAppSettingViewController.m */,
+			);
+			path = AppSetting;
+			sourceTree = "<group>";
+		};
+		8AECCA841C1D2BD600CD789F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8AECCA851C1D2C1000CD789F /* TKTableSectionM.h */,
+				8AECCA861C1D2C1000CD789F /* TKTableSectionM.m */,
+				8AECCA881C1D2F8D00CD789F /* TKTableViewRowM.h */,
+				8AECCA891C1D2F8D00CD789F /* TKTableViewRowM.m */,
+				8AECCA8B1C1D377700CD789F /* TKTableViewVM.h */,
+				8AECCA8C1C1D377700CD789F /* TKTableViewVM.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BB15064A1C0876D000F97A7B /* Test */ = {
@@ -4373,6 +4412,8 @@
 			children = (
 				BB520D271BFAD0FD0022BFA2 /* TK_UserNormalViewModel.h */,
 				BB520D281BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m */,
+				8A80E1ED1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.h */,
+				8A80E1EE1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -4590,6 +4631,7 @@
 				8A6B3C231BF01D4400E5C982 /* HFLanchViewController.xib in Resources */,
 				BB15064F1C0876E500F97A7B /* TestViewController.xib in Resources */,
 				BBE32BA01C0E9C190094ACEE /* TKHttpAction.plist in Resources */,
+				8AECCA7B1C1B195B00CD789F /* HFFeedbackController.xib in Resources */,
 				8AE10B821BF33BAA00C0C9A0 /* TKLoginViewController.xib in Resources */,
 				8A6B3C121BF01D4400E5C982 /* HFBindingViewController.xib in Resources */,
 				8A6B3C681BF01D4400E5C982 /* GameViewController.xib in Resources */,
@@ -4609,6 +4651,7 @@
 				8A6B3C261BF01D4400E5C982 /* HFAdvanceHealthViewController.xib in Resources */,
 				8A6B39701BF01B8F00E5C982 /* HttpAction.plist in Resources */,
 				8A6B3F411BF01E4900E5C982 /* MJPhotoBrowser.bundle in Resources */,
+				8AECCA831C1D29AE00CD789F /* UserInfoViewController.xib in Resources */,
 				8A6B3C9F1BF01D4400E5C982 /* UserInfoCell.xib in Resources */,
 				8A6B3F541BF01E4900E5C982 /* ReadMe.strings in Resources */,
 				8A6B3C161BF01D4400E5C982 /* HFDevInfoViewController.xib in Resources */,
@@ -4633,7 +4676,6 @@
 				8A6B3C991BF01D4400E5C982 /* UserViewController.xib in Resources */,
 				8A6B3C7A1BF01D4400E5C982 /* LoginViewController.xib in Resources */,
 				8A6B3CB51BF01D4400E5C982 /* HFReportView.xib in Resources */,
-				8A6B3CDC1BF01D4400E5C982 /* UserInfoViewController.xib in Resources */,
 				8A6B3C781BF01D4400E5C982 /* ForgetViewController.xib in Resources */,
 				BBE328D61C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib in Resources */,
 				8A6B3C9D1BF01D4400E5C982 /* HFSwitchCell.xib in Resources */,
@@ -4664,7 +4706,6 @@
 				8A508FFE1B9D5D700067B9E9 /* Images.xcassets in Resources */,
 				8A6B3CE71BF01D4400E5C982 /* HFMessageCell.xib in Resources */,
 				8A6B3CDA1BF01D4400E5C982 /* UserCenterViewController.xib in Resources */,
-				8A6B3C911BF01D4400E5C982 /* HFFeedbackController.xib in Resources */,
 				8A6B3CCF1BF01D4400E5C982 /* HFHabitViewCell.xib in Resources */,
 				8A6B3C6A1BF01D4400E5C982 /* RankViewCell.xib in Resources */,
 				8A6B3C281BF01D4400E5C982 /* HFAdvanceSchemeContainerViewController.xib in Resources */,
@@ -4677,7 +4718,7 @@
 				8A6B3C731BF01D4400E5C982 /* HFSchemeCell.xib in Resources */,
 				8A6B3C521BF01D4400E5C982 /* HFIntroduceCell.xib in Resources */,
 				8A6B3C7C1BF01D4400E5C982 /* SetPasswordViewController.xib in Resources */,
-				BB8B222B1C1991B3002B4C51 /* TK_SettingCell.xib in Resources */,
+				8AECCA741C1B192300CD789F /* TK_SettingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4733,9 +4774,11 @@
 				8A6B3F211BF01E4900E5C982 /* UIViewController+Customize.m in Sources */,
 				8A6B39D51BF01B8F00E5C982 /* HFWeiboDeleteCommentReq.m in Sources */,
 				8A6B3F251BF01E4900E5C982 /* HFHUDView.m in Sources */,
+				8AECCA821C1D29AE00CD789F /* UserInfoViewController.m in Sources */,
 				8A6B3C7D1BF01D4400E5C982 /* HFUserInfoModel.m in Sources */,
 				8A6B39221BF01B8F00E5C982 /* MyPostListRes.m in Sources */,
 				8A6B3BFF1BF01D4400E5C982 /* NSString+HFStrUtil.m in Sources */,
+				8AECCA7A1C1B195B00CD789F /* HFFeedbackController.m in Sources */,
 				8A6B391E1BF01B8F00E5C982 /* ModelData.m in Sources */,
 				8A6B3F241BF01E4900E5C982 /* HFAlertView.m in Sources */,
 				8A6B3BFD1BF01D4400E5C982 /* TKPicSelectViewController.m in Sources */,
@@ -4754,7 +4797,6 @@
 				8A6B3F301BF01E4900E5C982 /* RBCustomDatePickerView.m in Sources */,
 				BB1A03181BE211720035770A /* TKHomePageViewController.m in Sources */,
 				8A6B3C341BF01D4400E5C982 /* HFQuestionTestViewController.m in Sources */,
-				8A6B3CDB1BF01D4400E5C982 /* UserInfoViewController.m in Sources */,
 				8A6B3C191BF01D4400E5C982 /* HFMyDeviceCell.m in Sources */,
 				8A6B39D11BF01B8F00E5C982 /* HFSubmitCommentReq.m in Sources */,
 				8A6B3C8A1BF01D4400E5C982 /* FriendsViewController.m in Sources */,
@@ -4844,6 +4886,7 @@
 				8A6B39601BF01B8F00E5C982 /* HFHabitListRes.m in Sources */,
 				8A6B39241BF01B8F00E5C982 /* PostDetailRes.m in Sources */,
 				8A6B3C241BF01D4400E5C982 /* ChildSchemeViewController.m in Sources */,
+				8AECCA761C1B192300CD789F /* TKAppSettingViewController.m in Sources */,
 				8A6B39121BF01B8F00E5C982 /* HFCommentLikeListRes.m in Sources */,
 				BB5DF0D21C15AADC0050B598 /* TK_VerifySMSArg.m in Sources */,
 				8A6B3C5B1BF01D4400E5C982 /* HFUnlockCell.m in Sources */,
@@ -4969,6 +5012,7 @@
 				8A6B393B1BF01B8F00E5C982 /* HttpFileResp.m in Sources */,
 				8A6B3BED1BF01D4400E5C982 /* BasePortraitButton.m in Sources */,
 				8A6B3F441BF01E4900E5C982 /* MJPhotoProgressView.m in Sources */,
+				8A80E1EF1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.m in Sources */,
 				8A6B395E1BF01B8F00E5C982 /* HFHabitIsLatestRes.m in Sources */,
 				8A6B39751BF01B8F00E5C982 /* HFMessageTypeInfoRes.m in Sources */,
 				8A6B3CCC1BF01D4400E5C982 /* HFAdvanceSchemeCell.m in Sources */,
@@ -5023,7 +5067,6 @@
 				8A6B39311BF01B8F00E5C982 /* ParseResult.m in Sources */,
 				8A6B3C4D1BF01D4400E5C982 /* HFGiveUpView.m in Sources */,
 				8A6B391D1BF01B8F00E5C982 /* LoginRes.m in Sources */,
-				8A6B3C901BF01D4400E5C982 /* HFFeedbackController.m in Sources */,
 				8A6B39381BF01B8F00E5C982 /* HFLoadFileManager.m in Sources */,
 				BBBF89A81C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m in Sources */,
 				8A6B39781BF01B8F00E5C982 /* FinishSchemeArg.m in Sources */,
@@ -5031,6 +5074,7 @@
 				8A6B39AF1BF01B8F00E5C982 /* CheckUpdateReq.m in Sources */,
 				8A6B3C131BF01D4400E5C982 /* HFDevHistoryViewController.m in Sources */,
 				8A6B3C451BF01D4400E5C982 /* HFCupView.m in Sources */,
+				8AECCA731C1B192300CD789F /* TK_SettingCell.m in Sources */,
 				8A6B3C921BF01D4400E5C982 /* HFPrivacyViewController.m in Sources */,
 				8A6B39171BF01B8F00E5C982 /* HiModuleData.m in Sources */,
 				8A6B3CED1BF01D4400E5C982 /* MyInfoCell.m in Sources */,
@@ -5045,6 +5089,7 @@
 				BBE32BB41C0ED8400094ACEE /* TK_PraiseRewardArg.m in Sources */,
 				8A6B3C0A1BF01D4400E5C982 /* HFActivityListCell.m in Sources */,
 				8A6B3CD61BF01D4400E5C982 /* HFMessageViewController.m in Sources */,
+				8AECCA8D1C1D377700CD789F /* TKTableViewVM.m in Sources */,
 				8A6B3CD71BF01D4400E5C982 /* HFSystemMSGViewController.m in Sources */,
 				BB8B221F1C17BDE5002B4C51 /* TKUserPageViewController.m in Sources */,
 				8A6B3C091BF01D4400E5C982 /* HFDBCenter.m in Sources */,
@@ -5054,6 +5099,7 @@
 				BB339B8A1BFED91800680AEA /* TKIBaseNavWithDefaultBackVC.m in Sources */,
 				8A6B39131BF01B8F00E5C982 /* HFCommentUsersData.m in Sources */,
 				8A6B39C71BF01B8F00E5C982 /* HFDeleteWeiboReq.m in Sources */,
+				8AECCA7E1C1D212000CD789F /* TKUserDetailInfoViewController.m in Sources */,
 				8A6B399C1BF01B8F00E5C982 /* GiveUpQuizConclusionArg.m in Sources */,
 				8A6B3C221BF01D4400E5C982 /* HFLanchViewController.m in Sources */,
 				8A6B39A61BF01B8F00E5C982 /* SaveDietaryInfoArg.m in Sources */,
@@ -5090,6 +5136,7 @@
 				8A6B3F1C1BF01E4900E5C982 /* UIButton+RedPointButton.m in Sources */,
 				8A6B3C4A1BF01D4400E5C982 /* HFFoodPreScrollView.m in Sources */,
 				8A6B39871BF01B8F00E5C982 /* GetQuizSubjectAck.m in Sources */,
+				8AECCA8A1C1D2F8D00CD789F /* TKTableViewRowM.m in Sources */,
 				8A6B39B51BF01B8F00E5C982 /* HFSaveDeviceTokenRes.m in Sources */,
 				8A6B3C601BF01D4400E5C982 /* ModuleCell.m in Sources */,
 				8A6B3F351BF01E4900E5C982 /* FMDatabase.m in Sources */,
@@ -5110,6 +5157,7 @@
 				8A2E620B1BEC802700FBDB86 /* TKLeftMenuController.m in Sources */,
 				8A6B39281BF01B8F00E5C982 /* ResponseData.m in Sources */,
 				8A6B3F1D1BF01E4900E5C982 /* UIColor+Extended.m in Sources */,
+				8AECCA871C1D2C1000CD789F /* TKTableSectionM.m in Sources */,
 				8A6B3F571BF01E4900E5C982 /* SDCycleScrollView.m in Sources */,
 				8A6B3C671BF01D4400E5C982 /* GameViewController.m in Sources */,
 				8A6B39801BF01B8F00E5C982 /* GetDiseaseIntroArg.m in Sources */,
@@ -5192,12 +5240,10 @@
 				8A6B39271BF01B8F00E5C982 /* RegisterRes.m in Sources */,
 				8A6B39931BF01B8F00E5C982 /* GetSportPageDataAck.m in Sources */,
 				8A6B390C1BF01B8F00E5C982 /* GetSudoKuData.m in Sources */,
-				BB7568B11C1A4CA2003339F1 /* TKAppSettingViewController.m in Sources */,
 				8A6B3F1A1BF01E4900E5C982 /* SDWebImageManager+MJ.m in Sources */,
 				8A6B3BFA1BF01D4400E5C982 /* WKWebViewJavascriptBridge.m in Sources */,
 				8A6B39461BF01B8F00E5C982 /* HFActivityWindowArg.m in Sources */,
 				8A2E62061BEC802700FBDB86 /* MMLogoView.m in Sources */,
-				BB7568B91C1AC693003339F1 /* TKAboutUsViewController.m in Sources */,
 				8A6B3F561BF01E4900E5C982 /* SDCollectionViewCell.m in Sources */,
 				8A6B39D41BF01B8F00E5C982 /* HFUploadPostReq.m in Sources */,
 				8A6B3BF21BF01D4400E5C982 /* BaseView.m in Sources */,
@@ -5218,6 +5264,7 @@
 				BB1A03141BE2113F0035770A /* TKBaseViewController.m in Sources */,
 				8A6B3F221BF01E4900E5C982 /* UIWebView+JavaScriptAlert.m in Sources */,
 				8A6B39A81BF01B8F00E5C982 /* SchemeActionsArg.m in Sources */,
+				8AECCA751C1B192300CD789F /* TKAboutUsViewController.m in Sources */,
 				8A6B3C031BF01D4400E5C982 /* HFGifView.m in Sources */,
 				8A6B397C1BF01B8F00E5C982 /* GetCommonProblemArg.m in Sources */,
 				8A6B3CC41BF01D4400E5C982 /* HFTimePickView.m in Sources */,
@@ -5267,7 +5314,6 @@
 				8A6B39771BF01B8F00E5C982 /* FinishSchemeAck.m in Sources */,
 				8A6B39431BF01B8F00E5C982 /* HFActivityListReq.m in Sources */,
 				8A6B3C881BF01D4400E5C982 /* SignTwoViewController.m in Sources */,
-				BB8B222A1C1991B3002B4C51 /* TK_SettingCell.m in Sources */,
 				8A6B3C701BF01D4400E5C982 /* HFBannerCell.m in Sources */,
 				8A6B39BD1BF01B8F00E5C982 /* HFLogoutReq.m in Sources */,
 				8A6B3F161BF01E4900E5C982 /* MBProgressHUD+Add.m in Sources */,
@@ -5415,8 +5461,8 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xue bai (3M4NG9S2UD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5438,7 +5484,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
+				PROVISIONING_PROFILE = "6c4383df-1956-4c12-abe4-7677f69b15fe";
 			};
 			name = Debug;
 		};
@@ -5469,7 +5515,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
+				PROVISIONING_PROFILE = "6c4383df-1956-4c12-abe4-7677f69b15fe";
 			};
 			name = Release;
 		};

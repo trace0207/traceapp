@@ -36,6 +36,12 @@
 
 
 /**
+ 默认的 分割线颜色
+ **/
++ (UIColor *)tkDefaultLineColor;
+
+
+/**
  主题背景色 上面的text颜色
  **/
 +(UIColor *)tkMainTextColorForActiveBg;

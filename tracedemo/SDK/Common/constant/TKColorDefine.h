@@ -26,5 +26,7 @@
 #define TK_Color_nav_textActive @"f0004a"
 #define TK_Color_nav_textDefault @"333333"
 
+#define TK_Color_default_lineColor  @"666666"
+
 
 #endif /* TKColorDefine_h */

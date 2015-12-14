@@ -16,7 +16,8 @@
 #import "TK_menuViewVC.h"
 #import "UIColor+TK_Color.h"
 #import "TKPublishRewardVC.h"
-#import "TKUserPageViewController.h"
+//#import "TKUserPageViewController.h"
+#import "TKUserDetailInfoViewController.h"
 @interface HFPostDetailView()
 <UITableViewDelegate,UITableViewDataSource,
 PostCellDelegate,CLLRefreshHeadControllerDelegate,HFCommentViewControllerDelegate,
@@ -336,8 +337,10 @@ TK_menuViewVCDelegate>
         {
             return;
         }
-        TKUserPageViewController *vc = [[TKUserPageViewController alloc]init];
-        vc.userId = TKStrFromNumber(userId);
+        
+        NSString * showUserId = TKStrFromNumber(userId);
+        TKUserDetailInfoViewController *vc = [[TKUserDetailInfoViewController alloc]init];
+        vc.userId = showUserId;
         [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     }
 }

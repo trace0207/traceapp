@@ -150,6 +150,7 @@
 // 服务器地址
 #define TKBaseURL  [TKProxy proxy].tkBaseUrl;
 
+//默认的 head 头像地址
 #define TKDefaultHead  @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg"
 
 // 设置 image 头像
@@ -157,9 +158,15 @@
 [imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:url]]  \
               placeholderImage:[UIImage imageNamed:@"head_default"]];
 
+//  数字转换成 NSString
 #define  TKStrFromNumber(number)   [NSNumber numberWithDouble:number].stringValue
 
+// 读取全屏幕size 的 frame
 #define TKMainViewFream   [[UIScreen mainScreen] bounds]
+
+// 设置UItableView 的 代理
+#define TKSetTableView(tableView,d1,d2)  tableView.dataSource =  d1 ; \
+tableView.delegate = d2;
 
 
 typedef NS_ENUM(NSInteger, TKNetStateCode) {

@@ -110,6 +110,17 @@
 
 
 /**
+ 默认的 分割线颜色
+ **/
++ (UIColor *)tkDefaultLineColor
+{
+
+    return [self TKcolorWithHexString:TK_Color_default_lineColor];
+}
+
+
+
+/**
  主题背景色 上面的text颜色
  **/
 +(UIColor *)tkMainTextColorForActiveBg
@@ -122,7 +133,7 @@
  **/
 +(UIColor *)tkMainTextColorForDefaultBg
 {
-    return [self TKcolorWithHexString:TK_Color_white_main];
+    return [self TKcolorWithHexString:TK_Color_black_main];
 }
 
 /**
