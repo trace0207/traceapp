@@ -681,6 +681,9 @@
 		BBE32BB41C0ED8400094ACEE /* TK_PraiseRewardArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BB31C0ED8400094ACEE /* TK_PraiseRewardArg.m */; };
 		BBE32BB71C0ED8580094ACEE /* TK_PraiseOrderArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BB61C0ED8580094ACEE /* TK_PraiseOrderArg.m */; };
 		BBE32BBA1C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BB91C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m */; };
+		BBF4FCD21C1FF2020092FEE3 /* TKShowGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF4FCD01C1FF2020092FEE3 /* TKShowGoodsCell.m */; };
+		BBF4FCD31C1FF2020092FEE3 /* TKShowGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF4FCD11C1FF2020092FEE3 /* TKShowGoodsCell.xib */; };
+		BBF4FCD61C2012070092FEE3 /* TKIShowGoodsRowM.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF4FCD51C2012070092FEE3 /* TKIShowGoodsRowM.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1967,6 +1970,11 @@
 		BBE32BB61C0ED8580094ACEE /* TK_PraiseOrderArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PraiseOrderArg.m; sourceTree = "<group>"; };
 		BBE32BB81C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_AppraiseBuyerArg.h; sourceTree = "<group>"; };
 		BBE32BB91C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_AppraiseBuyerArg.m; sourceTree = "<group>"; };
+		BBF4FCCF1C1FF2020092FEE3 /* TKShowGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShowGoodsCell.h; sourceTree = "<group>"; };
+		BBF4FCD01C1FF2020092FEE3 /* TKShowGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShowGoodsCell.m; sourceTree = "<group>"; };
+		BBF4FCD11C1FF2020092FEE3 /* TKShowGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKShowGoodsCell.xib; sourceTree = "<group>"; };
+		BBF4FCD41C2012070092FEE3 /* TKIShowGoodsRowM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIShowGoodsRowM.h; sourceTree = "<group>"; };
+		BBF4FCD51C2012070092FEE3 /* TKIShowGoodsRowM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIShowGoodsRowM.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4346,6 +4354,8 @@
 				8AECCA891C1D2F8D00CD789F /* TKTableViewRowM.m */,
 				8AECCA8B1C1D377700CD789F /* TKTableViewVM.h */,
 				8AECCA8C1C1D377700CD789F /* TKTableViewVM.m */,
+				BBF4FCD41C2012070092FEE3 /* TKIShowGoodsRowM.h */,
+				BBF4FCD51C2012070092FEE3 /* TKIShowGoodsRowM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -4466,6 +4476,9 @@
 			children = (
 				8A9787141BD3C1A600C84ED2 /* BaseView */,
 				BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */,
+				BBF4FCCF1C1FF2020092FEE3 /* TKShowGoodsCell.h */,
+				BBF4FCD01C1FF2020092FEE3 /* TKShowGoodsCell.m */,
+				BBF4FCD11C1FF2020092FEE3 /* TKShowGoodsCell.xib */,
 			);
 			path = TKUIView;
 			sourceTree = "<group>";
@@ -4723,6 +4736,7 @@
 				8A6B3CDA1BF01D4400E5C982 /* UserCenterViewController.xib in Resources */,
 				8A6B3CCF1BF01D4400E5C982 /* HFHabitViewCell.xib in Resources */,
 				8A6B3C6A1BF01D4400E5C982 /* RankViewCell.xib in Resources */,
+				BBF4FCD31C1FF2020092FEE3 /* TKShowGoodsCell.xib in Resources */,
 				8A6B3C281BF01D4400E5C982 /* HFAdvanceSchemeContainerViewController.xib in Resources */,
 				8A552D721BA3D8230083E87E /* MenuViewController.xib in Resources */,
 				8A6B3C1E1BF01D4400E5C982 /* libIwownBLE.bundle in Resources */,
@@ -5070,8 +5084,10 @@
 				BB5AE4191BFF0FA000BA0167 /* TK_RegisterNewUserAck.m in Sources */,
 				8A6B3CB71BF01D4400E5C982 /* PictureCell.m in Sources */,
 				8A6B3CD01BF01D4400E5C982 /* HFMenuCell.m in Sources */,
+				BBF4FCD21C1FF2020092FEE3 /* TKShowGoodsCell.m in Sources */,
 				BBE32BA31C0E9C510094ACEE /* ActionTools.m in Sources */,
 				BB5AE4161BFF0F8B00BA0167 /* TK_RegisterNewUserArg.m in Sources */,
+				BBF4FCD61C2012070092FEE3 /* TKIShowGoodsRowM.m in Sources */,
 				8A6B39191BF01B8F00E5C982 /* HiModuleListRes.m in Sources */,
 				8A6B394C1BF01B8F00E5C982 /* HFUploadResultReq.m in Sources */,
 				8A6B39551BF01B8F00E5C982 /* HFCreateHabitRes.m in Sources */,

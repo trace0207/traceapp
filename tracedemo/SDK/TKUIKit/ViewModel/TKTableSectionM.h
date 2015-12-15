@@ -15,11 +15,11 @@
 /**
  *  section head 高度， 默认是 10
  */
-@property (nonatomic,assign)NSInteger sectionHeadHeight;
+@property (nonatomic,assign)CGFloat sectionHeadHeight;
 /**
  *  section foot 高度，默认是 0
  */
-@property (nonatomic,assign)NSInteger sectionFootHeight;
+@property (nonatomic,assign)CGFloat sectionFootHeight;
 
 /**
  *  section  cell高度，默认是 44, 如果设置了 TKTableViewRowM 的 rowHeight  则row的设置生效

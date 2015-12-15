@@ -18,7 +18,7 @@
 }
 
 
--(NSInteger)rowHeight
+-(CGFloat)rowHeight
 {
     
     //
