@@ -9,5 +9,6 @@
 #import "TKTableViewVM.h"
 
 @interface TKUserDetailInfoTableVM : TKTableViewVM
+@property (nonatomic,copy) NSString * userId;
 
 @end

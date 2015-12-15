@@ -13,5 +13,6 @@
 
 @property (nonatomic,assign) NSInteger rowHeight;
 @property (nonatomic,strong) NSObject * rowData;
+@property (nonatomic,assign) BOOL isEmptyData;
 
 @end

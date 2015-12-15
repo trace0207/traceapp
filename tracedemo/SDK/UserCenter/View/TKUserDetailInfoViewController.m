@@ -34,8 +34,9 @@
 
 -(void)firstInit
 {
-    tableVM = [[TKUserDetailInfoTableVM alloc] init];
+    tableVM = [[TKUserDetailInfoTableVM alloc]initWithDefaultTable];
     [self.view addSubview:tableVM.mTableView];
+    [tableVM tkUpdateViewConstraint];
     
 }
 

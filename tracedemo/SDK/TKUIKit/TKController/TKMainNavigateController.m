@@ -23,6 +23,7 @@
 #import "TKPublishShowGoodsVC.h"
 #import "TestViewController.h"
 #import "GlobNotifyDefine.h"
+#import "TKIMessageCenterViewController.h"
 
 
 
@@ -67,7 +68,7 @@
     newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
     
     
-    TKIBaseNavWithDefaultBackVC * newUser = [[TKIBaseNavWithDefaultBackVC alloc]init];
+    TKIMessageCenterViewController * newUser = [[TKIMessageCenterViewController alloc]init];
     newUser.navTitle = @"消息中心";
     newUser.hidDefaultBackBtn = YES;
     newUser.tabBarItem.title = @"消息";

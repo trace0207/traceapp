@@ -331,8 +331,8 @@ TK_menuViewVCDelegate>
 
 - (void)goUserCenterView:(NSInteger)userId
 {
-    if (bNeedPushUserCenter)
-    {
+//    if (bNeedPushUserCenter)
+//    {
         if (userId<=0)
         {
             return;
@@ -342,7 +342,7 @@ TK_menuViewVCDelegate>
         TKUserDetailInfoViewController *vc = [[TKUserDetailInfoViewController alloc]init];
         vc.userId = showUserId;
         [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
-    }
+//    }
 }
 
 - (void)operatePostType:(HFOperatePostType)type withCell:(PostCell *)cell

@@ -87,7 +87,7 @@
         _mPostView = [[HFPostDetailView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,height) withTableViewStyle:UITableViewStylePlain];
         _mPostView.bSupportPullUpLoad = YES;
         _mPostView.pageSize = kPageSize;
-        _mPostView.bNeedPushUserCenter = NO;
+//        _mPostView.bNeedPushUserCenter = NO;
         _mPostView.delegate = self;
         _mPostView.mTableView.backgroundColor = [UIColor clearColor];
         _mPostView.backgroundColor = [UIColor clearColor];

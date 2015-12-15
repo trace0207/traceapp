@@ -659,6 +659,9 @@
 		BB5AE4191BFF0FA000BA0167 /* TK_RegisterNewUserAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4181BFF0FA000BA0167 /* TK_RegisterNewUserAck.m */; };
 		BB5DF0D21C15AADC0050B598 /* TK_VerifySMSArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DF0D11C15AADC0050B598 /* TK_VerifySMSArg.m */; };
 		BB7568AE1C19C10C003339F1 /* TKPicSelectTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7568AD1C19C10C003339F1 /* TKPicSelectTool.m */; };
+		BB7568BC1C1E9A2D003339F1 /* TKUITools.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7568BB1C1E9A2D003339F1 /* TKUITools.m */; };
+		BB7568BF1C1EE621003339F1 /* TKIShowGoodsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7568BE1C1EE621003339F1 /* TKIShowGoodsVM.m */; };
+		BB7568C21C1FA56F003339F1 /* TKIMessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7568C11C1FA56F003339F1 /* TKIMessageCenterViewController.m */; };
 		BB8B221F1C17BDE5002B4C51 /* TKUserPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8B221D1C17BDE5002B4C51 /* TKUserPageViewController.m */; };
 		BB8B22201C17BDE5002B4C51 /* TKUserPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */; };
 		BB8B22261C1979F8002B4C51 /* TKEditUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8B22251C1979F8002B4C51 /* TKEditUserInfoVC.m */; };
@@ -1925,6 +1928,12 @@
 		BB5DF0D11C15AADC0050B598 /* TK_VerifySMSArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_VerifySMSArg.m; sourceTree = "<group>"; };
 		BB7568AC1C19C10C003339F1 /* TKPicSelectTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPicSelectTool.h; sourceTree = "<group>"; };
 		BB7568AD1C19C10C003339F1 /* TKPicSelectTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPicSelectTool.m; sourceTree = "<group>"; };
+		BB7568BA1C1E9A2D003339F1 /* TKUITools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUITools.h; sourceTree = "<group>"; };
+		BB7568BB1C1E9A2D003339F1 /* TKUITools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUITools.m; sourceTree = "<group>"; };
+		BB7568BD1C1EE621003339F1 /* TKIShowGoodsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIShowGoodsVM.h; sourceTree = "<group>"; };
+		BB7568BE1C1EE621003339F1 /* TKIShowGoodsVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIShowGoodsVM.m; sourceTree = "<group>"; };
+		BB7568C01C1FA56F003339F1 /* TKIMessageCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIMessageCenterViewController.h; sourceTree = "<group>"; };
+		BB7568C11C1FA56F003339F1 /* TKIMessageCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIMessageCenterViewController.m; sourceTree = "<group>"; };
 		BB8B221C1C17BDE5002B4C51 /* TKUserPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserPageViewController.h; sourceTree = "<group>"; };
 		BB8B221D1C17BDE5002B4C51 /* TKUserPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserPageViewController.m; sourceTree = "<group>"; };
 		BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKUserPageViewController.xib; sourceTree = "<group>"; };
@@ -2204,6 +2213,10 @@
 				BB1A03151BE211720035770A /* TKHomePageViewController.h */,
 				BB1A03161BE211720035770A /* TKHomePageViewController.m */,
 				BB1A03171BE211720035770A /* TKHomePageViewController.xib */,
+				BB7568BD1C1EE621003339F1 /* TKIShowGoodsVM.h */,
+				BB7568BE1C1EE621003339F1 /* TKIShowGoodsVM.m */,
+				BB7568C01C1FA56F003339F1 /* TKIMessageCenterViewController.h */,
+				BB7568C11C1FA56F003339F1 /* TKIMessageCenterViewController.m */,
 			);
 			path = TKController;
 			sourceTree = "<group>";
@@ -4442,6 +4455,8 @@
 			children = (
 				BB7568AC1C19C10C003339F1 /* TKPicSelectTool.h */,
 				BB7568AD1C19C10C003339F1 /* TKPicSelectTool.m */,
+				BB7568BA1C1E9A2D003339F1 /* TKUITools.h */,
+				BB7568BB1C1E9A2D003339F1 /* TKUITools.m */,
 			);
 			path = CommonKit;
 			sourceTree = "<group>";
@@ -4864,6 +4879,7 @@
 				8A6B3C4B1BF01D4400E5C982 /* HFFoodPreView.m in Sources */,
 				8A6B39491BF01B8F00E5C982 /* HFMainActivityReq.m in Sources */,
 				8A6B3C441BF01D4400E5C982 /* HFCoverFlowView.m in Sources */,
+				BB7568BF1C1EE621003339F1 /* TKIShowGoodsVM.m in Sources */,
 				8A6B39CD1BF01B8F00E5C982 /* HFPostBarPersonalReq.m in Sources */,
 				8A6B391B1BF01B8F00E5C982 /* HomePageRes.m in Sources */,
 				BB1506551C0AD1F100F97A7B /* TKClearView.m in Sources */,
@@ -4968,6 +4984,7 @@
 				8A6B3C391BF01D4400E5C982 /* HFDayPickerModel.m in Sources */,
 				8A6B3F431BF01E4900E5C982 /* MJPhotoLoadingView.m in Sources */,
 				8A6B3F231BF01E4900E5C982 /* HFActionSheet.m in Sources */,
+				BB7568C21C1FA56F003339F1 /* TKIMessageCenterViewController.m in Sources */,
 				8A6B3F6E1BF01E4900E5C982 /* SINavigationMenuView.m in Sources */,
 				8A6B3F281BF01E4900E5C982 /* HFRefreshController.m in Sources */,
 				8A6B3C021BF01D4400E5C982 /* CommonItem.m in Sources */,
@@ -4995,6 +5012,7 @@
 				8A6B3C801BF01D4400E5C982 /* SetHeadViewController.m in Sources */,
 				8A6B39691BF01B8F00E5C982 /* HFDeleteMessageReq.m in Sources */,
 				8A6B39721BF01B8F00E5C982 /* HFMessageBoxRes.m in Sources */,
+				BB7568BC1C1E9A2D003339F1 /* TKUITools.m in Sources */,
 				8A6B3CCB1BF01D4400E5C982 /* HFActivityView.m in Sources */,
 				8A6B3C1F1BF01D4400E5C982 /* MyBandViewController.m in Sources */,
 				8A6B39A31BF01B8F00E5C982 /* ModifySchemeStateArg.m in Sources */,
@@ -5461,8 +5479,8 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5484,7 +5502,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6c4383df-1956-4c12-abe4-7677f69b15fe";
+				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
 			};
 			name = Debug;
 		};
@@ -5493,7 +5511,7 @@
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xue bai (3M4NG9S2UD)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5515,7 +5533,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6c4383df-1956-4c12-abe4-7677f69b15fe";
+				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
 			};
 			name = Release;
 		};

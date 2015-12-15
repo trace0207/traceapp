@@ -18,6 +18,8 @@
 #import "TK_GetOrdersAck.h"
 #import "HFMenuControl.h"
 #import "TKPublishRewardVC.h"
+#import "TKIShowGoodsVM.h"
+#import "TKUserDetailInfoTableVM.h"
 
 
 @interface TKHomePageViewController ()<HFTitleViewDelegate,BasePostDetailViewDelegate,SDCycleScrollViewDelegate,HFMenuDelegate>{
@@ -26,6 +28,8 @@
     NSMutableArray *mSourceArray;
     NSMutableArray *mViewArray;
     NSMutableArray *mOffsetArray;
+    TKIShowGoodsVM * vm1;
+    TKIShowGoodsVM * vm2;
 }
 
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -60,21 +64,31 @@ static HFMenuControl * menu;
 
     [self.view addSubview:_scrollView];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.edges.equalTo(self.view);
     }];
-    for (NSInteger i = 0; i < 2; i++) {
-        HFPostDetailView *_tableView = [[HFPostDetailView alloc]initWithFrame:CGRectMake(i*kScreenWidth, 0, kScreenWidth, CGRectGetHeight(self.view.frame)-49)
-                                                           withTableViewStyle:UITableViewStylePlain];
-        _tableView.bSupportPullUpLoad = YES;
-        _tableView.delegate = self;
-        [_scrollView addSubview:_tableView];
-        [mViewArray addObject:_tableView];
-    }
+    vm1 = [[TKIShowGoodsVM alloc] initFreshAbleTableWithFrame:CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 49 - 44 - 20)];
+    vm2 = [[TKIShowGoodsVM alloc] initFreshAbleTableWithFrame:CGRectMake(TKScreenWidth, 0, TKScreenWidth, TKScreenHeight - 49 - 44 - 20)];
+    
+    [_scrollView addSubview:vm1.pullRefreshView];
+    [mViewArray addObject:vm1.pullRefreshView];
+    
+    [_scrollView addSubview:vm2.pullRefreshView];
+    [mViewArray addObject:vm2.pullRefreshView];
+//    
+//    [vm1 tkUpdateViewConstraint];
+//    [vm2 tkUpdateViewConstraint];
+    
+//    [vm2 tkLoadDefaultData];
+//    [vm2.pullRefreshView layoutSubviews];
     
     
-    
-    
+    [vm1 startPullDownRefreshing];
 }
+
+//-(void)viewDidLayoutSubviews
+//{
+//    [_scrollView updateConstraints];
+//}
 
 
 -(void)leftDrawerButtonPress{
@@ -106,6 +120,8 @@ static HFMenuControl * menu;
                forControlEvents:UIControlEventTouchUpInside];
     
     [self resetRightBarItem];
+    
+    [vm2 tkLoadDefaultData];
     
 }
 
@@ -162,13 +178,13 @@ static HFMenuControl * menu;
         // load 晒单
         
         DDLogInfo(@"loading shaidan ");
-        [self loadPullDownRefreashData];
-        
+        [vm1 tkLoadDefaultData];
     }else if(mCurrentIndex == 1){
         
         // load 悬赏
         DDLogInfo(@"loading xuanshang ");
-        [self loadPullDownRefreashData];
+//        [self loadPullDownRefreashData];
+        [vm2 tkLoadDefaultData];
     }
     
     
@@ -243,7 +259,7 @@ static HFMenuControl * menu;
         [array addObjectsFromArray:dataArray];
         //edit by shidongdong 20151015
         [mOffsetArray replaceObjectAtIndex:mCurrentIndex withObject:[NSNumber numberWithInteger:[dataArray count]]];
-        [view reloadData:array];
+//        [view reloadData:array];
         
         
         // TODO_end

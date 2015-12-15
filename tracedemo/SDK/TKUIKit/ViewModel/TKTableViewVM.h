@@ -11,12 +11,51 @@
 #import "TKTableViewRowM.h"
 #import "TK_SettingCell.h"
 
+
+@protocol TKTableViewVMDelegate <NSObject>
+
+-(void)onPull;
+@end
+
+
 @interface TKTableViewVM : NSObject
 @property (nonatomic,strong) UITableView * mTableView;
+@property (nonatomic,strong) UIView * pullRefreshView;
 @property (nonatomic,strong) NSMutableArray<__kindof TKTableSectionM *> * sectionData;
+@property (weak,nonatomic) id<TKTableViewVMDelegate> tkDelegate;
 
 
--(TKTableSectionM *)defaultSection;
+@property (nonatomic,strong) TKTableSectionM *defaultSection;
+/**
+ *  初始化默认的table 需
+ *  需要在 add到view之后，再调用 tkUpdateViewConstraint
+ *
+ *  @return self
+ */
+-(instancetype)initWithDefaultTable;
+/**
+ *  初始化可刷新的table 需
+ *  需要在 add到view之后，再调用 tkUpdateViewConstraint
+ *
+ *  @return self
+ */
+-(instancetype)initWithFreshAbleTable;
+
+/**
+ *  初始化默认的table 带 frame
+ *
+ *  @return self
+ */
+-(instancetype)initDefaultTableWithFrame:(CGRect)frame;
+/**
+ *  初始化可刷新的table 带 frame
+ *
+ *  @return self
+ */
+-(instancetype)initFreshAbleTableWithFrame:(CGRect)frame;
+
+-(void)tkLoadDefaultData;
+-(void)tkUpdateViewConstraint;
 
 
 #pragma  mark  UITableViewDelegate && UITableViewDataSource
@@ -25,4 +64,25 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+
+
+///////////////////////////--下拉刷新相关方法-//////////////////////////////////////////////
+/**
+ *  外部手动启动下拉加载的方法，例如 第一次进来 tableview自动下拉刷新
+ */
+- (void)startPullDownRefreshing;
+
+- (void)beginPullDownRefreshing;
+
+- (void)beginPullUpLoading;
+
+-(void)stopRefresh;
+
+- (BOOL)hasRefreshFooterView;
+
+
+
+
+
 @end
