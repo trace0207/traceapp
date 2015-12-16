@@ -22,4 +22,5 @@
 -(CGFloat)getPicWidth;
 -(CGFloat)getPicSeparation;
 -(CGFloat)getPicHeight;
+-(CGFloat)getPicPaddingLeft;
 @end

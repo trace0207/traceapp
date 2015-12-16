@@ -28,6 +28,26 @@
 }
 
 
++(void)showImagesInBigScreen:(NSArray *)picUrls withImageView:(UIImageView *)imageView currentIndex:(NSInteger)index
+{
+   
+    NSMutableArray * mjPhotos = [[NSMutableArray alloc] init];
+    
+    for(NSString * str in picUrls)
+    {
+         NSString * rawPicUrl = [UIKitTool getRawImage:str];
+        MJPhoto *photo = [[MJPhoto alloc] init];
+        photo.srcImageView = imageView;
+        photo.url = [NSURL URLWithString:rawPicUrl];
+        [mjPhotos addObject:photo];
+    }
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    browser.currentPhotoIndex = index;
+    browser.photos = [NSArray arrayWithArray:mjPhotos];
+    [browser show];
+}
+
+
 //计算纯文本高度
 + (CGFloat)getTextWidth:(NSString *)text withFontSize:(UIFont *)font
 {

@@ -30,6 +30,9 @@
     
     CGFloat picWidth;
     CGFloat picHeight;
+    
+    CGFloat cellContentPaddingLeftAndRight;
+    CGFloat picPaddingLeftAndRight;//  多张图片时，默认左右边距
 }
 
 @end
@@ -42,6 +45,8 @@
     self = [super init];
     imageFieldHeight = 0.0f;
     constFieldHeight = 250;
+    cellContentPaddingLeftAndRight = 16;//  cell contentView默认的边距 * 2
+    picPaddingLeftAndRight = 5 * 2; //两边距离一共
     return self;
 }
 
@@ -49,7 +54,10 @@
 -(CGFloat)rowHeight
 {
     
-    imageFieldHeight = [self getPicHeight:self.showGoodsData.pics];
+    if(imageFieldHeight == 0)
+    {
+        imageFieldHeight = [self getPicHeight:self.showGoodsData.pics];
+    }
     
     return constFieldHeight + imageFieldHeight;
 }
@@ -61,12 +69,17 @@
 }
 -(CGFloat)getPicSeparation
 {
-    return 10;
+    return 6;
 }
 
 -(CGFloat)getPicHeight
 {
     return picHeight;
+}
+
+-(CGFloat)getPicPaddingLeft
+{
+    return picPaddingLeftAndRight/2;
 }
 
 
@@ -77,20 +90,27 @@
     
     if(count == 1)
     {
-        picWidth = TKScreenWidth - 20;// 左右边距各 20
+        picWidth = TKScreenWidth - cellContentPaddingLeftAndRight - picPaddingLeftAndRight;// 左右边距各 20
         picHeight = picWidth * 0.75 ;
         return picHeight;
     }else if(count == 4)
     {
-        picWidth = (TKScreenWidth - 20 - 10)/2;
+        picWidth = (TKScreenWidth - cellContentPaddingLeftAndRight - [self getPicSeparation] - picPaddingLeftAndRight)/2;
         picHeight = picWidth * 0.75;
         return picHeight * 2 + 10;
     }else
     {
-        picWidth = (TKScreenWidth - 20 - 10 *2)/3;
+        picWidth = (TKScreenWidth - cellContentPaddingLeftAndRight - [self getPicSeparation] *2 - picPaddingLeftAndRight)/3;
         picHeight = picWidth;
         NSInteger row = count /3;
-        return picWidth * row + (row -1)*10;
+     
+        NSInteger rowCount = count % 3; //  如果不是刚好一行三个，则高度要增加一个 imageHeight的高度
+        if(rowCount > 0)
+        {
+            row = row +1;
+        }
+        
+        return picHeight * row + (row -1)*10;
     }
 }
 

@@ -21,6 +21,10 @@
 +(void)showImageInBigScreen:(NSString *)picUrl withImageView:(UIImageView *)imageView;
 
 
+
++(void)showImagesInBigScreen:(NSArray *)picUrls withImageView:(UIImageView *)imageView currentIndex:(NSInteger)index;
+
+
 //计算纯文本宽度
 + (CGFloat)getTextWidth:(NSString *)text withFontSize:(UIFont *)font;
 

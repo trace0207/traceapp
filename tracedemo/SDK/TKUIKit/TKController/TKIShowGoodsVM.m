@@ -9,6 +9,7 @@
 #import "TKIShowGoodsVM.h"
 #import "TKShowGoodsCell.h"
 #import "TKIShowGoodsRowM.h"
+#import "TKUITools.h"
 
 @implementation TKIShowGoodsVM
 
@@ -32,7 +33,7 @@
     section.sectionHeadHeight = 1;
     section.sectionFootHeight = 1;
     
-    for(int i=0;i<10;i++)
+    for(int i=0;i<20;i++)
     {
         TKIShowGoodsRowM * row = [[TKIShowGoodsRowM alloc] init];
         
@@ -82,9 +83,8 @@
         cell.backgroundColor = [UIColor clearColor];
         [cell.layer setCornerRadius:5];
         [cell setClipsToBounds:YES];
-        [self fillCellImages:cell indexPath:indexPath];
-        
     }
+    [self fillCellImages:cell indexPath:indexPath];
     return cell;
 }
 
@@ -96,24 +96,36 @@
     NSMutableArray * pics = rowD.showGoodsData.pics;
     
     int type = (pics.count == 4?2:3);
+    
+
+    for(UIView *view in [cell.imageContentView subviews])
+    {
+        [view removeFromSuperview];
+    }
+    
+    
     for(int i = 0;i< pics.count;i++)
     {
+        
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                              action:@selector(showBigImage:)];
         UIImageView * img = [[UIImageView alloc] init];
         TKSetLoadingImageView(img, [pics objectAtIndex:i]);
         [cell.imageContentView addSubview:img];
         [img mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo([rowD getPicWidth]);
             make.height.mas_equalTo([rowD getPicHeight]);
-            
-            
-            
-            NSInteger px = i%type;
-            NSInteger py = i/type;
-            
-            make.top.mas_equalTo(px *[rowD getPicHeight]);
-            make.left.mas_equalTo(py * [rowD getPicWidth]);
+            CGFloat px = i%type * ([rowD getPicWidth] +[rowD getPicSeparation]) + [rowD getPicPaddingLeft];
+            CGFloat py = i/type * ([rowD getPicHeight] + [rowD getPicSeparation]);
+            make.top.mas_equalTo(py );
+            make.left.mas_equalTo(px );
         
         }];
+        
+        [img setUserInteractionEnabled:YES];
+        [img addGestureRecognizer:tap];
+        img.tag = indexPath.row * 1000 + i;
+        
     }
     
     cell.imageFiledHeight.constant = rowD.rowHeight;
@@ -127,6 +139,17 @@
 //    }];
     
     
+}
+
+-(void)showBigImage:(UITapGestureRecognizer *)tap
+{
+    int index = tap.view.tag%1000;
+    NSInteger rowIndex = tap.view.tag/1000;
+    
+    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
+    [TKUITools showImagesInBigScreen:rowD.showGoodsData.pics
+                       withImageView: (UIImageView *)tap.view
+                        currentIndex:index];
 }
 
 
