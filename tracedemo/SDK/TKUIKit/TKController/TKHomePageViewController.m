@@ -78,10 +78,6 @@ static HFMenuControl * menu;
 //    [vm1 tkUpdateViewConstraint];
 //    [vm2 tkUpdateViewConstraint];
     
-//    [vm2 tkLoadDefaultData];
-//    [vm2.pullRefreshView layoutSubviews];
-    
-    
     [vm1 startPullDownRefreshing];
 }
 
@@ -121,7 +117,7 @@ static HFMenuControl * menu;
     
     [self resetRightBarItem];
     
-    [vm2 tkLoadDefaultData];
+//    [vm2 tkLoadDefaultData];
     
 }
 
@@ -171,20 +167,27 @@ static HFMenuControl * menu;
 /**
  *  根据选中的index 加载 page数据
  */
--(void)loadDataForPage{
+-(void)loadDataForPage:(BOOL) click{
     
     if(mCurrentIndex == 0){
         
         // load 晒单
         
         DDLogInfo(@"loading shaidan ");
-        [vm1 tkLoadDefaultData];
+        if(!vm1.hasInitData || click)
+        {
+            [vm1 startPullDownRefreshing];
+        }
+        
     }else if(mCurrentIndex == 1){
         
         // load 悬赏
         DDLogInfo(@"loading xuanshang ");
 //        [self loadPullDownRefreashData];
-        [vm2 tkLoadDefaultData];
+        if(!vm2.hasInitData || click)
+        {
+            [vm2 startPullDownRefreshing];
+        }
     }
     
     
@@ -195,7 +198,7 @@ static HFMenuControl * menu;
 - (void)titleViewDidSelectedAtIndex:(NSInteger)index clickMenuTap:(BOOL)clicked{
     
     mCurrentIndex = index;
-    [self loadDataForPage];
+    [self loadDataForPage:clicked];
     [self resetRightBarItem];
 }
 

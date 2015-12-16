@@ -23,4 +23,5 @@
 -(CGFloat)getPicSeparation;
 -(CGFloat)getPicHeight;
 -(CGFloat)getPicPaddingLeft;
+-(CGFloat)getImageFiledHeight;
 @end

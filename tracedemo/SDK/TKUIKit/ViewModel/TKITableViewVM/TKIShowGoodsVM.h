@@ -10,4 +10,6 @@
 
 @interface TKIShowGoodsVM : TKTableViewVM
 
+@property (nonatomic,assign) BOOL hasInitData;
+
 @end

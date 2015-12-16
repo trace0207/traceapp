@@ -23,6 +23,7 @@
 @property (nonatomic,strong) UIView * pullRefreshView;
 @property (nonatomic,strong) NSMutableArray<__kindof TKTableSectionM *> * sectionData;
 @property (weak,nonatomic) id<TKTableViewVMDelegate> tkDelegate;
+@property (assign,nonatomic)  BOOL logTrace;
 
 
 @property (nonatomic,strong) TKTableSectionM *defaultSection;

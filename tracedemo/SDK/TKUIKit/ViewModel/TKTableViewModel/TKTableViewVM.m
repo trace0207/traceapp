@@ -13,7 +13,7 @@
 @interface TKTableViewVM()<UITableViewDataSource,UITableViewDelegate,CLLRefreshHeadControllerDelegate>
 {
     CLLRefreshHeadController * refreshController;
-    BOOL logTrace;
+   
 }
 
 @end
@@ -24,7 +24,7 @@
 -(instancetype)init
 {
     self = [super init];
-    logTrace = YES;
+    _logTrace = YES;
     return self;
 }
 
@@ -161,7 +161,7 @@
     TKTableSectionM * tkSection = [self.sectionData objectAtIndex:section];
     NSInteger count =  tkSection.rowsData.count;
     
-    if(logTrace)
+    if(_logTrace)
     {
         DDLogInfo(@"\n at VM %@   sections == %ld  row == %ld",NSStringFromClass([self class]),section,count);
     }
@@ -249,6 +249,7 @@
     {
         [refreshController startPullDownRefreshing];
     }
+    [_mTableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];// 滚动到顶部
 }
 
 

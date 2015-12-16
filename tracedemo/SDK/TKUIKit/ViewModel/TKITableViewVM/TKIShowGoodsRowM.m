@@ -53,18 +53,25 @@
 
 -(CGFloat)rowHeight
 {
-    
-    if(imageFieldHeight == 0)
-    {
-        imageFieldHeight = [self getPicHeight:self.showGoodsData.pics];
-    }
-    
+    [self checkImageFieldHeightInit];
     return constFieldHeight + imageFieldHeight;
 }
 
 
+-(void)checkImageFieldHeightInit
+{
+    if(imageFieldHeight == 0)// 默认值是 0
+    {
+        imageFieldHeight = [self getPicHeight:self.showGoodsData.pics];
+    }
+
+}
+
+
+
 -(CGFloat)getPicWidth
 {
+    [self checkImageFieldHeightInit];
     return picWidth;
 }
 -(CGFloat)getPicSeparation
@@ -72,8 +79,15 @@
     return 6;
 }
 
+-(CGFloat)getImageFiledHeight
+{
+    [self checkImageFieldHeightInit];
+    return imageFieldHeight;
+}
+
 -(CGFloat)getPicHeight
 {
+    [self checkImageFieldHeightInit];
     return picHeight;
 }
 
@@ -88,6 +102,10 @@
 {
     NSInteger count = pics.count;
     
+    if(count == 0)
+    {
+        return 0.0f;
+    }
     if(count == 1)
     {
         picWidth = TKScreenWidth - cellContentPaddingLeftAndRight - picPaddingLeftAndRight;// 左右边距各 20
