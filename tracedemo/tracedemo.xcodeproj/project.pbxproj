@@ -649,17 +649,21 @@
 		BB520D211BF9B4540022BFA2 /* expression.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB520D201BF9B4540022BFA2 /* expression.plist */; };
 		BB520D261BFACCC40022BFA2 /* TK_ShareCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D251BFACCC40022BFA2 /* TK_ShareCategory.m */; };
 		BB520D291BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D281BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m */; };
-		BB53DA971C211BF000CF346A /* TKIShowGoodsRowM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DA8F1C211BF000CF346A /* TKIShowGoodsRowM.m */; };
 		BB53DA981C211BF000CF346A /* TKTableSectionM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DA921C211BF000CF346A /* TKTableSectionM.m */; };
 		BB53DA991C211BF000CF346A /* TKTableViewRowM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DA941C211BF000CF346A /* TKTableViewRowM.m */; };
 		BB53DA9A1C211BF000CF346A /* TKTableViewVM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DA961C211BF000CF346A /* TKTableViewVM.m */; };
-		BB53DA9D1C211C3C00CF346A /* TKIShowGoodsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DA9C1C211C3C00CF346A /* TKIShowGoodsVM.m */; };
-		BB53DAA41C211DD100CF346A /* TKShowGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DAA21C211DD100CF346A /* TKShowGoodsCell.m */; };
-		BB53DAA51C211DD100CF346A /* TKShowGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB53DAA31C211DD100CF346A /* TKShowGoodsCell.xib */; };
 		BB53DAA81C211DF900CF346A /* TKHeadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DAA71C211DF900CF346A /* TKHeadImageView.m */; };
 		BB53DAAB1C21589C00CF346A /* TKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DAAA1C21589C00CF346A /* TKBaseViewController.m */; };
 		BB53DAAE1C2158A800CF346A /* TK_menuViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DAAD1C2158A800CF346A /* TK_menuViewVC.m */; };
 		BB53DAB11C2158E100CF346A /* TKSHowGoodsDetailPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DAB01C2158E100CF346A /* TKSHowGoodsDetailPageVC.m */; };
+		BB53DABB1C215CAC00CF346A /* TKIShowGoodsRowM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DAB51C215CAC00CF346A /* TKIShowGoodsRowM.m */; };
+		BB53DABC1C215CAC00CF346A /* TKIShowGoodsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DAB71C215CAC00CF346A /* TKIShowGoodsVM.m */; };
+		BB53DABD1C215CAC00CF346A /* TKShowGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DAB91C215CAC00CF346A /* TKShowGoodsCell.m */; };
+		BB53DABE1C215CAC00CF346A /* TKShowGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB53DABA1C215CAC00CF346A /* TKShowGoodsCell.xib */; };
+		BB53DAC11C215CD500CF346A /* TKIRewardVM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DAC01C215CD500CF346A /* TKIRewardVM.m */; };
+		BB53DAC41C215D7100CF346A /* TKIShowGoodsDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DAC31C215D7100CF346A /* TKIShowGoodsDetailVM.m */; };
+		BB53DACD1C2161EE00CF346A /* TKICommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53DACB1C2161EE00CF346A /* TKICommentViewController.m */; };
+		BB53DACE1C2161EE00CF346A /* TKICommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB53DACC1C2161EE00CF346A /* TKICommentViewController.xib */; };
 		BB5AE4031BFF0C8F00BA0167 /* TKUserProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4021BFF0C8F00BA0167 /* TKUserProxy.m */; };
 		BB5AE40D1BFF0F0500BA0167 /* TK_LoginArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE40C1BFF0F0500BA0167 /* TK_LoginArg.m */; };
 		BB5AE4161BFF0F8B00BA0167 /* TK_RegisterNewUserArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AE4151BFF0F8B00BA0167 /* TK_RegisterNewUserArg.m */; };
@@ -1913,19 +1917,12 @@
 		BB520D251BFACCC40022BFA2 /* TK_ShareCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_ShareCategory.m; sourceTree = "<group>"; };
 		BB520D271BFAD0FD0022BFA2 /* TK_UserNormalViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_UserNormalViewModel.h; sourceTree = "<group>"; };
 		BB520D281BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_UserNormalViewModel.m; sourceTree = "<group>"; };
-		BB53DA8E1C211BF000CF346A /* TKIShowGoodsRowM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIShowGoodsRowM.h; sourceTree = "<group>"; };
-		BB53DA8F1C211BF000CF346A /* TKIShowGoodsRowM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIShowGoodsRowM.m; sourceTree = "<group>"; };
 		BB53DA911C211BF000CF346A /* TKTableSectionM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableSectionM.h; sourceTree = "<group>"; };
 		BB53DA921C211BF000CF346A /* TKTableSectionM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableSectionM.m; sourceTree = "<group>"; };
 		BB53DA931C211BF000CF346A /* TKTableViewRowM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewRowM.h; sourceTree = "<group>"; };
 		BB53DA941C211BF000CF346A /* TKTableViewRowM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableViewRowM.m; sourceTree = "<group>"; };
 		BB53DA951C211BF000CF346A /* TKTableViewVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewVM.h; sourceTree = "<group>"; };
 		BB53DA961C211BF000CF346A /* TKTableViewVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableViewVM.m; sourceTree = "<group>"; };
-		BB53DA9B1C211C3C00CF346A /* TKIShowGoodsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIShowGoodsVM.h; sourceTree = "<group>"; };
-		BB53DA9C1C211C3C00CF346A /* TKIShowGoodsVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIShowGoodsVM.m; sourceTree = "<group>"; };
-		BB53DAA11C211DD100CF346A /* TKShowGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShowGoodsCell.h; sourceTree = "<group>"; };
-		BB53DAA21C211DD100CF346A /* TKShowGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShowGoodsCell.m; sourceTree = "<group>"; };
-		BB53DAA31C211DD100CF346A /* TKShowGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKShowGoodsCell.xib; sourceTree = "<group>"; };
 		BB53DAA61C211DF900CF346A /* TKHeadImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKHeadImageView.h; sourceTree = "<group>"; };
 		BB53DAA71C211DF900CF346A /* TKHeadImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKHeadImageView.m; sourceTree = "<group>"; };
 		BB53DAA91C21589C00CF346A /* TKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBaseViewController.h; sourceTree = "<group>"; };
@@ -1934,6 +1931,20 @@
 		BB53DAAD1C2158A800CF346A /* TK_menuViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_menuViewVC.m; sourceTree = "<group>"; };
 		BB53DAAF1C2158E100CF346A /* TKSHowGoodsDetailPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSHowGoodsDetailPageVC.h; sourceTree = "<group>"; };
 		BB53DAB01C2158E100CF346A /* TKSHowGoodsDetailPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSHowGoodsDetailPageVC.m; sourceTree = "<group>"; };
+		BB53DAB41C215CAC00CF346A /* TKIShowGoodsRowM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIShowGoodsRowM.h; sourceTree = "<group>"; };
+		BB53DAB51C215CAC00CF346A /* TKIShowGoodsRowM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIShowGoodsRowM.m; sourceTree = "<group>"; };
+		BB53DAB61C215CAC00CF346A /* TKIShowGoodsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIShowGoodsVM.h; sourceTree = "<group>"; };
+		BB53DAB71C215CAC00CF346A /* TKIShowGoodsVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIShowGoodsVM.m; sourceTree = "<group>"; };
+		BB53DAB81C215CAC00CF346A /* TKShowGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShowGoodsCell.h; sourceTree = "<group>"; };
+		BB53DAB91C215CAC00CF346A /* TKShowGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShowGoodsCell.m; sourceTree = "<group>"; };
+		BB53DABA1C215CAC00CF346A /* TKShowGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKShowGoodsCell.xib; sourceTree = "<group>"; };
+		BB53DABF1C215CD500CF346A /* TKIRewardVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIRewardVM.h; sourceTree = "<group>"; };
+		BB53DAC01C215CD500CF346A /* TKIRewardVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIRewardVM.m; sourceTree = "<group>"; };
+		BB53DAC21C215D7100CF346A /* TKIShowGoodsDetailVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIShowGoodsDetailVM.h; sourceTree = "<group>"; };
+		BB53DAC31C215D7100CF346A /* TKIShowGoodsDetailVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIShowGoodsDetailVM.m; sourceTree = "<group>"; };
+		BB53DACA1C2161EE00CF346A /* TKICommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKICommentViewController.h; sourceTree = "<group>"; };
+		BB53DACB1C2161EE00CF346A /* TKICommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKICommentViewController.m; sourceTree = "<group>"; };
+		BB53DACC1C2161EE00CF346A /* TKICommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKICommentViewController.xib; sourceTree = "<group>"; };
 		BB5AE4011BFF0C8F00BA0167 /* TKUserProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserProxy.h; sourceTree = "<group>"; };
 		BB5AE4021BFF0C8F00BA0167 /* TKUserProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserProxy.m; sourceTree = "<group>"; };
 		BB5AE40B1BFF0F0500BA0167 /* TK_LoginArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_LoginArg.h; sourceTree = "<group>"; };
@@ -2220,6 +2231,9 @@
 			isa = PBXGroup;
 			children = (
 				BB339B841BFEBA6E00680AEA /* ControllerImpl */,
+				BB53DACA1C2161EE00CF346A /* TKICommentViewController.h */,
+				BB53DACB1C2161EE00CF346A /* TKICommentViewController.m */,
+				BB53DACC1C2161EE00CF346A /* TKICommentViewController.xib */,
 				8A6434A61BAE9DF600820545 /* TKMainNavigateController.h */,
 				8A6434A71BAE9DF600820545 /* TKMainNavigateController.m */,
 				BB1A03151BE211720035770A /* TKHomePageViewController.h */,
@@ -4442,13 +4456,8 @@
 		BB53DA8D1C211BF000CF346A /* TKITableViewVM */ = {
 			isa = PBXGroup;
 			children = (
-				BB53DAA11C211DD100CF346A /* TKShowGoodsCell.h */,
-				BB53DAA21C211DD100CF346A /* TKShowGoodsCell.m */,
-				BB53DAA31C211DD100CF346A /* TKShowGoodsCell.xib */,
-				BB53DA9B1C211C3C00CF346A /* TKIShowGoodsVM.h */,
-				BB53DA9C1C211C3C00CF346A /* TKIShowGoodsVM.m */,
-				BB53DA8E1C211BF000CF346A /* TKIShowGoodsRowM.h */,
-				BB53DA8F1C211BF000CF346A /* TKIShowGoodsRowM.m */,
+				BB53DAB21C215CAC00CF346A /* Reward */,
+				BB53DAB31C215CAC00CF346A /* ShowGoods */,
 			);
 			path = TKITableViewVM;
 			sourceTree = "<group>";
@@ -4464,6 +4473,31 @@
 				BB53DA961C211BF000CF346A /* TKTableViewVM.m */,
 			);
 			path = TKTableViewModel;
+			sourceTree = "<group>";
+		};
+		BB53DAB21C215CAC00CF346A /* Reward */ = {
+			isa = PBXGroup;
+			children = (
+				BB53DABF1C215CD500CF346A /* TKIRewardVM.h */,
+				BB53DAC01C215CD500CF346A /* TKIRewardVM.m */,
+			);
+			path = Reward;
+			sourceTree = "<group>";
+		};
+		BB53DAB31C215CAC00CF346A /* ShowGoods */ = {
+			isa = PBXGroup;
+			children = (
+				BB53DAB41C215CAC00CF346A /* TKIShowGoodsRowM.h */,
+				BB53DAB51C215CAC00CF346A /* TKIShowGoodsRowM.m */,
+				BB53DAB61C215CAC00CF346A /* TKIShowGoodsVM.h */,
+				BB53DAB71C215CAC00CF346A /* TKIShowGoodsVM.m */,
+				BB53DAB81C215CAC00CF346A /* TKShowGoodsCell.h */,
+				BB53DAB91C215CAC00CF346A /* TKShowGoodsCell.m */,
+				BB53DABA1C215CAC00CF346A /* TKShowGoodsCell.xib */,
+				BB53DAC21C215D7100CF346A /* TKIShowGoodsDetailVM.h */,
+				BB53DAC31C215D7100CF346A /* TKIShowGoodsDetailVM.m */,
+			);
+			path = ShowGoods;
 			sourceTree = "<group>";
 		};
 		BB5AE4041BFF0EB000BA0167 /* User */ = {
@@ -4695,6 +4729,7 @@
 				8A6B3CE01BF01D4400E5C982 /* HFAboutUsTableViewCell.xib in Resources */,
 				8A6B3C501BF01D4400E5C982 /* HFHealthCell.xib in Resources */,
 				8A6B3C871BF01D4400E5C982 /* SignThreeViewController.xib in Resources */,
+				BB53DABE1C215CAC00CF346A /* TKShowGoodsCell.xib in Resources */,
 				8A6B3C181BF01D4400E5C982 /* HFHistoryCell.xib in Resources */,
 				8A6B3C201BF01D4400E5C982 /* MyBandViewController.xib in Resources */,
 				8A6B3BF71BF01D4400E5C982 /* WebViewJavascriptBridge.js.txt in Resources */,
@@ -4729,6 +4764,7 @@
 				8A6B3C931BF01D4400E5C982 /* HFPrivacyViewController.xib in Resources */,
 				8A6B3C991BF01D4400E5C982 /* UserViewController.xib in Resources */,
 				8A6B3C7A1BF01D4400E5C982 /* LoginViewController.xib in Resources */,
+				BB53DACE1C2161EE00CF346A /* TKICommentViewController.xib in Resources */,
 				8A6B3CB51BF01D4400E5C982 /* HFReportView.xib in Resources */,
 				8A6B3C781BF01D4400E5C982 /* ForgetViewController.xib in Resources */,
 				BBE328D61C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib in Resources */,
@@ -4762,7 +4798,6 @@
 				8A6B3CDA1BF01D4400E5C982 /* UserCenterViewController.xib in Resources */,
 				8A6B3CCF1BF01D4400E5C982 /* HFHabitViewCell.xib in Resources */,
 				8A6B3C6A1BF01D4400E5C982 /* RankViewCell.xib in Resources */,
-				BB53DAA51C211DD100CF346A /* TKShowGoodsCell.xib in Resources */,
 				8A6B3C281BF01D4400E5C982 /* HFAdvanceSchemeContainerViewController.xib in Resources */,
 				8A552D721BA3D8230083E87E /* MenuViewController.xib in Resources */,
 				8A6B3C1E1BF01D4400E5C982 /* libIwownBLE.bundle in Resources */,
@@ -4830,6 +4865,7 @@
 				8A6B39D51BF01B8F00E5C982 /* HFWeiboDeleteCommentReq.m in Sources */,
 				8A6B3F251BF01E4900E5C982 /* HFHUDView.m in Sources */,
 				8AECCA821C1D29AE00CD789F /* UserInfoViewController.m in Sources */,
+				BB53DABB1C215CAC00CF346A /* TKIShowGoodsRowM.m in Sources */,
 				BB53DAAB1C21589C00CF346A /* TKBaseViewController.m in Sources */,
 				8A6B3C7D1BF01D4400E5C982 /* HFUserInfoModel.m in Sources */,
 				8A6B39221BF01B8F00E5C982 /* MyPostListRes.m in Sources */,
@@ -5014,6 +5050,7 @@
 				8A6B39481BF01B8F00E5C982 /* HFGetSudoDataReq.m in Sources */,
 				8A6B39571BF01B8F00E5C982 /* HFHabitAlarmClockAddReq.m in Sources */,
 				8A6B39D01BF01B8F00E5C982 /* HFReportReq.m in Sources */,
+				BB53DABC1C215CAC00CF346A /* TKIShowGoodsVM.m in Sources */,
 				8A6B39231BF01B8F00E5C982 /* PostDetailData.m in Sources */,
 				8A6B395A1BF01B8F00E5C982 /* HFHabitAlarmClockRes.m in Sources */,
 				8A6B3C8E1BF01D4400E5C982 /* HFCoopViewController.m in Sources */,
@@ -5022,7 +5059,6 @@
 				BB520D1D1BF9B3F20022BFA2 /* TK_GetOrdersArg.m in Sources */,
 				8A6B39471BF01B8F00E5C982 /* HFFriendsRankReq.m in Sources */,
 				8A6B3F191BF01E4900E5C982 /* NSString+Message.m in Sources */,
-				BB53DA971C211BF000CF346A /* TKIShowGoodsRowM.m in Sources */,
 				8A6B3C391BF01D4400E5C982 /* HFDayPickerModel.m in Sources */,
 				8A6B3F431BF01E4900E5C982 /* MJPhotoLoadingView.m in Sources */,
 				8A6B3F231BF01E4900E5C982 /* HFActionSheet.m in Sources */,
@@ -5032,7 +5068,6 @@
 				8A6B3C021BF01D4400E5C982 /* CommonItem.m in Sources */,
 				8A6B3CAC1BF01D4400E5C982 /* HFCommentLikeView.m in Sources */,
 				8A6B399B1BF01B8F00E5C982 /* GiveUpQuizConclusionAck.m in Sources */,
-				BB53DAA41C211DD100CF346A /* TKShowGoodsCell.m in Sources */,
 				8A6B39631BF01B8F00E5C982 /* HFHabitSignReq.m in Sources */,
 				8A6B3F321BF01E4900E5C982 /* FCModelCachedObject.m in Sources */,
 				8A6B3CE11BF01D4400E5C982 /* HFEditHeaderView.m in Sources */,
@@ -5107,6 +5142,7 @@
 				8A6B3C101BF01D4400E5C982 /* HFBindDeviceListController.m in Sources */,
 				8A6B3C581BF01D4400E5C982 /* HFTagView.m in Sources */,
 				8A6B395B1BF01B8F00E5C982 /* HFHabitAlarmClockUpdateReq.m in Sources */,
+				BB53DAC11C215CD500CF346A /* TKIRewardVM.m in Sources */,
 				8A978A611BD3C8EF00C84ED2 /* BasePortraitView.m in Sources */,
 				8A6B3C631BF01D4400E5C982 /* Cell.m in Sources */,
 				8A6B39A51BF01B8F00E5C982 /* PublishUserDiaryArg.m in Sources */,
@@ -5180,7 +5216,6 @@
 				8A6B39581BF01B8F00E5C982 /* HFHabitAlarmClockDeleteReq.m in Sources */,
 				8A2E62021BEC802700FBDB86 /* MMExampleLeftSideDrawerViewController.m in Sources */,
 				8A6B3F331BF01E4900E5C982 /* FCModelDatabaseQueue.m in Sources */,
-				BB53DA9D1C211C3C00CF346A /* TKIShowGoodsVM.m in Sources */,
 				8A6B39621BF01B8F00E5C982 /* HFHabitSignInfoRes.m in Sources */,
 				8A6B39591BF01B8F00E5C982 /* HFHabitAlarmClockReq.m in Sources */,
 				8A6B3C8C1BF01D4400E5C982 /* HFBindPhoneNumViewController.m in Sources */,
@@ -5248,6 +5283,7 @@
 				8A6B3F271BF01E4900E5C982 /* HFProgressHUD.m in Sources */,
 				8A6B3C741BF01D4400E5C982 /* HFSchemeItem.m in Sources */,
 				8A6B3CD91BF01D4400E5C982 /* UserCenterViewController.m in Sources */,
+				BB53DABD1C215CAC00CF346A /* TKShowGoodsCell.m in Sources */,
 				8A6B391F1BF01B8F00E5C982 /* ModuleRes.m in Sources */,
 				8A6B39B61BF01B8F00E5C982 /* HFSensitiveWordsReq.m in Sources */,
 				8A6B39681BF01B8F00E5C982 /* HFDeleteHabitReq.m in Sources */,
@@ -5351,6 +5387,7 @@
 				8A6B39CB1BF01B8F00E5C982 /* HFLikeUsersReq.m in Sources */,
 				8A6B39821BF01B8F00E5C982 /* GetFoodsByDayArg.m in Sources */,
 				8A6B3CAE1BF01D4400E5C982 /* HFControl.m in Sources */,
+				BB53DACD1C2161EE00CF346A /* TKICommentViewController.m in Sources */,
 				8A6B39A21BF01B8F00E5C982 /* ModifySchemeStateAck.m in Sources */,
 				8A6B39161BF01B8F00E5C982 /* HFSubmitLikeRes.m in Sources */,
 				8A6B396B1BF01B8F00E5C982 /* HFGetFunsReq.m in Sources */,
@@ -5365,6 +5402,7 @@
 				BB520D1E1BF9B3F20022BFA2 /* TKMainProxy.m in Sources */,
 				8A6B396A1BF01B8F00E5C982 /* HFGetFollowsReq.m in Sources */,
 				8A6B3CC51BF01D4400E5C982 /* HFWeekdaySelectView.m in Sources */,
+				BB53DAC41C215D7100CF346A /* TKIShowGoodsDetailVM.m in Sources */,
 				8A6B3F721BF01E4900E5C982 /* TRSDialScrollView.m in Sources */,
 				8A6B3F701BF01E4900E5C982 /* SKTagButton.m in Sources */,
 				8A6B398C1BF01B8F00E5C982 /* GetRunningDataArg.m in Sources */,

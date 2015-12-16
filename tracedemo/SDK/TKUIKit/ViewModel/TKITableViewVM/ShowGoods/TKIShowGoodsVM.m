@@ -13,7 +13,7 @@
 #import "TKHeadImageView.h"
 #import "TKUserDetailInfoViewController.h"
 #import "TKSHowGoodsDetailPageVC.h"
-
+#import "TKICommentViewController.h"
 @implementation TKIShowGoodsVM
 
 
@@ -207,6 +207,8 @@
     NSInteger rowIndex = (btn.tag - 2)/1000;
     TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
     DDLogInfo(@"commentClick %@",rowD.showGoodsData);
+    TKICommentViewController *vc = [[TKICommentViewController alloc] init];
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
 }
 
 

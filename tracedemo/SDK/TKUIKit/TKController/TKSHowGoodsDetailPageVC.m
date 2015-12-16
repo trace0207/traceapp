@@ -7,8 +7,12 @@
 //
 
 #import "TKSHowGoodsDetailPageVC.h"
+#import "TKIShowGoodsDetailVM.h"
 
 @interface TKSHowGoodsDetailPageVC ()
+{
+    TKIShowGoodsDetailVM * tableVM;
+}
 
 @end
 
@@ -17,6 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navTitle = @"晒单详情";
+    
+    tableVM = [[TKIShowGoodsDetailVM alloc] initWithFreshAbleTable];
+    [self.view addSubview:tableVM.pullRefreshView];
+    [tableVM tkUpdateViewConstraint];
+    [tableVM tkLoadDefaultData];
     // Do any additional setup after loading the view.
 }
 
@@ -24,5 +33,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
 
 @end
