@@ -15,11 +15,25 @@
 
 
 
+-(void)tkLoadDefaultData
+{
+ 
+    self.defaultSection.sectionHeadHeight = 0.1f;
+    
+    [super tkLoadDefaultData];
+
+    
+}
+
+
+
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section == 0 && indexPath.row == 0)
     {
         TKShowGoodsCell * cell = [[NSBundle mainBundle] loadNibNamed:@"TKShowGoodsCell" owner:self options:nil].firstObject;
+//        cell.backgroundColor = [UIColor blueColor];
         return cell;
         
     }else

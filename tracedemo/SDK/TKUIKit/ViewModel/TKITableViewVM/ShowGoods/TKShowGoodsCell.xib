@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="357"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="356"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="356.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMw-bL-h5d">
@@ -43,6 +43,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="＋关注"/>
+                                <connections>
+                                    <action selector="attentionAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Y1I-WF-UvR"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1个小时以前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8j-AN-dnw">
                                 <rect key="frame" x="81" y="38" width="133" height="21"/>
@@ -50,6 +53,12 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63B-y0-YIw">
+                                <rect key="frame" x="8" y="2" width="72" height="70"/>
+                                <connections>
+                                    <action selector="imageFieldBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LIA-17-wXn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -153,14 +162,23 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfs-tf-Wrl">
                                 <rect key="frame" x="1" y="5" width="101" height="30"/>
                                 <state key="normal" title="评论"/>
+                                <connections>
+                                    <action selector="commentAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VeL-9G-kn4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhD-3h-NBu">
                                 <rect key="frame" x="102" y="5" width="101" height="30"/>
                                 <state key="normal" title="喜欢"/>
+                                <connections>
+                                    <action selector="likeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6z6-IP-cN4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMe-mc-dWQ">
                                 <rect key="frame" x="203" y="5" width="101" height="30"/>
                                 <state key="normal" title="悬赏"/>
+                                <connections>
+                                    <action selector="rewardAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="04T-wG-aC5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91035353535353536" green="0.91035353535353536" blue="0.91035353535353536" alpha="1" colorSpace="calibratedRGB"/>
@@ -209,15 +227,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="attentionBtn" destination="aga-H2-Zeg" id="5va-Qf-s5J"/>
-                <outlet property="commentBtn" destination="cfs-tf-Wrl" id="bvl-hN-YeR"/>
                 <outlet property="contentText" destination="dON-Dv-lHX" id="IFM-t1-ORW"/>
                 <outlet property="headFirstLabel" destination="izp-yZ-LHp" id="UPd-Fw-Cpt"/>
                 <outlet property="headSecondLabel" destination="T8j-AN-dnw" id="bID-J6-tcW"/>
                 <outlet property="imageContentView" destination="dg0-pu-6Mg" id="Enr-H4-uvO"/>
                 <outlet property="imageFiledHeight" destination="mig-f6-cxN" id="xhY-os-e0i"/>
-                <outlet property="likeBtn" destination="AhD-3h-NBu" id="D6V-rN-d5e"/>
-                <outlet property="rewardBtn" destination="AMe-mc-dWQ" id="PJH-a9-gbs"/>
                 <outlet property="userHeadImage" destination="cQZ-uA-hcT" id="7ef-O1-PxT"/>
             </connections>
             <point key="canvasLocation" x="245" y="333.5"/>

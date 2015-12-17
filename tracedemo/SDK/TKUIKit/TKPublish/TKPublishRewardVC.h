@@ -10,4 +10,6 @@
 
 @interface TKPublishRewardVC : TKPublishShowGoodsVC
 
+@property(nonatomic,strong) NSObject * data;
+
 @end

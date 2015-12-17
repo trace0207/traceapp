@@ -21,6 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navTitle = @"用户资料";
+    
     // Do any additional setup after loading the view.
     [self firstInit];
 }

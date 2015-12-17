@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
@@ -134,7 +134,8 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="走别人的路，让别人走投无路" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6q-hJ-NuG">
                             <rect key="frame" x="0.0" y="5" width="312" height="21"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="21" id="OH4-em-ZAv"/>
+                                <constraint firstAttribute="height" constant="21" id="Wk4-gX-kR4"/>
+                                <constraint firstAttribute="width" constant="312" id="p1M-3F-HdH"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="highlightedColor"/>
@@ -142,9 +143,8 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="L6q-hJ-NuG" firstAttribute="centerY" secondItem="PlM-oa-vXi" secondAttribute="centerY" id="GjJ-MG-OEm"/>
-                        <constraint firstAttribute="trailing" secondItem="L6q-hJ-NuG" secondAttribute="trailing" constant="8" id="NOi-Fd-8mv"/>
-                        <constraint firstItem="L6q-hJ-NuG" firstAttribute="leading" secondItem="PlM-oa-vXi" secondAttribute="leading" id="uk6-x6-IIl"/>
+                        <constraint firstAttribute="trailing" secondItem="L6q-hJ-NuG" secondAttribute="trailing" constant="8" id="GC7-Ex-Wn0"/>
+                        <constraint firstItem="L6q-hJ-NuG" firstAttribute="centerY" secondItem="PlM-oa-vXi" secondAttribute="centerY" id="IsT-vi-Ti6"/>
                     </constraints>
                 </view>
             </subviews>
@@ -163,7 +163,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-636" y="-3"/>
+            <point key="canvasLocation" x="-627" y="-4"/>
         </view>
     </objects>
     <resources>

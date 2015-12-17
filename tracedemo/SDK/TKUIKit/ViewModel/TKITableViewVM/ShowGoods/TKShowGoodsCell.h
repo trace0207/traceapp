@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TKIShowGoodsRowM.h"
 #import "TKHeadImageView.h"
+
+
+@protocol TKShowGoodsCellDelegate<NSObject>
+
+@required
+-(TKShowGoodsRowData *)getRowDataByIndex:(NSIndexPath *) indexPath;
+
+@optional
+-(void)onCommentBtnClick:(NSIndexPath *) indexPath;
+
+@end
+
 
 @interface TKShowGoodsCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIView *imageContentView;
@@ -16,10 +29,20 @@
 @property (strong, nonatomic) IBOutlet UILabel *contentText;
 @property (strong, nonatomic) IBOutlet UILabel *headSecondLabel;
 @property (strong, nonatomic) IBOutlet UILabel *headFirstLabel;
-@property (strong, nonatomic) IBOutlet UIButton *commentBtn;
-@property (strong, nonatomic) IBOutlet UIButton *likeBtn;
-@property (strong, nonatomic) IBOutlet UIButton *rewardBtn;
-@property (strong, nonatomic) IBOutlet UIButton *attentionBtn;
+@property (strong,nonatomic) NSIndexPath * indexPath;
+@property (weak,nonatomic) id<TKShowGoodsCellDelegate> tkShowGoodscellDelegate;
 
+
+- (IBAction)imageFieldBtn:(id)sender;
+
+
+
+
+
+- (IBAction)attentionAction:(id)sender;
+
+- (IBAction)commentAction:(id)sender;
+- (IBAction)likeAction:(id)sender;
+- (IBAction)rewardAction:(id)sender;
 
 @end

@@ -14,6 +14,12 @@
 #import "TKUserDetailInfoViewController.h"
 #import "TKSHowGoodsDetailPageVC.h"
 #import "TKICommentViewController.h"
+
+
+@interface TKIShowGoodsVM()<TKShowGoodsCellDelegate>
+
+@end
+
 @implementation TKIShowGoodsVM
 
 
@@ -96,8 +102,6 @@
     {
         cell = [[NSBundle mainBundle]loadNibNamed:@"TKShowGoodsCell" owner:self options:nil].firstObject;
         cell.backgroundColor = [UIColor clearColor];
-        [cell.layer setCornerRadius:5];
-        [cell setClipsToBounds:YES];
     }
     [self fillCellImages:cell indexPath:indexPath];
     return cell;
@@ -128,10 +132,10 @@
             CGFloat px = i%type * ([rowD getPicWidth] +[rowD getPicSeparation]) + [rowD getPicPaddingLeft];
             CGFloat py = i/type * ([rowD getPicHeight] + [rowD getPicSeparation]);
             
-            if(self.logTrace)
-            {
-                DDLogInfo(@"image fill  height = %f, widht = %f, x = %f, y = %f",[rowD getPicWidth],[rowD getPicHeight],px,py);
-            }
+//            if(self.logTrace)
+//            {
+//                DDLogInfo(@"image fill  height = %f, widht = %f, x = %f, y = %f",[rowD getPicWidth],[rowD getPicHeight],px,py);
+//            }
             
             make.top.mas_equalTo(py );
             make.left.mas_equalTo(px );
@@ -147,17 +151,11 @@
     
     // 设置其他信息
     cell.userHeadImage.userId = @"";
-    [cell.userHeadImage addTapAction:@selector(goToUserPage:) forTarget:self];
     cell.headFirstLabel.text =  @"这里显示昵称";
     cell.headSecondLabel.text = @"这里显示其他信息";
     cell.contentText.text = @"到了，速度真快。 谁买谁知道。海外代购航空直邮，一周内到货，你值得信赖  bala bala ～～  bala bala ～ ";
-    cell.likeBtn.tag = indexPath.row * 1000 + 1;
-    cell.commentBtn.tag  = indexPath.row * 1000 + 2;
-    cell.rewardBtn.tag = indexPath.row * 1000 + 3;
-    [cell.likeBtn addTarget:self action:@selector(likeClick:) forControlEvents:UIControlEventTouchUpInside];
-    [cell.commentBtn addTarget:self action:@selector(commentClick:) forControlEvents:UIControlEventTouchUpInside];
-    [cell.rewardBtn addTarget:self action:@selector(rewardClick:) forControlEvents:UIControlEventTouchUpInside];
-    
+    cell.tkShowGoodscellDelegate = self;
+    cell.indexPath = indexPath;
 }
 
 /**
@@ -176,14 +174,12 @@
 
 
 /**
- 头像去用户中心
+ cell 协议方法，供给 cell 回调回去数据
  **/
--(void)goToUserPage:(UIGestureRecognizer * )tap
+-(TKShowGoodsRowData *)getRowDataByIndex:(NSIndexPath *) indexPath
 {
-    TKHeadImageView * head =  (TKHeadImageView *)tap.view;
-    TKUserDetailInfoViewController * vc = [[TKUserDetailInfoViewController alloc] init];
-    vc.userId = head.userId;
-    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
+    return rowM.showGoodsData;
 }
 
 /**

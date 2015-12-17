@@ -25,6 +25,7 @@
     tableVM = [[TKIShowGoodsDetailVM alloc] initWithFreshAbleTable];
     [self.view addSubview:tableVM.pullRefreshView];
     [tableVM tkUpdateViewConstraint];
+    self.view.backgroundColor = [UIColor redColor];
     [tableVM tkLoadDefaultData];
     // Do any additional setup after loading the view.
 }

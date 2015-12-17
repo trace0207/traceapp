@@ -27,6 +27,7 @@
 {
     [super viewWillAppear:YES];
     [self TKsetRightBarItemText:@"发表" withTextColor:[UIColor tkMainActiveColor] addTarget:self  action:@selector(tkPublish) forControlEvents:UIControlEventTouchUpInside];
+    [self.inputTextView becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

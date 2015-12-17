@@ -7,6 +7,9 @@
 //
 
 #import "TKShowGoodsCell.h"
+#import "TKPublishRewardVC.h"
+#import "TKICommentViewController.h"
+#import "TKUserDetailInfoViewController.h"
 
 @implementation TKShowGoodsCell
 
@@ -22,4 +25,38 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)imageFieldBtn:(id)sender {
+    TKUserDetailInfoViewController * vc = [[TKUserDetailInfoViewController alloc] init];
+    vc.userId = self.userHeadImage.userId;
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];}
+
+- (IBAction)attentionAction:(id)sender {
+}
+
+- (IBAction)commentAction:(id)sender {
+    if(_tkShowGoodscellDelegate && [_tkShowGoodscellDelegate respondsToSelector:@selector(onCommentBtnClick:)])
+    {
+        [_tkShowGoodscellDelegate onCommentBtnClick:self.indexPath];
+    }
+    else
+    {
+        TKICommentViewController *vc = [[TKICommentViewController alloc] init];
+        [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    }
+}
+
+- (IBAction)likeAction:(id)sender {
+    
+    [[HFHUDView shareInstance] ShowTips:@"    点赞 +1    " delayTime:1.5f atView:nil];
+    
+}
+
+- (IBAction)rewardAction:(id)sender {
+    TKShowGoodsRowData *data = [self.tkShowGoodscellDelegate getRowDataByIndex:self.indexPath];
+    TKPublishRewardVC * vc = [[TKPublishRewardVC alloc] initWithNibName:@"TKPublishShowGoodsVC" bundle:nil];
+    vc.data = data;
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    
+    
+}
 @end
