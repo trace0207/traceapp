@@ -642,6 +642,11 @@
 		BB1A03191BE211720035770A /* TKHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1A03171BE211720035770A /* TKHomePageViewController.xib */; };
 		BB339B871BFEBA6E00680AEA /* TK_BaseNavSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB339B861BFEBA6E00680AEA /* TK_BaseNavSettingViewController.m */; };
 		BB339B8A1BFED91800680AEA /* TKIBaseNavWithDefaultBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB339B891BFED91800680AEA /* TKIBaseNavWithDefaultBackVC.m */; };
+		BB4A868E1C23E53000739ADD /* TKIMessageCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4A868D1C23E53000739ADD /* TKIMessageCenterVM.m */; };
+		BB4A86921C24101400739ADD /* TKMessageListIItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4A86901C24101400739ADD /* TKMessageListIItemCell.m */; };
+		BB4A86931C24101400739ADD /* TKMessageListIItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A86911C24101400739ADD /* TKMessageListIItemCell.xib */; };
+		BB4A86961C241C0A00739ADD /* TKMessageChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4A86951C241C0A00739ADD /* TKMessageChatViewController.m */; };
+		BB4A86991C242AE700739ADD /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4A86981C242AE700739ADD /* DemoModelData.m */; };
 		BB520D1C1BF9B3F20022BFA2 /* TK_GetOrdersAck.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D141BF9B3F20022BFA2 /* TK_GetOrdersAck.m */; };
 		BB520D1D1BF9B3F20022BFA2 /* TK_GetOrdersArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D161BF9B3F20022BFA2 /* TK_GetOrdersArg.m */; };
 		BB520D1E1BF9B3F20022BFA2 /* TKMainProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB520D191BF9B3F20022BFA2 /* TKMainProxy.m */; };
@@ -1904,6 +1909,15 @@
 		BB339B861BFEBA6E00680AEA /* TK_BaseNavSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BaseNavSettingViewController.m; sourceTree = "<group>"; };
 		BB339B881BFED91800680AEA /* TKIBaseNavWithDefaultBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIBaseNavWithDefaultBackVC.h; sourceTree = "<group>"; };
 		BB339B891BFED91800680AEA /* TKIBaseNavWithDefaultBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIBaseNavWithDefaultBackVC.m; sourceTree = "<group>"; };
+		BB4A868C1C23E53000739ADD /* TKIMessageCenterVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIMessageCenterVM.h; sourceTree = "<group>"; };
+		BB4A868D1C23E53000739ADD /* TKIMessageCenterVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIMessageCenterVM.m; sourceTree = "<group>"; };
+		BB4A868F1C24101400739ADD /* TKMessageListIItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMessageListIItemCell.h; sourceTree = "<group>"; };
+		BB4A86901C24101400739ADD /* TKMessageListIItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMessageListIItemCell.m; sourceTree = "<group>"; };
+		BB4A86911C24101400739ADD /* TKMessageListIItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKMessageListIItemCell.xib; sourceTree = "<group>"; };
+		BB4A86941C241C0A00739ADD /* TKMessageChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMessageChatViewController.h; sourceTree = "<group>"; };
+		BB4A86951C241C0A00739ADD /* TKMessageChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMessageChatViewController.m; sourceTree = "<group>"; };
+		BB4A86971C242AE700739ADD /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
+		BB4A86981C242AE700739ADD /* DemoModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoModelData.m; sourceTree = "<group>"; };
 		BB520D131BF9B3F20022BFA2 /* TK_GetOrdersAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetOrdersAck.h; sourceTree = "<group>"; };
 		BB520D141BF9B3F20022BFA2 /* TK_GetOrdersAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetOrdersAck.m; sourceTree = "<group>"; };
 		BB520D151BF9B3F20022BFA2 /* TK_GetOrdersArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetOrdersArg.h; sourceTree = "<group>"; };
@@ -2243,6 +2257,8 @@
 				BB7568C11C1FA56F003339F1 /* TKIMessageCenterViewController.m */,
 				BB53DAAF1C2158E100CF346A /* TKSHowGoodsDetailPageVC.h */,
 				BB53DAB01C2158E100CF346A /* TKSHowGoodsDetailPageVC.m */,
+				BB4A86941C241C0A00739ADD /* TKMessageChatViewController.h */,
+				BB4A86951C241C0A00739ADD /* TKMessageChatViewController.m */,
 			);
 			path = TKController;
 			sourceTree = "<group>";
@@ -4397,6 +4413,20 @@
 			path = ControllerImpl;
 			sourceTree = "<group>";
 		};
+		BB4A868B1C23E50E00739ADD /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				BB4A86971C242AE700739ADD /* DemoModelData.h */,
+				BB4A86981C242AE700739ADD /* DemoModelData.m */,
+				BB4A868C1C23E53000739ADD /* TKIMessageCenterVM.h */,
+				BB4A868D1C23E53000739ADD /* TKIMessageCenterVM.m */,
+				BB4A868F1C24101400739ADD /* TKMessageListIItemCell.h */,
+				BB4A86901C24101400739ADD /* TKMessageListIItemCell.m */,
+				BB4A86911C24101400739ADD /* TKMessageListIItemCell.xib */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		BB520D111BF9B3F20022BFA2 /* TKProxy */ = {
 			isa = PBXGroup;
 			children = (
@@ -4456,6 +4486,7 @@
 		BB53DA8D1C211BF000CF346A /* TKITableViewVM */ = {
 			isa = PBXGroup;
 			children = (
+				BB4A868B1C23E50E00739ADD /* Message */,
 				BB53DAB21C215CAC00CF346A /* Reward */,
 				BB53DAB31C215CAC00CF346A /* ShowGoods */,
 			);
@@ -4637,6 +4668,7 @@
 				8A508FEA1B9D5D700067B9E9 /* Frameworks */,
 				8A508FEB1B9D5D700067B9E9 /* Resources */,
 				C24795676D0C708D7DCDF860 /* Copy Pods Resources */,
+				97513CF2AFAB0389C742D82F /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -4804,6 +4836,7 @@
 				8AB650201BF0CDE600D4C0A0 /* Localizable.strings in Resources */,
 				BB8B22201C17BDE5002B4C51 /* TKUserPageViewController.xib in Resources */,
 				8A6B3CCA1BF01D4400E5C982 /* HFSchemeListViewController.xib in Resources */,
+				BB4A86931C24101400739ADD /* TKMessageListIItemCell.xib in Resources */,
 				BBBF89B11C06B12200CF9F2E /* TKPublishShowGoodsVC.xib in Resources */,
 				8A6B3C731BF01D4400E5C982 /* HFSchemeCell.xib in Resources */,
 				8A6B3C521BF01D4400E5C982 /* HFIntroduceCell.xib in Resources */,
@@ -4835,6 +4868,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		97513CF2AFAB0389C742D82F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C24795676D0C708D7DCDF860 /* Copy Pods Resources */ = {
@@ -4946,6 +4994,7 @@
 				8A6B3F341BF01E4900E5C982 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				8A6B39451BF01B8F00E5C982 /* HFActivityWindowAck.m in Sources */,
 				8A6B39CE1BF01B8F00E5C982 /* HFPostBarReq.m in Sources */,
+				BB4A86961C241C0A00739ADD /* TKMessageChatViewController.m in Sources */,
 				8A6B39201BF01B8F00E5C982 /* MyModulesListData.m in Sources */,
 				8A6B3CC81BF01D4400E5C982 /* HFNewMainViewController.m in Sources */,
 				8A6B392B1BF01B8F00E5C982 /* UploadRes.m in Sources */,
@@ -4972,6 +5021,7 @@
 				8A6B3CB41BF01D4400E5C982 /* HFReportView.m in Sources */,
 				8A6B3CC91BF01D4400E5C982 /* HFSchemeListViewController.m in Sources */,
 				8A6B391C1BF01B8F00E5C982 /* ImagesRes.m in Sources */,
+				BB4A86921C24101400739ADD /* TKMessageListIItemCell.m in Sources */,
 				8A6B3C111BF01D4400E5C982 /* HFBindingViewController.m in Sources */,
 				8A6B3F751BF01E4900E5C982 /* ZHPickView.m in Sources */,
 				8A6B39A41BF01B8F00E5C982 /* OpenSchemeByStepArg.m in Sources */,
@@ -4987,6 +5037,7 @@
 				8A6B39B21BF01B8F00E5C982 /* HFOnlineTimeReq.m in Sources */,
 				8A6B39811BF01B8F00E5C982 /* GetFoodsByDayAck.m in Sources */,
 				8A6B3F2A1BF01E4900E5C982 /* StepCounterManager.m in Sources */,
+				BB4A868E1C23E53000739ADD /* TKIMessageCenterVM.m in Sources */,
 				8A6B39BA1BF01B8F00E5C982 /* HFGetUserHomeReq.m in Sources */,
 				8A6B3C321BF01D4400E5C982 /* HFIntroduceViewController.m in Sources */,
 				8A6B39A91BF01B8F00E5C982 /* SchemePunchAck.m in Sources */,
@@ -5072,6 +5123,7 @@
 				8A6B3F321BF01E4900E5C982 /* FCModelCachedObject.m in Sources */,
 				8A6B3CE11BF01D4400E5C982 /* HFEditHeaderView.m in Sources */,
 				8A2E61FF1BEC802700FBDB86 /* MMCenterTableViewCell.m in Sources */,
+				BB4A86991C242AE700739ADD /* DemoModelData.m in Sources */,
 				8A6B3F3C1BF01E4900E5C982 /* ZBFaceView.m in Sources */,
 				8A6B397F1BF01B8F00E5C982 /* GetDiseaseIntroAck.m in Sources */,
 				8A6B39B71BF01B8F00E5C982 /* HFSensitiveWordsRes.m in Sources */,
@@ -5561,8 +5613,8 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: / / (FMZ824BRG9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: / / (FMZ824BRG9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5584,7 +5636,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6c4383df-1956-4c12-abe4-7677f69b15fe";
+				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
 			};
 			name = Debug;
 		};
@@ -5593,8 +5645,8 @@
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: / / (FMZ824BRG9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: / / (FMZ824BRG9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5616,7 +5668,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6c4383df-1956-4c12-abe4-7677f69b15fe";
+				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
 			};
 			name = Release;
 		};

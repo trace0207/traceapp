@@ -14,7 +14,7 @@
 #import "TKUserDetailInfoViewController.h"
 #import "TKSHowGoodsDetailPageVC.h"
 #import "TKICommentViewController.h"
-
+#import <objc/runtime.h>
 
 @interface TKIShowGoodsVM()<TKShowGoodsCellDelegate>
 
@@ -98,7 +98,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TKShowGoodsCell *cell=[tableView dequeueReusableCellWithIdentifier:@"showGoodsCell"];
-    if(cell == nil)
+    if(!cell)
     {
         cell = [[NSBundle mainBundle]loadNibNamed:@"TKShowGoodsCell" owner:self options:nil].firstObject;
         cell.backgroundColor = [UIColor clearColor];
@@ -123,7 +123,22 @@
     {
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self
                                                                               action:@selector(showBigImage:)];
+        
+        
+        objc_setAssociatedObject(tap, "imags", pics, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        
+//        if (class_addIvar([UITapGestureRecognizer class], "tkImages", sizeof(NSArray *), 0, "@")) {
+//            NSLog(@"add ivar success");
+//        }else
+//        {
+//            NSLog(@"add ivar failed");
+//        }
+//        
+//        
+//        [tap setValue:pics forKey:@"tkImages"];
+        
         UIImageView * img = [[UIImageView alloc] init];
+        img.clipsToBounds = YES;
         TKSetLoadingImageView(img, [pics objectAtIndex:i]);
         [cell.imageContentView addSubview:img];
         [img mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -163,6 +178,11 @@
  **/
 -(void)showBigImage:(UITapGestureRecognizer *)tap
 {
+    
+//    NSArray * pics = objc_getAssociatedObject(tap, "imags"); // tkRuntime
+    
+   // NSArray * pics = (NSArray *)[tap valueForKey:@"tkImages"];
+    
     int index = tap.view.tag%1000;
     NSInteger rowIndex = tap.view.tag/1000;
     
@@ -182,42 +202,42 @@
     return rowM.showGoodsData;
 }
 
-/**
-  点赞
- **/
--(void)likeClick:(id)sender
-{
-    UIButton * btn = (UIButton *)sender;
-    NSInteger rowIndex = (btn.tag - 1)/1000;
-    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
-    DDLogInfo(@"I Like it %@",rowD.showGoodsData);
-}
-
-
-/**
- 评论
- **/
--(void)commentClick:(id)sender
-{
-    UIButton * btn = (UIButton *)sender;
-    NSInteger rowIndex = (btn.tag - 2)/1000;
-    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
-    DDLogInfo(@"commentClick %@",rowD.showGoodsData);
-    TKICommentViewController *vc = [[TKICommentViewController alloc] init];
-    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
-}
-
-
-/**
- 悬赏
- **/
--(void)rewardClick:(id)sender
-{
-    UIButton * btn = (UIButton *)sender;
-    NSInteger rowIndex = (btn.tag - 3)/1000;
-    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
-    DDLogInfo(@"rewardClick %@",rowD.showGoodsData);
-}
+///**
+//  点赞
+// **/
+//-(void)likeClick:(id)sender
+//{
+//    UIButton * btn = (UIButton *)sender;
+//    NSInteger rowIndex = (btn.tag - 1)/1000;
+//    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
+//    DDLogInfo(@"I Like it %@",rowD.showGoodsData);
+//}
+//
+//
+///**
+// 评论
+// **/
+//-(void)commentClick:(id)sender
+//{
+//    UIButton * btn = (UIButton *)sender;
+//    NSInteger rowIndex = (btn.tag - 2)/1000;
+//    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
+//    DDLogInfo(@"commentClick %@",rowD.showGoodsData);
+//    TKICommentViewController *vc = [[TKICommentViewController alloc] init];
+//    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+//}
+//
+//
+///**
+// 悬赏
+// **/
+//-(void)rewardClick:(id)sender
+//{
+//    UIButton * btn = (UIButton *)sender;
+//    NSInteger rowIndex = (btn.tag - 3)/1000;
+//    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
+//    DDLogInfo(@"rewardClick %@",rowD.showGoodsData);
+//}
 
 
 -(void)toShowGoodsDetailPage:(TKShowGoodsRowData *)data

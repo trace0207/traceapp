@@ -45,7 +45,7 @@
         
         // 监听点击
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-        singleTap.delaysTouchesBegan = YES;
+//        singleTap.delaysTouchesBegan = YES;
         singleTap.numberOfTapsRequired = 1;
         [self addGestureRecognizer:singleTap];
         
@@ -207,45 +207,58 @@
 #pragma mark - 手势处理
 - (void)handleSingleTap:(UITapGestureRecognizer *)tap {
     _doubleTap = NO;
-    [self performSelector:@selector(hide) withObject:nil afterDelay:0.3];
+    [self performSelector:@selector(hide) withObject:nil afterDelay:0.1];
 }
 - (void)hide
 {
     if (_doubleTap) return;
     
     // 移除进度条
-    [_photoLoadingView removeFromSuperview];
+//    [_photoLoadingView removeFromSuperview];
     self.contentOffset = CGPointZero;
     
     // 清空底部的小图
     _photo.srcImageView.image = nil;
     
-    CGFloat duration = 0.15;
-    if (_photo.srcImageView.clipsToBounds) {
-        [self performSelector:@selector(reset) withObject:nil afterDelay:duration];
-    }
     
-    [UIView animateWithDuration:duration + 0.1 animations:^{
+    DDLogInfo(@"hide begin   center  x = %f, y = %f",_imageView.center.x,_imageView.center.y);
+    
+    CGFloat duration = 0.15;
+//    if (_photo.srcImageView.clipsToBounds) {
+//        [self performSelector:@selector(reset) withObject:nil afterDelay:duration];
+//    }
+//    
+    
+    
+    [UIView animateWithDuration:1.0 animations: ^{
+        _imageView.center  =  CGPointMake(TKScreenWidth/2, TKScreenHeight/2);
         _imageView.frame = [_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
         
-        // gif图片仅显示第0张
-        if (_imageView.image.images) {
-            _imageView.image = _imageView.image.images[0];
-        }
-        
-        // 通知代理
-        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewSingleTap:)]) {
-            [self.photoViewDelegate photoViewSingleTap:self];
-        }
-    } completion:^(BOOL finished) {
-        // 设置底部的小图片
-        _photo.srcImageView.image = _photo.placeholder;
-        
-        // 通知代理
-        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewDidEndZoom:)]) {
-            [self.photoViewDelegate photoViewDidEndZoom:self];
-        }
     }];
+    
+    
+    
+//    [UIView animateWithDuration:duration + 0.1 animations:^{
+//        _imageView.frame = [_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
+//        
+//        // gif图片仅显示第0张
+//        if (_imageView.image.images) {
+//            _imageView.image = _imageView.image.images[0];
+//        }
+//        
+//        // 通知代理
+//        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewSingleTap:)]) {
+//            [self.photoViewDelegate photoViewSingleTap:self];
+//        }
+//    } completion:^(BOOL finished) {
+//        // 设置底部的小图片
+//        _photo.srcImageView.image = _photo.placeholder;
+//        
+//        // 通知代理
+//        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewDidEndZoom:)]) {
+//            [self.photoViewDelegate photoViewDidEndZoom:self];
+//        }
+//    }];
 }
 
 - (void)reset
@@ -268,16 +281,30 @@
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-    CGFloat orignY = (self.bounds.size.height - _imageView.frame.size.height) / 2;
+    CGRect rect = _imageView.frame;
+    CGFloat orignY = (self.bounds.size.height - _imageView.frame.size.height)/2;
     
     if (orignY < 0)
     {
         orignY = 0;
+        
     }
     
-    CGRect rect = _imageView.frame;
     rect.origin.y = orignY;
+    
+     CGFloat orignX = (self.bounds.size.width - _imageView.frame.size.width)/2;
+    if(orignX < 0)
+    {
+        orignX = 0;
+        
+    }
+    
+    rect.origin.x = orignX;
+    
     _imageView.frame = rect;
+    _imageView.center = CGPointMake(orignX + rect.size.width/2, orignY + rect.size.height/2);
+    
+    DDLogInfo(@"move to  center  x = %f, y = %f",_imageView.center.x,_imageView.center.y);
 }
 
 - (CGRect)zoomRectForScale:(float)scale withCenter:(CGPoint)center {//传入缩放比例和手势的点击的point返回<span style="color:#ff0000;">缩放</span>后的scrollview的大小和X、Y坐标点

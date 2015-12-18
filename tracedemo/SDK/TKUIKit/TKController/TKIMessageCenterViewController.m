@@ -7,11 +7,11 @@
 //
 
 #import "TKIMessageCenterViewController.h"
-#import "TKTableViewVM.h"
+#import "TKIMessageCenterVM.h"
 
 @interface TKIMessageCenterViewController ()
 {
-    TKTableViewVM * vm;
+    TKIMessageCenterVM * vm;
 }
 
 @end
@@ -22,9 +22,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    vm = [[TKTableViewVM alloc]initWithFreshAbleTable];
+    vm = [[TKIMessageCenterVM alloc]initFreshAbleTableWithFrame:CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 64 - 49)];
     [self.view addSubview:vm.pullRefreshView];
-    [vm tkUpdateViewConstraint];
+  
     [vm tkLoadDefaultData];
     
 }
@@ -48,6 +48,7 @@
 {
     [super viewWillAppear:animated];
 //    [vm startPullDownRefreshing];
+//    [vm tkUpdateViewConstraint];
 }
 
 @end

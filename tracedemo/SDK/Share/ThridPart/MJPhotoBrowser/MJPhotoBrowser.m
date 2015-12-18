@@ -138,7 +138,7 @@
     self.view.backgroundColor = [UIColor clearColor];
     
     // 移除工具条
-    [_toolbar removeFromSuperview];
+//    [_toolbar removeFromSuperview];
 }
 
 - (void)photoViewDidEndZoom:(MJPhotoView *)photoView
@@ -203,7 +203,7 @@
     // 调整当期页的frame
     CGRect bounds = _photoScrollView.bounds;
     CGRect photoViewFrame = bounds;
-    photoViewFrame.size.width -= (2 * kPadding);
+    photoViewFrame.size.width -= (2 * kPadding);// 减去两边的边距  10 ＊ 2
     photoViewFrame.origin.x = (bounds.size.width * index) + kPadding;
     photoView.tag = kPhotoViewTagOffset + index;
     
