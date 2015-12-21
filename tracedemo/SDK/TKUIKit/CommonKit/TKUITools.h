@@ -13,7 +13,7 @@
 
 
 /**
- *  显示大图
+ *  显示一个大图
  *
  *  @param picUrl    picurl
  *  @param imageView 绑定的UIImageVIew
@@ -22,7 +22,13 @@
 
 
 
-+(void)showImagesInBigScreen:(NSArray *)picUrls withImageView:(UIImageView *)imageView currentIndex:(NSInteger)index;
+/**
+ *  显示一组大图
+ *
+ *  @param picUrl    picurl
+ *  @param imageView 绑定的UIImageVIew
+ */
++(void)showImagesInBigScreen:(NSArray *)picUrls withImageViews:(NSArray *)imageViews currentIndex:(NSInteger)index;
 
 
 //计算纯文本宽度

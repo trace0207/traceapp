@@ -28,16 +28,16 @@
 }
 
 
-+(void)showImagesInBigScreen:(NSArray *)picUrls withImageView:(UIImageView *)imageView currentIndex:(NSInteger)index
++(void)showImagesInBigScreen:(NSArray *)picUrls withImageViews:(NSArray *)imageViews currentIndex:(NSInteger)index
 {
    
     NSMutableArray * mjPhotos = [[NSMutableArray alloc] init];
     
-    for(NSString * str in picUrls)
+    for(int i =0 ;i<picUrls.count;i++)
     {
-         NSString * rawPicUrl = [UIKitTool getRawImage:str];
+        NSString * rawPicUrl = [UIKitTool getRawImage:picUrls[i]];
         MJPhoto *photo = [[MJPhoto alloc] init];
-        photo.srcImageView = imageView;
+        photo.srcImageView = (UIImageView *)imageViews[i];
         photo.url = [NSURL URLWithString:rawPicUrl];
         [mjPhotos addObject:photo];
     }

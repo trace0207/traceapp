@@ -14,7 +14,7 @@
 @interface MJPhotoView ()
 {
     BOOL _doubleTap;
-    UIImageView *_imageView;
+    UIImageView *_imageView;//  当前显示的 ImageView
     MJPhotoLoadingView *_photoLoadingView;
 }
 @end
@@ -66,9 +66,10 @@
 #pragma mark 显示图片
 - (void)showImage
 {
-    if (_photo.firstShow) { // 首次显示
+    if (_photo.firstShow)
+    { // 首次显示
         _imageView.image = _photo.placeholder; // 占位图片
-        _photo.srcImageView.image = nil;
+//        _photo.srcImageView.image = nil;
         
         // 不是gif，就马上开始下载
         if (![_photo.url.absoluteString hasSuffix:@"gif"]) {
@@ -80,12 +81,14 @@
                 [photoView adjustFrame];
             }];
         }
-    } else {
+    }
+    else
+    {
         [self photoStartLoad];
     }
 
-    // 调整frame参数
-    [self adjustFrame];
+//    // 调整frame参数
+//    [self adjustFrame];
 }
 
 #pragma mark 开始加载图片
@@ -110,7 +113,7 @@
 //        } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
 //            [photoView photoDidFinishLoadWithImage:image];
 //        }];
-        [_imageView sd_setImageWithURL:_photo.url placeholderImage:_photo.srcImageView.image options:SDWebImageRetryFailed|SDWebImageLowPriority progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        [_imageView sd_setImageWithURL:_photo.url placeholderImage:_photo.placeholder options:SDWebImageRetryFailed|SDWebImageLowPriority progress:^(NSInteger receivedSize, NSInteger expectedSize) {
             if (receivedSize > kMinProgress) {
                 if (loading)
                 {
@@ -170,7 +173,7 @@
 	self.minimumZoomScale = minScale;
 	self.zoomScale = minScale;
     
-    CGRect imageFrame = CGRectMake(0, 0, boundsWidth, imageHeight * minScale);
+    CGRect imageFrame = CGRectMake(0, 0, boundsWidth, imageHeight * minScale);//  让显示的图片 横向填充屏幕宽度， 高度按照比例适配
     // 内容尺寸
     self.contentSize = CGSizeMake(0, imageFrame.size.height);
     
@@ -178,23 +181,33 @@
     if (imageFrame.size.height < boundsHeight) {
         imageFrame.origin.y = floorf((boundsHeight - imageFrame.size.height) / 2.0);
 	} else {
-        imageFrame.origin.y = 0;
+        imageFrame.origin.y = 0;//  如果是长图，或者是长宽比大于屏幕长宽比的图， 默认显示顶部。
 	}
     
    // NSLog(@"~~~~~~~~~~~~~~~~~%f,%f,%f,%f", imageFrame.origin.x, imageFrame.origin.y,imageFrame.size.width,imageFrame.size.height);
     
     if (_photo.firstShow) { // 第一次显示的图片
         _photo.firstShow = NO; // 已经显示过了
+        
+        // 显示的起始frame，和原来的 srcImage boud frame 一致 开始做动画
         _imageView.frame = [_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
         
-        [UIView animateWithDuration:0.3 animations:^{
+        _imageView.clipsToBounds = _photo.srcImageView.clipsToBounds;
+        
+        
+//        DDLogInfo(@"show begin frame w = %f, h = %f",_imageView.frame.size.width,_imageView.frame.size.height);
+//        DDLogInfo(@"show begin  x = %f, y = %f",_imageView.center.x,_imageView.center.y);
+        
+        [UIView animateWithDuration:0.35 animations:^{
             _imageView.frame = imageFrame;
+            DDLogInfo(@"show end  x = %f, y = %f",_imageView.center.x,_imageView.center.y);
         } completion:^(BOOL finished) {
-            // 设置底部的小图片
-            _photo.srcImageView.image = _photo.placeholder;
+            _imageView.image = _photo.placeholder;
+//            _photo.srcImageView.image = _photo.placeholder;//  先显示传过来的图片
             [self photoStartLoad];
         }];
     } else {
+        _imageView.clipsToBounds = _photo.srcImageView.clipsToBounds;
         _imageView.frame = imageFrame;
     }
 }
@@ -214,57 +227,74 @@
     if (_doubleTap) return;
     
     // 移除进度条
-//    [_photoLoadingView removeFromSuperview];
-    self.contentOffset = CGPointZero;
+    [_photoLoadingView removeFromSuperview];
+//    self.contentOffset = CGPointZero;
     
     // 清空底部的小图
-    _photo.srcImageView.image = nil;
+//    _photo.srcImageView.image = nil;
     
     
     DDLogInfo(@"hide begin   center  x = %f, y = %f",_imageView.center.x,_imageView.center.y);
     
-    CGFloat duration = 0.15;
+//    CGFloat duration = 0.;
 //    if (_photo.srcImageView.clipsToBounds) {
 //        [self performSelector:@selector(reset) withObject:nil afterDelay:duration];
 //    }
-//    
+//
     
-    
-    [UIView animateWithDuration:1.0 animations: ^{
-        _imageView.center  =  CGPointMake(TKScreenWidth/2, TKScreenHeight/2);
-        _imageView.frame = [_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
-        
-    }];
-    
-    
-    
-//    [UIView animateWithDuration:duration + 0.1 animations:^{
-//        _imageView.frame = [_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
+//    [UIView animateWithDuration:1.0 animations: ^{
 //        
-//        // gif图片仅显示第0张
-//        if (_imageView.image.images) {
-//            _imageView.image = _imageView.image.images[0];
-//        }
+//         CGRect frame = _photo.srcImageView.bounds;
+//        _imageView.frame = [_photo.srcImageView convertRect:frame toView:nil];
+//        DDLogInfo(@"hide end   center  x = %f, y = %f",_imageView.center.x,_imageView.center.y);
 //        
-//        // 通知代理
-//        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewSingleTap:)]) {
-//            [self.photoViewDelegate photoViewSingleTap:self];
-//        }
-//    } completion:^(BOOL finished) {
-//        // 设置底部的小图片
-//        _photo.srcImageView.image = _photo.placeholder;
-//        
-//        // 通知代理
-//        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewDidEndZoom:)]) {
-//            [self.photoViewDelegate photoViewDidEndZoom:self];
-//        }
 //    }];
+    
+    
+//    _imageView.image = _photo.srcImageView.image;
+    
+    CGRect frame =[_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
+     DDLogInfo(@"hide begin   center  x = %f, y = %f",frame.size.width,frame.size.height);
+    
+//    _imageView.contentMode = UIViewContentModeCenter;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _imageView.clipsToBounds  = _photo.srcImageView.clipsToBounds;
+
+    
+   
+//    _imageView.backgroundColor = [UIColor clearColor];
+    
+    [UIView animateWithDuration: 0.35 animations:^{
+
+//        _imageView.center  =  CGPointMake(frame.size.width/2, frame.size.height/2);
+        _imageView.frame = frame;
+        self.contentOffset = CGPointZero;
+        // gif图片仅显示第0张
+        if (_imageView.image.images) {
+            _imageView.image = _imageView.image.images[0];
+        }
+//        
+        // 通知代理
+        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewSingleTap:)]) {
+            [self.photoViewDelegate photoViewSingleTap:self];
+        }
+    } completion:^(BOOL finished) {
+        
+//                 _imageView.image = _photo.placeholder;
+        // 设置底部的小图片
+//        _photo.srcImageView.image = _photo.placeholder;
+        
+        // 通知代理
+        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewDidEndZoom:)]) {
+            [self.photoViewDelegate photoViewDidEndZoom:self];
+        }
+    }];
 }
 
 - (void)reset
 {
     _imageView.image = _photo.capture;
-    _imageView.contentMode = UIViewContentModeScaleToFill;
+    _imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)handleDoubleTap:(UITapGestureRecognizer *)tap {

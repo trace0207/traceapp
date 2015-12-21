@@ -52,7 +52,21 @@
         
         for(int k = 0;k<=i; k++)
         {
-            [row.showGoodsData.pics addObject:@"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg"];
+            NSString *iamgeURL;
+            if(k%4 ==0)
+            {
+                iamgeURL = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg";
+            }else if(k%4==1)
+            {
+                iamgeURL = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124332_084_X.jpg";
+            }else if(k%4 == 2)
+            {
+                iamgeURL = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124332_950_X.jpg";
+            }else
+            {
+                iamgeURL = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124332_498_X.jpg";
+            }
+            [row.showGoodsData.pics addObject:iamgeURL];
         }
         
         [section.rowsData addObject:row];
@@ -125,17 +139,9 @@
                                                                               action:@selector(showBigImage:)];
         
         
-        objc_setAssociatedObject(tap, "imags", pics, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(tap, "pics", pics, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(tap, "pics", pics, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
-//        if (class_addIvar([UITapGestureRecognizer class], "tkImages", sizeof(NSArray *), 0, "@")) {
-//            NSLog(@"add ivar success");
-//        }else
-//        {
-//            NSLog(@"add ivar failed");
-//        }
-//        
-//        
-//        [tap setValue:pics forKey:@"tkImages"];
         
         UIImageView * img = [[UIImageView alloc] init];
         img.clipsToBounds = YES;
@@ -187,8 +193,11 @@
     NSInteger rowIndex = tap.view.tag/1000;
     
     TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
+
+   NSArray * imageVIews =  [tap.view.superview subviews];
+    
     [TKUITools showImagesInBigScreen:rowD.showGoodsData.pics
-                       withImageView: (UIImageView *)tap.view
+                       withImageViews:imageVIews
                         currentIndex:index];
 }
 
