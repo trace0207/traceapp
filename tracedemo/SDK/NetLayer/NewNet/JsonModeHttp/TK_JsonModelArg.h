@@ -8,15 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "TK_BaseJsonModel.h"
-
 @interface TK_JsonModelArg : TK_BaseJsonModel
-
-
 @property(nonatomic,strong)NSString <Ignore> *baseUrl;
 @property(nonatomic,strong)NSString <Ignore> *relativeUrl;
 @property(nonatomic,strong)NSString <Ignore> *ackClassName;
 @property(nonatomic,strong)NSString <Ignore> *method;
 @property(nonatomic,strong)NSString <Ignore> *timeoutstr;
+@property(nonatomic,strong)id<Ignore> transferFromArg;
 
 -(Class)getAckClass;
 

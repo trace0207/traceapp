@@ -8,6 +8,13 @@
 
 #import "TK_JsonModelArg.h"
 #import "TK_JsonModelAck.h"
+#import "NSString+HFStrUtil.h"
+
+
+@interface TK_JsonModelArg()<TK_TransferArgProtocol>
+
+@end
+
 @implementation TK_JsonModelArg
 
 -(instancetype)init{
@@ -21,7 +28,17 @@
 -(Class)getAckClass
 {
     NSString * className = NSStringFromClass([self class]);
-    Class ackClass = NSClassFromString([className stringByReplacingOccurrencesOfString:@"Arg" withString:@"Ack"]);
+    
+    Class ackClass = nil;
+    
+    if([NSString isStrEmpty:self.ackClassName])
+    {
+       ackClass = NSClassFromString([className stringByReplacingOccurrencesOfString:@"Arg" withString:@"Ack"]);
+    }else
+    {
+        ackClass = NSClassFromString(self.ackClassName);
+    }
+    
     if(!ackClass || ![ackClass isSubclassOfClass:[self getDefaultAckClass]])
     {
    
@@ -34,5 +51,17 @@
 {
     return [TK_JsonModelAck class];
 }
+
+
+-(id)tkTransferFromArg
+{
+    return self.transferFromArg;
+}
+
+//-(id)tkTransferFromArg
+//{
+//    return self.transferFromArg;
+//}
+
 
 @end

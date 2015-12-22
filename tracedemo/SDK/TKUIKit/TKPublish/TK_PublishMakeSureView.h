@@ -15,7 +15,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *errorImage;
 - (IBAction)cancelAction:(id)sender;
 
-@property (strong,nonatomic) NSObject * publishData;
+@property (strong, nonatomic) NSArray *images;
 
+
+-(void)beginSend;
 
 @end

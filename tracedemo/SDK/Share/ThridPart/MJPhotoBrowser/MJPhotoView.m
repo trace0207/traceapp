@@ -70,7 +70,7 @@
     { // 首次显示
         _imageView.image = _photo.placeholder; // 占位图片
 //        _photo.srcImageView.image = nil;
-        
+        [self adjustFrame];
         // 不是gif，就马上开始下载
         if (![_photo.url.absoluteString hasSuffix:@"gif"]) {
             __weak MJPhotoView *photoView = self;

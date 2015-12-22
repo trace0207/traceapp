@@ -370,25 +370,31 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
 -(void)TKI_rightBarAction
 {
     
-    if(!shareCategory)
-    {
-        [[HFHUDView shareInstance] ShowTips:@"请选择品类" delayTime:1.0 atView:NULL];
-        return;
-    }
-    else if(self.inputTextView.text.length == 0)
-    {
-        [[HFHUDView shareInstance] ShowTips:@"请输入描述信息" delayTime:1.0 atView:NULL];
-        return;
-    }else if(self.picturesArr.count == 0)
-    {
-        [[HFHUDView shareInstance] ShowTips:@"请选择图片" delayTime:1.0 atView:NULL];
-        return;
-    }
+//    if(!shareCategory)
+//    {
+//        [[HFHUDView shareInstance] ShowTips:@"请选择品类" delayTime:1.0 atView:NULL];
+//        return;
+//    }
+//    else if(self.inputTextView.text.length == 0)
+//    {
+//        [[HFHUDView shareInstance] ShowTips:@"请输入描述信息" delayTime:1.0 atView:NULL];
+//        return;
+//    }else if(self.picturesArr.count == 0)
+//    {
+//        [[HFHUDView shareInstance] ShowTips:@"请选择图片" delayTime:1.0 atView:NULL];
+//        return;
+//    }
     
     TK_PublishMakeSureView * popView = [[TK_PublishMakeSureView alloc]init];
     [self onClearViewEvent];
+    
+    NSArray * pics = [[NSArray alloc] initWithArray:self.picturesArr];
+    popView.images = pics;
     [[AppDelegate getAppDelegate].window addSubview:popView];
-    [[HFHUDView shareInstance] ShowTips:@"发布晒单成功" delayTime:1.0 atView:NULL];
+    
+    [popView beginSend];
+    
+//    [[HFHUDView shareInstance] ShowTips:@"发布晒单成功" delayTime:1.0 atView:NULL];
 }
 
 - (IBAction)countAddAction:(id)sender {

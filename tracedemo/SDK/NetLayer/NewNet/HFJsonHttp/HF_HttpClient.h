@@ -7,6 +7,7 @@
 //
 
 #import "TK_JsonModelHttpClient.h"
+@class TK_JsonModelFileArg;
 
 
 typedef void (^hfAckBlock)(HF_BaseAck * ack);

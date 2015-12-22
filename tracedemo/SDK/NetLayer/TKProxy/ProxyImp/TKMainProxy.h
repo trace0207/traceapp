@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ *
+ *  @param ack  返回一组 Ack
+ */
+typedef void (^tkMutableArgBlock)(NSArray<__kindof TK_JsonModelAck *> * ack);
+
+
+
 @interface TKMainProxy : NSObject
 
 
@@ -77,6 +85,39 @@
 -(void)appraiseBuyer:(NSString *)buyerId
            withScore:(NSInteger)score
            withBlock:(hfAckBlock)block;
+
+
+/**
+ *  上传图片
+ *
+ *  @param image <#image description#>
+ *  @param block <#block description#>
+ */
+-(void)uploadImage:(UIImage *)image
+          withType:(NSInteger)type
+         withBlock:(hfAckBlock)block;
+
+
+/**
+ *  上传多张图片
+ *
+ *  @param images <#images description#>
+ *  @param type   <#type description#>
+ *  @param block  <#block description#>
+ */
+-(void)uploadMutableImages:(NSArray *)images
+                              withtype:(NSInteger)type
+                             withBlock:(tkMutableArgBlock)block;
+
+
+/**
+ *  通用 的多个 arg 请求队列
+ *  不loading ，不提示 error
+ *  @param args  <#args description#>
+ *  @param block <#block description#>
+ */
+-(void)sendMutableArg:(NSArray<__kindof TK_JsonModelArg *><TK_HttpFileProtocol> *)args
+            withBlock:(tkMutableArgBlock)block;
 
 
 @end

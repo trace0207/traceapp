@@ -8,9 +8,12 @@
 
 #import "TK_JsonModelHttpClient.h"
 #import "TK_JsonModelAck.h"
+#import "TK_JsonModelArg.h"
 #import "HF_BaseAck.h"
+#import "TK_HttpFileData.h"
 //#import "NSURL.h"
 //typedef void (^jsonModelAckBlock)(TK_JsonModelAck * ack);
+
 
 @implementation TK_JsonModelHttpClient
 
@@ -27,35 +30,63 @@
     NSString * requestURL = [arg.baseUrl stringByAppendingString:arg.relativeUrl];
     DDLogDebug(@"\nRequest : 【%@】 \nParams:%@",requestURL,[arg toDictionary]);
     Class ackClass = [arg getAckClass]; //NSClassFromString(arg.ackClassName);
-    
-//    // 对参数校验
-//    if(![ackClass isSubclassOfClass:TK_JsonModelAck.class]){
-//        
-//        NSError * classError = [[NSError alloc] initWithDomain:@"ClassError" code:TK_CLASS_ERROR userInfo:nil];
-//        TK_JsonModelAck * ack = [[TK_JsonModelAck alloc]init];
-//        ack.error = classError;
-//        block(ack);
-//        return;
-//    }
         // 发送请求
-    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:arg.method URLString:requestURL parameters:[arg toDictionary] error:nil];
+    NSMutableURLRequest *request = nil;
+    
+    
+    if([arg respondsToSelector:@selector(tkGetFileData)])
+    {
+        
+        TK_HttpFileData * data = [arg performSelector:@selector(tkGetFileData) withObject:nil withObject:nil];
+        
+        DDLogDebug(@"\nwithData :%@",[data toDictionary]);
+        request = [self.requestSerializer multipartFormRequestWithMethod:@"POST"
+                                                               URLString:requestURL
+                                                              parameters:[arg toDictionary]
+                                               constructingBodyWithBlock: ^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithFileData:data.tkData
+                                        name:data.name
+                                    fileName:data.displayName
+                                    mimeType:data.type];
+        }
+                                                                   error:nil];
+        
+        
+    }else
+    {
+      request  = [self.requestSerializer requestWithMethod:arg.method
+                                                 URLString:requestURL
+                                                parameters:[arg toDictionary]
+                                                      error:nil];
+    }
+    
+    
     request.timeoutInterval = arg.timeoutstr.integerValue;
-    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
+                                                                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
         DDLogDebug(@"\nAck : 【%@】 \nParams:%@",requestURL,responseObject);
         TK_JsonModelAck * ack = [self parserAckData:ackClass fromDictionary:responseObject];
+        if([arg respondsToSelector:@selector(tkTransferFromArg)])
+        {
+            ack.transferFromArg = [arg performSelector:@selector(tkTransferFromArg) withObject:nil];
+        }
         block(ack);
     }  failure:^(AFHTTPRequestOperation *operation, NSError *error){
         DDLogDebug(@"\nAck : 【%@】 error code = %@",requestURL,error);
         TK_JsonModelAck * ack = [[ackClass alloc]init];
         ack.error = error;
+        if([arg respondsToSelector:@selector(tkTransferFromArg)])
+        {
+            ack.transferFromArg = [arg performSelector:@selector(tkTransferFromArg) withObject:nil];
+        }
         block(ack);
     }];
     
     [self.operationQueue addOperation:operation];
-
-    
-    
 }
+
+
+
 
 
 /**

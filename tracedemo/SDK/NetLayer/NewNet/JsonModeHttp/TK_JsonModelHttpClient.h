@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AFHTTPRequestOperationManager.h"
-#import "TK_JsonModelArg.h"
-#import "TK_JsonModelAck.h"
+@class TK_JsonModelArg,TK_HttpFileData,TK_JsonModelAck;
 
 
 typedef NS_ENUM(NSInteger, TK_RequestError) {
@@ -21,14 +20,29 @@ typedef NS_ENUM(NSInteger, TK_RequestError) {
 
 typedef void (^jsonModelAckBlock)(TK_JsonModelAck * ack);
 
+/**
+ *  传送文件协议。 
+    如果http请求中需要携带 file文件，则实现这个协议的方法
+ */
+@protocol TK_HttpFileProtocol <NSObject>
+@required
+-(TK_HttpFileData *)tkGetFileData;
+@end
+
+
+
+/**
+ *  参数透传协议。  默认的接口全部实现该协议
+    用于 arg 需要和 ack对应的场景。 会在 ack中透传回来 arg 中的原始数据
+ */
+@protocol TK_TransferArgProtocol <NSObject>
+@required
+-(id)tkTransferFromArg;
+@end
+
+
+
 @interface TK_JsonModelHttpClient : AFHTTPRequestOperationManager
-
-
-
-
 -(BOOL)isNetEnable;
-
-
 -(void)sendRequestForJsonModel:(TK_JsonModelArg *)arg withAckBlock:(jsonModelAckBlock)block;
-
 @end

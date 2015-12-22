@@ -12,5 +12,6 @@
 
 @interface TK_JsonModelAck : TK_BaseJsonModel
 @property (nonatomic,strong) NSError<Ignore> * error;
+@property (nonatomic,strong) id<Ignore>transferFromArg;
 
 @end

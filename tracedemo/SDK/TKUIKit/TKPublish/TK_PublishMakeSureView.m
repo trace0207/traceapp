@@ -44,4 +44,13 @@
 - (IBAction)cancelAction:(id)sender {
     [self removeFromSuperview];
 }
+
+
+-(void)beginSend
+{
+    [[TKProxy proxy].mainProxy uploadMutableImages:self.images withtype:1 withBlock:^(NSArray * acks) {
+        
+        DDLogInfo(@"upload images array %@",acks);
+    } ];
+}
 @end

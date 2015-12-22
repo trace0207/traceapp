@@ -9,7 +9,6 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "BaseHttpReq.h"
 #import "HFNetProcessHelper.h"
-#import "HttpFileReq.h"
 #import "Reachability.h"
 
 @interface BaseHFHttpClient : AFHTTPRequestOperationManager

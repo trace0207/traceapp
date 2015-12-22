@@ -116,4 +116,5 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(HF_HttpClient, httpClient);
     
 }
 
+
 @end
