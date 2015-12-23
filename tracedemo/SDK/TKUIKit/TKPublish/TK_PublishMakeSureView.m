@@ -51,6 +51,7 @@
     [[TKProxy proxy].mainProxy uploadMutableImages:self.images withtype:1 withBlock:^(NSArray * acks) {
         
         DDLogInfo(@"upload images array %@",acks);
+        self.images = nil;
     } ];
 }
 @end

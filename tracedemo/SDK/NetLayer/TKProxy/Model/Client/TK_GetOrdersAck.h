@@ -6,7 +6,7 @@
 //  Copyright © 2015年 trace. All rights reserved.
 //
 
-#import "HF_BaseAck.h"
+@class HF_BaseAck;
 
 @interface TK_GetOrdersAck : HF_BaseAck
 

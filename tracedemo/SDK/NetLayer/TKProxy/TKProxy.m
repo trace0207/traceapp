@@ -7,8 +7,7 @@
 //
 
 #import "TKProxy.h"
-#import "TKMainProxy.h"
-#import "TKUserProxy.h"
+
 
 @implementation TKProxy
 

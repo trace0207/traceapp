@@ -59,7 +59,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(HF_HttpClient, httpClient);
     if(![[BaseHFHttpClient shareInstance]bNetReachable])
     {
         HF_BaseAck * errorAck = [[[arg getAckClass] alloc] init];
-        errorAck.recode =  TKHTTPRequestError;// = - 10085, // 网络不可用
+        errorAck.recode =  TK_NEtWorkError;// = - 10085, // 网络不可用
         errorAck.msg = _T(@"HF_Common_CheckNet");
         if([arg.showToastStr isEqualToString:@"YES"]){
             
@@ -115,6 +115,43 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(HF_HttpClient, httpClient);
     }];
     
 }
+
+
+
+-(void)sendMUtableArgsForHiffit:(NSArray<__kindof HF_BaseArg *> *)args
+                    showLoading:(BOOL) loading
+                     toastError:(BOOL) toastError
+                      withBlock:(hfMutableAckBlock) block
+{
+    // 检查网络
+    if(![[BaseHFHttpClient shareInstance]bNetReachable])
+    {
+        if(toastError){
+            
+            [[HFHUDView shareInstance] ShowTips:_T(@"HF_Common_CheckNet") delayTime:1.0 atView:NULL];
+        }
+        block(nil);
+        return ;
+    }
+
+    // 按需显示 loading
+    MBProgressHUD *hud;
+    if(loading){
+        
+        hud = [MBProgressHUD showHUDAddedTo:[UIKitTool getAppdelegate].window animated:YES];
+    }
+    
+    [self sendMutableArg:args withBlock:^(NSArray<__kindof TK_JsonModelAck *> *ack) {
+        
+        if(hud){
+            
+            [hud hide:YES];
+        }
+        block(ack);
+    }];
+}
+
+
 
 
 @end

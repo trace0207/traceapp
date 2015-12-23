@@ -10,6 +10,7 @@
 
 @interface ActionTools : NSObject
 
+
 +(NSString *)getRelativePathByArgClass:(Class)argClass;
 
 @end

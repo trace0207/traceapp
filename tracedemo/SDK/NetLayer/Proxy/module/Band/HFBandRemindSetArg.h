@@ -6,7 +6,7 @@
 //  Copyright © 2015年 ChinaMobile. All rights reserved.
 //
 
-#import "HF_BaseAck.h"
+@class HF_BaseAck;
 
 @interface HFBandRemindSetArg : HF_BaseArg
 

@@ -393,6 +393,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     [[AppDelegate getAppDelegate].window addSubview:popView];
     
     [popView beginSend];
+    self.picturesArr = nil;
     
 //    [[HFHUDView shareInstance] ShowTips:@"发布晒单成功" delayTime:1.0 atView:NULL];
 }

@@ -166,8 +166,6 @@
     NSMutableArray * array = [[NSMutableArray alloc] init];
     for(int i = 0;i<images.count;i++)
     {
-        //        dispatch_group_enter(group);
-        
         TK_UploadImageArg * arg = [[TK_UploadImageArg alloc] init];
         arg.showToastStr = @"NO";
         arg.image = images[i];
@@ -175,50 +173,12 @@
         arg.needCompress = 1;
         [array addObject:arg];
     }
-    [self sendMutableArg:array withBlock:block];
+    [[HF_HttpClient httpClient] sendMUtableArgsForHiffit:array showLoading:YES toastError:YES withBlock:^(NSArray<__kindof HF_BaseAck *> *acks) {
+       
+        DDLogInfo(@"ack back %@",acks);
+        acks = nil;
+    }];
 }
 
-
-
-/**
- *  通用 的多个 arg 请求队列
- *  不loading ，不提示 error
- *  @param args  <#args description#>
- *  @param block <#block description#>
- */
--(void)sendMutableArg:(NSArray<__kindof TK_JsonModelArg *><TK_TransferArgProtocol> *)args
-            withBlock:(tkMutableArgBlock)block
-{
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_group_t group = dispatch_group_create();
-    NSMutableArray * array = [[NSMutableArray alloc]init];
-    hfAckBlock  oneBlock = ^(HF_BaseAck * ack)
-    {
-        dispatch_group_async(group,queue,^{
-            [array addObject:ack];
-            DDLogInfo(@"TKGroup ack at  index = %@",ack.transferFromArg);
-        });
-        dispatch_group_leave(group);
-    };
-    
-    for(int i = 0;i<args.count;i++)
-    {
-        dispatch_group_enter(group);
-        dispatch_group_async(group,queue,^{
-            args[i].transferFromArg = @(i);
-            [[HF_HttpClient httpClient] sendRequestForHiifit:args[i] withBolck:oneBlock];
-            
-        });
-        
-    }
-    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        NSLog(@"结束了整组的请求队列");
-        NSArray * array2 = [array sortedArrayUsingComparator:^NSComparisonResult(HF_BaseAck * obj1, HF_BaseAck * obj2) {
-            return (NSInteger)obj1.transferFromArg > (NSInteger)obj2.transferFromArg ? NSOrderedDescending:NSOrderedDescending;
-        }];
-        block(array2);
-    });
-
-}
 
 @end

@@ -6,8 +6,7 @@
 //  Copyright © 2015年 trace. All rights reserved.
 //
 
-#import "HF_BaseAck.h"
-
+@class HF_BaseAck;
 
 //@protocol LoginAckData <NSObject>
 //@end

@@ -14,8 +14,13 @@
 
 @protocol TKTableViewVMDelegate <NSObject>
 
+@optional
 -(void)onPull;
+-(void)onTableItemSelect:(NSIndexPath *)indexPath withItemData:(id)data;
+
 @end
+
+
 
 
 @interface TKTableViewVM : NSObject

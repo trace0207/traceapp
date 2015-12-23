@@ -8,11 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-/*
- *
- *  @param ack  返回一组 Ack
- */
-typedef void (^tkMutableArgBlock)(NSArray<__kindof TK_JsonModelAck *> * ack);
+
 
 
 
@@ -108,16 +104,5 @@ typedef void (^tkMutableArgBlock)(NSArray<__kindof TK_JsonModelAck *> * ack);
 -(void)uploadMutableImages:(NSArray *)images
                               withtype:(NSInteger)type
                              withBlock:(tkMutableArgBlock)block;
-
-
-/**
- *  通用 的多个 arg 请求队列
- *  不loading ，不提示 error
- *  @param args  <#args description#>
- *  @param block <#block description#>
- */
--(void)sendMutableArg:(NSArray<__kindof TK_JsonModelArg *><TK_HttpFileProtocol> *)args
-            withBlock:(tkMutableArgBlock)block;
-
 
 @end

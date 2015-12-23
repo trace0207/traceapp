@@ -7,6 +7,7 @@
 //
 
 #import "TK_JsonModelArg.h"
+#import "TK_JsonModelHttpClient.h"
 
 @interface HF_BaseArg : TK_JsonModelArg
 

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 cmcc. All rights reserved.
 //
 
-#import "HF_BaseAck.h"
+@class HF_BaseAck;
 
 @interface GetSuggestArg : HF_BaseArg
 @property (nonatomic,assign)NSInteger schemeId;

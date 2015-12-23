@@ -89,6 +89,49 @@
 
 
 
+
+/**
+ *  通用 的多个 arg 请求队列
+ *  不loading ，不提示 error
+ *  @param args  arg列表
+ *  @param block 回调block
+ */
+-(void)sendMutableArg:(NSArray<__kindof TK_JsonModelArg *> *)args
+            withBlock:(tkMutableArgBlock)block
+{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_group_t group = dispatch_group_create();
+    NSMutableArray * array = [[NSMutableArray alloc]init];
+    jsonModelAckBlock  oneBlock = ^(TK_JsonModelAck * ack)
+    {
+        dispatch_group_async(group,queue,^{
+            [array addObject:ack];
+            DDLogInfo(@"TKGroup ack at  index = %@",ack.transferFromArg);
+        });
+        dispatch_group_leave(group);
+    };
+    
+    for(int i = 0;i<args.count;i++)
+    {
+        dispatch_group_enter(group);
+        dispatch_group_async(group,queue,^{
+            args[i].transferFromArg = @(i);
+            [self sendRequestForJsonModel:args[i] withAckBlock:oneBlock];
+        });
+        
+    }
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSLog(@"结束了整组的请求队列");
+        NSArray * array2 = [array sortedArrayUsingComparator:^NSComparisonResult(HF_BaseAck * obj1, HF_BaseAck * obj2) {
+            return (NSInteger)obj1.transferFromArg > (NSInteger)obj2.transferFromArg ? NSOrderedDescending:NSOrderedDescending;
+        }];
+        block(array2);
+    });
+    
+}
+
+
+
 /**
  将返回json解析成 class对象
  **/

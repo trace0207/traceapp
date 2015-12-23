@@ -7,7 +7,7 @@
 //
 
 #import "TKIBaseNavWithDefaultBackVC.h"
-
+#import "TKTableViewVM.h"
 
 typedef NS_ENUM(NSInteger, GZModifyType)
 {
@@ -21,6 +21,11 @@ typedef NS_ENUM(NSInteger, GZModifyType)
     GZModifyBangding        = 7,
     GZModifyBand            = 8,
 };
+
+
+@interface TKEditUserInfoTableVM : TKTableViewVM
+
+@end
 
 @interface TKEditUserInfoVC : TKIBaseNavWithDefaultBackVC
 

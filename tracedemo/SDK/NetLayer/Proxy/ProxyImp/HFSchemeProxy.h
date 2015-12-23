@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HF_BaseAck.h"
+@class HF_BaseAck;
 #import "HF_BaseArg.h"
 #import "HF_HttpClient.h"
 #import "SaveDietaryInfoArg.h"

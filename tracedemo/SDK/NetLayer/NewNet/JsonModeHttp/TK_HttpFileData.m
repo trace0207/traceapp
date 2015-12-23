@@ -10,4 +10,10 @@
 
 @implementation TK_HttpFileData
 
+
+-(void)dealloc
+{
+    DDLogInfo(@"HTTPFIleData delloc");
+}
+
 @end

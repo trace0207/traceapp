@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 wensihaihui. All rights reserved.
 //
 
-#import "HF_BaseAck.h"
+@class HF_BaseAck;
 
 @interface GetSubSchemeSportAck : HF_BaseAck
 //@property (nonatomic,strong) NSString * schemeId;

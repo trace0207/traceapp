@@ -30,8 +30,21 @@
         fileData.displayName = @"img.jpg";
         fileData.type = @"image/jpeg";
     }
-    fileData.tkData = UIImageJPEGRepresentation(self.image, 0.5);
+    fileData.tkData = UIImageJPEGRepresentation(self.image, 0.5);//  [[NSData alloc] init];
     return fileData;
 }
+
+
+-(void)dealloc
+{
+    if(fileData)
+    {
+        fileData.tkData = nil;
+        [fileData setTkData:nil];
+    }
+    fileData = nil;
+    DDLogInfo(@"uploadArg dealloc");
+}
+
 
 @end

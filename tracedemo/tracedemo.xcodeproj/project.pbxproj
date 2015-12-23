@@ -4339,10 +4339,10 @@
 		8AE10B7B1BF33B2000C0C9A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8AECCA6B1C1B192300CD789F /* AppSetting */,
 				8AECCA7F1C1D29AE00CD789F /* UserInfoViewController.h */,
 				8AECCA801C1D29AE00CD789F /* UserInfoViewController.m */,
 				8AECCA811C1D29AE00CD789F /* UserInfoViewController.xib */,
-				8AECCA6B1C1B192300CD789F /* AppSetting */,
 				8AE10B811BF33BAA00C0C9A0 /* TKLoginViewController.xib */,
 				8AE10B7C1BF33B3E00C0C9A0 /* TKLoginViewController.h */,
 				8AE10B7D1BF33B3E00C0C9A0 /* TKLoginViewController.m */,

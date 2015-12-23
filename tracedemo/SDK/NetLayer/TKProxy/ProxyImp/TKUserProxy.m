@@ -8,6 +8,11 @@
 
 #import "TKUserProxy.h"
 #import "TK_VerifySMSArg.h"
+#import "TK_LoginArg.h"
+#import "TK_RegisterNewUserArg.h"
+#import "TK_RegisterNewUserAck.h"
+
+//TK_LoginArg,TK_RegisterNewUserArg,TK_RegisterNewUserAck;
 @implementation TKUserProxy
 
 

@@ -14,4 +14,11 @@
 
 @implementation TK_UploadImageAck
 
+
+-(void)dealloc
+{
+    DDLogInfo(@"uploadImag Ack delloc");
+}
+
 @end
+

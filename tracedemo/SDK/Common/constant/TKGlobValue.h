@@ -171,9 +171,3 @@ placeholderImage:[UIImage imageNamed:@"tk_image_head"]];
 // 设置UItableView 的 代理
 #define TKSetTableView(tableView,d1,d2)  tableView.dataSource =  d1 ; \
 tableView.delegate = d2;
-
-
-typedef NS_ENUM(NSInteger, TKNetStateCode) {
-    TKNEtWorkError             = -10000,
-    TKHTTPRequestError         = -10001,
-};
