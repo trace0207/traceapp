@@ -68,14 +68,16 @@
 {
     if (_photo.firstShow)
     { // 首次显示
-        _imageView.image = _photo.placeholder; // 占位图片
+        _imageView.image = _photo.placeholder; // 占位图片  来源于 srcImage 或者是 clipToboud 截图
 //        _photo.srcImageView.image = nil;
         [self adjustFrame];
         // 不是gif，就马上开始下载
         if (![_photo.url.absoluteString hasSuffix:@"gif"]) {
             __weak MJPhotoView *photoView = self;
             __weak MJPhoto *photo = _photo;
-            [_imageView setImageWithURL:_photo.url placeholderImage:_photo.placeholder options:SDWebImageRetryFailed|SDWebImageLowPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+            [_imageView sd_setImageWithURL:_photo.url placeholderImage:_photo.placeholder
+                                   options:SDWebImageRetryFailed|SDWebImageLowPriority
+                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 photo.image = image;
                 // 调整frame参数
                 [photoView adjustFrame];
@@ -103,7 +105,6 @@
         // 直接显示进度条
         [_photoLoadingView showLoading];
         [self addSubview:_photoLoadingView];
-        
         __weak MJPhotoView *photoView = self;
         __weak MJPhotoLoadingView *loading = _photoLoadingView;
 //        [_imageView setImageWithURL:_photo.url placeholderImage:_photo.srcImageView.image options:SDWebImageRetryFailed|SDWebImageLowPriority progress:^(NSInteger receivedSize, NSInteger expectedSize) {
@@ -149,6 +150,9 @@
 #pragma mark 调整frame
 - (void)adjustFrame
 {
+    
+    DDLogInfo(@"adjustFrame enter ");
+    
 	if (_imageView.image == nil) return;
     
     // 基本尺寸参数
@@ -186,17 +190,18 @@
     
    // NSLog(@"~~~~~~~~~~~~~~~~~%f,%f,%f,%f", imageFrame.origin.x, imageFrame.origin.y,imageFrame.size.width,imageFrame.size.height);
     
-    if (_photo.firstShow) { // 第一次显示的图片
+    if (_photo.firstShow) { // 第一次显示的图片  做动画。  一组图片中只有 第一次显示的那张 firstShow 为 true
         _photo.firstShow = NO; // 已经显示过了
         
         // 显示的起始frame，和原来的 srcImage boud frame 一致 开始做动画
         _imageView.frame = [_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
         
-        _imageView.clipsToBounds = _photo.srcImageView.clipsToBounds;
+        _imageView.clipsToBounds = YES;
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
         
         
-//        DDLogInfo(@"show begin frame w = %f, h = %f",_imageView.frame.size.width,_imageView.frame.size.height);
-//        DDLogInfo(@"show begin  x = %f, y = %f",_imageView.center.x,_imageView.center.y);
+        DDLogInfo(@"show begin frame w = %f, h = %f",_imageView.frame.size.width,_imageView.frame.size.height);
+        DDLogInfo(@"show begin  x = %f, y = %f",_imageView.center.x,_imageView.center.y);
         
         [UIView animateWithDuration:0.35 animations:^{
             _imageView.frame = imageFrame;
@@ -234,7 +239,7 @@
 //    _photo.srcImageView.image = nil;
     
     
-    DDLogInfo(@"hide begin   center  x = %f, y = %f",_imageView.center.x,_imageView.center.y);
+//    DDLogInfo(@"hide begin   center  x = %f, y = %f",_imageView.center.x,_imageView.center.y);
     
 //    CGFloat duration = 0.;
 //    if (_photo.srcImageView.clipsToBounds) {
@@ -253,11 +258,21 @@
     
 //    _imageView.image = _photo.srcImageView.image;
     
+    
+    
     CGRect frame =[_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
-     DDLogInfo(@"hide begin   center  x = %f, y = %f",frame.size.width,frame.size.height);
     
 //    _imageView.contentMode = UIViewContentModeCenter;
-    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    if(_photo.image)
+    {
+       _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    }else
+    {
+         _imageView.contentMode = UIViewContentModeCenter;
+    }
+    
+   
     _imageView.clipsToBounds  = _photo.srcImageView.clipsToBounds;
 
     

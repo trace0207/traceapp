@@ -120,6 +120,7 @@
     [kNotificationCenter removeObserver:self];
 }
 
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

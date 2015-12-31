@@ -31,4 +31,13 @@
 }
 
 
+-(void)initDefaultRowData:(NSInteger)count
+{
+    for(int i = 0;i<count;i++)
+    {
+        [self.rowsData addObject:[[TKTableViewRowM alloc] init]];
+    }
+}
+
+
 @end

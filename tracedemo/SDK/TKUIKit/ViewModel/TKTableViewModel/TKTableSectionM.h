@@ -33,4 +33,6 @@
 
 @property (nonatomic,strong)UIView * tkHeadView;
 
+-(void)initDefaultRowData:(NSInteger)count;
+
 @end

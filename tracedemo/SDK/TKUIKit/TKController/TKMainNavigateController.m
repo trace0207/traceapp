@@ -14,7 +14,7 @@
 #import "UIViewController+TKNavigationBarSetting.h"
 #import "HFNewMainViewController.h"
 #import "HFMomentsViewController.h"
-#import "UserInfoViewController.h"
+#import "TKUserCenterViewController.h"
 #import "HFMessageViewController.h"
 #import "TKUserCenter.h"
 #import "TKLoginViewController.h"
@@ -76,7 +76,7 @@
     newUser.tabBarItem.selectedImage = IMG(@"new_mySelected");
     
 //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
-    UserInfoViewController * navc5 = [[UserInfoViewController alloc] init];
+    TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
     navc5.title = @"我";
     navc5.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
     
@@ -141,7 +141,7 @@
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController NS_AVAILABLE_IOS(3_0)
 {
-    if([viewController isKindOfClass:[UserInfoViewController class]] && ![[TKUserCenter instance] isLogin])
+    if([viewController isKindOfClass:[TKUserCenterViewController class]] && ![[TKUserCenter instance] isLogin])
     {
         [self showLoginView];
         temploginEvent = TK_GoToUserCenter;
@@ -167,7 +167,7 @@
 }
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     
-    DDLogInfo(@" shouldSelectViewController %@ ",viewController);
+//    DDLogInfo(@" shouldSelectViewController %@ ",viewController);
 }
 
 

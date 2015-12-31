@@ -117,7 +117,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(HF_HttpClient, httpClient);
 }
 
 
-
 -(void)sendMUtableArgsForHiffit:(NSArray<__kindof HF_BaseArg *> *)args
                     showLoading:(BOOL) loading
                      toastError:(BOOL) toastError

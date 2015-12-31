@@ -640,6 +640,7 @@
 		BB1A03191BE211720035770A /* TKHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1A03171BE211720035770A /* TKHomePageViewController.xib */; };
 		BB339B871BFEBA6E00680AEA /* TK_BaseNavSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB339B861BFEBA6E00680AEA /* TK_BaseNavSettingViewController.m */; };
 		BB339B8A1BFED91800680AEA /* TKIBaseNavWithDefaultBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB339B891BFED91800680AEA /* TKIBaseNavWithDefaultBackVC.m */; };
+		BB3702791C3378DB00294FC4 /* TK_UserCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3702781C3378DB00294FC4 /* TK_UserCenterVM.m */; };
 		BB4A868E1C23E53000739ADD /* TKIMessageCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4A868D1C23E53000739ADD /* TKIMessageCenterVM.m */; };
 		BB4A86921C24101400739ADD /* TKMessageListIItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4A86901C24101400739ADD /* TKMessageListIItemCell.m */; };
 		BB4A86931C24101400739ADD /* TKMessageListIItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A86911C24101400739ADD /* TKMessageListIItemCell.xib */; };
@@ -696,6 +697,7 @@
 		BBE32BB41C0ED8400094ACEE /* TK_PraiseRewardArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BB31C0ED8400094ACEE /* TK_PraiseRewardArg.m */; };
 		BBE32BB71C0ED8580094ACEE /* TK_PraiseOrderArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BB61C0ED8580094ACEE /* TK_PraiseOrderArg.m */; };
 		BBE32BBA1C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE32BB91C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m */; };
+		BBFD6F9D1C351CCA00E0A536 /* TKUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFD6F9C1C351CCA00E0A536 /* TKUserCenterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1906,6 +1908,8 @@
 		BB339B861BFEBA6E00680AEA /* TK_BaseNavSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BaseNavSettingViewController.m; sourceTree = "<group>"; };
 		BB339B881BFED91800680AEA /* TKIBaseNavWithDefaultBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIBaseNavWithDefaultBackVC.h; sourceTree = "<group>"; };
 		BB339B891BFED91800680AEA /* TKIBaseNavWithDefaultBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIBaseNavWithDefaultBackVC.m; sourceTree = "<group>"; };
+		BB3702771C3378DB00294FC4 /* TK_UserCenterVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_UserCenterVM.h; sourceTree = "<group>"; };
+		BB3702781C3378DB00294FC4 /* TK_UserCenterVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_UserCenterVM.m; sourceTree = "<group>"; };
 		BB4A868C1C23E53000739ADD /* TKIMessageCenterVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIMessageCenterVM.h; sourceTree = "<group>"; };
 		BB4A868D1C23E53000739ADD /* TKIMessageCenterVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIMessageCenterVM.m; sourceTree = "<group>"; };
 		BB4A868F1C24101400739ADD /* TKMessageListIItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMessageListIItemCell.h; sourceTree = "<group>"; };
@@ -2009,6 +2013,8 @@
 		BBE32BB61C0ED8580094ACEE /* TK_PraiseOrderArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PraiseOrderArg.m; sourceTree = "<group>"; };
 		BBE32BB81C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_AppraiseBuyerArg.h; sourceTree = "<group>"; };
 		BBE32BB91C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_AppraiseBuyerArg.m; sourceTree = "<group>"; };
+		BBFD6F9B1C351CCA00E0A536 /* TKUserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserCenterViewController.h; sourceTree = "<group>"; };
+		BBFD6F9C1C351CCA00E0A536 /* TKUserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserCenterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2406,16 +2412,16 @@
 		8A6B379F1BF01B8F00E5C982 /* NewNet */ = {
 			isa = PBXGroup;
 			children = (
+				8A6B37B31BF01B8F00E5C982 /* JsonModeHttp */,
+				8A6B37A41BF01B8F00E5C982 /* HFJsonHttp */,
 				8A6B37A01BF01B8F00E5C982 /* BaseHFHttpClient.h */,
 				8A6B37A11BF01B8F00E5C982 /* BaseHFHttpClient.m */,
 				8A6B37A21BF01B8F00E5C982 /* BaseHttpReq.h */,
 				8A6B37A31BF01B8F00E5C982 /* BaseHttpReq.m */,
-				8A6B37A41BF01B8F00E5C982 /* HFJsonHttp */,
 				8A6B37AB1BF01B8F00E5C982 /* HFLoadFileManager.h */,
 				8A6B37AC1BF01B8F00E5C982 /* HFLoadFileManager.m */,
 				8A6B37AD1BF01B8F00E5C982 /* HFNetProcessHelper.h */,
 				8A6B37AE1BF01B8F00E5C982 /* HFNetProcessHelper.m */,
-				8A6B37B31BF01B8F00E5C982 /* JsonModeHttp */,
 			);
 			path = NewNet;
 			sourceTree = "<group>";
@@ -4359,6 +4365,8 @@
 				BB8B22251C1979F8002B4C51 /* TKEditUserInfoVC.m */,
 				8AECCA7C1C1D212000CD789F /* TKUserDetailInfoViewController.h */,
 				8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */,
+				BBFD6F9B1C351CCA00E0A536 /* TKUserCenterViewController.h */,
+				BBFD6F9C1C351CCA00E0A536 /* TKUserCenterViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4477,6 +4485,8 @@
 				BB520D281BFAD0FD0022BFA2 /* TK_UserNormalViewModel.m */,
 				8A80E1ED1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.h */,
 				8A80E1EE1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.m */,
+				BB3702771C3378DB00294FC4 /* TK_UserCenterVM.h */,
+				BB3702781C3378DB00294FC4 /* TK_UserCenterVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -4931,6 +4941,7 @@
 				8A6B3C7D1BF01D4400E5C982 /* HFUserInfoModel.m in Sources */,
 				8A6B39221BF01B8F00E5C982 /* MyPostListRes.m in Sources */,
 				8A6B3BFF1BF01D4400E5C982 /* NSString+HFStrUtil.m in Sources */,
+				BBFD6F9D1C351CCA00E0A536 /* TKUserCenterViewController.m in Sources */,
 				8AECCA7A1C1B195B00CD789F /* HFFeedbackController.m in Sources */,
 				8A6B391E1BF01B8F00E5C982 /* ModelData.m in Sources */,
 				8A6B3F241BF01E4900E5C982 /* HFAlertView.m in Sources */,
@@ -5310,6 +5321,7 @@
 				8A6B39B11BF01B8F00E5C982 /* HFFeedbackReq.m in Sources */,
 				8A51DC471BF3759900D276AF /* TKRegisterViewController.m in Sources */,
 				8A6B3CD81BF01D4400E5C982 /* SettingsViewController.m in Sources */,
+				BB3702791C3378DB00294FC4 /* TK_UserCenterVM.m in Sources */,
 				8A6B3C371BF01D4400E5C982 /* HFUnlockViewController.m in Sources */,
 				8A6B39AB1BF01B8F00E5C982 /* SubSchemeHomeAck.m in Sources */,
 				8A6B39DE1BF01B8F00E5C982 /* UserProxy.m in Sources */,
