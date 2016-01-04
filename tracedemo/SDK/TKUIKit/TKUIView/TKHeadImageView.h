@@ -13,6 +13,6 @@
 @property (nonatomic,strong) NSString * userId;
 
 
-- (void)addTapAction:(SEL)selector forTarget:(id)target;
+- (void)tkAddTapAction:(SEL)selector forTarget:(id)target;
 
 @end

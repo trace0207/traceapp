@@ -630,8 +630,6 @@
 		8AECCA7A1C1B195B00CD789F /* HFFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA781C1B195B00CD789F /* HFFeedbackController.m */; };
 		8AECCA7B1C1B195B00CD789F /* HFFeedbackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AECCA791C1B195B00CD789F /* HFFeedbackController.xib */; };
 		8AECCA7E1C1D212000CD789F /* TKUserDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */; };
-		8AECCA821C1D29AE00CD789F /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AECCA801C1D29AE00CD789F /* UserInfoViewController.m */; };
-		8AECCA831C1D29AE00CD789F /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AECCA811C1D29AE00CD789F /* UserInfoViewController.xib */; };
 		BB15064E1C0876E500F97A7B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15064C1C0876E500F97A7B /* TestViewController.m */; };
 		BB15064F1C0876E500F97A7B /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB15064D1C0876E500F97A7B /* TestViewController.xib */; };
 		BB1506521C0A935D00F97A7B /* TK_PicAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1506511C0A935D00F97A7B /* TK_PicAddView.m */; };
@@ -1890,9 +1888,6 @@
 		8AECCA791C1B195B00CD789F /* HFFeedbackController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFFeedbackController.xib; sourceTree = "<group>"; };
 		8AECCA7C1C1D212000CD789F /* TKUserDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserDetailInfoViewController.h; sourceTree = "<group>"; };
 		8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserDetailInfoViewController.m; sourceTree = "<group>"; };
-		8AECCA7F1C1D29AE00CD789F /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
-		8AECCA801C1D29AE00CD789F /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
-		8AECCA811C1D29AE00CD789F /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
 		B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BB15064B1C0876E500F97A7B /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		BB15064C1C0876E500F97A7B /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
@@ -4346,9 +4341,6 @@
 			isa = PBXGroup;
 			children = (
 				8AECCA6B1C1B192300CD789F /* AppSetting */,
-				8AECCA7F1C1D29AE00CD789F /* UserInfoViewController.h */,
-				8AECCA801C1D29AE00CD789F /* UserInfoViewController.m */,
-				8AECCA811C1D29AE00CD789F /* UserInfoViewController.xib */,
 				8AE10B811BF33BAA00C0C9A0 /* TKLoginViewController.xib */,
 				8AE10B7C1BF33B3E00C0C9A0 /* TKLoginViewController.h */,
 				8AE10B7D1BF33B3E00C0C9A0 /* TKLoginViewController.m */,
@@ -4795,7 +4787,6 @@
 				8A6B3C261BF01D4400E5C982 /* HFAdvanceHealthViewController.xib in Resources */,
 				8A6B39701BF01B8F00E5C982 /* HttpAction.plist in Resources */,
 				8A6B3F411BF01E4900E5C982 /* MJPhotoBrowser.bundle in Resources */,
-				8AECCA831C1D29AE00CD789F /* UserInfoViewController.xib in Resources */,
 				8A6B3C9F1BF01D4400E5C982 /* UserInfoCell.xib in Resources */,
 				8A6B3F541BF01E4900E5C982 /* ReadMe.strings in Resources */,
 				8A6B3C161BF01D4400E5C982 /* HFDevInfoViewController.xib in Resources */,
@@ -4935,7 +4926,6 @@
 				8A6B3F211BF01E4900E5C982 /* UIViewController+Customize.m in Sources */,
 				8A6B39D51BF01B8F00E5C982 /* HFWeiboDeleteCommentReq.m in Sources */,
 				8A6B3F251BF01E4900E5C982 /* HFHUDView.m in Sources */,
-				8AECCA821C1D29AE00CD789F /* UserInfoViewController.m in Sources */,
 				BB53DABB1C215CAC00CF346A /* TKIShowGoodsRowM.m in Sources */,
 				BB53DAAB1C21589C00CF346A /* TKBaseViewController.m in Sources */,
 				8A6B3C7D1BF01D4400E5C982 /* HFUserInfoModel.m in Sources */,

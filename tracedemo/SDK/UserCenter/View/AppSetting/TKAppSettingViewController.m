@@ -200,15 +200,15 @@
     NSString *imageName = [dic objectForKey:KEY_IMG];
     if (indexPath.section == 0) {
         TK_SettingCell * cell = [TK_SettingCell loadSwitchType:self];
-        [cell.leftImageIcon setImage:IMG(imageName)];
-        cell.leftLabel.text = title;
+        [cell.icon1 setImage:IMG(imageName)];
+        cell.label1.text = title;
         return cell;
     }else if (indexPath.section == 1) {
         
         TK_SettingCell * cell = [TK_SettingCell loadDefaultTextWithLeftIconType:self];
-        [cell.leftImageIcon setImage:IMG(imageName)];
-        cell.leftLabel.text = title;
-        cell.rightLabel.hidden = YES;
+        [cell.icon1 setImage:IMG(imageName)];
+        cell.label1.text = title;
+        cell.label2.hidden = YES;
         return cell;
     }
     return [[UITableViewCell alloc]init];

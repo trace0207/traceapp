@@ -12,6 +12,7 @@
 #import "TKIBaseNavWithDefaultBackVC.h"
 #import "AppDelegate.h"
 #import "TKUserPageViewController.h"
+#import "TKHeadImageView.h"
 
 @interface TKUserDetailInfoTableVM()
 {
@@ -97,8 +98,8 @@
         case 1:
         {
             TK_SettingCell * tkCell = [TK_SettingCell loadDefaultTextType:self];
-            tkCell.leftLabel.text = @"设置备注和标签";
-            tkCell.rightLabel.hidden = YES;
+            tkCell.label1.text = @"设置备注和标签";
+            tkCell.label2.hidden = YES;
             cell = tkCell;
             break;
         }
@@ -113,15 +114,15 @@
                 TK_SettingCell * tkCell = [TK_SettingCell loadDefaultTextType:self];
                 [tkCell setAccessoryType:UITableViewCellAccessoryNone];
 //                tkCell.rightLabel.hidden = YES;
-                tkCell.leftLabel.text = @"地区";
-                tkCell.rightLabel.text = address;
+                tkCell.label1.text = @"地区";
+                tkCell.label2.text = address;
                 cell = tkCell;
                 cell.selectionStyle = NO;
             }else if(indexPath.row == 2)
             {
                 TK_SettingCell * tkCell = [TK_SettingCell loadDefaultTextType:self];
-                tkCell.leftLabel.text = @"更多";
-                tkCell.rightLabel.hidden = YES;
+                tkCell.label1.text = @"更多";
+                tkCell.label2.hidden = YES;
                 cell = tkCell;
             }
         }
@@ -155,7 +156,7 @@
     UITableViewCell * cell = [[UITableViewCell alloc] init];
    
     // 头像
-    UIImageView * headImage = [[UIImageView alloc]init];
+    TKHeadImageView * headImage = [[TKHeadImageView alloc]init];
     [headImage setUserInteractionEnabled:YES];
     [cell addSubview:headImage];
     headImage.image = IMG(headAddress);
@@ -172,13 +173,15 @@
     
     // 增加头像放大事件
     
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showBigHead:)];
+//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showBigHead:)];
+//    
+//    [headImage addGestureRecognizer:tap];
+//    
+//    [headImage.layer setCornerRadius:5];
+//    [headImage setClipsToBounds:YES];
     
-    [headImage addGestureRecognizer:tap];
     
-    [headImage.layer setCornerRadius:5];
-    [headImage setClipsToBounds:YES];
-    
+    [headImage tkAddTapAction:@selector(showBigHead:) forTarget:self];
 
     // 昵称
     UILabel * lb = [[UILabel alloc] init];

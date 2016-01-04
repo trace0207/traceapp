@@ -187,12 +187,12 @@
     
     
     UIImageView * headImage =  (UIImageView * )[menuHead viewWithTag:3];
-    UILabel * lebel1 = (UILabel *)[menuHead viewWithTag:4];
+    UILabel * label1 = (UILabel *)[menuHead viewWithTag:4];
     UIImageView * userStarImageIcon = (UIImageView * )[menuHead viewWithTag:5];
     UILabel * label2 = (UILabel * )[menuHead viewWithTag:6];
     
     headImage.image = [UIImage imageNamed:@"tk_image_head"];
-    lebel1.text = @"trace(18867101952)";
+    label1.text = @"trace(18867101952)";
     userStarImageIcon.image = [UIImage imageNamed:@"tk_icon_vip"];
     label2.text = @"99+";
     

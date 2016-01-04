@@ -94,31 +94,31 @@
     
     switch (row) {
         case 1:
-            cell.leftLabel.text = @"昵称";
-            cell.rightLabel.text = user.nickName;
+            cell.label1.text = @"昵称";
+            cell.label2.text = user.nickName;
             break;
         case 2:
-            cell.leftLabel.text = @"神器账号";
-            cell.rightLabel.text = user.mobile;
+            cell.label1.text = @"神器账号";
+            cell.label2.text = user.mobile;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell setAccessoryType:UITableViewCellAccessoryNone];
             break;
         case 3:
-            cell.leftLabel.text = @"手机号码";
-            cell.rightLabel.text = user.mobile;
+            cell.label1.text = @"手机号码";
+            cell.label2.text = user.mobile;
             break;
             
         case 4:
-            cell.leftLabel.text = @"通讯地址";
-            cell.rightLabel.text = user.address;
+            cell.label1.text = @"通讯地址";
+            cell.label2.text = user.address;
             break;
         case 5:
-            cell.leftLabel.text = @"性别";
-            cell.rightLabel.text = user.sex == 0?@"男":@"女";
+            cell.label1.text = @"性别";
+            cell.label2.text = user.sex == 0?@"男":@"女";
             break;
         case 6:
-            cell.leftLabel.text = @"个性签名";
-            cell.rightLabel.text = user.signature;
+            cell.label1.text = @"个性签名";
+            cell.label2.text = user.signature;
             break;
         default:
             break;
@@ -141,15 +141,11 @@
     {
         headView = [TK_SettingCell loadRightImageViewType:self];
     }
-    headView.leftLabel.text = @"头像";
-    headView.rightHeadImageView.backgroundColor = [UIColor whiteColor];
-    UIImageView * imageView = [headView viewWithTag:kRightImageViewTag];
-    headImageView = imageView;
-    [imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]]
+    headView.label1.text = @"头像";
+    headView.headImage.backgroundColor = [UIColor whiteColor];
+    [headView.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]]
                   placeholderImage:[UIImage imageNamed:@"head_default"]];
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showBigImage:)];
-    imageView.userInteractionEnabled = YES;
-    [imageView addGestureRecognizer:tap];
+    [headView.headImage tkAddTapAction:@selector(showBigImage:) forTarget:self];
     return  headView;
 }
 

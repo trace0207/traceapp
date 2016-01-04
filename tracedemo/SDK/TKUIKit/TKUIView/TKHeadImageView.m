@@ -61,7 +61,7 @@ static const CGFloat roundValue = 5.0f;
 }
 
 
-- (void)addTapAction:(SEL)selector forTarget:(id)target
+- (void)tkAddTapAction:(SEL)selector forTarget:(id)target
 {
     if (!mTap)
     {

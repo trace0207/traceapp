@@ -66,6 +66,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
     self.user.address = @"浙江省杭州市西湖区西溪路555号7号楼401";
     self.user.signature = @"走自己的路，让别人的BB吧";
     self.user.headPortraitUrl = TKDefaultHead;
+    self.user.score = 88;
     [[NSNotificationCenter defaultCenter] postNotificationName:TKUserLoginSuccess object:nil];
 }
 

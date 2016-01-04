@@ -11,7 +11,6 @@
 #import "LoginViewController.h"
 #import "SignThreeViewController.h"
 #import "WebViewController.h"
-#import "UserInfoViewController.h"
 #import "UserCenterViewController.h"
 #import "QuadCurveMenu.h"
 #import "SentPostViewController.h"
@@ -543,10 +542,10 @@
         
     }
     else if (idx == 4){
-            // 我的个人中心
-        [MobClick endEvent:Home_MyInfo];
-        UserInfoViewController *vc = [[UserInfoViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
+//            // 我的个人中心
+//        [MobClick endEvent:Home_MyInfo];
+//        UserInfoViewController *vc = [[UserInfoViewController alloc]init];
+//        [self.navigationController pushViewController:vc animated:YES];
         
     }
 }

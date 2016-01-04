@@ -24,7 +24,7 @@
 -(instancetype)init
 {
     self = [super init];
-    _logTrace = YES;
+    _logTrace = NO;
     return self;
 }
 
@@ -173,10 +173,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TK_SettingCell * cell = [TK_SettingCell loadDefaultTextType:self];
-    cell.rightLabel.hidden = YES;
+    cell.label2.hidden = YES;
     if([[self.sectionData objectAtIndex:indexPath.section].rowsData objectAtIndex:indexPath.row].isEmptyData)
     {
-        cell.leftLabel.text = @"还未初始化数据的TableView";
+        cell.label1.text = @"还未初始化数据的TableView";
     }
     return cell;
 }

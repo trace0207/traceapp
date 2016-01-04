@@ -94,8 +94,8 @@
     {
         TK_SettingCell * cell = [TK_SettingCell loadDefaultTextType:self];
         NSMutableDictionary * dic = [dataSource objectAtIndex:indexPath.row];
-        cell.leftLabel.text = [dic objectForKey:KEY_TXT];
-        cell.rightLabel.hidden = YES;
+        cell.label1.text = [dic objectForKey:KEY_TXT];
+        cell.label2.hidden = YES;
         return cell;
     }
 }
