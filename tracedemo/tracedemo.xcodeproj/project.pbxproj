@@ -681,6 +681,7 @@
 		BB8B22201C17BDE5002B4C51 /* TKUserPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */; };
 		BB8B22261C1979F8002B4C51 /* TKEditUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8B22251C1979F8002B4C51 /* TKEditUserInfoVC.m */; };
 		BBA9F7001BC8E4330059CEB4 /* TKLeftMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */; };
+		BBB3198F1C3B5DBD0035DC17 /* TKEditTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB3198E1C3B5DBD0035DC17 /* TKEditTextViewController.m */; };
 		BBBF89A81C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */; };
 		BBBF89B01C06B12200CF9F2E /* TKPublishShowGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89AE1C06B12200CF9F2E /* TKPublishShowGoodsVC.m */; };
 		BBBF89B11C06B12200CF9F2E /* TKPublishShowGoodsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBF89AF1C06B12200CF9F2E /* TKPublishShowGoodsVC.xib */; };
@@ -1983,6 +1984,8 @@
 		BB8B22241C1979F8002B4C51 /* TKEditUserInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEditUserInfoVC.h; sourceTree = "<group>"; };
 		BB8B22251C1979F8002B4C51 /* TKEditUserInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEditUserInfoVC.m; sourceTree = "<group>"; };
 		BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKLeftMenu.xib; sourceTree = "<group>"; };
+		BBB3198D1C3B5DBD0035DC17 /* TKEditTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEditTextViewController.h; sourceTree = "<group>"; };
+		BBB3198E1C3B5DBD0035DC17 /* TKEditTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEditTextViewController.m; sourceTree = "<group>"; };
 		BBBF89A61C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+TKI_ImageFill.h"; sourceTree = "<group>"; };
 		BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+TKI_ImageFill.m"; sourceTree = "<group>"; };
 		BBBF89AD1C06B12200CF9F2E /* TKPublishShowGoodsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPublishShowGoodsVC.h; sourceTree = "<group>"; };
@@ -4329,8 +4332,8 @@
 			isa = PBXGroup;
 			children = (
 				BB520D231BFACC9D0022BFA2 /* ViewModel */,
-				BB520D221BFACC960022BFA2 /* Model */,
 				8AE10B7B1BF33B2000C0C9A0 /* View */,
+				BB520D221BFACC960022BFA2 /* Model */,
 				8AE10B781BF3239A00C0C9A0 /* TKUserCenter.h */,
 				8AE10B791BF3239A00C0C9A0 /* TKUserCenter.m */,
 			);
@@ -4359,6 +4362,8 @@
 				8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */,
 				BBFD6F9B1C351CCA00E0A536 /* TKUserCenterViewController.h */,
 				BBFD6F9C1C351CCA00E0A536 /* TKUserCenterViewController.m */,
+				BBB3198D1C3B5DBD0035DC17 /* TKEditTextViewController.h */,
+				BBB3198E1C3B5DBD0035DC17 /* TKEditTextViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4937,6 +4942,7 @@
 				8A6B3F241BF01E4900E5C982 /* HFAlertView.m in Sources */,
 				8A6B3BFD1BF01D4400E5C982 /* TKPicSelectViewController.m in Sources */,
 				8A6B3BF01BF01D4400E5C982 /* BaseTableView.m in Sources */,
+				BBB3198F1C3B5DBD0035DC17 /* TKEditTextViewController.m in Sources */,
 				8A6B3CA71BF01D4400E5C982 /* FaceButton.m in Sources */,
 				8A6B398F1BF01B8F00E5C982 /* GetSchemeStepResultAck.m in Sources */,
 				8A6B3C211BF01D4400E5C982 /* GuideViewController.m in Sources */,

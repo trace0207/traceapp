@@ -26,6 +26,8 @@
     [self.view addSubview:vm.mTableView];
     [vm tkLoadDefaultData];
     
+//    [self.view.layer setMasksToBounds:YES];
+//    [self.view setClipsToBounds:YES];
     
     // Do any additional setup after loading the view.
 }

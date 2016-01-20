@@ -13,15 +13,16 @@
 #import "HFModifyInfoReq.h"
 #import "NSString+Message.h"
 #import "TKUserCenter.h"
+#import "TKEditTextViewController.h"
 
-#define KEY_DES     @"description"
-#define KEY_TYPE    @"type"
 #import "TKEditUserInfoVC.h"
 #import "TK_SettingCell.h"
 #import "MJPhotoBrowser.h"
 #import "MJPhoto.h"
 #import "TKPicSelectTool.h"
 
+#define KEY_DES     @"description"
+#define KEY_TYPE    @"type"
 
 @interface TKEditUserInfoTableVM()
 {
@@ -208,6 +209,7 @@
     {
         tool = [[TKPicSelectTool alloc] init];
     }
+    
     tool.viewController = self;
     tool.selectDelegate = self;
     [tool doSelectPic:@"选择头像" clipping:YES maxSelect:1];
@@ -222,9 +224,67 @@
 
 -(void)onTableItemSelect:(NSIndexPath *)indexPath withItemData:(id)data
 {
-    if(indexPath.row == 0)
-    {
-        [self doSelectImage];
+    switch (indexPath.row) {
+        case 0:
+            [self doSelectImage];
+            break;
+        case 1:
+        {
+            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
+            vc.inPutType = 0;
+            vc.navTitle = @"昵称";
+            vc.tag = indexPath.row;
+            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+        }
+            break;
+           
+        case 2:
+        {
+            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
+            vc.inPutType = 0;
+            vc.navTitle = @"神器账号";
+            vc.tag = indexPath.row;
+            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+        }
+            break;
+        case 3:
+        {
+            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
+            vc.inPutType = 0;
+            vc.navTitle = @"手机号码";
+            vc.tag = indexPath.row;
+            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+        }
+            break;
+        case 4:
+        {
+            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
+            vc.inPutType = 0;
+            vc.navTitle = @"通讯地址";
+            vc.tag = indexPath.row;
+            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+        }
+            break;
+        case 5:
+        {
+            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
+            vc.inPutType = 0;
+            vc.navTitle = @"性别";
+            vc.tag = indexPath.row;
+            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+        }
+            break;
+        case 6:
+        {
+            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
+            vc.inPutType = 0;
+            vc.navTitle = @"个性签名";
+            vc.tag = indexPath.row;
+            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+        }
+            break;
+        default:
+            break;
     }
 }
 @end
