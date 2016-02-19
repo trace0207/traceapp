@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BHomeChildBVC : UIViewController
+@property (strong, nonatomic) IBOutlet UIView *contentView;
 
 @end

@@ -84,6 +84,7 @@
     // tableView.separatorStyle = UITableViewCellSeparatorStyleNone
     self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    
     [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:0.3];
 }
 
@@ -160,9 +161,7 @@
             
             make.top.mas_equalTo(py );
             make.left.mas_equalTo(px );
-        
         }];
-        
         [img setUserInteractionEnabled:YES];
         [img addGestureRecognizer:tap];
         img.tag = indexPath.row * 1000 + i;

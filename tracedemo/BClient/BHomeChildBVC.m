@@ -7,8 +7,12 @@
 //
 
 #import "BHomeChildBVC.h"
+#import "TKIRewardVM.h"
 
 @interface BHomeChildBVC ()
+{
+    TKIRewardVM * vm;
+}
 
 @end
 
@@ -17,11 +21,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self initContentView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(void)initContentView
+{
+    vm = [[TKIRewardVM alloc] initWithFreshAbleTable];
+    [self.contentView addSubview:vm.pullRefreshView];
+    [vm tkUpdateViewConstraint];
+    [vm.mTableView setSeparatorColor:[UIColor clearColor]];
+    [vm tkLoadDefaultData];
+    
 }
 
 /*

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TKRewardCell" rowHeight="270" id="Aqw-P0-p32" customClass="TKRewardCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aqw-P0-p32" id="sQI-mY-HgF">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="269"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBR-ri-reY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTZ-n2-SZX" customClass="TKHeadImageView">
+                                <rect key="frame" x="5" y="10" width="45" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXK-l8-LmM">
+                                <rect key="frame" x="58" y="10" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFA-R2-BvD">
+                                <rect key="frame" x="58" y="37" width="246" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tk_icon_setting_b" translatesAutoresizingMaskIntoConstraints="NO" id="TGT-b7-HQF">
+                                <rect key="frame" x="271" y="5" width="45" height="27"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZ2-aR-I1P">
+                                <rect key="frame" x="121" y="61" width="56" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcz-AV-Se5">
+                                <rect key="frame" x="144" y="9" width="122" height="22"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZo-Fi-r2R">
+                                <rect key="frame" x="58" y="61" width="56" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="85" id="6uq-6B-07p"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCn-aZ-Fk1">
+                        <rect key="frame" x="0.0" y="85" width="320" height="170"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FIz-sk-1X4">
+                                <rect key="frame" x="0.0" y="1" width="320" height="124"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXo-pi-Ptl">
+                                        <rect key="frame" x="164" y="2" width="148" height="120"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsF-bD-eHD">
+                                        <rect key="frame" x="9" y="100" width="148" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPf-jx-2fF">
+                                        <rect key="frame" x="164" y="100" width="148" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zDS-zd-Yfv">
+                                        <rect key="frame" x="9" y="2" width="148" height="120"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaZ-3d-srf">
+                                <rect key="frame" x="9" y="129" width="148" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0g-s5-bX6">
+                                <rect key="frame" x="164" y="129" width="148" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="170" id="f2w-nX-9Sx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="OBR-ri-reY" firstAttribute="top" secondItem="sQI-mY-HgF" secondAttribute="top" id="Flt-dR-Sz4"/>
+                    <constraint firstAttribute="trailing" secondItem="yCn-aZ-Fk1" secondAttribute="trailing" id="caa-kw-WIb"/>
+                    <constraint firstItem="yCn-aZ-Fk1" firstAttribute="leading" secondItem="sQI-mY-HgF" secondAttribute="leading" id="jw1-Wa-nCv"/>
+                    <constraint firstAttribute="trailing" secondItem="OBR-ri-reY" secondAttribute="trailing" id="qqZ-rr-J3n"/>
+                    <constraint firstItem="yCn-aZ-Fk1" firstAttribute="top" secondItem="OBR-ri-reY" secondAttribute="bottom" id="tBn-pS-WT7"/>
+                    <constraint firstItem="OBR-ri-reY" firstAttribute="leading" secondItem="sQI-mY-HgF" secondAttribute="leading" id="uQJ-Ib-NzC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="brandTip" destination="DPf-jx-2fF" id="0jB-pR-Z3B"/>
+                <outlet property="btnLeft" destination="RaZ-3d-srf" id="19A-wS-OHc"/>
+                <outlet property="btnRight" destination="u0g-s5-bX6" id="xOg-GR-er9"/>
+                <outlet property="contentInfo" destination="vFA-R2-BvD" id="cLh-at-x38"/>
+                <outlet property="headImageView" destination="cTZ-n2-SZX" id="f06-it-CeT"/>
+                <outlet property="infoIconBtn1" destination="KZo-Fi-r2R" id="IbK-MJ-fyA"/>
+                <outlet property="infoIconBtn2" destination="zZ2-aR-I1P" id="tiH-EA-1an"/>
+                <outlet property="moneyTip" destination="BsF-bD-eHD" id="ShR-si-bQY"/>
+                <outlet property="pic1" destination="zDS-zd-Yfv" id="YZ1-Ww-Vth"/>
+                <outlet property="pic2" destination="eXo-pi-Ptl" id="6Pc-T7-1Ko"/>
+                <outlet property="statusIcon" destination="TGT-b7-HQF" id="hnL-1P-JYx"/>
+                <outlet property="timeView" destination="lcz-AV-Se5" id="eGP-Hs-X7x"/>
+                <outlet property="userName" destination="vXK-l8-LmM" id="W8I-gC-Xr9"/>
+            </connections>
+            <point key="canvasLocation" x="416" y="560"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="tk_icon_setting_b" width="21" height="20"/>
+    </resources>
+</document>

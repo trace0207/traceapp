@@ -62,7 +62,7 @@
             [self.vc2 didMoveToParentViewController:self];
             [self.vc1 willMoveToParentViewController:nil];
             [self.vc1 removeFromParentViewController];
-//            self.faqViewController.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64);
+            self.vc2.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64);
         }];
     }
 }

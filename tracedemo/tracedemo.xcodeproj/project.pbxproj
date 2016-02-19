@@ -1395,6 +1395,8 @@
 		BBA372541C75C5100075333E /* BHomeChildAScrolBox.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA372531C75C5100075333E /* BHomeChildAScrolBox.m */; };
 		BBA372561C75C52E0075333E /* BHomeCHildAScrollBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA372551C75C52E0075333E /* BHomeCHildAScrollBox.xib */; };
 		BBA372581C76AA100075333E /* C_Client.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBA372571C76AA100075333E /* C_Client.plist */; };
+		BBA3725B1C76B7180075333E /* TKRewardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA3725A1C76B7180075333E /* TKRewardCell.m */; };
+		BBA3725D1C76B72B0075333E /* TKRewardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA3725C1C76B72B0075333E /* TKRewardCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -2682,6 +2684,9 @@
 		BBA372531C75C5100075333E /* BHomeChildAScrolBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHomeChildAScrolBox.m; sourceTree = "<group>"; };
 		BBA372551C75C52E0075333E /* BHomeCHildAScrollBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHomeCHildAScrollBox.xib; sourceTree = "<group>"; };
 		BBA372571C76AA100075333E /* C_Client.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = C_Client.plist; sourceTree = "<group>"; };
+		BBA372591C76B7180075333E /* TKRewardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRewardCell.h; sourceTree = "<group>"; };
+		BBA3725A1C76B7180075333E /* TKRewardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRewardCell.m; sourceTree = "<group>"; };
+		BBA3725C1C76B72B0075333E /* TKRewardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKRewardCell.xib; sourceTree = "<group>"; };
 		BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKLeftMenu.xib; sourceTree = "<group>"; };
 		BBB3198D1C3B5DBD0035DC17 /* TKEditTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEditTextViewController.h; sourceTree = "<group>"; };
 		BBB3198E1C3B5DBD0035DC17 /* TKEditTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEditTextViewController.m; sourceTree = "<group>"; };
@@ -5222,6 +5227,9 @@
 			children = (
 				BB53DABF1C215CD500CF346A /* TKIRewardVM.h */,
 				BB53DAC01C215CD500CF346A /* TKIRewardVM.m */,
+				BBA372591C76B7180075333E /* TKRewardCell.h */,
+				BBA3725A1C76B7180075333E /* TKRewardCell.m */,
+				BBA3725C1C76B72B0075333E /* TKRewardCell.xib */,
 			);
 			path = Reward;
 			sourceTree = "<group>";
@@ -5550,6 +5558,7 @@
 				BB83FB2D1C72C01C0013A6A0 /* ForgetViewController.xib in Resources */,
 				BB83FB2E1C72C01C0013A6A0 /* TK_PublishMakeSureView.xib in Resources */,
 				BB83FB2F1C72C01C0013A6A0 /* HFSwitchCell.xib in Resources */,
+				BBA3725D1C76B72B0075333E /* TKRewardCell.xib in Resources */,
 				BB83FB301C72C01C0013A6A0 /* HFFoodListViewController.xib in Resources */,
 				BB83FB311C72C01C0013A6A0 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				BB83FB321C72C01C0013A6A0 /* WebViewController.xib in Resources */,
@@ -5957,6 +5966,7 @@
 				BB83F93C1C72C01C0013A6A0 /* HFSubmitLikeData.m in Sources */,
 				BB83F93D1C72C01C0013A6A0 /* NSDate+HFHelper.m in Sources */,
 				BB83F93E1C72C01C0013A6A0 /* HFEditInfoCell.m in Sources */,
+				BBA3725B1C76B7180075333E /* TKRewardCell.m in Sources */,
 				BB83F93F1C72C01C0013A6A0 /* PostCell.m in Sources */,
 				BB83F9401C72C01C0013A6A0 /* HFCommentView.m in Sources */,
 				BB83F9411C72C01C0013A6A0 /* HFEditInfoHeaderView.m in Sources */,
