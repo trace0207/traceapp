@@ -8,6 +8,7 @@
 
 #import "TKIBaseNavWithDefaultBackVC.h"
 #import "UIColor+TK_Color.h"
+#import "UIViewController+TKNavigationBarSetting.h"
 
 @interface TKIBaseNavWithDefaultBackVC ()
 

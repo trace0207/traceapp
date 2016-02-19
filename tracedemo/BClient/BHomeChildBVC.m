@@ -1,31 +1,28 @@
 //
-//  TKBaseViewController.m
+//  BHomeChildBVC.m
 //  tracedemo
 //
-//  Created by 罗田佳 on 15/10/29.
-//  Copyright © 2015年 trace. All rights reserved.
+//  Created by 罗田佳 on 16/2/18.
+//  Copyright © 2016年 trace. All rights reserved.
 //
 
-#import "TKBaseViewController.h"
+#import "BHomeChildBVC.h"
 
-@interface TKBaseViewController ()
+@interface BHomeChildBVC ()
 
 @end
 
-@implementation TKBaseViewController
+@implementation BHomeChildBVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
 
 /*
 #pragma mark - Navigation

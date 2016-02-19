@@ -44,10 +44,12 @@ static AppDelegate * appDelegate;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [super application:application didFinishLaunchingWithOptions:launchOptions];
     // Override point for customization after application launch.
-    [self showSlideMenuController];
+//    [self showSlideMenuController];
+    
+    [self showMainViewController];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     //    [NSThread sleepForTimeInterval:1.5];//  启动页停留 3 秒钟
     
@@ -136,6 +138,20 @@ static AppDelegate * appDelegate;
     
 }
 
+
+
+-(void)showMainViewController
+{
+    UIViewController * centerViewController = [[TKMainNavigateController alloc] init];
+    BaseNavViewController *nav = [[BaseNavViewController alloc]initWithRootViewController:centerViewController];
+    rootNavVC = nav;
+    nav.navigationBar.translucent = NO;
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:nav];
+    [self configNavigationBar];
+}
+
+
 /**
  *  <#Description#>: 显示主流导航试图
  */
@@ -173,6 +189,9 @@ static AppDelegate * appDelegate;
     UIColor * navColor = [UIColor TKcolorWithHexString:TK_Color_nav_background];
     [[UINavigationBar appearance] setBackgroundColor:navColor];
     [[UINavigationBar appearance] setBarTintColor:navColor];
+    
+    
+   
     [[UINavigationBar appearance] setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
     [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor TKcolorWithHexString:TK_Color_nav_textDefault], NSForegroundColorAttributeName, nil]];
     
@@ -183,6 +202,9 @@ static AppDelegate * appDelegate;
     {
         [[UINavigationBar appearance] setShadowImage:[[UIImage alloc]init]];
     }
+    
+    [[UIApplication sharedApplication]setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 

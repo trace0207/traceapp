@@ -105,7 +105,7 @@
  */
 + (UIColor *)tkMainActiveColor
 {
-    return [self TKcolorWithHexString:TK_Color_nav_textActive];
+    return [self TKcolorWithHexString:TK_Color_bg_active];
 }
 
 
@@ -133,7 +133,7 @@
  **/
 +(UIColor *)tkMainTextColorForDefaultBg
 {
-    return [self TKcolorWithHexString:TK_Color_black_main];
+    return [self TKcolorWithHexString:TK_Color_Text_default];
 }
 
 /**
@@ -143,6 +143,25 @@
 {
     return [self TKcolorWithHexString:TK_Color_white_background];
 }
+
+
+
+/**
+ 导航默认文字颜色
+ **/
++(UIColor *)tkTextColorForNav
+{
+   return [self TKcolorWithHexString:TK_Color_nav_textDefault];
+}
+
+/**
+ 导航 active 文字颜色
+ **/
++(UIColor *)tkActiveTextColorForNav
+{
+    return [self TKcolorWithHexString:TK_Color_nav_textActive];
+}
+
 
 
 /**

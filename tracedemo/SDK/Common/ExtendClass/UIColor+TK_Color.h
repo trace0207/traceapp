@@ -52,6 +52,18 @@
 +(UIColor *)tkMainTextColorForDefaultBg;
 
 
+
+/**
+ 导航默认文字颜色
+ **/
++(UIColor *)tkTextColorForNav;
+
+/**
+ 导航 active 文字颜色
+ **/
++(UIColor *)tkActiveTextColorForNav;
+
+
 /**
  主背景色
  **/
