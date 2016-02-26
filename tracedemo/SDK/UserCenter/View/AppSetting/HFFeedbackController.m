@@ -56,7 +56,7 @@ const int wordsNum = 200;
 
     [super viewWillAppear:animated];
     
-    [self TKsetRightBarItemText:@"发送" withTextColor:[UIColor tkMainActiveColor] addTarget:self action:@selector(rightBarItemAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self TKsetRightBarItemText:@"发送" withTextColor:[UIColor tkThemeColor1] addTarget:self action:@selector(rightBarItemAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -150,7 +150,7 @@ const int wordsNum = 200;
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
-    self.line1.backgroundColor = [UIColor tkMainActiveColor];
+    self.line1.backgroundColor = [UIColor tkThemeColor1];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView
@@ -162,9 +162,9 @@ const int wordsNum = 200;
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     if (textField == self.phoneTextField) {
-        self.line2.backgroundColor = [UIColor tkMainActiveColor];
+        self.line2.backgroundColor = [UIColor tkThemeColor1];
     }else if (textField == self.emailTextField) {
-        self.line3.backgroundColor = [UIColor tkMainActiveColor];
+        self.line3.backgroundColor = [UIColor tkThemeColor1];
     }
 }
 

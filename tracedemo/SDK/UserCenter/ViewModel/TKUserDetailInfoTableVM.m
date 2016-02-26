@@ -221,7 +221,7 @@
     lb2.textColor = [UIColor tkMainTextColorForDefaultBg];
     lb2.textAlignment = NSTextAlignmentLeft;
     lb2.font = [UIFont systemFontOfSize:14];
-    lb2.textColor = [UIColor tkMainActiveColor];
+    lb2.textColor = [UIColor tkThemeColor1];
     [cell addSubview:lb2];
     [lb2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(lb1.mas_top);
@@ -323,7 +323,7 @@
     [btn setTitle:@"私信" forState:UIControlStateNormal];
     btn.layer.cornerRadius = 5;
     [btn setClipsToBounds:YES];
-    btn.backgroundColor = [UIColor tkMainActiveColor];
+    btn.backgroundColor = [UIColor tkThemeColor1];
     [btn setTitleColor:[UIColor tkMainTextColorForActiveBg] forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor tkMainTextColorForDefaultBg] forState:UIControlStateHighlighted];
     [cell addSubview:btn];

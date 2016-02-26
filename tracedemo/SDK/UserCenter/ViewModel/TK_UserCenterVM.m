@@ -165,7 +165,7 @@
     }
     cell.label1.text = user.nickName;
     cell.label2.text = @"诚信值:";
-    cell.label3.textColor = [UIColor tkMainActiveColor];
+    cell.label3.textColor = [UIColor tkThemeColor1];
     cell.label3.text = TKStrFromNumber(user.score);//[[NSNumber numberWithInteger:user.score]stringValue];
     return cell;
 }

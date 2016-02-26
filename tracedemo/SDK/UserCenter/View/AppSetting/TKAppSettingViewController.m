@@ -167,7 +167,7 @@
         //UIImage *image = [IMG(@"My_bigButton") resizableImageWithCapInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
 //        UIImage *image = [UIImage scaleWithImage:@"My_bigButton"];
 //        [exitBtn setBackgroundImage:image forState:UIControlStateNormal];
-        [exitBtn setBackgroundImage:[UIColor TKcreateImageWithColor:[UIColor tkMainActiveColor]] forState:UIControlStateNormal];
+        [exitBtn setBackgroundImage:[UIColor TKcreateImageWithColor:[UIColor tkThemeColor1]] forState:UIControlStateNormal];
         [exitBtn setBackgroundImage:[UIColor TKcreateImageWithColor:[UIColor grayColor]] forState:UIControlStateHighlighted];
 //        [exitBtn.layer setCornerRadius:10.0f];
         

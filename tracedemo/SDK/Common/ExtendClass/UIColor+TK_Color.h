@@ -32,7 +32,18 @@
 /*
  主题色
  */
-+ (UIColor *)tkMainActiveColor;
++ (UIColor *)tkThemeColor1;
+
+
+/*
+ 主题色2
+ */
++ (UIColor *)tkThemeColor2;
+
+/**
+ 主背景色
+ **/
++ (UIColor *)tkMainBackgroundColor;
 
 
 /**
@@ -52,6 +63,11 @@
 +(UIColor *)tkMainTextColorForDefaultBg;
 
 
+/**
+ 轻灰的文字颜色
+ **/
++(UIColor *)tkLightGrayTextColor;
+
 
 /**
  导航默认文字颜色
@@ -64,10 +80,7 @@
 +(UIColor *)tkActiveTextColorForNav;
 
 
-/**
- 主背景色
- **/
-+ (UIColor *)tkMainBackgroundColor;
+
 
 /**
  color转换成 Image

@@ -58,11 +58,12 @@
     else
     {
         [self addChildViewController:self.vc2];
+        self.vc2.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64);
         [self transitionFromViewController:self.vc1 toViewController:self.vc2 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
             [self.vc2 didMoveToParentViewController:self];
             [self.vc1 willMoveToParentViewController:nil];
             [self.vc1 removeFromParentViewController];
-            self.vc2.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64);
+            
         }];
     }
 }

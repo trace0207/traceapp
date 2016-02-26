@@ -103,10 +103,29 @@
 /*
  主题色
  */
-+ (UIColor *)tkMainActiveColor
++ (UIColor *)tkThemeColor1
 {
-    return [self TKcolorWithHexString:TK_Color_bg_active];
+    return [self TKcolorWithHexString:TK_Color_ThemeColor];
 }
+
+
+/*
+ 主题色2
+ */
++ (UIColor *)tkThemeColor2
+{
+    return [self TKcolorWithHexString:TK_Color_themeColor2];
+}
+
+
+/**
+ 主背景色
+ **/
++ (UIColor *)tkMainBackgroundColor
+{
+    return [self TKcolorWithHexString:TK_Color_white_background];
+}
+
 
 
 /**
@@ -136,13 +155,17 @@
     return [self TKcolorWithHexString:TK_Color_Text_default];
 }
 
+
 /**
- 主背景色
+ 轻灰的文字颜色
  **/
-+ (UIColor *)tkMainBackgroundColor
++(UIColor *)tkLightGrayTextColor
 {
-    return [self TKcolorWithHexString:TK_Color_white_background];
+    return [self TKcolorWithHexString:TK_Color_Text_lightGray];
 }
+
+
+
 
 
 

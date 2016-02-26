@@ -238,7 +238,7 @@
     UIBarButtonItem *centerSpace=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     
     UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(doneClick)];
-    [right setTintColor:[UIColor tkMainActiveColor]];
+    [right setTintColor:[UIColor tkThemeColor1]];
     toolbar.items=@[centerSpace/**, lefttem*/, centerSpace, centerSpace, centerSpace, centerSpace, centerSpace, right, centerSpace];
     return toolbar;
 }

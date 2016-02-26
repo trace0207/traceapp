@@ -33,12 +33,15 @@
 
 
 #define TK_Color_black_main  @"1C1C1C"
-#define TK_Color_bg_active @"333333"
 #define TK_Color_Text_default @"100000"
+#define TK_Color_Text_lightGray @"7d8a97"
 #define TK_Color_Text_active @"f0c84f"
 #define TK_Color_nav_textDefault @"f0c84f"
 #define TK_Color_nav_textActive @"100000"
 #define TK_Color_white_background   @"efeff0"
+#define TK_Color_ThemeColor @"f0c84f"
+#define TK_Color_themeColor2 @"333333"
+
 
 
 #endif /* TKColorDefine_h */
