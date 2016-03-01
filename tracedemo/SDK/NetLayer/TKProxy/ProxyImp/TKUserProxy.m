@@ -21,6 +21,9 @@
     arg.mobile = userName;
     arg.password = value;
     arg.showLoadingStr = @"YES";
+#define if 
+    
+    
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
     
 }

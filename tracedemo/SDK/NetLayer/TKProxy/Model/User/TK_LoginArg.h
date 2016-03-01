@@ -12,5 +12,6 @@
 
 @property (nonatomic,copy)NSString * mobile;
 @property (nonatomic,copy)NSString * password;
+@property (nonatomic,assign)NSInteger role;
 
 @end
