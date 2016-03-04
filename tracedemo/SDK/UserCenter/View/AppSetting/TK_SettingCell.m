@@ -61,6 +61,15 @@ const NSInteger kSwitch = 9910;
 
 
 /**
+ 加载 中间 大图片的  cell
+ **/
++(TK_SettingCell *)loadCenterImageType:(id)ower
+{
+     return   [[[NSBundle mainBundle]loadNibNamed:@"TK_SettingCell" owner:ower options:nil]objectAtIndex:5];
+}
+
+
+/**
  
  加载左边大图片的  cell
  

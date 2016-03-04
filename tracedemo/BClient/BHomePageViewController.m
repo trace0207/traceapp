@@ -7,13 +7,12 @@
 //
 
 #import "BHomePageViewController.h"
-#import "BHomeChildBVC.h"
 #import "BHomeChildAVC.h"
 
 @interface BHomePageViewController ()<HFSegmentViewDelegate>
 
 @property (nonatomic,strong)BHomeChildAVC * vc1;
-@property (nonatomic,strong)BHomeChildBVC * vc2;
+@property (nonatomic,strong)BHomeChildAVC * vc2;
 
 @end
 
@@ -22,10 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hidDefaultBackBtn = YES;
-    
+    // Do any additional setup after loading the view from its nib.
+    [self initView];
+}
+
+
+-(void)initView
+{
     [self addChildViewController:self.vc1];
     [self.view addSubview:self.vc1.view];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,11 +84,11 @@
 }
 
 
--(BHomeChildBVC *)vc2
+-(BHomeChildAVC *)vc2
 {
     if(!_vc2)
     {
-        _vc2 = [[BHomeChildBVC alloc] initWithNibName:@"BHomeChildBVC" bundle:nil];
+        _vc2 = [[BHomeChildAVC alloc] initWithNibName:@"BHomeChildAVC" bundle:nil];
     }
     return _vc2;
 }

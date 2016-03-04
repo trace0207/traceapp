@@ -7,12 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class TKPublishShowGoodsArg;
 
 
 
 
 @interface TKMainProxy : NSObject
+
+
+/**
+ 发布晒单
+ **/
+-(void)publishShowGoods:(TKPublishShowGoodsArg *)arg withBlock:(hfAckBlock)block;
+
 
 
 /**

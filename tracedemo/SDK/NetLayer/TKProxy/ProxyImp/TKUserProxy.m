@@ -15,13 +15,21 @@
 //TK_LoginArg,TK_RegisterNewUserArg,TK_RegisterNewUserAck;
 @implementation TKUserProxy
 
+#if B_Client == 1
+#define ROLE 0
+#else 
+#define ROLE 1
+#endif
+
 
 -(void)login:(NSString *)userName withValue:(NSString *)value  withBlock:(hfAckBlock)block{
     TK_LoginArg * arg = [[TK_LoginArg alloc] init];
     arg.mobile = userName;
     arg.password = value;
     arg.showLoadingStr = @"YES";
-#define if 
+    arg.role = ROLE;
+    arg.method = @"GET";
+    arg.token = @"trace990";
     
     
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];

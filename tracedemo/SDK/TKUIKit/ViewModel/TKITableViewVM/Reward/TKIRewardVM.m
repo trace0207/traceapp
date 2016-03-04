@@ -9,6 +9,8 @@
 #import "TKIRewardVM.h"
 #import "TKRewardCell.h"
 #import "UIColor+TK_Color.h"
+#import "TKRewardDetailViewController.h"
+#import "AppDelegate.h"
 
 
 @interface TKIRewardVM()
@@ -67,6 +69,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
+    TKRewardDetailViewController *vc = [[TKRewardDetailViewController alloc] init];
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    
 }
 
 
@@ -98,5 +104,26 @@
 }
 
 
+
+- (void)beginPullDownRefreshing
+{
+    [self tkLoadDefaultData];
+    [self.mTableView reloadData];
+    // tableView.separatorStyle = UITableViewCellSeparatorStyleNone
+//    self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:0.3];
+}
+
+- (void)beginPullUpLoading
+{
+    [self tkLoadDefaultData];
+    [self.mTableView reloadData];
+    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:0.3];
+}
+
+-(BOOL)hasRefreshFooterView
+{
+    return YES;
+}
 
 @end

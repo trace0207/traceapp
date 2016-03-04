@@ -33,7 +33,7 @@
     _clearInputView.clearDelegate = self;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onLoginSuccess) name:TKUserLoginSuccess object:nil];
     
-    _userNameText.text = @"18867102687";
+    _userNameText.text = @"18867101952";
     _passwordText.text = @"123456";
     
 }

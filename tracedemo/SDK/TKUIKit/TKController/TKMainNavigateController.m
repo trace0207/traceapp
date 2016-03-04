@@ -25,9 +25,11 @@
 #import "GlobNotifyDefine.h"
 #import "TKIMessageCenterViewController.h"
 
-#if B_Client == 1
+
 #import "BHomePageViewController.h"
-# endif
+#import "CHomePageViewController.h"
+#import "BMyShowGoodsViewController.h"
+
 
 
 /**
@@ -70,6 +72,60 @@
 
 -(void)initCClientView
 {
+    
+    CHomePageViewController * subTabVC1  = [[CHomePageViewController alloc] init];
+    subTabVC1.tabBarItem.image=IMG(@"new_mainPageUnselected");
+    subTabVC1.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
+    subTabVC1.tabBarItem.title=@"首页";
+    //    subTabVC1.eventDelegate = self;
+    
+    //    HFNewMainViewController * newMain = [[HFNewMainViewController alloc] init];
+    //    newMain.tabBarItem.title=@"搜索";
+    //    newMain.tabBarItem.image=IMG(@"My_foodSearch");
+    //    newMain.tabBarItem.selectedImage = IMG(@"My_foodSearch");
+    
+    
+    
+    
+    TKIMessageCenterViewController * messages = [[TKIMessageCenterViewController alloc]init];
+    messages.navTitle = @"消息";
+    messages.hidDefaultBackBtn = YES;
+    messages.tabBarItem.title = @"消息";
+    messages.tabBarItem.image = IMG(@"new_myUnselected");
+    messages.tabBarItem.selectedImage = IMG(@"new_mySelected");
+    
+    
+    TKPublishShowGoodsVC * newChat = [[TKPublishShowGoodsVC alloc] init];
+    newChat.tabBarItem.title = @"发悬赏";
+    newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
+    newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
+    
+    //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
+    
+    
+    TKUserCenterViewController * navc4 = [[TKUserCenterViewController alloc] init];
+    navc4.title = @"我的购买";
+    navc4.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
+    
+    
+    TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
+    navc5.title = @"我的";
+    navc5.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
+    
+    self.selectedIndex =0;
+    self.viewControllers = @[subTabVC1,/*newMain,*/messages,newChat,navc4,navc5];
+    
+    [self addChildViewController:navc5];
+    self.delegate = self;
+    
+    [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
+    
+    [self.tabBar setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
+    
+    [self loadEmojIcon];
+    [self registerNotification];
+    
+    
 }
 
 
@@ -99,7 +155,7 @@
     messages.tabBarItem.selectedImage = IMG(@"new_mySelected");
     
     
-    TKPublishShowGoodsVC * newChat = [[TKPublishShowGoodsVC alloc] init];
+    BMyShowGoodsViewController * newChat = [[BMyShowGoodsViewController alloc] init];
     newChat.tabBarItem.title = @"晒单";
     newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
     newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");

@@ -69,6 +69,12 @@
 
 
 /**
+ 加载 中间 大图片的  cell
+ **/
++(TK_SettingCell *)loadCenterImageType:(id)ower;
+
+
+/**
  
  加载左边大图片的  cell
  

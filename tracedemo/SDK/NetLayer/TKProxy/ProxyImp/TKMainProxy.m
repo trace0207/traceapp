@@ -18,9 +18,27 @@
 #import "TK_CommentRewardArg.h"
 #import "TK_AppraiseBuyerArg.h"
 #import "TK_UploadImageArg.h"
+#import "TKPublishShowGoodsArg.h"
 
 
 @implementation TKMainProxy
+
+
+
+
+/**
+ 发布晒单
+ **/
+-(void)publishShowGoods:(TKPublishShowGoodsArg *)arg withBlock:(hfAckBlock)block
+{
+#if B_Client == 0
+    arg.role = 1
+#endif
+    
+    [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
+    
+}
+
 
 /**
  *  获取晒单列表
@@ -173,10 +191,10 @@
         arg.needCompress = 1;
         [array addObject:arg];
     }
-    [[HF_HttpClient httpClient] sendMUtableArgsForHiffit:array showLoading:YES toastError:YES withBlock:^(NSArray<__kindof HF_BaseAck *> *acks) {
+    [[HF_HttpClient httpClient] sendMUtableArgsForHiffit:array showLoading:NO toastError:NO withBlock:^(NSArray<__kindof HF_BaseAck *> *acks) {
        
-        DDLogInfo(@"ack back %@",acks);
-        acks = nil;
+//        DDLogInfo(@"ack back %@",acks);
+        block(acks);
     }];
 }
 

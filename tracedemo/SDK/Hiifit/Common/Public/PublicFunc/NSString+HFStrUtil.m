@@ -74,8 +74,15 @@
 /**
  int 转换成 string
  **/
-+(NSString *)intToNSString:(NSInteger)value{
++(NSString *)tkStringFromNumber:(NSInteger)value{
     return [NSNumber numberWithLong:value].stringValue;
+}
+
+
+
+-(NSString *)tkStringByAppendInteger:(NSInteger)number
+{
+    return [self stringByAppendingString:[NSString tkStringFromNumber:number]];
 }
 
 

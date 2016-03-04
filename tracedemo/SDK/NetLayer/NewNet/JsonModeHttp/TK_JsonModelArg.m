@@ -20,6 +20,7 @@
 -(instancetype)init{
 
     self = [super init];
+    _method = @"POST";
     _timeoutstr = @"20";
     return self;
 }

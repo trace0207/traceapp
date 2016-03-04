@@ -8,6 +8,9 @@
 
 #import "TKUserCenterViewController.h"
 #import "TK_UserCenterVM.h"
+#if B_Client == 1
+#import "BUserCenterVM.h"
+#endif
 
 @interface TKUserCenterViewController ()
 {
@@ -21,15 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hidDefaultBackBtn = YES;
-    
+#if B_Client == 1
+    vm = [[BUserCenterVM alloc] initDefaultTableWithFrame:CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 64 - 49)];
+#else
     vm = [[TK_UserCenterVM alloc] initDefaultTableWithFrame:CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 64 - 49)];
+#endif
     [self.view addSubview:vm.mTableView];
     [vm tkLoadDefaultData];
-    
-//    [self.view.layer setMasksToBounds:YES];
-//    [self.view setClipsToBounds:YES];
-    
-    // Do any additional setup after loading the view.
 }
 
 

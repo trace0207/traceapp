@@ -7,6 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0464F51C880FF200E6B1E0 /* BMyShowGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0464F31C880FF200E6B1E0 /* BMyShowGoodsViewController.m */; };
+		8A0464F61C880FF200E6B1E0 /* BMyShowGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0464F31C880FF200E6B1E0 /* BMyShowGoodsViewController.m */; };
+		8A0464F71C880FF200E6B1E0 /* BMyShowGoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0464F41C880FF200E6B1E0 /* BMyShowGoodsViewController.xib */; };
+		8A0464F81C880FF200E6B1E0 /* BMyShowGoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0464F41C880FF200E6B1E0 /* BMyShowGoodsViewController.xib */; };
+		8A0464FC1C8810AE00E6B1E0 /* TKShowGoodsListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0464FB1C8810AE00E6B1E0 /* TKShowGoodsListVM.m */; };
+		8A0464FD1C8810AE00E6B1E0 /* TKShowGoodsListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0464FB1C8810AE00E6B1E0 /* TKShowGoodsListVM.m */; };
+		8A0465021C88113300E6B1E0 /* TKISHowGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0465001C88113300E6B1E0 /* TKISHowGoodsCell.m */; };
+		8A0465031C88113300E6B1E0 /* TKISHowGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0465001C88113300E6B1E0 /* TKISHowGoodsCell.m */; };
+		8A0465041C88113300E6B1E0 /* TKISHowGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0465011C88113300E6B1E0 /* TKISHowGoodsCell.xib */; };
+		8A0465051C88113300E6B1E0 /* TKISHowGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0465011C88113300E6B1E0 /* TKISHowGoodsCell.xib */; };
+		8A5B60E71C85C4EB00BF8E19 /* BUserCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5B60E61C85C4EB00BF8E19 /* BUserCenterVM.m */; };
+		8A9985921C86C3A6000F9CBC /* BHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA3723F1C755EB50075333E /* BHomePageViewController.m */; };
+		8A9985931C86C514000F9CBC /* BHomeChildAVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA372441C75B9550075333E /* BHomeChildAVC.m */; };
+		8A9985941C86C519000F9CBC /* BHomeChildAScrolBox.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA372531C75C5100075333E /* BHomeChildAScrolBox.m */; };
+		8A9985951C86C51D000F9CBC /* BUserCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5B60E61C85C4EB00BF8E19 /* BUserCenterVM.m */; };
+		8A9985961C86C66C000F9CBC /* BHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA372401C755EB50075333E /* BHomePageViewController.xib */; };
+		8A9985971C86C67B000F9CBC /* BHomeChildAVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA372451C75B9550075333E /* BHomeChildAVC.xib */; };
+		8A9985981C86C681000F9CBC /* BHomeChildBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA3724E1C75B9B30075333E /* BHomeChildBVC.m */; };
+		8A9985991C86C684000F9CBC /* BHomeChildBVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA3724F1C75B9B30075333E /* BHomeChildBVC.xib */; };
+		8A99859A1C86C68A000F9CBC /* BHomeCHildAScrollBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA372551C75C52E0075333E /* BHomeCHildAScrollBox.xib */; };
+		8A99859B1C86C6A6000F9CBC /* TKRewardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA3725A1C76B7180075333E /* TKRewardCell.m */; };
+		8A99859C1C86C6AC000F9CBC /* TKRewardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA3725C1C76B72B0075333E /* TKRewardCell.xib */; };
+		8A9985A01C86CDF5000F9CBC /* CHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A99859E1C86CDF5000F9CBC /* CHomePageViewController.m */; };
+		8A9985A11C86CDF5000F9CBC /* CHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A99859E1C86CDF5000F9CBC /* CHomePageViewController.m */; };
+		8A9985A21C86CDF5000F9CBC /* CHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A99859F1C86CDF5000F9CBC /* CHomePageViewController.xib */; };
+		8A9985A31C86CDF5000F9CBC /* CHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A99859F1C86CDF5000F9CBC /* CHomePageViewController.xib */; };
+		8A9E8B4F1C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */; };
+		8A9E8B501C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */; };
+		8A9E8B511C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */; };
+		8A9E8B521C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */; };
+		8AA7F7091C88267000CE0F17 /* TKPublishShowGoodsArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7F7081C88267000CE0F17 /* TKPublishShowGoodsArg.m */; };
+		8AA7F70A1C88267000CE0F17 /* TKPublishShowGoodsArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7F7081C88267000CE0F17 /* TKPublishShowGoodsArg.m */; };
+		8AA7F70E1C8880AE00CE0F17 /* TKPublishShowGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7F70C1C8880AE00CE0F17 /* TKPublishShowGoodsVC.m */; };
+		8AA7F70F1C8880AE00CE0F17 /* TKPublishShowGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7F70C1C8880AE00CE0F17 /* TKPublishShowGoodsVC.m */; };
+		8AA7F7101C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA7F70D1C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib */; };
+		8AA7F7111C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA7F70D1C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib */; };
 		BB83F8A61C72C01C0013A6A0 /* GlobInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B39F81BF01D4400E5C982 /* GlobInfo.m */; };
 		BB83F8A71C72C01C0013A6A0 /* HFNoInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3B701BF01D4400E5C982 /* HFNoInfoView.m */; };
 		BB83F8A81C72C01C0013A6A0 /* UIViewController+Customize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3E4E1BF01E4900E5C982 /* UIViewController+Customize.m */; };
@@ -33,7 +69,6 @@
 		BB83F8BD1C72C01C0013A6A0 /* HFCheckVercodeReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B38B81BF01B8F00E5C982 /* HFCheckVercodeReq.m */; };
 		BB83F8BE1C72C01C0013A6A0 /* BindingArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37E11BF01B8F00E5C982 /* BindingArg.m */; };
 		BB83F8BF1C72C01C0013A6A0 /* TKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E62101BEC804D00FBDB86 /* TKConstants.m */; };
-		BB83F8C01C72C01C0013A6A0 /* TKPublishShowGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89AE1C06B12200CF9F2E /* TKPublishShowGoodsVC.m */; };
 		BB83F8C11C72C01C0013A6A0 /* TK_BaseNavSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB339B861BFEBA6E00680AEA /* TK_BaseNavSettingViewController.m */; };
 		BB83F8C21C72C01C0013A6A0 /* RBCustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3E731BF01E4900E5C982 /* RBCustomDatePickerView.m */; };
 		BB83F8C31C72C01C0013A6A0 /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A03161BE211720035770A /* TKHomePageViewController.m */; };
@@ -691,7 +726,6 @@
 		BB83FB511C72C01C0013A6A0 /* TKUserPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */; };
 		BB83FB521C72C01C0013A6A0 /* HFSchemeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3BA41BF01D4400E5C982 /* HFSchemeListViewController.xib */; };
 		BB83FB531C72C01C0013A6A0 /* TKMessageListIItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A86911C24101400739ADD /* TKMessageListIItemCell.xib */; };
-		BB83FB541C72C01C0013A6A0 /* TKPublishShowGoodsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBF89AF1C06B12200CF9F2E /* TKPublishShowGoodsVC.xib */; };
 		BB83FB551C72C01C0013A6A0 /* HFSchemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3AF91BF01D4400E5C982 /* HFSchemeCell.xib */; };
 		BB83FB561C72C01C0013A6A0 /* HFIntroduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3ABA1BF01D4400E5C982 /* HFIntroduceCell.xib */; };
 		BB83FB571C72C01C0013A6A0 /* SetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B0A1BF01D4400E5C982 /* SetPasswordViewController.xib */; };
@@ -722,7 +756,6 @@
 		BB83FB7A1C72C16B0013A6A0 /* HFCheckVercodeReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B38B81BF01B8F00E5C982 /* HFCheckVercodeReq.m */; };
 		BB83FB7B1C72C16B0013A6A0 /* BindingArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37E11BF01B8F00E5C982 /* BindingArg.m */; };
 		BB83FB7C1C72C16B0013A6A0 /* TKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E62101BEC804D00FBDB86 /* TKConstants.m */; };
-		BB83FB7D1C72C16B0013A6A0 /* TKPublishShowGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBF89AE1C06B12200CF9F2E /* TKPublishShowGoodsVC.m */; };
 		BB83FB7E1C72C16B0013A6A0 /* TK_BaseNavSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB339B861BFEBA6E00680AEA /* TK_BaseNavSettingViewController.m */; };
 		BB83FB7F1C72C16B0013A6A0 /* RBCustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3E731BF01E4900E5C982 /* RBCustomDatePickerView.m */; };
 		BB83FB801C72C16B0013A6A0 /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A03161BE211720035770A /* TKHomePageViewController.m */; };
@@ -1380,7 +1413,6 @@
 		BB83FE0E1C72C16B0013A6A0 /* TKUserPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */; };
 		BB83FE0F1C72C16B0013A6A0 /* HFSchemeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3BA41BF01D4400E5C982 /* HFSchemeListViewController.xib */; };
 		BB83FE101C72C16B0013A6A0 /* TKMessageListIItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A86911C24101400739ADD /* TKMessageListIItemCell.xib */; };
-		BB83FE111C72C16B0013A6A0 /* TKPublishShowGoodsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBF89AF1C06B12200CF9F2E /* TKPublishShowGoodsVC.xib */; };
 		BB83FE121C72C16B0013A6A0 /* HFSchemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3AF91BF01D4400E5C982 /* HFSchemeCell.xib */; };
 		BB83FE131C72C16B0013A6A0 /* HFIntroduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3ABA1BF01D4400E5C982 /* HFIntroduceCell.xib */; };
 		BB83FE141C72C16B0013A6A0 /* SetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B0A1BF01D4400E5C982 /* SetPasswordViewController.xib */; };
@@ -1402,6 +1434,14 @@
 /* Begin PBXFileReference section */
 		4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5B7E02E9AB012C0D49F6B86E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A0464F21C880FF200E6B1E0 /* BMyShowGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMyShowGoodsViewController.h; sourceTree = "<group>"; };
+		8A0464F31C880FF200E6B1E0 /* BMyShowGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMyShowGoodsViewController.m; sourceTree = "<group>"; };
+		8A0464F41C880FF200E6B1E0 /* BMyShowGoodsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMyShowGoodsViewController.xib; sourceTree = "<group>"; };
+		8A0464FA1C8810AE00E6B1E0 /* TKShowGoodsListVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShowGoodsListVM.h; sourceTree = "<group>"; };
+		8A0464FB1C8810AE00E6B1E0 /* TKShowGoodsListVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShowGoodsListVM.m; sourceTree = "<group>"; };
+		8A0464FF1C88113300E6B1E0 /* TKISHowGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKISHowGoodsCell.h; sourceTree = "<group>"; };
+		8A0465001C88113300E6B1E0 /* TKISHowGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKISHowGoodsCell.m; sourceTree = "<group>"; };
+		8A0465011C88113300E6B1E0 /* TKISHowGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKISHowGoodsCell.xib; sourceTree = "<group>"; };
 		8A17B0E41BA46CF500548CA7 /* TK_BaseAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BaseAppDelegate.h; sourceTree = "<group>"; };
 		8A17B0E51BA46CF500548CA7 /* TK_BaseAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BaseAppDelegate.m; sourceTree = "<group>"; };
 		8A17B0E71BA46CF500548CA7 /* TK_SDK_PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_SDK_PrefixHeader.pch; sourceTree = "<group>"; };
@@ -1462,6 +1502,8 @@
 		8A552D6E1BA3D8230083E87E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		8A552D6F1BA3D8230083E87E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		8A552D701BA3D8230083E87E /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		8A5B60E51C85C4EB00BF8E19 /* BUserCenterVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUserCenterVM.h; sourceTree = "<group>"; };
+		8A5B60E61C85C4EB00BF8E19 /* BUserCenterVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUserCenterVM.m; sourceTree = "<group>"; };
 		8A6434A61BAE9DF600820545 /* TKMainNavigateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainNavigateController.h; sourceTree = "<group>"; };
 		8A6434A71BAE9DF600820545 /* TKMainNavigateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMainNavigateController.m; sourceTree = "<group>"; };
 		8A6B37431BF01B8F00E5C982 /* ActivitiesData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiesData.h; sourceTree = "<group>"; };
@@ -2552,6 +2594,17 @@
 		8A978A5E1BD3C8EF00C84ED2 /* BasePortraitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePortraitView.m; sourceTree = "<group>"; };
 		8A978A5F1BD3C8EF00C84ED2 /* HFSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSegmentView.h; sourceTree = "<group>"; };
 		8A978A601BD3C8EF00C84ED2 /* HFSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSegmentView.m; sourceTree = "<group>"; };
+		8A99859D1C86CDF5000F9CBC /* CHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHomePageViewController.h; sourceTree = "<group>"; };
+		8A99859E1C86CDF5000F9CBC /* CHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHomePageViewController.m; sourceTree = "<group>"; };
+		8A99859F1C86CDF5000F9CBC /* CHomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHomePageViewController.xib; sourceTree = "<group>"; };
+		8A9E8B4C1C86DD3600F84BB7 /* TKRewardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRewardDetailViewController.h; sourceTree = "<group>"; };
+		8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRewardDetailViewController.m; sourceTree = "<group>"; };
+		8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKRewardDetailViewController.xib; sourceTree = "<group>"; };
+		8AA7F7071C88267000CE0F17 /* TKPublishShowGoodsArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPublishShowGoodsArg.h; sourceTree = "<group>"; };
+		8AA7F7081C88267000CE0F17 /* TKPublishShowGoodsArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPublishShowGoodsArg.m; sourceTree = "<group>"; };
+		8AA7F70B1C8880AE00CE0F17 /* TKPublishShowGoodsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPublishShowGoodsVC.h; sourceTree = "<group>"; };
+		8AA7F70C1C8880AE00CE0F17 /* TKPublishShowGoodsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPublishShowGoodsVC.m; sourceTree = "<group>"; };
+		8AA7F70D1C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKPublishShowGoodsVC.xib; sourceTree = "<group>"; };
 		8AB6501B1BF0CDE500D4C0A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		8AB6501E1BF0CDE500D4C0A0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
 		8AE10B781BF3239A00C0C9A0 /* TKUserCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserCenter.h; sourceTree = "<group>"; };
@@ -2692,9 +2745,6 @@
 		BBB3198E1C3B5DBD0035DC17 /* TKEditTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEditTextViewController.m; sourceTree = "<group>"; };
 		BBBF89A61C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+TKI_ImageFill.h"; sourceTree = "<group>"; };
 		BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+TKI_ImageFill.m"; sourceTree = "<group>"; };
-		BBBF89AD1C06B12200CF9F2E /* TKPublishShowGoodsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPublishShowGoodsVC.h; sourceTree = "<group>"; };
-		BBBF89AE1C06B12200CF9F2E /* TKPublishShowGoodsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPublishShowGoodsVC.m; sourceTree = "<group>"; };
-		BBBF89AF1C06B12200CF9F2E /* TKPublishShowGoodsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKPublishShowGoodsVC.xib; sourceTree = "<group>"; };
 		BBE328D21C0DC5DF0094ACEE /* TK_PublishMakeSureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_PublishMakeSureView.h; sourceTree = "<group>"; };
 		BBE328D31C0DC5DF0094ACEE /* TK_PublishMakeSureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PublishMakeSureView.m; sourceTree = "<group>"; };
 		BBE328D51C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_PublishMakeSureView.xib; sourceTree = "<group>"; };
@@ -2790,6 +2840,25 @@
 				B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8A0464F91C88108000E6B1E0 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				8A0464FA1C8810AE00E6B1E0 /* TKShowGoodsListVM.h */,
+				8A0464FB1C8810AE00E6B1E0 /* TKShowGoodsListVM.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		8A0464FE1C88110A00E6B1E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A0464FF1C88113300E6B1E0 /* TKISHowGoodsCell.h */,
+				8A0465001C88113300E6B1E0 /* TKISHowGoodsCell.m */,
+				8A0465011C88113300E6B1E0 /* TKISHowGoodsCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8A17B0E21BA46CF500548CA7 /* SDK */ = {
@@ -2903,6 +2972,7 @@
 		8A508FE41B9D5D700067B9E9 = {
 			isa = PBXGroup;
 			children = (
+				8A9E8B4B1C86DD1300F84BB7 /* CommonClient */,
 				BBEAF18F1C7418E700F07656 /* BClient */,
 				BBEAF1901C7418E700F07656 /* CClient */,
 				8A17B0E21BA46CF500548CA7 /* SDK */,
@@ -2944,6 +3014,15 @@
 				8A508FF21B9D5D700067B9E9 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A5B60E41C85C4D200BF8E19 /* BVM */ = {
+			isa = PBXGroup;
+			children = (
+				8A5B60E51C85C4EB00BF8E19 /* BUserCenterVM.h */,
+				8A5B60E61C85C4EB00BF8E19 /* BUserCenterVM.m */,
+			);
+			path = BVM;
 			sourceTree = "<group>";
 		};
 		8A6434981BAE844200820545 /* TKUIKit */ = {
@@ -5023,6 +5102,21 @@
 			path = BaseView;
 			sourceTree = "<group>";
 		};
+		8A9E8B4B1C86DD1300F84BB7 /* CommonClient */ = {
+			isa = PBXGroup;
+			children = (
+				8AA7F70B1C8880AE00CE0F17 /* TKPublishShowGoodsVC.h */,
+				8AA7F70C1C8880AE00CE0F17 /* TKPublishShowGoodsVC.m */,
+				8AA7F70D1C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib */,
+				8A0464FE1C88110A00E6B1E0 /* View */,
+				8A0464F91C88108000E6B1E0 /* VM */,
+				8A9E8B4C1C86DD3600F84BB7 /* TKRewardDetailViewController.h */,
+				8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */,
+				8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */,
+			);
+			path = CommonClient;
+			sourceTree = "<group>";
+		};
 		8AB650191BF0CDE500D4C0A0 /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -5287,6 +5381,8 @@
 				BB7B632C1C27EBAC00568E3F /* TK_UploadImageArg.m */,
 				BB7B632E1C27F67900568E3F /* TK_UploadImageAck.h */,
 				BB7B632F1C27F67900568E3F /* TK_UploadImageAck.m */,
+				8AA7F7071C88267000CE0F17 /* TKPublishShowGoodsArg.h */,
+				8AA7F7081C88267000CE0F17 /* TKPublishShowGoodsArg.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -5307,9 +5403,6 @@
 		BBBF89AC1C06B0D400CF9F2E /* TKPublish */ = {
 			isa = PBXGroup;
 			children = (
-				BBBF89AD1C06B12200CF9F2E /* TKPublishShowGoodsVC.h */,
-				BBBF89AE1C06B12200CF9F2E /* TKPublishShowGoodsVC.m */,
-				BBBF89AF1C06B12200CF9F2E /* TKPublishShowGoodsVC.xib */,
 				BB1506501C0A935D00F97A7B /* TK_PicAddView.h */,
 				BB1506511C0A935D00F97A7B /* TK_PicAddView.m */,
 				8AECCA681C0C8FA600CD789F /* TKPublishRewardVC.h */,
@@ -5362,6 +5455,7 @@
 		BBEAF18F1C7418E700F07656 /* BClient */ = {
 			isa = PBXGroup;
 			children = (
+				8A5B60E41C85C4D200BF8E19 /* BVM */,
 				BBA3723E1C755EB50075333E /* BHomePageViewController.h */,
 				BBA3723F1C755EB50075333E /* BHomePageViewController.m */,
 				BBA372401C755EB50075333E /* BHomePageViewController.xib */,
@@ -5374,6 +5468,9 @@
 				BBA372521C75C5100075333E /* BHomeChildAScrolBox.h */,
 				BBA372531C75C5100075333E /* BHomeChildAScrolBox.m */,
 				BBA372551C75C52E0075333E /* BHomeCHildAScrollBox.xib */,
+				8A0464F21C880FF200E6B1E0 /* BMyShowGoodsViewController.h */,
+				8A0464F31C880FF200E6B1E0 /* BMyShowGoodsViewController.m */,
+				8A0464F41C880FF200E6B1E0 /* BMyShowGoodsViewController.xib */,
 			);
 			path = BClient;
 			sourceTree = "<group>";
@@ -5382,6 +5479,9 @@
 			isa = PBXGroup;
 			children = (
 				BBA372571C76AA100075333E /* C_Client.plist */,
+				8A99859D1C86CDF5000F9CBC /* CHomePageViewController.h */,
+				8A99859E1C86CDF5000F9CBC /* CHomePageViewController.m */,
+				8A99859F1C86CDF5000F9CBC /* CHomePageViewController.xib */,
 			);
 			path = CClient;
 			sourceTree = "<group>";
@@ -5519,6 +5619,7 @@
 				BB83FB0A1C72C01C0013A6A0 /* HFHistoryCell.xib in Resources */,
 				BB83FB0B1C72C01C0013A6A0 /* MyBandViewController.xib in Resources */,
 				BB83FB0C1C72C01C0013A6A0 /* WebViewJavascriptBridge.js.txt in Resources */,
+				8A9E8B511C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */,
 				BB83FB0D1C72C01C0013A6A0 /* HFUnlockCell.xib in Resources */,
 				BB83FB0E1C72C01C0013A6A0 /* HFMyDeviceCell.xib in Resources */,
 				BBA372581C76AA100075333E /* C_Client.plist in Resources */,
@@ -5536,6 +5637,8 @@
 				BBA372561C75C52E0075333E /* BHomeCHildAScrollBox.xib in Resources */,
 				BBA372421C755EB50075333E /* BHomePageViewController.xib in Resources */,
 				BB83FB1A1C72C01C0013A6A0 /* FriendsCell.xib in Resources */,
+				8A0465041C88113300E6B1E0 /* TKISHowGoodsCell.xib in Resources */,
+				8AA7F7101C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib in Resources */,
 				BB83FB1B1C72C01C0013A6A0 /* SentPostViewController.xib in Resources */,
 				BB83FB1C1C72C01C0013A6A0 /* HFBindPhoneNumViewController.xib in Resources */,
 				BB83FB1D1C72C01C0013A6A0 /* HFRemindCell.xib in Resources */,
@@ -5546,6 +5649,7 @@
 				BB83FB221C72C01C0013A6A0 /* AgreementViewController.xib in Resources */,
 				BB83FB231C72C01C0013A6A0 /* TKLeftMenu.xib in Resources */,
 				BB83FB241C72C01C0013A6A0 /* HFAboutUsCell.xib in Resources */,
+				8A9985A21C86CDF5000F9CBC /* CHomePageViewController.xib in Resources */,
 				BB83FE1E1C72C56F0013A6A0 /* B_Client.plist in Resources */,
 				BB83FB251C72C01C0013A6A0 /* HFEditHeaderView.xib in Resources */,
 				BB83FB261C72C01C0013A6A0 /* HFBandViewController.xib in Resources */,
@@ -5559,6 +5663,7 @@
 				BB83FB2E1C72C01C0013A6A0 /* TK_PublishMakeSureView.xib in Resources */,
 				BB83FB2F1C72C01C0013A6A0 /* HFSwitchCell.xib in Resources */,
 				BBA3725D1C76B72B0075333E /* TKRewardCell.xib in Resources */,
+				8A0464F71C880FF200E6B1E0 /* BMyShowGoodsViewController.xib in Resources */,
 				BB83FB301C72C01C0013A6A0 /* HFFoodListViewController.xib in Resources */,
 				BB83FB311C72C01C0013A6A0 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				BB83FB321C72C01C0013A6A0 /* WebViewController.xib in Resources */,
@@ -5596,7 +5701,6 @@
 				BB83FB511C72C01C0013A6A0 /* TKUserPageViewController.xib in Resources */,
 				BB83FB521C72C01C0013A6A0 /* HFSchemeListViewController.xib in Resources */,
 				BB83FB531C72C01C0013A6A0 /* TKMessageListIItemCell.xib in Resources */,
-				BB83FB541C72C01C0013A6A0 /* TKPublishShowGoodsVC.xib in Resources */,
 				BB83FB551C72C01C0013A6A0 /* HFSchemeCell.xib in Resources */,
 				BB83FB561C72C01C0013A6A0 /* HFIntroduceCell.xib in Resources */,
 				BB83FB571C72C01C0013A6A0 /* SetPasswordViewController.xib in Resources */,
@@ -5613,11 +5717,15 @@
 				BB83FDB41C72C16B0013A6A0 /* PostCell.xib in Resources */,
 				BB83FDB51C72C16B0013A6A0 /* ModifyViewController.xib in Resources */,
 				BB83FDB61C72C16B0013A6A0 /* SignOneViewController.xib in Resources */,
+				8A9985971C86C67B000F9CBC /* BHomeChildAVC.xib in Resources */,
 				BB83FDB71C72C16B0013A6A0 /* HFBoxTableViewCell.xib in Resources */,
+				8A9985991C86C684000F9CBC /* BHomeChildBVC.xib in Resources */,
 				BB83FDB81C72C16B0013A6A0 /* ShareSDKLocalizable.strings in Resources */,
+				8AA7F7111C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib in Resources */,
 				BB83FDB91C72C16B0013A6A0 /* HFLanchViewController.xib in Resources */,
 				BB83FDBA1C72C16B0013A6A0 /* TestViewController.xib in Resources */,
 				BB83FDBB1C72C16B0013A6A0 /* TKHttpAction.plist in Resources */,
+				8A0465051C88113300E6B1E0 /* TKISHowGoodsCell.xib in Resources */,
 				BB83FDBC1C72C16B0013A6A0 /* HFFeedbackController.xib in Resources */,
 				BB83FDBD1C72C16B0013A6A0 /* TKLoginViewController.xib in Resources */,
 				BB83FDBE1C72C16B0013A6A0 /* HFBindingViewController.xib in Resources */,
@@ -5647,6 +5755,7 @@
 				BB83FDD61C72C16B0013A6A0 /* TKRegisterViewController.xib in Resources */,
 				BB83FDD71C72C16B0013A6A0 /* FriendsCell.xib in Resources */,
 				BB83FDD81C72C16B0013A6A0 /* SentPostViewController.xib in Resources */,
+				8A99859A1C86C68A000F9CBC /* BHomeCHildAScrollBox.xib in Resources */,
 				BB83FDD91C72C16B0013A6A0 /* HFBindPhoneNumViewController.xib in Resources */,
 				BB83FDDA1C72C16B0013A6A0 /* HFRemindCell.xib in Resources */,
 				BB83FDDB1C72C16B0013A6A0 /* SignTwoViewController.xib in Resources */,
@@ -5684,8 +5793,11 @@
 				BB83FDFB1C72C16B0013A6A0 /* SetInfoViewController.xib in Resources */,
 				BB83FDFC1C72C16B0013A6A0 /* ZYQAssetPicker.Bundle in Resources */,
 				BB83FDFD1C72C16B0013A6A0 /* HFCollectionCell.xib in Resources */,
+				8A0464F81C880FF200E6B1E0 /* BMyShowGoodsViewController.xib in Resources */,
 				BB83FDFE1C72C16B0013A6A0 /* Resource.bundle in Resources */,
+				8A99859C1C86C6AC000F9CBC /* TKRewardCell.xib in Resources */,
 				BB83FDFF1C72C16B0013A6A0 /* HFHabitTimeCell.xib in Resources */,
+				8A9E8B521C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */,
 				BB83FE001C72C16B0013A6A0 /* HFActivityListCell.xib in Resources */,
 				BB83FE011C72C16B0013A6A0 /* HFConclusionView.xib in Resources */,
 				BB83FE021C72C16B0013A6A0 /* ShareSDKFlatShareViewUI.bundle in Resources */,
@@ -5703,10 +5815,11 @@
 				BB83FE0E1C72C16B0013A6A0 /* TKUserPageViewController.xib in Resources */,
 				BB83FE0F1C72C16B0013A6A0 /* HFSchemeListViewController.xib in Resources */,
 				BB83FE101C72C16B0013A6A0 /* TKMessageListIItemCell.xib in Resources */,
-				BB83FE111C72C16B0013A6A0 /* TKPublishShowGoodsVC.xib in Resources */,
 				BB83FE121C72C16B0013A6A0 /* HFSchemeCell.xib in Resources */,
 				BB83FE131C72C16B0013A6A0 /* HFIntroduceCell.xib in Resources */,
+				8A9985A31C86CDF5000F9CBC /* CHomePageViewController.xib in Resources */,
 				BB83FE141C72C16B0013A6A0 /* SetPasswordViewController.xib in Resources */,
+				8A9985961C86C66C000F9CBC /* BHomePageViewController.xib in Resources */,
 				BB83FE151C72C16B0013A6A0 /* TK_SettingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5832,6 +5945,7 @@
 				BB83F8B71C72C01C0013A6A0 /* FaceButton.m in Sources */,
 				BB83F8B81C72C01C0013A6A0 /* GetSchemeStepResultAck.m in Sources */,
 				BB83F8B91C72C01C0013A6A0 /* GuideViewController.m in Sources */,
+				8AA7F70E1C8880AE00CE0F17 /* TKPublishShowGoodsVC.m in Sources */,
 				BB83F8BA1C72C01C0013A6A0 /* GetSportDataByDayAck.m in Sources */,
 				BB83F8BB1C72C01C0013A6A0 /* MMExampleViewController.m in Sources */,
 				BB83F8BC1C72C01C0013A6A0 /* HIIProxy.m in Sources */,
@@ -5839,7 +5953,6 @@
 				BB83F8BD1C72C01C0013A6A0 /* HFCheckVercodeReq.m in Sources */,
 				BB83F8BE1C72C01C0013A6A0 /* BindingArg.m in Sources */,
 				BB83F8BF1C72C01C0013A6A0 /* TKConstants.m in Sources */,
-				BB83F8C01C72C01C0013A6A0 /* TKPublishShowGoodsVC.m in Sources */,
 				BB83F8C11C72C01C0013A6A0 /* TK_BaseNavSettingViewController.m in Sources */,
 				BB83F8C21C72C01C0013A6A0 /* RBCustomDatePickerView.m in Sources */,
 				BB83F8C31C72C01C0013A6A0 /* TKHomePageViewController.m in Sources */,
@@ -5882,9 +5995,11 @@
 				BB83F8E81C72C01C0013A6A0 /* HFShareReq.m in Sources */,
 				BB83F8E91C72C01C0013A6A0 /* MLEmojiLabel.m in Sources */,
 				BB83F8EA1C72C01C0013A6A0 /* BandHistoryAck.m in Sources */,
+				8A5B60E71C85C4EB00BF8E19 /* BUserCenterVM.m in Sources */,
 				BB83F8EB1C72C01C0013A6A0 /* GetAdvanceSchemeMainPageAck.m in Sources */,
 				BB83F8EC1C72C01C0013A6A0 /* HFPostDetailView.m in Sources */,
 				BB83F8ED1C72C01C0013A6A0 /* HiModuleListData.m in Sources */,
+				8AA7F7091C88267000CE0F17 /* TKPublishShowGoodsArg.m in Sources */,
 				BB83F8EE1C72C01C0013A6A0 /* TK_JsonModelArg.m in Sources */,
 				BB83F8EF1C72C01C0013A6A0 /* HFSaveDeviceTokenReq.m in Sources */,
 				BB83F8F01C72C01C0013A6A0 /* VPImageCropperViewController.m in Sources */,
@@ -5987,6 +6102,7 @@
 				BB83F9501C72C01C0013A6A0 /* SchemeActionsAck.m in Sources */,
 				BB83F9511C72C01C0013A6A0 /* TKHeadImageView.m in Sources */,
 				BB83F9521C72C01C0013A6A0 /* HFAnimationView.m in Sources */,
+				8A0465021C88113300E6B1E0 /* TKISHowGoodsCell.m in Sources */,
 				BB83F9531C72C01C0013A6A0 /* HFSportViewCell.m in Sources */,
 				BB83F9541C72C01C0013A6A0 /* UIColor+TK_Color.m in Sources */,
 				BB83F9551C72C01C0013A6A0 /* UserViewController.m in Sources */,
@@ -6037,6 +6153,7 @@
 				BB83F9821C72C01C0013A6A0 /* ZBFaceView.m in Sources */,
 				BB83F9831C72C01C0013A6A0 /* GetDiseaseIntroAck.m in Sources */,
 				BB83F9841C72C01C0013A6A0 /* HFSensitiveWordsRes.m in Sources */,
+				8A0464F51C880FF200E6B1E0 /* BMyShowGoodsViewController.m in Sources */,
 				BBA372501C75B9B30075333E /* BHomeChildBVC.m in Sources */,
 				BB83F9851C72C01C0013A6A0 /* MainPageAdvanceSchemeAck.m in Sources */,
 				BB83F9861C72C01C0013A6A0 /* HFTestView.m in Sources */,
@@ -6141,6 +6258,7 @@
 				BB83F9E91C72C01C0013A6A0 /* HFHabitTimesListViewController.m in Sources */,
 				BB83F9EA1C72C01C0013A6A0 /* MMExampleSideDrawerViewController.m in Sources */,
 				BB83F9EB1C72C01C0013A6A0 /* UIButton+MixButton.m in Sources */,
+				8A9985A01C86CDF5000F9CBC /* CHomePageViewController.m in Sources */,
 				BB83F9EC1C72C01C0013A6A0 /* HFActivityDetailRes.m in Sources */,
 				BB83F9ED1C72C01C0013A6A0 /* FMDatabaseAdditions.m in Sources */,
 				BB83F9EE1C72C01C0013A6A0 /* HFCollectionCell.m in Sources */,
@@ -6332,6 +6450,7 @@
 				BB83FAA81C72C01C0013A6A0 /* GetRunningDataAck.m in Sources */,
 				BB83FAA91C72C01C0013A6A0 /* ZYQAssetPickerController.m in Sources */,
 				BB83FAAA1C72C01C0013A6A0 /* MainViewController.m in Sources */,
+				8A9E8B4F1C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */,
 				BB83FAAB1C72C01C0013A6A0 /* HabitRes.m in Sources */,
 				BB83FAAC1C72C01C0013A6A0 /* TestA.m in Sources */,
 				BB83FAAD1C72C01C0013A6A0 /* TK_GetOrdersArg.m in Sources */,
@@ -6360,6 +6479,7 @@
 				BB83FAC31C72C01C0013A6A0 /* MJPhotoToolbar.m in Sources */,
 				BB83FAC41C72C01C0013A6A0 /* TK_LoginArg.m in Sources */,
 				BB83FAC51C72C01C0013A6A0 /* HFMixView.m in Sources */,
+				8A0464FC1C8810AE00E6B1E0 /* TKShowGoodsListVM.m in Sources */,
 				BB83FAC61C72C01C0013A6A0 /* HFBandProxy.m in Sources */,
 				BB83FAC71C72C01C0013A6A0 /* HFNetProcessHelper.m in Sources */,
 				BB83FAC81C72C01C0013A6A0 /* SetPasswordViewController.m in Sources */,
@@ -6391,6 +6511,7 @@
 			files = (
 				BB83FB631C72C16B0013A6A0 /* GlobInfo.m in Sources */,
 				BB83FB641C72C16B0013A6A0 /* HFNoInfoView.m in Sources */,
+				8A9985921C86C3A6000F9CBC /* BHomePageViewController.m in Sources */,
 				BB83FB651C72C16B0013A6A0 /* UIViewController+Customize.m in Sources */,
 				BB83FB661C72C16B0013A6A0 /* HFWeiboDeleteCommentReq.m in Sources */,
 				BB83FB671C72C16B0013A6A0 /* HFHUDView.m in Sources */,
@@ -6409,13 +6530,13 @@
 				BB83FB741C72C16B0013A6A0 /* FaceButton.m in Sources */,
 				BB83FB751C72C16B0013A6A0 /* GetSchemeStepResultAck.m in Sources */,
 				BB83FB761C72C16B0013A6A0 /* GuideViewController.m in Sources */,
+				8AA7F70F1C8880AE00CE0F17 /* TKPublishShowGoodsVC.m in Sources */,
 				BB83FB771C72C16B0013A6A0 /* GetSportDataByDayAck.m in Sources */,
 				BB83FB781C72C16B0013A6A0 /* MMExampleViewController.m in Sources */,
 				BB83FB791C72C16B0013A6A0 /* HIIProxy.m in Sources */,
 				BB83FB7A1C72C16B0013A6A0 /* HFCheckVercodeReq.m in Sources */,
 				BB83FB7B1C72C16B0013A6A0 /* BindingArg.m in Sources */,
 				BB83FB7C1C72C16B0013A6A0 /* TKConstants.m in Sources */,
-				BB83FB7D1C72C16B0013A6A0 /* TKPublishShowGoodsVC.m in Sources */,
 				BB83FB7E1C72C16B0013A6A0 /* TK_BaseNavSettingViewController.m in Sources */,
 				BB83FB7F1C72C16B0013A6A0 /* RBCustomDatePickerView.m in Sources */,
 				BB83FB801C72C16B0013A6A0 /* TKHomePageViewController.m in Sources */,
@@ -6441,6 +6562,7 @@
 				BB83FB941C72C16B0013A6A0 /* HFGetMyModulesReq.m in Sources */,
 				BB83FB951C72C16B0013A6A0 /* HF_HttpClient.m in Sources */,
 				BB83FB961C72C16B0013A6A0 /* UIKitTool.m in Sources */,
+				8A9985951C86C51D000F9CBC /* BUserCenterVM.m in Sources */,
 				BB83FB971C72C16B0013A6A0 /* UIView+Z_Order.m in Sources */,
 				BB83FB981C72C16B0013A6A0 /* BaseNavigationInteractiveTransition.m in Sources */,
 				BB83FB991C72C16B0013A6A0 /* BaseHttpReq.m in Sources */,
@@ -6462,6 +6584,7 @@
 				BB83FBA91C72C16B0013A6A0 /* HFPostDetailView.m in Sources */,
 				BB83FBAA1C72C16B0013A6A0 /* HiModuleListData.m in Sources */,
 				BB83FBAB1C72C16B0013A6A0 /* TK_JsonModelArg.m in Sources */,
+				8AA7F70A1C88267000CE0F17 /* TKPublishShowGoodsArg.m in Sources */,
 				BB83FBAC1C72C16B0013A6A0 /* HFSaveDeviceTokenReq.m in Sources */,
 				BB83FBAD1C72C16B0013A6A0 /* VPImageCropperViewController.m in Sources */,
 				BB83FBAE1C72C16B0013A6A0 /* ModifySignatureController.m in Sources */,
@@ -6504,6 +6627,7 @@
 				BB83FBD31C72C16B0013A6A0 /* GetCommonProblemAck.m in Sources */,
 				BB83FBD41C72C16B0013A6A0 /* HFReportView.m in Sources */,
 				BB83FBD51C72C16B0013A6A0 /* HFSchemeListViewController.m in Sources */,
+				8A9985981C86C681000F9CBC /* BHomeChildBVC.m in Sources */,
 				BB83FBD61C72C16B0013A6A0 /* ImagesRes.m in Sources */,
 				BB83FBD71C72C16B0013A6A0 /* TKMessageListIItemCell.m in Sources */,
 				BB83FBD81C72C16B0013A6A0 /* HFBindingViewController.m in Sources */,
@@ -6563,6 +6687,7 @@
 				BB83FC0E1C72C16B0013A6A0 /* TKHeadImageView.m in Sources */,
 				BB83FC0F1C72C16B0013A6A0 /* HFAnimationView.m in Sources */,
 				BB83FC101C72C16B0013A6A0 /* HFSportViewCell.m in Sources */,
+				8A0465031C88113300E6B1E0 /* TKISHowGoodsCell.m in Sources */,
 				BB83FC111C72C16B0013A6A0 /* UIColor+TK_Color.m in Sources */,
 				BB83FC121C72C16B0013A6A0 /* UserViewController.m in Sources */,
 				BB83FC131C72C16B0013A6A0 /* HFModifyInfoReq.m in Sources */,
@@ -6613,6 +6738,7 @@
 				BB83FC401C72C16B0013A6A0 /* GetDiseaseIntroAck.m in Sources */,
 				BB83FC411C72C16B0013A6A0 /* HFSensitiveWordsRes.m in Sources */,
 				BB83FC421C72C16B0013A6A0 /* MainPageAdvanceSchemeAck.m in Sources */,
+				8A0464F61C880FF200E6B1E0 /* BMyShowGoodsViewController.m in Sources */,
 				BB83FC431C72C16B0013A6A0 /* HFTestView.m in Sources */,
 				BB83FC441C72C16B0013A6A0 /* FCModel.m in Sources */,
 				BB83FC451C72C16B0013A6A0 /* HFLoginReq.m in Sources */,
@@ -6717,6 +6843,7 @@
 				BB83FCA81C72C16B0013A6A0 /* UIButton+MixButton.m in Sources */,
 				BB83FCA91C72C16B0013A6A0 /* HFActivityDetailRes.m in Sources */,
 				BB83FCAA1C72C16B0013A6A0 /* FMDatabaseAdditions.m in Sources */,
+				8A9985A11C86CDF5000F9CBC /* CHomePageViewController.m in Sources */,
 				BB83FCAB1C72C16B0013A6A0 /* HFCollectionCell.m in Sources */,
 				BB83FCAC1C72C16B0013A6A0 /* HFAdvanceSchemeContainerViewController.m in Sources */,
 				BB83FCAD1C72C16B0013A6A0 /* TK_PraiseRewardArg.m in Sources */,
@@ -6779,6 +6906,7 @@
 				BB83FCE61C72C16B0013A6A0 /* ZBMessageManagerFaceView.m in Sources */,
 				BB83FCE71C72C16B0013A6A0 /* HFFeedbackReq.m in Sources */,
 				BB83FCE81C72C16B0013A6A0 /* TKRegisterViewController.m in Sources */,
+				8A99859B1C86C6A6000F9CBC /* TKRewardCell.m in Sources */,
 				BB83FCE91C72C16B0013A6A0 /* SettingsViewController.m in Sources */,
 				BB83FCEA1C72C16B0013A6A0 /* TK_UserCenterVM.m in Sources */,
 				BB83FCEB1C72C16B0013A6A0 /* HFUnlockViewController.m in Sources */,
@@ -6879,6 +7007,7 @@
 				BB83FD4A1C72C16B0013A6A0 /* HFActivityWindowArg.m in Sources */,
 				BB83FD4B1C72C16B0013A6A0 /* MMLogoView.m in Sources */,
 				BB83FD4C1C72C16B0013A6A0 /* SDCollectionViewCell.m in Sources */,
+				8A9985941C86C519000F9CBC /* BHomeChildAScrolBox.m in Sources */,
 				BB83FD4D1C72C16B0013A6A0 /* HFUploadPostReq.m in Sources */,
 				BB83FD4E1C72C16B0013A6A0 /* BaseView.m in Sources */,
 				BB83FD4F1C72C16B0013A6A0 /* SIMenuTable.m in Sources */,
@@ -6906,6 +7035,7 @@
 				BB83FD651C72C16B0013A6A0 /* GetRunningDataAck.m in Sources */,
 				BB83FD661C72C16B0013A6A0 /* ZYQAssetPickerController.m in Sources */,
 				BB83FD671C72C16B0013A6A0 /* MainViewController.m in Sources */,
+				8A9E8B501C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */,
 				BB83FD681C72C16B0013A6A0 /* HabitRes.m in Sources */,
 				BB83FD691C72C16B0013A6A0 /* TestA.m in Sources */,
 				BB83FD6A1C72C16B0013A6A0 /* TK_GetOrdersArg.m in Sources */,
@@ -6919,6 +7049,7 @@
 				BB83FD721C72C16B0013A6A0 /* TK_JsonModelHttpClient.m in Sources */,
 				BB83FD731C72C16B0013A6A0 /* LoginViewController.m in Sources */,
 				BB83FD741C72C16B0013A6A0 /* LoadSchemeInfoArg.m in Sources */,
+				8A9985931C86C514000F9CBC /* BHomeChildAVC.m in Sources */,
 				BB83FD751C72C16B0013A6A0 /* TKPublishRewardVC.m in Sources */,
 				BB83FD761C72C16B0013A6A0 /* HFKeyBoard.m in Sources */,
 				BB83FD771C72C16B0013A6A0 /* HFLikeUsersReq.m in Sources */,
@@ -6933,6 +7064,7 @@
 				BB83FD801C72C16B0013A6A0 /* MJPhotoToolbar.m in Sources */,
 				BB83FD811C72C16B0013A6A0 /* TK_LoginArg.m in Sources */,
 				BB83FD821C72C16B0013A6A0 /* HFMixView.m in Sources */,
+				8A0464FD1C8810AE00E6B1E0 /* TKShowGoodsListVM.m in Sources */,
 				BB83FD831C72C16B0013A6A0 /* HFBandProxy.m in Sources */,
 				BB83FD841C72C16B0013A6A0 /* HFNetProcessHelper.m in Sources */,
 				BB83FD851C72C16B0013A6A0 /* SetPasswordViewController.m in Sources */,

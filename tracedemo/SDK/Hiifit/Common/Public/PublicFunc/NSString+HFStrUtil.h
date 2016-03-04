@@ -31,7 +31,13 @@
 /**
   int 转换成 string
  **/
-+(NSString *)intToNSString:(NSInteger)value;
++(NSString *)tkStringFromNumber:(NSInteger)value;
 
+
+
+/**
+ 拼接 数字 成 string
+ **/
+-(NSString *)tkStringByAppendInteger:(NSInteger)number;
 
 @end

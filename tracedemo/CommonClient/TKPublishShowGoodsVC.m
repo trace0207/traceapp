@@ -17,6 +17,7 @@
 #import "TK_PublishMakeSureView.h"
 #import "TKPicSelectTool.h"
 
+
 static NSString * textDefault = @"此时此刻，分享你的宝贝心得吧";
 
 @interface TKPublishShowGoodsVC ()
@@ -390,10 +391,15 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     
     NSArray * pics = [[NSArray alloc] initWithArray:self.picturesArr];
     popView.images = pics;
+    popView.content = self.inputTextView.text;
+    popView.showPrice =  [self.willByPrice.text integerValue] * 100;
+    
     [[AppDelegate getAppDelegate].window addSubview:popView];
+    
     
     [popView beginSend];
     self.picturesArr = nil;
+    
     
 //    [[HFHUDView shareInstance] ShowTips:@"发布晒单成功" delayTime:1.0 atView:NULL];
 }

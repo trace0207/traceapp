@@ -63,10 +63,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
     self.user  = user;
     self.user.isLogin = YES;
     // TODO test 下面是测试代码
-    self.user.address = @"浙江省杭州市西湖区西溪路555号7号楼401";
-    self.user.signature = @"走自己的路，让别人的BB吧";
-    self.user.headPortraitUrl = TKDefaultHead;
-    self.user.score = 88;
+//    self.user.address = @"浙江省杭州市西湖区西溪路555号7号楼401";
+//    self.user.signature = @"走自己的路，让别人的BB吧";
+//    self.user.headPortraitUrl = TKDefaultHead;
+//    self.user.nickName = ;
+//    self.user.score = 88;
     [[NSNotificationCenter defaultCenter] postNotificationName:TKUserLoginSuccess object:nil];
 }
 
@@ -76,16 +77,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 
     
     //deviceId=123&mobile=18867102687&password=123456
-    [[TKProxy proxy].userProxy login:@"18867102687" withValue:@"123456" withBlock:^(HF_BaseAck * ack){
+    [[TKProxy proxy].userProxy login:userName withValue:password withBlock:^(HF_BaseAck * ack){
         if(ack.sucess){
             TK_LoginAck * loginAck = (TK_LoginAck *)ack;
             LoginAckData * loginData = (LoginAckData *)loginAck.data;
             TKUser * user = [[TKUser alloc] init];
             user.userId = loginData.id;
-            user.nickName = loginData.nickName;
+            user.nickName = loginData.purchaserName;
             user.mobile = loginData.mobile;
             user.signature = loginData.signature;
             user.headPortraitUrl = loginData.headerUrl;
+            user.guarantee = loginData.guarantee;
+            user.vip = loginData.vip;
             [self performSelectorOnMainThread:@selector(onLoginSuccess:) withObject:user waitUntilDone:NO];
 
         }

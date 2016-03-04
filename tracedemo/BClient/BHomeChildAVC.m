@@ -9,10 +9,11 @@
 #import "BHomeChildAVC.h"
 #import "BHomeChildAScrolBox.h"
 #import "TKIShowGoodsVM.h"
+#import "TKIRewardVM.h"
 
 @interface BHomeChildAVC ()
 {
-    TKIShowGoodsVM * vm1;
+    TKIRewardVM * vm1;
 }
 
 
@@ -60,8 +61,7 @@ const NSInteger boxWidth  = 84;
 
 -(void)initContentView
 {
-    vm1 = [[TKIShowGoodsVM alloc] initWithFreshAbleTable ];
-    
+    vm1 = [[TKIRewardVM alloc] initWithFreshAbleTable ];
     [self.contentView addSubview:vm1.pullRefreshView];
     [vm1 tkUpdateViewConstraint];
     [vm1 startPullDownRefreshing];

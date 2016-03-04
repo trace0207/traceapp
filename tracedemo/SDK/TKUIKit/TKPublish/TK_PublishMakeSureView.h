@@ -16,7 +16,12 @@
 - (IBAction)cancelAction:(id)sender;
 
 @property (strong, nonatomic) NSArray *images;
-
+@property (nonatomic,copy)NSString *orderId;
+@property (nonatomic,copy)NSString *content;
+@property (nonatomic,assign)NSInteger brandId;
+@property (nonatomic,assign)NSInteger categoryId;
+@property (nonatomic,assign)NSInteger role;
+@property (nonatomic,assign)NSInteger showPrice;
 
 -(void)beginSend;
 

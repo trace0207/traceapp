@@ -234,6 +234,7 @@
 
 - (void)beginPullDownRefreshing
 {
+    [self tkLoadDefaultData];
     [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:1.0];
 }
 

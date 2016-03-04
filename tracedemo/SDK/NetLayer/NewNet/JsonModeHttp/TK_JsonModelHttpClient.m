@@ -40,7 +40,7 @@
         TK_HttpFileData * data = [arg performSelector:@selector(tkGetFileData) withObject:nil withObject:nil];
         
         DDLogDebug(@"\nwithData :%@",[data toDictionary]);
-        request = [self.requestSerializer multipartFormRequestWithMethod:@"POST"
+        request = [self.requestSerializer multipartFormRequestWithMethod:arg.method
                                                                URLString:requestURL
                                                               parameters:[arg toDictionary]
                                                constructingBodyWithBlock: ^(id<AFMultipartFormData> formData) {

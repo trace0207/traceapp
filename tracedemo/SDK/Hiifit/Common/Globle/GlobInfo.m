@@ -37,6 +37,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(GlobInfo, shareInstance);
         devid = [self setDeviceid];
     }
     return devid;
+//    return @"112233";
 }
 
 - (NSString*)setDeviceid

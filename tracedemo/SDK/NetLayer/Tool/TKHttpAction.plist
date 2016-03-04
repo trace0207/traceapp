@@ -10,5 +10,7 @@
 	<string>/apollo/nologin/sms!sms.action</string>
 	<key>TK_UploadImageArg</key>
 	<string>/apollo/login/upload!upload.action</string>
+	<key>TKPublishShowGoodsArg</key>
+	<string>/apollo/login/order/show-order!showOrder.action</string>
 </dict>
 </plist>
