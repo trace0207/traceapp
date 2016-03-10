@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TK_ModifyUserInfoArg.h"
 @class TK_LoginArg,TK_RegisterNewUserArg,TK_RegisterNewUserAck;
 @interface TKUserProxy : NSObject
 
@@ -29,6 +30,14 @@
              userValue:(NSString *)userValue
                 mobile:(NSString *)mobile
              whtiBlock:(hfAckBlock)block;
+
+/**
+  重置密码
+ **/
+-(void)resetPassword:(NSString *)mobile
+             smsCode:(NSString *)smsCode
+            password:(NSString *)newPassword
+           withBlock:(hfAckBlock)block;
 
 
 @end

@@ -242,7 +242,7 @@ static HFMenuControl * menu;
     
     NSInteger type = mCurrentIndex;
     
-    [[TKProxy proxy].mainProxy getShowOrders:type withBlock:^(HF_BaseAck *ack){
+    [[TKProxy proxy].mainProxy getShowOrders:type page:1 withBlock:^(HF_BaseAck *ack){
         HFPostDetailView * view = [mViewArray objectAtIndex:mCurrentIndex];
         if(ack.sucess){
             

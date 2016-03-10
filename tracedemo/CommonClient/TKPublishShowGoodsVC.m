@@ -284,7 +284,8 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
 //    if ([text isEqualToString:@"\n"]) {
 //        [textView resignFirstResponder];
 //        return NO;
-//    }
+//    }[|
+    
     
     if (textView.text.length>=400 && text.length>0) {
         return NO;

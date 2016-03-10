@@ -55,7 +55,7 @@
     
     TKRewardCell * cell = [tableView dequeueReusableCellWithIdentifier:@"TKRewardCell"];
     
-    DDLogInfo(@"get rewardcell view  cell is nill =  %d",cell == nil);
+//    DDLogInfo(@"get rewardcell view  cell is nill =  %d",cell == nil);
     if(!cell)
     {
         cell = [[NSBundle mainBundle] loadNibNamed:@"TKRewardCell" owner:self options:nil].firstObject;

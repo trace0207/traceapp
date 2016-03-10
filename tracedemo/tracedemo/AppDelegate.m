@@ -19,6 +19,8 @@
 #import "MMDrawerController.h"
 #import "TKConstants.h"
 #import "UIColor+TK_Color.h"
+#import "TK_CategoryListAck.h"
+#import "NSString+HFStrUtil.h"
 
 @interface AppDelegate (){
     
@@ -54,6 +56,9 @@ static AppDelegate * appDelegate;
     //    [NSThread sleepForTimeInterval:1.5];//  启动页停留 3 秒钟
     
     appDelegate = self;
+    
+    [self initAppData];
+    
     return YES;
 }
 
@@ -149,6 +154,8 @@ static AppDelegate * appDelegate;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setRootViewController:nav];
     [self configNavigationBar];
+//    nav.navigationBar.shadowImage = [[UIImage alloc] init];
+//    nav.navigationBar.translucent = NO;
 }
 
 
@@ -187,12 +194,10 @@ static AppDelegate * appDelegate;
 - (void)configNavigationBar
 {
     UIColor * navColor = [UIColor TKcolorWithHexString:TK_Color_nav_background];
-    [[UINavigationBar appearance] setBackgroundColor:navColor];
+    [[UINavigationBar appearance] setBackgroundImage:[UIColor TKcreateImageWithColor:navColor] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setBarTintColor:navColor];
-    
-    
    
-    [[UINavigationBar appearance] setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
+    [[UINavigationBar appearance] setTintColor:[UIColor tkThemeColor1]];
     [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor TKcolorWithHexString:TK_Color_nav_textDefault], NSForegroundColorAttributeName, nil]];
     
     //    [[UINavigationBar appearance] setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
@@ -204,8 +209,30 @@ static AppDelegate * appDelegate;
     }
     
     [[UIApplication sharedApplication]setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    
 }
 
+
+
+
+-(void)initAppData
+{
+    
+    [[TKProxy proxy].mainProxy getBrandListWithBlock:^(HF_BaseAck *ack) {
+        
+        DDLogInfo(@"%@",ack);
+    }];
+    
+    [[TKProxy proxy].mainProxy getCategoryListWithBolck:^(HF_BaseAck *ack) {
+       
+        if(ack.sucess)
+        {
+            TK_CategoryListAck * k = (TK_CategoryListAck*)ack;
+            DDLogInfo(@"abc%@",[NSString ArrayToNSString:k.data withSeparator:@";"]);
+        }
+        
+    }];
+}
 
 @end

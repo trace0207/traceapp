@@ -11,6 +11,7 @@
 #import "TK_LoginArg.h"
 #import "TK_RegisterNewUserArg.h"
 #import "TK_RegisterNewUserAck.h"
+#import "TK_ModifyPasswordArg.h"
 
 //TK_LoginArg,TK_RegisterNewUserArg,TK_RegisterNewUserAck;
 @implementation TKUserProxy
@@ -54,10 +55,29 @@
     TK_RegisterNewUserArg * arg = [[TK_RegisterNewUserArg alloc] init];
     arg.mobile = mobile;
     arg.inviteCode = inviceCode;
-    arg.sms = verifyCode;
+    arg.smsCode = verifyCode;
     arg.password = userValue;
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
     
+}
+
+
+/**
+ 重置密码
+ **/
+-(void)resetPassword:(NSString *)mobile
+             smsCode:(NSString *)smsCode
+            password:(NSString *)newPassword
+           withBlock:(hfAckBlock)block
+{
+    TK_ModifyPasswordArg * arg = [[TK_ModifyPasswordArg alloc] init];
+    arg.password = newPassword;
+    arg.smsCode = smsCode;
+#if B_Client == 1
+    arg.role = 0;
+#endif
+    arg.mobile = mobile;
+    [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
 }
 
 @end

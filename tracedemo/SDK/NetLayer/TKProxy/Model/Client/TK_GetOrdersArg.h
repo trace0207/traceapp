@@ -9,6 +9,7 @@
 #import "HF_BaseArg.h"
 
 @interface TK_GetOrdersArg : HF_BaseArg
-@property (nonatomic) NSInteger type;
-
+@property (nonatomic) NSInteger categoryId;
+@property (nonatomic) NSInteger pageOffset;
+@property (nonatomic) NSInteger pageSize;
 @end

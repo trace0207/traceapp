@@ -25,7 +25,7 @@
 
 
 
-#define TK_Color_nav_background  @"111111"
+#define TK_Color_nav_background  @"f6eed6"
 
 
 #define TK_Color_default_lineColor  @"666666"
@@ -36,11 +36,11 @@
 #define TK_Color_Text_default @"100000"
 #define TK_Color_Text_lightGray @"7d8a97"
 #define TK_Color_Text_active @"f0c84f"
-#define TK_Color_nav_textDefault @"f0c84f"
-#define TK_Color_nav_textActive @"100000"
+#define TK_Color_nav_textDefault @"a88462"
+#define TK_Color_nav_textActive @"FFFFFF"
 #define TK_Color_white_background   @"efeff0"
-#define TK_Color_ThemeColor @"f0c84f"
-#define TK_Color_themeColor2 @"333333"
+#define TK_Color_ThemeColor @"a88462"
+#define TK_Color_themeColor2 @"f6eed6"
 
 
 

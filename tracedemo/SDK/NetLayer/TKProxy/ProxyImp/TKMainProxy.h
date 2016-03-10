@@ -23,12 +23,9 @@
 
 
 /**
- *  获取晒单列表
- *
- *  @param type  晒单类型
- *  @param block 回调block
- */
--(void)getShowOrders:(NSInteger) type withBlock:(hfAckBlock)block;
+ 消费者C 端晒单池
+ **/
+-(void)getShowOrders:(NSInteger) type page:(NSInteger)page  withBlock:(hfAckBlock)block;
 
 
 
@@ -111,5 +108,22 @@
 -(void)uploadMutableImages:(NSArray *)images
                               withtype:(NSInteger)type
                              withBlock:(tkMutableArgBlock)block;
+
+
+/**
+  获取分类列表
+ **/
+-(void)getCategoryListWithBolck:(hfAckBlock)block;
+
+
+/**
+ 获取品牌列表
+ **/
+-(void)getBrandListWithBlock:(hfAckBlock)block;
+
+
+
+
+
 
 @end

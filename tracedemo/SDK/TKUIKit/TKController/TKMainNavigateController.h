@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger,TK_LoginEvent)
 {
     TK_Default = 0,
     TK_GoToUserCenter = 1,
+    TK_GoToPublishReward = 2
     
 };
 

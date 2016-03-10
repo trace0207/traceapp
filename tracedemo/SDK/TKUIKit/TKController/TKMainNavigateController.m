@@ -29,6 +29,8 @@
 #import "BHomePageViewController.h"
 #import "CHomePageViewController.h"
 #import "BMyShowGoodsViewController.h"
+#import "CPublishRewardViewController.h"
+#import "HiiBeanWebViewController.h"
 
 
 
@@ -70,123 +72,7 @@
     
 }
 
--(void)initCClientView
-{
-    
-    CHomePageViewController * subTabVC1  = [[CHomePageViewController alloc] init];
-    subTabVC1.tabBarItem.image=IMG(@"new_mainPageUnselected");
-    subTabVC1.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
-    subTabVC1.tabBarItem.title=@"首页";
-    //    subTabVC1.eventDelegate = self;
-    
-    //    HFNewMainViewController * newMain = [[HFNewMainViewController alloc] init];
-    //    newMain.tabBarItem.title=@"搜索";
-    //    newMain.tabBarItem.image=IMG(@"My_foodSearch");
-    //    newMain.tabBarItem.selectedImage = IMG(@"My_foodSearch");
-    
-    
-    
-    
-    TKIMessageCenterViewController * messages = [[TKIMessageCenterViewController alloc]init];
-    messages.navTitle = @"消息";
-    messages.hidDefaultBackBtn = YES;
-    messages.tabBarItem.title = @"消息";
-    messages.tabBarItem.image = IMG(@"new_myUnselected");
-    messages.tabBarItem.selectedImage = IMG(@"new_mySelected");
-    
-    
-    TKPublishShowGoodsVC * newChat = [[TKPublishShowGoodsVC alloc] init];
-    newChat.tabBarItem.title = @"发悬赏";
-    newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
-    newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
-    
-    //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
-    
-    
-    TKUserCenterViewController * navc4 = [[TKUserCenterViewController alloc] init];
-    navc4.title = @"我的购买";
-    navc4.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
-    
-    
-    TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
-    navc5.title = @"我的";
-    navc5.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
-    
-    self.selectedIndex =0;
-    self.viewControllers = @[subTabVC1,/*newMain,*/messages,newChat,navc4,navc5];
-    
-    [self addChildViewController:navc5];
-    self.delegate = self;
-    
-    [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
-    
-    [self.tabBar setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
-    
-    [self loadEmojIcon];
-    [self registerNotification];
-    
-    
-}
 
-
--(void)initBClientView
-{
-    
-    
-    BHomePageViewController * subTabVC1  = [[BHomePageViewController alloc] init];
-    subTabVC1.tabBarItem.image=IMG(@"new_mainPageUnselected");
-    subTabVC1.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
-    subTabVC1.tabBarItem.title=@"悬赏池";
-//    subTabVC1.eventDelegate = self;
-    
-    //    HFNewMainViewController * newMain = [[HFNewMainViewController alloc] init];
-    //    newMain.tabBarItem.title=@"搜索";
-    //    newMain.tabBarItem.image=IMG(@"My_foodSearch");
-    //    newMain.tabBarItem.selectedImage = IMG(@"My_foodSearch");
-    
-    
-    
-    
-    TKIMessageCenterViewController * messages = [[TKIMessageCenterViewController alloc]init];
-    messages.navTitle = @"消息中心";
-    messages.hidDefaultBackBtn = YES;
-    messages.tabBarItem.title = @"消息";
-    messages.tabBarItem.image = IMG(@"new_myUnselected");
-    messages.tabBarItem.selectedImage = IMG(@"new_mySelected");
-    
-    
-    BMyShowGoodsViewController * newChat = [[BMyShowGoodsViewController alloc] init];
-    newChat.tabBarItem.title = @"晒单";
-    newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
-    newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
-    
-    //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
-    
-    
-    TKUserCenterViewController * navc4 = [[TKUserCenterViewController alloc] init];
-    navc4.title = @"我的订单";
-    navc4.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
-    
-    
-    TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
-    navc5.title = @"我";
-    navc5.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
-    
-    self.selectedIndex =0;
-    self.viewControllers = @[subTabVC1,/*newMain,*/messages,newChat,navc4,navc5];
-    
-    [self addChildViewController:navc5];
-    self.delegate = self;
-    
-    [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
-    
-    [self.tabBar setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
-    
-    [self loadEmojIcon];
-    [self registerNotification];
-
-    
-}
 
 
 
@@ -233,36 +119,7 @@
 }
 
 
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController NS_AVAILABLE_IOS(3_0)
-{
-    if([viewController isKindOfClass:[TKUserCenterViewController class]] && ![[TKUserCenter instance] isLogin])
-    {
-        [self showLoginView];
-        temploginEvent = TK_GoToUserCenter;
-        return NO;
-    }
-    else if([viewController isKindOfClass:[TKPublishShowGoodsVC class]])
-    {
-    
-        [self showGoodsPage];
-        return NO;
-    }
-    else if([viewController isKindOfClass:[HFNewMainViewController class]])
-    {
 
-        [self showSearchVC];
-        return NO;
-    }
-    else
-    {
-        return YES;
-    }
-
-}
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    
-//    DDLogInfo(@" shouldSelectViewController %@ ",viewController);
-}
 
 
 /**
@@ -348,7 +205,12 @@
 {
     if(temploginEvent == TK_GoToUserCenter)
     {
-        self.selectedIndex = 3;
+        self.selectedIndex = 4;
+        temploginEvent = TK_Default;
+    }
+    else if(temploginEvent == TK_GoToPublishReward)
+    {
+        [self showPublishRewardView];
         temploginEvent = TK_Default;
     }
     
@@ -362,6 +224,190 @@
 
 
 
+
+
+
+#pragma mark   BClient
+-(void)initBClientView
+{
+    
+    
+    BHomePageViewController * subTabVC1  = [[BHomePageViewController alloc] init];
+    subTabVC1.tabBarItem.image=IMG(@"new_mainPageUnselected");
+    subTabVC1.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
+    subTabVC1.tabBarItem.title=@"悬赏池";
+    //    subTabVC1.eventDelegate = self;
+    
+    //    HFNewMainViewController * newMain = [[HFNewMainViewController alloc] init];
+    //    newMain.tabBarItem.title=@"搜索";
+    //    newMain.tabBarItem.image=IMG(@"My_foodSearch");
+    //    newMain.tabBarItem.selectedImage = IMG(@"My_foodSearch");
+    
+    
+    
+    
+    TKIMessageCenterViewController * messages = [[TKIMessageCenterViewController alloc]init];
+    messages.navTitle = @"消息中心";
+    messages.hidDefaultBackBtn = YES;
+    messages.tabBarItem.title = @"消息";
+    messages.tabBarItem.image = IMG(@"new_myUnselected");
+    messages.tabBarItem.selectedImage = IMG(@"new_mySelected");
+    
+    
+    BMyShowGoodsViewController * newChat = [[BMyShowGoodsViewController alloc] init];
+    newChat.tabBarItem.title = @"晒单";
+    newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
+    newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
+    
+    //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
+    
+    
+    TKUserCenterViewController * navc4 = [[TKUserCenterViewController alloc] init];
+    navc4.title = @"我的订单";
+    navc4.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
+    
+    
+    TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
+    navc5.title = @"我";
+    navc5.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
+    
+    self.selectedIndex =0;
+    self.viewControllers = @[subTabVC1,/*newMain,*/messages,newChat,navc4,navc5];
+    
+    [self addChildViewController:navc5];
+    self.delegate = self;
+    
+    [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
+    
+    [self.tabBar setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
+    
+    [self loadEmojIcon];
+    [self registerNotification];
+    
+    
+}
+
+
+
+#pragma mark   CClient
+
+
+-(void)initCClientView
+{
+    
+    CHomePageViewController * subTabVC1  = [[CHomePageViewController alloc] init];
+    subTabVC1.tabBarItem.image=IMG(@"new_mainPageUnselected");
+    subTabVC1.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
+    subTabVC1.tabBarItem.title=@"首页";
+    //    subTabVC1.eventDelegate = self;
+    
+    //    HFNewMainViewController * newMain = [[HFNewMainViewController alloc] init];
+    //    newMain.tabBarItem.title=@"搜索";
+    //    newMain.tabBarItem.image=IMG(@"My_foodSearch");
+    //    newMain.tabBarItem.selectedImage = IMG(@"My_foodSearch");
+    
+    
+    
+    
+    TKIMessageCenterViewController * messages = [[TKIMessageCenterViewController alloc]init];
+    messages.navTitle = @"消息";
+    messages.hidDefaultBackBtn = YES;
+    messages.tabBarItem.title = @"消息";
+    messages.tabBarItem.image = IMG(@"new_myUnselected");
+    messages.tabBarItem.selectedImage = IMG(@"new_mySelected");
+    
+    
+    CPublishRewardViewController * newChat = [[CPublishRewardViewController alloc] init];
+    newChat.tabBarItem.title = @"发悬赏";
+    newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
+    newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
+    
+    //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
+    
+    
+    HiiBeanWebViewController * navc4 = [[HiiBeanWebViewController alloc] init];
+    navc4.title = @"我的购买";
+    navc4.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
+    
+    
+    TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
+    navc5.title = @"我的";
+    navc5.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
+    
+    self.selectedIndex =0;
+    self.viewControllers = @[subTabVC1,/*newMain,*/messages,newChat,navc4,navc5];
+    
+    [self addChildViewController:navc5];
+    self.delegate = self;
+    
+    [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
+    
+    [self.tabBar setTintColor:[UIColor tkThemeColor1]];
+    
+    [self loadEmojIcon];
+    [self registerNotification];
+    
+    
+}
+
+-(void)showPublishRewardView
+{
+    CPublishRewardViewController * vc = [[CPublishRewardViewController alloc] init];
+    
+    UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    
+    [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:^{
+        
+    }];
+}
+
+
+
+
+#pragma mark  B&C
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController NS_AVAILABLE_IOS(3_0)
+{
+    if([viewController isKindOfClass:[TKUserCenterViewController class]] && ![[TKUserCenter instance] isLogin])
+    {
+        [self showLoginView];
+        temploginEvent = TK_GoToUserCenter;
+        return NO;
+    }
+    else if([viewController isKindOfClass:[TKPublishShowGoodsVC class]])
+    {
+        
+        [self showGoodsPage];
+        return NO;
+    }
+    else if([viewController isKindOfClass:[HFNewMainViewController class]])
+    {
+        
+        [self showSearchVC];
+        return NO;
+    }
+    else if([viewController isKindOfClass:[CPublishRewardViewController class]])
+    {
+        if(![[TKUserCenter instance] isLogin])
+        {
+            temploginEvent = TK_GoToPublishReward;
+            [self showLoginView];
+            return NO;
+        }
+        [self showPublishRewardView];
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+    
+}
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    
+    //    DDLogInfo(@" shouldSelectViewController %@ ",viewController);
+}
 
 
 @end

@@ -19,6 +19,9 @@
 #import "TK_AppraiseBuyerArg.h"
 #import "TK_UploadImageArg.h"
 #import "TKPublishShowGoodsArg.h"
+#import "TK_BrandListArg.h"
+#import "TK_CategoryListArg.h"
+
 
 
 @implementation TKMainProxy
@@ -32,7 +35,7 @@
 -(void)publishShowGoods:(TKPublishShowGoodsArg *)arg withBlock:(hfAckBlock)block
 {
 #if B_Client == 0
-    arg.role = 1
+    arg.role = 1;
 #endif
     
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
@@ -46,10 +49,14 @@
  *  @param type  晒单类型
  *  @param block 回调block
  */
--(void)getShowOrders:(NSInteger) type withBlock:(hfAckBlock)block{
+-(void)getShowOrders:(NSInteger) type
+                page:(NSInteger)page
+           withBlock:(hfAckBlock)block{
     
     TK_GetOrdersArg * arg = [[TK_GetOrdersArg alloc] init];
-    arg.type = type;
+    arg.categoryId = type;
+    arg.pageSize = 20;
+    arg.pageOffset = page;
     arg.ackClassName = NSStringFromClass([TK_GetOrdersAck class]);
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
 
@@ -196,6 +203,27 @@
 //        DDLogInfo(@"ack back %@",acks);
         block(acks);
     }];
+}
+
+
+
+/**
+ 获取分类列表
+ **/
+-(void)getCategoryListWithBolck:(hfAckBlock)block
+{
+    TK_CategoryListArg * arg = [[TK_CategoryListArg alloc] init];
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
+
+
+/**
+ 获取品牌列表
+ **/
+-(void)getBrandListWithBlock:(hfAckBlock)block
+{
+    TK_BrandListArg * arg = [[TK_BrandListArg alloc] init];
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 
 

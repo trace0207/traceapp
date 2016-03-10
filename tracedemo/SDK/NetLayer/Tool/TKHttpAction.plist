@@ -2,8 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>TKUploadImageArg</key>
-	<string></string>
+	<key>TK_ModifyUserInfoArg</key>
+	<string>/apollo/login/user!modify.action</string>
+	<key>TK_ModifyPasswordArg</key>
+	<string>/apollo/nologin/register!find.action</string>
+	<key>TK_RegisterNewUserArg</key>
+	<string>/apollo/nologin/register!register.action</string>
+	<key>TK_BrandListArg</key>
+	<string>/apollo/nologin/product/category!brandList.action</string>
+	<key>TK_CategoryListArg</key>
+	<string>/apollo/nologin/product/category!categoryList.action</string>
 	<key>TK_LoginArg</key>
 	<string>/apollo/nologin/login!login.action</string>
 	<key>TK_VerifySMSArg</key>

@@ -38,7 +38,6 @@ const NSInteger boxWidth  = 84;
 }
 
 
-
 -(void)initHeadScrollView
 {
     

@@ -58,7 +58,21 @@
             if(i != array.count -1){
                 [str appendString:(NSString *)separtor];
             }
-        }else{
+        }else if([obj isKindOfClass:[JSONModel class]])
+        {
+            [str appendString:@"\n"];
+            NSString * classStr = NSStringFromClass([obj class]);
+            [str appendString:classStr];
+            [str appendString:@":"];
+            [str appendString:[(JSONModel*)obj toJSONString]];
+            
+            if(i != array.count -1){
+                [str appendString:(NSString *)separtor];
+            }
+            
+        }
+        else
+        {
             NSString * classStr = NSStringFromClass([obj class]);
             [str appendString:classStr];
             if(i != array.count -1){

@@ -1,24 +1,19 @@
 //
-//  TK_ModifyUserInfo.h
+//  TK_ModifyUserInfoArg.h
 //  tracedemo
 //
-//  Created by 罗田佳 on 15/12/2.
-//  Copyright © 2015年 trace. All rights reserved.
+//  Created by cmcc on 16/3/6.
+//  Copyright © 2016年 trace. All rights reserved.
 //
 
 #import "HF_BaseArg.h"
 
-@interface TK_ModifyUserInfo : HF_BaseArg
-
-
+@interface TK_ModifyUserInfoArg : HF_BaseArg
 @property (nonatomic,strong)NSString * userId;
-
 @property (nonatomic,strong)NSString * nickName;
-
 @property (nonatomic,strong)NSString * headerUrl;
-
 @property (nonatomic,strong)NSString * address;
-
 @property (nonatomic,strong)NSString * signature;
+@property (nonatomic,assign)NSInteger role;
 
 @end

@@ -31,6 +31,9 @@
     // Do any additional setup after loading the view.
     self.navTitle = @"登录";
     _clearInputView.clearDelegate = self;
+    
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onLoginSuccess) name:TKUserLoginSuccess object:nil];
     
     _userNameText.text = @"18867101952";

@@ -10,12 +10,11 @@
 
 @interface TK_RegisterNewUserArg : HF_BaseArg
 
+@property (nonatomic,assign)NSInteger role;
 @property (nonatomic,strong)NSString * mobile;
-
 @property (nonatomic,strong)NSString * password;
-
 @property (nonatomic,strong)NSString * inviteCode;
-
-@property (nonatomic,strong)NSString * sms;
+@property (nonatomic,strong)NSString * token;
+@property (nonatomic,strong)NSString * smsCode;
 
 @end

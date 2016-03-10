@@ -21,6 +21,7 @@
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okV-7W-9n7">
                             <rect key="frame" x="0.0" y="0.0" width="248" height="40"/>
+                            <color key="backgroundColor" red="0.96470588235294119" green="0.93333333333333335" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                         </scrollView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zp0-zC-hUo">
                             <rect key="frame" x="251" y="11" width="1" height="18"/>
@@ -40,7 +41,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.96470588235294119" green="0.93333333333333335" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="okV-7W-9n7" firstAttribute="leading" secondItem="hGb-gI-YYI" secondAttribute="leading" id="DLI-hu-m0F"/>
                         <constraint firstItem="Zp0-zC-hUo" firstAttribute="leading" secondItem="okV-7W-9n7" secondAttribute="trailing" constant="3" id="EnB-mW-Lpt"/>
