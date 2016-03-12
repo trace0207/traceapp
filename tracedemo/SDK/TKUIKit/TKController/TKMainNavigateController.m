@@ -389,12 +389,12 @@
     }
     else if([viewController isKindOfClass:[CPublishRewardViewController class]])
     {
-        if(![[TKUserCenter instance] isLogin])
-        {
-            temploginEvent = TK_GoToPublishReward;
-            [self showLoginView];
-            return NO;
-        }
+//        if(![[TKUserCenter instance] isLogin])
+//        {
+//            temploginEvent = TK_GoToPublishReward;
+//            [self showLoginView];
+//            return NO;
+//        }
         [self showPublishRewardView];
         return NO;
     }

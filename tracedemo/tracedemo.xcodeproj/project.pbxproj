@@ -31,6 +31,14 @@
 		8A37498C1C911937003DE59E /* HiiBeanWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3749891C911937003DE59E /* HiiBeanWebViewController.m */; };
 		8A37498D1C911937003DE59E /* HiiBeanWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A37498A1C911937003DE59E /* HiiBeanWebViewController.xib */; };
 		8A37498E1C911937003DE59E /* HiiBeanWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A37498A1C911937003DE59E /* HiiBeanWebViewController.xib */; };
+		8A3749911C919F21003DE59E /* TK_ImageSelectBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3749901C919F21003DE59E /* TK_ImageSelectBoxView.m */; };
+		8A3749921C919F21003DE59E /* TK_ImageSelectBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3749901C919F21003DE59E /* TK_ImageSelectBoxView.m */; };
+		8A3749941C919F37003DE59E /* TK_ImageSelectBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749931C919F37003DE59E /* TK_ImageSelectBoxView.xib */; };
+		8A3749951C919F37003DE59E /* TK_ImageSelectBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749931C919F37003DE59E /* TK_ImageSelectBoxView.xib */; };
+		8A37499A1C924D23003DE59E /* TKNotifycationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3749981C924D23003DE59E /* TKNotifycationViewController.m */; };
+		8A37499B1C924D23003DE59E /* TKNotifycationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3749981C924D23003DE59E /* TKNotifycationViewController.m */; };
+		8A37499C1C924D23003DE59E /* TKNotifycationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749991C924D23003DE59E /* TKNotifycationViewController.xib */; };
+		8A37499D1C924D23003DE59E /* TKNotifycationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749991C924D23003DE59E /* TKNotifycationViewController.xib */; };
 		8A5B60E71C85C4EB00BF8E19 /* BUserCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5B60E61C85C4EB00BF8E19 /* BUserCenterVM.m */; };
 		8A9985921C86C3A6000F9CBC /* BHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA3723F1C755EB50075333E /* BHomePageViewController.m */; };
 		8A9985931C86C514000F9CBC /* BHomeChildAVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA372441C75B9550075333E /* BHomeChildAVC.m */; };
@@ -1520,6 +1528,12 @@
 		8A3749881C911937003DE59E /* HiiBeanWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiiBeanWebViewController.h; sourceTree = "<group>"; };
 		8A3749891C911937003DE59E /* HiiBeanWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiiBeanWebViewController.m; sourceTree = "<group>"; };
 		8A37498A1C911937003DE59E /* HiiBeanWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HiiBeanWebViewController.xib; sourceTree = "<group>"; };
+		8A37498F1C919F21003DE59E /* TK_ImageSelectBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_ImageSelectBoxView.h; sourceTree = "<group>"; };
+		8A3749901C919F21003DE59E /* TK_ImageSelectBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_ImageSelectBoxView.m; sourceTree = "<group>"; };
+		8A3749931C919F37003DE59E /* TK_ImageSelectBoxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_ImageSelectBoxView.xib; sourceTree = "<group>"; };
+		8A3749971C924D23003DE59E /* TKNotifycationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNotifycationViewController.h; sourceTree = "<group>"; };
+		8A3749981C924D23003DE59E /* TKNotifycationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNotifycationViewController.m; sourceTree = "<group>"; };
+		8A3749991C924D23003DE59E /* TKNotifycationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKNotifycationViewController.xib; sourceTree = "<group>"; };
 		8A508FF21B9D5D700067B9E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8A508FF41B9D5D700067B9E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8A508FF51B9D5D700067B9E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2899,6 +2913,9 @@
 				8A0464FF1C88113300E6B1E0 /* TKISHowGoodsCell.h */,
 				8A0465001C88113300E6B1E0 /* TKISHowGoodsCell.m */,
 				8A0465011C88113300E6B1E0 /* TKISHowGoodsCell.xib */,
+				8A37498F1C919F21003DE59E /* TK_ImageSelectBoxView.h */,
+				8A3749901C919F21003DE59E /* TK_ImageSelectBoxView.m */,
+				8A3749931C919F37003DE59E /* TK_ImageSelectBoxView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3009,6 +3026,16 @@
 				8A2E621E1BEC804D00FBDB86 /* MWLogFormatter.m */,
 			);
 			path = Log;
+			sourceTree = "<group>";
+		};
+		8A3749961C924D03003DE59E /* Notifycation */ = {
+			isa = PBXGroup;
+			children = (
+				8A3749971C924D23003DE59E /* TKNotifycationViewController.h */,
+				8A3749981C924D23003DE59E /* TKNotifycationViewController.m */,
+				8A3749991C924D23003DE59E /* TKNotifycationViewController.xib */,
+			);
+			path = Notifycation;
 			sourceTree = "<group>";
 		};
 		8A508FE41B9D5D700067B9E9 = {
@@ -5149,6 +5176,7 @@
 		8A9E8B4B1C86DD1300F84BB7 /* CommonClient */ = {
 			isa = PBXGroup;
 			children = (
+				8A3749961C924D03003DE59E /* Notifycation */,
 				8AA7F70B1C8880AE00CE0F17 /* TKPublishShowGoodsVC.h */,
 				8AA7F70C1C8880AE00CE0F17 /* TKPublishShowGoodsVC.m */,
 				8AA7F70D1C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib */,
@@ -5629,6 +5657,14 @@
 			attributes = {
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = trace;
+				TargetAttributes = {
+					BB83F8A31C72C01C0013A6A0 = {
+						DevelopmentTeam = ADEGDGVE3P;
+					};
+					BB83FB601C72C16B0013A6A0 = {
+						DevelopmentTeam = PS3T6HBA6H;
+					};
+				};
 			};
 			buildConfigurationList = 8A508FE81B9D5D700067B9E9 /* Build configuration list for PBXProject "tracedemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -5751,10 +5787,12 @@
 				BB83FB441C72C01C0013A6A0 /* HFConclusionView.xib in Resources */,
 				BB83FB451C72C01C0013A6A0 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				BBA372511C75B9B30075333E /* BHomeChildBVC.xib in Resources */,
+				8A37499C1C924D23003DE59E /* TKNotifycationViewController.xib in Resources */,
 				BB83FB461C72C01C0013A6A0 /* ChildSchemeCell.xib in Resources */,
 				BB83FB471C72C01C0013A6A0 /* TKHomePageViewController.xib in Resources */,
 				BB83FB481C72C01C0013A6A0 /* Images.xcassets in Resources */,
 				BB83FB491C72C01C0013A6A0 /* HFMessageCell.xib in Resources */,
+				8A3749941C919F37003DE59E /* TK_ImageSelectBoxView.xib in Resources */,
 				BB83FB4A1C72C01C0013A6A0 /* UserCenterViewController.xib in Resources */,
 				BB83FB4B1C72C01C0013A6A0 /* HFHabitViewCell.xib in Resources */,
 				BB83FB4C1C72C01C0013A6A0 /* RankViewCell.xib in Resources */,
@@ -5805,6 +5843,7 @@
 				BB83FDC71C72C16B0013A6A0 /* HFHistoryCell.xib in Resources */,
 				BB83FDC81C72C16B0013A6A0 /* MyBandViewController.xib in Resources */,
 				BB83FDC91C72C16B0013A6A0 /* WebViewJavascriptBridge.js.txt in Resources */,
+				8A3749951C919F37003DE59E /* TK_ImageSelectBoxView.xib in Resources */,
 				BB83FDCA1C72C16B0013A6A0 /* HFUnlockCell.xib in Resources */,
 				BB83FDCB1C72C16B0013A6A0 /* HFMyDeviceCell.xib in Resources */,
 				BB83FDCC1C72C16B0013A6A0 /* SudoViewController.xib in Resources */,
@@ -5862,6 +5901,7 @@
 				BB83FDFD1C72C16B0013A6A0 /* HFCollectionCell.xib in Resources */,
 				8A0464F81C880FF200E6B1E0 /* BMyShowGoodsViewController.xib in Resources */,
 				BB83FDFE1C72C16B0013A6A0 /* Resource.bundle in Resources */,
+				8A37499D1C924D23003DE59E /* TKNotifycationViewController.xib in Resources */,
 				8A99859C1C86C6AC000F9CBC /* TKRewardCell.xib in Resources */,
 				BB83FDFF1C72C16B0013A6A0 /* HFHabitTimeCell.xib in Resources */,
 				8A9E8B521C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */,
@@ -6202,6 +6242,7 @@
 				BB83F96C1C72C01C0013A6A0 /* PostDetailData.m in Sources */,
 				BB83F96D1C72C01C0013A6A0 /* HFHabitAlarmClockRes.m in Sources */,
 				BB83F96E1C72C01C0013A6A0 /* HFCoopViewController.m in Sources */,
+				8A37499A1C924D23003DE59E /* TKNotifycationViewController.m in Sources */,
 				BB83F96F1C72C01C0013A6A0 /* VercodeRes.m in Sources */,
 				BB83F9701C72C01C0013A6A0 /* HFModifySignatureReq.m in Sources */,
 				BB83F9711C72C01C0013A6A0 /* HFFriendsRankReq.m in Sources */,
@@ -6334,6 +6375,7 @@
 				BB83F9E91C72C01C0013A6A0 /* HFHabitTimesListViewController.m in Sources */,
 				BB83F9EA1C72C01C0013A6A0 /* MMExampleSideDrawerViewController.m in Sources */,
 				BB83F9EB1C72C01C0013A6A0 /* UIButton+MixButton.m in Sources */,
+				8A3749911C919F21003DE59E /* TK_ImageSelectBoxView.m in Sources */,
 				8A9985A01C86CDF5000F9CBC /* CHomePageViewController.m in Sources */,
 				BB83F9EC1C72C01C0013A6A0 /* HFActivityDetailRes.m in Sources */,
 				BB83F9ED1C72C01C0013A6A0 /* FMDatabaseAdditions.m in Sources */,
@@ -6795,6 +6837,7 @@
 				BB83FC2A1C72C16B0013A6A0 /* HFHabitAlarmClockRes.m in Sources */,
 				BB83FC2B1C72C16B0013A6A0 /* HFCoopViewController.m in Sources */,
 				BB83FC2C1C72C16B0013A6A0 /* VercodeRes.m in Sources */,
+				8A37499B1C924D23003DE59E /* TKNotifycationViewController.m in Sources */,
 				BB83FC2D1C72C16B0013A6A0 /* HFModifySignatureReq.m in Sources */,
 				BB83FC2E1C72C16B0013A6A0 /* HFFriendsRankReq.m in Sources */,
 				BB83FC2F1C72C16B0013A6A0 /* NSString+Message.m in Sources */,
@@ -6927,6 +6970,7 @@
 				BB83FCA91C72C16B0013A6A0 /* HFActivityDetailRes.m in Sources */,
 				BB83FCAA1C72C16B0013A6A0 /* FMDatabaseAdditions.m in Sources */,
 				8A9985A11C86CDF5000F9CBC /* CHomePageViewController.m in Sources */,
+				8A3749921C919F21003DE59E /* TK_ImageSelectBoxView.m in Sources */,
 				BB83FCAB1C72C16B0013A6A0 /* HFCollectionCell.m in Sources */,
 				BB83FCAC1C72C16B0013A6A0 /* HFAdvanceSchemeContainerViewController.m in Sources */,
 				BB83FCAD1C72C16B0013A6A0 /* TK_PraiseRewardArg.m in Sources */,
@@ -7298,7 +7342,7 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -7335,7 +7379,7 @@
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -7367,8 +7411,8 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xue bai (3M4NG9S2UD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7395,7 +7439,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemoC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -7404,8 +7448,8 @@
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xue bai (3M4NG9S2UD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7427,7 +7471,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemoC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

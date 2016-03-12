@@ -7,6 +7,7 @@
 //
 
 #import "TKIBaseNavWithDefaultBackVC.h"
+#import "TK_ImageSelectBoxView.h"
 
 @interface CPublishRewardViewController : TKIBaseNavWithDefaultBackVC
 
@@ -17,6 +18,10 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
+
+@property (strong, nonatomic)  TK_ImageSelectBoxView *firstPic;
+
+@property (strong, nonatomic)  TK_ImageSelectBoxView *secondPic;
 
 
 @end

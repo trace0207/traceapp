@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TKNotifycationViewController">
+            <connections>
+                <outlet property="cancelBtn" destination="Fo8-S7-j7j" id="2Cy-dL-J52"/>
+                <outlet property="holeView" destination="bgF-CG-J2V" id="vSU-e0-e21"/>
+                <outlet property="textView" destination="crq-7Q-hIn" id="qPG-0g-jib"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="189"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBw-4f-X5h">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="189"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgF-CG-J2V">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="你有一条新的消息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crq-7Q-hIn">
+                                    <rect key="frame" x="8" y="11" width="312" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fo8-S7-j7j">
+                                    <rect key="frame" x="320" y="6" width="46" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="bYL-Q4-2Hk"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.69438663300000003" blue="0.54043050339999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="OBw-4f-X5h" secondAttribute="trailing" id="1de-vM-Thd"/>
+                <constraint firstAttribute="bottom" secondItem="OBw-4f-X5h" secondAttribute="bottom" id="3mh-tJ-4Y4"/>
+                <constraint firstItem="OBw-4f-X5h" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YcV-bE-Tnh"/>
+                <constraint firstItem="OBw-4f-X5h" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="p9c-gu-kGd"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="347.5" y="223.5"/>
+        </view>
+    </objects>
+</document>

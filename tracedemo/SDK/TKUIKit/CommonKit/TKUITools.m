@@ -70,5 +70,16 @@
     return rect.size.height;
 }
 
++(void)removeAllChildViews:(UIView *)view
+{
+
+    NSArray  * array =   [view subviews];
+    for(UIView *v in array)
+    {
+        [v removeFromSuperview];
+    }
+
+}
+
 
 @end
