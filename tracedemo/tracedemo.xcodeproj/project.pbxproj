@@ -5659,10 +5659,10 @@
 				ORGANIZATIONNAME = trace;
 				TargetAttributes = {
 					BB83F8A31C72C01C0013A6A0 = {
-						DevelopmentTeam = ADEGDGVE3P;
+						DevelopmentTeam = Q4J2EKN3EJ;
 					};
 					BB83FB601C72C16B0013A6A0 = {
-						DevelopmentTeam = PS3T6HBA6H;
+						DevelopmentTeam = D7N6ACN9TP;
 					};
 				};
 			};
@@ -7342,8 +7342,8 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7368,9 +7368,9 @@
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemoB;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.buyer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
+				PROVISIONING_PROFILE = "823954cd-bca1-4a91-ba0c-5e0db41db71c";
 			};
 			name = Debug;
 		};
@@ -7379,8 +7379,8 @@
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xue bai (3M4NG9S2UD)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7400,9 +7400,9 @@
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemoB;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.buyer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f7d2cb71-80e1-4f36-b067-484c8c6ca974";
+				PROVISIONING_PROFILE = "823954cd-bca1-4a91-ba0c-5e0db41db71c";
 			};
 			name = Release;
 		};
@@ -7411,8 +7411,8 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7437,9 +7437,9 @@
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemoC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.consumer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "9bf5eea5-bb5d-4a73-bab5-dd41b502d97f";
 			};
 			name = Debug;
 		};
@@ -7448,8 +7448,8 @@
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7469,9 +7469,9 @@
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiifit.traceDemoC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.consumer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "9bf5eea5-bb5d-4a73-bab5-dd41b502d97f";
 			};
 			name = Release;
 		};
