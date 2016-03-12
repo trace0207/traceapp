@@ -8,10 +8,10 @@
 
 #import "BHomePageViewController.h"
 #import "BHomeChildAVC.h"
-
+#import "BPageViewController.h"
 @interface BHomePageViewController ()<HFSegmentViewDelegate>
 
-@property (nonatomic,strong)BHomeChildAVC * vc1;
+@property (nonatomic,strong)BPageViewController * vc1;
 @property (nonatomic,strong)BHomeChildAVC * vc2;
 @property (nonatomic,strong)UIViewController * currentVC;
 
@@ -95,11 +95,11 @@
     return _vc2;
 }
 
--(BHomeChildAVC *)vc1
+-(BPageViewController *)vc1
 {
     if(!_vc1)
     {
-        _vc1 = [[BHomeChildAVC alloc] initWithNibName:@"BHomeChildAVC" bundle:nil];
+        _vc1 = [[BPageViewController alloc] init];
     }
     return _vc1;
 }

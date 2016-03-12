@@ -10,7 +10,5 @@
 #import "HFSegmentView.h"
 
 @interface BHomePageViewController : TKIBaseNavWithDefaultBackVC
-@property (strong, nonatomic) IBOutlet UIView *headView;
-@property (strong, nonatomic) IBOutlet UIView *contentView;
 @property(nonatomic,strong)HFSegmentView * mSegView;
 @end

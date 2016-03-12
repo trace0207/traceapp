@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BHomeChildAVC : UIViewController
-@property (strong, nonatomic) IBOutlet UIScrollView *headScrollView;
-@property (strong, nonatomic) IBOutlet UIView *contentView;
 
 @end
