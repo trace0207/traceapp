@@ -12,8 +12,8 @@
 @interface BHomePageViewController ()<HFSegmentViewDelegate>
 
 @property (nonatomic,strong)BPageViewController * vc1;
-@property (nonatomic,strong)BHomeChildAVC * vc2;
-@property (nonatomic,strong)UIViewController * currentVC;
+@property (nonatomic,strong)BPageViewController * vc2;
+//@property (nonatomic,strong)UIViewController * currentVC;
 
 @end
 
@@ -21,9 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.hidDefaultBackBtn = YES;
-    //SDFDSFDSFDS
-    // Do any additional setup after loading the view from its nib.
     [self initView];
 }
 
@@ -31,6 +30,7 @@
 -(void)initView
 {
     [self addChildViewController:self.vc1];
+    [self addChildViewController:self.vc2];
     [self.view addSubview:self.vc1.view];
 }
 
@@ -54,21 +54,13 @@
 {
     if (index == 0)
     {
-        [self addChildViewController:self.vc1];
         [self transitionFromViewController:self.vc2 toViewController:self.vc1 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
-            [self.vc1 didMoveToParentViewController:self];
-            [self.vc2 willMoveToParentViewController:nil];
-            [self.vc2 removeFromParentViewController];
         }];
     }
     else
     {
-        [self addChildViewController:self.vc2];
-        self.vc2.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64);
         [self transitionFromViewController:self.vc1 toViewController:self.vc2 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
-            [self.vc2 didMoveToParentViewController:self];
-            [self.vc1 willMoveToParentViewController:nil];
-            [self.vc1 removeFromParentViewController];
+
             
         }];
     }
@@ -86,11 +78,11 @@
 }
 
 
--(BHomeChildAVC *)vc2
+-(BPageViewController *)vc2
 {
     if(!_vc2)
     {
-        _vc2 = [[BHomeChildAVC alloc] initWithNibName:@"BHomeChildAVC" bundle:nil];
+        _vc2 = [[BPageViewController alloc] init];
     }
     return _vc2;
 }
