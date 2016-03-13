@@ -9,11 +9,13 @@
 #import "BHomePageViewController.h"
 #import "BHomeChildAVC.h"
 #import "BPageViewController.h"
+#import "KTDropdownMenuView.h"
+#import "UIColor+TK_Color.h"
 @interface BHomePageViewController ()<HFSegmentViewDelegate>
 
 @property (nonatomic,strong)BPageViewController * vc1;
 @property (nonatomic,strong)BPageViewController * vc2;
-//@property (nonatomic,strong)UIViewController * currentVC;
+@property (nonatomic,strong)KTDropdownMenuView *menuView;
 
 @end
 
@@ -26,12 +28,31 @@
     [self initView];
 }
 
-
+- (KTDropdownMenuView *)menuView
+{
+    if (_menuView == nil) {
+         NSArray *titles = @[@"悬赏中", @"已释放悬赏"];
+        _menuView = [[KTDropdownMenuView alloc] initWithFrame:CGRectMake(0, 0,100, 44) titles:titles];
+        _menuView.cellColor = [UIColor clearColor];
+        _menuView.cellSeparatorColor = [UIColor lightGrayColor];
+        _menuView.selectedAtIndex = ^(int index)
+        {
+            NSLog(@"selected title:%@", titles[index]);
+        };
+        _menuView.textFont = [UIFont systemFontOfSize:15];
+        _menuView.backgroundAlpha = 0.0f;
+        _menuView.width = 133;
+        _menuView.edgesRight = -10;
+        _menuView.textColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
+        _menuView.cellAccessoryCheckmarkColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
+    }
+    return _menuView;
+}
 -(void)initView
 {
     [self addChildViewController:self.vc1];
     [self addChildViewController:self.vc2];
-    [self.view addSubview:self.vc1.view];
+    [self.view addSubview:self.vc2.view];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +63,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self TKaddNavigationTitleView:self.mSegView];
+    [self addRightBarItemWithCustomView:nil];
+    [self addRightBarItemWithCustomView:self.menuView];
 }
 
 
@@ -71,6 +94,7 @@
     if (!_mSegView)
     {
         _mSegView = [[HFSegmentView alloc] initWithFrame:CGRectMake((kScreenWidth - 185) / 2, 28, 185, 28)];
+        _mSegView.currentIndex = 1;
         _mSegView.delegate = self;
         [_mSegView setSegmentTitles:@[@"悬赏广场",@"我的客户"]];
     }
@@ -83,6 +107,8 @@
     if(!_vc2)
     {
         _vc2 = [[BPageViewController alloc] init];
+        _vc2.indicatorColor = [UIColor tkThemeColor1];
+        _vc2.tabsViewBackgroundColor = [UIColor tkThemeColor2];
     }
     return _vc2;
 }
@@ -92,6 +118,8 @@
     if(!_vc1)
     {
         _vc1 = [[BPageViewController alloc] init];
+        _vc1.indicatorColor = [UIColor tkThemeColor1];
+        _vc1.tabsViewBackgroundColor = [UIColor tkThemeColor2];
     }
     return _vc1;
 }

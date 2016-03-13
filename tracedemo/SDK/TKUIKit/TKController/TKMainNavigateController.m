@@ -279,7 +279,7 @@
     
     [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
     
-    [self.tabBar setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textActive]];
+    [self.tabBar setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textDefault]];
     
     [self loadEmojIcon];
     [self registerNotification];

@@ -8,6 +8,7 @@
 
 #import "BPageViewController.h"
 #import "BHomeChildAVC.h"
+#import "UIColor+TK_Color.h"
 @interface BPageViewController ()<ViewPagerDataSource,ViewPagerDelegate>
 @property (nonatomic, strong) NSMutableArray *weekArray;
 @end
@@ -43,10 +44,10 @@
     
     UILabel *label = [UILabel new];
     label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont systemFontOfSize:13.0];
+    label.font = [UIFont systemFontOfSize:14.0];
     label.text = [self.weekArray objectAtIndex:index];
     label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor blackColor];
+    label.textColor = [UIColor tkThemeColor1];
     [label sizeToFit];
     return label;
 }
@@ -59,35 +60,36 @@
 }
 
 #pragma mark - ViewPagerDelegate
-- (CGFloat)viewPager:(ViewPagerController *)viewPager valueForOption:(ViewPagerOption)option withDefault:(CGFloat)value {
-    
-    switch (option) {
-        case ViewPagerOptionStartFromSecondTab:
-            return 0;
-            break;
-        case ViewPagerOptionCenterCurrentTab:
-            return 1.0;
-            break;
-        case ViewPagerOptionTabLocation:
-            return 1.0;
-            break;
-        default:
-            break;
-    }
-    
-    return value;
-}
-- (UIColor *)viewPager:(ViewPagerController *)viewPager colorForComponent:(ViewPagerComponent)component withDefault:(UIColor *)color {
-    
-    switch (component) {
-        case ViewPagerIndicator:
-            return [[UIColor redColor] colorWithAlphaComponent:0.64];
-            break;
-        default:
-            break;
-    }
-    
-    return color;
-}
+//- (CGFloat)viewPager:(ViewPagerController *)viewPager valueForOption:(ViewPagerOption)option withDefault:(CGFloat)value {
+//    
+//    switch (option) {
+//        case ViewPagerOptionStartFromSecondTab:
+//            return 0;
+//            break;
+//        case ViewPagerOptionCenterCurrentTab:
+//            return 1.0;
+//            break;
+//        case ViewPagerOptionTabLocation:
+//            return 1.0;
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//    return value;
+//}
+//- (UIColor *)viewPager:(ViewPagerController *)viewPager colorForComponent:(ViewPagerComponent)component withDefault:(UIColor *)color {
+//    
+//    switch (component) {
+//        case ViewPagerIndicator:
+//            return [[UIColor redColor] colorWithAlphaComponent:0.64];
+//            break;
+//        default:
+//            return [[UIColor grayColor] colorWithAlphaComponent:0.64];
+//            break;
+//    }
+//    
+//    return color;
+//}
 
 @end

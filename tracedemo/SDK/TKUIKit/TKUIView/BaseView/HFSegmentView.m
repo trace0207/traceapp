@@ -8,7 +8,7 @@
 
 #import "HFSegmentView.h"
 #import "UIColor+TK_Color.h"
-
+#import "UIImage+Scale.h"
 #define kSegmentBaseTag  1000
 
 @interface HFSegmentView()
@@ -59,13 +59,15 @@
 - (void)setSegmentTitles:(NSArray *)titles
 {
     //默认选中第一个
-    UIImage * image = IMG(@"scheme_selected");
-    CGSize rect = image.size;
     
-    self.selectImageView.frame = CGRectMake(0, 0, rect.width, rect.height);
-    self.selectImageView.image = image;
     
-    mLastTag = kSegmentBaseTag;
+    CGFloat higlitImageWidth = self.frame.size.width/titles.count;
+    
+    
+    self.selectImageView.frame = CGRectMake(self.currentIndex*higlitImageWidth, 0, higlitImageWidth, self.frame.size.height);
+    
+    
+    mLastTag = kSegmentBaseTag+self.currentIndex;
     
     CGFloat width = self.frame.size.width / 2;
     
@@ -75,7 +77,7 @@
         btn.frame = CGRectMake(i * width, 0, width, self.frame.size.height);
         btn.tag = kSegmentBaseTag + i;
         
-        if (i == 0)
+        if (i == self.currentIndex)
         {
             [btn setTitleColor:[UIColor tkActiveTextColorForNav] forState:UIControlStateNormal];
         }
@@ -131,7 +133,7 @@
 
 - (void)loadUI
 {
-    self.bgImageView.image = IMG(@"scheme_bg");
+    self.bgImageView.image = [UIImage scaleWithImage:@"scheme_bg"];
 }
 
 
@@ -154,6 +156,8 @@
     if (!_selectImageView)
     {
         _selectImageView = [[UIImageView alloc] init];
+        UIImage * image = [UIImage scaleWithImage:@"scheme_selected"];
+        self.selectImageView.image = image;
         [self addSubview:_selectImageView];
     }
     

@@ -195,7 +195,7 @@ static AppDelegate * appDelegate;
 {
     UIColor * navColor = [UIColor TKcolorWithHexString:TK_Color_nav_background];
     [[UINavigationBar appearance] setBackgroundImage:[UIColor TKcreateImageWithColor:navColor] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setBarTintColor:navColor];
+    //[[UINavigationBar appearance] setBarTintColor:navColor];
    
     [[UINavigationBar appearance] setTintColor:[UIColor tkThemeColor1]];
     [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor TKcolorWithHexString:TK_Color_nav_textDefault], NSForegroundColorAttributeName, nil]];
