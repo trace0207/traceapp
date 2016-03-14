@@ -39,6 +39,9 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 // Any tab item's width, defaults to 128.0. To-do: make this dynamic
 @property CGFloat tabWidth;
 
+// 左右滑动菜单右边间隔屏幕宽度，用来放自定义右边的视图
+@property CGFloat tabViewRightSpace;
+
 // 1.0: Top, 0.0: Bottom, changes tab bar's location in the screen
 // Defaults to Top
 @property CGFloat tabLocation;

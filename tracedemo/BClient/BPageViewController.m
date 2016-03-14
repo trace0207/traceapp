@@ -9,46 +9,99 @@
 #import "BPageViewController.h"
 #import "BHomeChildAVC.h"
 #import "UIColor+TK_Color.h"
+#import "KTDropdownMenuView.h"
+#import "HFTitleLabel.h"
 @interface BPageViewController ()<ViewPagerDataSource,ViewPagerDelegate>
-@property (nonatomic, strong) NSMutableArray *weekArray;
+@property (nonatomic, strong) NSMutableArray *titleArray;
+@property (nonatomic, strong) NSMutableArray *numberArray;
+@property (nonatomic,strong)KTDropdownMenuView *menuView;
 @end
 
 @implementation BPageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.dataSource = self;
     self.delegate = self;
     [self reloadData];
-    // Do any additional setup after loading the view.
+    [self.view addSubview:self.menuView];
 }
-
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+}
+- (KTDropdownMenuView *)menuView
+{
+    if (_menuView == nil) {
+        NSArray *titles = @[@"耐克", @"阿迪达斯", @"杰克琼斯", @"安踏", @"七匹狼", @"李宁", @"乔丹"];
+        _menuView = [[KTDropdownMenuView alloc] initWithFrame:CGRectMake(kScreenWidth-90, 0,90, 44) titles:titles];
+        _menuView.showLine = YES;
+        _menuView.backgroundColor = [UIColor tkThemeColor2];
+        _menuView.cellColor = [UIColor clearColor];
+        _menuView.cellSeparatorColor = [UIColor lightGrayColor];
+        _menuView.selectedAtIndex = ^(int index)
+        {
+            NSLog(@"selected title:%@", titles[index]);
+        };
+        _menuView.textFont = [UIFont systemFontOfSize:15];
+        _menuView.backgroundAlpha = 0.0f;
+        _menuView.width = 115;
+        _menuView.edgesRight = -20;
+        _menuView.textColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
+        _menuView.cellAccessoryCheckmarkColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
+    }
+    return _menuView;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (NSMutableArray *)weekArray
+- (NSMutableArray *)titleArray
 {
-    if (_weekArray == nil) {
-        _weekArray = [[NSMutableArray alloc]initWithObjects:@"周一",@"周二",@"周三",@"周四",@"周五",@"周六",@"周日", nil];
+    if (_titleArray == nil) {
+        _titleArray = [[NSMutableArray alloc]initWithObjects:@"全部",@"包包",@"鞋子",@"裤子",@"上衣",@"毛衣",@"外套", nil];
     }
-    return _weekArray;
-    
+    return _titleArray;
+}
+
+- (NSMutableArray *)numberArray
+{
+    if (_numberArray == nil) {
+        _numberArray = [[NSMutableArray alloc]initWithObjects:@(0),@(3),@(0),@(6),@(53),@(100),@(76), nil];
+    }
+    return _numberArray;
 }
 
 #pragma mark - ViewPagerDataSource
 - (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager {
-    return self.weekArray.count;
+    return self.titleArray.count;
 }
 - (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSUInteger)index {
     
-    UILabel *label = [UILabel new];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont systemFontOfSize:14.0];
-    label.text = [self.weekArray objectAtIndex:index];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor tkThemeColor1];
-    [label sizeToFit];
+    
+    HFTitleLabel *label = [[HFTitleLabel alloc]init];
+    
+    NSString *title = [self.titleArray objectAtIndex:index];
+    CGSize size = CGSizeMake(320,2000); //设置一个行高上限
+    NSDictionary *attributes = @{NSFontAttributeName:label.textFont};
+    size = [title boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+    
+    NSInteger num = 0;
+    if (index < self.numberArray.count) {
+        NSNumber *number = [self.numberArray objectAtIndex:index];
+        NSInteger num1 = [number integerValue];
+        num = num1;
+    }
+    CGFloat width = size.width + 20;
+    if (num > 0) {
+        width += 17;
+    }
+    label.frame = CGRectMake(0, 0, width, 44);
+    
+    [label setTitle:title number:num];
+    
     return label;
 }
 

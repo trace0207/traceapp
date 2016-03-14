@@ -58,12 +58,21 @@
 //    [bezierPath stroke];
     
     // Draw bottom line
-    bezierPath = [UIBezierPath bezierPath];
-    [bezierPath moveToPoint:CGPointMake(0.0, rect.size.height)];
-    [bezierPath addLineToPoint:CGPointMake(rect.size.width, rect.size.height)];
-    [[UIColor colorWithWhite:197.0/255.0 alpha:0.75] setStroke];
-    [bezierPath setLineWidth:1.0];
-    [bezierPath stroke];
+//    bezierPath = [UIBezierPath bezierPath];
+//    [bezierPath moveToPoint:CGPointMake(0.0, rect.size.height)];
+//    [bezierPath addLineToPoint:CGPointMake(rect.size.width, rect.size.height)];
+//    [[UIColor colorWithWhite:197.0/255.0 alpha:0.75] setStroke];
+//    [bezierPath setLineWidth:1.0];
+//    [bezierPath stroke];
+    
+    // Draw right line
+//    bezierPath = [UIBezierPath bezierPath];
+//    [bezierPath moveToPoint:CGPointMake(rect.size.width-1, 0)];
+//    [bezierPath addLineToPoint:CGPointMake(rect.size.width-1, rect.size.height)];
+//    [[UIColor colorWithWhite:197.0/255.0 alpha:0.75] setStroke];
+//    [bezierPath setLineWidth:1.0];
+//    [bezierPath stroke];
+    
     
     // Draw an indicator line if tab is selected
     if (self.selected) {
@@ -73,7 +82,7 @@
         // Draw the indicator
         [bezierPath moveToPoint:CGPointMake(0.0, rect.size.height - 1.0)];
         [bezierPath addLineToPoint:CGPointMake(rect.size.width, rect.size.height - 1.0)];
-        [bezierPath setLineWidth:5.0];
+        [bezierPath setLineWidth:2.0];
         [self.indicatorColor setStroke];
         [bezierPath stroke];
     }
@@ -132,7 +141,7 @@
     frame = _tabsView.frame;
     frame.origin.x = 0.0;
     frame.origin.y = self.tabLocation ? 0.0 : self.view.frame.size.height - self.tabHeight;
-    frame.size.width = self.view.bounds.size.width;
+    frame.size.width = self.view.bounds.size.width-self.tabViewRightSpace;
     frame.size.height = self.tabHeight;
     _tabsView.frame = frame;
     
@@ -331,11 +340,13 @@
     }
     
     // Add tabsView
-    _tabsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.tabHeight)];
+    _tabsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width-self.tabViewRightSpace, self.tabHeight)];
     _tabsView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     _tabsView.backgroundColor = self.tabsViewBackgroundColor;
     _tabsView.showsHorizontalScrollIndicator = NO;
     _tabsView.showsVerticalScrollIndicator = NO;
+
+    
     
     [self.view insertSubview:_tabsView atIndex:0];
     
@@ -347,7 +358,7 @@
         
         CGRect frame = tabView.frame;
         frame.origin.x = contentSizeWidth;
-        frame.size.width = self.tabWidth;
+        //frame.size.width = self.tabWidth;
         tabView.frame = frame;
         
         [_tabsView addSubview:tabView];
@@ -410,12 +421,12 @@
         UIView *tabViewContent = [self.dataSource viewPager:self viewForTabAtIndex:index];
         
         // Create TabView and subview the content
-        TabView *tabView = [[TabView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tabWidth, self.tabHeight)];
+        TabView *tabView = [[TabView alloc] initWithFrame:tabViewContent.frame];
         [tabView addSubview:tabViewContent];
         [tabView setClipsToBounds:YES];
         [tabView setIndicatorColor:self.indicatorColor];
         
-        tabViewContent.center = tabView.center;
+        //tabViewContent.center = tabView.center;
         
         // Replace the null object with tabView
         [_tabs replaceObjectAtIndex:index withObject:tabView];

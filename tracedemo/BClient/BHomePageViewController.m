@@ -32,7 +32,7 @@
 {
     if (_menuView == nil) {
          NSArray *titles = @[@"悬赏中", @"已释放悬赏"];
-        _menuView = [[KTDropdownMenuView alloc] initWithFrame:CGRectMake(0, 0,100, 44) titles:titles];
+        _menuView = [[KTDropdownMenuView alloc] initWithFrame:CGRectMake(0, 0,80, 44) titles:titles];
         _menuView.cellColor = [UIColor clearColor];
         _menuView.cellSeparatorColor = [UIColor lightGrayColor];
         _menuView.selectedAtIndex = ^(int index)
@@ -48,6 +48,16 @@
     }
     return _menuView;
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self TKaddNavigationTitleView:self.mSegView];
+    if (self.mSegView.currentIndex == 1) {
+        [self addRightBarItemWithCustomView:self.menuView];
+    }
+}
+
 -(void)initView
 {
     [self addChildViewController:self.vc1];
@@ -60,14 +70,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [self TKaddNavigationTitleView:self.mSegView];
-    [self addRightBarItemWithCustomView:nil];
-    [self addRightBarItemWithCustomView:self.menuView];
-}
-
-
 //-(UIStatusBarStyle)preferredStatusBarStyle
 //{
 //    return UIStatusBarStyleLightContent;
@@ -77,11 +79,13 @@
 {
     if (index == 0)
     {
+        [self addRightBarItemWithCustomView:nil];
         [self transitionFromViewController:self.vc2 toViewController:self.vc1 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
         }];
     }
     else
     {
+        [self addRightBarItemWithCustomView:self.menuView];
         [self transitionFromViewController:self.vc1 toViewController:self.vc2 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
 
             
@@ -93,8 +97,9 @@
 {
     if (!_mSegView)
     {
-        _mSegView = [[HFSegmentView alloc] initWithFrame:CGRectMake((kScreenWidth - 185) / 2, 28, 185, 28)];
+        _mSegView = [[HFSegmentView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth == 320.f?130:167, 30)];
         _mSegView.currentIndex = 1;
+        _mSegView.textFont = kScreenWidth == 320?[UIFont systemFontOfSize:15]:[UIFont systemFontOfSize:17];
         _mSegView.delegate = self;
         [_mSegView setSegmentTitles:@[@"悬赏广场",@"我的客户"]];
     }
@@ -107,8 +112,10 @@
     if(!_vc2)
     {
         _vc2 = [[BPageViewController alloc] init];
+        _vc2.tabViewRightSpace = 90;
         _vc2.indicatorColor = [UIColor tkThemeColor1];
         _vc2.tabsViewBackgroundColor = [UIColor tkThemeColor2];
+        _vc2.view.backgroundColor = [UIColor tkThemeColor2];
     }
     return _vc2;
 }
@@ -118,8 +125,10 @@
     if(!_vc1)
     {
         _vc1 = [[BPageViewController alloc] init];
+        _vc1.tabViewRightSpace = 90;
         _vc1.indicatorColor = [UIColor tkThemeColor1];
         _vc1.tabsViewBackgroundColor = [UIColor tkThemeColor2];
+        _vc1.view.backgroundColor = [UIColor tkThemeColor2];
     }
     return _vc1;
 }

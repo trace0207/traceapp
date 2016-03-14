@@ -32,6 +32,8 @@
 #define kScreenWidth    [[UIScreen mainScreen]bounds].size.width
 #define kScreenHeight   [[UIScreen mainScreen]bounds].size.height
 #define kScreenScale    (kScreenWidth/320.0f)
+#define kWidthScale    (kScreenWidth/375.0f)
+#define kHeightScale    (kScreenWidth/667.0f)
 
 #define kUserDefaults       [NSUserDefaults standardUserDefaults]
 #define kNotificationCenter [NSNotificationCenter defaultCenter]

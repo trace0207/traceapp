@@ -75,6 +75,8 @@
 		8AA7F7251C8C6A8E00CE0F17 /* TK_ModifyPasswordArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7F7231C8C6A8E00CE0F17 /* TK_ModifyPasswordArg.m */; };
 		8AA7F7281C8C718D00CE0F17 /* TK_ModifyUserInfoArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7F7271C8C718D00CE0F17 /* TK_ModifyUserInfoArg.m */; };
 		8AA7F7291C8C718D00CE0F17 /* TK_ModifyUserInfoArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7F7271C8C718D00CE0F17 /* TK_ModifyUserInfoArg.m */; };
+		9135820C1C9718CD00517542 /* HFTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135820B1C9718CD00517542 /* HFTitleLabel.m */; };
+		9135820D1C9718CD00517542 /* HFTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135820B1C9718CD00517542 /* HFTitleLabel.m */; };
 		915FC66F1C94030400A74704 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FC66E1C94030400A74704 /* ViewPagerController.m */; };
 		915FC6701C94030400A74704 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FC66E1C94030400A74704 /* ViewPagerController.m */; };
 		915FC6731C94036500A74704 /* BPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FC6721C94036500A74704 /* BPageViewController.m */; };
@@ -2688,6 +2690,8 @@
 		8AECCA791C1B195B00CD789F /* HFFeedbackController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFFeedbackController.xib; sourceTree = "<group>"; };
 		8AECCA7C1C1D212000CD789F /* TKUserDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserDetailInfoViewController.h; sourceTree = "<group>"; };
 		8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserDetailInfoViewController.m; sourceTree = "<group>"; };
+		9135820A1C9718CD00517542 /* HFTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTitleLabel.h; sourceTree = "<group>"; };
+		9135820B1C9718CD00517542 /* HFTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTitleLabel.m; sourceTree = "<group>"; };
 		915FC66D1C94030400A74704 /* ViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPagerController.h; sourceTree = "<group>"; };
 		915FC66E1C94030400A74704 /* ViewPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPagerController.m; sourceTree = "<group>"; };
 		915FC6711C94036500A74704 /* BPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPageViewController.h; sourceTree = "<group>"; };
@@ -5488,6 +5492,8 @@
 				BBA9F6FF1BC8E4330059CEB4 /* TKLeftMenu.xib */,
 				BB53DAA61C211DF900CF346A /* TKHeadImageView.h */,
 				BB53DAA71C211DF900CF346A /* TKHeadImageView.m */,
+				9135820A1C9718CD00517542 /* HFTitleLabel.h */,
+				9135820B1C9718CD00517542 /* HFTitleLabel.m */,
 			);
 			path = TKUIView;
 			sourceTree = "<group>";
@@ -6575,6 +6581,7 @@
 				BB83FAA61C72C01C0013A6A0 /* HFTimePickView.m in Sources */,
 				BB83FAA71C72C01C0013A6A0 /* HFMessageCell.m in Sources */,
 				BB83FAA81C72C01C0013A6A0 /* GetRunningDataAck.m in Sources */,
+				9135820C1C9718CD00517542 /* HFTitleLabel.m in Sources */,
 				BB83FAA91C72C01C0013A6A0 /* ZYQAssetPickerController.m in Sources */,
 				BB83FAAA1C72C01C0013A6A0 /* MainViewController.m in Sources */,
 				8A9E8B4F1C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */,
@@ -7173,6 +7180,7 @@
 				BB83FD631C72C16B0013A6A0 /* HFTimePickView.m in Sources */,
 				BB83FD641C72C16B0013A6A0 /* HFMessageCell.m in Sources */,
 				BB83FD651C72C16B0013A6A0 /* GetRunningDataAck.m in Sources */,
+				9135820D1C9718CD00517542 /* HFTitleLabel.m in Sources */,
 				BB83FD661C72C16B0013A6A0 /* ZYQAssetPickerController.m in Sources */,
 				BB83FD671C72C16B0013A6A0 /* MainViewController.m in Sources */,
 				8A9E8B501C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */,

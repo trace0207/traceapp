@@ -17,6 +17,8 @@
 @property (nonatomic, assign) CGFloat edgesTop;
 
 @property (nonatomic, assign) CGFloat edgesRight;
+
+@property (nonatomic, assign) BOOL showLine;
 // width the table width, default 0.0, which indicates that the table width is equal to
 // the window width, width less than 80 is two small and will be set to window width as
 // well

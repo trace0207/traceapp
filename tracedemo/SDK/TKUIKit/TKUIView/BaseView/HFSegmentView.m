@@ -86,10 +86,18 @@
             [btn setTitleColor:[UIColor tkTextColorForNav] forState:UIControlStateNormal];
         }
         [btn setTitle:[titles objectAtIndex:i] forState:UIControlStateNormal];
-        btn.titleLabel.font = [UIFont boldSystemFontOfSize:17.0];
+        btn.titleLabel.font = self.textFont;
         [btn addTarget:self action:@selector(segmentClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
     }
+}
+
+- (UIFont *)textFont
+{
+    if (!_textFont) {
+        _textFont = [UIFont systemFontOfSize:17];
+    }
+    return _textFont;
 }
 
 - (void)segmentClick:(UIButton *)btn
@@ -116,6 +124,7 @@
         [currentBtn setTitleColor:[UIColor tkActiveTextColorForNav] forState:UIControlStateNormal];
         
         mLastTag = btn.tag;
+        self.currentIndex = mLastTag - kSegmentBaseTag;
     }];
     
     

@@ -9,7 +9,7 @@
 #import "KTDropdownMenuView.h"
 #import <Masonry.h>
 #import "UIImage+Scale.h"
-
+#import "UIColor+TK_Color.h"
 
 @interface KTDropdownMenuView()<UITableViewDataSource, UITableViewDelegate>
 
@@ -21,6 +21,7 @@
 @property (nonatomic, strong) UIView *backgroundView;
 @property (nonatomic, strong) UIButton *hiddenBtn;
 @property (nonatomic, strong) UIView *wrapperView;
+@property (nonatomic, strong) UIView *line;
 
 @end
 
@@ -56,6 +57,19 @@
     return self;
 }
 
+- (void)setShowLine:(BOOL)showLine
+{
+    if (showLine) {
+        [self addSubview:self.line];
+    }else
+    {
+        if (_line) {
+            [_line removeFromSuperview];
+        }
+    }
+    _showLine = showLine;
+}
+
 - (void)didMoveToWindow
 {
     [super didMoveToWindow];
@@ -67,14 +81,21 @@
         [self.titleButton mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self);
         }];
+        if (self.showLine) {
+            [self.line mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(1, 15));
+                make.centerY.equalTo(self.titleButton);
+                make.right.equalTo(self.titleButton.mas_left).with.offset(-5);
+            }];
+        }
         [self.arrowImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.titleButton.mas_right).offset(5);
+            make.left.equalTo(self.titleButton.mas_right).offset(0);
             make.centerY.equalTo(self.titleButton.mas_centerY);
         }];
         // 依附于导航栏下面
         [self.wrapperView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.bottom.equalTo(self.window);
-            make.top.equalTo(self.superview.mas_bottom);
+            make.edges.equalTo(self.window);
+            //make.top.equalTo(self.superview.mas_bottom);
         }];
         [self.backgroundView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.wrapperView);
@@ -93,13 +114,13 @@
             {
                 make.width.equalTo(self.wrapperView.mas_width);
             }
-            make.top.equalTo(self.wrapperView.mas_top).with.offset(self.edgesTop);
+            make.top.equalTo(self.titleButton.mas_bottom).with.offset(self.edgesTop);
             make.height.mas_equalTo(tableCellsHeight);
 //            make.bottom.equalTo(self.wrapperView.mas_bottom).offset(tableCellsHeight + kKTDropdownMenuViewHeaderHeight);
         }];
         [self.tableViewBackgroundImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.bottom.right.equalTo(self.tableView);
-            make.top.equalTo(self.wrapperView);
+            make.top.equalTo(self.titleButton.mas_bottom);
         }];
         self.wrapperView.hidden = YES;
     }
@@ -347,11 +368,21 @@
     _textFont = textFont;
 }
 
+- (UIView *)line
+{
+    if (!_line) {
+        _line = [[UIView alloc]init];
+        _line.backgroundColor = [UIColor tkThemeColor1];
+    }
+    return _line;
+}
+
 - (UIButton *)titleButton
 {
     if (!_titleButton)
     {
         _titleButton = [[UIButton alloc] init];
+        _titleButton.backgroundColor = [UIColor clearColor];
         [_titleButton setTitle:[self.titles objectAtIndex:0] forState:UIControlStateNormal];
         [_titleButton addTarget:self action:@selector(handleTapOnTitleButton:) forControlEvents:UIControlEventTouchUpInside];
         [_titleButton.titleLabel setFont:self.textFont];

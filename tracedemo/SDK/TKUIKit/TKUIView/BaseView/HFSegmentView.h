@@ -17,6 +17,7 @@
 @interface HFSegmentView : UIView
 
 @property (nonatomic, assign) NSInteger currentIndex;
+@property (nonatomic, strong) UIFont *textFont;
 @property(nonatomic,weak)id<HFSegmentViewDelegate>delegate;
 
 - (void)setSegmentTitles:(NSArray *)titles;
