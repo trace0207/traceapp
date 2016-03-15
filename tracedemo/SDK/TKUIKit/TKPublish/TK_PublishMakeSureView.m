@@ -118,6 +118,10 @@
        arg.role = 1;
 #endif
         
+    
+        arg.brandId = 1;
+        arg.categoryId = 3;
+        
         WS(weakSelf)
         [[TKProxy proxy].mainProxy publishShowGoods:arg withBlock:^(HF_BaseAck *ack) {
             if(ack.sucess)

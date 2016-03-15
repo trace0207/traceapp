@@ -203,6 +203,17 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     
     // 发布请求
     
+    if(image1 == nil)
+    {
+        DDLogInfo(@"iamge1 is nil");
+        return;
+    }
+    if(image2 == nil)
+    {
+        DDLogInfo(@"image2 is nil");
+        return ;
+    }
+    
     
     TK_PublishMakeSureView * popView = [[TK_PublishMakeSureView alloc]init];
 //    [self onClearViewEvent];

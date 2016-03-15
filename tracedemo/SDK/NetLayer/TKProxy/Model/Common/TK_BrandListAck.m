@@ -8,6 +8,10 @@
 
 #import "TK_BrandListAck.h"
 
+@implementation BrandData
+
+
+@end
 @implementation TK_BrandListAck
 
 @end
