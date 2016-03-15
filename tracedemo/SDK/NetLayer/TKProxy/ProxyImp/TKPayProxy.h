@@ -12,7 +12,7 @@
 @interface TKPayProxy : NSObject
 
 
--(void)aliPay:(NSObject *)charge
++(void)aliPay:(NSObject *)charge
     urlScheme:(NSString *)scheme
 withCompletion:(PingppCompletion)completionBlock;
 

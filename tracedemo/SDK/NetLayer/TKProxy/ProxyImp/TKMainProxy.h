@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class TKPublishShowGoodsArg;
+@class TK_PayArg,TKPublishShowGoodsArg ,TK_PublishRewardArg;
 
 
 
@@ -123,6 +123,16 @@
 
 
 
+
+/**
+ 发布悬赏
+ **/
+-(void)publishReward:(TK_PublishRewardArg *)arg withBlock:(hfAckBlock)block;
+
+/**
+ 支付
+ **/
+-(void)tkPay:(TK_PayArg *)arg withBolco:(hfAckBlock)block;
 
 
 

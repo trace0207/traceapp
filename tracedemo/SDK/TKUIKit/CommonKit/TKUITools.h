@@ -39,6 +39,9 @@
 //计算纯文本高度
 + (CGFloat)getTextHeight:(NSString *)text withFontSize:(UIFont *)font maxWidth:(CGFloat)maxWidth;
 
+/**
+ 删除view的子view
+ **/
 +(void)removeAllChildViews:(UIView *)view;
 
 

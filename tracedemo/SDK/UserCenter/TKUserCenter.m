@@ -11,6 +11,7 @@
 #import "GlobNotifyDefine.h"
 #import "TK_CategoryListAck.h"
 #import "NSString+HFStrUtil.h"
+#import "Pingpp.h"
 
 @interface TKUser(){
 
@@ -123,6 +124,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 
 -(void)initAppData
 {
+    
+    [Pingpp setDebugMode:YES];
+    
     [[TKProxy proxy].mainProxy getBrandListWithBlock:^(HF_BaseAck *ack) {
         
         if(ack.sucess)
@@ -133,8 +137,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
         {
             DDLogInfo(@"get user BrandList failed");
         }
-        
-        
         
 //        DDLogInfo(@"%@",ack);
     }];

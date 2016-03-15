@@ -20,6 +20,8 @@
 #import "TK_UploadImageArg.h"
 #import "TKPublishShowGoodsArg.h"
 #import "TK_BrandListArg.h"
+#import "TK_PayArg.h"
+#import "TK_PublishRewardArg.h"
 #import "TK_CategoryListArg.h"
 
 
@@ -223,6 +225,24 @@
 -(void)getBrandListWithBlock:(hfAckBlock)block
 {
     TK_BrandListArg * arg = [[TK_BrandListArg alloc] init];
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
+
+
+
+/**
+ 发布悬赏
+ **/
+-(void)publishReward:(TK_PublishRewardArg *)arg withBlock:(hfAckBlock)block;
+{
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
+
+/**
+ 支付
+ **/
+-(void)tkPay:(TK_PayArg *)arg withBolco:(hfAckBlock)block
+{
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 

@@ -8,7 +8,12 @@
 
 #import "TK_PublishMakeSureView.h"
 #import "TK_UploadImageAck.h"
-#import "TKPublishShowGoodsArg.h"
+#import "TK_PublishRewardArg.h"
+#import "TKUserCenter.h"
+#import "TK_PayArg.h"
+#import "TK_PublishRewardAck.h"
+#import "TKPayProxy.h"
+#import "TK_PayAck.h"
 
 @implementation TK_PublishMakeSureView
 
@@ -74,7 +79,7 @@
         
         self.images = nil;
         
-        TKPublishShowGoodsArg * arg = [[TKPublishShowGoodsArg alloc] init];
+        TK_PublishRewardArg * arg = [[TK_PublishRewardArg alloc] init];
         if(picArray.count > 0)
         {
             arg.picAddr1 = picArray[0];
@@ -113,21 +118,31 @@
         }
         
         arg.content = self.content;
-        arg.showPrice = self.showPrice;
-#if B_Client == 0
-       arg.role = 1;
-#endif
+//        arg.rewardPrice = [TK]self.showPrice * 100;
+//#if B_Client == 0
+//       arg.role = 1;
+//#endif
+//        
+//    
+//        arg.brandId = 1;
+//        arg.categoryId = 3;
         
-    
-        arg.brandId = 1;
-        arg.categoryId = 3;
+        arg.rewardPrice = @"4";
+        arg.content = @"求购 求购 ";
+        arg.source = @"1";
+        arg.sourceId = [[TKUserCenter instance] getUser].userId;
+        arg.categoryId = @"1";
+        arg.brandId = @"1";
+        arg.receiverId = @"1";
+        arg.requireDay = @"1";
+        
         
         WS(weakSelf)
-        [[TKProxy proxy].mainProxy publishShowGoods:arg withBlock:^(HF_BaseAck *ack) {
+        [[TKProxy proxy].mainProxy publishReward:arg withBlock:^(HF_BaseAck *ack) {
             if(ack.sucess)
             {
-                [weakSelf removeFromSuperview];
-                weakSelf.images = nil;
+                TK_PublishRewardAck * a = (TK_PublishRewardAck*)ack;
+                [weakSelf requestPay:a.data.deposit postrewardId:a.data.rewardId];
             }
             else
             {
@@ -136,9 +151,37 @@
             }
         }];
     }
+}
+
+
+
+-(void)requestPay:(NSString *) money postrewardId:(NSString *)postId
+{
     
+    TK_PayArg * arg = [[TK_PayArg alloc] init];
+    arg.bigMoney = 0;
+    arg.payAmount = money;
     
+    arg.postrewardId = postId;
+    arg.fundType = 0;//0 订金， 1 尾款， 2全款， 3 买手充值保证金
+    arg.clientIp = @"192.168.1.1";
     
+    WS(weakSelf)
+    [[TKProxy proxy].mainProxy tkPay:arg withBolco:^(HF_BaseAck *ack) {
+        if(ack.sucess)
+        {
+            [weakSelf removeFromSuperview];
+             weakSelf.images = nil;
+            [TKPayProxy aliPay: ((TK_PayAck *)ack).data urlScheme:@"QupaiConsumer" withCompletion:^(NSString *result, PingppError *error) {
+            }];
+            
+        }
+        else
+        {
+            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingError) object:nil];
+            [weakSelf showLoadingError];
+        }
+    } ];
 }
 
 

@@ -36,6 +36,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(GlobInfo, shareInstance);
     if (devid == nil || devid.length <= 0) {
         devid = [self setDeviceid];
     }
+    
+    
+    
     return devid;
 //    return @"112233";
 }
