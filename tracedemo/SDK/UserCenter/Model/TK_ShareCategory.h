@@ -17,7 +17,7 @@
 /**
  *  品类id
  */
-@property (nonatomic) NSInteger categoryId;
+@property (nonatomic,strong) NSString *categoryId;
 
 @property (nonatomic,strong) NSString * createTime;
 
@@ -31,6 +31,6 @@
  *
  *  @return Object
  */
-+(instancetype)setTitle:(NSString *)title setId:(NSInteger)categoryId time:(NSString *)createTime sum:(NSString *)sum;
++(instancetype)setTitle:(NSString *)title setId:(NSString *)categoryId time:(NSString *)createTime sum:(NSString *)sum;
 
 @end

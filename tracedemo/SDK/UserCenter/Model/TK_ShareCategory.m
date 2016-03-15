@@ -20,7 +20,7 @@
  *  @return Object
  */
 +(instancetype)setTitle:(NSString *)title
-                  setId:(NSInteger)categoryId
+                  setId:(NSString *)categoryId
                    time:(NSString *)createTime
                     sum:(NSString *)sum{
     TK_ShareCategory * shareCategory = [[TK_ShareCategory alloc]init];

@@ -125,7 +125,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 {
     [[TKProxy proxy].mainProxy getBrandListWithBlock:^(HF_BaseAck *ack) {
         
-        DDLogInfo(@"%@",ack);
+        if(ack.sucess)
+        {
+            [self.userNormalVM resetBrandList:(TK_BrandListAck *)ack];
+        }
+        else
+        {
+            DDLogInfo(@"get user BrandList failed");
+        }
+        
+        
+        
+//        DDLogInfo(@"%@",ack);
     }];
     
     [[TKProxy proxy].mainProxy getCategoryListWithBolck:^(HF_BaseAck *ack) {
@@ -133,7 +144,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
         if(ack.sucess)
         {
             TK_CategoryListAck * k = (TK_CategoryListAck*)ack;
-            DDLogInfo(@"abc%@",[NSString ArrayToNSString:k.data withSeparator:@";"]);
+            [self.userNormalVM resetCategorys:(TK_CategoryListAck *)ack];
+//            DDLogInfo(@"abc%@",[NSString ArrayToNSString:k.data withSeparator:@";"]);
+        }
+        else
+        {
+              DDLogInfo(@"get user category failed");
         }
         
     }];
