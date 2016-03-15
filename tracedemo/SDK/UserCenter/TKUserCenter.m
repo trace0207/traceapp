@@ -9,6 +9,8 @@
 #import "TKUserCenter.h"
 #import "TK_LoginAck.h"
 #import "GlobNotifyDefine.h"
+#import "TK_CategoryListAck.h"
+#import "NSString+HFStrUtil.h"
 
 @interface TKUser(){
 
@@ -117,5 +119,26 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
     return _userNormalVM;
     
 }
+
+
+-(void)initAppData
+{
+    [[TKProxy proxy].mainProxy getBrandListWithBlock:^(HF_BaseAck *ack) {
+        
+        DDLogInfo(@"%@",ack);
+    }];
+    
+    [[TKProxy proxy].mainProxy getCategoryListWithBolck:^(HF_BaseAck *ack) {
+        
+        if(ack.sucess)
+        {
+            TK_CategoryListAck * k = (TK_CategoryListAck*)ack;
+            DDLogInfo(@"abc%@",[NSString ArrayToNSString:k.data withSeparator:@";"]);
+        }
+        
+    }];
+
+}
+
 
 @end

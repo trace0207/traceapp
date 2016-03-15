@@ -36,7 +36,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onLoginSuccess) name:TKUserLoginSuccess object:nil];
     
-    _userNameText.text = @"18867101952";
+    _userNameText.text = @"18867102687";
     _passwordText.text = @"123456";
     
 }

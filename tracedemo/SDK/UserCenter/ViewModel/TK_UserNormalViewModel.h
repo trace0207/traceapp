@@ -8,8 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "TK_ShareCategory.h"
+#import "TK_CategoryListAck.h"
+#import "TK_BrandListAck.h"
+#import "TK_Brand.h"
+#import "TK_ShareCategory.h"
 
 @interface TK_UserNormalViewModel : NSObject
-@property (nonatomic,copy) NSMutableArray * shareCategorys;
+@property (nonatomic,copy) NSMutableArray<__kindof TK_ShareCategory*> * shareCategorys;
+@property (nonatomic,copy) NSMutableArray<__kindof TK_Brand*> * brandList;
+
+
+
+-(void)resetCategorys:(TK_CategoryListAck*)ack;
+
+-(void)resetBrandList:(TK_BrandListAck *)ack;
 
 @end

@@ -19,8 +19,7 @@
 #import "MMDrawerController.h"
 #import "TKConstants.h"
 #import "UIColor+TK_Color.h"
-#import "TK_CategoryListAck.h"
-#import "NSString+HFStrUtil.h"
+#import "TKUserCenter.h"
 
 @interface AppDelegate (){
     
@@ -217,22 +216,8 @@ static AppDelegate * appDelegate;
 
 
 -(void)initAppData
-{
-    
-    [[TKProxy proxy].mainProxy getBrandListWithBlock:^(HF_BaseAck *ack) {
-        
-        DDLogInfo(@"%@",ack);
-    }];
-    
-    [[TKProxy proxy].mainProxy getCategoryListWithBolck:^(HF_BaseAck *ack) {
-       
-        if(ack.sucess)
-        {
-            TK_CategoryListAck * k = (TK_CategoryListAck*)ack;
-            DDLogInfo(@"abc%@",[NSString ArrayToNSString:k.data withSeparator:@";"]);
-        }
-        
-    }];
+{   
+    [[TKUserCenter instance] initAppData];
 }
 
 @end

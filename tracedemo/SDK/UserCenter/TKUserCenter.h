@@ -44,4 +44,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(TKUserCenter, instance);
 -(void)onLoginSuccess:(TKUser *)user;
 -(void)doLogin:(NSString *)userName password:(NSString *)password;
 -(TKUser *)getUser;
+
+-(void)initAppData;
+
 @end

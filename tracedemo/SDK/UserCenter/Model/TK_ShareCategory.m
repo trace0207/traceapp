@@ -19,10 +19,14 @@
  *
  *  @return Object
  */
-+(instancetype)setTitle:(NSString *)title setId:(NSInteger)categoryId{
++(instancetype)setTitle:(NSString *)title
+                  setId:(NSInteger)categoryId
+                   time:(NSString *)createTime
+                    sum:(NSString *)sum{
     TK_ShareCategory * shareCategory = [[TK_ShareCategory alloc]init];
     shareCategory.title = title;
     shareCategory.categoryId = categoryId;
+    shareCategory.createTime = createTime;
     return shareCategory;
 }
 

@@ -19,6 +19,10 @@
  */
 @property (nonatomic) NSInteger categoryId;
 
+@property (nonatomic,strong) NSString * createTime;
+
+@property (nonatomic,strong) NSString * sum;
+
 /**
  *  带参数初始化
  *
@@ -27,6 +31,6 @@
  *
  *  @return Object
  */
-+(instancetype)setTitle:(NSString *)title setId:(NSInteger)categoryId;
++(instancetype)setTitle:(NSString *)title setId:(NSInteger)categoryId time:(NSString *)createTime sum:(NSString *)sum;
 
 @end

@@ -17,6 +17,8 @@
 #import "HFKeyBoard.h"
 #import "TKPicSelectTool.h"
 #import "TKUITools.h"
+#import "TK_PublishMakeSureView.h"
+
 
 #define PICONE 101
 #define PICSecond 102
@@ -165,6 +167,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     
     
     [self TKsetLeftBarItemText:@"取消" withTextColor:[UIColor tkThemeColor1] addTarget:self action:@selector(TKI_leftBarAction) forControlEvents:UIControlEventTouchUpInside];
+    [self TKsetRightBarItemText:@"发布" withTextColor:[UIColor tkThemeColor1] addTarget:self action:@selector(TKI_rightBarAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -192,6 +195,27 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
 - (IBAction)cancelAction:(UIButton *)sender {
     
     [self TKI_leftBarAction];
+    
+}
+
+-(void)TKI_rightBarAction
+{
+    
+    // 发布请求
+    
+    
+    TK_PublishMakeSureView * popView = [[TK_PublishMakeSureView alloc]init];
+//    [self onClearViewEvent];
+    
+    NSArray * pics = @[image1,image2]; //[[NSArray alloc] initWithArray:self.picturesArr];
+    popView.images = pics;
+    popView.content = @"测试悬赏";
+    popView.showPrice = 10;  //[self.willByPrice.text integerValue] * 100;
+    
+    [[AppDelegate getAppDelegate].window addSubview:popView];
+    
+    
+    [popView beginSend];
     
 }
 
