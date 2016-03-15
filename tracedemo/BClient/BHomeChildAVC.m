@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     vm1 = [[TKIRewardVM alloc] initWithFreshAbleTable ];
+    
     [self.view addSubview:vm1.pullRefreshView];
     [vm1 tkUpdateViewConstraint];
     [vm1 startPullDownRefreshing];

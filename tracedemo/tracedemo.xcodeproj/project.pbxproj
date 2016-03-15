@@ -51,8 +51,6 @@
 		8A99859C1C86C6AC000F9CBC /* TKRewardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA3725C1C76B72B0075333E /* TKRewardCell.xib */; };
 		8A9985A01C86CDF5000F9CBC /* CHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A99859E1C86CDF5000F9CBC /* CHomePageViewController.m */; };
 		8A9985A11C86CDF5000F9CBC /* CHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A99859E1C86CDF5000F9CBC /* CHomePageViewController.m */; };
-		8A9985A21C86CDF5000F9CBC /* CHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A99859F1C86CDF5000F9CBC /* CHomePageViewController.xib */; };
-		8A9985A31C86CDF5000F9CBC /* CHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A99859F1C86CDF5000F9CBC /* CHomePageViewController.xib */; };
 		8A9E8B4F1C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */; };
 		8A9E8B501C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */; };
 		8A9E8B511C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */; };
@@ -2646,7 +2644,6 @@
 		8A978A601BD3C8EF00C84ED2 /* HFSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSegmentView.m; sourceTree = "<group>"; };
 		8A99859D1C86CDF5000F9CBC /* CHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHomePageViewController.h; sourceTree = "<group>"; };
 		8A99859E1C86CDF5000F9CBC /* CHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHomePageViewController.m; sourceTree = "<group>"; };
-		8A99859F1C86CDF5000F9CBC /* CHomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHomePageViewController.xib; sourceTree = "<group>"; };
 		8A9E8B4C1C86DD3600F84BB7 /* TKRewardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRewardDetailViewController.h; sourceTree = "<group>"; };
 		8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRewardDetailViewController.m; sourceTree = "<group>"; };
 		8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKRewardDetailViewController.xib; sourceTree = "<group>"; };
@@ -5580,7 +5577,6 @@
 				BBA372571C76AA100075333E /* C_Client.plist */,
 				8A99859D1C86CDF5000F9CBC /* CHomePageViewController.h */,
 				8A99859E1C86CDF5000F9CBC /* CHomePageViewController.m */,
-				8A99859F1C86CDF5000F9CBC /* CHomePageViewController.xib */,
 				8A3749771C8D5BC4003DE59E /* CHomeChildAVC.h */,
 				8A3749781C8D5BC4003DE59E /* CHomeChildAVC.m */,
 				8A3749791C8D5BC4003DE59E /* CHomeChildAVC.xib */,
@@ -5763,7 +5759,6 @@
 				BB83FB221C72C01C0013A6A0 /* AgreementViewController.xib in Resources */,
 				BB83FB231C72C01C0013A6A0 /* TKLeftMenu.xib in Resources */,
 				BB83FB241C72C01C0013A6A0 /* HFAboutUsCell.xib in Resources */,
-				8A9985A21C86CDF5000F9CBC /* CHomePageViewController.xib in Resources */,
 				BB83FB251C72C01C0013A6A0 /* HFEditHeaderView.xib in Resources */,
 				BB83FB261C72C01C0013A6A0 /* HFBandViewController.xib in Resources */,
 				BB83FB271C72C01C0013A6A0 /* FriendsViewController.xib in Resources */,
@@ -5938,7 +5933,6 @@
 				BB83FE101C72C16B0013A6A0 /* TKMessageListIItemCell.xib in Resources */,
 				BB83FE121C72C16B0013A6A0 /* HFSchemeCell.xib in Resources */,
 				BB83FE131C72C16B0013A6A0 /* HFIntroduceCell.xib in Resources */,
-				8A9985A31C86CDF5000F9CBC /* CHomePageViewController.xib in Resources */,
 				BB83FE141C72C16B0013A6A0 /* SetPasswordViewController.xib in Resources */,
 				BB83FE151C72C16B0013A6A0 /* TK_SettingCell.xib in Resources */,
 			);

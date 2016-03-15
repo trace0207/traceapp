@@ -27,8 +27,8 @@
     TKTableSectionM * section = [[TKTableSectionM alloc] init];
     
     
-    section.sectionFootHeight = 0.1;
-    section.sectionHeadHeight = 0.1;
+    section.sectionFootHeight = 0.0;
+    section.sectionHeadHeight = 0.0;
     section.rowHeight = 260;
     
     

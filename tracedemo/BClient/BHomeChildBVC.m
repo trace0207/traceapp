@@ -37,7 +37,7 @@
     vm = [[TKIRewardVM alloc] initWithFreshAbleTable];
     [self.contentView addSubview:vm.pullRefreshView];
     [vm tkUpdateViewConstraint];
-    [vm.mTableView setSeparatorColor:[UIColor clearColor]];
+    //[vm.mTableView setSeparatorColor:[UIColor clearColor]];
     [vm tkLoadDefaultData];
     
 }
