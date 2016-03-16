@@ -77,11 +77,18 @@
     // Draw an indicator line if tab is selected
     if (self.selected) {
         
+        UIView *view = [[self subviews]firstObject];
+        NSArray *views = [view subviews];
+        CGFloat space = 0;
+        if (views.count > 1) {
+            space = 17;
+        }
+        
         bezierPath = [UIBezierPath bezierPath];
         
         // Draw the indicator
-        [bezierPath moveToPoint:CGPointMake(0.0, rect.size.height - 1.0)];
-        [bezierPath addLineToPoint:CGPointMake(rect.size.width, rect.size.height - 1.0)];
+        [bezierPath moveToPoint:CGPointMake(10.0, rect.size.height - 1.0)];
+        [bezierPath addLineToPoint:CGPointMake(rect.size.width-10-space, rect.size.height - 1.0)];
         [bezierPath setLineWidth:2.0];
         [self.indicatorColor setStroke];
         [bezierPath stroke];

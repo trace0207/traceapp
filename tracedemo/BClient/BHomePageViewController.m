@@ -11,6 +11,7 @@
 #import "BPageViewController.h"
 #import "KTDropdownMenuView.h"
 #import "UIColor+TK_Color.h"
+#import "HFAlertView.h"
 @interface BHomePageViewController ()<HFSegmentViewDelegate>
 
 @property (nonatomic,strong)BPageViewController * vc1;
@@ -56,6 +57,31 @@
     if (self.mSegView.currentIndex == 1) {
         [self addRightBarItemWithCustomView:self.menuView];
     }
+    UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 30)];
+    [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [bt setTitle:@"AltertView" forState:UIControlStateNormal];
+    [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+    [self addLeftBarItemWithCustomView:bt];
+}
+
+- (void)test
+{
+
+    NSMutableAttributedString *attriString = [[NSMutableAttributedString alloc]initWithString:@"请支付预付款：1200元\n（预付款将打入平台账户，不会直接打给买手）"];
+    
+    NSDictionary *dic1 = @{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor darkGrayColor]};
+    
+    [attriString addAttributes:dic1 range:NSMakeRange(0, 7)];
+    
+    NSDictionary *dic2 = @{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor redColor]};
+    [attriString addAttributes:dic2 range:NSMakeRange(7, 5)];
+    
+    NSDictionary *dic3 = @{NSFontAttributeName:[UIFont systemFontOfSize:13],NSForegroundColorAttributeName:[UIColor lightGrayColor]};
+    [attriString addAttributes:dic3 range:NSMakeRange(13, 21)];
+    
+    [HFAlertView showAltertWithTitle:@"请支付悬赏金" withMessage:attriString commpleteBlock:^(NSInteger buttonIndex) {
+        
+    } cancelTitle:@"取消" determineTitle:@"确定并支付"];
 }
 
 -(void)initView
