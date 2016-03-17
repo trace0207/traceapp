@@ -38,6 +38,9 @@
 }
 
 
+/**
+ 任意一个中间过程出现失败时显示
+ **/
 -(void)showLoadingError{
 
     _errorImage.hidden = NO;
@@ -46,6 +49,16 @@
     _loadingTips.text = @"发布悬赏超时，请重试";
     
 }
+
+
+/**
+ 悬赏发布成功，并且支付成功
+ **/
+-(void)onPaySuccess
+{
+}
+
+
 
 /**
  图片上传结果返回

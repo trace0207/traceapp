@@ -121,9 +121,6 @@
  **/
 -(void)getBrandListWithBlock:(hfAckBlock)block;
 
-
-
-
 /**
  发布悬赏
  **/
@@ -135,5 +132,26 @@
 -(void)tkPay:(TK_PayArg *)arg withBolco:(hfAckBlock)block;
 
 
+
+#pragma mark   BClient
+
+/**
+ 根据类目查询我的客户的悬赏ID
+ **/
+-(void)getMyRewardList:(NSString *)categoryId
+                  page:(NSInteger)page
+          rewardStatus:(NSInteger)status
+             withBlock:(hfAckBlock)block;
+
+/**
+ 根据类目查询悬赏广场的悬赏
+ **/
+-(void)getRewardList:(NSString *)categoryId
+                page:(NSInteger)page
+           withBlock:(hfAckBlock)block;
+
+
+
+#pragma  mark CClient
 
 @end

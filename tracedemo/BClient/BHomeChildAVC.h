@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "TKIRewardVM.h"
 @interface BHomeChildAVC : UIViewController
+
+@property(nonatomic,strong)TKIRewardVM * vm1;
+
+
+-(void)loadData;
 
 @end

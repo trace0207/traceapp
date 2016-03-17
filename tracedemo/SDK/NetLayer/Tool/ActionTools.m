@@ -26,4 +26,18 @@
     return value;
 }
 
+
++(NSString *)getRelativePathByString:(NSString *)keyStr
+{
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"TKHttpAction" ofType:@"plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    
+    
+    NSString * value =[data objectForKey:keyStr];
+    if(!value){
+        value = @"/error.html";
+    }
+    return value;
+}
+
 @end

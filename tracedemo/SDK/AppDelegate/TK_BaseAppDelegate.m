@@ -10,6 +10,7 @@
 #import "MWLogFormatter.h"
 #import "DDTTYLogger.h"
 #import "DDFileLogger.h"
+#import "Pingpp.h"
 
 @implementation TK_BaseAppDelegate
 
@@ -54,6 +55,19 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+-(BOOL)application:(UIApplication*)application
+           openURL:(nonnull NSURL *)url
+           options:(nonnull NSDictionary<NSString *,id> *)options
+{
+    BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:^(NSString *result, PingppError *error) {
+        
+        DDLogInfo(@"pay result %@  |  error %@",result,[error getMsg]);
+    }];
+    return canHandleURL;
+}
+
 
 
 

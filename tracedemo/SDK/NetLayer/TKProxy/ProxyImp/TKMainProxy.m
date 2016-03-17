@@ -23,6 +23,9 @@
 #import "TK_PayArg.h"
 #import "TK_PublishRewardArg.h"
 #import "TK_CategoryListArg.h"
+#import "TK_RewardListForBuyerAck.h"
+#import "TK_RewardListForBuyerArg.h"
+#import "ActionTools.h"
 
 
 
@@ -247,4 +250,37 @@
 }
 
 
+
+#pragma mark   BClient
+
+/**
+ 根据类目查询我的客户的悬赏ID
+ **/
+-(void)getMyRewardList:(NSString *)categoryId
+                  page:(NSInteger)page
+          rewardStatus:(NSInteger)status
+             withBlock:(hfAckBlock)block
+{
+    
+    TK_RewardListForBuyerArg * arg = [[TK_RewardListForBuyerArg alloc] init];
+    arg.pageSize = 20;
+    arg.pageOffset = page;
+    arg.rewardStatus = status;
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
+
+/**
+ 根据类目查询悬赏广场的悬赏
+ **/
+-(void)getRewardList:(NSString *)categoryId
+                page:(NSInteger)page
+           withBlock:(hfAckBlock)block
+{
+    TK_RewardListForBuyerArg * arg = [[TK_RewardListForBuyerArg alloc] init];
+    arg.pageSize = 20;
+    arg.pageOffset = page;
+    arg.relativeUrl = [ActionTools getRelativePathByString:@"TK_RewardListForBuyerArg1"];
+    arg.ackClassName = @"TK_RewardListForBuyerAck";
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
 @end

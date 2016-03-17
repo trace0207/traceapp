@@ -24,20 +24,16 @@
 #import "TestViewController.h"
 #import "GlobNotifyDefine.h"
 #import "TKIMessageCenterViewController.h"
-
-
 #import "BHomePageViewController.h"
 #import "CHomePageViewController.h"
 #import "BMyShowGoodsViewController.h"
 #import "CPublishRewardViewController.h"
-#import "HiiBeanWebViewController.h"
-
+#import "TKWebViewController.h"
 
 
 /**
  for  B client  only
  **/
-
 @interface TKMainNavigateController()<HomePageEventProtocol,UITabBarControllerDelegate,LoginDelegate>
 {
 
@@ -224,9 +220,6 @@
 
 
 
-
-
-
 #pragma mark   BClient
 -(void)initBClientView
 {
@@ -262,10 +255,10 @@
     //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
     
     
-    TKUserCenterViewController * navc4 = [[TKUserCenterViewController alloc] init];
+    TKWebViewController * navc4 = [[TKWebViewController alloc] init];
     navc4.title = @"我的订单";
     navc4.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
-    
+    navc4.navTitle = @"我的订单";
     
     TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
     navc5.title = @"我";
@@ -325,8 +318,9 @@
     //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
     
     
-    HiiBeanWebViewController * navc4 = [[HiiBeanWebViewController alloc] init];
+    TKWebViewController * navc4 = [[TKWebViewController alloc] init];
     navc4.title = @"我的购买";
+    navc4.navTitle = @"我的购买";
     navc4.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
     
     

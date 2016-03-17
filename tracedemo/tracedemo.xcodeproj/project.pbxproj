@@ -61,6 +61,14 @@
 		8A9D9B531C9809B0009F877F /* TK_PayAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B511C9809B0009F877F /* TK_PayAck.m */; };
 		8A9D9B561C9809BE009F877F /* TK_PayArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B551C9809BE009F877F /* TK_PayArg.m */; };
 		8A9D9B571C9809BE009F877F /* TK_PayArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B551C9809BE009F877F /* TK_PayArg.m */; };
+		8A9D9B5B1C993DD3009F877F /* TKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B591C993DD3009F877F /* TKWebViewController.m */; };
+		8A9D9B5C1C993DD3009F877F /* TKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B591C993DD3009F877F /* TKWebViewController.m */; };
+		8A9D9B5D1C993DD3009F877F /* TKWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9D9B5A1C993DD3009F877F /* TKWebViewController.xib */; };
+		8A9D9B5E1C993DD3009F877F /* TKWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9D9B5A1C993DD3009F877F /* TKWebViewController.xib */; };
+		8A9D9B621C998CD0009F877F /* TK_RewardListForBuyerAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B611C998CD0009F877F /* TK_RewardListForBuyerAck.m */; };
+		8A9D9B631C998CD0009F877F /* TK_RewardListForBuyerAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B611C998CD0009F877F /* TK_RewardListForBuyerAck.m */; };
+		8A9D9B661C998D9A009F877F /* TK_RewardListForBuyerArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B651C998D9A009F877F /* TK_RewardListForBuyerArg.m */; };
+		8A9D9B671C998D9A009F877F /* TK_RewardListForBuyerArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B651C998D9A009F877F /* TK_RewardListForBuyerArg.m */; };
 		8A9E8B4F1C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */; };
 		8A9E8B501C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */; };
 		8A9E8B511C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */; };
@@ -2666,6 +2674,13 @@
 		8A9D9B511C9809B0009F877F /* TK_PayAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PayAck.m; sourceTree = "<group>"; };
 		8A9D9B541C9809BE009F877F /* TK_PayArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_PayArg.h; sourceTree = "<group>"; };
 		8A9D9B551C9809BE009F877F /* TK_PayArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PayArg.m; sourceTree = "<group>"; };
+		8A9D9B581C993DD3009F877F /* TKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebViewController.h; sourceTree = "<group>"; };
+		8A9D9B591C993DD3009F877F /* TKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWebViewController.m; sourceTree = "<group>"; };
+		8A9D9B5A1C993DD3009F877F /* TKWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKWebViewController.xib; sourceTree = "<group>"; };
+		8A9D9B601C998CD0009F877F /* TK_RewardListForBuyerAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_RewardListForBuyerAck.h; sourceTree = "<group>"; };
+		8A9D9B611C998CD0009F877F /* TK_RewardListForBuyerAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_RewardListForBuyerAck.m; sourceTree = "<group>"; };
+		8A9D9B641C998D99009F877F /* TK_RewardListForBuyerArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_RewardListForBuyerArg.h; sourceTree = "<group>"; };
+		8A9D9B651C998D9A009F877F /* TK_RewardListForBuyerArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_RewardListForBuyerArg.m; sourceTree = "<group>"; };
 		8A9E8B4C1C86DD3600F84BB7 /* TKRewardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRewardDetailViewController.h; sourceTree = "<group>"; };
 		8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRewardDetailViewController.m; sourceTree = "<group>"; };
 		8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKRewardDetailViewController.xib; sourceTree = "<group>"; };
@@ -5208,6 +5223,17 @@
 			path = BaseView;
 			sourceTree = "<group>";
 		};
+		8A9D9B5F1C998CBC009F877F /* BClient */ = {
+			isa = PBXGroup;
+			children = (
+				8A9D9B601C998CD0009F877F /* TK_RewardListForBuyerAck.h */,
+				8A9D9B611C998CD0009F877F /* TK_RewardListForBuyerAck.m */,
+				8A9D9B641C998D99009F877F /* TK_RewardListForBuyerArg.h */,
+				8A9D9B651C998D9A009F877F /* TK_RewardListForBuyerArg.m */,
+			);
+			path = BClient;
+			sourceTree = "<group>";
+		};
 		8A9E8B4B1C86DD1300F84BB7 /* CommonClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -5220,6 +5246,9 @@
 				8A9E8B4C1C86DD3600F84BB7 /* TKRewardDetailViewController.h */,
 				8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */,
 				8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */,
+				8A9D9B581C993DD3009F877F /* TKWebViewController.h */,
+				8A9D9B591C993DD3009F877F /* TKWebViewController.m */,
+				8A9D9B5A1C993DD3009F877F /* TKWebViewController.xib */,
 			);
 			path = CommonClient;
 			sourceTree = "<group>";
@@ -5359,8 +5388,8 @@
 		BB520D121BF9B3F20022BFA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8A9D9B5F1C998CBC009F877F /* BClient */,
 				BB7B63211C27EA3C00568E3F /* Common */,
-				BBE32BA81C0ED2820094ACEE /* Buyer */,
 				BBE32BA71C0ED2740094ACEE /* Client */,
 				BB5AE4041BFF0EB000BA0167 /* User */,
 			);
@@ -5576,13 +5605,6 @@
 			path = Client;
 			sourceTree = "<group>";
 		};
-		BBE32BA81C0ED2820094ACEE /* Buyer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Buyer;
-			sourceTree = "<group>";
-		};
 		BBEAF18F1C7418E700F07656 /* BClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -5710,7 +5732,7 @@
 						DevelopmentTeam = Q4J2EKN3EJ;
 					};
 					BB83FB601C72C16B0013A6A0 = {
-						DevelopmentTeam = D7N6ACN9TP;
+						DevelopmentTeam = Q4J2EKN3EJ;
 					};
 				};
 			};
@@ -5813,6 +5835,7 @@
 				BB83FB311C72C01C0013A6A0 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				BB83FB321C72C01C0013A6A0 /* WebViewController.xib in Resources */,
 				BB83FB331C72C01C0013A6A0 /* HFHabitRecordViewController.xib in Resources */,
+				8A9D9B5D1C993DD3009F877F /* TKWebViewController.xib in Resources */,
 				BB83FB341C72C01C0013A6A0 /* expression.plist in Resources */,
 				BB83FB351C72C01C0013A6A0 /* HFSportViewCell.xib in Resources */,
 				BB83FB361C72C01C0013A6A0 /* HFEditInfoCell.xib in Resources */,
@@ -5963,6 +5986,7 @@
 				BB83FE0A1C72C16B0013A6A0 /* HFAdvanceSchemeContainerViewController.xib in Resources */,
 				BB83FE0B1C72C16B0013A6A0 /* MenuViewController.xib in Resources */,
 				BB83FE0C1C72C16B0013A6A0 /* libIwownBLE.bundle in Resources */,
+				8A9D9B5E1C993DD3009F877F /* TKWebViewController.xib in Resources */,
 				BB83FE0D1C72C16B0013A6A0 /* Localizable.strings in Resources */,
 				BB83FE0E1C72C16B0013A6A0 /* TKUserPageViewController.xib in Resources */,
 				BB83FE0F1C72C16B0013A6A0 /* HFSchemeListViewController.xib in Resources */,
@@ -6203,6 +6227,7 @@
 				BB83F91C1C72C01C0013A6A0 /* ZHPickView.m in Sources */,
 				BB83F91D1C72C01C0013A6A0 /* OpenSchemeByStepArg.m in Sources */,
 				BB83F91E1C72C01C0013A6A0 /* HFHabitListRes.m in Sources */,
+				8A9D9B621C998CD0009F877F /* TK_RewardListForBuyerAck.m in Sources */,
 				BB83F91F1C72C01C0013A6A0 /* PostDetailRes.m in Sources */,
 				BB83F9201C72C01C0013A6A0 /* ChildSchemeViewController.m in Sources */,
 				8AD4758B1C96CB9A00B44D56 /* TKPayProxy.m in Sources */,
@@ -6390,6 +6415,7 @@
 				BB83F9CA1C72C01C0013A6A0 /* HF_BaseAck.m in Sources */,
 				BB83F9CB1C72C01C0013A6A0 /* TK_RegisterNewUserAck.m in Sources */,
 				BB83F9CC1C72C01C0013A6A0 /* PictureCell.m in Sources */,
+				8A9D9B661C998D9A009F877F /* TK_RewardListForBuyerArg.m in Sources */,
 				BB83F9CD1C72C01C0013A6A0 /* HFMenuCell.m in Sources */,
 				8A37497A1C8D5BC4003DE59E /* CHomeChildAVC.m in Sources */,
 				BB83F9CE1C72C01C0013A6A0 /* ActionTools.m in Sources */,
@@ -6563,6 +6589,7 @@
 				BB83FA721C72C01C0013A6A0 /* HFPostArg.m in Sources */,
 				BB83FA731C72C01C0013A6A0 /* HFTitleBar.m in Sources */,
 				BB83FA741C72C01C0013A6A0 /* MXSCycleScrollView.m in Sources */,
+				8A9D9B5B1C993DD3009F877F /* TKWebViewController.m in Sources */,
 				BB83FA751C72C01C0013A6A0 /* UIViewController+TKVCcategory.m in Sources */,
 				BB83FA761C72C01C0013A6A0 /* BaseNavViewController.m in Sources */,
 				BB83FA771C72C01C0013A6A0 /* HFGetPostsReq.m in Sources */,
@@ -6808,6 +6835,7 @@
 				BB83FBD91C72C16B0013A6A0 /* ZHPickView.m in Sources */,
 				BB83FBDA1C72C16B0013A6A0 /* OpenSchemeByStepArg.m in Sources */,
 				BB83FBDB1C72C16B0013A6A0 /* HFHabitListRes.m in Sources */,
+				8A9D9B631C998CD0009F877F /* TK_RewardListForBuyerAck.m in Sources */,
 				BB83FBDC1C72C16B0013A6A0 /* PostDetailRes.m in Sources */,
 				BB83FBDD1C72C16B0013A6A0 /* ChildSchemeViewController.m in Sources */,
 				8AD4758C1C96CB9A00B44D56 /* TKPayProxy.m in Sources */,
@@ -6995,6 +7023,7 @@
 				BB83FC891C72C16B0013A6A0 /* PictureCell.m in Sources */,
 				BB83FC8A1C72C16B0013A6A0 /* HFMenuCell.m in Sources */,
 				BB83FC8B1C72C16B0013A6A0 /* ActionTools.m in Sources */,
+				8A9D9B671C998D9A009F877F /* TK_RewardListForBuyerArg.m in Sources */,
 				BB83FC8C1C72C16B0013A6A0 /* TK_RegisterNewUserArg.m in Sources */,
 				8A37497D1C8D5BD9003DE59E /* CHomeChildAVC.m in Sources */,
 				BB83FC8D1C72C16B0013A6A0 /* HiModuleListRes.m in Sources */,
@@ -7168,6 +7197,7 @@
 				BB83FD301C72C16B0013A6A0 /* HFTitleBar.m in Sources */,
 				BB83FD311C72C16B0013A6A0 /* MXSCycleScrollView.m in Sources */,
 				BB83FD321C72C16B0013A6A0 /* UIViewController+TKVCcategory.m in Sources */,
+				8A9D9B5C1C993DD3009F877F /* TKWebViewController.m in Sources */,
 				BB83FD331C72C16B0013A6A0 /* BaseNavViewController.m in Sources */,
 				BB83FD341C72C16B0013A6A0 /* HFGetPostsReq.m in Sources */,
 				BB83FD351C72C16B0013A6A0 /* TK_menuViewVC.m in Sources */,
@@ -7404,8 +7434,8 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: wei yu (PKE3P2425Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wei yu (PKE3P2425Z)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7432,7 +7462,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.buyer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "823954cd-bca1-4a91-ba0c-5e0db41db71c";
+				PROVISIONING_PROFILE = "acab7839-feab-4f49-a28f-aeeef64eb69e";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -7442,8 +7472,8 @@
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: wei yu (PKE3P2425Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wei yu (PKE3P2425Z)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7465,7 +7495,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.buyer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "823954cd-bca1-4a91-ba0c-5e0db41db71c";
+				PROVISIONING_PROFILE = "acab7839-feab-4f49-a28f-aeeef64eb69e";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -7475,8 +7505,8 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: wei yu (PKE3P2425Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wei yu (PKE3P2425Z)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7503,7 +7533,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.consumer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9bf5eea5-bb5d-4a73-bab5-dd41b502d97f";
+				PROVISIONING_PROFILE = "48edb671-040e-442f-be8f-3e8d78a9b776";
 			};
 			name = Debug;
 		};
@@ -7512,8 +7542,8 @@
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: wei yu (PKE3P2425Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wei yu (PKE3P2425Z)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7535,7 +7565,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.consumer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9bf5eea5-bb5d-4a73-bab5-dd41b502d97f";
+				PROVISIONING_PROFILE = "48edb671-040e-442f-be8f-3e8d78a9b776";
 			};
 			name = Release;
 		};

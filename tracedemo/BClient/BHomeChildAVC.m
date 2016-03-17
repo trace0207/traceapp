@@ -9,21 +9,43 @@
 #import "BHomeChildAVC.h"
 #import "BHomeChildAScrolBox.h"
 #import "TKIShowGoodsVM.h"
-#import "TKIRewardVM.h"
 
-@interface BHomeChildAVC ()
+
+@interface BHomeChildAVC()
 {
-    TKIRewardVM * vm1;
+    
 }
 @end
 @implementation BHomeChildAVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    vm1 = [[TKIRewardVM alloc] initWithFreshAbleTable ];
+    self.vm1 = [[TKIRewardVM alloc] initWithFreshAbleTable ];
+    [self.view addSubview:self.vm1.pullRefreshView];
+    [self.vm1 tkUpdateViewConstraint];
     
-    [self.view addSubview:vm1.pullRefreshView];
-    [vm1 tkUpdateViewConstraint];
-    [vm1 startPullDownRefreshing];
+}
+
+
+-(void)loadData
+{
+    [self.vm1 startPullDownRefreshing];
+}
+
+
+
+-(TKIRewardVM *)vm1
+{
+    if(!_vm1)
+    {
+        _vm1 = [[TKIRewardVM alloc] init];
+    }
+    return _vm1;
+}
+
+
+-(void)dealloc
+{
+    _vm1 = nil;
 }
 @end

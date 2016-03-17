@@ -13,4 +13,6 @@
 
 +(NSString *)getRelativePathByArgClass:(Class)argClass;
 
++(NSString *)getRelativePathByString:(NSString *)keyStr;
+
 @end
