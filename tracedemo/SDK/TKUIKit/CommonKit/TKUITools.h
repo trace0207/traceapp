@@ -44,5 +44,14 @@
  **/
 +(void)removeAllChildViews:(UIView *)view;
 
+/**
+ 设置圆角border
+ **/
+
++(void)setRoudBorderForView:(UIView *)view
+                borderColor:(UIColor *)color
+                     radius:(CGFloat)radius
+                borderWidth:(CGFloat)width;
+
 
 @end

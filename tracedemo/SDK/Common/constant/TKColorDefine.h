@@ -40,7 +40,7 @@
 #define TK_Color_nav_textActive @"FFFFFF"
 #define TK_Color_white_background   @"efeff0"
 #define TK_Color_ThemeColor @"a88462"
-#define TK_Color_themeColor2 @"f6eed6"
+#define TK_Color_themeColor2 @"f2ead2"
 
 
 

@@ -78,7 +78,21 @@
     {
         [v removeFromSuperview];
     }
+}
 
+
+/**
+ 设置圆角border
+ **/
+
++(void)setRoudBorderForView:(UIView *)view
+                borderColor:(UIColor *)color
+                     radius:(CGFloat)radius
+                borderWidth:(CGFloat)width
+{
+    [view.layer setBorderColor:color.CGColor];
+    [view.layer setBorderWidth:width];
+    [view.layer setCornerRadius:radius];
 }
 
 

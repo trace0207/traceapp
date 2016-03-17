@@ -23,12 +23,13 @@ static const CGFloat roundValue = 5.0f;
 - (instancetype)init
 {
     self = [super init];
+    self.image = IMG(@"head_default");
     self.clipsToBounds = YES;
     self.contentMode = UIViewContentModeScaleAspectFill;
     self.userInteractionEnabled = YES;
     return self;
 }
-
+    
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

@@ -13,6 +13,9 @@
 #import "AppDelegate.h"
 
 
+
+#define IN_REWARDING  101
+
 @interface TKIRewardVM()
 {
     
@@ -26,7 +29,7 @@
 -(instancetype)init
 {
     self = [super init];
-    nowPage = 1;
+    nowPage = 0; // 开始页 是  0
     return self;
 }
 
@@ -34,7 +37,7 @@
 -(void)tkLoadDefaultData
 {
     
-    [[TKProxy proxy].mainProxy getMyRewardList:self.category.categoryId page:nowPage rewardStatus:1 withBlock:^(HF_BaseAck *ack) {
+    [[TKProxy proxy].mainProxy getMyRewardList:self.category.categoryId page:nowPage rewardStatus:IN_REWARDING withBlock:^(HF_BaseAck *ack) {
         
         DDLogInfo(@"%@",ack);
     }];

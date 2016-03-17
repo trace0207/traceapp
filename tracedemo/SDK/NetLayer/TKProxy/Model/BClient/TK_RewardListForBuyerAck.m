@@ -8,6 +8,12 @@
 
 #import "TK_RewardListForBuyerAck.h"
 
+
+@implementation RewardData
+
+
+@end
+
 @implementation TK_RewardListForBuyerAck
 
 @end
