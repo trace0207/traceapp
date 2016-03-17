@@ -29,6 +29,7 @@
 
 
 #define TK_Color_default_lineColor  @"666666"
+#define TK_Color_BorderColor @"bbbbbb"
 
 
 

@@ -11,6 +11,8 @@
 #import "UIColor+TK_Color.h"
 #import "TKRewardDetailViewController.h"
 #import "AppDelegate.h"
+#import "TKUITools.h"
+#import "UIColor+TK_Color.h"
 
 
 
@@ -47,7 +49,7 @@
     
     section.sectionFootHeight = 0.1;
     section.sectionHeadHeight = 0.1;
-    section.rowHeight = 260;
+    section.rowHeight = 300;
     
     
     for (int i = 0; i<20;i++) {
@@ -64,6 +66,8 @@
     
     
     [self setDefaultSection:section];
+    
+    self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
 
@@ -113,12 +117,16 @@
 
 -(void)setTableCellStyle:(TKRewardCell *)cell
 {
-    cell.contentInfo.textColor = [UIColor tkMainTextColorForDefaultBg];
-    cell.userName.textColor = [UIColor tkLightGrayTextColor];
-    cell.btnLeft.backgroundColor = [UIColor tkThemeColor1];
-    cell.btnRight.backgroundColor = [UIColor tkLightGrayTextColor];
-    [cell.btnRight setTitleColor:[UIColor tkMainTextColorForDefaultBg] forState:UIControlStateNormal];
-    [cell.btnLeft setTitleColor:[UIColor tkMainTextColorForDefaultBg] forState:UIControlStateNormal];
+//    cell.contentInfo.textColor = [UIColor tkMainTextColorForDefaultBg];
+//    cell.userName.textColor = [UIColor tkLightGrayTextColor];
+//    cell.btnLeft.backgroundColor = [UIColor tkThemeColor1];
+//    cell.btnRight.backgroundColor = [UIColor tkLightGrayTextColor];
+//    [cell.btnRight setTitleColor:[UIColor tkMainTextColorForDefaultBg] forState:UIControlStateNormal];
+//    [cell.btnLeft setTitleColor:[UIColor tkMainTextColorForDefaultBg] forState:UIControlStateNormal];
+//    [TKUITools setRoudBorderForView:cell.btnLeft  borderColor:[UIColor tkThemeColor1] radius:2 borderWidth:1];
+    TKBorder(cell.btnLeft);
+    TKBorder(cell.btnRight);
+    
 }
 
 

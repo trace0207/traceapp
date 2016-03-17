@@ -186,6 +186,15 @@
 }
 
 
+/**
+ 边框颜色
+ **/
++(UIColor *)tkBorderColor
+{
+    return [self TKcolorWithHexString:TK_Color_BorderColor];
+}
+
+
 
 /**
  color转换成 Image

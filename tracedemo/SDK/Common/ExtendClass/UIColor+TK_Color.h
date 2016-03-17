@@ -80,6 +80,12 @@
 +(UIColor *)tkActiveTextColorForNav;
 
 
+/**
+ 边框颜色
+ **/
++(UIColor *)tkBorderColor;
+
+
 
 
 /**

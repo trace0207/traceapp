@@ -173,4 +173,4 @@ placeholderImage:[UIImage imageNamed:@"tk_image_head"]];
 tableView.delegate = d2;
 
 // 设置view 的边框
-#define TKBorder(x)  [TKUITools setRoudBorderForView: borderColor:[UIColor tkThemeColor1] radius:2 borderWidth:1];
+#define TKBorder(x)  [TKUITools setRoudBorderForView:x borderColor:[UIColor tkBorderColor] radius:2 borderWidth:1];
