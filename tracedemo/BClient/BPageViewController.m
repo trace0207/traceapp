@@ -40,7 +40,7 @@
         NSArray *titles = @[@"耐克", @"阿迪达斯", @"杰克琼斯", @"安踏", @"七匹狼", @"李宁", @"乔丹"];
         _menuView = [[KTDropdownMenuView alloc] initWithFrame:CGRectMake(kScreenWidth-90, 0,90, 44) titles:titles];
         _menuView.showLine = YES;
-        _menuView.backgroundColor = [UIColor tkThemeColor2];
+        _menuView.backgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
         _menuView.cellColor = [UIColor clearColor];
         _menuView.cellSeparatorColor = [UIColor lightGrayColor];
         _menuView.selectedAtIndex = ^(int index)
@@ -84,7 +84,7 @@
     
     
     HFTitleLabel *label = [[HFTitleLabel alloc]init];
-    
+    label.backgroundColor = [UIColor clearColor];
     NSString *title = [self.titleArray objectAtIndex:index];
     CGSize size = CGSizeMake(320,2000); //设置一个行高上限
     NSDictionary *attributes = @{NSFontAttributeName:label.textFont};

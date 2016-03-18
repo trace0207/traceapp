@@ -15,8 +15,8 @@
 
 #define TK_Color_BLUE   @"223344"
 #define TK_Color_Black  @"000000"
-#define TK_Color_Wite  @"FFFFFF"
-
+#define TK_Color_Wite   @"FFFFFF"
+#define TKColorRed      @"BD0000"
 
 
 #define TK_Color_black_main_1  @"666666"

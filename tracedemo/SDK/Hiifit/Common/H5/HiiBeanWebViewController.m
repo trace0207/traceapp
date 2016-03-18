@@ -53,12 +53,15 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         //self.title = @"加载中...";
+        
     }
     return self;
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     self.hidDefaultBackBtn = YES;
     self.navTitle = @"我的购买";
     

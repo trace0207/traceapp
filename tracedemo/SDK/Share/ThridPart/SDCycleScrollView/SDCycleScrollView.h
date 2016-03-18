@@ -42,7 +42,7 @@ typedef enum {
 
 @interface SDCycleScrollView : UIView
 
-
+@property (nonatomic, assign) int currentIndex;
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>  数据源接口
 
@@ -103,6 +103,8 @@ typedef enum {
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>  清除缓存接口
+
+- (void)setupMainView;
 
 - (void)clearCache;
 

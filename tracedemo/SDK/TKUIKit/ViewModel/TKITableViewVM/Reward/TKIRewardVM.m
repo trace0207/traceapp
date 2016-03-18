@@ -14,7 +14,7 @@
 #import "TKUITools.h"
 #import "UIColor+TK_Color.h"
 #import "TK_RewardListForBuyerAck.h"
-
+#import "GoodsDetailViewController.h"
 
 
 #define IN_REWARDING  101
@@ -108,7 +108,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    TKRewardDetailViewController *vc = [[TKRewardDetailViewController alloc] init];
+    GoodsDetailViewController *vc = [[GoodsDetailViewController alloc]initWithNibName:@"GoodsDetailViewController" bundle:nil];
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     
 }
