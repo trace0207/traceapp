@@ -170,6 +170,7 @@ const NSInteger kSwitch = 9910;
     if(!_label2)
     {
         _label2 = [self viewWithTag:kLebel2];
+        _label2.textColor = [UIColor hexChangeFloat:@"666666"];
     }
     return _label2;
 }

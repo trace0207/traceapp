@@ -58,12 +58,12 @@
 //    [bezierPath stroke];
     
     // Draw bottom line
-//    bezierPath = [UIBezierPath bezierPath];
-//    [bezierPath moveToPoint:CGPointMake(0.0, rect.size.height)];
-//    [bezierPath addLineToPoint:CGPointMake(rect.size.width, rect.size.height)];
-//    [[UIColor colorWithWhite:197.0/255.0 alpha:0.75] setStroke];
-//    [bezierPath setLineWidth:1.0];
-//    [bezierPath stroke];
+    bezierPath = [UIBezierPath bezierPath];
+    [bezierPath moveToPoint:CGPointMake(0.0, rect.size.height)];
+    [bezierPath addLineToPoint:CGPointMake(rect.size.width, rect.size.height)];
+    [[UIColor hexChangeFloat:@"e3c8ae"] setStroke];
+    [bezierPath setLineWidth:1.0];
+    [bezierPath stroke];
     
     // Draw right line
 //    bezierPath = [UIBezierPath bezierPath];

@@ -156,6 +156,7 @@
 -(TK_SettingCell *)getHeadCell
 {
     TK_SettingCell * cell =   [TK_SettingCell loadLeftImageViewType:self];
+   
     TKUser * user = [[TKUserCenter instance]getUser];
     if (user.headPortraitUrl.length>0) {
         [cell.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];

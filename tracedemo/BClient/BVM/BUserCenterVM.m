@@ -21,54 +21,61 @@
 
 -(void)tkLoadDefaultData
 {
+    self.mTableView.backgroundColor = [UIColor clearColor];
+    [self.mTableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+//    TKTableSectionM * section0 = [[TKTableSectionM alloc] init];
+//    section0.sectionHeadHeight = 0.01;
+//    section0.sectionFootHeight = 0.01;
+//    [section0 initDefaultRowData:1];
+//    section0.rowHeight = 150;
     
-    TKTableSectionM * section0 = [[TKTableSectionM alloc] init];
-    section0.sectionHeadHeight = 0.01;
-    section0.sectionFootHeight = 0.01;
-    [section0 initDefaultRowData:1];
-    section0.rowHeight = 150;
+    UIView *view = [self getHeadCell];
+    [self.mTableView setTableHeaderView:view];
     
     TKTableSectionM * section1 = [[TKTableSectionM alloc] init];
     section1.sectionHeadHeight = 0.01;
-    section1.sectionFootHeight = 10;
+    section1.sectionFootHeight = 15;
     [section1 initDefaultRowData:5];
     
     
     TKTableSectionM * section2 = [[TKTableSectionM alloc] init];
     section2.sectionHeadHeight = 0.01;
-    section2.sectionFootHeight = 10;
-    [section2 initDefaultRowData:2];
+    section2.sectionFootHeight = 15;
+    [section2 initDefaultRowData:3];
     
     TKTableSectionM * section3 = [[TKTableSectionM alloc] init];
     section3.sectionHeadHeight = 0.01;
-    section3.sectionFootHeight = 10;
+    section3.sectionFootHeight = 0.001;
     [section3 initDefaultRowData:1];
     
-    NSMutableArray * sections = [[NSMutableArray alloc] initWithObjects:section0,section1,section2,section3,nil];
+    NSMutableArray * sections = [[NSMutableArray alloc] initWithObjects:section1,section2,section3,nil];
     self.sectionData = sections;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 0 && indexPath.row == 0)
-    {
-        return [self getHeadCell];
-    }
-    else if(indexPath.section == 1)
+    if(indexPath.section == 0)
     {
         return [self getSection1Row:indexPath.row];
     }
-    else if(indexPath.section == 2)
+    else if(indexPath.section == 1)
     {
         return [self getSection2Row:indexPath.row];
     }
-    else if(indexPath.section == 3)
+    else if(indexPath.section == 2)
     {
         return [self getSection3Row:indexPath.row];
     }
     return [super tableView:tableView cellForRowAtIndexPath:indexPath];
     
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *v = [[UIView alloc]init];
+    v.backgroundColor = [UIColor whiteColor];
+    return v;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -138,6 +145,7 @@
 -(TK_SettingCell *)getSection2Row:(NSInteger)row
 {
     TK_SettingCell * cell =   [TK_SettingCell loadDefaultTextWithLeftIconType:self];
+    
     cell.label2.hidden  = YES;
     switch (row) {
         case 0:
@@ -145,10 +153,12 @@
             cell.icon1.image = IMG(@"My_setting");
             break;
         case 1:
-            cell.label1.text = @"关于趣淘";
+            cell.label1.text = @"关于";
             cell.icon1.image = IMG(@"My_setting");
             break;
         default:
+            cell.label1.text = @"生成邀请码";
+            cell.icon1.image = IMG(@"My_setting");
             break;
     }
     
@@ -164,6 +174,8 @@
         case 0:
             cell.label1.text = @"联系客服";
             cell.icon1.image = IMG(@"My_message");
+            cell.label2.hidden = NO;
+            cell.label2.text = @"400-800-8008";
             break;
         default:
             break;
@@ -177,6 +189,8 @@
 -(TK_SettingCell *)getHeadCell
 {
     TK_SettingCell * cell =   [TK_SettingCell loadCenterImageType:self];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundView.backgroundColor = [UIColor clearColor];
     TKUser * user = [[TKUserCenter instance]getUser];
     if (user.headPortraitUrl.length>0) {
         [cell.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];
