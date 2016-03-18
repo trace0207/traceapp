@@ -12,6 +12,22 @@
 @implementation TKRewardCellModel
 
 
+
++(TKRewardCellModel *)transformFromRewardData:(RewardData *)reward
+{
+    TKRewardCellModel * m = [[TKRewardCellModel alloc] init];
+    if(reward)
+    {
+        
+//        m.pic1Address = reward.picAddr1;
+//        m.pic2Address = reward.picAddr2;
+//        m.contentInfo = reward.content;
+        m.ackData = reward;
+    }
+    return m;
+}
+
+
 @end
 
 
@@ -35,4 +51,17 @@
 }
 */
 
+- (IBAction)acceptAction:(id)sender {
+    if(self.delegate)
+    {
+        [self.delegate onAcceptBtnClick:self.indexPath];
+    }
+}
+
+- (IBAction)discardAction:(id)sender {
+    if(self.delegate)
+    {
+        [self.delegate onReleaseBtnClick:self.indexPath];
+    }
+}
 @end

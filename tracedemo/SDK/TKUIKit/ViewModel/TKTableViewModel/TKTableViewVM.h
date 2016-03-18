@@ -32,6 +32,10 @@
 
 
 @property (nonatomic,strong) TKTableSectionM *defaultSection;
+
+
+-(void)defaultViewSetting;
+
 /**
  *  初始化默认的table 需
  *  需要在 add到view之后，再调用 tkUpdateViewConstraint

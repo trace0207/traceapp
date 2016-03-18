@@ -26,6 +26,8 @@
 #import "TK_RewardListForBuyerAck.h"
 #import "TK_RewardListForBuyerArg.h"
 #import "ActionTools.h"
+#import "TK_AcceptRewardArg.h"
+#import "TK_ReleaseRewardArg.h"
 
 
 
@@ -283,4 +285,49 @@
     arg.ackClassName = @"TK_RewardListForBuyerAck";
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
+
+
+/**
+ 接单
+ **/
+-(void)accept:(NSString *)buyerId
+     rewardId:(NSString *)rewardId
+     needDays:(NSInteger) days
+    withBlock:(hfAckBlock)block
+{
+    
+    TK_AcceptRewardArg * arg = [[TK_AcceptRewardArg alloc] init];
+    arg.purchaserId = buyerId;
+    arg.purchaserDay = days;
+    arg.postrewardId = rewardId;
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:^(HF_BaseAck *ack) {
+    
+        block(ack);
+    }];
+    
+    
+}
+
+
+/**
+ 释放悬赏
+ source  0 买手接单时释放到公共池， 1 消费者在拒绝买手发货时间释放到 公共池  2消费者  24 小时未同意发货时间释放到公共池
+ **/
+-(void)releaseReward:(NSString *)rewardId source:(NSInteger)source withBlock:(hfAckBlock)block
+{
+    TK_ReleaseRewardArg * arg = [[TK_ReleaseRewardArg alloc] init];
+    
+    arg.postrewardId = rewardId;
+    arg.source = source;
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:^(HF_BaseAck *ack) {
+        
+        block(ack);
+    }];
+    
+}
+
+
+#pragma  mark CClient
+
+
 @end

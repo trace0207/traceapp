@@ -217,22 +217,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/JSONModel/JSONModel/JSONModel/JSONModel.m"
-            timestampString = "479738806.265931"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
-            landmarkName = "-__importDictionary:withKeyMapper:validation:error:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BClient/BHomePageViewController.m"
             timestampString = "479827710.634307"
             startingColumnNumber = "9223372036854775807"
@@ -249,13 +233,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BClient/BPageViewController.m"
-            timestampString = "479867678.653889"
+            filePath = "SDK/TKUIKit/ViewModel/TKITableViewVM/Reward/TKIRewardVM.m"
+            timestampString = "479986329.59769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "-viewPager:contentViewControllerForTabAtIndex:"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "-fillTableCell:withDataIndex:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDK/TKUIKit/ViewModel/TKITableViewVM/Reward/TKIRewardVM.m"
+            timestampString = "479986480.931218"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-tkLoadDefaultData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

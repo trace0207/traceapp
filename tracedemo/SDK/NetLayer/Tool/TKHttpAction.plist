@@ -2,10 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>TK_ReleaseRewardArg</key>
+	<string>/apollo/login/order/postreward!release.action</string>
+	<key>TK_AcceptRewardArg</key>
+	<string>/apollo/login/order/postreward!accept.action</string>
 	<key>TK_RewardListForBuyerArg1</key>
 	<string>/apollo/login/order/postreward!postRewardSquareListByPurchaser.action</string>
 	<key>TK_RewardListForBuyerArg</key>
-	<string>/apollo/nologin/order/postreward!postRewardSquareListByPurchaser.action</string>
+	<string>/apollo/login/order/postreward!postRewardSquareListByPurchaser.action</string>
 	<key>TK_PayArg</key>
 	<string>/apollo/login/order/pay!pay.action</string>
 	<key>TK_PublishRewardArg</key>

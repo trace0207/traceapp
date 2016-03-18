@@ -34,6 +34,7 @@
     self = [self init];
     _mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
     TKSetTableView(_mTableView, self, self);
+    [self defaultViewSetting];
     return self;
 }
 
@@ -46,9 +47,15 @@
     TKSetTableView(_mTableView, self, self);
     [_pullRefreshView addSubview:_mTableView];
     refreshController = [[CLLRefreshHeadController alloc]initWithScrollView:_mTableView viewDelegate:self];
+    [self defaultViewSetting];
     return self;
 }
 
+
+-(void)defaultViewSetting
+{
+    
+}
 
 
 /**
@@ -61,6 +68,7 @@
     self = [self init];
     _mTableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
     TKSetTableView(_mTableView, self, self);
+    [self defaultViewSetting];
     return self;
 }
 /**
@@ -76,6 +84,7 @@
     TKSetTableView(_mTableView, self, self);
     [_pullRefreshView addSubview:_mTableView];
     refreshController = [[CLLRefreshHeadController alloc]initWithScrollView:_mTableView viewDelegate:self];
+    [self defaultViewSetting];
     return self;
 }
 

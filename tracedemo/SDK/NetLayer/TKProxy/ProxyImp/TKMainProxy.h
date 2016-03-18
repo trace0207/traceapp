@@ -151,6 +151,18 @@
            withBlock:(hfAckBlock)block;
 
 
+/**
+ 接单
+ **/
+-(void)accept:(NSString *)buyerId rewardId:(NSString *)rewardId needDays:(NSInteger) days withBlock:(hfAckBlock)block;
+
+
+/**
+ 释放悬赏  
+ source  0 买手接单时释放到公共池， 1 消费者在拒绝买手发货时间释放到 公共池  2消费者  24 小时未同意发货时间释放到公共池
+ **/
+-(void)releaseReward:(NSString *)rewardId source:(NSInteger)source withBlock:(hfAckBlock)block;
+
 
 #pragma  mark CClient
 

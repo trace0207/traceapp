@@ -8,29 +8,40 @@
 
 #import <UIKit/UIKit.h>
 #import "TKTableViewRowM.h"
+#import "TK_RewardListForBuyerAck.h"
+
 
 
 
 @interface TKRewardCellModel : TKTableViewRowM
 
+@property (nonatomic,strong) RewardData * ackData;
 
-@property (nonatomic,strong) NSString * userName;
-@property (nonatomic,strong) NSString * headAddress;
-@property (nonatomic,strong) NSString * contentInfo;
-@property (nonatomic,strong) NSString * pic1Address;
-@property (nonatomic,strong) NSString * pic2Address;
-@property (nonatomic,strong) NSString * goodTips;
-@property (nonatomic,strong) NSString * infoIcon1;
-@property (nonatomic,strong) NSString * infoIcon2;
-@property (nonatomic,assign) CGFloat money;
 @property (nonatomic,assign) NSInteger remainingSeconds;
 
 
++(TKRewardCellModel *)transformFromRewardData:(RewardData *)reward;
+
+@end
+
+
+@protocol TKRewardCellDelegate <NSObject>
+
+@required
+
+-(void)onAcceptBtnClick:(NSIndexPath *)indexPath;
+-(void)onReleaseBtnClick:(NSIndexPath *)indexPath;
 
 
 @end
 
+
 @interface TKRewardCell : UITableViewCell
+
+@property (strong,nonatomic) NSIndexPath *indexPath;
+@property (weak,nonatomic) id<TKRewardCellDelegate>  delegate;
+
+
 @property (strong, nonatomic) IBOutlet UIImageView *headImageView;
 @property (strong, nonatomic) IBOutlet UILabel *userName;
 @property (strong, nonatomic) IBOutlet UILabel *contentInfo;
@@ -44,5 +55,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *brandTip;
 @property (strong, nonatomic) IBOutlet UIButton *btnLeft;
 @property (strong, nonatomic) IBOutlet UIButton *btnRight;
+- (IBAction)acceptAction:(id)sender;
+- (IBAction)discardAction:(id)sender;
 
 @end

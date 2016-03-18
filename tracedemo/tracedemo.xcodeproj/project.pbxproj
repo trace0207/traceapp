@@ -69,6 +69,10 @@
 		8A9D9B631C998CD0009F877F /* TK_RewardListForBuyerAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B611C998CD0009F877F /* TK_RewardListForBuyerAck.m */; };
 		8A9D9B661C998D9A009F877F /* TK_RewardListForBuyerArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B651C998D9A009F877F /* TK_RewardListForBuyerArg.m */; };
 		8A9D9B671C998D9A009F877F /* TK_RewardListForBuyerArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B651C998D9A009F877F /* TK_RewardListForBuyerArg.m */; };
+		8A9D9B6A1C9BCC94009F877F /* TK_AcceptRewardArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B691C9BCC94009F877F /* TK_AcceptRewardArg.m */; };
+		8A9D9B6B1C9BCC94009F877F /* TK_AcceptRewardArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B691C9BCC94009F877F /* TK_AcceptRewardArg.m */; };
+		8A9D9B6E1C9BED7B009F877F /* TK_ReleaseRewardArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B6D1C9BED7B009F877F /* TK_ReleaseRewardArg.m */; };
+		8A9D9B6F1C9BED7B009F877F /* TK_ReleaseRewardArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D9B6D1C9BED7B009F877F /* TK_ReleaseRewardArg.m */; };
 		8A9E8B4F1C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */; };
 		8A9E8B501C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */; };
 		8A9E8B511C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */; };
@@ -2681,6 +2685,10 @@
 		8A9D9B611C998CD0009F877F /* TK_RewardListForBuyerAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_RewardListForBuyerAck.m; sourceTree = "<group>"; };
 		8A9D9B641C998D99009F877F /* TK_RewardListForBuyerArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_RewardListForBuyerArg.h; sourceTree = "<group>"; };
 		8A9D9B651C998D9A009F877F /* TK_RewardListForBuyerArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_RewardListForBuyerArg.m; sourceTree = "<group>"; };
+		8A9D9B681C9BCC94009F877F /* TK_AcceptRewardArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_AcceptRewardArg.h; sourceTree = "<group>"; };
+		8A9D9B691C9BCC94009F877F /* TK_AcceptRewardArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_AcceptRewardArg.m; sourceTree = "<group>"; };
+		8A9D9B6C1C9BED7B009F877F /* TK_ReleaseRewardArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_ReleaseRewardArg.h; sourceTree = "<group>"; };
+		8A9D9B6D1C9BED7B009F877F /* TK_ReleaseRewardArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_ReleaseRewardArg.m; sourceTree = "<group>"; };
 		8A9E8B4C1C86DD3600F84BB7 /* TKRewardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRewardDetailViewController.h; sourceTree = "<group>"; };
 		8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRewardDetailViewController.m; sourceTree = "<group>"; };
 		8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKRewardDetailViewController.xib; sourceTree = "<group>"; };
@@ -5230,6 +5238,10 @@
 				8A9D9B611C998CD0009F877F /* TK_RewardListForBuyerAck.m */,
 				8A9D9B641C998D99009F877F /* TK_RewardListForBuyerArg.h */,
 				8A9D9B651C998D9A009F877F /* TK_RewardListForBuyerArg.m */,
+				8A9D9B681C9BCC94009F877F /* TK_AcceptRewardArg.h */,
+				8A9D9B691C9BCC94009F877F /* TK_AcceptRewardArg.m */,
+				8A9D9B6C1C9BED7B009F877F /* TK_ReleaseRewardArg.h */,
+				8A9D9B6D1C9BED7B009F877F /* TK_ReleaseRewardArg.m */,
 			);
 			path = BClient;
 			sourceTree = "<group>";
@@ -6286,6 +6298,7 @@
 				8A0465021C88113300E6B1E0 /* TKISHowGoodsCell.m in Sources */,
 				BB83F9531C72C01C0013A6A0 /* HFSportViewCell.m in Sources */,
 				BB83F9541C72C01C0013A6A0 /* UIColor+TK_Color.m in Sources */,
+				8A9D9B6A1C9BCC94009F877F /* TK_AcceptRewardArg.m in Sources */,
 				BB83F9551C72C01C0013A6A0 /* UserViewController.m in Sources */,
 				BB83F9561C72C01C0013A6A0 /* HFModifyInfoReq.m in Sources */,
 				BB83F9571C72C01C0013A6A0 /* HFHealthCell.m in Sources */,
@@ -6589,6 +6602,7 @@
 				BB83FA721C72C01C0013A6A0 /* HFPostArg.m in Sources */,
 				BB83FA731C72C01C0013A6A0 /* HFTitleBar.m in Sources */,
 				BB83FA741C72C01C0013A6A0 /* MXSCycleScrollView.m in Sources */,
+				8A9D9B6E1C9BED7B009F877F /* TK_ReleaseRewardArg.m in Sources */,
 				8A9D9B5B1C993DD3009F877F /* TKWebViewController.m in Sources */,
 				BB83FA751C72C01C0013A6A0 /* UIViewController+TKVCcategory.m in Sources */,
 				BB83FA761C72C01C0013A6A0 /* BaseNavViewController.m in Sources */,
@@ -6894,6 +6908,7 @@
 				8A0465031C88113300E6B1E0 /* TKISHowGoodsCell.m in Sources */,
 				BB83FC111C72C16B0013A6A0 /* UIColor+TK_Color.m in Sources */,
 				BB83FC121C72C16B0013A6A0 /* UserViewController.m in Sources */,
+				8A9D9B6B1C9BCC94009F877F /* TK_AcceptRewardArg.m in Sources */,
 				BB83FC131C72C16B0013A6A0 /* HFModifyInfoReq.m in Sources */,
 				BB83FC141C72C16B0013A6A0 /* HFHealthCell.m in Sources */,
 				BB83FC151C72C16B0013A6A0 /* FMDatabaseQueue.m in Sources */,
@@ -7197,6 +7212,7 @@
 				BB83FD301C72C16B0013A6A0 /* HFTitleBar.m in Sources */,
 				BB83FD311C72C16B0013A6A0 /* MXSCycleScrollView.m in Sources */,
 				BB83FD321C72C16B0013A6A0 /* UIViewController+TKVCcategory.m in Sources */,
+				8A9D9B6F1C9BED7B009F877F /* TK_ReleaseRewardArg.m in Sources */,
 				8A9D9B5C1C993DD3009F877F /* TKWebViewController.m in Sources */,
 				BB83FD331C72C16B0013A6A0 /* BaseNavViewController.m in Sources */,
 				BB83FD341C72C16B0013A6A0 /* HFGetPostsReq.m in Sources */,
