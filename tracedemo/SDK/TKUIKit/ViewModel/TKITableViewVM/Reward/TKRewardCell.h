@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TKTableViewRowM.h"
 #import "TK_RewardListForBuyerAck.h"
+#import "CountDownView.h"
 
 
 
@@ -41,6 +42,7 @@
 @property (strong,nonatomic) NSIndexPath *indexPath;
 @property (weak,nonatomic) id<TKRewardCellDelegate>  delegate;
 
+@property (weak, nonatomic) IBOutlet CountDownView *timeCountView;
 
 @property (strong, nonatomic) IBOutlet UIImageView *headImageView;
 @property (strong, nonatomic) IBOutlet UILabel *userName;
@@ -55,6 +57,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *brandTip;
 @property (strong, nonatomic) IBOutlet UIButton *btnLeft;
 @property (strong, nonatomic) IBOutlet UIButton *btnRight;
+@property (weak, nonatomic) IBOutlet UILabel *priceText;
 - (IBAction)acceptAction:(id)sender;
 - (IBAction)discardAction:(id)sender;
 

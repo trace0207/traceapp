@@ -15,6 +15,7 @@
 #import "UIColor+TK_Color.h"
 #import "TK_RewardListForBuyerAck.h"
 #import "GoodsDetailViewController.h"
+#import "TKUserCenter.h"
 
 
 #define IN_REWARDING  101
@@ -104,6 +105,11 @@
     TKSetHeadImageView(cell.headImageView,rowData.userHeaderUrl);
     cell.contentInfo.text = rowData.content;
     cell.backgroundColor = [UIColor clearColor];
+    
+    cell.priceText.text =  [NSString stringWithFormat:@"%0.2f",rowData.rewardPrice.floatValue/100];
+    [cell.timeCountView setSecondsUTC:rowData.releaseTime.doubleValue/1000];
+    [cell.infoIconBtn1 setTitle:rowData.brandName forState:UIControlStateNormal];
+    [cell.infoIconBtn2 setTitle:rowData.categoryName forState:UIControlStateNormal];
     cell.delegate = self;
     cell.indexPath = indexPath;
     
@@ -140,7 +146,9 @@
 
 -(void)onAcceptBtnClick:(NSIndexPath *)indexPath
 {
-    [[TKProxy proxy].mainProxy accept:@"1" rewardId:@"2" needDays:3 withBlock:^(HF_BaseAck * ack)
+    TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
+    RewardData * rowData  = cellData.ackData;
+    [[TKProxy proxy].mainProxy accept:[[TKUserCenter instance] getUser].userId rewardId:rowData.id needDays:3 withBlock:^(HF_BaseAck * ack)
     {
         DDLogInfo(@"ack %@",ack);
     }];
@@ -148,7 +156,9 @@
 
 -(void)onReleaseBtnClick:(NSIndexPath *)indexPath
 {
-    [[TKProxy proxy].mainProxy releaseReward:@"1" source:1 withBlock:^(HF_BaseAck *ack) {
+    TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
+    RewardData * rowData  = cellData.ackData;
+    [[TKProxy proxy].mainProxy releaseReward:rowData.id source:0 withBlock:^(HF_BaseAck *ack) {
         DDLogInfo(@"ack %@",ack);
     }];
 }

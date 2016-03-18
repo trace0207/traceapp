@@ -21,21 +21,27 @@
                                 <rect key="frame" x="25" y="0.0" width="30" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXK-l8-LmM">
-                                <rect key="frame" x="63" y="4" width="78" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="急求一款下图的包包，意大利原产地。。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFA-R2-BvD">
                                 <rect key="frame" x="63" y="31" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.20202020202020199" green="0.20202020202020199" blue="0.20202020202020199" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tk_icon_buy_status" translatesAutoresizingMaskIntoConstraints="NO" id="TGT-b7-HQF">
-                                <rect key="frame" x="284" y="5" width="65" height="24"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gje-j4-nFc">
+                                <rect key="frame" x="288" y="7" width="56" height="20"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tk_icon_buy_status" translatesAutoresizingMaskIntoConstraints="NO" id="TGT-b7-HQF">
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="20"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="订金已付" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCS-Aj-0kt">
+                                        <rect key="frame" x="12" y="-1" width="42" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZ2-aR-I1P">
                                 <rect key="frame" x="235" y="58" width="50" height="18"/>
                                 <color key="backgroundColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,11 +51,18 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcz-AV-Se5">
-                                <rect key="frame" x="142" y="5" width="140" height="22"/>
+                                <rect key="frame" x="122" y="5" width="160" height="18"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tk_icon_time_remaining" translatesAutoresizingMaskIntoConstraints="NO" id="tLd-SV-TAZ">
-                                        <rect key="frame" x="-1" y="0.0" width="141" height="22"/>
-                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="距悬赏结束:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRH-TG-Kbb">
+                                        <rect key="frame" x="16" y="0.0" width="65" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.74117647060000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gur-Wd-yJQ" customClass="CountDownView">
+                                        <rect key="frame" x="79" y="2" width="80" height="18"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq7-LH-DoB">
@@ -80,6 +93,12 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="王大锤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXK-l8-LmM">
+                                <rect key="frame" x="63" y="4" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="height" constant="86" id="YJX-fH-DCi"/>
@@ -194,7 +213,9 @@
                 <outlet property="moneyTip" destination="BsF-bD-eHD" id="ShR-si-bQY"/>
                 <outlet property="pic1" destination="zDS-zd-Yfv" id="YZ1-Ww-Vth"/>
                 <outlet property="pic2" destination="eXo-pi-Ptl" id="6Pc-T7-1Ko"/>
+                <outlet property="priceText" destination="R5f-52-9fb" id="h2C-VY-0vZ"/>
                 <outlet property="statusIcon" destination="TGT-b7-HQF" id="hnL-1P-JYx"/>
+                <outlet property="timeCountView" destination="gur-Wd-yJQ" id="1Bc-uu-5E7"/>
                 <outlet property="timeView" destination="lcz-AV-Se5" id="eGP-Hs-X7x"/>
                 <outlet property="userName" destination="vXK-l8-LmM" id="W8I-gC-Xr9"/>
             </connections>
@@ -202,8 +223,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="tk_icon_buy_status" width="42" height="16"/>
-        <image name="tk_icon_time_remaining" width="100" height="15"/>
+        <image name="tk_icon_buy_status" width="56" height="19"/>
         <image name="tk_icon_vip" width="64" height="64"/>
     </resources>
 </document>
