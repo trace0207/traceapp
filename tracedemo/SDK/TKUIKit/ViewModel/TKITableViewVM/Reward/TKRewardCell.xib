@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="311"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aqw-P0-p32" id="sQI-mY-HgF">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="310.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="311"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBR-ri-reY">
@@ -92,7 +92,7 @@
                                 <rect key="frame" x="70" y="0.0" width="255" height="170"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDS-H5-Afv">
-                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="170"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="170"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zDS-zd-Yfv">
                                                 <rect key="frame" x="0.0" y="0.0" width="122" height="122"/>
@@ -119,7 +119,7 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-xf-0dL">
-                                        <rect key="frame" x="130.5" y="0.0" width="124.5" height="170"/>
+                                        <rect key="frame" x="131" y="0.0" width="125" height="170"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXo-pi-Ptl">
                                                 <rect key="frame" x="0.0" y="0.0" width="122" height="122"/>

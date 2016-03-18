@@ -159,8 +159,8 @@
               placeholderImage:[UIImage imageNamed:@"head_default"]];
 
 #define TKSetLoadingImageView(imageView,url)  \
-[imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:url]]  \
-placeholderImage:[UIImage imageNamed:@"tk_image_head"]];
+[imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getRawImage:url]]  \
+placeholderImage:[UIImage imageNamed:@"img_default"]];
 
 //  数字转换成 NSString
 #define  TKStrFromNumber(number)   [NSNumber numberWithDouble:number].stringValue

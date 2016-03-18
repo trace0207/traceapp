@@ -55,13 +55,9 @@
     WS(weakSelf)
     [[TKProxy proxy].mainProxy getMyRewardList:self.category.categoryId page:nowPage rewardStatus:IN_REWARDING withBlock:^(HF_BaseAck *ack) {
         
-//        DDLogInfo(@"%@",ack);
-        
         if(ack.sucess)
         {
             TK_RewardListForBuyerAck * ackData = (TK_RewardListForBuyerAck *)ack;
-//            [dataList removeAllObjects];
-//            [dataList addObjectsFromArray:ackData.data];
             for (RewardData *d in ackData.data) {
                 [section.rowsData addObject:[TKRewardCellModel transformFromRewardData:d]];
             }
@@ -70,23 +66,6 @@
         }
         [weakSelf stopRefresh];
     }];
-    
-    
-    
-    
-    
-//    for (int i = 0; i<20;i++) {
-//        
-//        TKRewardCellModel * rowM = [[TKRewardCellModel alloc] init];
-//        rowM.userName = @"李小龙";
-//        rowM.pic1Address = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg";
-//        rowM.pic2Address = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124332_084_X.jpg";
-//        
-//        rowM.headAddress = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124332_084_X.jpg";
-//        rowM.contentInfo = @"急求这款包包，意大利产，Prada包包，看图片";
-//        [section.rowsData addObject:rowM];
-//    }
-    
 }
 
 
@@ -133,13 +112,6 @@
 
 -(void)setTableCellStyle:(TKRewardCell *)cell
 {
-//    cell.contentInfo.textColor = [UIColor tkMainTextColorForDefaultBg];
-//    cell.userName.textColor = [UIColor tkLightGrayTextColor];
-//    cell.btnLeft.backgroundColor = [UIColor tkThemeColor1];
-//    cell.btnRight.backgroundColor = [UIColor tkLightGrayTextColor];
-//    [cell.btnRight setTitleColor:[UIColor tkMainTextColorForDefaultBg] forState:UIControlStateNormal];
-//    [cell.btnLeft setTitleColor:[UIColor tkMainTextColorForDefaultBg] forState:UIControlStateNormal];
-//    [TKUITools setRoudBorderForView:cell.btnLeft  borderColor:[UIColor tkThemeColor1] radius:2 borderWidth:1];
     TKBorder(cell.btnLeft);
     TKBorder(cell.btnRight);
     
@@ -150,17 +122,12 @@
 - (void)beginPullDownRefreshing
 {
     [self tkLoadDefaultData];
-//    [self.mTableView reloadData];
-    // tableView.separatorStyle = UITableViewCellSeparatorStyleNone
-//    self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:0.3];
+
 }
 
 - (void)beginPullUpLoading
 {
     [self tkLoadDefaultData];
-//    [self.mTableView reloadData];
-//    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:0.3];
 }
 
 -(BOOL)hasRefreshFooterView
