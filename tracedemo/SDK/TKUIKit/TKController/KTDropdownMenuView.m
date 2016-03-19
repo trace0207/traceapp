@@ -89,7 +89,7 @@
             }];
         }
         [self.arrowImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.titleButton.mas_right).offset(0);
+            make.left.equalTo(self.titleButton.mas_right).offset(4);
             make.centerY.equalTo(self.titleButton.mas_centerY);
         }];
         // 依附于导航栏下面
@@ -396,7 +396,7 @@
 {
     if (!_arrowImageView)
     {
-        UIImage *image = [UIImage imageNamed:@"arrow_down_icon"];
+        UIImage *image = [UIImage imageNamed:@"icon_down_arrow"];
         _arrowImageView = [[UIImageView alloc] initWithImage:image];
     }
     

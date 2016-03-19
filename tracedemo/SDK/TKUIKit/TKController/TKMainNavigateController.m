@@ -226,8 +226,8 @@
     
     
     BHomePageViewController * subTabVC1  = [[BHomePageViewController alloc] init];
-    subTabVC1.tabBarItem.image=IMG(@"new_mainPageUnselected");
-    subTabVC1.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
+    subTabVC1.tabBarItem.image=IMG(@"icon_tab_reward");
+    subTabVC1.tabBarItem.selectedImage = IMG(@"icon_tab_reward");
     subTabVC1.tabBarItem.title=@"悬赏池";
     //    subTabVC1.eventDelegate = self;
     
@@ -243,26 +243,26 @@
     messages.navTitle = @"消息中心";
     messages.hidDefaultBackBtn = YES;
     messages.tabBarItem.title = @"消息";
-    messages.tabBarItem.image = IMG(@"new_myUnselected");
-    messages.tabBarItem.selectedImage = IMG(@"new_mySelected");
+    messages.tabBarItem.image = IMG(@"icon_tab_message");
+    messages.tabBarItem.selectedImage = IMG(@"icon_tab_message");
     
     
     BMyShowGoodsViewController * newChat = [[BMyShowGoodsViewController alloc] init];
     newChat.tabBarItem.title = @"晒单";
-    newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
-    newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
+    newChat.tabBarItem.image = IMG(@"icon_tab_publish");
+    newChat.tabBarItem.selectedImage = IMG(@"icon_tab_publish");
     
     //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
     
     
     TKWebViewController * navc4 = [[TKWebViewController alloc] init];
     navc4.title = @"我的订单";
-    navc4.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
+    navc4.tabBarItem.image = [UIImage imageNamed:@"icon_tab_myorder"];
     navc4.navTitle = @"我的订单";
     
     TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
     navc5.title = @"我";
-    navc5.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
+    navc5.tabBarItem.image = [UIImage imageNamed:@"icon_tab_my"];
     
     self.selectedIndex =0;
     self.viewControllers = @[subTabVC1,/*newMain,*/messages,newChat,navc4,navc5];
@@ -289,8 +289,8 @@
 {
     
     CHomePageViewController * subTabVC1  = [[CHomePageViewController alloc] init];
-    subTabVC1.tabBarItem.image=IMG(@"new_mainPageUnselected");
-    subTabVC1.tabBarItem.selectedImage = IMG(@"new_mainPageSelected");
+    subTabVC1.tabBarItem.image=IMG(@"icon_tab_chome");
+    subTabVC1.tabBarItem.selectedImage = IMG(@"icon_tab_chome");
     subTabVC1.tabBarItem.title=@"首页";
     //    subTabVC1.eventDelegate = self;
     
@@ -306,14 +306,14 @@
     messages.navTitle = @"消息";
     messages.hidDefaultBackBtn = YES;
     messages.tabBarItem.title = @"消息";
-    messages.tabBarItem.image = IMG(@"new_myUnselected");
-    messages.tabBarItem.selectedImage = IMG(@"new_mySelected");
+    messages.tabBarItem.image = IMG(@"icon_tab_message");
+    messages.tabBarItem.selectedImage = IMG(@"icon_tab_message");
     
     
     CPublishRewardViewController * newChat = [[CPublishRewardViewController alloc] init];
     newChat.tabBarItem.title = @"发悬赏";
-    newChat.tabBarItem.image = IMG(@"new_hiMomentUnselected");
-    newChat.tabBarItem.selectedImage = IMG(@"new_hiMomentSelected");
+    newChat.tabBarItem.image = IMG(@"icon_tab_publish");
+    newChat.tabBarItem.selectedImage = IMG(@"icon_tab_publish");
     
     //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
     
@@ -321,12 +321,12 @@
     TKWebViewController * navc4 = [[TKWebViewController alloc] init];
     navc4.title = @"我的购买";
     navc4.navTitle = @"我的购买";
-    navc4.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
+    navc4.tabBarItem.image = [UIImage imageNamed:@"icon_tab_mygoods"];
     
     
     TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
     navc5.title = @"我的";
-    navc5.tabBarItem.image = [UIImage imageNamed:@"tk_icon_user_3_b"];
+    navc5.tabBarItem.image = [UIImage imageNamed:@"icon_tab_my"];
     
     self.selectedIndex =0;
     self.viewControllers = @[subTabVC1,/*newMain,*/messages,newChat,navc4,navc5];

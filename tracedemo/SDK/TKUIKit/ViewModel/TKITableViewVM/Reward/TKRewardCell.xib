@@ -53,14 +53,17 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcz-AV-Se5">
                                 <rect key="frame" x="122" y="5" width="160" height="18"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_clock" translatesAutoresizingMaskIntoConstraints="NO" id="ENv-aV-rzO">
+                                        <rect key="frame" x="5" y="5" width="10" height="10"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="距悬赏结束:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRH-TG-Kbb">
-                                        <rect key="frame" x="16" y="0.0" width="65" height="21"/>
+                                        <rect key="frame" x="18" y="0.0" width="65" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" red="0.74117647060000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gur-Wd-yJQ" customClass="CountDownView">
-                                        <rect key="frame" x="79" y="2" width="80" height="18"/>
+                                        <rect key="frame" x="80" y="2" width="80" height="18"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -68,17 +71,17 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq7-LH-DoB">
                                 <rect key="frame" x="64" y="57" width="123" height="20"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tk_icon_vip" translatesAutoresizingMaskIntoConstraints="NO" id="cgI-10-bsb">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_gold_money" translatesAutoresizingMaskIntoConstraints="NO" id="cgI-10-bsb">
+                                        <rect key="frame" x="3" y="2" width="16" height="15"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="悬赏价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UG-8s-XWm">
-                                        <rect key="frame" x="19" y="-1" width="42" height="21"/>
+                                        <rect key="frame" x="20" y="0.0" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.74117647058823533" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3800" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5f-52-9fb">
-                                        <rect key="frame" x="58" y="-1" width="61" height="21"/>
+                                        <rect key="frame" x="59" y="0.0" width="61" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <color key="textColor" red="0.74117647060000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -128,7 +131,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaZ-3d-srf">
                                                 <rect key="frame" x="0.0" y="130" width="122" height="35"/>
-                                                <state key="normal" title="抢单">
+                                                <state key="normal" title="     抢单" backgroundImage="bg_purchase">
                                                     <color key="titleColor" red="0.74117647060000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -223,7 +226,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="bg_purchase" width="122" height="35"/>
+        <image name="icon_clock" width="10" height="10"/>
+        <image name="icon_gold_money" width="15" height="15"/>
         <image name="tk_icon_buy_status" width="56" height="19"/>
-        <image name="tk_icon_vip" width="64" height="64"/>
     </resources>
 </document>
