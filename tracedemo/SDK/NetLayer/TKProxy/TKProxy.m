@@ -19,7 +19,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKProxy, proxy);
 {
     if(!_tkBaseUrl)
     {
-        return @"http://114.55.30.32";// 开发环境
+        return @"https://114.55.30.32";// 开发环境
 //        return @"http://www.sungool.com"//域名
 //        return @"http://183.131.13.104:8080";// 测试环境
 //        return @"http://183.131.13.104:8080";// 预发布环境
