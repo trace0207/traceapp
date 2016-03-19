@@ -19,8 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    self.navTitle = @"详情";
     NSString *text = @"我佛拍哈卡卡收到回复流口水了空军航空地方搭上了回家看房客户发了快递发货快乐就啊水电费看了好久啊穑地方立刻就收到回复快乐就会撒地方离开家哈桑地方还撒了看法是拉空间发的哈克里斯蒂肌肤拉开绝代风华阿斯利康绝代风华收到了空间发很多事分开就拉屎的方式打开链接发贺卡收到放到沙发和电视看房活动萨卡积分的看法好哒是靠近阿富汗的失联客机繁华的司芬克斯地方还可减肥哈是对抗肌肤哈桑分";
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
     CGFloat height = [UIKitTool caculateHeight:text sizeOfWidth:(kScreenWidth-68) withAttributes:dic];
@@ -34,8 +33,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self TKI_setBarDefaultTitle:@"详情"];
-    [self TKI_setBarDefaultLeftBack];
+//    [self TKI_setBarDefaultTitle:@"详情"];
+//    [self TKI_setBarDefaultLeftBack];
 }
 
 - (BannerView *)bannerView

@@ -6,9 +6,9 @@
 //  Copyright © 2016年 trace. All rights reserved.
 //
 
-#import "TK_BaseNavSettingViewController.h"
+#import "TKIBaseNavWithDefaultBackVC.h"
 #import "SDCycleScrollView.h"
-@interface GoodsDetailViewController : TK_BaseNavSettingViewController
+@interface GoodsDetailViewController : TKIBaseNavWithDefaultBackVC
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *grobBtn;
 @property (weak, nonatomic) IBOutlet UIButton *freeBtn;
