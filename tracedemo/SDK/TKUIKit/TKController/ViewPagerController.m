@@ -58,12 +58,12 @@
 //    [bezierPath stroke];
     
     // Draw bottom line
-    bezierPath = [UIBezierPath bezierPath];
-    [bezierPath moveToPoint:CGPointMake(0.0, rect.size.height)];
-    [bezierPath addLineToPoint:CGPointMake(rect.size.width, rect.size.height)];
-    [[UIColor hexChangeFloat:@"e3c8ae"] setStroke];
-    [bezierPath setLineWidth:1.0];
-    [bezierPath stroke];
+//    bezierPath = [UIBezierPath bezierPath];
+//    [bezierPath moveToPoint:CGPointMake(0.0, rect.size.height)];
+//    [bezierPath addLineToPoint:CGPointMake(rect.size.width, rect.size.height)];
+//    [[UIColor hexChangeFloat:@"e3c8ae"] setStroke];
+//    [bezierPath setLineWidth:1.0];
+//    [bezierPath stroke];
     
     // Draw right line
 //    bezierPath = [UIBezierPath bezierPath];
@@ -385,6 +385,9 @@
     if (!_contentView) {
         
         _contentView = _pageViewController.view;
+        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _contentView.frame.size.width, 0.5)];
+        line.backgroundColor = [UIColor hexChangeFloat:@"e3c8ae"];
+        [_contentView addSubview:line];
         _contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _contentView.backgroundColor = self.contentViewBackgroundColor;
         _contentView.bounds = self.view.bounds;
