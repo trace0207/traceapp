@@ -54,6 +54,9 @@
 -(void)tkLoadDefaultData
 {
     WS(weakSelf)
+    
+    
+    
     [[TKProxy proxy].mainProxy getMyRewardList:self.category.categoryId page:nowPage rewardStatus:IN_REWARDING withBlock:^(HF_BaseAck *ack) {
         
         if(ack.sucess)
