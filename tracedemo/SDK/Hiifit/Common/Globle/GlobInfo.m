@@ -32,22 +32,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(GlobInfo, shareInstance);
 
 - (NSString*)deviceid
 {
-    NSString *devid = [kUserDefaults valueForKey:kParamDeviceId];
-    if (devid == nil || devid.length <= 0) {
-        devid = [self setDeviceid];
+    if(!_deviceid)
+    {
+        _deviceid = [self setDeviceid];
     }
-    
-    
-    
-    return devid;
-//    return @"112233";
+    return _deviceid;
 }
 
 - (NSString*)setDeviceid
 {
     NSString *devid = [[HFDeviceInfo shareInstance]getDeviceId];
-    [kUserDefaults setValue:devid forKey:kParamDeviceId];
-    [kUserDefaults synchronize];
+//    [kUserDefaults setValue:devid forKey:kParamDeviceId];
+//    [kUserDefaults synchronize];
     return devid;
 }
 

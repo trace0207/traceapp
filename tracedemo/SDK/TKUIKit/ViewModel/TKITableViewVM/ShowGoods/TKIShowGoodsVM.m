@@ -77,6 +77,11 @@
 
 
 
+-(void)defaultViewSetting
+{
+    [self.mTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+}
+
 - (void)beginPullDownRefreshing
 {
     [self tkLoadDefaultData];
@@ -118,7 +123,7 @@
         cell = [[NSBundle mainBundle]loadNibNamed:@"TKShowGoodsCell" owner:self options:nil].firstObject;
         cell.backgroundColor = [UIColor clearColor];
     }
-    [self fillCellImages:cell indexPath:indexPath];
+//    [self fillCellImages:cell indexPath:indexPath];
     return cell;
 }
 

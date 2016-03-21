@@ -91,7 +91,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
+    RewardData * rowData  = cellData.ackData;
     GoodsDetailViewController *vc = [[GoodsDetailViewController alloc]initWithNibName:@"GoodsDetailViewController" bundle:nil];
+    vc.data = [rowData copy];
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     
 }

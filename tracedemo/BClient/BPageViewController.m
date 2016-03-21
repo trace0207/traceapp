@@ -13,6 +13,7 @@
 #import "HFTitleLabel.h"
 #import "TK_ShareCategory.h"
 #import "TK_Brand.h"
+#import "TKShowGoodsListVC.h"
 @interface BPageViewController ()<ViewPagerDataSource,ViewPagerDelegate>
 @property (nonatomic, strong) NSMutableArray *titleArray;
 @property (nonatomic, strong) NSMutableArray *numberArray;
@@ -108,14 +109,23 @@
 }
 
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
-    
+   
+#if B_Client
     BHomeChildAVC *vc = [[BHomeChildAVC alloc]init];
-    
     TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
     category.categoryId = @"1";
     category.title = @"内衣";
     vc.vm1.category =category;
     return vc;
+#else
+    TKShowGoodsListVC *vc = [[TKShowGoodsListVC alloc]init];
+    TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
+    category.categoryId = @"1";
+    category.title = @"内衣";
+    vc.vm.category =category;
+    return vc;
+#endif
+    
     
 }
 

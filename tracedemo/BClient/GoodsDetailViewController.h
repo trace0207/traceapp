@@ -8,7 +8,11 @@
 
 #import "TKIBaseNavWithDefaultBackVC.h"
 #import "SDCycleScrollView.h"
+#import "TKRewardCell.h"
 @interface GoodsDetailViewController : TKIBaseNavWithDefaultBackVC
+
+@property (nonatomic,strong) RewardData * data;
+
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *grobBtn;
 @property (weak, nonatomic) IBOutlet UIButton *freeBtn;

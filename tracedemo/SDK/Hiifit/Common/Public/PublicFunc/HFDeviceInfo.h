@@ -27,4 +27,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(HFDeviceInfo, shareInstance)
 //编码后的ip地址
 - (NSString*)getBehaviorInfo;
 
+@property (nonatomic,strong)NSString * deviceId;
+
 @end

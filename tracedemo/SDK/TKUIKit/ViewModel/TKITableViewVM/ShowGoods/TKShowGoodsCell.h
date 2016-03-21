@@ -25,6 +25,7 @@
 @interface TKShowGoodsCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIView *imageContentView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *imageFiledHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textHeight;
 @property (strong, nonatomic) IBOutlet TKHeadImageView *userHeadImage;
 @property (strong, nonatomic) IBOutlet UILabel *contentText;
 @property (strong, nonatomic) IBOutlet UILabel *headSecondLabel;
@@ -38,11 +39,5 @@
 
 
 
-
-- (IBAction)attentionAction:(id)sender;
-
-- (IBAction)commentAction:(id)sender;
-- (IBAction)likeAction:(id)sender;
-- (IBAction)rewardAction:(id)sender;
 
 @end

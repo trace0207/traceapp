@@ -35,6 +35,7 @@
     CGFloat picPaddingLeftAndRight;//  多张图片时，默认左右边距
 }
 
+
 @end
 
 @implementation TKIShowGoodsRowM
@@ -44,7 +45,7 @@
 {
     self = [super init];
     imageFieldHeight = 0.0f;
-    constFieldHeight = 250;
+    constFieldHeight = 360;
     cellContentPaddingLeftAndRight = 16;//  cell contentView默认的边距 * 2
     picPaddingLeftAndRight = 5 * 2; //两边距离一共
     return self;
@@ -54,7 +55,7 @@
 -(CGFloat)rowHeight
 {
     [self checkImageFieldHeightInit];
-    return constFieldHeight + imageFieldHeight;
+    return constFieldHeight ; // + imageFieldHeight;
 }
 
 

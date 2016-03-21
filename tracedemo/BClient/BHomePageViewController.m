@@ -38,6 +38,8 @@
 //        UIImage *img = [UIImage scaleWithImage:@"btn_bg_unable"];
 //        [_segmentedControl setImage:img forSegmentAtIndex:0];
 //        [_segmentedControl setImage:img forSegmentAtIndex:1];
+        
+       
     }
     return _segmentedControl;
 }

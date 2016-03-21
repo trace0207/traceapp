@@ -77,6 +77,8 @@
 		8A9E8B501C86DD3600F84BB7 /* TKRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */; };
 		8A9E8B511C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */; };
 		8A9E8B521C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */; };
+		8AA3464E1CA001BC00FCB39D /* TKShowGoodsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3464D1CA001BC00FCB39D /* TKShowGoodsListVC.m */; };
+		8AA3464F1CA001BC00FCB39D /* TKShowGoodsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3464D1CA001BC00FCB39D /* TKShowGoodsListVC.m */; };
 		8AA7F7091C88267000CE0F17 /* TKPublishShowGoodsArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7F7081C88267000CE0F17 /* TKPublishShowGoodsArg.m */; };
 		8AA7F70A1C88267000CE0F17 /* TKPublishShowGoodsArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7F7081C88267000CE0F17 /* TKPublishShowGoodsArg.m */; };
 		8AA7F70E1C8880AE00CE0F17 /* TKPublishShowGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7F70C1C8880AE00CE0F17 /* TKPublishShowGoodsVC.m */; };
@@ -2726,6 +2728,8 @@
 		8A9E8B4C1C86DD3600F84BB7 /* TKRewardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRewardDetailViewController.h; sourceTree = "<group>"; };
 		8A9E8B4D1C86DD3600F84BB7 /* TKRewardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRewardDetailViewController.m; sourceTree = "<group>"; };
 		8A9E8B4E1C86DD3600F84BB7 /* TKRewardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKRewardDetailViewController.xib; sourceTree = "<group>"; };
+		8AA3464C1CA001BC00FCB39D /* TKShowGoodsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShowGoodsListVC.h; sourceTree = "<group>"; };
+		8AA3464D1CA001BC00FCB39D /* TKShowGoodsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShowGoodsListVC.m; sourceTree = "<group>"; };
 		8AA7F7071C88267000CE0F17 /* TKPublishShowGoodsArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPublishShowGoodsArg.h; sourceTree = "<group>"; };
 		8AA7F7081C88267000CE0F17 /* TKPublishShowGoodsArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPublishShowGoodsArg.m; sourceTree = "<group>"; };
 		8AA7F70B1C8880AE00CE0F17 /* TKPublishShowGoodsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPublishShowGoodsVC.h; sourceTree = "<group>"; };
@@ -5328,6 +5332,8 @@
 				8A9D9B581C993DD3009F877F /* TKWebViewController.h */,
 				8A9D9B591C993DD3009F877F /* TKWebViewController.m */,
 				8A9D9B5A1C993DD3009F877F /* TKWebViewController.xib */,
+				8AA3464C1CA001BC00FCB39D /* TKShowGoodsListVC.h */,
+				8AA3464D1CA001BC00FCB39D /* TKShowGoodsListVC.m */,
 			);
 			path = CommonClient;
 			sourceTree = "<group>";
@@ -6849,6 +6855,7 @@
 				BB83FACF1C72C01C0013A6A0 /* GetRunningDataArg.m in Sources */,
 				BB83FAD01C72C01C0013A6A0 /* HFHabitSignInfoReq.m in Sources */,
 				BB83FAD11C72C01C0013A6A0 /* HFSetPwdReq.m in Sources */,
+				8AA3464E1CA001BC00FCB39D /* TKShowGoodsListVC.m in Sources */,
 				BB83FAD21C72C01C0013A6A0 /* HFItem.m in Sources */,
 				BB83FAD31C72C01C0013A6A0 /* HFMomentsViewController.m in Sources */,
 				BB83FAD41C72C01C0013A6A0 /* BaseTableCell.m in Sources */,
@@ -7471,6 +7478,7 @@
 				BB83FD8C1C72C16B0013A6A0 /* GetRunningDataArg.m in Sources */,
 				BB83FD8D1C72C16B0013A6A0 /* HFHabitSignInfoReq.m in Sources */,
 				BB83FD8E1C72C16B0013A6A0 /* HFSetPwdReq.m in Sources */,
+				8AA3464F1CA001BC00FCB39D /* TKShowGoodsListVC.m in Sources */,
 				BB83FD8F1C72C16B0013A6A0 /* HFItem.m in Sources */,
 				BB83FD901C72C16B0013A6A0 /* HFMomentsViewController.m in Sources */,
 				BB83FD911C72C16B0013A6A0 /* BaseTableCell.m in Sources */,

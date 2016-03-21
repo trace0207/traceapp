@@ -126,6 +126,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(HFDeviceInfo, shareInstance)
     return [addresses count] ? addresses : nil;
 }
 
+-(NSString *)deviceId
+{
+    if( _deviceId)
+    {
+        
+    }
+    return _deviceId;
+}
+
 - (NSString*)getDeviceId
 {
     static NSString *deviceId = nil;

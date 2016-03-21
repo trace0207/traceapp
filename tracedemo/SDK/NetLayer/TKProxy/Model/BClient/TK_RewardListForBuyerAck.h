@@ -99,6 +99,7 @@
 
 
 
+-(NSArray *)getPicsArrays;
 
 
 

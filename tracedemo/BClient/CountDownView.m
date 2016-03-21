@@ -123,7 +123,7 @@
         make.left.equalTo(self.secondcolonLabel.mas_right);
         make.top.right.equalTo(self);
         make.bottom.equalTo(self).with.offset(-1);
-        make.right.equalTo(self).with.offset(-1);
+//        make.right.equalTo(self).with.offset(-1);
         make.width.equalTo(self.minuteLabel);
     }];
 }
