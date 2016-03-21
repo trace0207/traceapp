@@ -14,7 +14,7 @@
 #import "TKAppSettingViewController.h"
 #import "TKEditUserInfoVC.h"
 #import "NSString+HFStrUtil.h"
-
+#import "AbountViewController.h"
 @implementation BUserCenterVM
 
 
@@ -84,15 +84,13 @@
     
     switch (indexPath.section) {
         case 0:
-//            [self goToUserPage];
-            break;
-        case 1:
             [self onTableRowSelectFromSectionOne:indexPath.row view:[tableView cellForRowAtIndexPath:indexPath]];
             break;
-        case 2:
+        case 1:
             [self onTableRowSelectFromSectionTwo:indexPath.row];
             break;
-        case 3:
+        case 2:
+            //打客服电话
             break;
         default:
             break;
@@ -189,8 +187,8 @@
 -(TK_SettingCell *)getHeadCell
 {
     TK_SettingCell * cell =   [TK_SettingCell loadCenterImageType:self];
-    cell.backgroundColor = [UIColor clearColor];
-    cell.backgroundView.backgroundColor = [UIColor clearColor];
+    //cell.backgroundColor = [UIColor clearColor];
+    cell.contentView.backgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
     TKUser * user = [[TKUserCenter instance]getUser];
     if (user.headPortraitUrl.length>0) {
         [cell.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];
@@ -198,6 +196,7 @@
     }else{
         [cell.headImage setImage:IMG(@"user")];
     }
+    [cell.headImage tkAddTapAction:@selector(goToUserPage) forTarget:self];
     cell.label2.text = user.nickName;
 //    cell.label1.text = [[@"Vip:" stringByAppendingString:user.vip] stringByAppendingString:@"级"];
     
@@ -247,9 +246,11 @@
         [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
     }
     if (row == 1) {
-        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
-        bvc.navTitle = @"我的卡券";
-        [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
+//        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
+//        bvc.navTitle = @"我的卡券";
+//        [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
+        AbountViewController *vc = [[AbountViewController alloc]initWithNibName:@"AbountViewController" bundle:nil];
+        [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     }
     else if (row == 2){
         

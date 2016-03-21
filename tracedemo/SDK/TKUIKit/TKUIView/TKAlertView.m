@@ -1,0 +1,266 @@
+//
+//  TKAltertView.m
+//  tracedemo
+//
+//  Created by zhuxiaoxia on 16/3/21.
+//  Copyright © 2016年 trace. All rights reserved.
+//
+
+#import "TKAlertView.h"
+#import <objc/runtime.h>
+#import "GlobConfig.h"
+#import "UIKitTool.h"
+#import "Masonry.h"
+#import "UIColor+TK_Color.h"
+
+@interface KAlertView : UIView
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *describleLabel;
+@property (nonatomic, strong) UIButton *determinBtn;
+@property (nonatomic, strong) UIButton *cancelBtn;
+
+@property (nonatomic, strong) UIImageView *tipImageView;
+
+@end
+@implementation KAlertView
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.clipsToBounds = YES;
+        self.layer.masksToBounds = NO;
+        self.backgroundColor = [UIColor whiteColor];
+        [[self layer] setCornerRadius:5];
+        [[self layer] setShadowOffset:CGSizeMake(3, 3)];
+        [[self layer] setShadowRadius:5];
+        [[self layer] setShadowOpacity:0.8];
+        [[self layer] setShadowColor:[UIColor blackColor].CGColor];
+    }
+    return self;
+}
+
+- (UILabel *)titleLabel
+{
+    if (_titleLabel == nil) {
+        _titleLabel = [[UILabel alloc]init];
+        _titleLabel.numberOfLines = 0;
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.font = [UIFont systemFontOfSize:17];
+        _titleLabel.textColor = [UIColor darkGrayColor];
+        [self addSubview:_titleLabel];
+        [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.top.equalTo(self).with.offset(20);
+            make.height.mas_equalTo(20);
+            make.width.mas_greaterThanOrEqualTo(10);
+            make.centerX.equalTo(self.mas_centerX);
+//            make.left.equalTo(self).with.offset(20);
+//            make.right.equalTo(self).with.offset(-20);
+//            make.top.equalTo(self).with.offset(20);
+//            make.height.mas_greaterThanOrEqualTo(0);
+        }];
+    }
+    return _titleLabel;
+}
+
+- (UIImageView *)tipImageView
+{
+    if (_tipImageView == nil) {
+        _tipImageView = [[UIImageView alloc]init];
+        [self addSubview:_tipImageView];
+    }
+    return _tipImageView;
+}
+
+- (UILabel *)describleLabel
+{
+    if (_describleLabel == nil) {
+        _describleLabel = [[UILabel alloc]init];
+        _describleLabel.font = [UIFont systemFontOfSize:14];
+        _describleLabel.textAlignment = NSTextAlignmentCenter;
+        _describleLabel.textColor = [UIColor darkGrayColor];
+        _describleLabel.numberOfLines = 0;
+        [self addSubview:_describleLabel];
+        
+        [_describleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self).with.offset(20);
+            make.right.equalTo(self).with.offset(-20);
+            if (_titleLabel) {
+                make.top.equalTo(self.titleLabel.mas_bottom).with.offset(20);
+            }else {
+                make.top.equalTo(self).with.offset(20);
+            }
+            make.bottom.equalTo(self).with.offset(-80);
+        }];
+    }
+    return _describleLabel;
+}
+
+- (UIButton *)determinBtn
+{
+    if (_determinBtn == nil) {
+        _determinBtn = [[UIButton alloc]init];
+        _determinBtn.tag = 1;
+        [_determinBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [_determinBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
+        _determinBtn.clipsToBounds = YES;
+        [_determinBtn.layer setBorderWidth:1];
+        [_determinBtn.layer setBorderColor:[UIColor darkGrayColor].CGColor];
+        [_determinBtn.layer setCornerRadius:2];
+        [self addSubview:_determinBtn];
+    }
+    return _determinBtn;
+}
+
+- (UIButton *)cancelBtn
+{
+    if (_cancelBtn == nil) {
+        _cancelBtn = [[UIButton alloc]init];
+        [_cancelBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [_cancelBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
+        _cancelBtn.clipsToBounds = YES;
+        [_cancelBtn.layer setBorderWidth:1];
+        [_cancelBtn.layer setBorderColor:[UIColor darkGrayColor].CGColor];
+        [_cancelBtn.layer setCornerRadius:2];
+        [self addSubview:_cancelBtn];
+    }
+    return _cancelBtn;
+}
+@end
+
+
+@interface TKAlertView ()
+@property (nonatomic, strong) KAlertView *subAltert;
+@end
+
+@implementation TKAlertView
+
+- (KAlertView *)subAltert
+{
+    if (_subAltert == nil) {
+        _subAltert = [[KAlertView alloc]init];
+        [self addSubview: _subAltert];
+        [_subAltert mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.mas_left).with.offset(20);
+            make.right.equalTo(self.mas_right).with.offset(-20);
+            make.centerY.equalTo(self.mas_centerY);
+            make.height.mas_greaterThanOrEqualTo(20);
+        }];
+    }
+    return _subAltert;
+}
+
+#pragma mark - 初始化，给一个透明的背景
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [UIColor clearColor];
+        UIView *backgroundView = [UIView new];
+        backgroundView.backgroundColor = [UIColor blackColor];
+        backgroundView.alpha = 0.4f;
+        [self addSubview:backgroundView];
+        
+        [backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        }];
+        
+    }
+    return self;
+}
+#pragma mark - 本项目使用弹出框
++ (instancetype)showAltertWithTitle:(NSString *)title withMessage:(id)message commpleteBlock:(void(^)(NSInteger buttonIndex))block cancelTitle:(NSString *)cancelTitle determineTitle:(NSString *)determineTitle
+{
+    TKAlertView *altertView = [[self alloc]initWithFrame:kScreenBounds];
+    objc_setAssociatedObject(altertView, "callBack", [block copy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [[[UIApplication sharedApplication]keyWindow]addSubview:altertView];
+    
+    
+    
+    if (title.length>0) {
+        altertView.subAltert.titleLabel.text = title;
+    }
+    if (message == nil) {
+        altertView.subAltert.describleLabel.text = @"";
+    }else if ([message isKindOfClass:[NSString class]]) {
+        altertView.subAltert.describleLabel.text = message;
+    }else if ([message isKindOfClass:[NSAttributedString class]]) {
+        altertView.subAltert.describleLabel.attributedText = message;
+    }else {
+        altertView.subAltert.describleLabel.text = @"";
+    }
+    NSAssert(determineTitle != nil || cancelTitle != nil, @"至少要一个按钮");
+    
+    if (cancelTitle == nil || determineTitle == nil) {
+        [altertView.subAltert.cancelBtn addTarget:altertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];
+        NSString *text = cancelTitle ? cancelTitle:determineTitle;
+        [altertView.subAltert.cancelBtn setTitle:text forState:UIControlStateNormal];
+        [altertView.subAltert.cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(40);
+            make.bottom.equalTo(altertView.subAltert).with.offset(-20);
+            make.left.equalTo(altertView.subAltert).with.offset(90);
+            make.right.equalTo(altertView.subAltert).with.offset(-90);
+        }];
+    }else {
+        [altertView.subAltert.cancelBtn addTarget:altertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];
+        [altertView.subAltert.cancelBtn setTitle:cancelTitle forState:UIControlStateNormal];
+        [altertView.subAltert.cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(40);
+            make.bottom.equalTo(altertView.subAltert).with.offset(-20);
+            make.right.equalTo(altertView.subAltert).with.offset(-20);
+            make.width.equalTo(altertView.subAltert.determinBtn);
+        }];
+        
+        [altertView.subAltert.determinBtn addTarget:altertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];
+        [altertView.subAltert.determinBtn setTitle:determineTitle forState:UIControlStateNormal];
+        [altertView.subAltert.determinBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(40);
+            make.bottom.equalTo(altertView.subAltert).with.offset(-20);
+            make.left.equalTo(altertView.subAltert).with.offset(20);
+            make.right.equalTo(altertView.subAltert.cancelBtn.mas_left).with.offset(-20);
+        }];
+    }
+    [altertView.subAltert setNeedsUpdateConstraints];
+    return altertView;
+}
+
++ (void)showSuccessWithTitle:(NSString *)title withMessage:(id)message commpleteBlock:(void(^)(NSInteger buttonIndex))block cancelTitle:(NSString *)cancelTitle determineTitle:(NSString *)determineTitle
+{
+    TKAlertView *alertView = [self showAltertWithTitle:title withMessage:message commpleteBlock:block cancelTitle:cancelTitle determineTitle:determineTitle];
+    [alertView.subAltert.tipImageView setImage:IMG(@"icon_selectyes")];
+    [alertView.subAltert.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(alertView.subAltert.mas_centerX).with.offset(10+3);
+    }];
+    [alertView.subAltert.tipImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(20, 20));
+        make.right.equalTo(alertView.subAltert.titleLabel.mas_left).with.offset(-3);
+        make.centerY.equalTo(alertView.subAltert.titleLabel.mas_centerY);
+    }];
+}
+
+
++ (void)showFailedWithTitle:(NSString *)title withMessage:(id)message commpleteBlock:(void(^)(NSInteger buttonIndex))block cancelTitle:(NSString *)cancelTitle determineTitle:(NSString *)determineTitle
+{
+    TKAlertView *alertView = [self showAltertWithTitle:title withMessage:message commpleteBlock:block cancelTitle:cancelTitle determineTitle:determineTitle];
+    [alertView.subAltert.tipImageView setImage:IMG(@"video_error")];
+    [alertView.subAltert.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(alertView.subAltert.mas_centerX).with.offset(10+3);
+    }];
+    [alertView.subAltert.tipImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(20, 20));
+        make.right.equalTo(alertView.subAltert.titleLabel.mas_left).with.offset(-3);
+        make.centerY.equalTo(alertView.subAltert.titleLabel.mas_centerY);
+    }];
+}
+
+- (void)alertAction:(UIButton*)bt
+{
+    void (^block)(NSInteger buttonIndex) = objc_getAssociatedObject(self, "callBack");
+    if (block) {
+        block(bt.tag);
+    }
+    [self removeFromSuperview];
+}
+
+@end

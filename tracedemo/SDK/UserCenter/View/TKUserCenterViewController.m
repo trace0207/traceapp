@@ -44,13 +44,24 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [vm tkLoadDefaultData];
      [vm tkUpdateViewConstraint];
+    
+//    [vm.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.mas_equalTo(UIEdgeInsetsMake(64, 0, 0, 0));
+//    }];
 }
 
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self TKaddNavigationTitle:@"我"];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    //[self TKaddNavigationTitle:@"我"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {

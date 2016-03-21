@@ -248,7 +248,7 @@
     
     
     BMyShowGoodsViewController * newChat = [[BMyShowGoodsViewController alloc] init];
-    newChat.tabBarItem.title = @"晒单";
+    newChat.tabBarItem.title = @"我要晒单";
     newChat.tabBarItem.image = IMG(@"icon_tab_publish");
     newChat.tabBarItem.selectedImage = IMG(@"icon_tab_publish");
     
@@ -261,7 +261,7 @@
     navc4.navTitle = @"我的订单";
     
     TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
-    navc5.title = @"我";
+    navc5.title = @"我的";
     navc5.tabBarItem.image = [UIImage imageNamed:@"icon_tab_my"];
     
     self.selectedIndex =0;

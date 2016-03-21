@@ -226,22 +226,22 @@
             </tableViewCellContentView>
             <point key="canvasLocation" x="195" y="571.5"/>
         </tableViewCell>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TK_SettingCell" rowHeight="153" id="aiv-yO-cB3" customClass="TK_SettingCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TK_SettingCell" rowHeight="126" id="aiv-yO-cB3" customClass="TK_SettingCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aiv-yO-cB3" id="bUZ-ZC-vT2">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="125.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" tag="9900" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hki-qt-fyV" customClass="TKHeadImageView">
-                        <rect key="frame" x="20" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="20" y="61" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="j0c-Pz-gBm"/>
                             <constraint firstAttribute="height" constant="50" id="zJt-Ai-rHQ"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" tag="9902" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGt-S2-G5R">
-                        <rect key="frame" x="78" y="15" width="134" height="21"/>
+                        <rect key="frame" x="78" y="76" width="134" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Z8v-OF-m4U"/>
                         </constraints>
@@ -250,7 +250,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" tag="9901" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgO-c2-sbd">
-                        <rect key="frame" x="220" y="15" width="80" height="21"/>
+                        <rect key="frame" x="220" y="76" width="80" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="fI3-CX-zoi"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="fYq-tP-XC9"/>
@@ -262,10 +262,10 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="RGt-S2-G5R" firstAttribute="top" secondItem="bUZ-ZC-vT2" secondAttribute="top" constant="15" id="39g-6t-1iK"/>
+                    <constraint firstItem="RGt-S2-G5R" firstAttribute="top" secondItem="bUZ-ZC-vT2" secondAttribute="top" constant="76" id="39g-6t-1iK"/>
                     <constraint firstItem="hgO-c2-sbd" firstAttribute="leading" secondItem="RGt-S2-G5R" secondAttribute="trailing" constant="8" id="Hao-ns-LHR"/>
-                    <constraint firstItem="hgO-c2-sbd" firstAttribute="top" secondItem="bUZ-ZC-vT2" secondAttribute="top" constant="15" id="Ubx-GZ-Lsr"/>
-                    <constraint firstItem="hki-qt-fyV" firstAttribute="top" secondItem="bUZ-ZC-vT2" secondAttribute="top" id="ZOG-Sh-gAT"/>
+                    <constraint firstItem="hgO-c2-sbd" firstAttribute="top" secondItem="bUZ-ZC-vT2" secondAttribute="top" constant="76" id="Ubx-GZ-Lsr"/>
+                    <constraint firstItem="hki-qt-fyV" firstAttribute="top" secondItem="bUZ-ZC-vT2" secondAttribute="top" constant="61" id="ZOG-Sh-gAT"/>
                     <constraint firstItem="hki-qt-fyV" firstAttribute="leading" secondItem="bUZ-ZC-vT2" secondAttribute="leading" constant="20" id="bB9-nG-Rbu"/>
                     <constraint firstItem="RGt-S2-G5R" firstAttribute="centerY" secondItem="hki-qt-fyV" secondAttribute="centerY" id="c3E-Gz-kgX"/>
                     <constraint firstAttribute="trailing" secondItem="hgO-c2-sbd" secondAttribute="trailing" constant="20" id="hVi-V2-U0V"/>

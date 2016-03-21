@@ -11,7 +11,8 @@
 #import "BPageViewController.h"
 #import "KTDropdownMenuView.h"
 #import "UIColor+TK_Color.h"
-#import "HFAlertView.h"
+//#import "HFAlertView.h"
+#import "TKAlertView.h"
 #import "CountDownView.h"
 #import "UIImage+Scale.h"
 @interface BHomePageViewController ()<HFSegmentViewDelegate>
@@ -76,20 +77,22 @@
     if (self.mSegView.currentIndex == 1) {
         [self addRightBarItemWithCustomView:self.menuView];
     }
-//    UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 30)];
-//    [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//    [bt setTitle:@"AltertView" forState:UIControlStateNormal];
-//    [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
-//    [self addLeftBarItemWithCustomView:bt];
+    UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
+    [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [bt setTitle:@"弹窗" forState:UIControlStateNormal];
+    [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+    [self addLeftBarItemWithCustomView:bt];
 }
 
 - (void)test
 {
 
-    CountDownView *countView = [[CountDownView alloc]initWithFrame:CGRectMake(50, 350, 100, 30)];
     
-    [[UIKitTool getAppdelegate].window addSubview:countView];
-    countView.secondsUTC = 1457312501+BSDay*11;
+    [TKAlertView showSuccessWithTitle:@"提示" withMessage:@"你不能这么厉害好吗？" commpleteBlock:^(NSInteger buttonIndex) {
+        
+    } cancelTitle:@"取消" determineTitle:@"确定"];
+    
+    
     //countView.secondsUTC = NSTimeIntervalSince1970;
 //    NSMutableAttributedString *attriString = [[NSMutableAttributedString alloc]initWithString:@"请支付预付款：1200元\n（预付款将打入平台账户，不会直接打给买手）"];
 //    

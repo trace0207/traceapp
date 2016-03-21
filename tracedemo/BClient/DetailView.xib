@@ -31,7 +31,7 @@
                         <constraint firstAttribute="height" constant="16" id="v6e-8P-7Re"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qkv-UR-3qe">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_clock" translatesAutoresizingMaskIntoConstraints="NO" id="qkv-UR-3qe">
                     <rect key="frame" x="106" y="24" width="13" height="13"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="13" id="5MV-6T-2Vc"/>
@@ -127,6 +127,7 @@
     </objects>
     <resources>
         <image name="head_default" width="56" height="56"/>
-        <image name="tk_icon_buy_status" width="42" height="16"/>
+        <image name="icon_clock" width="10" height="10"/>
+        <image name="tk_icon_buy_status" width="56" height="19"/>
     </resources>
 </document>
