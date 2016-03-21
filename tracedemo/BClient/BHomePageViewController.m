@@ -87,13 +87,19 @@
 - (void)test
 {
 
+    //成功场景
+//    [TKAlertView showSuccessWithTitle:@"晒单成功！" withMessage:@"你不能这么厉害好吗？" commpleteBlock:^(NSInteger buttonIndex) {
+//        
+//    } cancelTitle:@"取消" determineTitle:@"确定"];
     
-    [TKAlertView showSuccessWithTitle:@"提示" withMessage:@"你不能这么厉害好吗？" commpleteBlock:^(NSInteger buttonIndex) {
-        
-    } cancelTitle:@"取消" determineTitle:@"确定"];
+    //失败场景
+//    [TKAlertView showFailedWithTitle:@"晒单失败!" withMessage:@"你为什么这么弱？" commpleteBlock:^(NSInteger buttonIndex) {
+//        
+//    } cancelTitle:@"我错了" determineTitle:nil];
     
+
     
-    //countView.secondsUTC = NSTimeIntervalSince1970;
+    //富文本场景
 //    NSMutableAttributedString *attriString = [[NSMutableAttributedString alloc]initWithString:@"请支付预付款：1200元\n（预付款将打入平台账户，不会直接打给买手）"];
 //    
 //    NSDictionary *dic1 = @{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor darkGrayColor]};
@@ -106,9 +112,14 @@
 //    NSDictionary *dic3 = @{NSFontAttributeName:[UIFont systemFontOfSize:13],NSForegroundColorAttributeName:[UIColor lightGrayColor]};
 //    [attriString addAttributes:dic3 range:NSMakeRange(13, 21)];
 //    
-//    [HFAlertView showAltertWithTitle:@"请支付悬赏金" withMessage:attriString commpleteBlock:^(NSInteger buttonIndex) {
+//    [TKAlertView showAltertWithTitle:@"请支付悬赏金" withMessage:attriString commpleteBlock:^(NSInteger buttonIndex) {
 //        
 //    } cancelTitle:@"取消" determineTitle:@"确定并支付"];
+    
+    //发货时间弹窗界面
+    [TKAlertView showDeliveryTimeWithBlock:^(NSInteger buttonIndex) {
+        
+    }];
 }
 
 -(void)initView

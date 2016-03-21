@@ -12,6 +12,28 @@
 #import "UIKitTool.h"
 #import "Masonry.h"
 #import "UIColor+TK_Color.h"
+#import "UIView+Border.h"
+#import "UIButton+TitleImage.h"
+#import "DeliveryTimeView.h"
+
+@interface HUD : UIView
+
+@end
+
+
+@implementation HUD
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
+@end
+
 
 @interface KAlertView : UIView
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -102,12 +124,9 @@
     if (_determinBtn == nil) {
         _determinBtn = [[UIButton alloc]init];
         _determinBtn.tag = 1;
-        [_determinBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [_determinBtn setTitleColor:[UIColor hexChangeFloat:TKColorBlack] forState:UIControlStateNormal];
         [_determinBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
-        _determinBtn.clipsToBounds = YES;
-        [_determinBtn.layer setBorderWidth:1];
-        [_determinBtn.layer setBorderColor:[UIColor darkGrayColor].CGColor];
-        [_determinBtn.layer setCornerRadius:2];
+        [_determinBtn setDefaultBorder];
         [self addSubview:_determinBtn];
     }
     return _determinBtn;
@@ -117,12 +136,9 @@
 {
     if (_cancelBtn == nil) {
         _cancelBtn = [[UIButton alloc]init];
-        [_cancelBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [_cancelBtn setTitleColor:[UIColor hexChangeFloat:TKColorBlack] forState:UIControlStateNormal];
         [_cancelBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
-        _cancelBtn.clipsToBounds = YES;
-        [_cancelBtn.layer setBorderWidth:1];
-        [_cancelBtn.layer setBorderColor:[UIColor darkGrayColor].CGColor];
-        [_cancelBtn.layer setCornerRadius:2];
+        [_cancelBtn setDefaultBorder];
         [self addSubview:_cancelBtn];
     }
     return _cancelBtn;
@@ -142,8 +158,8 @@
         _subAltert = [[KAlertView alloc]init];
         [self addSubview: _subAltert];
         [_subAltert mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_left).with.offset(20);
-            make.right.equalTo(self.mas_right).with.offset(-20);
+            make.left.equalTo(self.mas_left).with.offset(17.5*kWidthScale);
+            make.right.equalTo(self.mas_right).with.offset(-17.5*kWidthScale);
             make.centerY.equalTo(self.mas_centerY);
             make.height.mas_greaterThanOrEqualTo(20);
         }];
@@ -228,7 +244,7 @@
 + (void)showSuccessWithTitle:(NSString *)title withMessage:(id)message commpleteBlock:(void(^)(NSInteger buttonIndex))block cancelTitle:(NSString *)cancelTitle determineTitle:(NSString *)determineTitle
 {
     TKAlertView *alertView = [self showAltertWithTitle:title withMessage:message commpleteBlock:block cancelTitle:cancelTitle determineTitle:determineTitle];
-    [alertView.subAltert.tipImageView setImage:IMG(@"icon_selectyes")];
+    [alertView.subAltert.tipImageView setImage:IMG(@"success")];
     [alertView.subAltert.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(alertView.subAltert.mas_centerX).with.offset(10+3);
     }];
@@ -243,7 +259,7 @@
 + (void)showFailedWithTitle:(NSString *)title withMessage:(id)message commpleteBlock:(void(^)(NSInteger buttonIndex))block cancelTitle:(NSString *)cancelTitle determineTitle:(NSString *)determineTitle
 {
     TKAlertView *alertView = [self showAltertWithTitle:title withMessage:message commpleteBlock:block cancelTitle:cancelTitle determineTitle:determineTitle];
-    [alertView.subAltert.tipImageView setImage:IMG(@"video_error")];
+    [alertView.subAltert.tipImageView setImage:IMG(@"failed")];
     [alertView.subAltert.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(alertView.subAltert.mas_centerX).with.offset(10+3);
     }];
@@ -252,6 +268,29 @@
         make.right.equalTo(alertView.subAltert.titleLabel.mas_left).with.offset(-3);
         make.centerY.equalTo(alertView.subAltert.titleLabel.mas_centerY);
     }];
+}
+
++ (void)showDeliveryTimeWithBlock:(void(^)(NSInteger buttonIndex))block
+{
+    TKAlertView *alertView = [[self alloc]initWithFrame:kScreenBounds];
+    objc_setAssociatedObject(alertView, "callBack", [block copy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [[[UIApplication sharedApplication]keyWindow] addSubview:alertView];
+    DeliveryTimeView *subView = [[DeliveryTimeView alloc]init];
+    [alertView addSubview:subView];
+    [subView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(alertView.mas_left).with.offset(17.5*kWidthScale);
+        make.right.equalTo(alertView.mas_right).with.offset(-17.5*kWidthScale);
+        make.center.equalTo(alertView);
+        make.height.mas_greaterThanOrEqualTo(0);
+    }];
+    [subView layoutIfNeeded];
+    [subView.leftBtn addTarget:alertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];
+    [subView.rightBtn addTarget:alertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];
+}
+
++ (void)showHUD
+{
+    //待写
 }
 
 - (void)alertAction:(UIButton*)bt

@@ -99,6 +99,14 @@
 		8AD4758C1C96CB9A00B44D56 /* TKPayProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4758A1C96CB9A00B44D56 /* TKPayProxy.m */; };
 		912120AD1C9F180500271605 /* TKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120AC1C9F180500271605 /* TKAlertView.m */; };
 		912120AE1C9F180500271605 /* TKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120AC1C9F180500271605 /* TKAlertView.m */; };
+		912120B41C9F941C00271605 /* UIView+Border.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120B31C9F941C00271605 /* UIView+Border.m */; };
+		912120B51C9F941C00271605 /* UIView+Border.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120B31C9F941C00271605 /* UIView+Border.m */; };
+		912120B81C9F95B900271605 /* UIButton+TitleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120B71C9F95B900271605 /* UIButton+TitleImage.m */; };
+		912120B91C9F95B900271605 /* UIButton+TitleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120B71C9F95B900271605 /* UIButton+TitleImage.m */; };
+		912120BC1C9FD6E600271605 /* DeliveryTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120BB1C9FD6E600271605 /* DeliveryTimeView.m */; };
+		912120BD1C9FD6E600271605 /* DeliveryTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120BB1C9FD6E600271605 /* DeliveryTimeView.m */; };
+		912120BF1C9FD6FA00271605 /* DeliveryTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 912120BE1C9FD6FA00271605 /* DeliveryTimeView.xib */; };
+		912120C01C9FD6FA00271605 /* DeliveryTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 912120BE1C9FD6FA00271605 /* DeliveryTimeView.xib */; };
 		9135820C1C9718CD00517542 /* HFTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135820B1C9718CD00517542 /* HFTitleLabel.m */; };
 		9135820D1C9718CD00517542 /* HFTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135820B1C9718CD00517542 /* HFTitleLabel.m */; };
 		915FC66F1C94030400A74704 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FC66E1C94030400A74704 /* ViewPagerController.m */; };
@@ -2762,6 +2770,13 @@
 		8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserDetailInfoViewController.m; sourceTree = "<group>"; };
 		912120AB1C9F180500271605 /* TKAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAlertView.h; sourceTree = "<group>"; };
 		912120AC1C9F180500271605 /* TKAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAlertView.m; sourceTree = "<group>"; };
+		912120B21C9F941C00271605 /* UIView+Border.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Border.h"; sourceTree = "<group>"; };
+		912120B31C9F941C00271605 /* UIView+Border.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Border.m"; sourceTree = "<group>"; };
+		912120B61C9F95B900271605 /* UIButton+TitleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+TitleImage.h"; sourceTree = "<group>"; };
+		912120B71C9F95B900271605 /* UIButton+TitleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TitleImage.m"; sourceTree = "<group>"; };
+		912120BA1C9FD6E600271605 /* DeliveryTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeliveryTimeView.h; sourceTree = "<group>"; };
+		912120BB1C9FD6E600271605 /* DeliveryTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeliveryTimeView.m; sourceTree = "<group>"; };
+		912120BE1C9FD6FA00271605 /* DeliveryTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeliveryTimeView.xib; sourceTree = "<group>"; };
 		9135820A1C9718CD00517542 /* HFTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTitleLabel.h; sourceTree = "<group>"; };
 		9135820B1C9718CD00517542 /* HFTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTitleLabel.m; sourceTree = "<group>"; };
 		915FC66D1C94030400A74704 /* ViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPagerController.h; sourceTree = "<group>"; };
@@ -4826,6 +4841,10 @@
 				8A6B3E4E1BF01E4900E5C982 /* UIViewController+Customize.m */,
 				8A6B3E4F1BF01E4900E5C982 /* UIWebView+JavaScriptAlert.h */,
 				8A6B3E501BF01E4900E5C982 /* UIWebView+JavaScriptAlert.m */,
+				912120B21C9F941C00271605 /* UIView+Border.h */,
+				912120B31C9F941C00271605 /* UIView+Border.m */,
+				912120B61C9F95B900271605 /* UIButton+TitleImage.h */,
+				912120B71C9F95B900271605 /* UIButton+TitleImage.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -5683,6 +5702,9 @@
 				BB53DAA71C211DF900CF346A /* TKHeadImageView.m */,
 				9135820A1C9718CD00517542 /* HFTitleLabel.h */,
 				9135820B1C9718CD00517542 /* HFTitleLabel.m */,
+				912120BA1C9FD6E600271605 /* DeliveryTimeView.h */,
+				912120BB1C9FD6E600271605 /* DeliveryTimeView.m */,
+				912120BE1C9FD6FA00271605 /* DeliveryTimeView.xib */,
 				912120AB1C9F180500271605 /* TKAlertView.h */,
 				912120AC1C9F180500271605 /* TKAlertView.m */,
 			);
@@ -5981,6 +6003,7 @@
 				8A3749941C919F37003DE59E /* TK_ImageSelectBoxView.xib in Resources */,
 				BB83FB4A1C72C01C0013A6A0 /* UserCenterViewController.xib in Resources */,
 				BB83FB4B1C72C01C0013A6A0 /* HFHabitViewCell.xib in Resources */,
+				912120BF1C9FD6FA00271605 /* DeliveryTimeView.xib in Resources */,
 				BB83FB4C1C72C01C0013A6A0 /* RankViewCell.xib in Resources */,
 				BB83FB4D1C72C01C0013A6A0 /* HFAdvanceSchemeContainerViewController.xib in Resources */,
 				BB83FB4E1C72C01C0013A6A0 /* MenuViewController.xib in Resources */,
@@ -6008,6 +6031,7 @@
 				BB83FDB71C72C16B0013A6A0 /* HFBoxTableViewCell.xib in Resources */,
 				8A9985991C86C684000F9CBC /* BHomeChildBVC.xib in Resources */,
 				BB83FDB81C72C16B0013A6A0 /* ShareSDKLocalizable.strings in Resources */,
+				912120C01C9FD6FA00271605 /* DeliveryTimeView.xib in Resources */,
 				8AA7F7111C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib in Resources */,
 				BB83FDB91C72C16B0013A6A0 /* HFLanchViewController.xib in Resources */,
 				BB83FDBA1C72C16B0013A6A0 /* TestViewController.xib in Resources */,
@@ -6323,6 +6347,7 @@
 				8A37498B1C911937003DE59E /* HiiBeanWebViewController.m in Sources */,
 				BB83F9031C72C01C0013A6A0 /* HFActivityListRes.m in Sources */,
 				BB83F9041C72C01C0013A6A0 /* GetOrUpdateSchemeArg.m in Sources */,
+				912120B41C9F941C00271605 /* UIView+Border.m in Sources */,
 				BB83F9051C72C01C0013A6A0 /* HFCaculateHeightModel.m in Sources */,
 				BB83F9061C72C01C0013A6A0 /* HFHabitTimeDetailViewController.m in Sources */,
 				BB83F9071C72C01C0013A6A0 /* HFFoodPreView.m in Sources */,
@@ -6351,6 +6376,7 @@
 				BB83F91E1C72C01C0013A6A0 /* HFHabitListRes.m in Sources */,
 				8A9D9B621C998CD0009F877F /* TK_RewardListForBuyerAck.m in Sources */,
 				BB83F91F1C72C01C0013A6A0 /* PostDetailRes.m in Sources */,
+				912120B81C9F95B900271605 /* UIButton+TitleImage.m in Sources */,
 				BB83F9201C72C01C0013A6A0 /* ChildSchemeViewController.m in Sources */,
 				8AD4758B1C96CB9A00B44D56 /* TKPayProxy.m in Sources */,
 				BB83F9211C72C01C0013A6A0 /* TKAppSettingViewController.m in Sources */,
@@ -6455,6 +6481,7 @@
 				BB83F97E1C72C01C0013A6A0 /* FCModelCachedObject.m in Sources */,
 				BB83F97F1C72C01C0013A6A0 /* HFEditHeaderView.m in Sources */,
 				BB83F9801C72C01C0013A6A0 /* MMCenterTableViewCell.m in Sources */,
+				912120BC1C9FD6E600271605 /* DeliveryTimeView.m in Sources */,
 				BB83F9811C72C01C0013A6A0 /* DemoModelData.m in Sources */,
 				BB83F9821C72C01C0013A6A0 /* ZBFaceView.m in Sources */,
 				BB83F9831C72C01C0013A6A0 /* GetDiseaseIntroAck.m in Sources */,
@@ -6942,6 +6969,7 @@
 				8A37498C1C911937003DE59E /* HiiBeanWebViewController.m in Sources */,
 				BB83FBC11C72C16B0013A6A0 /* GetOrUpdateSchemeArg.m in Sources */,
 				BB83FBC21C72C16B0013A6A0 /* HFCaculateHeightModel.m in Sources */,
+				912120B51C9F941C00271605 /* UIView+Border.m in Sources */,
 				BB83FBC31C72C16B0013A6A0 /* HFHabitTimeDetailViewController.m in Sources */,
 				BB83FBC41C72C16B0013A6A0 /* HFFoodPreView.m in Sources */,
 				BB83FBC51C72C16B0013A6A0 /* HFMainActivityReq.m in Sources */,
@@ -6970,6 +6998,7 @@
 				BB83FBDB1C72C16B0013A6A0 /* HFHabitListRes.m in Sources */,
 				8A9D9B631C998CD0009F877F /* TK_RewardListForBuyerAck.m in Sources */,
 				BB83FBDC1C72C16B0013A6A0 /* PostDetailRes.m in Sources */,
+				912120B91C9F95B900271605 /* UIButton+TitleImage.m in Sources */,
 				BB83FBDD1C72C16B0013A6A0 /* ChildSchemeViewController.m in Sources */,
 				8AD4758C1C96CB9A00B44D56 /* TKPayProxy.m in Sources */,
 				BB83FBDE1C72C16B0013A6A0 /* TKAppSettingViewController.m in Sources */,
@@ -7074,6 +7103,7 @@
 				BB83FC3C1C72C16B0013A6A0 /* HFEditHeaderView.m in Sources */,
 				BB83FC3D1C72C16B0013A6A0 /* MMCenterTableViewCell.m in Sources */,
 				BB83FC3E1C72C16B0013A6A0 /* DemoModelData.m in Sources */,
+				912120BD1C9FD6E600271605 /* DeliveryTimeView.m in Sources */,
 				BB83FC3F1C72C16B0013A6A0 /* ZBFaceView.m in Sources */,
 				BB83FC401C72C16B0013A6A0 /* GetDiseaseIntroAck.m in Sources */,
 				BB83FC411C72C16B0013A6A0 /* HFSensitiveWordsRes.m in Sources */,

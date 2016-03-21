@@ -16,7 +16,7 @@
 #define TK_Color_BLUE   @"223344"
 #define TK_Color_Black  @"000000"
 #define TK_Color_Wite   @"FFFFFF"
-#define TKColorRed      @"BD0000"
+
 
 
 #define TK_Color_black_main_1  @"666666"
@@ -42,7 +42,9 @@
 #define TK_Color_white_background   @"efeff0"
 #define TK_Color_ThemeColor @"a88462"
 #define TK_Color_themeColor2 @"f2ead2"
-
+#define TKColorGreen    @"04864d"
+#define TKColorRed      @"BD0000"
+#define TKColorBlack    @"222222"
 
 
 #endif /* TKColorDefine_h */
