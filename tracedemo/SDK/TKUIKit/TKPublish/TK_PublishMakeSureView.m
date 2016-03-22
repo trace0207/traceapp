@@ -177,24 +177,39 @@
     
     arg.postrewardId = postId;
     arg.fundType = 0;//0 订金， 1 尾款， 2全款， 3 买手充值保证金
-    arg.clientIp = @"192.168.1.1";
+//    arg.clientIp = @"192.168.1.1";
     
     WS(weakSelf)
-    [[TKProxy proxy].mainProxy tkPay:arg withBolco:^(HF_BaseAck *ack) {
-        if(ack.sucess)
-        {
-            [weakSelf removeFromSuperview];
-             weakSelf.images = nil;
-            [TKPayProxy aliPay: ((TK_PayAck *)ack).data urlScheme:@"QupaiConsumer" withCompletion:^(NSString *result, PingppError *error) {
-            }];
-            
-        }
-        else
-        {
-            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingError) object:nil];
-            [weakSelf showLoadingError];
-        }
-    } ];
+    
+    [TKPayProxy pay:arg
+          withBlick:^(NSInteger result) {
+              if(result == 1)
+              {
+                  [weakSelf removeFromSuperview];
+                  weakSelf.images = nil;
+              }
+              else
+              {
+                  [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingError) object:nil];
+                  [weakSelf showLoadingError];
+              }
+          }];
+    
+//    [[TKProxy proxy].mainProxy tkPay:arg withBolco:^(HF_BaseAck *ack) {
+//        if(ack.sucess)
+//        {
+//            [weakSelf removeFromSuperview];
+//             weakSelf.images = nil;
+//            [TKPayProxy aliPay: ((TK_PayAck *)ack).data urlScheme:@"QupaiConsumer" withCompletion:^(NSString *result, PingppError *error) {
+//            }];
+//            
+//        }
+//        else
+//        {
+//            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingError) object:nil];
+//            [weakSelf showLoadingError];
+//        }
+//    } ];
 }
 
 

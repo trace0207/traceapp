@@ -7,6 +7,7 @@
 //
 
 #import "TKPayProxy.h"
+#import "TK_PayAck.h"
 
 
 @implementation TKPayProxy
@@ -31,5 +32,35 @@ withCompletion:(PingppCompletion)completionBlock
              appURLScheme:scheme
            withCompletion:completionBlock];
 }
+
+
+
+/**
+ 支付
+ **/
++(void)pay:(TK_PayArg *)arg withBlick:(payAckBlock)block
+{
+    
+    arg.clientIp = [[HFDeviceInfo shareInstance] getIPAddress:YES];
+    
+    [[TKProxy proxy].mainProxy tkPay:arg withBolco:^(HF_BaseAck *ack) {
+        if(ack.sucess)
+        {
+//            [weakSelf removeFromSuperview];
+//            weakSelf.images = nil;
+            [TKPayProxy aliPay: ((TK_PayAck *)ack).data urlScheme:@"QupaiConsumer" withCompletion:^(NSString *result, PingppError *error) {
+                block(1);
+            }];
+            
+        }
+        else
+        {
+            block(0);
+//            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingError) object:nil];
+//            [weakSelf showLoadingError];
+        }
+    } ];}
+
+
 
 @end

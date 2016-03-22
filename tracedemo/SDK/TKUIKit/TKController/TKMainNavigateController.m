@@ -259,6 +259,9 @@
     navc4.title = @"我的订单";
     navc4.tabBarItem.image = [UIImage imageNamed:@"icon_tab_myorder"];
     navc4.navTitle = @"我的订单";
+     navc4.hidDefaultBackBtn = YES;
+    navc4.defaultURL = [[TKProxy proxy].tkBaseUrl  stringByAppendingString:BMyOrders];
+    
     
     TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
     navc5.title = @"我的";
@@ -267,7 +270,7 @@
     self.selectedIndex =0;
     self.viewControllers = @[subTabVC1,/*newMain,*/messages,newChat,navc4,navc5];
     
-    [self addChildViewController:navc5];
+//    [self addChildViewController:navc5];
     self.delegate = self;
     
     [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
@@ -321,6 +324,8 @@
     TKWebViewController * navc4 = [[TKWebViewController alloc] init];
     navc4.title = @"我的购买";
     navc4.navTitle = @"我的购买";
+    navc4.hidDefaultBackBtn = YES;
+    navc4.defaultURL = [[TKProxy proxy].tkBaseUrl  stringByAppendingString:CMyGoodsURL];
     navc4.tabBarItem.image = [UIImage imageNamed:@"icon_tab_mygoods"];
     
     
@@ -331,7 +336,7 @@
     self.selectedIndex =0;
     self.viewControllers = @[subTabVC1,/*newMain,*/messages,newChat,navc4,navc5];
     
-    [self addChildViewController:navc5];
+//    [self addChildViewController:navc5];
     self.delegate = self;
     
     [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];

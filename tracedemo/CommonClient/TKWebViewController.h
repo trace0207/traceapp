@@ -13,4 +13,7 @@
 @property (strong,nonatomic) UIWebView *webView;
 @property (strong,nonatomic) NSString * defaultURL;
 
+
++(void)showWebView:(NSString *)title url:(NSString *) url;
+
 @end

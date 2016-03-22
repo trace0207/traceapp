@@ -153,6 +153,32 @@
 //默认的 head 头像地址
 #define TKDefaultHead  @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg"
 
+
+
+// web 页面
+
+//C 我的购买
+#define CMyGoodsURL @"/web/apollo/order/orderlist.html?role=1"
+//B 我的订单
+#define BMyOrders @"/web/apollo/order/orderlist.html?role=0"
+//账号详情B
+#define BaccountDetailURL @"/web/apollo/my/accountB.html"
+//账号详情C
+#define CaccountDetailURL @"/web/apollo/my/accountC.html"
+//C端我的账单
+#define CPayListURL @"/web/apollo/my/bill.html"
+//B端买手等级规则
+#define BRuleURL @"/web/apollo/my/bRules.html"
+//B端保证金
+#define BDepositURL @"/web/apollo/my/securityDeposit.html"
+//C端大牌币
+#define CBigMoneyURL @"/web/apollo/my/wallet.html"
+//B端提现
+#define BGetMoneyURL @"/web/apollo/my/withdrawal.html"
+//地址
+#define AddressURL @"/web/apollo/address/list.html"
+
+
 // 设置 image 头像
 #define TKSetHeadImageView(imageView,url)  \
 [imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:url]]  \

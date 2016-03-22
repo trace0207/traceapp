@@ -218,6 +218,24 @@ static AppDelegate * appDelegate;
 -(void)initAppData
 {   
     [[TKUserCenter instance] initAppData];
+    
+//    NSString * ua = [kUserDefaults stringForKey:@"UserAgent"];
+//    NSString * deviceId = [GlobInfo shareInstance].deviceid;
+//    if(![ua containsString:deviceId])
+//    {
+//        NSString * newAgent = [[ua stringByAppendingString:@"|"] stringByAppendingString:deviceId];
+//        [kUserDefaults registerDefaults:@{@"UserAgent":newAgent}];
+//        DDLogInfo(@"userAgent set to %@",newAgent);
+//        [kUserDefaults synchronize];
+//    }
+    NSString * deviceId = [GlobInfo shareInstance].deviceid;
+    [kUserDefaults registerDefaults:@{@"UserAgent":deviceId}];
+    DDLogInfo(@"userAgent set to %@",deviceId);
+    [kUserDefaults synchronize];
+
+   
+    
+
 }
 
 @end
