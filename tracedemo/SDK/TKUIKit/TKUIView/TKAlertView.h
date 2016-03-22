@@ -22,7 +22,7 @@
 //选择发货时间的弹窗界面
 + (void)showDeliveryTimeWithBlock:(void(^)(NSInteger buttonIndex))block;
 
-
-+ (void)showHUD;
+//HUD
++ (instancetype)showHUDWithText:(NSString *)text;
 
 @end

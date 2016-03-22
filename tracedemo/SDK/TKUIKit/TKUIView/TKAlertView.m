@@ -17,7 +17,7 @@
 #import "DeliveryTimeView.h"
 
 @interface HUD : UIView
-
+@property (nonatomic, strong) UILabel *textLabel;
 @end
 
 
@@ -27,7 +27,27 @@
 {
     self = [super init];
     if (self) {
-        
+        [self setDefaultBackgroundView];
+        UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [self addSubview:activityView];
+        [activityView startAnimating];
+        _textLabel = [[UILabel alloc]init];
+        _textLabel.textColor = [UIColor hexChangeFloat:TKColorBlack];
+        _textLabel.font = [UIFont systemFontOfSize:15];
+        _textLabel.text = @"正在发布，请稍后...";
+        [_textLabel sizeToFit];
+        [self addSubview:_textLabel];
+        [_textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_greaterThanOrEqualTo(0);
+            make.width.mas_greaterThanOrEqualTo(0);
+            make.centerY.equalTo(self.mas_centerY);
+            make.centerX.equalTo(self.mas_centerX).with.offset(activityView.frame.size.width/2.0f+4);
+        }];
+        [activityView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(activityView.frame.size);
+            make.centerY.equalTo(_textLabel.mas_centerY);
+            make.right.equalTo(_textLabel.mas_left).with.offset(-4);
+        }];
     }
     return self;
 }
@@ -50,14 +70,7 @@
 {
     self = [super init];
     if (self) {
-        self.clipsToBounds = YES;
-        self.layer.masksToBounds = NO;
-        self.backgroundColor = [UIColor whiteColor];
-        [[self layer] setCornerRadius:5];
-        [[self layer] setShadowOffset:CGSizeMake(3, 3)];
-        [[self layer] setShadowRadius:5];
-        [[self layer] setShadowOpacity:0.8];
-        [[self layer] setShadowColor:[UIColor blackColor].CGColor];
+        [self setDefaultBackgroundView];
     }
     return self;
 }
@@ -288,9 +301,22 @@
     [subView.rightBtn addTarget:alertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-+ (void)showHUD
++ (instancetype)showHUDWithText:(NSString *)text
 {
-    //待写
+    TKAlertView *alertView = [[self alloc]initWithFrame:kScreenBounds];
+    [[[UIApplication sharedApplication]keyWindow] addSubview:alertView];
+    if (alertView) {
+        HUD *hud = [[HUD alloc]init];
+        hud.textLabel.text = text;
+        [alertView addSubview:hud];
+        [hud mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(alertView.mas_left).with.offset(17.5*kWidthScale);
+            make.right.equalTo(alertView.mas_right).with.offset(-17.5*kWidthScale);
+            make.centerY.equalTo(alertView.mas_centerY);
+            make.height.mas_equalTo(140*kWidthScale);
+        }];
+    }
+    return alertView;
 }
 
 - (void)alertAction:(UIButton*)bt

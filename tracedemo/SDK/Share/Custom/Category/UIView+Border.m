@@ -22,4 +22,16 @@
     self.layer.borderWidth = width;
     [self.layer setCornerRadius:2];
 }
+
+- (void)setDefaultBackgroundView
+{
+    self.clipsToBounds = YES;
+    self.layer.masksToBounds = NO;
+    self.backgroundColor = [UIColor whiteColor];
+    [[self layer] setCornerRadius:5];
+    [[self layer] setShadowOffset:CGSizeMake(3, 3)];
+    [[self layer] setShadowRadius:5];
+    [[self layer] setShadowOpacity:0.8];
+    [[self layer] setShadowColor:[UIColor blackColor].CGColor];
+}
 @end

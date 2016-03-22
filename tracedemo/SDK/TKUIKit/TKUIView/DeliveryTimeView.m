@@ -17,14 +17,7 @@
 {
     self = [super init];
     if (self) {
-        self.clipsToBounds = YES;
-        self.layer.masksToBounds = NO;
-        self.backgroundColor = [UIColor whiteColor];
-        [[self layer] setCornerRadius:5];
-        [[self layer] setShadowOffset:CGSizeMake(3, 3)];
-        [[self layer] setShadowRadius:5];
-        [[self layer] setShadowOpacity:0.8];
-        [[self layer] setShadowColor:[UIColor blackColor].CGColor];
+        [self setDefaultBackgroundView];
         
         [self chooseDate:self.threeBtn];
         [self.hasReadBtn setImage:IMG(@"selected") forState:UIControlStateSelected];

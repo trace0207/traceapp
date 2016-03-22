@@ -14,4 +14,5 @@
 
 - (void)setBorderColor:(UIColor  *)color borderWidth:(CGFloat)width;
 
+- (void)setDefaultBackgroundView;
 @end

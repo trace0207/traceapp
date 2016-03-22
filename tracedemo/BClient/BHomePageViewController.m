@@ -119,9 +119,19 @@
 //    } cancelTitle:@"取消" determineTitle:@"确定并支付"];
     
     //发货时间弹窗界面
-    [TKAlertView showDeliveryTimeWithBlock:^(NSInteger buttonIndex) {
-        
-    }];
+//    [TKAlertView showDeliveryTimeWithBlock:^(NSInteger buttonIndex) {
+//        
+//    }];
+    
+    
+    //HUD
+    TKAlertView *alertView = [TKAlertView showHUDWithText:@"正在发布，请稍后..."];
+    [self performSelector:@selector(hideHUD:) withObject:alertView afterDelay:2];
+}
+
+- (void)hideHUD:(TKAlertView *)hud
+{
+    [hud removeFromSuperview];
 }
 
 -(void)initView
