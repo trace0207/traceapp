@@ -7,7 +7,7 @@
 //
 
 #import "TKIBaseNavWithDefaultBackVC.h"
-#import "HFSegmentView.h"
+//#import "HFSegmentView.h"
 
 
 
@@ -15,6 +15,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *headView;
 @property (strong, nonatomic) IBOutlet UIView *contentView;
-@property(nonatomic,strong)HFSegmentView * mSegView;
+//@property(nonatomic,strong)HFSegmentView * mSegView;
 
 @end

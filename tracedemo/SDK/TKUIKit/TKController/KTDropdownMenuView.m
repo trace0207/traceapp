@@ -36,7 +36,7 @@
         _width = 0.0;
         _animationDuration = 0.4;
         _backgroundAlpha = 0.3;
-        _edgesTop = 10;
+        _edgesTop = 5;
         _cellHeight = 44;
         _isMenuShow = NO;
         _selectedIndex = 0;
@@ -119,8 +119,10 @@
 //            make.bottom.equalTo(self.wrapperView.mas_bottom).offset(tableCellsHeight + kKTDropdownMenuViewHeaderHeight);
         }];
         [self.tableViewBackgroundImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.bottom.right.equalTo(self.tableView);
-            make.top.equalTo(self.titleButton.mas_bottom);
+            make.top.equalTo(self.titleButton.mas_bottom).with.offset(2);
+            make.left.equalTo(self.tableView.mas_left).with.offset(0);
+            make.bottom.equalTo(self.tableView).with.offset(4);
+            make.right.equalTo(self.tableView).with.offset(4);
         }];
         self.wrapperView.hidden = YES;
     }
@@ -420,6 +422,11 @@
     if (!_tableView)
     {
         _tableView = [[UITableView alloc] init];
+        if ([_tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+            [_tableView setLayoutMargins:UIEdgeInsetsMake(0, 0, 0, 0)];
+        }
+        
+        [_tableView setSeparatorInset:UIEdgeInsetsMake(0, -8, 0, 4)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.bounces = NO;

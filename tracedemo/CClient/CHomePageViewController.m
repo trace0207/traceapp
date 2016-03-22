@@ -11,8 +11,8 @@
 #import "BPageViewController.h"
 #import "KTDropdownMenuView.h"
 #import "UIColor+TK_Color.h"
-@interface CHomePageViewController ()<HFSegmentViewDelegate>
-
+@interface CHomePageViewController ()
+@property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic,strong)BPageViewController * vc1;
 @property (nonatomic,strong)BPageViewController * vc2;
 
@@ -30,7 +30,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self TKaddNavigationTitleView:self.mSegView];
+    [self TKaddNavigationTitleView:self.segmentedControl];
 }
 
 -(void)initView
@@ -50,34 +50,31 @@
 //    return UIStatusBarStyleLightContent;
 //}
 
-- (void)selectSegmentIndex:(NSInteger)index
+
+- (UISegmentedControl *)segmentedControl
 {
-    if (index == 0)
-    {
+    if (_segmentedControl == nil) {
+        _segmentedControl = [[UISegmentedControl alloc]initWithItems:@[@"嗮单池",@"悬赏池"]];
+        _segmentedControl.frame = CGRectMake(0, 0, 150, 30);
+        _segmentedControl.selectedSegmentIndex = 0;
+        [_segmentedControl addTarget:self action:@selector(segmentedAction:) forControlEvents:UIControlEventValueChanged];
+        
+    }
+    return _segmentedControl;
+}
+- (void)segmentedAction:(UISegmentedControl *)seg
+{
+    if (seg.selectedSegmentIndex == 0) {
+        [self addRightBarItemWithCustomView:nil];
         [self transitionFromViewController:self.vc2 toViewController:self.vc1 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
         }];
-    }
-    else
-    {
+    }else {
         [self transitionFromViewController:self.vc1 toViewController:self.vc2 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
             
             
         }];
     }
 }
-
-- (HFSegmentView *)mSegView
-{
-    if (!_mSegView)
-    {
-        _mSegView = [[HFSegmentView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth == 320.f?130:167, 30)];
-        _mSegView.textFont = kScreenWidth == 320?[UIFont systemFontOfSize:15]:[UIFont systemFontOfSize:17];
-        _mSegView.delegate = self;
-        [_mSegView setSegmentTitles:@[@"嗮单池",@"悬赏池"]];
-    }
-    return _mSegView;
-}
-
 
 -(BPageViewController *)vc2
 {
@@ -86,7 +83,7 @@
         _vc2 = [[BPageViewController alloc] init];
         _vc2.tabViewRightSpace = 90;
         _vc2.indicatorColor = [UIColor tkThemeColor1];
-        _vc2.tabsViewBackgroundColor = [UIColor tkThemeColor2];
+        _vc2.tabsViewBackgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
         _vc2.view.backgroundColor = [UIColor tkThemeColor2];
     }
     return _vc2;
@@ -99,7 +96,7 @@
         _vc1 = [[BPageViewController alloc] init];
         _vc1.tabViewRightSpace = 90;
         _vc1.indicatorColor = [UIColor tkThemeColor1];
-        _vc1.tabsViewBackgroundColor = [UIColor tkThemeColor2];
+        _vc1.tabsViewBackgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
         _vc1.view.backgroundColor = [UIColor tkThemeColor2];
     }
     return _vc1;

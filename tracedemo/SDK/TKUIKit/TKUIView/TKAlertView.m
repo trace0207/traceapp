@@ -283,7 +283,7 @@
     }];
 }
 
-+ (void)showDeliveryTimeWithBlock:(void(^)(NSInteger buttonIndex))block
++ (void)showDeliveryTime:(int)days WithBlock:(void(^)(NSInteger buttonIndex))block
 {
     TKAlertView *alertView = [[self alloc]initWithFrame:kScreenBounds];
     objc_setAssociatedObject(alertView, "callBack", [block copy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -296,6 +296,7 @@
         make.center.equalTo(alertView);
         make.height.mas_greaterThanOrEqualTo(0);
     }];
+    [subView setExpectDays:days];
     [subView layoutIfNeeded];
     [subView.leftBtn addTarget:alertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];
     [subView.rightBtn addTarget:alertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];

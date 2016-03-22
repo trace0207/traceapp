@@ -18,8 +18,6 @@
     self = [super init];
     if (self) {
         [self setDefaultBackgroundView];
-        
-        [self chooseDate:self.threeBtn];
         [self.hasReadBtn setImage:IMG(@"selected") forState:UIControlStateSelected];
         [self.onShowBtn setImage:IMG(@"selected") forState:UIControlStateSelected];
         [self.hasReadBtn setBorderColor:[UIColor hexChangeFloat:TKColorGreen] borderWidth:2];
@@ -33,7 +31,9 @@
 }
 - (IBAction)chooseDate:(UIButton *)button
 {
+    int days = 0;
     if (button.tag == 1) {
+        days = 1;
         [self.oneBtn setBorderColor:[UIColor hexChangeFloat:TKColorGreen] borderWidth:2];
         [self.oneBtn setTitleColor:[UIColor hexChangeFloat:TKColorGreen] forState:UIControlStateNormal];
         [self.oneBtn setLeftTitle:@"1天内发货" rightImage:IMG(@"selected")];
@@ -52,6 +52,7 @@
         [self.sevenBtn setTitle:@"7天内发货" forState:UIControlStateNormal];
         [self.sevenBtn setImage:nil forState:UIControlStateNormal];
     }else if (button.tag == 2) {
+        days = 3;
         [self.threeBtn setBorderColor:[UIColor hexChangeFloat:TKColorGreen] borderWidth:2];
         [self.threeBtn setTitleColor:[UIColor hexChangeFloat:TKColorGreen] forState:UIControlStateNormal];
         [self.threeBtn setLeftTitle:@"3天内发货" rightImage:IMG(@"selected")];
@@ -70,6 +71,7 @@
         [self.sevenBtn setTitle:@"7天内发货" forState:UIControlStateNormal];
         [self.sevenBtn setImage:nil forState:UIControlStateNormal];
     }else {
+        days = 7;
         [self.sevenBtn setBorderColor:[UIColor hexChangeFloat:TKColorGreen] borderWidth:2];
         [self.sevenBtn setTitleColor:[UIColor hexChangeFloat:TKColorGreen] forState:UIControlStateNormal];
         [self.sevenBtn setLeftTitle:@"7天内发货" rightImage:IMG(@"selected")];
@@ -88,7 +90,22 @@
         [self.oneBtn setTitle:@"1天内发货" forState:UIControlStateNormal];
         [self.oneBtn setImage:nil forState:UIControlStateNormal];
     }
+    self.actualLabel.text = [NSString stringWithFormat:@"您选择了“%i天内发货”，若买家同意您的发货时间，切记不要延期，否则平台将会按照“发货规则”执行罚金操作，同意将影响您的信用等级。",days];
 }
+
+- (void)setExpectDays:(int)expectDays
+{
+    _expectDays = expectDays;
+    self.expectLabel.text = [NSString stringWithFormat:@"买家期望发货时间：%i天内发货",expectDays];
+    if (expectDays == 1) {
+        [self chooseDate:self.oneBtn];
+    }else if (expectDays == 3) {
+        [self chooseDate:self.threeBtn];
+    }else {
+        [self chooseDate:self.sevenBtn];
+    }
+}
+
 - (IBAction)hasReadAction:(UIButton *)button
 {
     if (self.hasReadBtn.selected) {

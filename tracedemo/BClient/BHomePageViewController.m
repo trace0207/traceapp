@@ -15,7 +15,7 @@
 #import "TKAlertView.h"
 #import "CountDownView.h"
 #import "UIImage+Scale.h"
-@interface BHomePageViewController ()<HFSegmentViewDelegate>
+@interface BHomePageViewController ()
 
 @property (nonatomic,strong)BPageViewController * vc1;
 @property (nonatomic,strong)BPageViewController * vc2;
@@ -34,14 +34,25 @@
         _segmentedControl = [[UISegmentedControl alloc]initWithItems:@[@"悬赏广场",@"我的客户"]];
         _segmentedControl.frame = CGRectMake(0, 0, 170, 30);
         _segmentedControl.selectedSegmentIndex = 1;
-        //_segmentedControl.tintColor = [UIColor hexChangeFloat:TK_Color_nav_background];
-//        UIImage *img = [UIImage scaleWithImage:@"btn_bg_unable"];
-//        [_segmentedControl setImage:img forSegmentAtIndex:0];
-//        [_segmentedControl setImage:img forSegmentAtIndex:1];
-        
+        [_segmentedControl addTarget:self action:@selector(segmentedAction:) forControlEvents:UIControlEventValueChanged];
        
     }
     return _segmentedControl;
+}
+
+- (void)segmentedAction:(UISegmentedControl *)seg
+{
+    if (seg.selectedSegmentIndex == 0) {
+        [self addRightBarItemWithCustomView:nil];
+        [self transitionFromViewController:self.vc2 toViewController:self.vc1 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
+        }];
+    }else {
+        [self addRightBarItemWithCustomView:self.menuView];
+        [self transitionFromViewController:self.vc1 toViewController:self.vc2 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
+            
+            
+        }];
+    }
 }
 
 - (void)viewDidLoad {
@@ -64,10 +75,11 @@
         };
         _menuView.textFont = [UIFont systemFontOfSize:15];
         _menuView.backgroundAlpha = 0.0f;
-        _menuView.width = 133;
+        _menuView.width = 100;
         _menuView.edgesRight = -10;
         _menuView.textColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
         _menuView.cellAccessoryCheckmarkColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
+        _menuView.cellSeparatorColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
     }
     return _menuView;
 }
@@ -76,14 +88,14 @@
 {
     [super viewWillAppear:animated];
     [self TKaddNavigationTitleView:self.segmentedControl];
-    if (self.mSegView.currentIndex == 1) {
+    if (self.segmentedControl.selectedSegmentIndex == 1) {
         [self addRightBarItemWithCustomView:self.menuView];
     }
-    UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
-    [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [bt setTitle:@"弹窗" forState:UIControlStateNormal];
-    [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
-    [self addLeftBarItemWithCustomView:bt];
+//    UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
+//    [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    [bt setTitle:@"弹窗" forState:UIControlStateNormal];
+//    [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+//    [self addLeftBarItemWithCustomView:bt];
 }
 
 - (void)test
@@ -119,14 +131,14 @@
 //    } cancelTitle:@"取消" determineTitle:@"确定并支付"];
     
     //发货时间弹窗界面
-//    [TKAlertView showDeliveryTimeWithBlock:^(NSInteger buttonIndex) {
+//    [TKAlertView showDeliveryTime:7 WithBlock:^(NSInteger buttonIndex) {
 //        
 //    }];
     
     
     //HUD
-    TKAlertView *alertView = [TKAlertView showHUDWithText:@"正在发布，请稍后..."];
-    [self performSelector:@selector(hideHUD:) withObject:alertView afterDelay:2];
+//    TKAlertView *alertView = [TKAlertView showHUDWithText:@"正在发布，请稍后..."];
+//    [self performSelector:@selector(hideHUD:) withObject:alertView afterDelay:2];
 }
 
 - (void)hideHUD:(TKAlertView *)hud
@@ -151,36 +163,36 @@
 //    return UIStatusBarStyleLightContent;
 //}
 
-- (void)selectSegmentIndex:(NSInteger)index
-{
-    if (index == 0)
-    {
-        [self addRightBarItemWithCustomView:nil];
-        [self transitionFromViewController:self.vc2 toViewController:self.vc1 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
-        }];
-    }
-    else
-    {
-        [self addRightBarItemWithCustomView:self.menuView];
-        [self transitionFromViewController:self.vc1 toViewController:self.vc2 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
+//- (void)selectSegmentIndex:(NSInteger)index
+//{
+//    if (index == 0)
+//    {
+//        [self addRightBarItemWithCustomView:nil];
+//        [self transitionFromViewController:self.vc2 toViewController:self.vc1 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
+//        }];
+//    }
+//    else
+//    {
+//        [self addRightBarItemWithCustomView:self.menuView];
+//        [self transitionFromViewController:self.vc1 toViewController:self.vc2 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
+//
+//            
+//        }];
+//    }
+//}
 
-            
-        }];
-    }
-}
-
-- (HFSegmentView *)mSegView
-{
-    if (!_mSegView)
-    {
-        _mSegView = [[HFSegmentView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth == 320.f?130:167, 30)];
-        _mSegView.currentIndex = 1;
-        _mSegView.textFont = kScreenWidth == 320?[UIFont systemFontOfSize:15]:[UIFont systemFontOfSize:17];
-        _mSegView.delegate = self;
-        [_mSegView setSegmentTitles:@[@"悬赏广场",@"我的客户"]];
-    }
-    return _mSegView;
-}
+//- (HFSegmentView *)mSegView
+//{
+//    if (!_mSegView)
+//    {
+//        _mSegView = [[HFSegmentView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth == 320.f?130:167, 30)];
+//        _mSegView.currentIndex = 1;
+//        _mSegView.textFont = kScreenWidth == 320?[UIFont systemFontOfSize:15]:[UIFont systemFontOfSize:17];
+//        _mSegView.delegate = self;
+//        [_mSegView setSegmentTitles:@[@"悬赏广场",@"我的客户"]];
+//    }
+//    return _mSegView;
+//}
 
 
 -(BPageViewController *)vc2

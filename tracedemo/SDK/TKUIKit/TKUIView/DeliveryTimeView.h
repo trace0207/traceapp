@@ -22,6 +22,8 @@
 @property (nonatomic, strong) IBOutlet UIButton *leftBtn;//继续晒单按钮
 @property (nonatomic, strong) IBOutlet UIButton *rightBtn;//关闭按钮
 
+@property (nonatomic, assign) int expectDays;
+
 - (IBAction)chooseDate:(UIButton *)button;
 - (IBAction)hasReadAction:(UIButton *)button;
 - (IBAction)donotShowAction:(UIButton *)button;

@@ -7,8 +7,8 @@
 //
 
 #import "TKIBaseNavWithDefaultBackVC.h"
-#import "HFSegmentView.h"
+//#import "HFSegmentView.h"
 
 @interface BHomePageViewController : TKIBaseNavWithDefaultBackVC
-@property(nonatomic,strong)HFSegmentView * mSegView;
+//@property(nonatomic,strong)HFSegmentView * mSegView;
 @end

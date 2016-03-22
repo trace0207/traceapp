@@ -19,8 +19,8 @@
 //带有失败标识图片的弹窗
 + (void)showFailedWithTitle:(NSString *)title withMessage:(id)message commpleteBlock:(void(^)(NSInteger buttonIndex))block cancelTitle:(NSString *)cancelTitle determineTitle:(NSString *)determineTitle;
 
-//选择发货时间的弹窗界面
-+ (void)showDeliveryTimeWithBlock:(void(^)(NSInteger buttonIndex))block;
+//选择发货时间的弹窗界面,days：买家期望发货时间
++ (void)showDeliveryTime:(int)days WithBlock:(void(^)(NSInteger buttonIndex))block;
 
 //HUD
 + (instancetype)showHUDWithText:(NSString *)text;
