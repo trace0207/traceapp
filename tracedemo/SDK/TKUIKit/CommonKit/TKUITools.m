@@ -37,7 +37,10 @@
     {
         NSString * rawPicUrl = [UIKitTool getRawImage:picUrls[i]];
         MJPhoto *photo = [[MJPhoto alloc] init];
-        photo.srcImageView = (UIImageView *)imageViews[i];
+        if(imageViews.count >i)
+        {
+            photo.srcImageView = (UIImageView *)imageViews[i];
+        }
         photo.url = [NSURL URLWithString:rawPicUrl];
         [mjPhotos addObject:photo];
     }

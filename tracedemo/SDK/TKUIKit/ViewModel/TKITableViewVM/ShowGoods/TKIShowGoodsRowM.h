@@ -20,8 +20,12 @@
 @property (nonatomic,strong) TKShowGoodsRowData * showGoodsData;
 
 -(CGFloat)getPicWidth;
--(CGFloat)getPicSeparation;
 -(CGFloat)getPicHeight;
+-(CGFloat)getFrameX:(NSInteger)index;
+-(CGFloat)getFrameY:(NSInteger)index;
+
+-(CGFloat)getPicSeparation;
 -(CGFloat)getPicPaddingLeft;
 -(CGFloat)getImageFiledHeight;
+-(CGFloat)getContentTextHeight;
 @end

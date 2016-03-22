@@ -18,10 +18,6 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8z-ou-A7A">
                     <rect key="frame" x="11" y="520" width="146" height="40"/>
-<<<<<<< Updated upstream
-                    <color key="backgroundColor" red="0.61253181410000002" green="1" blue="0.40539740670000002" alpha="1" colorSpace="calibratedRGB"/>
-=======
->>>>>>> Stashed changes
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="eE1-BS-QIw"/>
                     </constraints>
@@ -41,12 +37,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxq-SC-Iqg">
-<<<<<<< Updated upstream
-                    <rect key="frame" x="164" y="520" width="145" height="40"/>
-                    <color key="backgroundColor" red="1" green="0.2110098383" blue="0.68582764610000002" alpha="1" colorSpace="calibratedRGB"/>
-=======
                     <rect key="frame" x="164" y="520" width="146" height="40"/>
->>>>>>> Stashed changes
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="a1Y-Ib-cSI"/>
                     </constraints>

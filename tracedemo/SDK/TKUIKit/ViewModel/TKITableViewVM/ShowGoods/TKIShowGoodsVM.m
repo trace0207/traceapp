@@ -15,6 +15,7 @@
 #import "TKSHowGoodsDetailPageVC.h"
 #import "TKICommentViewController.h"
 #import <objc/runtime.h>
+#import "UIColor+TK_Color.h"
 
 @interface TKIShowGoodsVM()<TKShowGoodsCellDelegate>
 
@@ -123,7 +124,7 @@
         cell = [[NSBundle mainBundle]loadNibNamed:@"TKShowGoodsCell" owner:self options:nil].firstObject;
         cell.backgroundColor = [UIColor clearColor];
     }
-//    [self fillCellImages:cell indexPath:indexPath];
+    [self fillCellImages:cell indexPath:indexPath];
     return cell;
 }
 
@@ -134,20 +135,29 @@
 
     // 加载图片
     NSMutableArray * pics = rowD.showGoodsData.pics;
-    int type = (pics.count == 4?2:3);
+//    int type = (pics.count == 2?2:3);
     for(UIView *view in [cell.imageContentView subviews])
     {
         [view removeFromSuperview];
     }
-    for(int i = 0;i< pics.count;i++)
+    NSInteger count = pics.count;
+    
+    BOOL addMore = false;
+    
+    if(count >4)
+    {
+        count = 4;
+        addMore = YES;
+    }
+    for(int i = 0;i< count;i++)
     {
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self
                                                                               action:@selector(showBigImage:)];
         
         
+//        objc_setAssociatedObject(tap, "pics", pics, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         objc_setAssociatedObject(tap, "pics", pics, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(tap, "pics", pics, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        
+//
         
         UIImageView * img = [[UIImageView alloc] init];
         img.clipsToBounds = YES;
@@ -156,8 +166,8 @@
         [img mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo([rowD getPicWidth]);
             make.height.mas_equalTo([rowD getPicHeight]);
-            CGFloat px = i%type * ([rowD getPicWidth] +[rowD getPicSeparation]) + [rowD getPicPaddingLeft];
-            CGFloat py = i/type * ([rowD getPicHeight] + [rowD getPicSeparation]);
+            CGFloat px = [rowD getFrameX:i]; //i%type * ([rowD getPicWidth] +[rowD getPicSeparation]) + [rowD getPicPaddingLeft];
+            CGFloat py = [rowD getFrameY:i];//i/type * ([rowD getPicHeight] + [rowD getPicSeparation]);
             
 //            if(self.logTrace)
 //            {
@@ -170,8 +180,66 @@
         [img setUserInteractionEnabled:YES];
         [img addGestureRecognizer:tap];
         img.tag = indexPath.row * 1000 + i;
+        
+        
+        // 添加 更多图标
+        if(addMore && i == 3)
+        {
+            
+            UIView * view = [[UIView alloc] init];
+            [cell.imageContentView addSubview:view];
+            view.backgroundColor = [UIColor TKcolorWithHexString:@"86000000"];
+            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                
+                make.size.equalTo(img);
+                make.center.equalTo(img);
+                
+            }];
+            
+            UIImageView * addMoreImage = [[UIImageView alloc] init];
+            addMoreImage.image = IMG(@"icon_big_right_arrow");
+            [cell.imageContentView addSubview:addMoreImage];
+            [addMoreImage mas_makeConstraints:^(MASConstraintMaker *make) {
+               
+                make.center.equalTo(img);
+                make.width.mas_equalTo(20);
+                make.height.mas_equalTo(30);
+                
+            }];
+            addMoreImage.tag = 999;
+        }
+        
+        
+        // 添加商品悬赏价// 和标签
+        if(i == 0 || i == 1)
+        {
+            UIView * view = [[UIView alloc] init];
+            [cell.imageContentView addSubview:view];
+            view.backgroundColor = [UIColor TKcolorWithHexString:@"86000000"];
+            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                
+                make.width.equalTo(img);
+                make.bottom.equalTo(img);
+                make.left.equalTo(img);
+                make.height.mas_equalTo(25);
+                
+            }];
+            
+            UILabel * label = [[UILabel alloc] init];
+            [view addSubview:label];
+            label.backgroundColor = [UIColor clearColor];
+            label.text = @"悬赏价:￥3800";
+            label.textAlignment = NSTextAlignmentCenter;
+            label.textColor = [UIColor whiteColor];
+            [label setFont:[UIFont fontWithName:@"Helvetica" size:12]];
+            [label mas_makeConstraints:^(MASConstraintMaker *make) {
+               
+                make.edges.equalTo(view);
+            }];
+        }
     }
     cell.imageFiledHeight.constant = [rowD getImageFiledHeight];
+    cell.textHeight.constant = [rowD getContentTextHeight];
     // －－－－－加载图片结束
     
     // 设置其他信息
@@ -200,8 +268,18 @@
 
    NSArray * imageVIews =  [tap.view.superview subviews];
     
+    NSMutableArray * pics = [[NSMutableArray alloc] init];
+    for (UIView *view in imageVIews) {
+        if([view isKindOfClass:[UIImageView class] ]&& view.tag != 999)
+        {
+            [pics addObject:view];
+        }
+    }
+    
+    
+    
     [TKUITools showImagesInBigScreen:rowD.showGoodsData.pics
-                       withImageViews:imageVIews
+                       withImageViews:pics
                         currentIndex:index];
 }
 
