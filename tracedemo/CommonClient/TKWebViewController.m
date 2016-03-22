@@ -37,9 +37,9 @@
     }];
     
 #if B_Client
-    _defaultURL = [[TKProxy proxy].tkBaseUrl  stringByAppendingString:@"/web/apollo/orderlist.html?role=0"];
+    _defaultURL = [[TKProxy proxy].tkBaseUrl  stringByAppendingString:@"/web/apollo/order/orderlist.html?role=0"];
 #else
-    _defaultURL = [[TKProxy proxy].tkBaseUrl  stringByAppendingString:@"/web/apollo/orderlist.html?role=1"];
+    _defaultURL = [[TKProxy proxy].tkBaseUrl  stringByAppendingString:@"/web/apollo/order/orderlist.html?role=1"];
 #endif
     
     NSURL * url = [NSURL URLWithString:_defaultURL];

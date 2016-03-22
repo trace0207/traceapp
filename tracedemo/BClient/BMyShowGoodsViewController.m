@@ -9,11 +9,12 @@
 #import "BMyShowGoodsViewController.h"
 #import "TKPublishShowGoodsVC.h"
 #import "AppDelegate.h"
-#import "TKShowGoodsListVM.h"
+//#import "TKShowGoodsListVM.h"
+#import "TKIShowGoodsVM.h"
 
 @interface BMyShowGoodsViewController ()
 {
-    TKShowGoodsListVM * vm;
+    TKIShowGoodsVM * vm;
 }
 
 @end
@@ -23,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hidDefaultBackBtn = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self initView];
     // Do any additional setup after loading the view from its nib.
 }
@@ -43,10 +45,15 @@
 
 -(void)initView
 {
-    vm = [[TKShowGoodsListVM alloc] initWithFreshAbleTable];
+    vm = [[TKIShowGoodsVM alloc] initWithFreshAbleTable];
     [self.view addSubview:vm.pullRefreshView];
     [vm tkUpdateViewConstraint];
     [vm startPullDownRefreshing];
+}
+
+-(void)dealloc
+{
+    vm = nil;
 }
 
 
