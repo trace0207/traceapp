@@ -10,6 +10,7 @@
 #import "TK_SettingCell.h"
 #import "CBillViewController.h"
 #import "CoinViewController.h"
+#import "SettingsViewController.h"
 @interface CAcountViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @end

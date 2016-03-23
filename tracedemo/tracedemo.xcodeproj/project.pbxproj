@@ -139,6 +139,10 @@
 		9182F2741C9EFCE800428B7F /* AbountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182F2711C9EFCE800428B7F /* AbountViewController.m */; };
 		9182F2751C9EFCE800428B7F /* AbountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9182F2721C9EFCE800428B7F /* AbountViewController.xib */; };
 		9182F2761C9EFCE800428B7F /* AbountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9182F2721C9EFCE800428B7F /* AbountViewController.xib */; };
+		91F603401CA2C5EE00238FCE /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6033F1CA2C5EE00238FCE /* UserInfoViewController.m */; };
+		91F603411CA2C5EE00238FCE /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6033F1CA2C5EE00238FCE /* UserInfoViewController.m */; };
+		91F603441CA2C6DC00238FCE /* TKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F603431CA2C6DC00238FCE /* TKSettingsViewController.m */; };
+		91F603451CA2C6DC00238FCE /* TKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F603431CA2C6DC00238FCE /* TKSettingsViewController.m */; };
 		91F862881C9A4406006F44BE /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F862861C9A4406006F44BE /* GoodsDetailViewController.m */; };
 		91F862891C9A4406006F44BE /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F862861C9A4406006F44BE /* GoodsDetailViewController.m */; };
 		91F8628A1C9A4406006F44BE /* GoodsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F862871C9A4406006F44BE /* GoodsDetailViewController.xib */; };
@@ -2808,6 +2812,10 @@
 		9182F2701C9EFCE800428B7F /* AbountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbountViewController.h; sourceTree = "<group>"; };
 		9182F2711C9EFCE800428B7F /* AbountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbountViewController.m; sourceTree = "<group>"; };
 		9182F2721C9EFCE800428B7F /* AbountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbountViewController.xib; sourceTree = "<group>"; };
+		91F6033E1CA2C5EE00238FCE /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		91F6033F1CA2C5EE00238FCE /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		91F603421CA2C6DC00238FCE /* TKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSettingsViewController.h; sourceTree = "<group>"; };
+		91F603431CA2C6DC00238FCE /* TKSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSettingsViewController.m; sourceTree = "<group>"; };
 		91F862851C9A4406006F44BE /* GoodsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetailViewController.h; sourceTree = "<group>"; };
 		91F862861C9A4406006F44BE /* GoodsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailViewController.m; sourceTree = "<group>"; };
 		91F862871C9A4406006F44BE /* GoodsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsDetailViewController.xib; sourceTree = "<group>"; };
@@ -5435,13 +5443,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		9143031D1CA26BD0003E80F7 /* CVM */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = CVM;
-			sourceTree = "<group>";
-		};
 		91F862771C993E9D006F44BE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -5451,6 +5452,10 @@
 				914303161CA2304B003E80F7 /* CAcountViewController.m */,
 				914303191CA24248003E80F7 /* CBillViewController.h */,
 				9143031A1CA24248003E80F7 /* CBillViewController.m */,
+				91F6033E1CA2C5EE00238FCE /* UserInfoViewController.h */,
+				91F6033F1CA2C5EE00238FCE /* UserInfoViewController.m */,
+				91F603421CA2C6DC00238FCE /* TKSettingsViewController.h */,
+				91F603431CA2C6DC00238FCE /* TKSettingsViewController.m */,
 				914303221CA29998003E80F7 /* CoinViewController.h */,
 				914303231CA29998003E80F7 /* CoinViewController.m */,
 				914303241CA29998003E80F7 /* CoinViewController.xib */,
@@ -5781,7 +5786,6 @@
 			isa = PBXGroup;
 			children = (
 				BBA372571C76AA100075333E /* C_Client.plist */,
-				9143031D1CA26BD0003E80F7 /* CVM */,
 				91F862771C993E9D006F44BE /* ViewControllers */,
 			);
 			path = CClient;
@@ -5926,7 +5930,6 @@
 				BB83FB071C72C01C0013A6A0 /* HFHealthCell.xib in Resources */,
 				BB83FB081C72C01C0013A6A0 /* SignThreeViewController.xib in Resources */,
 				914303271CA29998003E80F7 /* CoinViewController.xib in Resources */,
-				BB83FB091C72C01C0013A6A0 /* TKShowGoodsCell.xib in Resources */,
 				BB83FB0A1C72C01C0013A6A0 /* HFHistoryCell.xib in Resources */,
 				BB83FB0B1C72C01C0013A6A0 /* MyBandViewController.xib in Resources */,
 				8A37498D1C911937003DE59E /* HiiBeanWebViewController.xib in Resources */,
@@ -6312,6 +6315,7 @@
 				BB83F8DC1C72C01C0013A6A0 /* BaseHttpReq.m in Sources */,
 				BB83F8DD1C72C01C0013A6A0 /* CommonProxy.m in Sources */,
 				BB83F8DE1C72C01C0013A6A0 /* HFWeiBoProxy.m in Sources */,
+				91F603401CA2C5EE00238FCE /* UserInfoViewController.m in Sources */,
 				BB83F8DF1C72C01C0013A6A0 /* UIImage+Scale.m in Sources */,
 				BB83F8E01C72C01C0013A6A0 /* GetDiaryDataByDayAck.m in Sources */,
 				BB83F8E11C72C01C0013A6A0 /* BandHistoryArg.m in Sources */,
@@ -6803,6 +6807,7 @@
 				BB83FA9F1C72C01C0013A6A0 /* TimeLineRes.m in Sources */,
 				BB83FAA01C72C01C0013A6A0 /* AgreementViewController.m in Sources */,
 				BB83FAA11C72C01C0013A6A0 /* UIWebView+JavaScriptAlert.m in Sources */,
+				91F603441CA2C6DC00238FCE /* TKSettingsViewController.m in Sources */,
 				BB83FAA21C72C01C0013A6A0 /* SchemeActionsArg.m in Sources */,
 				BB83FAA31C72C01C0013A6A0 /* TKAboutUsViewController.m in Sources */,
 				BB83FAA41C72C01C0013A6A0 /* HFGifView.m in Sources */,
@@ -6935,6 +6940,7 @@
 				BB83FB991C72C16B0013A6A0 /* BaseHttpReq.m in Sources */,
 				BB83FB9A1C72C16B0013A6A0 /* CommonProxy.m in Sources */,
 				BB83FB9B1C72C16B0013A6A0 /* HFWeiBoProxy.m in Sources */,
+				91F603411CA2C5EE00238FCE /* UserInfoViewController.m in Sources */,
 				BB83FB9C1C72C16B0013A6A0 /* UIImage+Scale.m in Sources */,
 				BB83FB9D1C72C16B0013A6A0 /* GetDiaryDataByDayAck.m in Sources */,
 				BB83FB9E1C72C16B0013A6A0 /* BandHistoryArg.m in Sources */,
@@ -7426,6 +7432,7 @@
 				BB83FD5C1C72C16B0013A6A0 /* TimeLineRes.m in Sources */,
 				BB83FD5D1C72C16B0013A6A0 /* AgreementViewController.m in Sources */,
 				BB83FD5E1C72C16B0013A6A0 /* UIWebView+JavaScriptAlert.m in Sources */,
+				91F603451CA2C6DC00238FCE /* TKSettingsViewController.m in Sources */,
 				BB83FD5F1C72C16B0013A6A0 /* SchemeActionsArg.m in Sources */,
 				BB83FD601C72C16B0013A6A0 /* TKAboutUsViewController.m in Sources */,
 				BB83FD611C72C16B0013A6A0 /* HFGifView.m in Sources */,

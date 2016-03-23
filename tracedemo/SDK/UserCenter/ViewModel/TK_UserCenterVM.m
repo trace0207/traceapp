@@ -15,6 +15,8 @@
 #import "TKEditUserInfoVC.h"
 #import "UIView+Border.h"
 #import "CAcountViewController.h"
+#import "AbountViewController.h"
+#import "TKSettingsViewController.h"
 @interface TK_UserCenterVM()
 {
  
@@ -111,7 +113,7 @@
             [self onTableRowSelectFromSectionOne:indexPath.row];
             break;
         case 2:
-            [self onTableRowSelectFromSectionTwo:indexPath.row];
+            //[self onTableRowSelectFromSectionTwo:indexPath.row];
             break;
         default:
             break;
@@ -208,31 +210,20 @@
         CAcountViewController * bvc = [[CAcountViewController alloc] init];
         [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
     }else{
-        TKUserPageViewController * userPage = [[TKUserPageViewController alloc] init];
-        userPage.userId = TKUserId;
-        userPage.navTitle = @"我的晒单";
-        [[AppDelegate getMainNavigation] pushViewController:userPage animated:YES];
+        TKEditUserInfoVC * bvc = [[TKEditUserInfoVC alloc] init];
+        [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
     }
 }
 
 -(void)onTableRowSelectFromSectionOne:(NSInteger)row
 {
     if (row == 0) {
-        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
-        bvc.navTitle = @"我的订单";
-        [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
-    }else if (row == 1){ //  晒单相册
-        TKUserPageViewController * userPage = [[TKUserPageViewController alloc] init];
-        userPage.userId = TKUserId;
-        userPage.navTitle = @"我的晒单";
-        [[AppDelegate getMainNavigation] pushViewController:userPage animated:YES];
-    }else if (row == 2)
-    {
-        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
-        bvc.navTitle = @"我的私信";
-        [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
+        TKSettingsViewController *vc = [[TKSettingsViewController alloc]init];
+        [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    }else if (row == 1){ //晒单相册
+        AbountViewController * vc = [[AbountViewController alloc] init];
+        [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     }
-    
 }
 
 -(void)onTableRowSelectFromSectionTwo:(NSInteger)row

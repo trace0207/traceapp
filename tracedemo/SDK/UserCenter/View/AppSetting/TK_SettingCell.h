@@ -87,5 +87,7 @@
  **/
 +(TK_SettingCell *)loadSwitchType:(id)ower;
 
++(TK_SettingCell *)loadNoImageSwitchType:(id)ower;
+
 
 @end

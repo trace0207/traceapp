@@ -88,7 +88,10 @@ const NSInteger kSwitch = 9910;
     return  [[[NSBundle mainBundle]loadNibNamed:@"TK_SettingCell" owner:ower options:nil]objectAtIndex:3];
 }
 
-
++(TK_SettingCell *)loadNoImageSwitchType:(id)ower
+{
+    return  [[[NSBundle mainBundle]loadNibNamed:@"TK_SettingCell" owner:ower options:nil]objectAtIndex:6];
+}
 
 //@property (nonatomic,strong)UILabel * leftLabel;
 //@property (nonatomic,strong)UILabel * rightLabel;

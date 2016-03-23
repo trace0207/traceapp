@@ -176,7 +176,7 @@
                     <constraint firstItem="iy2-NN-8vE" firstAttribute="centerY" secondItem="MIk-XT-XjA" secondAttribute="centerY" id="zKg-FG-1Mw"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="225" y="451"/>
+            <point key="canvasLocation" x="187" y="470"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TK_SettingCell" rowHeight="89" id="FoA-US-LXN" customClass="TK_SettingCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
@@ -269,6 +269,40 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="165" y="677"/>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TK_SettingCell" id="T1c-t6-QOO" customClass="TK_SettingCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T1c-t6-QOO" id="WV0-w3-SLB">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="9901" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0X-Vc-YJn">
+                        <rect key="frame" x="16" y="11" width="100" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="289-EB-QO2"/>
+                            <constraint firstAttribute="width" constant="100" id="FY1-vM-tnz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" tag="9910" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRw-Ry-0xv">
+                        <rect key="frame" x="253" y="6" width="51" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="5lZ-7Q-OZp"/>
+                            <constraint firstAttribute="width" constant="49" id="VJO-9B-5te"/>
+                        </constraints>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="g0X-Vc-YJn" firstAttribute="centerY" secondItem="WV0-w3-SLB" secondAttribute="centerY" id="8Ja-wm-rYr"/>
+                    <constraint firstItem="g0X-Vc-YJn" firstAttribute="leading" secondItem="WV0-w3-SLB" secondAttribute="leading" constant="16" id="Sdb-6o-uTg"/>
+                    <constraint firstItem="ZRw-Ry-0xv" firstAttribute="centerY" secondItem="WV0-w3-SLB" secondAttribute="centerY" id="XBd-dR-fL2"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ZRw-Ry-0xv" secondAttribute="trailing" constant="10" id="f69-He-kpE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="119" y="762"/>
         </tableViewCell>
     </objects>
 </document>
