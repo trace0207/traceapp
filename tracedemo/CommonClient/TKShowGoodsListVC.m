@@ -7,7 +7,6 @@
 //
 
 #import "TKShowGoodsListVC.h"
-#import "TKShowGoodsListVM.h"
 
 @interface TKShowGoodsListVC ()
 

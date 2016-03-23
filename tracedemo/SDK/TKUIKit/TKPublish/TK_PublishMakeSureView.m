@@ -141,11 +141,11 @@
 //        arg.categoryId = 3;
         
         arg.rewardPrice = @"4";
-        arg.content = @"求购 求购 ";
+        arg.content = @"要求一天之内发货，亲，抢单吧";
         arg.source = @"1";
         arg.sourceId = [[TKUserCenter instance] getUser].userId;
-        arg.categoryId = @"1";
-        arg.brandId = @"1";
+        arg.categoryId = @"2";
+        arg.brandId = @"2";
         arg.receiverId = @"1";
         arg.requireDay = @"1";
         

@@ -220,7 +220,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     
     NSArray * pics = @[image1,image2]; //[[NSArray alloc] initWithArray:self.picturesArr];
     popView.images = pics;
-    popView.content = @"测试悬赏";
+    popView.content = @"买一件 ， 来吧";
     popView.showPrice = 10;  //[self.willByPrice.text integerValue] * 100;
     
     [[AppDelegate getAppDelegate].window addSubview:popView];
