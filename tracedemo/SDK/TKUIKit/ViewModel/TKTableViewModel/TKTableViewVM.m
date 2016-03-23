@@ -31,8 +31,15 @@
 
 -(instancetype)initWithDefaultTable
 {
+    self = [self initTableWithStyle:UITableViewStyleGrouped];
+    
+    return self;
+}
+
+- (instancetype)initTableWithStyle:(UITableViewStyle)tableStyle
+{
     self = [self init];
-    _mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
+    _mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:tableStyle];
     TKSetTableView(_mTableView, self, self);
     [self defaultViewSetting];
     return self;
@@ -41,9 +48,15 @@
 
 -(instancetype)initWithFreshAbleTable
 {
+    self = [self initFreshTableWtihStyle:UITableViewStyleGrouped];
+    return self;
+}
+
+- (instancetype)initFreshTableWtihStyle:(UITableViewStyle)tableStyle
+{
     self = [self init];
     _pullRefreshView = [[UIView alloc]init];
-    _mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
+    _mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:tableStyle];
     TKSetTableView(_mTableView, self, self);
     [_pullRefreshView addSubview:_mTableView];
     refreshController = [[CLLRefreshHeadController alloc]initWithScrollView:_mTableView viewDelegate:self];

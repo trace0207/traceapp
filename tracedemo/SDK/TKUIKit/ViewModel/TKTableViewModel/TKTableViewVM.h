@@ -43,6 +43,7 @@
  *  @return self
  */
 -(instancetype)initWithDefaultTable;
+- (instancetype)initTableWithStyle:(UITableViewStyle)tableStyle;
 /**
  *  初始化可刷新的table 需
  *  需要在 add到view之后，再调用 tkUpdateViewConstraint
@@ -50,7 +51,7 @@
  *  @return self
  */
 -(instancetype)initWithFreshAbleTable;
-
+- (instancetype)initFreshTableWtihStyle:(UITableViewStyle)tableStyle;
 /**
  *  初始化默认的table 带 frame
  *

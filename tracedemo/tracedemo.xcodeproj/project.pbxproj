@@ -119,6 +119,14 @@
 		912120C01C9FD6FA00271605 /* DeliveryTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 912120BE1C9FD6FA00271605 /* DeliveryTimeView.xib */; };
 		9135820C1C9718CD00517542 /* HFTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135820B1C9718CD00517542 /* HFTitleLabel.m */; };
 		9135820D1C9718CD00517542 /* HFTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135820B1C9718CD00517542 /* HFTitleLabel.m */; };
+		914303171CA2304B003E80F7 /* CAcountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914303161CA2304B003E80F7 /* CAcountViewController.m */; };
+		914303181CA2304B003E80F7 /* CAcountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914303161CA2304B003E80F7 /* CAcountViewController.m */; };
+		9143031B1CA24248003E80F7 /* CBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9143031A1CA24248003E80F7 /* CBillViewController.m */; };
+		9143031C1CA24248003E80F7 /* CBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9143031A1CA24248003E80F7 /* CBillViewController.m */; };
+		914303251CA29998003E80F7 /* CoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914303231CA29998003E80F7 /* CoinViewController.m */; };
+		914303261CA29998003E80F7 /* CoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914303231CA29998003E80F7 /* CoinViewController.m */; };
+		914303271CA29998003E80F7 /* CoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914303241CA29998003E80F7 /* CoinViewController.xib */; };
+		914303281CA29998003E80F7 /* CoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914303241CA29998003E80F7 /* CoinViewController.xib */; };
 		915FC66F1C94030400A74704 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FC66E1C94030400A74704 /* ViewPagerController.m */; };
 		915FC6701C94030400A74704 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FC66E1C94030400A74704 /* ViewPagerController.m */; };
 		915FC6731C94036500A74704 /* BPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FC6721C94036500A74704 /* BPageViewController.m */; };
@@ -129,14 +137,6 @@
 		9182F2741C9EFCE800428B7F /* AbountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182F2711C9EFCE800428B7F /* AbountViewController.m */; };
 		9182F2751C9EFCE800428B7F /* AbountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9182F2721C9EFCE800428B7F /* AbountViewController.xib */; };
 		9182F2761C9EFCE800428B7F /* AbountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9182F2721C9EFCE800428B7F /* AbountViewController.xib */; };
-		91F862741C993D48006F44BE /* CPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F862731C993D48006F44BE /* CPublishViewController.m */; };
-		91F862751C993D48006F44BE /* CPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F862731C993D48006F44BE /* CPublishViewController.m */; };
-		91F8627A1C994078006F44BE /* PictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F862791C994078006F44BE /* PictureView.m */; };
-		91F8627B1C994078006F44BE /* PictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F862791C994078006F44BE /* PictureView.m */; };
-		91F8627E1C99486A006F44BE /* PublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F8627D1C99486A006F44BE /* PublishView.m */; };
-		91F8627F1C99486A006F44BE /* PublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F8627D1C99486A006F44BE /* PublishView.m */; };
-		91F862811C994888006F44BE /* PublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F862801C994888006F44BE /* PublishView.xib */; };
-		91F862821C994888006F44BE /* PublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F862801C994888006F44BE /* PublishView.xib */; };
 		91F862881C9A4406006F44BE /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F862861C9A4406006F44BE /* GoodsDetailViewController.m */; };
 		91F862891C9A4406006F44BE /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F862861C9A4406006F44BE /* GoodsDetailViewController.m */; };
 		91F8628A1C9A4406006F44BE /* GoodsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F862871C9A4406006F44BE /* GoodsDetailViewController.xib */; };
@@ -2788,6 +2788,13 @@
 		912120BE1C9FD6FA00271605 /* DeliveryTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeliveryTimeView.xib; sourceTree = "<group>"; };
 		9135820A1C9718CD00517542 /* HFTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTitleLabel.h; sourceTree = "<group>"; };
 		9135820B1C9718CD00517542 /* HFTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTitleLabel.m; sourceTree = "<group>"; };
+		914303151CA2304B003E80F7 /* CAcountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAcountViewController.h; sourceTree = "<group>"; };
+		914303161CA2304B003E80F7 /* CAcountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAcountViewController.m; sourceTree = "<group>"; };
+		914303191CA24248003E80F7 /* CBillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBillViewController.h; sourceTree = "<group>"; };
+		9143031A1CA24248003E80F7 /* CBillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBillViewController.m; sourceTree = "<group>"; };
+		914303221CA29998003E80F7 /* CoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinViewController.h; sourceTree = "<group>"; };
+		914303231CA29998003E80F7 /* CoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinViewController.m; sourceTree = "<group>"; };
+		914303241CA29998003E80F7 /* CoinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoinViewController.xib; sourceTree = "<group>"; };
 		915FC66D1C94030400A74704 /* ViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPagerController.h; sourceTree = "<group>"; };
 		915FC66E1C94030400A74704 /* ViewPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPagerController.m; sourceTree = "<group>"; };
 		915FC6711C94036500A74704 /* BPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPageViewController.h; sourceTree = "<group>"; };
@@ -2797,13 +2804,6 @@
 		9182F2701C9EFCE800428B7F /* AbountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbountViewController.h; sourceTree = "<group>"; };
 		9182F2711C9EFCE800428B7F /* AbountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbountViewController.m; sourceTree = "<group>"; };
 		9182F2721C9EFCE800428B7F /* AbountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbountViewController.xib; sourceTree = "<group>"; };
-		91F862721C993D48006F44BE /* CPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPublishViewController.h; sourceTree = "<group>"; };
-		91F862731C993D48006F44BE /* CPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPublishViewController.m; sourceTree = "<group>"; };
-		91F862781C994078006F44BE /* PictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureView.h; sourceTree = "<group>"; };
-		91F862791C994078006F44BE /* PictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureView.m; sourceTree = "<group>"; };
-		91F8627C1C99486A006F44BE /* PublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishView.h; sourceTree = "<group>"; };
-		91F8627D1C99486A006F44BE /* PublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishView.m; sourceTree = "<group>"; };
-		91F862801C994888006F44BE /* PublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublishView.xib; sourceTree = "<group>"; };
 		91F862851C9A4406006F44BE /* GoodsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetailViewController.h; sourceTree = "<group>"; };
 		91F862861C9A4406006F44BE /* GoodsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailViewController.m; sourceTree = "<group>"; };
 		91F862871C9A4406006F44BE /* GoodsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsDetailViewController.xib; sourceTree = "<group>"; };
@@ -5431,16 +5431,11 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		91F862761C993E8D006F44BE /* Views */ = {
+		9143031D1CA26BD0003E80F7 /* CVM */ = {
 			isa = PBXGroup;
 			children = (
-				91F862781C994078006F44BE /* PictureView.h */,
-				91F862791C994078006F44BE /* PictureView.m */,
-				91F8627C1C99486A006F44BE /* PublishView.h */,
-				91F8627D1C99486A006F44BE /* PublishView.m */,
-				91F862801C994888006F44BE /* PublishView.xib */,
 			);
-			name = Views;
+			name = CVM;
 			sourceTree = "<group>";
 		};
 		91F862771C993E9D006F44BE /* ViewControllers */ = {
@@ -5448,8 +5443,13 @@
 			children = (
 				8A99859D1C86CDF5000F9CBC /* CHomePageViewController.h */,
 				8A99859E1C86CDF5000F9CBC /* CHomePageViewController.m */,
-				91F862721C993D48006F44BE /* CPublishViewController.h */,
-				91F862731C993D48006F44BE /* CPublishViewController.m */,
+				914303151CA2304B003E80F7 /* CAcountViewController.h */,
+				914303161CA2304B003E80F7 /* CAcountViewController.m */,
+				914303191CA24248003E80F7 /* CBillViewController.h */,
+				9143031A1CA24248003E80F7 /* CBillViewController.m */,
+				914303221CA29998003E80F7 /* CoinViewController.h */,
+				914303231CA29998003E80F7 /* CoinViewController.m */,
+				914303241CA29998003E80F7 /* CoinViewController.xib */,
 				8A3749771C8D5BC4003DE59E /* CHomeChildAVC.h */,
 				8A3749781C8D5BC4003DE59E /* CHomeChildAVC.m */,
 				8A3749791C8D5BC4003DE59E /* CHomeChildAVC.xib */,
@@ -5775,8 +5775,8 @@
 			isa = PBXGroup;
 			children = (
 				BBA372571C76AA100075333E /* C_Client.plist */,
+				9143031D1CA26BD0003E80F7 /* CVM */,
 				91F862771C993E9D006F44BE /* ViewControllers */,
-				91F862761C993E8D006F44BE /* Views */,
 			);
 			path = CClient;
 			sourceTree = "<group>";
@@ -5919,6 +5919,8 @@
 				BB83FB061C72C01C0013A6A0 /* HFAboutUsTableViewCell.xib in Resources */,
 				BB83FB071C72C01C0013A6A0 /* HFHealthCell.xib in Resources */,
 				BB83FB081C72C01C0013A6A0 /* SignThreeViewController.xib in Resources */,
+				914303271CA29998003E80F7 /* CoinViewController.xib in Resources */,
+				BB83FB091C72C01C0013A6A0 /* TKShowGoodsCell.xib in Resources */,
 				BB83FB0A1C72C01C0013A6A0 /* HFHistoryCell.xib in Resources */,
 				BB83FB0B1C72C01C0013A6A0 /* MyBandViewController.xib in Resources */,
 				8A37498D1C911937003DE59E /* HiiBeanWebViewController.xib in Resources */,
@@ -5988,7 +5990,6 @@
 				BB83FB3F1C72C01C0013A6A0 /* ZYQAssetPicker.Bundle in Resources */,
 				BB83FB401C72C01C0013A6A0 /* HFCollectionCell.xib in Resources */,
 				BB83FB411C72C01C0013A6A0 /* Resource.bundle in Resources */,
-				91F862811C994888006F44BE /* PublishView.xib in Resources */,
 				BB83FB421C72C01C0013A6A0 /* HFHabitTimeCell.xib in Resources */,
 				BB83FB431C72C01C0013A6A0 /* HFActivityListCell.xib in Resources */,
 				BB83FB441C72C01C0013A6A0 /* HFConclusionView.xib in Resources */,
@@ -6036,6 +6037,7 @@
 				BB83FDB91C72C16B0013A6A0 /* HFLanchViewController.xib in Resources */,
 				BB83FDBA1C72C16B0013A6A0 /* TestViewController.xib in Resources */,
 				BB83FDBB1C72C16B0013A6A0 /* TKHttpAction.plist in Resources */,
+				914303281CA29998003E80F7 /* CoinViewController.xib in Resources */,
 				8A0465051C88113300E6B1E0 /* TKISHowGoodsCell.xib in Resources */,
 				8A37497C1C8D5BD0003DE59E /* CHomeChildAVC.xib in Resources */,
 				BB83FDBC1C72C16B0013A6A0 /* HFFeedbackController.xib in Resources */,
@@ -6067,7 +6069,6 @@
 				BB83FDD61C72C16B0013A6A0 /* TKRegisterViewController.xib in Resources */,
 				BB83FDD71C72C16B0013A6A0 /* FriendsCell.xib in Resources */,
 				BB83FDD81C72C16B0013A6A0 /* SentPostViewController.xib in Resources */,
-				91F862821C994888006F44BE /* PublishView.xib in Resources */,
 				8A99859A1C86C68A000F9CBC /* BHomeCHildAScrollBox.xib in Resources */,
 				BB83FDD91C72C16B0013A6A0 /* HFBindPhoneNumViewController.xib in Resources */,
 				BB83FDDA1C72C16B0013A6A0 /* HFRemindCell.xib in Resources */,
@@ -6382,7 +6383,6 @@
 				BB83F9211C72C01C0013A6A0 /* TKAppSettingViewController.m in Sources */,
 				BB83F9221C72C01C0013A6A0 /* HFCommentLikeListRes.m in Sources */,
 				BB83F9231C72C01C0013A6A0 /* TK_VerifySMSArg.m in Sources */,
-				91F8627A1C994078006F44BE /* PictureView.m in Sources */,
 				BB83F9241C72C01C0013A6A0 /* HFUnlockCell.m in Sources */,
 				BB83F9251C72C01C0013A6A0 /* CellCreator.m in Sources */,
 				BB83F9261C72C01C0013A6A0 /* HFHabitInfoCell.m in Sources */,
@@ -6479,6 +6479,7 @@
 				BB83F97C1C72C01C0013A6A0 /* HFHabitSignReq.m in Sources */,
 				BB83F97D1C72C01C0013A6A0 /* TK_GetOrdersAck.m in Sources */,
 				BB83F97E1C72C01C0013A6A0 /* FCModelCachedObject.m in Sources */,
+				9143031B1CA24248003E80F7 /* CBillViewController.m in Sources */,
 				BB83F97F1C72C01C0013A6A0 /* HFEditHeaderView.m in Sources */,
 				BB83F9801C72C01C0013A6A0 /* MMCenterTableViewCell.m in Sources */,
 				912120BC1C9FD6E600271605 /* DeliveryTimeView.m in Sources */,
@@ -6512,7 +6513,6 @@
 				BB83F9971C72C01C0013A6A0 /* MyBandViewController.m in Sources */,
 				BB83F9981C72C01C0013A6A0 /* ModifySchemeStateArg.m in Sources */,
 				BB83F9991C72C01C0013A6A0 /* TK_PraiseOrderArg.m in Sources */,
-				91F8627E1C99486A006F44BE /* PublishView.m in Sources */,
 				BB83F99A1C72C01C0013A6A0 /* SIMenuConfiguration.m in Sources */,
 				BB83F99B1C72C01C0013A6A0 /* TK_BaseAppDelegate.m in Sources */,
 				BB83F99C1C72C01C0013A6A0 /* HFMessageDetailView.m in Sources */,
@@ -6597,6 +6597,7 @@
 				BB83F9E31C72C01C0013A6A0 /* HFCupView.m in Sources */,
 				BB83F9E41C72C01C0013A6A0 /* TK_SettingCell.m in Sources */,
 				BB83F9E51C72C01C0013A6A0 /* HFPrivacyViewController.m in Sources */,
+				914303171CA2304B003E80F7 /* CAcountViewController.m in Sources */,
 				BB83F9E61C72C01C0013A6A0 /* HiModuleData.m in Sources */,
 				BB83F9E71C72C01C0013A6A0 /* MyInfoCell.m in Sources */,
 				8AA7F7171C8BC9A500CE0F17 /* TK_CategoryListAck.m in Sources */,
@@ -6756,6 +6757,7 @@
 				BB83FA7A1C72C01C0013A6A0 /* MJPhotoBrowser.m in Sources */,
 				BB83FA7B1C72C01C0013A6A0 /* MainTableViewCell.m in Sources */,
 				BB83FA7C1C72C01C0013A6A0 /* HFRegisterReq.m in Sources */,
+				914303251CA29998003E80F7 /* CoinViewController.m in Sources */,
 				BB83FA7D1C72C01C0013A6A0 /* TKProxy.m in Sources */,
 				BB83FA7E1C72C01C0013A6A0 /* AppDelegate.m in Sources */,
 				BB83FA7F1C72C01C0013A6A0 /* HFHistoryCell.m in Sources */,
@@ -6798,7 +6800,6 @@
 				BB83FAA31C72C01C0013A6A0 /* TKAboutUsViewController.m in Sources */,
 				BB83FAA41C72C01C0013A6A0 /* HFGifView.m in Sources */,
 				BB83FAA51C72C01C0013A6A0 /* GetCommonProblemArg.m in Sources */,
-				91F862741C993D48006F44BE /* CPublishViewController.m in Sources */,
 				BB83FAA61C72C01C0013A6A0 /* HFTimePickView.m in Sources */,
 				BB83FAA71C72C01C0013A6A0 /* HFMessageCell.m in Sources */,
 				BB83FAA81C72C01C0013A6A0 /* GetRunningDataAck.m in Sources */,
@@ -7004,7 +7005,6 @@
 				BB83FBDE1C72C16B0013A6A0 /* TKAppSettingViewController.m in Sources */,
 				BB83FBDF1C72C16B0013A6A0 /* HFCommentLikeListRes.m in Sources */,
 				BB83FBE01C72C16B0013A6A0 /* TK_VerifySMSArg.m in Sources */,
-				91F8627B1C994078006F44BE /* PictureView.m in Sources */,
 				BB83FBE11C72C16B0013A6A0 /* HFUnlockCell.m in Sources */,
 				BB83FBE21C72C16B0013A6A0 /* CellCreator.m in Sources */,
 				BB83FBE31C72C16B0013A6A0 /* HFHabitInfoCell.m in Sources */,
@@ -7101,6 +7101,7 @@
 				BB83FC3A1C72C16B0013A6A0 /* TK_GetOrdersAck.m in Sources */,
 				BB83FC3B1C72C16B0013A6A0 /* FCModelCachedObject.m in Sources */,
 				BB83FC3C1C72C16B0013A6A0 /* HFEditHeaderView.m in Sources */,
+				9143031C1CA24248003E80F7 /* CBillViewController.m in Sources */,
 				BB83FC3D1C72C16B0013A6A0 /* MMCenterTableViewCell.m in Sources */,
 				BB83FC3E1C72C16B0013A6A0 /* DemoModelData.m in Sources */,
 				912120BD1C9FD6E600271605 /* DeliveryTimeView.m in Sources */,
@@ -7134,7 +7135,6 @@
 				BB83FC561C72C16B0013A6A0 /* TK_PraiseOrderArg.m in Sources */,
 				BB83FC571C72C16B0013A6A0 /* SIMenuConfiguration.m in Sources */,
 				BB83FC581C72C16B0013A6A0 /* TK_BaseAppDelegate.m in Sources */,
-				91F8627F1C99486A006F44BE /* PublishView.m in Sources */,
 				BB83FC591C72C16B0013A6A0 /* HFMessageDetailView.m in Sources */,
 				BB83FC5A1C72C16B0013A6A0 /* TAAnimatedDotView.m in Sources */,
 				BB83FC5B1C72C16B0013A6A0 /* HFPreRegisterReq.m in Sources */,
@@ -7219,6 +7219,7 @@
 				BB83FCA21C72C16B0013A6A0 /* HFPrivacyViewController.m in Sources */,
 				BB83FCA31C72C16B0013A6A0 /* HiModuleData.m in Sources */,
 				BB83FCA41C72C16B0013A6A0 /* MyInfoCell.m in Sources */,
+				914303181CA2304B003E80F7 /* CAcountViewController.m in Sources */,
 				BB83FCA51C72C16B0013A6A0 /* ReportBandArg.m in Sources */,
 				BB83FCA61C72C16B0013A6A0 /* HFHabitTimesListViewController.m in Sources */,
 				BB83FCA71C72C16B0013A6A0 /* MMExampleSideDrawerViewController.m in Sources */,
@@ -7378,6 +7379,7 @@
 				BB83FD381C72C16B0013A6A0 /* MainTableViewCell.m in Sources */,
 				BB83FD391C72C16B0013A6A0 /* HFRegisterReq.m in Sources */,
 				BB83FD3A1C72C16B0013A6A0 /* TKProxy.m in Sources */,
+				914303261CA29998003E80F7 /* CoinViewController.m in Sources */,
 				BB83FD3B1C72C16B0013A6A0 /* AppDelegate.m in Sources */,
 				BB83FD3C1C72C16B0013A6A0 /* HFHistoryCell.m in Sources */,
 				BB83FD3D1C72C16B0013A6A0 /* BaseTableViewController.m in Sources */,
@@ -7420,7 +7422,6 @@
 				BB83FD601C72C16B0013A6A0 /* TKAboutUsViewController.m in Sources */,
 				BB83FD611C72C16B0013A6A0 /* HFGifView.m in Sources */,
 				BB83FD621C72C16B0013A6A0 /* GetCommonProblemArg.m in Sources */,
-				91F862751C993D48006F44BE /* CPublishViewController.m in Sources */,
 				BB83FD631C72C16B0013A6A0 /* HFTimePickView.m in Sources */,
 				BB83FD641C72C16B0013A6A0 /* HFMessageCell.m in Sources */,
 				BB83FD651C72C16B0013A6A0 /* GetRunningDataAck.m in Sources */,

@@ -13,8 +13,8 @@
 #import "TKUserPageViewController.h"
 #import "TKAppSettingViewController.h"
 #import "TKEditUserInfoVC.h"
-
-
+#import "UIView+Border.h"
+#import "CAcountViewController.h"
 @interface TK_UserCenterVM()
 {
  
@@ -27,34 +27,65 @@
 -(void)tkLoadDefaultData
 {
     
+    self.mTableView.backgroundColor = [UIColor clearColor];
+    [self.mTableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    UIView *view = [self getHeadCell];
+    [self.mTableView setTableHeaderView:view];
+    
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
+    footerView.backgroundColor = [UIColor whiteColor];
+    [self.mTableView setTableFooterView:footerView];
+    
+    UIButton *exitBtn = [[UIButton alloc]init];
+    [footerView addSubview:exitBtn];
+    [exitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(40);
+        make.left.equalTo(footerView.mas_left).with.offset(20);
+        make.right.equalTo(footerView.mas_right).with.offset(-20);
+        make.bottom.equalTo(footerView.mas_bottom).with.offset(-20);
+    }];
+    [exitBtn setTitle:@"退出" forState:UIControlStateNormal];
+    [exitBtn setTitleColor:[UIColor hexChangeFloat:TKColorRed] forState:UIControlStateNormal];
+    [exitBtn addTarget:self action:@selector(exit:) forControlEvents:UIControlEventTouchUpInside];
+    [exitBtn setBorderColor:[UIColor tkBorderColor] borderWidth:1];
+    
+    
     TKTableSectionM * section0 = [[TKTableSectionM alloc] init];
-    section0.sectionHeadHeight = 10;
+    section0.sectionHeadHeight = 0.01;
     section0.sectionFootHeight = 10;
-    [section0 initDefaultRowData:1];
-    section0.rowHeight = 100;
+    [section0 initDefaultRowData:2];
+    section0.rowHeight = 50;
     
     TKTableSectionM * section1 = [[TKTableSectionM alloc] init];
     section1.sectionHeadHeight = 0.01;
     section1.sectionFootHeight = 10;
-    [section1 initDefaultRowData:3];
+    section0.rowHeight = 50;
+    [section1 initDefaultRowData:2];
     
     
     TKTableSectionM * section2 = [[TKTableSectionM alloc] init];
     section2.sectionHeadHeight = 0.01;
-    section2.sectionFootHeight = 10;
-    [section2 initDefaultRowData:5];
+    section2.sectionFootHeight = 0.01;
+    section0.rowHeight = 50;
+    [section2 initDefaultRowData:1];
     
     
     NSMutableArray * sections = [[NSMutableArray alloc] initWithObjects:section0,section1,section2, nil];
     self.sectionData = sections;
 }
 
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *v = [[UIView alloc]init];
+    v.backgroundColor = [UIColor whiteColor];
+    return v;
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 0 && indexPath.row == 0)
+    if(indexPath.section == 0)
     {
-        return [self getHeadCell];
+        return [self getSection0Row:indexPath.row];
     }
     else if(indexPath.section == 1)
     {
@@ -74,7 +105,7 @@
     
     switch (indexPath.section) {
         case 0:
-            [self goToUserPage];
+            [self onTableRowSelectFromSectionZore:indexPath.row];
             break;
         case 1:
             [self onTableRowSelectFromSectionOne:indexPath.row];
@@ -85,6 +116,11 @@
         default:
             break;
     }
+}
+
+- (void)exit:(id)sender
+{
+    //退出操作
 }
 
 -(void)goToUserPage
@@ -100,15 +136,11 @@
     cell.label2.hidden  = YES;
     switch (row) {
         case 0:
-            cell.label1.text = @"我的订单";
+            cell.label1.text = @"设置";
             cell.icon1.image = IMG(@"My_stepRecord");
             break;
         case 1:
-            cell.label1.text = @"晒单相册";
-            cell.icon1.image = IMG(@"My_stepRecord");
-            break;
-        case 2:
-            cell.label1.text = @"我的私信";
+            cell.label1.text = @"关于";
             cell.icon1.image = IMG(@"My_stepRecord");
             break;
         default:
@@ -118,31 +150,18 @@
     return cell;
 }
 
-
--(TK_SettingCell *)getSection2Row:(NSInteger)row
+-(TK_SettingCell *)getSection0Row:(NSInteger)row
 {
     TK_SettingCell * cell =   [TK_SettingCell loadDefaultTextWithLeftIconType:self];
     cell.label2.hidden  = YES;
     switch (row) {
         case 0:
-            cell.label1.text = @"我的账户";
-            cell.icon1.image = IMG(@"My_message");
+            cell.label1.text = @"账户详情";
+            cell.icon1.image = IMG(@"My_stepRecord");
             break;
         case 1:
-            cell.label1.text = @"我的卡券";
-            cell.icon1.image = IMG(@"My_hiBox");
-            break;
-        case 2:
-            cell.label1.text = @"附近买手";
-            cell.icon1.image = IMG(@"My_foodSearch");
-            break;
-        case 3:
-            cell.label1.text = @"活动";
-            cell.icon1.image = IMG(@"My_activity");
-            break;
-        case 4:
-            cell.label1.text = @"设置";
-            cell.icon1.image = IMG(@"My_setting");
+            cell.label1.text = @"我的个人信息";
+            cell.icon1.image = IMG(@"My_stepRecord");
             break;
         default:
             break;
@@ -152,11 +171,22 @@
 }
 
 
+-(TK_SettingCell *)getSection2Row:(NSInteger)row
+{
+    TK_SettingCell * cell =   [TK_SettingCell loadDefaultTextWithLeftIconType:self];
+    cell.label2.hidden  = NO;
+    cell.label1.text = @"联系客服";
+    cell.icon1.image = IMG(@"My_message");
+    cell.label2.text = @"400-800-8008";
+    return cell;
+}
+
+
 
 -(TK_SettingCell *)getHeadCell
 {
     TK_SettingCell * cell =   [TK_SettingCell loadLeftImageViewType:self];
-   
+    cell.contentView.backgroundColor = [UIColor clearColor];
     TKUser * user = [[TKUserCenter instance]getUser];
     if (user.headPortraitUrl.length>0) {
         [cell.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];
@@ -165,13 +195,25 @@
         [cell.headImage setImage:IMG(@"user")];
     }
     cell.label1.text = user.nickName;
-    cell.label2.text = @"诚信值:";
-    cell.label3.textColor = [UIColor tkThemeColor1];
-    cell.label3.text = TKStrFromNumber(user.score);//[[NSNumber numberWithInteger:user.score]stringValue];
+    cell.label1.text = @"增斌";
+    cell.label2.text = @"还是喜欢法国品牌";
+//    cell.label3.textColor = [UIColor tkThemeColor1];
+//    cell.label3.text = TKStrFromNumber(user.score);//[[NSNumber numberWithInteger:user.score]stringValue];
     return cell;
 }
 
-
+-(void)onTableRowSelectFromSectionZore:(NSInteger)row
+{
+    if (row == 0) {
+        CAcountViewController * bvc = [[CAcountViewController alloc] init];
+        [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
+    }else{
+        TKUserPageViewController * userPage = [[TKUserPageViewController alloc] init];
+        userPage.userId = TKUserId;
+        userPage.navTitle = @"我的晒单";
+        [[AppDelegate getMainNavigation] pushViewController:userPage animated:YES];
+    }
+}
 
 -(void)onTableRowSelectFromSectionOne:(NSInteger)row
 {

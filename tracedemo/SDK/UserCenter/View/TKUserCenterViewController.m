@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.hidDefaultBackBtn = YES;
+    
     UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight/2.0f)];
     backView.backgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
     [self.view addSubview:backView];
@@ -33,12 +35,12 @@
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, kScreenHeight/2., 0));
     }];
     
-    self.hidDefaultBackBtn = YES;
 #if B_Client == 1
+    
     vm = [[BUserCenterVM alloc] initWithDefaultTable];
    
 #else
-    vm = [[TK_UserCenterVM alloc] initDefaultTableWithFrame:CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 64 - 49)];
+    vm = [[TK_UserCenterVM alloc] initWithDefaultTable];
 #endif
     [self.view addSubview:vm.mTableView];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -54,14 +56,14 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-    //[self TKaddNavigationTitle:@"我"];
+    //[self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self TKaddNavigationTitle:@"我"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    //[self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
