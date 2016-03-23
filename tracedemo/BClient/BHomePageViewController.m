@@ -204,6 +204,7 @@
         _vc2.indicatorColor = [UIColor tkThemeColor1];
         _vc2.tabsViewBackgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
         _vc2.view.backgroundColor = [UIColor tkThemeColor2];
+        _vc2.dataType = B_MyUserReward;
     }
     return _vc2;
 }
@@ -217,6 +218,7 @@
         _vc1.indicatorColor = [UIColor tkThemeColor1];
         _vc1.tabsViewBackgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
         _vc1.view.backgroundColor = [UIColor tkThemeColor2];
+        _vc1.dataType = B_AllReward;
     }
     return _vc1;
 }

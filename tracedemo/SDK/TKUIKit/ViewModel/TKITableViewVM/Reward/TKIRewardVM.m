@@ -53,12 +53,13 @@
 
 -(void)tkLoadDefaultData
 {
-    WS(weakSelf)
+    WS(weakSelf);
     
-    
-    
-    [[TKProxy proxy].mainProxy getMyRewardList:self.category.categoryId page:nowPage rewardStatus:IN_REWARDING withBlock:^(HF_BaseAck *ack) {
-        
+    [[TKProxy proxy].mainProxy getRewardList:self.category.categoryId
+                                        page:0
+                                        type:self.rewardPageType
+                                rewardStatus:0
+                                   withBlock:^(HF_BaseAck *ack) {
         if(ack.sucess)
         {
             TK_RewardListForBuyerAck * ackData = (TK_RewardListForBuyerAck *)ack;
@@ -70,6 +71,16 @@
         }
         [weakSelf stopRefresh];
     }];
+    
+    
+//    
+//    [[TKProxy proxy].mainProxy getRewardList:self.category.categoryId
+//                                        page:nowPage
+//     
+//                                   withBlock:^(HF_BaseAck *ack) {
+//        
+//        
+//    }];
 }
 
 

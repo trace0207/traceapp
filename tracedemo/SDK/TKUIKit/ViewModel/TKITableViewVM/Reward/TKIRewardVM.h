@@ -12,17 +12,8 @@
 #import "TK_Brand.h"
 
 
-
-typedef NS_ENUM(NSInteger,REWARDTYPE)
-{
-    ALL = 0,
-    MyCunstomer = 1
-    
-    
-};
-
 @interface TKIRewardVM : TKTableViewVM
 @property (nonatomic,strong)TK_Brand * brand;
 @property (nonatomic,strong)TK_ShareCategory * category;
-@property (nonatomic,assign)REWARDTYPE type;
+@property (nonatomic,assign)HomePageType rewardPageType;
 @end

@@ -27,17 +27,19 @@
 -(void)tkLoadDefaultData
 {
     
-    /**
-     
-     data4.picAddr1 = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg";
-     data4.picAddr2 = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124332_084_X.jpg";
-     data4.picAddr3 = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124332_498_X.jpg";
-     data4.picAddr4 = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124332_950_X.jpg";
-     data4.picAddr5 = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg";
-     data4.picAddr6 = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg";
-     data4.picAddr7 = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg";
-     **/
-    
+    WS(weakSelf)
+    [[TKProxy proxy].mainProxy getShowOrders:1 page:0 withBlock:^(HF_BaseAck *ack) {
+       
+        DDLogInfo(@"orders list %@",ack);
+        [weakSelf stopRefresh];
+        [weakSelf resetData];
+        
+    }];
+}
+
+
+-(void)resetData
+{
     DDLogInfo(@"loadDefaultData  enter   go  go go ");
     
     TKTableSectionM * section = [[TKTableSectionM alloc] init];
@@ -73,7 +75,7 @@
         [section.rowsData addObject:row];
     }
     [self setDefaultSection:section];
-    self.hasInitData = YES;
+    [self.mTableView reloadData];
 }
 
 
@@ -86,19 +88,19 @@
 - (void)beginPullDownRefreshing
 {
     [self tkLoadDefaultData];
-    [self.mTableView reloadData];
-    // tableView.separatorStyle = UITableViewCellSeparatorStyleNone
-    self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    
-    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:0.3];
+//    [self.mTableView reloadData];
+//    // tableView.separatorStyle = UITableViewCellSeparatorStyleNone
+//    self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    
+//    
+//    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:0.3];
 }
 
 - (void)beginPullUpLoading
 {
     [self tkLoadDefaultData];
-    [self.mTableView reloadData];
-    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:0.3];
+//    [self.mTableView reloadData];
+//    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:0.3];
 }
 
 -(BOOL)hasRefreshFooterView

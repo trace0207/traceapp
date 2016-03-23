@@ -25,6 +25,8 @@
 		8A0547FF1CA26C0100AC8DD5 /* TKShowGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0547F61CA26C0100AC8DD5 /* TKShowGoodsCell.m */; };
 		8A0548001CA26C0100AC8DD5 /* TKShowGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0547F71CA26C0100AC8DD5 /* TKShowGoodsCell.xib */; };
 		8A0548011CA26C0100AC8DD5 /* TKShowGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0547F71CA26C0100AC8DD5 /* TKShowGoodsCell.xib */; };
+		8A0548041CA2898700AC8DD5 /* TK_CGetRewardListArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0548031CA2898700AC8DD5 /* TK_CGetRewardListArg.m */; };
+		8A0548051CA2898700AC8DD5 /* TK_CGetRewardListArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0548031CA2898700AC8DD5 /* TK_CGetRewardListArg.m */; };
 		8A37497A1C8D5BC4003DE59E /* CHomeChildAVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3749781C8D5BC4003DE59E /* CHomeChildAVC.m */; };
 		8A37497B1C8D5BC4003DE59E /* CHomeChildAVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749791C8D5BC4003DE59E /* CHomeChildAVC.xib */; };
 		8A37497C1C8D5BD0003DE59E /* CHomeChildAVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749791C8D5BC4003DE59E /* CHomeChildAVC.xib */; };
@@ -1540,6 +1542,8 @@
 		8A0547F51CA26C0100AC8DD5 /* TKShowGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShowGoodsCell.h; sourceTree = "<group>"; };
 		8A0547F61CA26C0100AC8DD5 /* TKShowGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShowGoodsCell.m; sourceTree = "<group>"; };
 		8A0547F71CA26C0100AC8DD5 /* TKShowGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKShowGoodsCell.xib; sourceTree = "<group>"; };
+		8A0548021CA2898700AC8DD5 /* TK_CGetRewardListArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_CGetRewardListArg.h; sourceTree = "<group>"; };
+		8A0548031CA2898700AC8DD5 /* TK_CGetRewardListArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_CGetRewardListArg.m; sourceTree = "<group>"; };
 		8A17B0E41BA46CF500548CA7 /* TK_BaseAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BaseAppDelegate.h; sourceTree = "<group>"; };
 		8A17B0E51BA46CF500548CA7 /* TK_BaseAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BaseAppDelegate.m; sourceTree = "<group>"; };
 		8A17B0E71BA46CF500548CA7 /* TK_SDK_PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_SDK_PrefixHeader.pch; sourceTree = "<group>"; };
@@ -5687,6 +5691,8 @@
 				8A9D9B511C9809B0009F877F /* TK_PayAck.m */,
 				8A9D9B541C9809BE009F877F /* TK_PayArg.h */,
 				8A9D9B551C9809BE009F877F /* TK_PayArg.m */,
+				8A0548021CA2898700AC8DD5 /* TK_CGetRewardListArg.h */,
+				8A0548031CA2898700AC8DD5 /* TK_CGetRewardListArg.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -6521,6 +6527,7 @@
 				BB83F99E1C72C01C0013A6A0 /* HFPreRegisterReq.m in Sources */,
 				BB83F99F1C72C01C0013A6A0 /* ForgetViewController.m in Sources */,
 				8A9D9B521C9809B0009F877F /* TK_PayAck.m in Sources */,
+				8A0548041CA2898700AC8DD5 /* TK_CGetRewardListArg.m in Sources */,
 				BB83F9A01C72C01C0013A6A0 /* HFCommentsReq.m in Sources */,
 				BB83F9A11C72C01C0013A6A0 /* MMSideDrawerTableViewCell.m in Sources */,
 				BB83F9A21C72C01C0013A6A0 /* NSDate+Common.m in Sources */,
@@ -7143,6 +7150,7 @@
 				BB83FC5D1C72C16B0013A6A0 /* HFCommentsReq.m in Sources */,
 				BB83FC5E1C72C16B0013A6A0 /* MMSideDrawerTableViewCell.m in Sources */,
 				8A9D9B531C9809B0009F877F /* TK_PayAck.m in Sources */,
+				8A0548051CA2898700AC8DD5 /* TK_CGetRewardListArg.m in Sources */,
 				BB83FC5F1C72C16B0013A6A0 /* NSDate+Common.m in Sources */,
 				BB83FC601C72C16B0013A6A0 /* UIView+SDExtension.m in Sources */,
 				BB83FC611C72C16B0013A6A0 /* BasePortraitButton.m in Sources */,

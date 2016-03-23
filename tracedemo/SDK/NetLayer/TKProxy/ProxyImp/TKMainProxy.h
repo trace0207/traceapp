@@ -136,7 +136,7 @@
 #pragma mark   BClient
 
 /**
- 根据类目查询我的客户的悬赏ID
+ B根据类目查询我的客户的悬赏ID
  **/
 -(void)getMyRewardList:(NSString *)categoryId
                   page:(NSInteger)page
@@ -144,10 +144,12 @@
              withBlock:(hfAckBlock)block;
 
 /**
- 根据类目查询悬赏广场的悬赏
+ B根据类目查询悬赏广场的悬赏
  **/
 -(void)getRewardList:(NSString *)categoryId
                 page:(NSInteger)page
+                type:(HomePageType)type
+        rewardStatus:(NSInteger)status
            withBlock:(hfAckBlock)block;
 
 
@@ -165,5 +167,13 @@
 
 
 #pragma  mark CClient
+
+/**
+ 查询C端悬赏广场
+ **/
+-(void)getCRewardList:(NSString *)categoryId
+                 page:(NSInteger)page
+         rewardStatus:(NSInteger)status
+            withBlock:(hfAckBlock)block;
 
 @end

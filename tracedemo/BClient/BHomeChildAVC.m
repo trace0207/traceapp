@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.vm1 = [[TKIRewardVM alloc] initWithFreshAbleTable ];
     [self.view addSubview:self.vm1.pullRefreshView];
     [self.vm1 tkUpdateViewConstraint];
     
@@ -38,7 +37,7 @@
 {
     if(!_vm1)
     {
-        _vm1 = [[TKIRewardVM alloc] init];
+        _vm1 = [[TKIRewardVM alloc] initWithFreshAbleTable];
     }
     return _vm1;
 }

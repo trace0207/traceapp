@@ -28,6 +28,7 @@
 #import "ActionTools.h"
 #import "TK_AcceptRewardArg.h"
 #import "TK_ReleaseRewardArg.h"
+#import "TK_CGetRewardListArg.h"
 
 
 
@@ -276,13 +277,25 @@
  **/
 -(void)getRewardList:(NSString *)categoryId
                 page:(NSInteger)page
+                type:(HomePageType)type
+        rewardStatus:(NSInteger)status
            withBlock:(hfAckBlock)block
 {
     TK_RewardListForBuyerArg * arg = [[TK_RewardListForBuyerArg alloc] init];
+    
+    arg.ackClassName = @"TK_RewardListForBuyerAck";
+    if(type == B_AllReward)
+    {
+        arg.relativeUrl = [ActionTools getRelativePathByString:@"TK_RewardListForBuyerArg1"];
+    }
+    else if(type == C_AllReward)
+    {
+        arg.relativeUrl = [ActionTools getRelativePathByString:@"TK_CGetRewardListArg"];
+    }
+    arg.rewardStatus = status;
+    //默认的是查我的客户的悬赏
     arg.pageSize = 20;
     arg.pageOffset = page;
-    arg.relativeUrl = [ActionTools getRelativePathByString:@"TK_RewardListForBuyerArg1"];
-    arg.ackClassName = @"TK_RewardListForBuyerAck";
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 
@@ -328,6 +341,16 @@
 
 
 #pragma  mark CClient
+
+//-(void)getCRewardList:(NSString *)categoryId page:(NSInteger)page rewardStatus:(NSInteger)status withBlock:(hfAckBlock)block
+//{
+//    TK_CGetRewardListArg * arg = [[TK_CGetRewardListArg alloc] init];
+//    arg.ackClassName = @"TK_RewardListForBuyerAck";
+//    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:^(HF_BaseAck *ack) {
+//        
+//        block(ack);
+//    }];
+//}
 
 
 @end

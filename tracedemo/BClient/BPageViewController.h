@@ -9,5 +9,6 @@
 #import "ViewPagerController.h"
 
 @interface BPageViewController : ViewPagerController
+@property (nonatomic,assign)HomePageType dataType;
 
 @end

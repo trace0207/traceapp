@@ -104,30 +104,31 @@
     }
     label.frame = CGRectMake(0, 0, width, 44);
     
-    [label setTitle:title number:num];
+    [label setTitle:title number:num]; 
     
     return label;
 }
 
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
    
-#if B_Client
-    BHomeChildAVC *vc = [[BHomeChildAVC alloc]init];
-    TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
-    category.categoryId = @"1";
-    category.title = @"内衣";
-    vc.vm1.category =category;
-    return vc;
-#else
-    TKShowGoodsListVC *vc = [[TKShowGoodsListVC alloc]init];
-    TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
-    category.categoryId = @"1";
-    category.title = @"内衣";
-    vc.vm.category =category;
-    return vc;
-#endif
-    
-    
+    if(self.dataType == B_AllReward || self.dataType == B_MyUserReward || self.dataType == C_AllReward)
+    {
+        BHomeChildAVC *vc = [[BHomeChildAVC alloc]init];
+        TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
+        category.categoryId = @"1";
+        category.title = @"内衣";
+        vc.vm1.category =category;
+        vc.vm1.rewardPageType = self.dataType;
+        return vc;
+    }else
+    {
+        TKShowGoodsListVC *vc = [[TKShowGoodsListVC alloc]init];
+        TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
+        category.categoryId = @"1";
+        category.title = @"内衣";
+        vc.vm.category =category;
+        return vc;
+    }
 }
 
 #pragma mark - ViewPagerDelegate

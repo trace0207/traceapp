@@ -7,6 +7,16 @@
 //
 
 
+
+
+typedef NS_ENUM(NSInteger,HomePageType)
+{
+    C_AllReward = 4,// C悬赏池
+    C_showGoods = 3,
+    B_MyUserReward = 2,
+    B_AllReward = 1
+} ;
+
 #ifndef TKGlobValue_h
 #define TKGlobValue_h
 
