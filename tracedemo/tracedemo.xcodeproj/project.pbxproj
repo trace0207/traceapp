@@ -109,6 +109,8 @@
 		8AA7F7291C8C718D00CE0F17 /* TK_ModifyUserInfoArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7F7271C8C718D00CE0F17 /* TK_ModifyUserInfoArg.m */; };
 		8AD4758B1C96CB9A00B44D56 /* TKPayProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4758A1C96CB9A00B44D56 /* TKPayProxy.m */; };
 		8AD4758C1C96CB9A00B44D56 /* TKPayProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4758A1C96CB9A00B44D56 /* TKPayProxy.m */; };
+		911D01431CA3C9FB00BF06AE /* TKPayChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */; };
+		911D01441CA3C9FB00BF06AE /* TKPayChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */; };
 		912120AD1C9F180500271605 /* TKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120AC1C9F180500271605 /* TKAlertView.m */; };
 		912120AE1C9F180500271605 /* TKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120AC1C9F180500271605 /* TKAlertView.m */; };
 		912120B41C9F941C00271605 /* UIView+Border.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120B31C9F941C00271605 /* UIView+Border.m */; };
@@ -2785,6 +2787,8 @@
 		8AECCA791C1B195B00CD789F /* HFFeedbackController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFFeedbackController.xib; sourceTree = "<group>"; };
 		8AECCA7C1C1D212000CD789F /* TKUserDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserDetailInfoViewController.h; sourceTree = "<group>"; };
 		8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserDetailInfoViewController.m; sourceTree = "<group>"; };
+		911D01411CA3C9FB00BF06AE /* TKPayChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPayChooseView.h; sourceTree = "<group>"; };
+		911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPayChooseView.m; sourceTree = "<group>"; };
 		912120AB1C9F180500271605 /* TKAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAlertView.h; sourceTree = "<group>"; };
 		912120AC1C9F180500271605 /* TKAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAlertView.m; sourceTree = "<group>"; };
 		912120B21C9F941C00271605 /* UIView+Border.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Border.h"; sourceTree = "<group>"; };
@@ -5718,6 +5722,8 @@
 				912120BE1C9FD6FA00271605 /* DeliveryTimeView.xib */,
 				912120AB1C9F180500271605 /* TKAlertView.h */,
 				912120AC1C9F180500271605 /* TKAlertView.m */,
+				911D01411CA3C9FB00BF06AE /* TKPayChooseView.h */,
+				911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */,
 			);
 			path = TKUIView;
 			sourceTree = "<group>";
@@ -6314,6 +6320,7 @@
 				BB83F8DB1C72C01C0013A6A0 /* BaseNavigationInteractiveTransition.m in Sources */,
 				BB83F8DC1C72C01C0013A6A0 /* BaseHttpReq.m in Sources */,
 				BB83F8DD1C72C01C0013A6A0 /* CommonProxy.m in Sources */,
+				911D01431CA3C9FB00BF06AE /* TKPayChooseView.m in Sources */,
 				BB83F8DE1C72C01C0013A6A0 /* HFWeiBoProxy.m in Sources */,
 				91F603401CA2C5EE00238FCE /* UserInfoViewController.m in Sources */,
 				BB83F8DF1C72C01C0013A6A0 /* UIImage+Scale.m in Sources */,
@@ -6939,6 +6946,7 @@
 				BB83FB981C72C16B0013A6A0 /* BaseNavigationInteractiveTransition.m in Sources */,
 				BB83FB991C72C16B0013A6A0 /* BaseHttpReq.m in Sources */,
 				BB83FB9A1C72C16B0013A6A0 /* CommonProxy.m in Sources */,
+				911D01441CA3C9FB00BF06AE /* TKPayChooseView.m in Sources */,
 				BB83FB9B1C72C16B0013A6A0 /* HFWeiBoProxy.m in Sources */,
 				91F603411CA2C5EE00238FCE /* UserInfoViewController.m in Sources */,
 				BB83FB9C1C72C16B0013A6A0 /* UIImage+Scale.m in Sources */,

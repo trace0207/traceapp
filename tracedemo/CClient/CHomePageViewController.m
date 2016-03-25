@@ -11,11 +11,12 @@
 #import "BPageViewController.h"
 #import "KTDropdownMenuView.h"
 #import "UIColor+TK_Color.h"
+#import "TKPayChooseView.h"
 @interface CHomePageViewController ()
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic,strong)BPageViewController * vc1;
 @property (nonatomic,strong)BPageViewController * vc2;
-
+@property (nonatomic, strong)TKPayChooseView *payView;
 @end
 
 @implementation CHomePageViewController
@@ -31,6 +32,11 @@
 {
     [super viewWillAppear:animated];
     [self TKaddNavigationTitleView:self.segmentedControl];
+        UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
+        [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [bt setTitle:@"支付" forState:UIControlStateNormal];
+        [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+        [self addLeftBarItemWithCustomView:bt];
 }
 
 -(void)initView
@@ -40,7 +46,18 @@
     [self.view addSubview:self.vc1.view];
     self.vc2.view.frame = CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 49 -20 - 44);
 }
-
+-(void)test
+{
+    self.payView.money = 1200;
+    [self.payView show];
+}
+- (TKPayChooseView *)payView
+{
+    if (_payView == nil) {
+        _payView = [[TKPayChooseView alloc]initWithPayType:PayTypeAll];
+    }
+    return _payView;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
