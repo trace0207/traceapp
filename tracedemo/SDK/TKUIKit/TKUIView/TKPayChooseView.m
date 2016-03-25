@@ -62,6 +62,7 @@
 @interface CellData : NSObject
 @property (nonatomic, strong) NSString *imageName;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, assign) PayType payType;
 @end
 @implementation CellData
 @end
@@ -82,6 +83,7 @@
 
 @property (nonatomic, strong) NSMutableArray<__kindof CellData*> *payDataSource;
 @property (nonatomic, assign) NSInteger currentRow;//当前选中的支付方式
+@property (nonatomic, assign) PayType currentPayType;//当前选中的支付方式
 
 @end
 
@@ -95,24 +97,28 @@
             CellData *cellData = [[CellData alloc]init];
             cellData.imageName = @"icon_apple_pay";
             cellData.title = @"Apple Pay";
+            cellData.payType = PayTypeApple;
             [self.payDataSource addObject:cellData];
         }
         if ((payType & PayTypeUnion)) {
             CellData *cellData = [[CellData alloc]init];
             cellData.imageName = @"icon_union_pay";
             cellData.title = @"银联支付";
+            cellData.payType = PayTypeUnion;
             [self.payDataSource addObject:cellData];
         }
         if ((payType & PayTypeWeChat)) {
             CellData *cellData = [[CellData alloc]init];
             cellData.imageName = @"icon_weChat_pay";
             cellData.title = @"微信支付";
+            cellData.payType = PayTypeWeChat;
             [self.payDataSource addObject:cellData];
         }
         if ((payType & PayTypeAlipay)) {
             CellData *cellData = [[CellData alloc]init];
             cellData.imageName = @"icon_alipay";
             cellData.title = @"支付宝支付";
+            cellData.payType = PayTypeAlipay;
             [self.payDataSource addObject:cellData];
         }
         
@@ -123,6 +129,12 @@
         
     }
     return self;
+}
+
+- (PayType)currentPayType
+{
+    CellData *data = [self.payDataSource objectAtIndex:self.currentRow];
+    return data.payType;
 }
 
 - (void)setViews
@@ -327,9 +339,13 @@
     }];
 }
 
+#pragma mark - 去支付动作执行
+//支付按钮
 - (void)payAction:(UIButton *)btn
 {
     [self hidden];
+    //self.currentPayType
+    //self.money
 }
 
 #pragma mark - table view data source
