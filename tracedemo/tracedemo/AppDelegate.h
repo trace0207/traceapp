@@ -24,5 +24,6 @@ typedef void(^complete)(BOOL finished);
 
 +(BaseNavViewController *)getMainNavigation;
 +(AppDelegate *)getAppDelegate;
++(UIViewController *)appRootViewController;
 @end
 

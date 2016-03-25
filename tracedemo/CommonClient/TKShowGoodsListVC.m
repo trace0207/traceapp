@@ -26,10 +26,11 @@
 //    self.hidDefaultBackBtn = YES;
     [super viewDidLoad];
     
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [self.view addSubview:self.vm.pullRefreshView];
-    [self.vm tkLoadDefaultData];
     [self.vm tkUpdateViewConstraint];
+    [self.vm tkLoadDefaultData];
     
     
     // Do any additional setup after loading the view.

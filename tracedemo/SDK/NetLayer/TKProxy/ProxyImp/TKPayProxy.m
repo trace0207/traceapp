@@ -49,6 +49,7 @@ withCompletion:(PingppCompletion)completionBlock
 //            [weakSelf removeFromSuperview];
 //            weakSelf.images = nil;
             [TKPayProxy aliPay: ((TK_PayAck *)ack).data urlScheme:@"QupaiConsumer" withCompletion:^(NSString *result, PingppError *error) {
+                DDLogInfo(@"pay back %@",result);
                 block(1);
             }];
             

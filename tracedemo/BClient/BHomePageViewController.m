@@ -150,7 +150,8 @@
 {
     [self addChildViewController:self.vc1];
     [self addChildViewController:self.vc2];
-    [self.view addSubview:self.vc2.view];
+    self.vc2.view.frame = CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 49 -20 - 44);
+    [self.view addSubview:self.vc1.view];
 }
 
 - (void)didReceiveMemoryWarning {

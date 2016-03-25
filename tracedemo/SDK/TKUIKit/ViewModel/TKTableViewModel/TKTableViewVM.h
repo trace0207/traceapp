@@ -66,6 +66,7 @@
 -(instancetype)initFreshAbleTableWithFrame:(CGRect)frame;
 
 -(void)tkLoadDefaultData;
+// 更新约束
 -(void)tkUpdateViewConstraint;
 
 

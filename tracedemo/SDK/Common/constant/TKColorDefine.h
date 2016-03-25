@@ -46,5 +46,7 @@
 #define TKColorRed      @"BD0000"
 #define TKColorBlack    @"222222"
 
+#define TKColorBtnSelect @"D4F1E3"
+
 
 #endif /* TKColorDefine_h */

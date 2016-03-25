@@ -20,10 +20,15 @@
 
 -(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
-
-    if(_clearDelegate && [_clearDelegate respondsToSelector:@selector(onClearViewEvent)])
+    
+    if(_clearDelegate && [_clearDelegate respondsToSelector:@selector(onClearViewEvent:withEvent:)])
     {
-        [_clearDelegate onClearViewEvent];
+        UIView * view = [_clearDelegate onClearViewEvent:point withEvent:event];
+        if(view != nil)
+        {
+            return  view;
+        }
+        return nil;
     }
     return nil;
 }

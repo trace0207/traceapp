@@ -86,6 +86,11 @@
 +(UIColor *)tkBorderColor;
 
 
+/**
+ 按钮选中颜色  绿色
+ **/
+
++(UIColor *)btnSelectBackgroundColor;
 
 
 /**

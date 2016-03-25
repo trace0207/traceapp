@@ -22,9 +22,13 @@
     [super viewDidLoad];
     [self.view addSubview:self.vm1.pullRefreshView];
     [self.vm1 tkUpdateViewConstraint];
-    
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+}
 
 -(void)loadData
 {

@@ -197,6 +197,16 @@
 
 
 /**
+ 按钮选中颜色  绿色
+ **/
+
++(UIColor *)btnSelectBackgroundColor
+{
+    return [self TKcolorWithHexString:TKColorBtnSelect];
+}
+
+
+/**
  color转换成 Image
  **/
 +(UIImage*) tkCreateImageWithColor: (UIColor*) color

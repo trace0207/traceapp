@@ -84,7 +84,6 @@
     {
         self.goodsDesLayer.hidden = YES;
         self.mainImage.hidden = NO;
-        self.goodsDesLayer.hidden = NO;
         self.addIconLayer.hidden = YES;
     }else if(status == DescAddBtn)
     {

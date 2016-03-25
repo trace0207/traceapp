@@ -39,7 +39,7 @@
 {
     TKNotifycationViewController * vc = [[TKNotifycationViewController alloc] init];
     vc.textView.text = text;
-    UIViewController *rootVC = [TKNotifycationViewController appRootViewController];
+    UIViewController *rootVC = [AppDelegate appRootViewController];
     
     
 //    [[TKNotifycationViewController appRootViewController] presentViewController:vc animated:YES completion:^{
@@ -62,15 +62,7 @@
 }
 
 
-+(UIViewController *)appRootViewController
-{
-    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    UIViewController *topVC = appRootVC;
-    while (topVC.presentedViewController) {
-        topVC = topVC.presentedViewController;
-    }
-    return topVC;
-}
+
 
 - (IBAction)cancelAction:(id)sender {
     [self dismissViewControllerAnimated:YES

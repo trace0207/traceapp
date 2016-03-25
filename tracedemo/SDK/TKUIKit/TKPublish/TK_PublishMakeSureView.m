@@ -140,9 +140,9 @@
 //        arg.brandId = 1;
 //        arg.categoryId = 3;
         
-        arg.rewardPrice = @"4";
-        arg.content = @"要求一天之内发货，亲，抢单吧";
-        arg.source = @"1";
+        arg.rewardPrice = self.showPrice;
+        arg.content = self.content;
+        arg.source = @"1";// 1 自主发起
         arg.sourceId = [[TKUserCenter instance] getUser].userId;
         arg.categoryId = @"2";
         arg.brandId = @"2";
@@ -186,7 +186,7 @@
               if(result == 1)
               {
                   [weakSelf removeFromSuperview];
-                  weakSelf.images = nil;
+                   weakSelf.images = nil;
               }
               else
               {
@@ -194,22 +194,6 @@
                   [weakSelf showLoadingError];
               }
           }];
-    
-//    [[TKProxy proxy].mainProxy tkPay:arg withBolco:^(HF_BaseAck *ack) {
-//        if(ack.sucess)
-//        {
-//            [weakSelf removeFromSuperview];
-//             weakSelf.images = nil;
-//            [TKPayProxy aliPay: ((TK_PayAck *)ack).data urlScheme:@"QupaiConsumer" withCompletion:^(NSString *result, PingppError *error) {
-//            }];
-//            
-//        }
-//        else
-//        {
-//            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingError) object:nil];
-//            [weakSelf showLoadingError];
-//        }
-//    } ];
 }
 
 

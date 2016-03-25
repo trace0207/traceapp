@@ -10,7 +10,8 @@
 
 @protocol TKClearViewDelegate <NSObject>
 
--(void)onClearViewEvent;
+@optional
+-(UIView *)onClearViewEvent:(CGPoint)point withEvent:(UIEvent *)event;
 
 @end
 

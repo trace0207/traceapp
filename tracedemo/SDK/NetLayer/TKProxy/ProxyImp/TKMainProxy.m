@@ -286,7 +286,7 @@
     arg.ackClassName = @"TK_RewardListForBuyerAck";
     if(type == B_AllReward)
     {
-        arg.relativeUrl = [ActionTools getRelativePathByString:@"TK_RewardListForBuyerArg1"];
+        arg.relativeUrl = [ActionTools getRelativePathByString:@"TK_RewardListForBuyerArg"];
     }
     else if(type == C_AllReward)
     {
@@ -296,6 +296,7 @@
     //默认的是查我的客户的悬赏
     arg.pageSize = 20;
     arg.pageOffset = page;
+    arg.categoryId = @"";
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 

@@ -16,6 +16,7 @@
 #import "TKUserCenter.h"
 #import "TK_PublishMakeSureView.h"
 #import "TKPicSelectTool.h"
+#import "NSString+HFStrUtil.h"
 
 
 static NSString * textDefault = @"此时此刻，分享你的宝贝心得吧";
@@ -369,7 +370,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
 /*
   发布晒单
  */
--(void)TKI_rightBarAction
+-(void)TKI_rightBarActionc
 {
     
 //    if(!shareCategory)
@@ -393,7 +394,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     NSArray * pics = [[NSArray alloc] initWithArray:self.picturesArr];
     popView.images = pics;
     popView.content = self.inputTextView.text;
-    popView.showPrice =  [self.willByPrice.text integerValue] * 100;
+    popView.showPrice =  [NSString tkStringFromNumber:[self.willByPrice.text integerValue] * 100];
     
     [[AppDelegate getAppDelegate].window addSubview:popView];
     

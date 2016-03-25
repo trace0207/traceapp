@@ -21,7 +21,8 @@
 @property (nonatomic,assign)NSInteger brandId;
 @property (nonatomic,assign)NSInteger categoryId;
 @property (nonatomic,assign)NSInteger role;
-@property (nonatomic,assign)NSInteger showPrice;
+@property (nonatomic,copy)NSString  *showPrice;
+@property (nonatomic,assign)NSInteger requireDay;
 
 -(void)beginSend;
 

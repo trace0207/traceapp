@@ -18,10 +18,14 @@
 #import "TKPicSelectTool.h"
 #import "TKUITools.h"
 #import "TK_PublishMakeSureView.h"
+#import "TKUITools.h"
+#import "UIColor+TK_Color.h"
+#import "TKWebViewController.h"
 
 
 #define PICONE 101
 #define PICSecond 102
+#define PIC_ADD 103
 
 @interface CPublishRewardViewController ()<TKPicSelectDelegate,CycleScrollViewDelegate,ZHPickViewDelegate,
 UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
@@ -35,6 +39,9 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     NSMutableArray *  otherPics;//其它图片
     UIImage *image1;
     UIImage *image2;
+    CGFloat defaultHeight;
+    NSString *requireDay;
+    
 }
 
 @end
@@ -43,7 +50,8 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    defaultHeight = TKScreenHeight - 20;
+    requireDay = @"3";
     [self initView];
     // Do any additional setup after loading the view from its nib.
 }
@@ -56,13 +64,23 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     picTopAndBtomPadding = 12;
     selectPic = 0;
     otherPics = [[NSMutableArray alloc] init];
-    
+    self.clearView.clearDelegate = self;
     
     picWidth = (TKScreenWidth -  (picCountInLine+1)* picWiteSpaceWidth )/ picCountInLine;
     self.hidDefaultBackBtn = YES;
     self.navTitle = @"发布悬赏";
-    [self.mainScrollView setContentSize:CGSizeMake(TKScreenWidth, TKScreenHeight)];
+    [self.mainScrollView setContentSize:CGSizeMake(TKScreenWidth, defaultHeight)];
+    self.mainView.clipsToBounds = YES;
+//    self.mainView.frame = CGRectMake(0, 0, TKScreenWidth, defaultHeight);
     [self.mainScrollView addSubview:self.mainView];
+    [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.mas_equalTo(0);
+        make.left.mas_equalTo(0);
+        make.width.mas_equalTo(TKScreenWidth);
+        make.height.mas_equalTo(defaultHeight);
+        
+    }];
     
     
     self.firstPic.frame = CGRectMake(picWiteSpaceWidth, picTopAndBtomPadding, picWidth, picWidth);
@@ -78,10 +96,66 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     self.secondPic.tag = PICSecond;
     [self.secondPic addGestureRecognizer:tap2];
     [self resetPicField];
+    [self defaultViewSetting];
     
     
 }
 
+
+
+#pragma  mark  viewEvent
+
+-(void)defaultViewSetting
+{
+    [TKUITools setRoudBorderForView:self.dayBtn1 borderColor:[UIColor tkBorderColor] radius:2 borderWidth:1];
+    [TKUITools setRoudBorderForView:self.dayBtn2 borderColor:[UIColor tkBorderColor] radius:2 borderWidth:1];
+    [TKUITools setRoudBorderForView:self.dayBtn3 borderColor:[UIColor tkBorderColor] radius:2 borderWidth:1];
+    [TKUITools setRoudBorderForView:self.inputText borderColor:[UIColor tkBorderColor] radius:2 borderWidth:1];
+    self.brandText.userInteractionEnabled = NO;
+    self.categoryText.userInteractionEnabled = NO;
+//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showAddress)];
+//    [self.addressView addGestureRecognizer:tap];
+//    self.addressText.userInteractionEnabled = NO;
+}
+
+
+-(void)showAddress
+{
+    TKWebViewController *web = [[TKWebViewController alloc] init];
+    web.hidDefaultBackBtn = NO;
+    web.defaultURL = AddressURL;
+    [self.navigationController pushViewController:web animated:YES];
+//    [TKWebViewController showWebView:@"选择地址" url:AddressURL];
+    
+}
+
+
+-(UIView *)onClearViewEvent:(CGPoint)point withEvent:(UIEvent *)event
+{
+ 
+    
+    CGPoint tapPoint = [self.priceInputText convertPoint:point fromView:self.clearView];
+    if([self.priceInputText pointInside:tapPoint withEvent:event])
+    {
+        return self.priceInputText;
+    }
+    
+    [self hidKeyBord];
+    return nil;
+}
+
+
+-(void)hidKeyBord
+{
+    [self.inputText resignFirstResponder];
+    [self.priceInputText resignFirstResponder];
+
+}
+
+
+
+
+#pragma mark  pic event
 
 /**
  刷新 图片区域
@@ -120,21 +194,22 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     {
         TK_ImageSelectBoxView * box = [[TK_ImageSelectBoxView alloc] init];
         
-        int x = (i+2)%4;
-        int y = (i+2)/4;
+        int x = (i+2)%3;
+        int y = (i+2)/3;
         
         CGRect frame = CGRectMake(picWiteSpaceWidth + x*(picWiteSpaceWidth + picWidth), picTopAndBtomPadding + y*(picWiteSpaceWidth + picWidth), picWidth, picWidth);
-        
+        [box setStatus:NormalImage];
+        box.mainImage.image = [otherPics objectAtIndex:i];
         box.frame = frame;
         [self.imageContaner addSubview:box];
     }
     
-    if(otherPics.count < 6)
+    if(otherPics.count < 7)
     {
         TK_ImageSelectBoxView * box = [[TK_ImageSelectBoxView alloc] init];
         NSInteger count = otherPics.count;
-        NSInteger x = (count+2)%4;
-        NSInteger y = (count+2)/4;
+        NSInteger x = (count+2)%3;
+        NSInteger y = (count+2)/3;
         
         CGRect frame = CGRectMake(picWiteSpaceWidth + x*(picWiteSpaceWidth + picWidth), picTopAndBtomPadding + y*(picWiteSpaceWidth + picWidth), picWidth, picWidth);
         
@@ -142,7 +217,32 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
         
         box.frame = frame;
         [self.imageContaner addSubview:box];
+        UIGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onPicTap:)];
+        box.tag = PIC_ADD;
+        [box addGestureRecognizer:tap];
     }
+    
+    NSInteger boxCount = otherPics.count < 7?otherPics.count+3:otherPics.count+2 ;//  一共不足 7张时， 多一个 add box
+    
+    NSInteger row = boxCount/3;
+    int morRow = boxCount%3 == 0?0:1;
+    row = row + morRow;
+    
+    CGFloat addHeight = (picWidth + picTopAndBtomPadding)* (row - 1);
+    
+    self.imageFieldHeight.constant = addHeight + picWidth + picTopAndBtomPadding*2;
+    
+    [self.mainScrollView setContentSize:CGSizeMake(TKScreenWidth, defaultHeight + addHeight)];
+//    self.mainView.frame = CGRectMake(0, 0, TKScreenWidth, defaultHeight+ addHeight);
+    
+    [self.mainView mas_updateConstraints:^(MASConstraintMaker *make) {
+        
+//        make.top.mas_equalTo(0);
+//        make.left.mas_equalTo(0);
+//        make.width.mas_equalTo(TKScreenWidth);
+        make.height.mas_equalTo(defaultHeight + addHeight);
+        
+    }];
 
 }
 
@@ -157,10 +257,60 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
         picTool.selectDelegate = self;
         picTool.viewController = self;
     }
-    [picTool doSelectPic:@"添加图片" clipping:NO maxSelect:1];
+    
+    if(index == PIC_ADD)
+    {
+        [picTool doSelectPic:@"添加图片" clipping:NO maxSelect:7 - otherPics.count];
+    }else
+    {
+        [picTool doSelectPic:@"添加图片" clipping:NO maxSelect:1];
+    }
+    
 }
 
 
+#pragma mark
+
+-(void)onImageSelect:(UIImage *)image
+{
+    if(PICONE == selectPic)
+    {
+        image1 = image;
+        self.firstPic.mainImage.image = image1;
+        [self.firstPic setStatus:ImageStatus];
+        self.firstPic.bottomDescText.text = @"主图";
+    }
+    else if(PICSecond == selectPic)
+    {
+        image2 = image;
+        self.secondPic.mainImage.image = image2;
+        [self.secondPic setStatus:ImageStatus];
+        self.secondPic.bottomDescText.text = @"吊牌";
+    }
+    else if(PIC_ADD == selectPic)
+    {
+        [otherPics addObject:image];
+        [self resetPicField];
+    }
+}
+-(void)onImagesSelect:(NSArray *)images
+{
+    if(images.count == 1)
+    {
+        [self onImageSelect:images[0]];
+    }else
+    {
+        [otherPics addObjectsFromArray:images];
+        [self resetPicField];
+    }
+}
+-(void)onLoadingImage
+{
+}
+
+
+
+#pragma  mark  privete Method
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -201,6 +351,8 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
 -(void)TKI_rightBarAction
 {
     
+    [self hidKeyBord];
+    
     // 发布请求
     
     if(image1 == nil)
@@ -220,8 +372,9 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     
     NSArray * pics = @[image1,image2]; //[[NSArray alloc] initWithArray:self.picturesArr];
     popView.images = pics;
-    popView.content = @"买一件 ， 来吧";
-    popView.showPrice = 10;  //[self.willByPrice.text integerValue] * 100;
+    popView.content = self.inputText.text;
+    popView.showPrice = self.priceInputText.text;  //[self.willByPrice.text integerValue] * 100;
+    popView.requireDay = requireDay.integerValue;
     
     [[AppDelegate getAppDelegate].window addSubview:popView];
     
@@ -248,37 +401,38 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     return _secondPic;
 }
 
-
-#pragma mark 
-
--(void)onImageSelect:(UIImage *)image
-{
-    if(PICONE == selectPic)
-    {
-        image1 = image;
-        self.firstPic.mainImage.image = image1;
-        [self.firstPic setStatus:ImageStatus];
-        self.firstPic.bottomDescText.text = @"主图";
-    }
-    else if(PICSecond == selectPic)
-    {
-        image2 = image;
-        self.secondPic.mainImage.image = image2;
-        [self.secondPic setStatus:ImageStatus];
-        self.secondPic.bottomDescText.text = @"吊牌";
-    }
-}
--(void)onImagesSelect:(NSArray *)images
-{
-    if(images.count == 1)
-    {
-        [self onImageSelect:images[0]];
-    }else
-    {
-    }
-}
--(void)onLoadingImage
-{
+- (IBAction)addressFieldTouch:(id)sender {
+    
+    [self showAddress];
 }
 
+
+
+
+- (IBAction)dayBtn1:(id)sender {
+    self.dayBtn1.backgroundColor = [UIColor btnSelectBackgroundColor];
+    self.dayBtn2.backgroundColor = [UIColor clearColor];
+    self.dayBtn3.backgroundColor = [UIColor clearColor];
+    requireDay = @"1";
+    
+}
+- (IBAction)dayBtn2:(id)sender {
+    
+    self.dayBtn2.backgroundColor = [UIColor btnSelectBackgroundColor];
+    self.dayBtn1.backgroundColor = [UIColor clearColor];
+    self.dayBtn3.backgroundColor = [UIColor clearColor];
+    requireDay = @"3";
+    
+}
+- (IBAction)dayBtn3:(id)sender {
+    self.dayBtn3.backgroundColor = [UIColor btnSelectBackgroundColor];
+    self.dayBtn1.backgroundColor = [UIColor clearColor];
+    self.dayBtn2.backgroundColor = [UIColor clearColor];
+    requireDay = @"7";
+}
+- (IBAction)brandSelectClick:(id)sender {
+}
+
+- (IBAction)categorySelectAction:(id)sender {
+}
 @end

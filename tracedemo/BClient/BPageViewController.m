@@ -27,6 +27,7 @@
     
     self.dataSource = self;
     self.delegate = self;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self reloadData];
     [self.view addSubview:self.menuView];
 }
