@@ -38,14 +38,9 @@
     footerView.backgroundColor = [UIColor whiteColor];
     [self.mTableView setTableFooterView:footerView];
     
-    UIButton *exitBtn = [[UIButton alloc]init];
+    
+    UIButton *exitBtn = [[UIButton alloc]initWithFrame:CGRectMake(20, 50, kScreenWidth-40, 40)];
     [footerView addSubview:exitBtn];
-    [exitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(40);
-        make.left.equalTo(footerView.mas_left).with.offset(20);
-        make.right.equalTo(footerView.mas_right).with.offset(-20);
-        make.bottom.equalTo(footerView.mas_bottom).with.offset(-20);
-    }];
     [exitBtn setTitle:@"退出" forState:UIControlStateNormal];
     [exitBtn setTitleColor:[UIColor hexChangeFloat:TKColorRed] forState:UIControlStateNormal];
     [exitBtn addTarget:self action:@selector(exit:) forControlEvents:UIControlEventTouchUpInside];

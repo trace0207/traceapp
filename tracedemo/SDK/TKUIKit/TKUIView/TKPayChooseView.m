@@ -157,7 +157,7 @@
     CGFloat tableViewHeight = self.payDataSource.count * 44.0f;
     [self.contantView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.equalTo(self);
-        make.height.mas_equalTo(tableViewHeight+175);
+        make.height.mas_equalTo(tableViewHeight+185);
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -290,6 +290,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.bounces = NO;
+        _tableView.showsVerticalScrollIndicator = NO;
         [_tableView setTableFooterView:[UIView new]];
         if ([_tableView respondsToSelector:@selector(setLayoutMargins:)]) {
             [_tableView setLayoutMargins:UIEdgeInsetsMake(0, 0, 0, 0)];
