@@ -93,68 +93,15 @@ const NSInteger kSwitch = 9910;
     return  [[[NSBundle mainBundle]loadNibNamed:@"TK_SettingCell" owner:ower options:nil]objectAtIndex:6];
 }
 
-//@property (nonatomic,strong)UILabel * leftLabel;
-//@property (nonatomic,strong)UILabel * rightLabel;
-//@property (nonatomic,strong)UIImageView * rightHeadImageView;
-//@property (nonatomic,strong)UISwitch * rightSwitch;
-//@property (nonatomic,strong)UIImageView * leftImageIcon;
 
-//-(UILabel *)leftLabel{
-//
-//    if(!_leftLabel)
-//    {
-//        _leftLabel = [self viewWithTag:kLeftLabelTag];
-//    }
-//    return _leftLabel;
-//}
-//
-//-(UILabel *)rightLabel{
-//    
-//    if(!_rightLabel)
-//    {
-//        _rightLabel = [self viewWithTag:kRightLabelTag];
-//    }
-//    return _rightLabel;
-//}
-//
-//-(UIImageView *)rightHeadImageView
-//{
-//    if(!_rightHeadImageView)
-//    {
-//        _rightHeadImageView = [self viewWithTag:kRightImageViewTag];
-//    }
-//    return _rightHeadImageView;
-//}
+/**
+ * 加载对勾的 cell
+ **/
++(TK_SettingCell *)loadSelectType:(id)ower
+{
+     return  [[[NSBundle mainBundle]loadNibNamed:@"TK_SettingCell" owner:ower options:nil]objectAtIndex:7];
+}
 
-//
-//-(UIImageView *)leftHeadImageView
-//{
-//    if(!_rightHeadImageView)
-//    {
-//        _rightHeadImageView = [self viewWithTag:kRightImageViewTag];
-//    }
-//    return _rightHeadImageView;
-//}
-//
-//
-//-(UIImageView *)leftImageIcon
-//{
-//    if(!_leftImageIcon)
-//    {
-//        _leftImageIcon = [self viewWithTag:kLeftImageIconTag];
-//    }
-//    return _leftImageIcon;
-//}
-//
-//-(UISwitch *)rightSwitch
-//{
-//
-//    if(!_rightSwitch)
-//    {
-//        _rightSwitch = [self viewWithTag:kRightSwitchTag];
-//    }
-//    return _rightSwitch;
-//}
 
 
 

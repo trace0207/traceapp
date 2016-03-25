@@ -172,7 +172,7 @@
                             <rect key="frame" x="12" y="164" width="351" height="38"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krj-WX-KAC">
-                                    <rect key="frame" x="0.0" y="0.0" width="110.5" height="38"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="111" height="38"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="38" id="ahP-YZ-dtF"/>
                                     </constraints>
@@ -199,7 +199,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJY-3N-YdW">
-                                    <rect key="frame" x="240" y="0.0" width="110.5" height="38"/>
+                                    <rect key="frame" x="240" y="0.0" width="111" height="38"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="38" id="hQp-Ur-R19"/>
                                     </constraints>

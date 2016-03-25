@@ -27,6 +27,10 @@
 		8A0548011CA26C0100AC8DD5 /* TKShowGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0547F71CA26C0100AC8DD5 /* TKShowGoodsCell.xib */; };
 		8A0548041CA2898700AC8DD5 /* TK_CGetRewardListArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0548031CA2898700AC8DD5 /* TK_CGetRewardListArg.m */; };
 		8A0548051CA2898700AC8DD5 /* TK_CGetRewardListArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0548031CA2898700AC8DD5 /* TK_CGetRewardListArg.m */; };
+		8A05480D1CA4C11A00AC8DD5 /* TKBrandSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A05480B1CA4C11A00AC8DD5 /* TKBrandSelectViewController.m */; };
+		8A05480E1CA4C11A00AC8DD5 /* TKBrandSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A05480B1CA4C11A00AC8DD5 /* TKBrandSelectViewController.m */; };
+		8A05480F1CA4C11A00AC8DD5 /* TKBrandSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A05480C1CA4C11A00AC8DD5 /* TKBrandSelectViewController.xib */; };
+		8A0548101CA4C11A00AC8DD5 /* TKBrandSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A05480C1CA4C11A00AC8DD5 /* TKBrandSelectViewController.xib */; };
 		8A37497A1C8D5BC4003DE59E /* CHomeChildAVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3749781C8D5BC4003DE59E /* CHomeChildAVC.m */; };
 		8A37497B1C8D5BC4003DE59E /* CHomeChildAVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749791C8D5BC4003DE59E /* CHomeChildAVC.xib */; };
 		8A37497C1C8D5BD0003DE59E /* CHomeChildAVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749791C8D5BC4003DE59E /* CHomeChildAVC.xib */; };
@@ -1550,6 +1554,9 @@
 		8A0547F71CA26C0100AC8DD5 /* TKShowGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKShowGoodsCell.xib; sourceTree = "<group>"; };
 		8A0548021CA2898700AC8DD5 /* TK_CGetRewardListArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_CGetRewardListArg.h; sourceTree = "<group>"; };
 		8A0548031CA2898700AC8DD5 /* TK_CGetRewardListArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_CGetRewardListArg.m; sourceTree = "<group>"; };
+		8A05480A1CA4C11A00AC8DD5 /* TKBrandSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBrandSelectViewController.h; sourceTree = "<group>"; };
+		8A05480B1CA4C11A00AC8DD5 /* TKBrandSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBrandSelectViewController.m; sourceTree = "<group>"; };
+		8A05480C1CA4C11A00AC8DD5 /* TKBrandSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKBrandSelectViewController.xib; sourceTree = "<group>"; };
 		8A17B0E41BA46CF500548CA7 /* TK_BaseAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BaseAppDelegate.h; sourceTree = "<group>"; };
 		8A17B0E51BA46CF500548CA7 /* TK_BaseAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BaseAppDelegate.m; sourceTree = "<group>"; };
 		8A17B0E71BA46CF500548CA7 /* TK_SDK_PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_SDK_PrefixHeader.pch; sourceTree = "<group>"; };
@@ -5361,6 +5368,9 @@
 				8A9D9B5A1C993DD3009F877F /* TKWebViewController.xib */,
 				8AA3464C1CA001BC00FCB39D /* TKShowGoodsListVC.h */,
 				8AA3464D1CA001BC00FCB39D /* TKShowGoodsListVC.m */,
+				8A05480A1CA4C11A00AC8DD5 /* TKBrandSelectViewController.h */,
+				8A05480B1CA4C11A00AC8DD5 /* TKBrandSelectViewController.m */,
+				8A05480C1CA4C11A00AC8DD5 /* TKBrandSelectViewController.xib */,
 			);
 			path = CommonClient;
 			sourceTree = "<group>";
@@ -6006,6 +6016,7 @@
 				BB83FB401C72C01C0013A6A0 /* HFCollectionCell.xib in Resources */,
 				BB83FB411C72C01C0013A6A0 /* Resource.bundle in Resources */,
 				BB83FB421C72C01C0013A6A0 /* HFHabitTimeCell.xib in Resources */,
+				8A05480F1CA4C11A00AC8DD5 /* TKBrandSelectViewController.xib in Resources */,
 				BB83FB431C72C01C0013A6A0 /* HFActivityListCell.xib in Resources */,
 				BB83FB441C72C01C0013A6A0 /* HFConclusionView.xib in Resources */,
 				BB83FB451C72C01C0013A6A0 /* ShareSDKFlatShareViewUI.bundle in Resources */,
@@ -6110,6 +6121,7 @@
 				8A37498E1C911937003DE59E /* HiiBeanWebViewController.xib in Resources */,
 				BB83FDEE1C72C16B0013A6A0 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				BB83FDEF1C72C16B0013A6A0 /* WebViewController.xib in Resources */,
+				8A0548101CA4C11A00AC8DD5 /* TKBrandSelectViewController.xib in Resources */,
 				BB83FDF01C72C16B0013A6A0 /* HFHabitRecordViewController.xib in Resources */,
 				BB83FDF11C72C16B0013A6A0 /* expression.plist in Resources */,
 				BB83FDF21C72C16B0013A6A0 /* HFSportViewCell.xib in Resources */,
@@ -6853,6 +6865,7 @@
 				BB83FAC01C72C01C0013A6A0 /* HFGetFunsReq.m in Sources */,
 				BB83FAC11C72C01C0013A6A0 /* AFSoundManager.m in Sources */,
 				BB83FAC21C72C01C0013A6A0 /* HFInsightLargeImageView.m in Sources */,
+				8A05480D1CA4C11A00AC8DD5 /* TKBrandSelectViewController.m in Sources */,
 				BB83FAC31C72C01C0013A6A0 /* MJPhotoToolbar.m in Sources */,
 				BB83FAC41C72C01C0013A6A0 /* TK_LoginArg.m in Sources */,
 				BB83FAC51C72C01C0013A6A0 /* HFMixView.m in Sources */,
@@ -7479,6 +7492,7 @@
 				BB83FD7D1C72C16B0013A6A0 /* HFGetFunsReq.m in Sources */,
 				BB83FD7E1C72C16B0013A6A0 /* AFSoundManager.m in Sources */,
 				BB83FD7F1C72C16B0013A6A0 /* HFInsightLargeImageView.m in Sources */,
+				8A05480E1CA4C11A00AC8DD5 /* TKBrandSelectViewController.m in Sources */,
 				BB83FD801C72C16B0013A6A0 /* MJPhotoToolbar.m in Sources */,
 				BB83FD811C72C16B0013A6A0 /* TK_LoginArg.m in Sources */,
 				BB83FD821C72C16B0013A6A0 /* HFMixView.m in Sources */,

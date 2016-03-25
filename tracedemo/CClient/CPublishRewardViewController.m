@@ -21,6 +21,7 @@
 #import "TKUITools.h"
 #import "UIColor+TK_Color.h"
 #import "TKWebViewController.h"
+#import "TKBrandSelectViewController.h"
 
 
 #define PICONE 101
@@ -28,7 +29,7 @@
 #define PIC_ADD 103
 
 @interface CPublishRewardViewController ()<TKPicSelectDelegate,CycleScrollViewDelegate,ZHPickViewDelegate,
-UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
+UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,BrandSelectDelegate>
 {
     CGFloat picWidth;
     NSInteger picCountInLine;
@@ -41,6 +42,9 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     UIImage *image2;
     CGFloat defaultHeight;
     NSString *requireDay;
+    TKBrandSelectViewController * vc;
+    TK_Brand * selectBrand;
+    TK_ShareCategory * selectCategory;
     
 }
 
@@ -431,8 +435,50 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate>
     requireDay = @"7";
 }
 - (IBAction)brandSelectClick:(id)sender {
+    
+    if(!vc)
+    {
+        vc = [[TKBrandSelectViewController alloc] init];
+        vc.selectDelegate = self;
+        
+    }
+    vc.vm.type = 1;
+    [vc.vm tkLoadDefaultData];
+    
+    [[AppDelegate appRootViewController].view addSubview:vc.view];
+    //    [self presentViewController:vc animated:YES completion:nil];
+    
+}
+
+-(void)selectCancel
+{
+    [vc.view removeFromSuperview];
+}
+
+-(void)onBrandSelect:(TK_Brand *)brand
+{
+    selectBrand = brand;
+    self.brandText.text = selectBrand.brandName;
+    
+}
+
+-(void)onCategorySelect:(TK_ShareCategory *)category
+{
+    selectCategory = category;
+    self.categoryText.text = selectCategory.title;
 }
 
 - (IBAction)categorySelectAction:(id)sender {
+    
+    if(!vc)
+    {
+        vc = [[TKBrandSelectViewController alloc] init];
+        vc.selectDelegate = self;
+        
+    }
+    vc.vm.type = 2;
+    [vc.vm tkLoadDefaultData];
+    
+    [[AppDelegate appRootViewController].view addSubview:vc.view];
 }
 @end

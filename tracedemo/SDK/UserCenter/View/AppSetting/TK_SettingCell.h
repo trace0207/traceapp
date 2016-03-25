@@ -90,4 +90,9 @@
 +(TK_SettingCell *)loadNoImageSwitchType:(id)ower;
 
 
+/**
+ * 加载对勾的 cell
+ **/
++(TK_SettingCell *)loadSelectType:(id)ower;
+
 @end

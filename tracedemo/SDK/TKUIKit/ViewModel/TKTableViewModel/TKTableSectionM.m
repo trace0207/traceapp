@@ -33,6 +33,7 @@
 
 -(void)initDefaultRowData:(NSInteger)count
 {
+    [self.rowsData removeAllObjects];
     for(int i = 0;i<count;i++)
     {
         [self.rowsData addObject:[[TKTableViewRowM alloc] init]];
