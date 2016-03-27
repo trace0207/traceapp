@@ -208,6 +208,10 @@
     {
         [self showPublishRewardView];
         temploginEvent = TK_Default;
+    }else if(temploginEvent == TK_GoToOrderWebView)
+    {
+        self.selectedIndex = 3;
+        temploginEvent = TK_Default;
     }
     
 }
@@ -388,14 +392,34 @@
     }
     else if([viewController isKindOfClass:[CPublishRewardViewController class]])
     {
-//        if(![[TKUserCenter instance] isLogin])
-//        {
-//            temploginEvent = TK_GoToPublishReward;
-//            [self showLoginView];
-//            return NO;
-//        }
+        if(![[TKUserCenter instance] isLogin])
+        {
+            temploginEvent = TK_GoToPublishReward;
+            [self showLoginView];
+            return NO;
+        }
         [self showPublishRewardView];
         return NO;
+    }
+    else if([viewController isKindOfClass:[TKWebViewController class]])
+    {
+        if(![[TKUserCenter instance] isLogin])
+        {
+            temploginEvent = TK_GoToOrderWebView;
+            [self showLoginView];
+            return NO;
+        }
+        return YES;
+    }
+    else if([viewController isKindOfClass:[BMyShowGoodsViewController class]])
+    {
+        if(![[TKUserCenter instance] isLogin])
+        {
+            temploginEvent = TK_GoToMyShowGoodsView;
+            [self showLoginView];
+            return NO;
+        }
+        return  YES;
     }
     else
     {

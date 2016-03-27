@@ -240,10 +240,6 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 //    self.mainView.frame = CGRectMake(0, 0, TKScreenWidth, defaultHeight+ addHeight);
     
     [self.mainView mas_updateConstraints:^(MASConstraintMaker *make) {
-        
-//        make.top.mas_equalTo(0);
-//        make.left.mas_equalTo(0);
-//        make.width.mas_equalTo(TKScreenWidth);
         make.height.mas_equalTo(defaultHeight + addHeight);
         
     }];
