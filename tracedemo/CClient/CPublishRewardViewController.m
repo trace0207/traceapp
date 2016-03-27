@@ -22,6 +22,13 @@
 #import "UIColor+TK_Color.h"
 #import "TKWebViewController.h"
 #import "TKBrandSelectViewController.h"
+#import "TK_UploadImageAck.h"
+#import "TK_PublishRewardArg.h"
+#import "TK_PublishRewardAck.h"
+#import "TK_PayArg.h"
+#import "TKPayProxy.h"
+#import "TKAlertView.h"
+#import "TKUserCenter.h"
 
 
 #define PICONE 101
@@ -45,6 +52,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     TKBrandSelectViewController * vc;
     TK_Brand * selectBrand;
     TK_ShareCategory * selectCategory;
+    TKAlertView * alertView;
     
 }
 
@@ -365,21 +373,8 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         DDLogInfo(@"image2 is nil");
         return ;
     }
-    
-    
-    TK_PublishMakeSureView * popView = [[TK_PublishMakeSureView alloc]init];
-//    [self onClearViewEvent];
-    
-    NSArray * pics = @[image1,image2]; //[[NSArray alloc] initWithArray:self.picturesArr];
-    popView.images = pics;
-    popView.content = self.inputText.text;
-    popView.showPrice = self.priceInputText.text;  //[self.willByPrice.text integerValue] * 100;
-    popView.requireDay = requireDay.integerValue;
-    
-    [[AppDelegate getAppDelegate].window addSubview:popView];
-    
-    
-    [popView beginSend];
+
+    [self beginSend];
     
 }
 
@@ -477,4 +472,173 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     
     [[AppDelegate appRootViewController].view addSubview:vc.view];
 }
+
+
+
+#pragma  mark  publish 
+
+/**
+ 图片上传结果返回
+ **/
+-(void)onImageUploadSuccess:(NSArray *)acks
+{
+    
+    //        DDLogInfo(@"upload images array %@",acks);
+    BOOL isAnyFailed = NO;
+    NSMutableArray * picArray = [[NSMutableArray alloc] init];
+    for(TK_UploadImageAck *a in acks)
+    {
+        if([a sucess])
+        {
+            [picArray addObject:a.data.imgUrl];
+        }else
+        {
+            isAnyFailed = YES;
+        }
+    }
+    
+    if(isAnyFailed)
+    {
+        
+//        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingError) object:nil];
+        [self showLoadingError:@"上传图片失败"];
+        
+    }
+    else
+    {
+        
+//        self.images = nil;
+        
+        TK_PublishRewardArg * arg = [[TK_PublishRewardArg alloc] init];
+        if(picArray.count > 0)
+        {
+            arg.picAddr1 = picArray[0];
+        }
+        if(picArray.count > 1)
+        {
+            arg.picAddr2 = picArray[1];
+        }
+        if(picArray.count > 3)
+        {
+            arg.picAddr3 = picArray[2];
+        }
+        if(picArray.count > 4)
+        {
+            arg.picAddr4 = picArray[3];
+        }
+        if(picArray.count > 5)
+        {
+            arg.picAddr5 = picArray[4];
+        }
+        if(picArray.count > 6)
+        {
+            arg.picAddr6 = picArray[5];
+        }
+        if(picArray.count > 7)
+        {
+            arg.picAddr7 = picArray[6];
+        }
+        if(picArray.count > 8)
+        {
+            arg.picAddr8 = picArray[7];
+        }
+        if(picArray.count > 9)
+        {
+            arg.picAddr9 = picArray[8];
+        }
+        
+        arg.content = self.inputText.text;
+        arg.rewardPrice = self.priceInputText.text;
+        arg.source = @"1";// 1 自主发起
+        arg.sourceId = [[TKUserCenter instance] getUser].userId;
+        arg.categoryId = selectCategory.categoryId;
+        arg.brandId = selectBrand.brandId;
+        arg.receiverId = @"1"; // 地址id
+        arg.requireDay = requireDay;
+        
+        
+        WS(weakSelf)
+        [[TKProxy proxy].mainProxy publishReward:arg withBlock:^(HF_BaseAck *ack) {
+            if(ack.sucess)
+            {
+                TK_PublishRewardAck * a = (TK_PublishRewardAck*)ack;
+                [weakSelf requestPay:a.data.deposit postrewardId:a.data.rewardId];
+            }
+            else
+            {
+             
+                [weakSelf showLoadingError:ack.msg];
+            }
+        }];
+    }
+}
+
+
+
+-(void)requestPay:(NSString *) money postrewardId:(NSString *)postId
+{
+    
+    TK_PayArg * arg = [[TK_PayArg alloc] init];
+    arg.bigMoney = 0;
+    arg.payAmount = money;
+    
+    arg.postrewardId = postId;
+    arg.fundType = 0;//0 订金， 1 尾款， 2全款， 3 买手充值保证金
+    //    arg.clientIp = @"192.168.1.1";
+    
+    WS(weakSelf)
+    
+    [TKPayProxy pay:arg
+          withBlick:^(NSInteger result) {
+              if(result == 1)
+              {
+//                  weakSelf.images = nil;
+                  [weakSelf onPublishSuccess];
+              }
+              else
+              {
+                  
+              }
+          }];
+}
+
+
+
+
+-(void)beginSend
+{
+    
+    alertView = [TKAlertView showHUDWithText:@"正在发布悬赏，请稍等"];
+    
+    NSMutableArray * images = [[NSMutableArray alloc] init];
+    
+    [images addObject:image1];
+    [images addObject:image2];
+    [images addObjectsFromArray:otherPics];
+    WS(weakSelf)
+    [[TKProxy proxy].mainProxy uploadMutableImages:images withtype:1 withBlock:^(NSArray * acks) {
+        
+        [weakSelf onImageUploadSuccess:acks];
+    } ];
+}
+
+
+-(void)showLoadingError:(NSString *)msg
+{
+    
+    [alertView removeFromSuperview];
+    [TKAlertView showFailedWithTitle:@"发表失败" withMessage:msg commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
+    
+}
+
+-(void)onPublishSuccess{
+    
+    [alertView removeFromSuperview];
+    
+    [TKAlertView showSuccessWithTitle:@"发表悬赏成功" withMessage:nil commpleteBlock:^(NSInteger buttonIndex) {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    } cancelTitle:nil determineTitle:@"确定"];
+    
+}
+
 @end

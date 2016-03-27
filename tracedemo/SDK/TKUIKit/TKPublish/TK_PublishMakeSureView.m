@@ -28,12 +28,12 @@
 -(instancetype)init
 {
     self = [super init];
-    self.frame = [UIScreen mainScreen].bounds;
-     _errorImage.hidden = YES;
-    _loading.hidden = NO;
-    [_loading startAnimating];
-    _loadingTips.text = @"正在上传图片...";
-    [self performSelector:@selector(showLoadingError) withObject:nil afterDelay:30.0f];
+//    self.frame = [UIScreen mainScreen].bounds;
+//     _errorImage.hidden = YES;
+//    _loading.hidden = NO;
+//    [_loading startAnimating];
+//    _loadingTips.text = @"正在上传图片...";
+//    [self performSelector:@selector(showLoadingError) withObject:nil afterDelay:30.0f];
     return self;
 }
 
@@ -185,7 +185,6 @@
           withBlick:^(NSInteger result) {
               if(result == 1)
               {
-                  [weakSelf removeFromSuperview];
                    weakSelf.images = nil;
               }
               else
@@ -197,10 +196,6 @@
 }
 
 
-
-- (IBAction)cancelAction:(id)sender {
-    [self removeFromSuperview];
-}
 
 
 -(void)beginSend

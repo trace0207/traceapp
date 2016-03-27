@@ -20,7 +20,10 @@
 @interface CountDownView : UIView
 
 @property (nonatomic, assign) NSTimeInterval secondsUTC;
+
 @property (nonatomic, weak) id<CountDownViewDelegate>delegate;
+
+-(void)beginCutDownFromSeconds:(NSInteger)remainSeconds;
 
 @end
 

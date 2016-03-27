@@ -130,6 +130,7 @@
 
 - (NSTimer *)countDownTimer
 {
+   
     if (_countDownTimer == nil) {
         _countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop]addTimer:_countDownTimer forMode:NSRunLoopCommonModes];
@@ -139,17 +140,19 @@
 
 - (void)countDown:(NSTimer *)timer
 {
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:_secondsUTC];
-    NSTimeInterval seconds = [date timeIntervalSinceNow];
-    if (seconds <= 0) {
+    _secondsUTC --;
+//    NSDate *date = [NSDate dateWithTimeIntervalSince1970:_secondsUTC];
+//    NSTimeInterval seconds = [date timeIntervalSinceNow];
+    if (_secondsUTC <= 0) {
         [self timeOverAction];
     }else {
-        [self setCountDownTimeWihtUTC:seconds];
+        [self setCountDownTimeWihtUTC:_secondsUTC];
     }
 }
 
 - (void)setSecondsUTC:(NSTimeInterval)secondsUTC
 {
+    
     NSDate *currentDate = [NSDate date];
     NSTimeInterval since1970 = [currentDate timeIntervalSince1970];
     if (secondsUTC <= since1970) {
@@ -160,6 +163,15 @@
     _secondsUTC = secondsUTC;
     [self.countDownTimer fire];
 }
+
+
+-(void)beginCutDownFromSeconds:(NSInteger)remainSeconds
+{
+     NSDate *currentDate = [NSDate date];
+    _secondsUTC = [currentDate timeIntervalSinceNow] + remainSeconds;
+    [self.countDownTimer fire];
+}
+
 
 - (void)setCountDownTimeWihtUTC:(NSTimeInterval)seconds
 {

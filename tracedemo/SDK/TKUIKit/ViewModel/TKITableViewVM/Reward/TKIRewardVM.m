@@ -124,7 +124,7 @@
     cell.backgroundColor = [UIColor clearColor];
     
     cell.priceText.text =  [NSString stringWithFormat:@"%0.2f",rowData.rewardPrice.floatValue/100];
-    [cell.timeCountView setSecondsUTC:rowData.releaseTime.doubleValue/1000];
+    [cell.timeCountView beginCutDownFromSeconds:2000];
     [cell.infoIconBtn1 setTitle:rowData.brandName forState:UIControlStateNormal];
     [cell.infoIconBtn2 setTitle:rowData.categoryName forState:UIControlStateNormal];
     cell.delegate = self;

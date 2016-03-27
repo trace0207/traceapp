@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseView.h"
 
-@interface TK_PublishMakeSureView : BaseView
+@interface TK_PublishMakeSureView : NSObject
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 @property (strong, nonatomic) IBOutlet UILabel *loadingTips;
 @property (strong, nonatomic) IBOutlet UIImageView *errorImage;
-- (IBAction)cancelAction:(id)sender;
 
 @property (strong, nonatomic) NSArray *images;
 @property (nonatomic,copy)NSString *orderId;

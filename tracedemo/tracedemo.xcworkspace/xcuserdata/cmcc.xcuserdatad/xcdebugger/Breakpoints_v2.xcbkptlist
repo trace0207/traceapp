@@ -68,13 +68,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CClient/CPublishRewardViewController.m"
-            timestampString = "480569356.071414"
+            timestampString = "480778100.880625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "-resetPicField"
-            landmarkType = "5">
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "@implementation CPublishRewardViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -84,12 +84,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CClient/CPublishRewardViewController.m"
-            timestampString = "480751396.314453"
+            timestampString = "480778425.000457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "406"
-            endingLineNumber = "406"
-            landmarkName = "-addressFieldTouch:"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
+            landmarkName = "-secondPic"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -148,13 +148,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CClient/CPublishRewardViewController.m"
-            timestampString = "480751396.314453"
+            timestampString = "480778100.880625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
-            landmarkName = "-TKI_leftBarAction"
-            landmarkType = "5">
+            startingLineNumber = "343"
+            endingLineNumber = "343"
+            landmarkName = "@implementation CPublishRewardViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -164,12 +164,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CClient/CPublishRewardViewController.m"
-            timestampString = "480751396.314453"
+            timestampString = "480778425.000457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "451"
-            endingLineNumber = "451"
-            landmarkName = "-selectCancel"
+            startingLineNumber = "439"
+            endingLineNumber = "439"
+            landmarkName = "-brandSelectClick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -218,6 +218,22 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "-onLoginSuccess"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDK/NetLayer/NewNet/JsonModeHttp/TK_JsonModelHttpClient.m"
+            timestampString = "480778686.437627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "-sendMutableArg:withBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

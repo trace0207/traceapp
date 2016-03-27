@@ -800,7 +800,6 @@
 		BB83FB2B1C72C01C0013A6A0 /* TKICommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB53DACC1C2161EE00CF346A /* TKICommentViewController.xib */; };
 		BB83FB2C1C72C01C0013A6A0 /* HFReportView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B751BF01D4400E5C982 /* HFReportView.xib */; };
 		BB83FB2D1C72C01C0013A6A0 /* ForgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B041BF01D4400E5C982 /* ForgetViewController.xib */; };
-		BB83FB2E1C72C01C0013A6A0 /* TK_PublishMakeSureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE328D51C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib */; };
 		BB83FB2F1C72C01C0013A6A0 /* HFSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B441BF01D4400E5C982 /* HFSwitchCell.xib */; };
 		BB83FB301C72C01C0013A6A0 /* HFFoodListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3A741BF01D4400E5C982 /* HFFoodListViewController.xib */; };
 		BB83FB311C72C01C0013A6A0 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3EE01BF01E4900E5C982 /* TencentOpenApi_IOS_Bundle.bundle */; };
@@ -1481,7 +1480,6 @@
 		BB83FDE81C72C16B0013A6A0 /* TKICommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB53DACC1C2161EE00CF346A /* TKICommentViewController.xib */; };
 		BB83FDE91C72C16B0013A6A0 /* HFReportView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B751BF01D4400E5C982 /* HFReportView.xib */; };
 		BB83FDEA1C72C16B0013A6A0 /* ForgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B041BF01D4400E5C982 /* ForgetViewController.xib */; };
-		BB83FDEB1C72C16B0013A6A0 /* TK_PublishMakeSureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE328D51C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib */; };
 		BB83FDEC1C72C16B0013A6A0 /* HFSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B441BF01D4400E5C982 /* HFSwitchCell.xib */; };
 		BB83FDED1C72C16B0013A6A0 /* HFFoodListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3A741BF01D4400E5C982 /* HFFoodListViewController.xib */; };
 		BB83FDEE1C72C16B0013A6A0 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3EE01BF01E4900E5C982 /* TencentOpenApi_IOS_Bundle.bundle */; };
@@ -2945,7 +2943,6 @@
 		BBBF89A71C045F2D00CF9F2E /* UIImageView+TKI_ImageFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+TKI_ImageFill.m"; sourceTree = "<group>"; };
 		BBE328D21C0DC5DF0094ACEE /* TK_PublishMakeSureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_PublishMakeSureView.h; sourceTree = "<group>"; };
 		BBE328D31C0DC5DF0094ACEE /* TK_PublishMakeSureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PublishMakeSureView.m; sourceTree = "<group>"; };
-		BBE328D51C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_PublishMakeSureView.xib; sourceTree = "<group>"; };
 		BBE32B9F1C0E9C190094ACEE /* TKHttpAction.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TKHttpAction.plist; sourceTree = "<group>"; };
 		BBE32BA11C0E9C510094ACEE /* ActionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionTools.h; sourceTree = "<group>"; };
 		BBE32BA21C0E9C510094ACEE /* ActionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionTools.m; sourceTree = "<group>"; };
@@ -5747,7 +5744,6 @@
 				8AECCA691C0C8FA600CD789F /* TKPublishRewardVC.m */,
 				BBE328D21C0DC5DF0094ACEE /* TK_PublishMakeSureView.h */,
 				BBE328D31C0DC5DF0094ACEE /* TK_PublishMakeSureView.m */,
-				BBE328D51C0DC5FB0094ACEE /* TK_PublishMakeSureView.xib */,
 			);
 			path = TKPublish;
 			sourceTree = "<group>";
@@ -5990,7 +5986,6 @@
 				BB83FB2B1C72C01C0013A6A0 /* TKICommentViewController.xib in Resources */,
 				BB83FB2C1C72C01C0013A6A0 /* HFReportView.xib in Resources */,
 				BB83FB2D1C72C01C0013A6A0 /* ForgetViewController.xib in Resources */,
-				BB83FB2E1C72C01C0013A6A0 /* TK_PublishMakeSureView.xib in Resources */,
 				BB83FB2F1C72C01C0013A6A0 /* HFSwitchCell.xib in Resources */,
 				BBA3725D1C76B72B0075333E /* TKRewardCell.xib in Resources */,
 				8A0464F71C880FF200E6B1E0 /* BMyShowGoodsViewController.xib in Resources */,
@@ -6115,7 +6110,6 @@
 				BB83FDE81C72C16B0013A6A0 /* TKICommentViewController.xib in Resources */,
 				BB83FDE91C72C16B0013A6A0 /* HFReportView.xib in Resources */,
 				BB83FDEA1C72C16B0013A6A0 /* ForgetViewController.xib in Resources */,
-				BB83FDEB1C72C16B0013A6A0 /* TK_PublishMakeSureView.xib in Resources */,
 				BB83FDEC1C72C16B0013A6A0 /* HFSwitchCell.xib in Resources */,
 				BB83FDED1C72C16B0013A6A0 /* HFFoodListViewController.xib in Resources */,
 				8A37498E1C911937003DE59E /* HiiBeanWebViewController.xib in Resources */,
