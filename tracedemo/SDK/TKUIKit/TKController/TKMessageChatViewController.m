@@ -20,15 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    demoDeta = [[DemoModelData alloc] init];
-    self.senderId = @"123";
-    self.senderDisplayName = @"testSend";
-    
-//    [NSUserDefaults saveIncomingAvatarSetting:YES];
-//    [NSUserDefaults saveOutgoingAvatarSetting:YES];
-    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
-    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
-    // Do any additional setup after loading the view.
+//    demoDeta = [[DemoModelData alloc] init];
+//    self.senderId = @"123";
+//    self.senderDisplayName = @"testSend";
+//    
+////    [NSUserDefaults saveIncomingAvatarSetting:YES];
+////    [NSUserDefaults saveOutgoingAvatarSetting:YES];
+//    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
+//    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
+//    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

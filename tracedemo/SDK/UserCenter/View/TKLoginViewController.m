@@ -96,6 +96,10 @@
 {
     [self TKI_leftBarAction];
     [[NSNotificationCenter defaultCenter] postNotificationName:TKUserLoginBackEvent object:nil];
+    if(self.delegate)
+    {
+        [self.delegate onLoginSuccess];
+    }
 }
 
 - (IBAction)forgetPassword:(id)sender {

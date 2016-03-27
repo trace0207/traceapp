@@ -20,8 +20,9 @@
 #import "TKConstants.h"
 #import "UIColor+TK_Color.h"
 #import "TKUserCenter.h"
+#import "TKLoginViewController.h"
 
-@interface AppDelegate (){
+@interface AppDelegate ()<LoginDelegate>{
     
     
 }
@@ -36,6 +37,12 @@ static AppDelegate * appDelegate;
 @implementation AppDelegate
 
 
+
+-(void)onLoginSuccess
+{
+    [self showMainViewController];
+}
+
 -(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     
     
@@ -47,17 +54,26 @@ static AppDelegate * appDelegate;
     // Override point for customization after application launch.
 //    [self showSlideMenuController];
     
+     appDelegate = self;
+      [self initAppData];
+
+#if B_Client == 1
+
+    if(![[TKUserCenter instance] isLogin])
+    {
+        TKLoginViewController * vc = [[TKLoginViewController alloc] init];
+        vc.delegate = self;
+        [self.window setRootViewController:vc];
+    }
+#else
     [self showMainViewController];
+#endif
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
 //    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     //    [NSThread sleepForTimeInterval:1.5];//  启动页停留 3 秒钟
-    
-    appDelegate = self;
-    
-    [self initAppData];
-    
     return YES;
 }
 
@@ -146,13 +162,14 @@ static AppDelegate * appDelegate;
 
 -(void)showMainViewController
 {
+    
     UIViewController * centerViewController = [[TKMainNavigateController alloc] init];
     BaseNavViewController *nav = [[BaseNavViewController alloc]initWithRootViewController:centerViewController];
     rootNavVC = nav;
     nav.navigationBar.translucent = NO;
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     [self.window setRootViewController:nav];
-    [self configNavigationBar];
+    
 //    nav.navigationBar.shadowImage = [[UIImage alloc] init];
 //    nav.navigationBar.translucent = NO;
 }
@@ -216,7 +233,9 @@ static AppDelegate * appDelegate;
 
 
 -(void)initAppData
-{   
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self configNavigationBar];
     [[TKUserCenter instance] initAppData];
     
 //    NSString * ua = [kUserDefaults stringForKey:@"UserAgent"];
