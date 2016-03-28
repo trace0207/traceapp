@@ -27,9 +27,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(HFHUDView, shareInstance);
     else
     {
         
-        if (pView == NULL)
+        if (pView == nil)
         {
-            pView = [[UIApplication sharedApplication] keyWindow];
+            //pView = [[UIApplication sharedApplication] keyWindow];//这里可能为nil ？？
+            pView = [[UIView alloc]initWithFrame:kScreenBounds];
         }
         MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:pView animated:YES];
         hud.mode = MBProgressHUDModeText;
@@ -45,7 +46,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(HFHUDView, shareInstance);
 {
     if (pView == NULL)
     {
-        pView = [[UIApplication sharedApplication] keyWindow];
+        //pView = [[UIApplication sharedApplication] keyWindow];
+        pView = [[UIView alloc]initWithFrame:kScreenBounds];
     }
     
     HUD = [[MBProgressHUD alloc] initWithView:pView];

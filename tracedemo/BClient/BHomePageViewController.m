@@ -91,20 +91,20 @@
     if (self.segmentedControl.selectedSegmentIndex == 1) {
         [self addRightBarItemWithCustomView:self.menuView];
     }
-//    UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
-//    [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//    [bt setTitle:@"弹窗" forState:UIControlStateNormal];
-//    [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
-//    [self addLeftBarItemWithCustomView:bt];
+    UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
+    [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [bt setTitle:@"弹窗" forState:UIControlStateNormal];
+    [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+    [self addLeftBarItemWithCustomView:bt];
 }
 
 - (void)test
 {
 
     //成功场景
-//    [TKAlertView showSuccessWithTitle:@"晒单成功！" withMessage:@"你不能这么厉害好吗？" commpleteBlock:^(NSInteger buttonIndex) {
-//        
-//    } cancelTitle:@"取消" determineTitle:@"确定"];
+    [TKAlertView showSuccessWithTitle:@"发表悬赏成果" withMessage:nil commpleteBlock:^(NSInteger buttonIndex) {
+        
+    } cancelTitle:@"取消" determineTitle:nil];
     
     //失败场景
 //    [TKAlertView showFailedWithTitle:@"晒单失败!" withMessage:@"你为什么这么弱？" commpleteBlock:^(NSInteger buttonIndex) {

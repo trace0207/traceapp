@@ -88,8 +88,8 @@
             
             make.top.equalTo(self).with.offset(20);
             make.height.mas_equalTo(20);
-            make.width.mas_greaterThanOrEqualTo(10);
-            make.centerX.equalTo(self.mas_centerX);
+            make.width.mas_greaterThanOrEqualTo(0);
+            make.centerX.equalTo(self);
 //            make.left.equalTo(self).with.offset(20);
 //            make.right.equalTo(self).with.offset(-20);
 //            make.top.equalTo(self).with.offset(20);
@@ -259,7 +259,7 @@
     TKAlertView *alertView = [self showAltertWithTitle:title withMessage:message commpleteBlock:block cancelTitle:cancelTitle determineTitle:determineTitle];
     [alertView.subAltert.tipImageView setImage:IMG(@"success")];
     [alertView.subAltert.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(alertView.subAltert.mas_centerX).with.offset(10+3);
+        make.centerX.equalTo(alertView).with.offset(10+3);
     }];
     [alertView.subAltert.tipImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(20, 20));
@@ -274,7 +274,7 @@
     TKAlertView *alertView = [self showAltertWithTitle:title withMessage:message commpleteBlock:block cancelTitle:cancelTitle determineTitle:determineTitle];
     [alertView.subAltert.tipImageView setImage:IMG(@"failed")];
     [alertView.subAltert.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(alertView.subAltert.mas_centerX).with.offset(10+3);
+        make.centerX.equalTo(alertView).with.offset(10+3);
     }];
     [alertView.subAltert.tipImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(20, 20));
