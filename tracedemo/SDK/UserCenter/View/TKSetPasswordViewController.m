@@ -145,9 +145,9 @@
     
 //    [[AppDelegate getMainNavigation] popToRootViewControllerAnimated:YES];
     
-    NSString * verifyCode = @"111111";
-    NSString * inviteCode = @"222222";
-    NSString * password = @"aaaaaa";
+    NSString * verifyCode = self.verifyCodeInput.text;
+    NSString * inviteCode = self.inviteCodeInput.text;
+    NSString * password = self.passwordInput.text;
     
     [[TKProxy proxy].userProxy registerNewUser:verifyCode
                                     inviteCode:inviteCode
@@ -157,7 +157,6 @@
         
         DDLogInfo(@"--------- %@  ",ack);
     }];
-    
     
 }
 - (IBAction)sortwareProtocol:(id)sender {

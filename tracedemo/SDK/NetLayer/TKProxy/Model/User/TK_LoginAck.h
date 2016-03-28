@@ -75,6 +75,8 @@
 @property (nonatomic, copy)   NSString  *token;//
 @property (nonatomic, copy)   NSString  *version;//
 @property (nonatomic, copy)   NSString  *vip;//
+@property (nonatomic, copy)   NSString  *bigMoney;
+@property (nonatomic, copy)   NSString  *inviteCode;
 
 @property (nonatomic, strong) Address  *defaultReceiver;//
 @end

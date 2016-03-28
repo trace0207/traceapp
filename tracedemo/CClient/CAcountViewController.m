@@ -11,6 +11,7 @@
 #import "CBillViewController.h"
 #import "CoinViewController.h"
 #import "SettingsViewController.h"
+#import "TKUserCenter.h"
 @interface CAcountViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @end
@@ -92,7 +93,8 @@
         
     }else {
         cell.label1.text = @"我的大牌币";
-        cell.label2.text = @"800大牌币";
+        NSString * money = [TKUserCenter instance].getUser.ackData.bigMoney;
+        cell.label2.text = [money stringByAppendingString:@" 大牌币"];
     }
     return cell;
 }

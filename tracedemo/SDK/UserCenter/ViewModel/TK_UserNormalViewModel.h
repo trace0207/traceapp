@@ -17,6 +17,7 @@
 @property (nonatomic,copy) NSMutableArray<__kindof TK_ShareCategory*> * shareCategorys;
 @property (nonatomic,copy) NSMutableArray<__kindof TK_Brand*> * brandList;
 
+@property (nonatomic,strong)NSString * token;
 
 
 -(void)resetCategorys:(TK_CategoryListAck*)ack;

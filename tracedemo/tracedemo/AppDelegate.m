@@ -21,6 +21,8 @@
 #import "UIColor+TK_Color.h"
 #import "TKUserCenter.h"
 #import "TKLoginViewController.h"
+#import "Pingpp.h"
+#import "GlobNotifyDefine.h"
 
 @interface AppDelegate ()<LoginDelegate>{
     
@@ -101,6 +103,18 @@ static AppDelegate * appDelegate;
 
 
 
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
+{
+    BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:^(NSString *result, PingppError *error) {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:TKPayNotify object:result];
+        DDLogInfo(@"pingpp pay result = %@",result);
+    } ];
+    return canHandleURL;
+}
+
+
+
 #pragma mark -----Show  Controller detail -------
 
 
@@ -169,9 +183,6 @@ static AppDelegate * appDelegate;
     nav.navigationBar.translucent = NO;
     
     [self.window setRootViewController:nav];
-    
-//    nav.navigationBar.shadowImage = [[UIImage alloc] init];
-//    nav.navigationBar.translucent = NO;
 }
 
 
@@ -237,22 +248,29 @@ static AppDelegate * appDelegate;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self configNavigationBar];
     [[TKUserCenter instance] initAppData];
-    
-//    NSString * ua = [kUserDefaults stringForKey:@"UserAgent"];
-//    NSString * deviceId = [GlobInfo shareInstance].deviceid;
-//    if(![ua containsString:deviceId])
-//    {
-//        NSString * newAgent = [[ua stringByAppendingString:@"|"] stringByAppendingString:deviceId];
-//        [kUserDefaults registerDefaults:@{@"UserAgent":newAgent}];
-//        DDLogInfo(@"userAgent set to %@",newAgent);
-//        [kUserDefaults synchronize];
-//    }
     NSString * deviceId = [GlobInfo shareInstance].deviceid;
     [kUserDefaults registerDefaults:@{@"UserAgent":deviceId}];
     DDLogInfo(@"userAgent set to %@",deviceId);
     [kUserDefaults synchronize];
 
    
+    
+    if (IOS8VERSION)
+    {
+        
+        DDLogInfo(@"IOS 8.0  registerUserNotificationSettings  begin ");
+        
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings
+                                                                             settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge)
+                                                                             categories:nil]];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else
+    {
+        DDLogInfo(@"IOS < 8.0  registerUserNotificationSettings  begin ");
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+    }
     
 
 }
@@ -267,5 +285,25 @@ static AppDelegate * appDelegate;
     }
     return topVC;
 }
+
+#pragma  mark   notification
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken
+{
+    
+    application.applicationIconBadgeNumber = 0;
+    //注册，回调deviceToken
+    NSString * pushToken = [[[deviceToken description]
+                             stringByReplacingOccurrencesOfString:@"<" withString:@""]
+                            stringByReplacingOccurrencesOfString:@">" withString:@""];
+    
+    DDLogInfo(@"recevie devicetoken %@",pushToken);
+    [[TKUserCenter instance].userNormalVM setToken:pushToken];
+    
+//    [[GlobInfo shareInstance] saveDeviceToken:pushToken];
+}
+
+
+
 
 @end

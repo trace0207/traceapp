@@ -30,6 +30,7 @@
 #import "TKAlertView.h"
 #import "TKUserCenter.h"
 #import "TKProxy.h"
+#import "GlobNotifyDefine.h"
 
 
 #define PICONE 101
@@ -68,8 +69,24 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     requireDay = @"3";
     [self initView];
     // Do any additional setup after loading the view from its nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPayNotify:) name:TKPayNotify object:nil];
 }
 
+
+-(void)onPayNotify:(NSNotification *)notify
+{
+    NSString * result = [notify object];
+    if(alertView)
+    {
+        [alertView removeFromSuperview];
+    }
+    DDLogInfo(@"payBack result %@",result);
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self forKeyPath:TKPayNotify];
+}
 
 -(void)initView
 {

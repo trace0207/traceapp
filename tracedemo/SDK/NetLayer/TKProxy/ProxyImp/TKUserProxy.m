@@ -12,6 +12,7 @@
 #import "TK_RegisterNewUserArg.h"
 #import "TK_RegisterNewUserAck.h"
 #import "TK_ModifyPasswordArg.h"
+#import "TKUserCenter.h"
 
 //TK_LoginArg,TK_RegisterNewUserArg,TK_RegisterNewUserAck;
 @implementation TKUserProxy
@@ -53,10 +54,18 @@
                 mobile:(NSString *)mobile
              whtiBlock:(hfAckBlock)block{
     TK_RegisterNewUserArg * arg = [[TK_RegisterNewUserArg alloc] init];
+    
+#if B_Client == 1
+    arg.role = 0;
+#else
+    arg.role = 1;
+#endif
+ 
     arg.mobile = mobile;
     arg.inviteCode = inviceCode;
     arg.smsCode = verifyCode;
     arg.password = userValue;
+    arg.token = [TKUserCenter instance].userNormalVM.token;
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
     
 }

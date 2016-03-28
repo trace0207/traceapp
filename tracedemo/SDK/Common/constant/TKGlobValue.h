@@ -213,3 +213,6 @@ tableView.delegate = d2;
 
 // 设置view 的边框
 #define TKBorder(x)  [TKUITools setRoudBorderForView:x borderColor:[UIColor tkBorderColor] radius:2 borderWidth:1];
+
+
+

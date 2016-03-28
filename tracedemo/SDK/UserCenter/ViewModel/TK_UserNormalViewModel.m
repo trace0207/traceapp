@@ -9,6 +9,7 @@
 #import "TK_UserNormalViewModel.h"
 
 @implementation TK_UserNormalViewModel
+@synthesize token;
 
 -(instancetype)init{
 
@@ -76,6 +77,24 @@
         _brandList = [[NSMutableArray alloc] init];
     }
     return _brandList;
+}
+
+-(void)setToken:(NSString *)token1
+{
+    token = token1;
+    
+    [kUserDefaults setObject:token forKey:kParmsDeviceToken];
+    [kUserDefaults synchronize];
+    
+}
+
+-(NSString *)token
+{
+    if(!token)
+    {
+        token = [kUserDefaults objectForKey:kParmsDeviceToken];
+    }
+    return token;
 }
 
 
