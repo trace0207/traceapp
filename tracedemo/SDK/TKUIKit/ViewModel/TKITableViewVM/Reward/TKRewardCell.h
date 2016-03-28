@@ -20,7 +20,7 @@
 
 @property (nonatomic,assign) NSInteger remainingSeconds;
 
-
+-(NSInteger)getRemainSeconds;
 +(TKRewardCellModel *)transformFromRewardData:(RewardData *)reward;
 
 @end
@@ -60,5 +60,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceText;
 - (IBAction)acceptAction:(id)sender;
 - (IBAction)discardAction:(id)sender;
+
 
 @end

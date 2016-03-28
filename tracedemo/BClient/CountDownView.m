@@ -167,8 +167,13 @@
 
 -(void)beginCutDownFromSeconds:(NSInteger)remainSeconds
 {
-     NSDate *currentDate = [NSDate date];
-    _secondsUTC = [currentDate timeIntervalSinceNow] + remainSeconds;
+//     NSDate *currentDate = [NSDate date];
+    _secondsUTC = remainSeconds;
+    if(remainSeconds < 0)
+    {
+        _secondsUTC = 0;
+    }
+//    _secondsUTC = [currentDate timeIntervalSinceNow] + remainSeconds;
     [self.countDownTimer fire];
 }
 

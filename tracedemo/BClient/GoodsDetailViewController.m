@@ -25,28 +25,23 @@
     [super viewDidLoad];
     self.navTitle = @"详情";
 //    NSString *text = self.data.content;
-    NSString * text = @"122222221hslkdhfasdfhasdfhaksdhfwofhasdhfwflkkshdfklhsdfoiwfaskdhfwiuhfklashdfiowfaksjdlfowfaksldhfiwfghkahgkshfadfljasdlfjhaofhsakldhfakhsdfa";
+    NSString * text = self.data.content;
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
     CGFloat height = [UIKitTool caculateHeight:text sizeOfWidth:(kScreenWidth-68) withAttributes:dic];
     
     self.detailView.frame = CGRectMake(0, kScreenWidth, kScreenWidth, 91+height);
-    self.detailView.countDownView.secondsUTC = 1457312501+BSDay*13;
+//    self.detailView.countDownView.secondsUTC = 1457312501+BSDay*13;
     self.detailView.textView.text = text;
     
     TKSetHeadImageView(self.detailView.headImageView, self.data.userHeaderUrl);
-  
     self.detailView.nameLabel.text = self.data.userNickName;
     self.detailView.brandLabel.text = self.data.brandName;
     self.detailView.kindLabel.text = self.data.categoryName;
+    [self.detailView.countDownView beginCutDownFromSeconds:self.data.clock.integerValue/1000];
     
     TKBorder(self.grobBtn);
-    
-    [self.grobBtn setBackgroundImage:IMG(@"bg_purchase") forState:UIControlStateNormal];
-    
     TKBorder(self.freeBtn);
-    
-//    self.view.backgroundColor = [UIColor whiteColor];
-    
+    [self.grobBtn setBackgroundImage:IMG(@"bg_purchase") forState:UIControlStateNormal];
     self.scrollView.contentSize = CGSizeMake(kScreenWidth, self.bannerView.frame.size.height+self.detailView.frame.size.height);
 }
 
@@ -67,7 +62,9 @@
         NSArray * images = [self.data getPicsArrays];
         _bannerView = [BannerView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth) imageURLStringsGroup:images];
         _bannerView.imageURLStringsGroup = images;
-        NSString * price = [NSString stringWithFormat:@"悬赏价:¥%@",self.data.rewardPrice];
+        
+        //[NSString stringWithFormat:@"%0.2f",rowData.rewardPrice.floatValue/100]
+        NSString * price = [NSString stringWithFormat:@"悬赏价:¥%0.2f",self.data.rewardPrice.floatValue/100];
         [_bannerView setTitle:price];
         [self.scrollView addSubview:_bannerView];
     }

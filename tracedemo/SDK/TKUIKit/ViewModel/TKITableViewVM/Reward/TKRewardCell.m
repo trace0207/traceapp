@@ -28,6 +28,18 @@
 }
 
 
+
+
+-(NSInteger)getRemainSeconds
+{
+    NSInteger  seconds = (self.ackData.releaseTime.integerValue - self.ackData.finalTime.integerValue)/1000;
+    if (seconds <=0) {
+        seconds = 0;
+    }
+    return seconds;
+}
+
+
 @end
 
 
@@ -64,4 +76,5 @@
         [self.delegate onReleaseBtnClick:self.indexPath];
     }
 }
+
 @end
