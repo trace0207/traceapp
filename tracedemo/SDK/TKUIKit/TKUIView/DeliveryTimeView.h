@@ -23,7 +23,7 @@
 @property (nonatomic, strong) IBOutlet UIButton *rightBtn;//关闭按钮
 
 @property (nonatomic, assign) int expectDays;
-
+@property (nonatomic, readonly) int overTime;
 - (IBAction)chooseDate:(UIButton *)button;
 - (IBAction)hasReadAction:(UIButton *)button;
 - (IBAction)donotShowAction:(UIButton *)button;

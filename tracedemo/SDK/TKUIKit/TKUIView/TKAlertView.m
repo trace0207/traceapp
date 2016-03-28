@@ -161,6 +161,7 @@
 
 @interface TKAlertView ()
 @property (nonatomic, strong) KAlertView *subAltert;
+@property (nonatomic, strong) DeliveryTimeView *subView;
 @end
 
 @implementation TKAlertView
@@ -283,23 +284,23 @@
     }];
 }
 
-+ (void)showDeliveryTime:(int)days WithBlock:(void(^)(NSInteger buttonIndex))block
++ (void)showDeliveryTime:(int)days WithBlock:(void(^)(NSInteger buttonIndex,int deliveryTime))block
 {
     TKAlertView *alertView = [[self alloc]initWithFrame:kScreenBounds];
-    objc_setAssociatedObject(alertView, "callBack", [block copy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(alertView, "deliveryTimeBlock", [block copy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [[[UIApplication sharedApplication]keyWindow] addSubview:alertView];
-    DeliveryTimeView *subView = [[DeliveryTimeView alloc]init];
-    [alertView addSubview:subView];
-    [subView mas_makeConstraints:^(MASConstraintMaker *make) {
+    alertView.subView = [[DeliveryTimeView alloc]init];
+    [alertView addSubview:alertView.subView];
+    [alertView.subView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(alertView.mas_left).with.offset(17.5*kWidthScale);
         make.right.equalTo(alertView.mas_right).with.offset(-17.5*kWidthScale);
         make.center.equalTo(alertView);
         make.height.mas_greaterThanOrEqualTo(0);
     }];
-    [subView setExpectDays:days];
-    [subView layoutIfNeeded];
-    [subView.leftBtn addTarget:alertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];
-    [subView.rightBtn addTarget:alertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];
+    [alertView.subView setExpectDays:days];
+    [alertView.subView layoutIfNeeded];
+    [alertView.subView.leftBtn addTarget:alertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];
+    [alertView.subView.rightBtn addTarget:alertView action:@selector(alertAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 + (instancetype)showHUDWithText:(NSString *)text
@@ -325,6 +326,10 @@
     void (^block)(NSInteger buttonIndex) = objc_getAssociatedObject(self, "callBack");
     if (block) {
         block(bt.tag);
+    }
+    void (^deliveryTimeBlock)(NSInteger buttonIndex,int deliveryTime) = objc_getAssociatedObject(self, "deliveryTimeBlock");
+    if (deliveryTimeBlock) {
+        deliveryTimeBlock(bt.tag,self.subView.overTime);
     }
     [self removeFromSuperview];
 }

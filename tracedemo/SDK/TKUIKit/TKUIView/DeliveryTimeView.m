@@ -90,6 +90,7 @@
         [self.oneBtn setTitle:@"1天内发货" forState:UIControlStateNormal];
         [self.oneBtn setImage:nil forState:UIControlStateNormal];
     }
+    _overTime = days;
     self.actualLabel.text = [NSString stringWithFormat:@"您选择了“%i天内发货”，若买家同意您的发货时间，切记不要延期，否则平台将会按照“发货规则”执行罚金操作，同意将影响您的信用等级。",days];
 }
 
@@ -97,12 +98,12 @@
 {
     _expectDays = expectDays;
     self.expectLabel.text = [NSString stringWithFormat:@"买家期望发货时间：%i天内发货",expectDays];
-    if (expectDays == 1) {
-        [self chooseDate:self.oneBtn];
+    if (expectDays == 7) {
+        [self chooseDate:self.sevenBtn];
     }else if (expectDays == 3) {
         [self chooseDate:self.threeBtn];
     }else {
-        [self chooseDate:self.sevenBtn];
+        [self chooseDate:self.oneBtn];
     }
 }
 
@@ -110,8 +111,12 @@
 {
     if (self.hasReadBtn.selected) {
         [self.hasReadBtn setDefaultBorder];
+        [self.leftBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        self.leftBtn.enabled = NO;
     }else {
         [self.hasReadBtn setBorderColor:[UIColor hexChangeFloat:TKColorGreen] borderWidth:2];
+        self.leftBtn.enabled = YES;
+        [self.leftBtn setTitleColor:[UIColor hexChangeFloat:TKColorBlack] forState:UIControlStateNormal];
     }
     self.hasReadBtn.selected = !self.hasReadBtn.selected;
 }

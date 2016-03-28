@@ -54,7 +54,7 @@
                         <action selector="hasReadAction:" destination="9sE-2g-my2" eventType="touchUpInside" id="ndJ-jq-fku"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tt9-WR-Trt">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tt9-WR-Trt">
                     <rect key="frame" x="188" y="244" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="OJk-U4-T1b"/>
@@ -74,7 +74,7 @@
                     <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不再提示" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kx-ae-66s">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不再提示" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kx-ae-66s">
                     <rect key="frame" x="223" y="250" width="60" height="18"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="iGG-jn-eXS"/>
@@ -103,7 +103,7 @@
                     </state>
                 </button>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNc-sP-8yS">
-                    <rect key="frame" x="20" y="125" width="96.5" height="40"/>
+                    <rect key="frame" x="20" y="125" width="97" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="2Tb-Vt-P35"/>
                     </constraints>
@@ -129,7 +129,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PC-hZ-xie">
-                    <rect key="frame" x="223" y="125" width="96.5" height="40"/>
+                    <rect key="frame" x="223" y="125" width="97" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Nce-5T-PMz"/>
                     </constraints>

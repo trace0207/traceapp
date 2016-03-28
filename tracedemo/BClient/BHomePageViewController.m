@@ -102,9 +102,9 @@
 {
 
     //成功场景
-    [TKAlertView showSuccessWithTitle:@"发表悬赏成果" withMessage:nil commpleteBlock:^(NSInteger buttonIndex) {
-        
-    } cancelTitle:@"取消" determineTitle:nil];
+//    [TKAlertView showSuccessWithTitle:@"发表悬赏成果" withMessage:nil commpleteBlock:^(NSInteger buttonIndex) {
+//        
+//    } cancelTitle:@"取消" determineTitle:nil];
     
     //失败场景
 //    [TKAlertView showFailedWithTitle:@"晒单失败!" withMessage:@"你为什么这么弱？" commpleteBlock:^(NSInteger buttonIndex) {
@@ -131,9 +131,10 @@
 //    } cancelTitle:@"取消" determineTitle:@"确定并支付"];
     
     //发货时间弹窗界面
-//    [TKAlertView showDeliveryTime:7 WithBlock:^(NSInteger buttonIndex) {
-//        
-//    }];
+
+    [TKAlertView showDeliveryTime:3 WithBlock:^(NSInteger buttonIndex, int deliveryTime) {
+        
+    }];
     
     
     //HUD

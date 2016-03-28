@@ -12,7 +12,7 @@
 #import "TKUITools.h"
 #import "UIColor+TK_Color.h"
 #import "TKUserCenter.h"
-
+#import "TKAlertView.h"
 
 @interface GoodsDetailViewController ()
 @property (nonatomic, strong) BannerView *bannerView;
@@ -93,22 +93,31 @@
 
 - (IBAction)grobAction:(UIButton *)sender {
     //抢单动作
-    
-    [[TKProxy proxy].mainProxy accept:[[TKUserCenter instance] getUser].userId rewardId:self.data.id needDays:3 withBlock:^(HF_BaseAck * ack)
-     {
-         if(ack.sucess)
-         {
-             
-         }
-         DDLogInfo(@"ack %@",ack);
-     }];
+    [TKAlertView showDeliveryTime:[self.data.requireDay intValue] WithBlock:^(NSInteger buttonIndex, int deliveryTime) {
+        if (buttonIndex == 1) {
+            [[TKProxy proxy].mainProxy accept:[[TKUserCenter instance] getUser].userId rewardId:self.data.id needDays:deliveryTime withBlock:^(HF_BaseAck * ack)
+             {
+                 if(ack.sucess)
+                 {
+        
+                 }
+                 DDLogInfo(@"ack %@",ack);
+             }];
+        }
+    }];
+
 }
 
 - (IBAction)freeAction:(UIButton *)sender {
     //释放动作
-    [[TKProxy proxy].mainProxy releaseReward:self.data.id source:0 withBlock:^(HF_BaseAck *ack) {
-        DDLogInfo(@"ack %@",ack);
-    }];
+    [TKAlertView showAltertWithTitle:@"确定不接该笔悬赏？" withMessage:@"释放后，您可以在悬赏状态切换位置找到“已释放的悬赏”。" commpleteBlock:^(NSInteger buttonIndex) {
+        if (buttonIndex == 1) {
+            [[TKProxy proxy].mainProxy releaseReward:self.data.id source:0 withBlock:^(HF_BaseAck *ack) {
+                DDLogInfo(@"ack %@",ack);
+            }];
+        }
+    } cancelTitle:@"取消" determineTitle:@"不接"];
+    
 }
 
 
