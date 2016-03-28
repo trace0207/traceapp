@@ -58,7 +58,7 @@
     [[TKProxy proxy].mainProxy getRewardList:self.category.categoryId
                                         page:0
                                         type:self.rewardPageType
-                                rewardStatus:0
+                                rewardStatus:101
                                    withBlock:^(HF_BaseAck *ack) {
         if(ack.sucess)
         {

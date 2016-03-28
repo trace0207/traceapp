@@ -29,6 +29,7 @@
 #import "TKPayProxy.h"
 #import "TKAlertView.h"
 #import "TKUserCenter.h"
+#import "TKProxy.h"
 
 
 #define PICONE 101
@@ -53,6 +54,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     TK_Brand * selectBrand;
     TK_ShareCategory * selectCategory;
     TKAlertView * alertView;
+    Address * ackAddress;
     
 }
 
@@ -125,9 +127,14 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     [TKUITools setRoudBorderForView:self.inputText borderColor:[UIColor tkBorderColor] radius:2 borderWidth:1];
     self.brandText.userInteractionEnabled = NO;
     self.categoryText.userInteractionEnabled = NO;
-//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showAddress)];
-//    [self.addressView addGestureRecognizer:tap];
-//    self.addressText.userInteractionEnabled = NO;
+    //    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showAddress)];
+    //    [self.addressView addGestureRecognizer:tap];
+    //    self.addressText.userInteractionEnabled = NO;
+    
+    ackAddress =  [TKUserCenter instance].getUser.ackData.defaultReceiver;
+    
+    NSString * address =  [NSString stringWithFormat:@"%@  %@  %@",ackAddress.province,ackAddress.city,ackAddress.address];
+    self.addressText.text = address;
 }
 
 
@@ -135,7 +142,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 {
     TKWebViewController *web = [[TKWebViewController alloc] init];
     web.hidDefaultBackBtn = NO;
-    web.defaultURL = AddressURL;
+    web.defaultURL = [[TKProxy proxy].tkBaseUrl stringByAppendingString:AddressURL];
     [self.navigationController pushViewController:web animated:YES];
 //    [TKWebViewController showWebView:@"选择地址" url:AddressURL];
     
@@ -553,8 +560,9 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         arg.sourceId = [[TKUserCenter instance] getUser].userId;
         arg.categoryId = selectCategory.categoryId;
         arg.brandId = selectBrand.brandId;
-        arg.receiverId = @"1"; // 地址id
+        arg.receiverId = ackAddress.id; // 地址id
         arg.requireDay = requireDay;
+    
         
         
         WS(weakSelf)

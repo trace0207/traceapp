@@ -85,6 +85,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
             TK_LoginAck * loginAck = (TK_LoginAck *)ack;
             LoginAckData * loginData = (LoginAckData *)loginAck.data;
             TKUser * user = [[TKUser alloc] init];
+            user.ackData = loginData;
             user.userId = loginData.id;
             user.nickName = loginData.purchaserName;
             user.mobile = loginData.mobile;

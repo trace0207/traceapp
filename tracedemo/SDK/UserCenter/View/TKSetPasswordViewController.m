@@ -75,7 +75,14 @@
     {
         return;
     }
-    [[TKProxy proxy].userProxy getVerifyCode:[TKUserCenter instance].tempUserData.mobile type:0 whtiBlock:^(HF_BaseAck * ack){
+ //  codeType   17：消费者注册短信验证码，19：消费者找回密码短信验证码，18：买手注册短信，20：买手找回密码短信验证码
+    NSInteger type = 17;
+    
+#if B_Client == 1
+    type = 18;
+#endif
+    
+    [[TKProxy proxy].userProxy getVerifyCode:[TKUserCenter instance].tempUserData.mobile type:type whtiBlock:^(HF_BaseAck * ack){
         [self startTimeCount];
     }];
     

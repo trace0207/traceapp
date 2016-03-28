@@ -32,11 +32,11 @@
 {
     [super viewWillAppear:animated];
     [self TKaddNavigationTitleView:self.segmentedControl];
-        UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
-        [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [bt setTitle:@"支付" forState:UIControlStateNormal];
-        [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
-        [self addLeftBarItemWithCustomView:bt];
+//        UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
+//        [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//        [bt setTitle:@"支付" forState:UIControlStateNormal];
+//        [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+//        [self addLeftBarItemWithCustomView:bt];
 }
 
 -(void)initView
@@ -99,11 +99,12 @@
     if(!_vc2)
     {
         _vc2 = [[BPageViewController alloc] init];
+        _vc2.dataType = C_AllReward;
         _vc2.tabViewRightSpace = 90;
         _vc2.indicatorColor = [UIColor tkThemeColor1];
         _vc2.tabsViewBackgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
         _vc2.view.backgroundColor = [UIColor tkThemeColor2];
-        _vc2.dataType = C_AllReward;
+        
     }
     return _vc2;
 }
@@ -113,11 +114,12 @@
     if(!_vc1)
     {
         _vc1 = [[BPageViewController alloc] init];
+        _vc1.dataType = C_showGoods;
         _vc1.tabViewRightSpace = 90;
         _vc1.indicatorColor = [UIColor tkThemeColor1];
         _vc1.tabsViewBackgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
         _vc1.view.backgroundColor = [UIColor tkThemeColor2];
-        _vc1.dataType = C_showGoods;
+        
     }
     return _vc1;
 }

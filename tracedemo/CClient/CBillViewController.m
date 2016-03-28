@@ -10,7 +10,15 @@
 #import "KTDropdownMenuView.h"
 #import "UIColor+TK_Color.h"
 #import "TK_SettingCell.h"
-@interface CBillViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "WebViewJavascriptBridge.h"
+#import "TKProxy.h"
+@interface CBillViewController ()<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>
+{
+    UIWebView * webView;
+    WebViewJavascriptBridge * bridge;
+    NSInteger role;
+    NSInteger month;
+}
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic,strong)KTDropdownMenuView *menuView;
@@ -19,13 +27,33 @@
 
 @implementation CBillViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.tableView];
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+#if B_Client == 1 
+    role = 0;
+#else 
+    role = 1;
+#endif
+    
+    month = 3;
+    
+    webView = [[UIWebView alloc] init];
+    [self initWebView];
+    
+    [self.view addSubview:webView];
+    
+    [webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
-    [self.tableView reloadData];
+    
+    
+//    [self.view addSubview:self.tableView];
+//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+//    }];
+//    [self.tableView reloadData];
 }
 
 - (NSMutableArray *)data
@@ -61,9 +89,12 @@
         _menuView = [[KTDropdownMenuView alloc] initWithFrame:CGRectMake(0, 0,40, 44) titles:titles];
         _menuView.cellColor = [UIColor clearColor];
         _menuView.cellSeparatorColor = [UIColor lightGrayColor];
+        WS(weakSelf)
         _menuView.selectedAtIndex = ^(int index)
         {
             NSLog(@"selected title:%@", titles[index]);
+            month = index + 1;
+            [weakSelf reloadData];
         };
         _menuView.textFont = [UIFont systemFontOfSize:15];
         _menuView.backgroundAlpha = 0.0f;
@@ -75,6 +106,10 @@
     }
     return _menuView;
 }
+
+
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -131,5 +166,71 @@
     return 0.01;
 }
 
+
+
+-(void)initWebView
+{
+    
+    webView.backgroundColor = [UIColor tkThemeColor1];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    bridge = [WebViewJavascriptBridge bridgeForWebView:webView webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"ObjC received message from JS: %@", data);
+        responseCallback(@"Response for message from ObjC");
+    }];
+    WS(weakSelf)
+    [bridge registerHandler:@"hiifitFunction" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSDictionary * dic = (NSDictionary *)data;
+        NSString * actionString = [dic objectForKey:@"action"];
+        [weakSelf handleJSONString:actionString withData:[dic objectForKey:@"data"]];
+        
+    }];
+    
+   webView.scalesPageToFit = YES;
+    
+    
+    
+//#if B_Client
+//    urlPart = BaccountDetailURL;
+//#endif
+    
+    [self reloadData];
+
+
+}
+
+-(void)reloadData
+{
+    NSString * fullUrl = [NSString stringWithFormat:@"%@%@?role=%ld&month=%ld",[TKProxy proxy].tkBaseUrl ,MyBillURL,role,month];
+    NSURL * url = [NSURL URLWithString:fullUrl];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:request];
+}
+
+
+- (void)handleJSONString:(NSString *)actionString withData:(NSDictionary *)dataDic
+{
+    DDLogInfo(@"webcallBack %@  action %@",dataDic, actionString);
+    
+//    if([@"pay" isEqualToString:actionString])// 支付
+//    {
+//        TK_PayArg * arg = [[TK_PayArg alloc] init];
+//        NSString * str = [dataDic objectForKey:@"fundType"];
+//        arg.fundType = [str integerValue];
+//        arg.payAmount = [dataDic objectForKey:@"payAmount"];
+//        arg.bigMoney = 0;
+//        arg.postrewardId = [dataDic objectForKey:@"postrewardId"];
+//        [TKPayProxy pay:arg withBlick:^(NSInteger result) {
+//            
+//            DDLogInfo(@"pay for web page , result = %ld",result);
+//        }];
+//    }
+//    else if([@"linkToNewWindow" isEqualToString:actionString]) // 打开新窗口
+//    {
+//        NSString * relativeUrl = [dataDic objectForKey:@"url"];
+//        [TKWebViewController showWebView:@"订单详情" url:relativeUrl];
+//        
+//    }
+}
 
 @end

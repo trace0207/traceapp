@@ -188,6 +188,9 @@ typedef NS_ENUM(NSInteger,HomePageType)
 //地址
 #define AddressURL @"/web/apollo/address/list.html"
 
+//账单
+#define  MyBillURL  @"/web/apollo/my/bill.html"
+
 
 // 设置 image 头像
 #define TKSetHeadImageView(imageView,url)  \

@@ -132,7 +132,7 @@
         
         arg.content = self.content;
 //        arg.rewardPrice = [TK]self.showPrice * 100;
-//#if B_Client == 0
+//#if B_Client == 1
 //       arg.role = 1;
 //#endif
 //        

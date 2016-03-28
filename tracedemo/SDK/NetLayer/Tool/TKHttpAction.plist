@@ -13,7 +13,7 @@
 	<key>TK_RewardListForBuyerArg1</key>
 	<string>/apollo/login/order/postreward!postRewardSquareListByPurchaser.action</string>
 	<key>TK_RewardListForBuyerArg</key>
-	<string>/apollo/login/order/postreward!postRewardSquareListByPurchaser.action</string>
+	<string>/apollo/login/order/postreward!postRewardListByPurchaser.action</string>
 	<key>TK_PayArg</key>
 	<string>/apollo/login/order/pay!pay.action</string>
 	<key>TK_PublishRewardArg</key>

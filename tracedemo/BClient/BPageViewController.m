@@ -115,11 +115,11 @@
     if(self.dataType == B_AllReward || self.dataType == B_MyUserReward || self.dataType == C_AllReward)
     {
         BHomeChildAVC *vc = [[BHomeChildAVC alloc]init];
+        vc.vm1.rewardPageType = self.dataType;
         TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
         category.categoryId = @"1";
         category.title = @"内衣";
         vc.vm1.category =category;
-        vc.vm1.rewardPageType = self.dataType;
         return vc;
     }else
     {

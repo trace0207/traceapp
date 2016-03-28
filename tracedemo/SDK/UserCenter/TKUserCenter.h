@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TK_UserNormalViewModel.h"
+#import "TK_LoginAck.h"
 
 
 @interface TKUser : NSObject
@@ -27,6 +28,8 @@
 @property (nonatomic, copy) NSString *guarantee; //保证金
 @property (nonatomic,assign)NSInteger sex;
 @property (nonatomic, assign)BOOL isLogin;
+
+@property (nonatomic,strong) LoginAckData * ackData;
 @end
 
 

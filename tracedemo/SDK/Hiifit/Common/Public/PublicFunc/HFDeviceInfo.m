@@ -144,7 +144,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(HFDeviceInfo, shareInstance)
     NSString *deviceModel   = [self getDeviceModel];
     NSString *OSVersion     = [self getDeviceOSVersion];
     NSString *role = @"1";
-#if B_Client
+#if B_Client == 1
     role = @"0";
 #endif
     deviceId = [NSString stringWithFormat:@"IMEI=%@|VERSION=%@|SNAME=%@|DEVICE=%@|OSVERSION=%@|role=%@",IMEI,version,carrierName,deviceModel,OSVersion,role];

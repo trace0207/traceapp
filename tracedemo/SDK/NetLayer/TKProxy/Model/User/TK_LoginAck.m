@@ -9,9 +9,16 @@
 #import "TK_LoginAck.h"
 
 
+
+@implementation Address
+
+
+@end
 @implementation LoginAckData
 
 @end
+
+
 
 @implementation TK_LoginAck
 
