@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *dayBtn3;
 - (IBAction)dayBtn3:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *inputText;
+@property (weak, nonatomic) IBOutlet UILabel *placeholder;
 @property (weak, nonatomic) IBOutlet UIView *addressView;
 @property (weak, nonatomic) IBOutlet UILabel *addressText;
 @property (weak, nonatomic) IBOutlet UITextField *priceInputText;

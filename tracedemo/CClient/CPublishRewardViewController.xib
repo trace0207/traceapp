@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPublishRewardViewController">
@@ -21,6 +21,7 @@
                 <outlet property="inputText" destination="XtW-0P-LTk" id="sUi-Dn-epg"/>
                 <outlet property="mainScrollView" destination="mLV-lu-fL6" id="5SC-mZ-jBW"/>
                 <outlet property="mainView" destination="nXS-GM-Off" id="J3x-cN-Sy0"/>
+                <outlet property="placeholder" destination="OZm-UA-Ozr" id="otq-04-dhT"/>
                 <outlet property="priceInputText" destination="e0p-hl-xk7" id="1pc-rl-hbA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -78,7 +79,10 @@
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入价格" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0p-hl-xk7">
                                     <rect key="frame" x="47" y="6" width="188" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="mUW-9Z-pak"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
@@ -171,12 +175,12 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyG-7g-DIO">
                             <rect key="frame" x="12" y="164" width="351" height="38"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krj-WX-KAC">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krj-WX-KAC">
                                     <rect key="frame" x="0.0" y="0.0" width="111" height="38"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="38" id="ahP-YZ-dtF"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="1天内发货">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -184,13 +188,13 @@
                                         <action selector="dayBtn1:" destination="-1" eventType="touchUpInside" id="sv4-zg-FyR"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSL-Rs-Bzs">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSL-Rs-Bzs">
                                     <rect key="frame" x="120" y="0.0" width="110" height="38"/>
-                                    <color key="backgroundColor" red="0.83137254901960789" green="0.94509803921568625" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="38" id="62w-zY-in3"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="3天内发货">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -198,12 +202,12 @@
                                         <action selector="dayBtn2:" destination="-1" eventType="touchUpInside" id="c0t-wr-EmB"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJY-3N-YdW">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJY-3N-YdW">
                                     <rect key="frame" x="240" y="0.0" width="111" height="38"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="38" id="hQp-Ur-R19"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="7天内发货">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -228,20 +232,35 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-qF-bKo">
                             <rect key="frame" x="12" y="215" width="351" height="80"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="请输入颜色、尺码、尺寸等相关信息" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XtW-0P-LTk">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XtW-0P-LTk">
                                     <rect key="frame" x="0.0" y="0.0" width="351" height="80"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="51e-ut-oOg"/>
+                                    </connections>
                                 </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入颜色、尺码、尺寸等相关信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZm-UA-Ozr">
+                                    <rect key="frame" x="5" y="6" width="230" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="230" id="U5y-pD-2NO"/>
+                                        <constraint firstAttribute="height" constant="21" id="Wia-96-AK1"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="OZm-UA-Ozr" firstAttribute="leading" secondItem="zwd-qF-bKo" secondAttribute="leading" constant="5" id="66l-io-Ke5"/>
                                 <constraint firstItem="XtW-0P-LTk" firstAttribute="top" secondItem="zwd-qF-bKo" secondAttribute="top" id="BMW-RC-XVS"/>
                                 <constraint firstItem="XtW-0P-LTk" firstAttribute="leading" secondItem="zwd-qF-bKo" secondAttribute="leading" id="OLG-IU-wCP"/>
                                 <constraint firstAttribute="bottom" secondItem="XtW-0P-LTk" secondAttribute="bottom" id="Sg5-gI-1aT"/>
                                 <constraint firstAttribute="trailing" secondItem="XtW-0P-LTk" secondAttribute="trailing" id="ceb-uP-Vn5"/>
+                                <constraint firstItem="OZm-UA-Ozr" firstAttribute="top" secondItem="zwd-qF-bKo" secondAttribute="top" constant="6" id="nRX-Qq-lde"/>
                                 <constraint firstAttribute="height" constant="80" id="sBP-E0-ahi"/>
                             </constraints>
                         </view>

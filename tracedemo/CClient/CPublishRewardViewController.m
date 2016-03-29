@@ -31,7 +31,8 @@
 #import "TKUserCenter.h"
 #import "TKProxy.h"
 #import "GlobNotifyDefine.h"
-
+#import "UIView+Border.h"
+#import "UIButton+TitleImage.h"
 
 #define PICONE 101
 #define PICSecond 102
@@ -66,6 +67,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 - (void)viewDidLoad {
     [super viewDidLoad];
     defaultHeight = TKScreenHeight - 20;
+    [self dayBtn2:self.dayBtn2];
     requireDay = @"3";
     [self initView];
     // Do any additional setup after loading the view from its nib.
@@ -85,7 +87,8 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 
 -(void)dealloc
 {
-    [[NSNotificationCenter defaultCenter]removeObserver:self forKeyPath:TKPayNotify];
+    //[[NSNotificationCenter defaultCenter]removeObserver:self forKeyPath:TKPayNotify];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 -(void)initView
@@ -429,25 +432,78 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 
 
 - (IBAction)dayBtn1:(id)sender {
-    self.dayBtn1.backgroundColor = [UIColor btnSelectBackgroundColor];
-    self.dayBtn2.backgroundColor = [UIColor clearColor];
-    self.dayBtn3.backgroundColor = [UIColor clearColor];
+//    self.dayBtn1.backgroundColor = [UIColor btnSelectBackgroundColor];
+//    self.dayBtn2.backgroundColor = [UIColor clearColor];
+//    self.dayBtn3.backgroundColor = [UIColor clearColor];
     requireDay = @"1";
+    
+    [self.dayBtn1 setBorderColor:[UIColor hexChangeFloat:TKColorGreen] borderWidth:2];
+    [self.dayBtn1 setTitleColor:[UIColor hexChangeFloat:TKColorGreen] forState:UIControlStateNormal];
+    [self.dayBtn1 setLeftTitle:@"1天内发货" rightImage:IMG(@"selected")];
+    
+    [self.dayBtn2 setDefaultBorder];
+    [self.dayBtn2 setTitleColor:[UIColor hexChangeFloat:TKColorBlack] forState:UIControlStateNormal];
+    [self.dayBtn2 setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn2 setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn2 setTitle:@"3天内发货" forState:UIControlStateNormal];
+    [self.dayBtn2 setImage:nil forState:UIControlStateNormal];
+    
+    [self.dayBtn3 setDefaultBorder];
+    [self.dayBtn3 setTitleColor:[UIColor hexChangeFloat:TKColorBlack] forState:UIControlStateNormal];
+    [self.dayBtn3 setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn3 setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn3 setTitle:@"7天内发货" forState:UIControlStateNormal];
+    [self.dayBtn3 setImage:nil forState:UIControlStateNormal];
     
 }
 - (IBAction)dayBtn2:(id)sender {
     
-    self.dayBtn2.backgroundColor = [UIColor btnSelectBackgroundColor];
-    self.dayBtn1.backgroundColor = [UIColor clearColor];
-    self.dayBtn3.backgroundColor = [UIColor clearColor];
+//    self.dayBtn2.backgroundColor = [UIColor btnSelectBackgroundColor];
+//    self.dayBtn1.backgroundColor = [UIColor clearColor];
+//    self.dayBtn3.backgroundColor = [UIColor clearColor];
     requireDay = @"3";
+    
+    [self.dayBtn2 setBorderColor:[UIColor hexChangeFloat:TKColorGreen] borderWidth:2];
+    [self.dayBtn2 setTitleColor:[UIColor hexChangeFloat:TKColorGreen] forState:UIControlStateNormal];
+    [self.dayBtn2 setLeftTitle:@"3天内发货" rightImage:IMG(@"selected")];
+    
+    [self.dayBtn1 setDefaultBorder];
+    [self.dayBtn1 setTitleColor:[UIColor hexChangeFloat:TKColorBlack] forState:UIControlStateNormal];
+    [self.dayBtn1 setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn1 setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn1 setTitle:@"1天内发货" forState:UIControlStateNormal];
+    [self.dayBtn1 setImage:nil forState:UIControlStateNormal];
+    
+    [self.dayBtn3 setDefaultBorder];
+    [self.dayBtn3 setTitleColor:[UIColor hexChangeFloat:TKColorBlack] forState:UIControlStateNormal];
+    [self.dayBtn3 setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn3 setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn3 setTitle:@"7天内发货" forState:UIControlStateNormal];
+    [self.dayBtn3 setImage:nil forState:UIControlStateNormal];
     
 }
 - (IBAction)dayBtn3:(id)sender {
-    self.dayBtn3.backgroundColor = [UIColor btnSelectBackgroundColor];
-    self.dayBtn1.backgroundColor = [UIColor clearColor];
-    self.dayBtn2.backgroundColor = [UIColor clearColor];
+//    self.dayBtn3.backgroundColor = [UIColor btnSelectBackgroundColor];
+//    self.dayBtn1.backgroundColor = [UIColor clearColor];
+//    self.dayBtn2.backgroundColor = [UIColor clearColor];
     requireDay = @"7";
+    [self.dayBtn3 setBorderColor:[UIColor hexChangeFloat:TKColorGreen] borderWidth:2];
+    [self.dayBtn3 setTitleColor:[UIColor hexChangeFloat:TKColorGreen] forState:UIControlStateNormal];
+    [self.dayBtn3 setLeftTitle:@"7天内发货" rightImage:IMG(@"selected")];
+    
+    [self.dayBtn2 setDefaultBorder];
+    [self.dayBtn2 setTitleColor:[UIColor hexChangeFloat:TKColorBlack] forState:UIControlStateNormal];
+    [self.dayBtn2 setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn2 setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn2 setTitle:@"3天内发货" forState:UIControlStateNormal];
+    [self.dayBtn2 setImage:nil forState:UIControlStateNormal];
+    
+    [self.dayBtn1 setDefaultBorder];
+    [self.dayBtn1 setTitleColor:[UIColor hexChangeFloat:TKColorBlack] forState:UIControlStateNormal];
+    [self.dayBtn1 setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn1 setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.dayBtn1 setTitle:@"1天内发货" forState:UIControlStateNormal];
+    [self.dayBtn1 setImage:nil forState:UIControlStateNormal];
 }
 - (IBAction)brandSelectClick:(id)sender {
     
@@ -664,6 +720,21 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     [self dismissViewControllerAnimated:YES completion:nil];
     } cancelTitle:nil determineTitle:@"确定"];
     
+}
+
+#pragma mark - text view delegate
+- (void)textViewDidChange:(UITextView *)textView;
+{
+    if (textView.text.length>0) {
+        self.placeholder.hidden = YES;
+    }else {
+        self.placeholder.hidden = NO;
+    }
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end
