@@ -59,4 +59,6 @@
     
     
 }
+- (IBAction)followAction:(id)sender {
+}
 @end

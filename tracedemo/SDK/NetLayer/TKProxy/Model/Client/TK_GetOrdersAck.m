@@ -8,6 +8,9 @@
 
 #import "TK_GetOrdersAck.h"
 
+@implementation GetOrderData
+
+@end
 @implementation TK_GetOrdersAck
 
 @end

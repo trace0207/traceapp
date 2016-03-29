@@ -16,6 +16,8 @@
 #import "TKICommentViewController.h"
 #import <objc/runtime.h>
 #import "UIColor+TK_Color.h"
+#import "TK_GetOrdersAck.h"
+#import "NSString+HFStrUtil.h"
 
 @interface TKIShowGoodsVM()<TKShowGoodsCellDelegate>
 
@@ -28,51 +30,76 @@
 {
     
     WS(weakSelf)
-    [[TKProxy proxy].mainProxy getShowOrders:1 page:0 withBlock:^(HF_BaseAck *ack) {
+    [[TKProxy proxy].mainProxy getShowOrders:self.category.categoryId page:0 withBlock:^(HF_BaseAck *ack) {
        
-        DDLogInfo(@"orders list %@",ack);
+//        DDLogInfo(@"orders list %@",ack);
+        
+        if([ack isKindOfClass:[TK_GetOrdersAck class]])
+        {
+            [weakSelf resetData:(TK_GetOrdersAck *)ack];
+        }
+        
         [weakSelf stopRefresh];
-        [weakSelf resetData];
         
     }];
 }
 
 
--(void)resetData
+-(void)resetData:(TK_GetOrdersAck *)ack
 {
     DDLogInfo(@"loadDefaultData  enter   go  go go ");
     
     TKTableSectionM * section = [[TKTableSectionM alloc] init];
     [section.rowsData removeAllObjects];
-    section.sectionHeadHeight = 1;
-    section.sectionFootHeight = 1;
+    section.sectionHeadHeight = 0.1;
+    section.sectionFootHeight = 0.1;
     
-    for(int i=0;i<20;i++)
-    {
+    for (GetOrderData * data in ack.data) {
+        
         TKIShowGoodsRowM * row = [[TKIShowGoodsRowM alloc] init];
-        
         row.showGoodsData = [[TKShowGoodsRowData alloc] init];
+        row.ackData = data;
         
-        for(int k = 0;k<=i; k++)
+        if(![NSString isStrEmpty:data.picAddr1])
         {
-            NSString *iamgeURL;
-            if(k%4 ==0)
-            {
-                iamgeURL = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124331_438_X.jpg";
-            }else if(k%4==1)
-            {
-                iamgeURL = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124332_084_X.jpg";
-            }else if(k%4 == 2)
-            {
-                iamgeURL = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124332_950_X.jpg";
-            }else
-            {
-                iamgeURL = @"http://183.131.13.104:80/share/data/spider/pic/user/11186/weibo/weibo_20151109124332_498_X.jpg";
-            }
-            [row.showGoodsData.pics addObject:iamgeURL];
+            [row.showGoodsData.pics addObject:data.picAddr1];
         }
         
+        if(![NSString isStrEmpty:data.picAddr2])
+        {
+            [row.showGoodsData.pics addObject:data.picAddr2];
+        }
+        if(![NSString isStrEmpty:data.picAddr3])
+        {
+            [row.showGoodsData.pics addObject:data.picAddr3];
+        }
+        if(![NSString isStrEmpty:data.picAddr4])
+        {
+            [row.showGoodsData.pics addObject:data.picAddr4];
+        }
+        if(![NSString isStrEmpty:data.picAddr5])
+        {
+            [row.showGoodsData.pics addObject:data.picAddr5];
+        }
+        if(![NSString isStrEmpty:data.picAddr6])
+        {
+            [row.showGoodsData.pics addObject:data.picAddr6];
+        }
+        if(![NSString isStrEmpty:data.picAddr7])
+        {
+            [row.showGoodsData.pics addObject:data.picAddr7];
+        }
+        if(![NSString isStrEmpty:data.picAddr8])
+        {
+            [row.showGoodsData.pics addObject:data.picAddr8];
+        }
+        if(![NSString isStrEmpty:data.picAddr9])
+        {
+            [row.showGoodsData.pics addObject:data.picAddr9];
+        }
+
         [section.rowsData addObject:row];
+        
     }
     [self setDefaultSection:section];
     [self.mTableView reloadData];
@@ -230,8 +257,12 @@
             UILabel * label = [[UILabel alloc] init];
             [view addSubview:label];
             label.backgroundColor = [UIColor clearColor];
-            label.text = @"悬赏价:￥3800";
-            label.textAlignment = NSTextAlignmentCenter;
+            if(i == 0)
+            {
+                label.text = @"悬赏价:￥";//3800";
+
+            }
+                        label.textAlignment = NSTextAlignmentCenter;
             label.textColor = [UIColor whiteColor];
             [label setFont:[UIFont fontWithName:@"Helvetica" size:12]];
             [label mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -244,11 +275,37 @@
     cell.textHeight.constant = [rowD getContentTextHeight];
     // －－－－－加载图片结束
     
+    GetOrderData * ackData = rowD.ackData;
     // 设置其他信息
-    cell.userHeadImage.userId = @"";
-    cell.headFirstLabel.text =  @"这里显示昵称";
-    cell.headSecondLabel.text = @"这里显示其他信息";
-    cell.contentText.text = @"到了，速度真快。 谁买谁知道。海外代购航空直邮，一周内到货，你值得信赖  bala bala ～～  bala bala ～ ";
+    cell.userHeadImage.userId = ackData.id;
+    TKSetHeadImageView(cell.userHeadImage,ackData.userHeaderUrl)
+    cell.headFirstLabel.text =  ackData.userNickName;
+    cell.headSecondLabel.text = ackData.userSignature;
+    cell.contentText.text = ackData.content;
+    
+    TKSetHeadImageView(cell.buyerHeadImage, ackData.purchaserHeaderUrl)
+    cell.buyerNameText.text = ackData.purchaserNickName;
+    cell.zanCount.text =  ackData.praiseCount;
+    if(ackData.praiseCount.integerValue <99)
+    {
+        cell.zanMore.hidden = YES;
+    }
+    else{
+       cell.zanMore.hidden = NO;
+    }
+    cell.followCount.text = ackData.followCount;
+    
+    if(ackData.followCount.integerValue < 99)
+    {
+        cell.followMore.hidden = YES;
+    }
+    else{
+       cell.followMore.hidden = NO;
+    }
+    
+    [cell.brandBtn setTitle:ackData.brandName forState:UIControlStateNormal];
+    [cell.categoryBtn setTitle:ackData.categoryName forState:UIControlStateNormal];
+    
     cell.tkShowGoodscellDelegate = self;
     cell.indexPath = indexPath;
 }

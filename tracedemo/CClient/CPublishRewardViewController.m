@@ -85,7 +85,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 
 -(void)dealloc
 {
-    [[NSNotificationCenter defaultCenter]removeObserver:self forKeyPath:TKPayNotify];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:TKPayNotify object:nil];
 }
 
 -(void)initView

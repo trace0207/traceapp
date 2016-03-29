@@ -25,7 +25,7 @@
 /**
  消费者C 端晒单池
  **/
--(void)getShowOrders:(NSInteger) type page:(NSInteger)page  withBlock:(hfAckBlock)block;
+-(void)getShowOrders:(NSString *) type page:(NSInteger)page  withBlock:(hfAckBlock)block;
 
 
 
@@ -171,9 +171,9 @@
 /**
  查询C端悬赏广场
  **/
--(void)getCRewardList:(NSString *)categoryId
-                 page:(NSInteger)page
-         rewardStatus:(NSInteger)status
-            withBlock:(hfAckBlock)block;
+//-(void)getCRewardList:(NSString *)categoryId
+//                 page:(NSInteger)page
+//         rewardStatus:(NSInteger)status
+//            withBlock:(hfAckBlock)block;
 
 @end

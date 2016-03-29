@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="359.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-Ts-WWL">
@@ -22,7 +22,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Yf-1T-5tr">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="31"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tk_image_head" translatesAutoresizingMaskIntoConstraints="NO" id="FM8-kW-RaX">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tk_image_head" translatesAutoresizingMaskIntoConstraints="NO" id="FM8-kW-RaX" customClass="TKHeadImageView">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="H1B-QN-2lv"/>
@@ -256,6 +256,9 @@
                                                 <state key="normal" title="跟单">
                                                     <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="followAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PuU-EH-BRF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -318,12 +321,24 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="addressText" destination="oft-hF-7N3" id="cmY-oU-63w"/>
+                <outlet property="brandBtn" destination="Web-2f-P4B" id="q9E-Mz-M3v"/>
+                <outlet property="buyerHeadImage" destination="VRh-Tn-2fs" id="sWb-qF-lso"/>
+                <outlet property="buyerNameText" destination="OYY-Fm-deq" id="bsD-ea-BdT"/>
+                <outlet property="buyerVipLevelText" destination="Mzq-fh-wfQ" id="S2B-Jj-ZGB"/>
+                <outlet property="categoryBtn" destination="tDz-fx-Iwo" id="Ucq-c2-g87"/>
                 <outlet property="contentText" destination="h9T-Np-ZHp" id="6Yb-Ul-lcW"/>
+                <outlet property="followCount" destination="xIX-c3-Dhd" id="RWT-Ft-QzV"/>
+                <outlet property="followMore" destination="nR8-Kt-5UT" id="0o4-UL-vni"/>
                 <outlet property="headFirstLabel" destination="uwt-W4-NAm" id="ing-IX-Afx"/>
                 <outlet property="headSecondLabel" destination="FoS-4y-T0A" id="sZC-20-6Uq"/>
                 <outlet property="imageContentView" destination="5B4-AT-Bsh" id="tpK-Rb-E2D"/>
                 <outlet property="imageFiledHeight" destination="cOm-h6-lpL" id="rO3-np-lLs"/>
                 <outlet property="textHeight" destination="Bi9-Ge-9aU" id="qhU-dt-JQE"/>
+                <outlet property="timeText" destination="zqc-Oh-GoH" id="fJV-3r-zeU"/>
+                <outlet property="userHeadImage" destination="FM8-kW-RaX" id="P14-Zu-GV9"/>
+                <outlet property="zanCount" destination="nuC-fp-zPi" id="8HK-7d-SeY"/>
+                <outlet property="zanMore" destination="Jsl-78-hRi" id="Y6i-Yw-UEv"/>
             </connections>
             <point key="canvasLocation" x="249.5" y="427"/>
         </tableViewCell>

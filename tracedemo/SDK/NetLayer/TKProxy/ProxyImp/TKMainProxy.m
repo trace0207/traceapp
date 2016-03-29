@@ -57,7 +57,7 @@
  *  @param type  晒单类型
  *  @param block 回调block
  */
--(void)getShowOrders:(NSInteger) type
+-(void)getShowOrders:(NSString *) type
                 page:(NSInteger)page
            withBlock:(hfAckBlock)block{
     

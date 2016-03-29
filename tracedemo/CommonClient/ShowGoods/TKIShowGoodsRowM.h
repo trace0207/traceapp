@@ -7,6 +7,7 @@
 //
 
 #import "TKTableViewRowM.h"
+#import "TK_GetOrdersAck.h"
 
 
 
@@ -18,6 +19,8 @@
 
 @interface TKIShowGoodsRowM : TKTableViewRowM
 @property (nonatomic,strong) TKShowGoodsRowData * showGoodsData;
+
+@property (nonatomic,strong) GetOrderData * ackData;
 
 -(CGFloat)getPicWidth;
 -(CGFloat)getPicHeight;

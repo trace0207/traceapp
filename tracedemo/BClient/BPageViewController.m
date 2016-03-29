@@ -125,7 +125,7 @@
     {
         TKShowGoodsListVC *vc = [[TKShowGoodsListVC alloc]init];
         TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
-        category.categoryId = @"1";
+        category.categoryId = @"";
         category.title = @"内衣";
         vc.vm.category =category;
         return vc;

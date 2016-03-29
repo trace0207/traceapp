@@ -219,7 +219,7 @@
 -(void)dealloc
 {
 
-    [[NSNotificationCenter defaultCenter]removeObserver:self forKeyPath:TKUserLoginBackEvent];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 

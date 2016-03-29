@@ -7711,8 +7711,8 @@
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: wei yu (PKE3P2425Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wei yu (PKE3P2425Z)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7739,7 +7739,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.consumer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "48edb671-040e-442f-be8f-3e8d78a9b776";
+				PROVISIONING_PROFILE = "ff32bc93-a5c4-4e69-9c25-460dcd3bf013";
 			};
 			name = Debug;
 		};
@@ -7748,8 +7748,8 @@
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: wei yu (PKE3P2425Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wei yu (PKE3P2425Z)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7771,7 +7771,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.consumer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "48edb671-040e-442f-be8f-3e8d78a9b776";
+				PROVISIONING_PROFILE = "ff32bc93-a5c4-4e69-9c25-460dcd3bf013";
 			};
 			name = Release;
 		};
