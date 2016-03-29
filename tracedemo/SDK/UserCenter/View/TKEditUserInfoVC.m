@@ -184,7 +184,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navTitle = @"个人资料";
+    self.navTitle = @"我的个人信息";
     vm = [[TKEditUserInfoTableVM alloc] initWithDefaultTable];
     [self.view addSubview:vm.mTableView];
     [vm tkUpdateViewConstraint];

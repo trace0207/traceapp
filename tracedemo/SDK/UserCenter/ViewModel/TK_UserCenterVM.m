@@ -134,11 +134,11 @@
     switch (row) {
         case 0:
             cell.label1.text = @"设置";
-            cell.icon1.image = IMG(@"My_stepRecord");
+            cell.icon1.image = IMG(@"tk_icon_setting");
             break;
         case 1:
             cell.label1.text = @"关于";
-            cell.icon1.image = IMG(@"My_stepRecord");
+            cell.icon1.image = IMG(@"tk_icon_about");
             break;
         default:
             break;
@@ -154,11 +154,11 @@
     switch (row) {
         case 0:
             cell.label1.text = @"账户详情";
-            cell.icon1.image = IMG(@"My_stepRecord");
+            cell.icon1.image = IMG(@"tk_icon_account_detail");
             break;
         case 1:
             cell.label1.text = @"我的个人信息";
-            cell.icon1.image = IMG(@"My_stepRecord");
+            cell.icon1.image = IMG(@"tk_icon_myuserinfo");
             break;
         default:
             break;
@@ -173,7 +173,7 @@
     TK_SettingCell * cell =   [TK_SettingCell loadDefaultTextWithLeftIconType:self];
     cell.label2.hidden  = NO;
     cell.label1.text = @"联系客服";
-    cell.icon1.image = IMG(@"My_message");
+    cell.icon1.image = IMG(@"tk_icon_gethelp");
     cell.label2.text = @"400-800-8008";
     return cell;
 }
@@ -192,8 +192,8 @@
         [cell.headImage setImage:IMG(@"user")];
     }
     cell.label1.text = user.nickName;
-    cell.label1.text = @"增斌";
-    cell.label2.text = @"还是喜欢法国品牌";
+//    cell.label1.text = 
+    cell.label2.text = user.signature;
 //    cell.label3.textColor = [UIColor tkThemeColor1];
 //    cell.label3.text = TKStrFromNumber(user.score);//[[NSNumber numberWithInteger:user.score]stringValue];
     return cell;
@@ -203,9 +203,11 @@
 {
     if (row == 0) {
         CAcountViewController * bvc = [[CAcountViewController alloc] init];
+       
         [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
     }else{
         TKEditUserInfoVC * bvc = [[TKEditUserInfoVC alloc] init];
+         bvc.navTitle = @"我的个人信息";
         [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
     }
 }
