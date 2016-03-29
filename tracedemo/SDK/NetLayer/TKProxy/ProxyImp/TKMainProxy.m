@@ -43,7 +43,7 @@
 -(void)publishShowGoods:(TKPublishShowGoodsArg *)arg withBlock:(hfAckBlock)block
 {
 #if B_Client == 0
-    arg.role = 1;
+    arg.role = @"1";
 #endif
     
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];

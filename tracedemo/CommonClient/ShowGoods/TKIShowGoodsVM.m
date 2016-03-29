@@ -140,8 +140,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
-    [self toShowGoodsDetailPage:rowD.showGoodsData];
+//    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
+//    [self toShowGoodsDetailPage:rowD.showGoodsData];
     
 }
 
@@ -259,10 +259,14 @@
             label.backgroundColor = [UIColor clearColor];
             if(i == 0)
             {
-                label.text = @"悬赏价:￥";//3800";
+                NSInteger price =  rowD.ackData.showPrice.integerValue;
+                label.text = [NSString stringWithFormat:@"悬赏价:￥%0.2f",price/100.0f];//3800";
 
+            }else
+            {
+                label.text  = @"吊牌图";
             }
-                        label.textAlignment = NSTextAlignmentCenter;
+            label.textAlignment = NSTextAlignmentCenter;
             label.textColor = [UIColor whiteColor];
             [label setFont:[UIFont fontWithName:@"Helvetica" size:12]];
             [label mas_makeConstraints:^(MASConstraintMaker *make) {

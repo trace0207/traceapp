@@ -781,9 +781,11 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 -(void)onPublishSuccess{
     
     [alertView removeFromSuperview];
-    
-    [TKAlertView showSuccessWithTitle:@"发表悬赏成功" withMessage:nil commpleteBlock:^(NSInteger buttonIndex) {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSString * title =  self.publishType == 1?@"发表晒单成功":@"发表悬赏成功";
+    WS(weakSelf)
+    [TKAlertView showSuccessWithTitle:title withMessage:nil commpleteBlock:^(NSInteger buttonIndex) {
+        [weakSelf TKI_leftBarAction];
+//    [self dismissViewControllerAnimated:YES completion:nil];
     } cancelTitle:nil determineTitle:@"确定"];
     
 }
