@@ -7,7 +7,7 @@
 //
 
 #import "BMyShowGoodsViewController.h"
-#import "TKPublishShowGoodsVC.h"
+#import "CPublishRewardViewController.h"
 #import "AppDelegate.h"
 //#import "TKShowGoodsListVM.h"
 #import "TKIShowGoodsVM.h"
@@ -39,7 +39,7 @@
 {
     [super viewWillAppear:animated];
     [self TKaddNavigationTitle:@"我的晒单"];
-    [self TKsetRightBarItemImage:IMG(@"tk_icon_camera_w") addTarget:self action:@selector(TKI_rightBarAction) forControlEvents:UIControlEventTouchUpInside];
+    [self TKsetRightBarItemImage:IMG(@"tk_icon_showorder") addTarget:self action:@selector(TKI_rightBarAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -69,7 +69,8 @@
 
 -(void)TKI_rightBarAction
 {
-    TKPublishShowGoodsVC *vc = [[TKPublishShowGoodsVC alloc] init];
+    CPublishRewardViewController *vc = [[CPublishRewardViewController alloc] init];
+    vc.publishType = 1;
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
 }
 

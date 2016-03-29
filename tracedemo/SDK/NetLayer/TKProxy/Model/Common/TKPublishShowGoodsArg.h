@@ -7,15 +7,16 @@
 //
 
 #import "HF_BaseArg.h"
+#import "TK_PublishRewardArg.h"
 
 @interface TKPublishShowGoodsArg : HF_BaseArg
 
 @property (nonatomic,copy)NSString *orderId;
 @property (nonatomic,copy)NSString *content;
-@property (nonatomic,assign)NSInteger brandId;
-@property (nonatomic,assign)NSInteger categoryId;
-@property (nonatomic,assign)NSInteger role;
-@property (nonatomic,assign)NSInteger showPrice;
+@property (nonatomic,copy)NSString *brandId;
+@property (nonatomic,copy)NSString *categoryId;
+@property (nonatomic,copy)NSString *role;
+@property (nonatomic,copy)NSString *showPrice;
 @property (nonatomic,copy)NSString *picAddr1;
 @property (nonatomic,copy)NSString *picAddr2;
 @property (nonatomic,copy)NSString *picAddr3;
@@ -27,5 +28,9 @@
 @property (nonatomic,copy)NSString *picAddr9;
 
 
+/**
+  arg 对象转换
+ **/
++(TKPublishShowGoodsArg *)changeFromRrewardArg:(TK_PublishRewardArg*)arg;
 
 @end

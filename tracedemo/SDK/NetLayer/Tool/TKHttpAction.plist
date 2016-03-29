@@ -35,6 +35,6 @@
 	<key>TK_UploadImageArg</key>
 	<string>/apollo/login/upload!upload.action</string>
 	<key>TKPublishShowGoodsArg</key>
-	<string>/apollo/login/order/show-order!showOrder.action</string>
+	<string>/apollo/login/order/show-order!purchaserShowOrder.action</string>
 </dict>
 </plist>

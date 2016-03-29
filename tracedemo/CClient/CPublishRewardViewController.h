@@ -12,6 +12,8 @@
 
 @interface CPublishRewardViewController : TKIBaseNavWithDefaultBackVC
 
+@property (nonatomic,assign) NSInteger publishType;
+
 @property (weak, nonatomic) IBOutlet UIView *imageContaner;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageFieldHeight;
@@ -44,5 +46,8 @@
 @property (weak, nonatomic) IBOutlet TKClearView *clearView;
 - (IBAction)brandSelectClick:(id)sender;
 - (IBAction)categorySelectAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *dayBtnField;
+@property (weak, nonatomic) IBOutlet UIView *infoField;
+@property (weak, nonatomic) IBOutlet UIView *addressField;
 
 @end

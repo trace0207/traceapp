@@ -33,6 +33,7 @@
 #import "GlobNotifyDefine.h"
 #import "UIView+Border.h"
 #import "UIButton+TitleImage.h"
+#import "TKPublishShowGoodsArg.h"
 
 #define PICONE 101
 #define PICSecond 102
@@ -66,9 +67,16 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    defaultHeight = TKScreenHeight - 20;
-    [self dayBtn2:self.dayBtn2];
-    requireDay = @"3";
+    if(self.publishType != 1)
+    {
+        defaultHeight = TKScreenHeight - 64;
+        //    [self dayBtn2:self.dayBtn2];
+        requireDay = @"3";
+    }else
+    {
+        defaultHeight = TKScreenHeight - 64;
+    }
+
     [self initView];
     // Do any additional setup after loading the view from its nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPayNotify:) name:TKPayNotify object:nil];
@@ -101,7 +109,15 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     
     picWidth = (TKScreenWidth -  (picCountInLine+1)* picWiteSpaceWidth )/ picCountInLine;
     self.hidDefaultBackBtn = YES;
-    self.navTitle = @"发布悬赏";
+    
+    if(self.publishType == 1)
+    {
+        self.navTitle = @"晒单";
+    }else
+    {
+        self.navTitle = @"发布悬赏";
+    }
+    
     [self.mainScrollView setContentSize:CGSizeMake(TKScreenWidth, defaultHeight)];
     self.mainView.clipsToBounds = YES;
 //    self.mainView.frame = CGRectMake(0, 0, TKScreenWidth, defaultHeight);
@@ -129,9 +145,17 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     self.secondPic.tag = PICSecond;
     [self.secondPic addGestureRecognizer:tap2];
     [self resetPicField];
+    if(self.publishType == 1)
+    {
+        self.dayBtnField.hidden = YES;
+        self.addressField.hidden = YES;
+        [self.infoField mas_updateConstraints:^(MASConstraintMaker *make) {
+            
+            make.top.mas_equalTo(self.dayBtnField);
+            
+        }];
+    }
     [self defaultViewSetting];
-    
-    
 }
 
 
@@ -348,8 +372,6 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    
     [self TKsetLeftBarItemText:@"取消" withTextColor:[UIColor tkThemeColor1] addTarget:self action:@selector(TKI_leftBarAction) forControlEvents:UIControlEventTouchUpInside];
     [self TKsetRightBarItemText:@"发布" withTextColor:[UIColor tkThemeColor1] addTarget:self action:@selector(TKI_rightBarAction) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -372,37 +394,15 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 
 -(void)TKI_leftBarAction
 {
-//    [TKNotifycationViewController showNotifyCation:@"测试通知"];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)cancelAction:(UIButton *)sender {
-    
-    [self TKI_leftBarAction];
-    
-}
-
--(void)TKI_rightBarAction
-{
-    
-    [self hidKeyBord];
-    
-    // 发布请求
-    
-    if(image1 == nil)
+    if(self.publishType == 1)
     {
-        DDLogInfo(@"iamge1 is nil");
-        return;
-    }
-    if(image2 == nil)
+        [[AppDelegate getMainNavigation] popViewControllerAnimated:YES];
+    }else
     {
-        DDLogInfo(@"image2 is nil");
-        return ;
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
-
-    [self beginSend];
-    
 }
+
 
 -(TK_ImageSelectBoxView *)firstPic
 {
@@ -556,6 +556,49 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 
 #pragma  mark  publish 
 
+
+
+-(void)TKI_rightBarAction
+{
+    
+    if(self.publishType == 1)
+    {
+        [self publishShowGoods];
+    }
+    else
+    {
+        [self publishReward];
+    }
+    
+    
+    
+}
+
+-(void)publishShowGoods
+{
+    [self publishReward];
+}
+
+-(void)publishReward
+{
+    [self hidKeyBord];
+    
+    // 发布请求
+    
+    if(image1 == nil)
+    {
+        DDLogInfo(@"iamge1 is nil");
+        return;
+    }
+    if(image2 == nil)
+    {
+        DDLogInfo(@"image2 is nil");
+        return ;
+    }
+    
+    [self beginSend];
+}
+
 /**
  图片上传结果返回
  **/
@@ -638,18 +681,40 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         
         
         WS(weakSelf)
-        [[TKProxy proxy].mainProxy publishReward:arg withBlock:^(HF_BaseAck *ack) {
-            if(ack.sucess)
-            {
-                TK_PublishRewardAck * a = (TK_PublishRewardAck*)ack;
-                [weakSelf requestPay:a.data.deposit postrewardId:a.data.rewardId];
-            }
-            else
-            {
-             
-                [weakSelf showLoadingError:ack.msg];
-            }
-        }];
+        
+        if(self.publishType == 1)
+        {
+            TKPublishShowGoodsArg *a = [TKPublishShowGoodsArg changeFromRrewardArg:arg];
+            [[TKProxy proxy].mainProxy publishShowGoods:a withBlock:^(HF_BaseAck *ack) {
+                
+//                DDLogInfo(@"publishshow goods result = %@",ack);
+                
+                if(ack.sucess)
+                {
+                    [weakSelf onPublishSuccess];
+                }else
+                {
+                    [weakSelf showLoadingError:ack.msg];
+                }
+            }];
+            
+        }else
+        {
+            
+            [[TKProxy proxy].mainProxy publishReward:arg withBlock:^(HF_BaseAck *ack) {
+                if(ack.sucess)
+                {
+                    TK_PublishRewardAck * a = (TK_PublishRewardAck*)ack;
+                    [weakSelf requestPay:a.data.deposit postrewardId:a.data.rewardId];
+                }
+                else
+                {
+                    
+                    [weakSelf showLoadingError:ack.msg];
+                }
+            }];
+        }
+        
     }
 }
 
@@ -688,7 +753,9 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 -(void)beginSend
 {
     
-    alertView = [TKAlertView showHUDWithText:@"正在发布悬赏，请稍等"];
+    NSString * tips = self.publishType == 1? @"正在发布晒单,请稍等...":@"正在发布悬赏，请稍等";
+    
+    alertView = [TKAlertView showHUDWithText:tips];
     
     NSMutableArray * images = [[NSMutableArray alloc] init];
     

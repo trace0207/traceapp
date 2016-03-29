@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPublishRewardViewController">
             <connections>
+                <outlet property="addressField" destination="WBI-tc-PkR" id="swj-yY-r3x"/>
                 <outlet property="addressText" destination="ihn-dI-ZCh" id="1yZ-lq-Cnc"/>
                 <outlet property="addressView" destination="WBI-tc-PkR" id="egd-5U-e4F"/>
                 <outlet property="brandSelect" destination="Ye1-VK-vtk" id="1yZ-t6-yY0"/>
@@ -16,8 +17,10 @@
                 <outlet property="dayBtn1" destination="Krj-WX-KAC" id="FyO-kP-C4R"/>
                 <outlet property="dayBtn2" destination="JSL-Rs-Bzs" id="owu-Xj-Igf"/>
                 <outlet property="dayBtn3" destination="ZJY-3N-YdW" id="fdS-yn-VQe"/>
+                <outlet property="dayBtnField" destination="TyG-7g-DIO" id="ZCp-HC-cN7"/>
                 <outlet property="imageContaner" destination="pLR-Ny-hzQ" id="X90-R9-IKd"/>
                 <outlet property="imageFieldHeight" destination="xbQ-Z2-pDg" id="Jde-4k-D5q"/>
+                <outlet property="infoField" destination="zwd-qF-bKo" id="4ie-VQ-5LI"/>
                 <outlet property="inputText" destination="XtW-0P-LTk" id="sUi-Dn-epg"/>
                 <outlet property="mainScrollView" destination="mLV-lu-fL6" id="5SC-mZ-jBW"/>
                 <outlet property="mainView" destination="nXS-GM-Off" id="J3x-cN-Sy0"/>
