@@ -111,25 +111,25 @@
     switch (row) {
         case 0:
             cell.label1.text = @"保证金";
-            cell.icon1.image = IMG(@"My_stepRecord");
+            cell.icon1.image = IMG(@"tk_icon_ deposit");
             cell.label2.hidden = NO;
             cell.label2.text = [[TKUserCenter instance] getUser].guarantee;
             break;
         case 1:
             cell.label1.text = @"账户详情";
-            cell.icon1.image = IMG(@"My_stepRecord");
+            cell.icon1.image = IMG(@"tk_icon_account_detail");
             break;
         case 2:
             cell.label1.text = @"我的个人信息";
-            cell.icon1.image = IMG(@"My_stepRecord");
+            cell.icon1.image = IMG(@"tk_icon_myuserinfo");
             break;
         case 3:
             cell.label1.text = @"我的账单流水";
-            cell.icon1.image = IMG(@"My_stepRecord");
+            cell.icon1.image = IMG(@"tk_icon_my_paylist");
             break;
         case 4:
             cell.label1.text = @"我的客户管理";
-            cell.icon1.image = IMG(@"My_stepRecord");
+            cell.icon1.image = IMG(@"tk_icon_myconsumers");
             break;
 
         default:
@@ -148,15 +148,15 @@
     switch (row) {
         case 0:
             cell.label1.text = @"设置";
-            cell.icon1.image = IMG(@"My_setting");
+            cell.icon1.image = IMG(@"tk_icon_setting");
             break;
         case 1:
             cell.label1.text = @"关于";
-            cell.icon1.image = IMG(@"My_setting");
+            cell.icon1.image = IMG(@"tk_icon_about");
             break;
         default:
             cell.label1.text = @"生成邀请码";
-            cell.icon1.image = IMG(@"My_setting");
+            cell.icon1.image = IMG(@"tk_icon_invitecode");
             break;
     }
     
@@ -171,7 +171,7 @@
     switch (row) {
         case 0:
             cell.label1.text = @"联系客服";
-            cell.icon1.image = IMG(@"My_message");
+            cell.icon1.image = IMG(@"tk_icon_gethelp");
             cell.label2.hidden = NO;
             cell.label2.text = @"400-800-8008";
             break;
