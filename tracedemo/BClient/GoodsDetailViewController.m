@@ -23,13 +23,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.navTitle = @"详情";
 //    NSString *text = self.data.content;
     NSString * text = self.data.content;
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
     CGFloat height = [UIKitTool caculateHeight:text sizeOfWidth:(kScreenWidth-68) withAttributes:dic];
     
-    self.detailView.frame = CGRectMake(0, kScreenWidth, kScreenWidth, 91+height);
+    self.detailView.frame = CGRectMake(0, kScreenWidth, kScreenWidth, 91+height+300);
 //    self.detailView.countDownView.secondsUTC = 1457312501+BSDay*13;
     self.detailView.textView.text = text;
     
@@ -42,7 +43,7 @@
     TKBorder(self.grobBtn);
     TKBorder(self.freeBtn);
     [self.grobBtn setBackgroundImage:IMG(@"bg_purchase") forState:UIControlStateNormal];
-    self.scrollView.contentSize = CGSizeMake(kScreenWidth, self.bannerView.frame.size.height+self.detailView.frame.size.height);
+    self.scrollView.contentSize = CGSizeMake(kScreenWidth, self.bannerView.frame.size.height+self.detailView.frame.size.height-300);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,6 +78,7 @@
         _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-55-64)];
         _scrollView.alwaysBounceHorizontal = NO;
         _scrollView.alwaysBounceVertical = YES;
+        _scrollView.backgroundColor = [UIColor HFColorStyle_6];
         [self.view addSubview:_scrollView];
     }
     return _scrollView;
