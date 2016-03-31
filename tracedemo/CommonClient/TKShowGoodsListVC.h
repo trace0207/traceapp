@@ -14,5 +14,6 @@
 
 @property (nonatomic,strong) TKIShowGoodsVM *vm;
 
+-(void)loadData;
 
 @end

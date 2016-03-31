@@ -34,7 +34,6 @@
     self.delegate = self;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tabViewRightSpace = 95;
-    [self reloadData];
     [self.view addSubview:self.menuView];
 }
 - (void)viewDidAppear:(BOOL)animated
@@ -44,8 +43,9 @@
 }
 
 
--(void)reloadTitleView
+-(void)reloadTitleViewAndData
 {
+    DDLogInfo(@"BPageViewController loadData enter ");
     NSArray<__kindof TK_ShareCategory*> * shareCategorys = nil;
     
 #if B_Client == 1
@@ -71,6 +71,10 @@
     self.brandsArray = [brandList copy];
     self.shareCategorys = [shareCategorys copy];
     [self reloadData];
+    if(shareCategorys.count != 0 && brandList.count != 0)
+    {
+        self.titleReady = YES;
+    }
     
 }
 
@@ -151,14 +155,15 @@
         NSInteger num1 = [number integerValue];
         num = num1;
     }
+    
     CGFloat width = size.width + 20;
+    
     if (num > 0) {
         width += 17;
     }
     label.frame = CGRectMake(0, 0, width, 44);
     
-    [label setTitle:title number:num]; 
-    
+    [label setTitle:title number:num];    
     return label;
 }
 
@@ -172,6 +177,10 @@
         category.categoryId = @"1";
         category.title = @"内衣";
         vc.vm1.category =category;
+        
+        [self performSelector:@selector(pullRefreshB:) withObject:vc afterDelay:0.4];
+        
+        
         return vc;
     }else
     {
@@ -180,8 +189,19 @@
         category.categoryId = @"";
         category.title = @"内衣";
         vc.vm.category =category;
+        [self performSelector:@selector(pullRefreshA:) withObject:vc afterDelay:0.4];
         return vc;
     }
+}
+
+-(void)pullRefreshB:(TKShowGoodsListVC *)vc
+{
+    [vc loadData];
+}
+
+-(void)pullRefreshA:(BHomeChildAVC *)vc
+{
+    [vc loadData];
 }
 
 
@@ -193,9 +213,9 @@
         
        TK_ShareCategory * s =  [[TK_ShareCategory alloc] init];
      
-        s.sum = @"10";
-        s.title = @"测试";
-        s.categoryId = @"10";
+        s.sum = @"0";
+        s.title = @"全部类目";
+        s.categoryId = @"";
         [_shareCategorys addObject:s];
     }
     return _shareCategorys;

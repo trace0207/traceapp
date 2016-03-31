@@ -16,6 +16,9 @@
 #import "CountDownView.h"
 #import "UIImage+Scale.h"
 @interface BHomePageViewController ()
+{
+  
+}
 
 @property (nonatomic,strong)BPageViewController * vc1;
 @property (nonatomic,strong)BPageViewController * vc2;
@@ -42,15 +45,31 @@
 
 - (void)segmentedAction:(UISegmentedControl *)seg
 {
+     WS(weakSelf)
     if (seg.selectedSegmentIndex == 0) {
         [self addRightBarItemWithCustomView:nil];
+        [self addChildViewController:self.vc1];
         [self transitionFromViewController:self.vc2 toViewController:self.vc1 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
+            [weakSelf.vc1 didMoveToParentViewController:self];
+            [weakSelf.vc2 willMoveToParentViewController:nil];
+            [weakSelf.vc2 removeFromParentViewController];
+            [weakSelf.vc1.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(self.view);
+            }];
+
         }];
     }else {
+        [self addChildViewController:self.vc2];
         [self addRightBarItemWithCustomView:self.menuView];
         [self transitionFromViewController:self.vc1 toViewController:self.vc2 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
             
-            
+            [weakSelf.vc2 didMoveToParentViewController:self];
+            [weakSelf.vc1 willMoveToParentViewController:nil];
+            [weakSelf.vc1 removeFromParentViewController];
+            [weakSelf.vc2.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(self.view);
+            }];
+
         }];
     }
 }
@@ -61,6 +80,7 @@
     self.hidDefaultBackBtn = YES;
     [self initView];
 }
+
 
 - (KTDropdownMenuView *)menuView
 {
@@ -91,11 +111,11 @@
     if (self.segmentedControl.selectedSegmentIndex == 1) {
         [self addRightBarItemWithCustomView:self.menuView];
     }
-    UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
-    [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [bt setTitle:@"弹窗" forState:UIControlStateNormal];
-    [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
-    [self addLeftBarItemWithCustomView:bt];
+//    UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
+//    [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    [bt setTitle:@"弹窗" forState:UIControlStateNormal];
+//    [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+//    [self addLeftBarItemWithCustomView:bt];
 }
 
 - (void)test
@@ -143,8 +163,8 @@
     
     //刷新title数据
     
-    [self.vc1 reloadTitleView];
-    [self.vc2 reloadTitleView];
+//    [self.vc1 reloadTitleView];
+//    [self.vc2 reloadTitleView];
     
 }
 
@@ -157,8 +177,8 @@
 {
     [self addChildViewController:self.vc1];
     [self addChildViewController:self.vc2];
-    self.vc2.view.frame = CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 49 -20 - 44);
     [self.view addSubview:self.vc1.view];
+    [self.vc1 reloadTitleViewAndData];
 }
 
 - (void)didReceiveMemoryWarning {

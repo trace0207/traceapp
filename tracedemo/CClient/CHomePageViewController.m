@@ -32,29 +32,26 @@
 {
     [super viewWillAppear:animated];
     [self TKaddNavigationTitleView:self.segmentedControl];
-        UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
-        [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [bt setTitle:@"刷新" forState:UIControlStateNormal];
-        [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
-        [self addLeftBarItemWithCustomView:bt];
+//        UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
+//        [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//        [bt setTitle:@"刷新" forState:UIControlStateNormal];
+//        [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+//        [self addLeftBarItemWithCustomView:bt];
 }
 
 -(void)initView
 {
     [self addChildViewController:self.vc1];
-//    [self addChildViewController:self.vc2];
-//    self.vc1.view.frame = CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 49 -20 - 44);
     [self.view addSubview:self.vc1.view];
-   
-//    self.vc2.view.frame = CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 49 -20 - 44);
+    [self.vc1 reloadTitleViewAndData];
 }
 -(void)test
 {
 //    self.payView.money = 1200;
 //    [self.payView show];
-    
-    [self.vc1 reloadTitleView];
-    [self.vc2 reloadTitleView];
+//    
+//    [self.vc1 reloadTitleView];
+//    [self.vc2 reloadTitleView];
 }
 - (TKPayChooseView *)payView
 {
@@ -95,9 +92,15 @@
             [weakSelf.vc1 didMoveToParentViewController:self];
             [weakSelf.vc2 willMoveToParentViewController:nil];
             [weakSelf.vc2 removeFromParentViewController];
-            [self.vc1.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            [weakSelf.vc1.view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.edges.equalTo(self.view);
             }];
+            
+            if(!self.vc1.titleReady)
+            {
+                [self.vc1 reloadTitleViewAndData];
+            }
+            
         }];
     }else {
         [self addChildViewController:self.vc2];
@@ -106,9 +109,13 @@
             [weakSelf.vc2 didMoveToParentViewController:self];
             [weakSelf.vc1 willMoveToParentViewController:nil];
             [weakSelf.vc1 removeFromParentViewController];
-            [self.vc2.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            [weakSelf.vc2.view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.edges.equalTo(self.view);
             }];
+            if(!weakSelf.vc2.titleReady)
+            {
+                [weakSelf.vc2 reloadTitleViewAndData];
+            }
         }];
         
     }

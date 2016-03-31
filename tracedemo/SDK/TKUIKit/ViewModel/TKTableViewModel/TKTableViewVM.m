@@ -275,8 +275,9 @@
     if(refreshController)
     {
         [refreshController startPullDownRefreshing];
+        [_mTableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];// 滚动到顶部
     }
-    [_mTableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];// 滚动到顶部
+   
 }
 
 

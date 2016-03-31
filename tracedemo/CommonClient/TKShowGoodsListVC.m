@@ -20,6 +20,11 @@
 
 
 
+-(void)loadData
+{
+   [self.vm startPullDownRefreshing];
+}
+
 
 
 - (void)viewDidLoad {
@@ -30,7 +35,7 @@
     
     [self.view addSubview:self.vm.pullRefreshView];
     [self.vm tkUpdateViewConstraint];
-    [self.vm tkLoadDefaultData];
+//    [self.vm tkLoadDefaultData];
     
     
     // Do any additional setup after loading the view.

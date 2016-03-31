@@ -381,6 +381,7 @@
         
         CGRect frame = tabView.frame;
         
+        // 不足  4个item时，刚好充满view，等分
         if(_tabCount <=4)
         {
             CGRect  defaultFrame = CGRectMake(frame.origin.x, frame.origin.y, _tabsView.frame.size.width/_tabCount, frame.size.height);
@@ -469,15 +470,26 @@
         UIView *tabViewContent = [self.dataSource viewPager:self viewForTabAtIndex:index];
         
         // Create TabView and subview the content
+        
+        CGRect frame = tabViewContent.frame;
+        if(_tabCount <= 4)
+        {
+            frame = CGRectMake(frame.origin.x, frame.origin.y, _tabsView.frame.size.width/_tabCount, frame.size.height);
+        }
+        
+        tabViewContent.frame = frame;
+        
         TabView *tabView = [[TabView alloc] initWithFrame:tabViewContent.frame];
         [tabView addSubview:tabViewContent];
         [tabView setClipsToBounds:NO];
         [tabView setIndicatorColor:self.indicatorColor];
         
         //tabViewContent.center = tabView.center;
-        
         // Replace the null object with tabView
         [_tabs replaceObjectAtIndex:index withObject:tabView];
+        
+        
+        
     }
     
     return [_tabs objectAtIndex:index];
