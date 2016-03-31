@@ -61,4 +61,13 @@
 }
 - (IBAction)followAction:(id)sender {
 }
+
+- (IBAction)messageAction:(id)sender
+{
+    
+}
+- (void)setHeadViewModel:(id)model
+{
+    
+}
 @end

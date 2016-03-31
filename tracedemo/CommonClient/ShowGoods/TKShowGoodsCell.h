@@ -56,6 +56,12 @@
 
 
 
+//head cell
+@property (nonatomic, weak) IBOutlet UIImageView *headImage;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;;
+@property (nonatomic, weak) IBOutlet UILabel *gradeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *describleLabel;
+- (IBAction)messageAction:(id)sender;
 
-
+- (void)setHeadViewModel:(id)model;
 @end

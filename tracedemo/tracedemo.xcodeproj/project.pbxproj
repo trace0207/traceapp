@@ -145,6 +145,10 @@
 		9182F2741C9EFCE800428B7F /* AbountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182F2711C9EFCE800428B7F /* AbountViewController.m */; };
 		9182F2751C9EFCE800428B7F /* AbountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9182F2721C9EFCE800428B7F /* AbountViewController.xib */; };
 		9182F2761C9EFCE800428B7F /* AbountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9182F2721C9EFCE800428B7F /* AbountViewController.xib */; };
+		91C109B71CACD15200BC567E /* TKBuyerCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C109B61CACD15200BC567E /* TKBuyerCenterVM.m */; };
+		91C109B81CACD15200BC567E /* TKBuyerCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C109B61CACD15200BC567E /* TKBuyerCenterVM.m */; };
+		91C109BB1CACECC800BC567E /* TKBuyerCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C109BA1CACECC800BC567E /* TKBuyerCenterViewController.m */; };
+		91C109BC1CACECC800BC567E /* TKBuyerCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C109BA1CACECC800BC567E /* TKBuyerCenterViewController.m */; };
 		91F603401CA2C5EE00238FCE /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6033F1CA2C5EE00238FCE /* UserInfoViewController.m */; };
 		91F603411CA2C5EE00238FCE /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6033F1CA2C5EE00238FCE /* UserInfoViewController.m */; };
 		91F603441CA2C6DC00238FCE /* TKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F603431CA2C6DC00238FCE /* TKSettingsViewController.m */; };
@@ -2821,6 +2825,10 @@
 		9182F2701C9EFCE800428B7F /* AbountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbountViewController.h; sourceTree = "<group>"; };
 		9182F2711C9EFCE800428B7F /* AbountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbountViewController.m; sourceTree = "<group>"; };
 		9182F2721C9EFCE800428B7F /* AbountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbountViewController.xib; sourceTree = "<group>"; };
+		91C109B51CACD15100BC567E /* TKBuyerCenterVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBuyerCenterVM.h; sourceTree = "<group>"; };
+		91C109B61CACD15200BC567E /* TKBuyerCenterVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBuyerCenterVM.m; sourceTree = "<group>"; };
+		91C109B91CACECC800BC567E /* TKBuyerCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBuyerCenterViewController.h; sourceTree = "<group>"; };
+		91C109BA1CACECC800BC567E /* TKBuyerCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBuyerCenterViewController.m; sourceTree = "<group>"; };
 		91F6033E1CA2C5EE00238FCE /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		91F6033F1CA2C5EE00238FCE /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		91F603421CA2C6DC00238FCE /* TKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSettingsViewController.h; sourceTree = "<group>"; };
@@ -3064,6 +3072,8 @@
 				8A0547F21CA26C0100AC8DD5 /* TKIShowGoodsRowM.m */,
 				8A0547F31CA26C0100AC8DD5 /* TKIShowGoodsVM.h */,
 				8A0547F41CA26C0100AC8DD5 /* TKIShowGoodsVM.m */,
+				91C109B51CACD15100BC567E /* TKBuyerCenterVM.h */,
+				91C109B61CACD15200BC567E /* TKBuyerCenterVM.m */,
 				8A0547F51CA26C0100AC8DD5 /* TKShowGoodsCell.h */,
 				8A0547F61CA26C0100AC8DD5 /* TKShowGoodsCell.m */,
 				8A0547F71CA26C0100AC8DD5 /* TKShowGoodsCell.xib */,
@@ -5515,6 +5525,8 @@
 				8A0464F21C880FF200E6B1E0 /* BMyShowGoodsViewController.h */,
 				8A0464F31C880FF200E6B1E0 /* BMyShowGoodsViewController.m */,
 				8A0464F41C880FF200E6B1E0 /* BMyShowGoodsViewController.xib */,
+				91C109B91CACECC800BC567E /* TKBuyerCenterViewController.h */,
+				91C109BA1CACECC800BC567E /* TKBuyerCenterViewController.m */,
 				9182F2701C9EFCE800428B7F /* AbountViewController.h */,
 				9182F2711C9EFCE800428B7F /* AbountViewController.m */,
 				9182F2721C9EFCE800428B7F /* AbountViewController.xib */,
@@ -6510,6 +6522,7 @@
 				BB83F9821C72C01C0013A6A0 /* ZBFaceView.m in Sources */,
 				BB83F9831C72C01C0013A6A0 /* GetDiseaseIntroAck.m in Sources */,
 				8AA7F71C1C8BCA3300CE0F17 /* TK_BrandListAck.m in Sources */,
+				91C109BB1CACECC800BC567E /* TKBuyerCenterViewController.m in Sources */,
 				BB83F9841C72C01C0013A6A0 /* HFSensitiveWordsRes.m in Sources */,
 				8A0464F51C880FF200E6B1E0 /* BMyShowGoodsViewController.m in Sources */,
 				BBA372501C75B9B30075333E /* BHomeChildBVC.m in Sources */,
@@ -6803,6 +6816,7 @@
 				BB83FA8E1C72C01C0013A6A0 /* MMLogoView.m in Sources */,
 				BB83FA8F1C72C01C0013A6A0 /* SDCollectionViewCell.m in Sources */,
 				BB83FA901C72C01C0013A6A0 /* HFUploadPostReq.m in Sources */,
+				91C109B71CACD15200BC567E /* TKBuyerCenterVM.m in Sources */,
 				BB83FA911C72C01C0013A6A0 /* BaseView.m in Sources */,
 				BB83FA921C72C01C0013A6A0 /* SIMenuTable.m in Sources */,
 				BB83FA931C72C01C0013A6A0 /* TKTableViewVM.m in Sources */,
@@ -7137,6 +7151,7 @@
 				BB83FC401C72C16B0013A6A0 /* GetDiseaseIntroAck.m in Sources */,
 				BB83FC411C72C16B0013A6A0 /* HFSensitiveWordsRes.m in Sources */,
 				8AA7F71D1C8BCA3300CE0F17 /* TK_BrandListAck.m in Sources */,
+				91C109BC1CACECC800BC567E /* TKBuyerCenterViewController.m in Sources */,
 				BB83FC421C72C16B0013A6A0 /* MainPageAdvanceSchemeAck.m in Sources */,
 				8A0464F61C880FF200E6B1E0 /* BMyShowGoodsViewController.m in Sources */,
 				BB83FC431C72C16B0013A6A0 /* HFTestView.m in Sources */,
@@ -7430,6 +7445,7 @@
 				BB83FD4C1C72C16B0013A6A0 /* SDCollectionViewCell.m in Sources */,
 				8A9985941C86C519000F9CBC /* BHomeChildAScrolBox.m in Sources */,
 				BB83FD4D1C72C16B0013A6A0 /* HFUploadPostReq.m in Sources */,
+				91C109B81CACD15200BC567E /* TKBuyerCenterVM.m in Sources */,
 				BB83FD4E1C72C16B0013A6A0 /* BaseView.m in Sources */,
 				BB83FD4F1C72C16B0013A6A0 /* SIMenuTable.m in Sources */,
 				BB83FD501C72C16B0013A6A0 /* TKTableViewVM.m in Sources */,

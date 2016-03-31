@@ -8,7 +8,7 @@
 
 #import "TKTableViewVM.h"
 
-
+#import "TK_GetOrdersAck.h"
 #import "TK_Brand.h"
 #import "TK_ShareCategory.h"
 
@@ -18,5 +18,5 @@
 @property (nonatomic,strong)TK_ShareCategory * category;
 
 @property (nonatomic,assign) BOOL hasInitData;
-
+-(void)resetData:(TK_GetOrdersAck *)ack;
 @end

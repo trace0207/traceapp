@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -328,27 +328,104 @@
                 <outlet property="buyerVipLevelText" destination="Mzq-fh-wfQ" id="S2B-Jj-ZGB"/>
                 <outlet property="categoryBtn" destination="tDz-fx-Iwo" id="Ucq-c2-g87"/>
                 <outlet property="contentText" destination="h9T-Np-ZHp" id="6Yb-Ul-lcW"/>
+                <outlet property="describleLabel" destination="2GN-m2-kCG" id="i24-sD-q9V"/>
                 <outlet property="followCount" destination="xIX-c3-Dhd" id="RWT-Ft-QzV"/>
                 <outlet property="followMore" destination="nR8-Kt-5UT" id="0o4-UL-vni"/>
+                <outlet property="gradeLabel" destination="rR8-sj-3n5" id="rlb-9f-pqK"/>
                 <outlet property="headFirstLabel" destination="uwt-W4-NAm" id="ing-IX-Afx"/>
+                <outlet property="headImage" destination="yhC-bD-55r" id="8VK-4M-3ag"/>
                 <outlet property="headSecondLabel" destination="FoS-4y-T0A" id="sZC-20-6Uq"/>
                 <outlet property="imageContentView" destination="5B4-AT-Bsh" id="tpK-Rb-E2D"/>
                 <outlet property="imageFiledHeight" destination="cOm-h6-lpL" id="rO3-np-lLs"/>
+                <outlet property="nameLabel" destination="l06-3i-a4J" id="cxe-w2-UEj"/>
                 <outlet property="textHeight" destination="Bi9-Ge-9aU" id="qhU-dt-JQE"/>
                 <outlet property="timeText" destination="zqc-Oh-GoH" id="fJV-3r-zeU"/>
                 <outlet property="userHeadImage" destination="FM8-kW-RaX" id="P14-Zu-GV9"/>
                 <outlet property="zanCount" destination="nuC-fp-zPi" id="8HK-7d-SeY"/>
                 <outlet property="zanMore" destination="Jsl-78-hRi" id="Y6i-Yw-UEv"/>
             </connections>
-            <point key="canvasLocation" x="249.5" y="427"/>
+            <point key="canvasLocation" x="225.5" y="169"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Cr4-ho-YEZ">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cr4-ho-YEZ" id="6Nb-wS-5IN">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head_default" translatesAutoresizingMaskIntoConstraints="NO" id="yhC-bD-55r">
+                        <rect key="frame" x="25" y="25" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="rcl-y7-tsF"/>
+                            <constraint firstAttribute="width" constant="50" id="ucU-rv-jHR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="罗嘉佑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l06-3i-a4J">
+                        <rect key="frame" x="83" y="29" width="48" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="Uk0-XR-IEo"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="Zdm-aI-te9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我喜欢看蓝猫淘气三千问" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GN-m2-kCG">
+                        <rect key="frame" x="83" y="51" width="164" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="ofi-JU-4XN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.69019607843137254" green="0.69019607843137254" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RJ-3A-Qa0">
+                        <rect key="frame" x="255" y="30" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="XUr-r0-L0k"/>
+                            <constraint firstAttribute="height" constant="40" id="pc6-cn-ee8"/>
+                        </constraints>
+                        <state key="normal" image="icon_tab_message"/>
+                        <connections>
+                            <action selector="messageAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ORz-rA-L7b"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B10级买手" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rR8-sj-3n5">
+                        <rect key="frame" x="144" y="29" width="86" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="SV0-Dc-MTb"/>
+                            <constraint firstAttribute="width" constant="86" id="zFK-SF-eIg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.69019607843137254" green="0.69019607843137254" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="l06-3i-a4J" firstAttribute="leading" secondItem="yhC-bD-55r" secondAttribute="trailing" constant="8" id="06b-g8-F7f"/>
+                    <constraint firstAttribute="trailing" secondItem="5RJ-3A-Qa0" secondAttribute="trailing" constant="25" id="276-Mw-fiP"/>
+                    <constraint firstItem="5RJ-3A-Qa0" firstAttribute="centerY" secondItem="6Nb-wS-5IN" secondAttribute="centerY" id="775-tT-fLo"/>
+                    <constraint firstItem="l06-3i-a4J" firstAttribute="top" secondItem="yhC-bD-55r" secondAttribute="top" constant="4" id="8Ja-9Z-IAl"/>
+                    <constraint firstItem="yhC-bD-55r" firstAttribute="centerY" secondItem="6Nb-wS-5IN" secondAttribute="centerY" id="FNA-Wo-f1X"/>
+                    <constraint firstItem="2GN-m2-kCG" firstAttribute="top" secondItem="rR8-sj-3n5" secondAttribute="bottom" constant="4" id="j6C-qZ-K4K"/>
+                    <constraint firstItem="rR8-sj-3n5" firstAttribute="centerY" secondItem="l06-3i-a4J" secondAttribute="centerY" id="qml-Ef-qlS"/>
+                    <constraint firstItem="5RJ-3A-Qa0" firstAttribute="leading" secondItem="2GN-m2-kCG" secondAttribute="trailing" constant="8" id="sFm-Yk-Jjd"/>
+                    <constraint firstItem="yhC-bD-55r" firstAttribute="leading" secondItem="6Nb-wS-5IN" secondAttribute="leading" constant="25" id="uvm-M1-E2w"/>
+                    <constraint firstItem="rR8-sj-3n5" firstAttribute="leading" secondItem="l06-3i-a4J" secondAttribute="trailing" constant="13" id="whr-lM-oeL"/>
+                    <constraint firstItem="2GN-m2-kCG" firstAttribute="leading" secondItem="yhC-bD-55r" secondAttribute="trailing" constant="8" id="x2Y-kh-Ndk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="225" y="463"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="bg_connect_buyer" width="86" height="31"/>
+        <image name="head_default" width="56" height="56"/>
         <image name="icon_connect" width="26" height="11"/>
         <image name="icon_follow_money" width="17" height="16"/>
         <image name="icon_location" width="12" height="16"/>
         <image name="icon_parise" width="17" height="16"/>
+        <image name="icon_tab_message" width="30" height="30"/>
         <image name="tk_icon_vip" width="64" height="64"/>
         <image name="tk_image_head" width="148" height="168"/>
     </resources>

@@ -17,6 +17,7 @@
 #import "CAcountViewController.h"
 #import "AbountViewController.h"
 #import "TKSettingsViewController.h"
+#import "TKBuyerCenterViewController.h"
 @interface TK_UserCenterVM()
 {
  
@@ -118,6 +119,8 @@
 - (void)exit:(id)sender
 {
     //退出操作
+    TKBuyerCenterViewController *vc = [[TKBuyerCenterViewController alloc]init];
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
 }
 
 -(void)goToUserPage

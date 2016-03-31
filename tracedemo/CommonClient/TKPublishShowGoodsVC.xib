@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TKPublishShowGoodsVC">
@@ -25,7 +25,7 @@
             <point key="canvasLocation" x="414" y="-130"/>
         </view>
         <view contentMode="scaleToFill" id="ZXJ-Ag-Ilg">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cap-co-hkU">
@@ -76,13 +76,13 @@
                         </mask>
                         <mask key="constraints">
                             <exclude reference="LxV-1R-tku"/>
+                            <exclude reference="SZb-Zw-9gL"/>
+                            <exclude reference="sS4-kd-fmf"/>
+                            <exclude reference="tGw-io-Wza"/>
                             <exclude reference="56W-CO-r1b"/>
                             <exclude reference="MEE-09-Uvx"/>
                             <exclude reference="haq-vi-yvv"/>
                             <exclude reference="yV7-dP-asC"/>
-                            <exclude reference="SZb-Zw-9gL"/>
-                            <exclude reference="sS4-kd-fmf"/>
-                            <exclude reference="tGw-io-Wza"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
@@ -92,13 +92,13 @@
                         </mask>
                         <mask key="constraints">
                             <include reference="LxV-1R-tku"/>
+                            <include reference="SZb-Zw-9gL"/>
+                            <include reference="sS4-kd-fmf"/>
+                            <include reference="tGw-io-Wza"/>
                             <include reference="56W-CO-r1b"/>
                             <include reference="MEE-09-Uvx"/>
                             <include reference="haq-vi-yvv"/>
                             <include reference="yV7-dP-asC"/>
-                            <include reference="SZb-Zw-9gL"/>
-                            <include reference="sS4-kd-fmf"/>
-                            <include reference="tGw-io-Wza"/>
                         </mask>
                     </variation>
                 </view>
@@ -267,7 +267,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="品类:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wft-qJ-cBO">
                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                         <rect key="frame" x="8" y="10" width="42" height="21"/>
@@ -392,11 +392,11 @@
                     <exclude reference="IoO-z4-byU"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="JMc-eq-1ps"/>
+                    <exclude reference="z8f-uY-p2i"/>
                     <exclude reference="20n-sj-skN"/>
                     <exclude reference="Rt0-Dz-7hu"/>
                     <exclude reference="T52-l5-r8z"/>
-                    <exclude reference="JMc-eq-1ps"/>
-                    <exclude reference="z8f-uY-p2i"/>
                     <exclude reference="DIr-YZ-fs8"/>
                     <exclude reference="MvQ-Y4-sX2"/>
                     <exclude reference="e4j-Ga-hsR"/>
@@ -417,11 +417,11 @@
                     <include reference="IoO-z4-byU"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="JMc-eq-1ps"/>
+                    <include reference="z8f-uY-p2i"/>
                     <include reference="20n-sj-skN"/>
                     <include reference="Rt0-Dz-7hu"/>
                     <include reference="T52-l5-r8z"/>
-                    <include reference="JMc-eq-1ps"/>
-                    <include reference="z8f-uY-p2i"/>
                     <include reference="DIr-YZ-fs8"/>
                     <include reference="MvQ-Y4-sX2"/>
                     <include reference="e4j-Ga-hsR"/>
@@ -456,7 +456,7 @@
             <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="highlightedColor"/>
         </label>
     </objects>
