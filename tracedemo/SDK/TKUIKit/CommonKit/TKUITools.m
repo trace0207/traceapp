@@ -111,4 +111,15 @@
     return l;
 }
 
+/**
+ 返回解析过后的图片地址
+ **/
++ (NSString*)getRawImage:(NSString*)imageUrl
+{
+    if (!imageUrl) {
+        return @"";
+    }
+    return  [imageUrl stringByReplacingOccurrencesOfString:@"_X" withString:@"_R"];
+}
+
 @end

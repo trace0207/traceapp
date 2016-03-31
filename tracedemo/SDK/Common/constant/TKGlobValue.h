@@ -195,7 +195,7 @@ typedef NS_ENUM(NSInteger,HomePageType)
 // 设置 image 头像
 #define TKSetHeadImageView(imageView,url)  \
 [imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:url]]  \
-              placeholderImage:[UIImage imageNamed:@"head_default"]];
+              placeholderImage:[UIImage imageNamed:@"tk_image_head_default"]];
 
 #define TKSetLoadingImageView(imageView,url)  \
 [imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getRawImage:url]]  \

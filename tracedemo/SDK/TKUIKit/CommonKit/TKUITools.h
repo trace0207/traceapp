@@ -53,7 +53,13 @@
                      radius:(CGFloat)radius
                 borderWidth:(CGFloat)width;
 
-
+/**
+ 返回默认的  list 加载数据为空的视图
+ **/
 +(UIView *)getListViewEmptyTip;
 
+/**
+ 返回解析过后的图片地址
+ **/
++ (NSString*)getRawImage:(NSString*)imageUrl;
 @end

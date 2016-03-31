@@ -243,6 +243,8 @@
                 
             }];
             
+            view.userInteractionEnabled = NO;
+            
             UIImageView * addMoreImage = [[UIImageView alloc] init];
             addMoreImage.image = IMG(@"icon_big_right_arrow");
             [cell.imageContentView addSubview:addMoreImage];
@@ -301,12 +303,24 @@
     GetOrderData * ackData = rowD.ackData;
     // 设置其他信息
     cell.userHeadImage.userId = ackData.id;
-    TKSetHeadImageView(cell.userHeadImage,ackData.userHeaderUrl)
-    cell.headFirstLabel.text =  ackData.userNickName;
-    cell.headSecondLabel.text = ackData.userSignature;
-    cell.contentText.text = ackData.content;
     
-    TKSetHeadImageView(cell.buyerHeadImage, ackData.purchaserHeaderUrl)
+    
+    if([ackData.userId isEqualToString:@"0"])//匿名晒单
+    {
+        cell.userHeadImage.image = IMG(@"tk_image_head_default");
+        cell.headFirstLabel.text =  @"匿名消费者";
+        cell.headSecondLabel.text = @"我是一个土豪，不解释";
+        cell.contentText.text = ackData.content;
+    }
+    else // 正常显示
+    {
+        TKSetHeadImageView(cell.userHeadImage,  ackData.userHeaderUrl)
+        cell.headFirstLabel.text =  ackData.userNickName;
+        cell.headSecondLabel.text = ackData.userSignature;
+        cell.contentText.text = ackData.content;
+
+    }
+    TKSetHeadImageView(cell.buyerHeadImage, [TKUITools getRawImage:ackData.purchaserHeaderUrl])
     cell.buyerNameText.text = ackData.purchaserNickName;
     cell.zanCount.text =  ackData.praiseCount;
     if(ackData.praiseCount.integerValue <99)
