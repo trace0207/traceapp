@@ -18,7 +18,7 @@
 #import "TKBuyerCenterViewController.h"
 #import "TKSettingsViewController.h"
 #import "TKInviteCodeViewController.h"
-
+#import "TKBuyerCenterViewController.h"
 @implementation BUserCenterVM
 
 
@@ -104,7 +104,7 @@
 
 -(void)goToUserPage
 {
-    TKEditUserInfoVC * bvc = [[TKEditUserInfoVC alloc] init];
+    TKBuyerCenterViewController * bvc = [[TKBuyerCenterViewController alloc] init];
     [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
 }
 
@@ -219,10 +219,16 @@
 -(void)onTableRowSelectFromSectionOne:(NSInteger)row view:(TK_SettingCell *)cell
 {
     
-    TKIBaseNavWithDefaultBackVC * normalVC = [[TKIBaseNavWithDefaultBackVC alloc] init];
-    normalVC.navTitle = cell.label1.text;
-    [[AppDelegate getMainNavigation] pushViewController:normalVC animated:YES];
-    return;
+    if (row == 2) {
+        TKEditUserInfoVC *vc = [[TKEditUserInfoVC alloc]init];
+        [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    }else{
+        TKIBaseNavWithDefaultBackVC * normalVC = [[TKIBaseNavWithDefaultBackVC alloc] init];
+        normalVC.navTitle = cell.label1.text;
+        [[AppDelegate getMainNavigation] pushViewController:normalVC animated:YES];
+    }
+    
+
     
 //    if (row == 0) {
 //        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
