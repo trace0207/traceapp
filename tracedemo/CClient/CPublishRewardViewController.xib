@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPublishRewardViewController">
             <connections>
-                <outlet property="addressField" destination="WBI-tc-PkR" id="swj-yY-r3x"/>
-                <outlet property="addressText" destination="ihn-dI-ZCh" id="1yZ-lq-Cnc"/>
-                <outlet property="addressView" destination="WBI-tc-PkR" id="egd-5U-e4F"/>
+                <outlet property="addressField" destination="WBI-tc-PkR" id="HpO-oV-wqb"/>
+                <outlet property="addressText" destination="ihn-dI-ZCh" id="ocz-zo-nGA"/>
+                <outlet property="brandField" destination="8n7-HN-mku" id="ynf-aV-iKa"/>
                 <outlet property="brandSelect" destination="Ye1-VK-vtk" id="1yZ-t6-yY0"/>
                 <outlet property="brandText" destination="4zl-e1-9Lw" id="TrV-aB-fPQ"/>
                 <outlet property="categorySelect" destination="8d8-a8-j6d" id="i4J-he-qb9"/>
@@ -21,6 +21,7 @@
                 <outlet property="imageContaner" destination="pLR-Ny-hzQ" id="X90-R9-IKd"/>
                 <outlet property="imageFieldHeight" destination="xbQ-Z2-pDg" id="Jde-4k-D5q"/>
                 <outlet property="infoField" destination="zwd-qF-bKo" id="4ie-VQ-5LI"/>
+                <outlet property="infoFieldMarginTop" destination="cOm-JR-1NB" id="TrP-FZ-XBz"/>
                 <outlet property="inputText" destination="XtW-0P-LTk" id="sUi-Dn-epg"/>
                 <outlet property="mainScrollView" destination="mLV-lu-fL6" id="5SC-mZ-jBW"/>
                 <outlet property="mainView" destination="nXS-GM-Off" id="J3x-cN-Sy0"/>
@@ -192,7 +193,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSL-Rs-Bzs">
-                                    <rect key="frame" x="120" y="0.0" width="110" height="38"/>
+                                    <rect key="frame" x="121" y="0.0" width="110" height="38"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="38" id="62w-zY-in3"/>
@@ -206,7 +207,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJY-3N-YdW">
-                                    <rect key="frame" x="240" y="0.0" width="111" height="38"/>
+                                    <rect key="frame" x="241" y="0.0" width="111" height="38"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="38" id="hQp-Ur-R19"/>
                                     </constraints>
@@ -233,7 +234,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-qF-bKo">
-                            <rect key="frame" x="12" y="215" width="351" height="80"/>
+                            <rect key="frame" x="12" y="164" width="351" height="80"/>
                             <subviews>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XtW-0P-LTk">
                                     <rect key="frame" x="0.0" y="0.0" width="351" height="80"/>
@@ -268,7 +269,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBI-tc-PkR">
-                            <rect key="frame" x="0.0" y="313" width="375" height="65"/>
+                            <rect key="frame" x="0.0" y="259" width="375" height="65"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2M-fz-QZ8">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
@@ -342,15 +343,15 @@
                         <constraint firstItem="VFe-dO-fVV" firstAttribute="top" secondItem="rve-fo-ERD" secondAttribute="top" constant="11" id="3vl-LI-dpJ"/>
                         <constraint firstItem="glL-qK-jmb" firstAttribute="top" secondItem="VFe-dO-fVV" secondAttribute="bottom" constant="11" id="4vC-sf-Ucg"/>
                         <constraint firstItem="glL-qK-jmb" firstAttribute="leading" secondItem="rve-fo-ERD" secondAttribute="leading" constant="12" id="8RW-c9-DiL"/>
-                        <constraint firstItem="zwd-qF-bKo" firstAttribute="top" secondItem="TyG-7g-DIO" secondAttribute="bottom" constant="13" id="8n4-ua-FCT"/>
                         <constraint firstAttribute="trailing" secondItem="glL-qK-jmb" secondAttribute="trailing" constant="12" id="C1p-ER-AfQ"/>
                         <constraint firstAttribute="trailing" secondItem="TyG-7g-DIO" secondAttribute="trailing" constant="12" id="Dw9-Qd-NgG"/>
                         <constraint firstAttribute="trailing" secondItem="WBI-tc-PkR" secondAttribute="trailing" id="EQD-s7-dO1"/>
-                        <constraint firstItem="WBI-tc-PkR" firstAttribute="top" secondItem="zwd-qF-bKo" secondAttribute="bottom" constant="18" id="GTr-uo-aWE"/>
+                        <constraint firstItem="WBI-tc-PkR" firstAttribute="top" secondItem="zwd-qF-bKo" secondAttribute="bottom" constant="15" id="Id5-3a-dce"/>
                         <constraint firstItem="WBI-tc-PkR" firstAttribute="leading" secondItem="rve-fo-ERD" secondAttribute="leading" id="PcJ-bP-gbs"/>
                         <constraint firstAttribute="trailing" secondItem="8n7-HN-mku" secondAttribute="trailing" constant="12" id="QLe-Pk-SHb"/>
                         <constraint firstItem="TyG-7g-DIO" firstAttribute="leading" secondItem="rve-fo-ERD" secondAttribute="leading" constant="12" id="UCY-0a-VrM"/>
                         <constraint firstItem="8n7-HN-mku" firstAttribute="leading" secondItem="rve-fo-ERD" secondAttribute="leading" constant="12" id="YNj-aU-oZl"/>
+                        <constraint firstItem="zwd-qF-bKo" firstAttribute="top" secondItem="8n7-HN-mku" secondAttribute="bottom" constant="12" id="cOm-JR-1NB"/>
                         <constraint firstItem="zwd-qF-bKo" firstAttribute="leading" secondItem="rve-fo-ERD" secondAttribute="leading" constant="12" id="gA0-1e-wGk"/>
                         <constraint firstItem="8n7-HN-mku" firstAttribute="top" secondItem="glL-qK-jmb" secondAttribute="bottom" constant="10" id="idT-dM-0WD"/>
                         <constraint firstAttribute="trailing" secondItem="zwd-qF-bKo" secondAttribute="trailing" constant="12" id="xZe-0p-Hmu"/>

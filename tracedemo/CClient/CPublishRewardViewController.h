@@ -30,14 +30,15 @@
 - (IBAction)dayBtn3:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *inputText;
 @property (weak, nonatomic) IBOutlet UILabel *placeholder;
-@property (weak, nonatomic) IBOutlet UIView *addressView;
-@property (weak, nonatomic) IBOutlet UILabel *addressText;
+
+
 @property (weak, nonatomic) IBOutlet UITextField *priceInputText;
 @property (weak, nonatomic) IBOutlet UITextField *categoryText;
 @property (weak, nonatomic) IBOutlet UIImageView *brandSelect;
 @property (weak, nonatomic) IBOutlet UIImageView *categorySelect;
 @property (weak, nonatomic) IBOutlet UITextField *brandText;
 
+@property (weak, nonatomic) IBOutlet UIView *brandField;
 
 @property (nonatomic,strong)TK_ImageSelectBoxView * firstPic;
 @property (nonatomic,strong)TK_ImageSelectBoxView * secondPic;
@@ -49,5 +50,7 @@
 @property (weak, nonatomic) IBOutlet UIView *dayBtnField;
 @property (weak, nonatomic) IBOutlet UIView *infoField;
 @property (weak, nonatomic) IBOutlet UIView *addressField;
+@property (weak, nonatomic) IBOutlet UILabel *addressText;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoFieldMarginTop;
 
 @end

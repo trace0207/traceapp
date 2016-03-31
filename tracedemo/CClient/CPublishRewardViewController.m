@@ -149,14 +149,9 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     {
         self.dayBtnField.hidden = YES;
         self.addressField.hidden = YES;
-//        [self.infoField mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            
-//            make.top.mas_equalTo(self.dayBtnField);
-//            make.left.equalTo(self.infoField.superview).width.offset(12);
-//            make.right.equalTo(self.infoField.superview).width.offset(-12);
-//            make.height.mas_equalTo(80);
-//            
-//        }];
+    }else
+    {
+        self.infoFieldMarginTop.constant = 65;
     }
     [self defaultViewSetting];
 }
