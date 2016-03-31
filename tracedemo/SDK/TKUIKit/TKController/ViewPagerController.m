@@ -7,6 +7,7 @@
 //
 
 #import "ViewPagerController.h"
+#import "TKUITools.h"
 
 #define kDefaultTabHeight 44.0 // Default tab height
 #define kDefaultTabOffset 56.0 // Offset of the second and further tabs' from left
@@ -347,15 +348,30 @@
     }
     
     // Add tabsView
-    _tabsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width-self.tabViewRightSpace, self.tabHeight)];
-    _tabsView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    _tabsView.backgroundColor = self.tabsViewBackgroundColor;
-    _tabsView.showsHorizontalScrollIndicator = NO;
-    _tabsView.showsVerticalScrollIndicator = NO;
-
+//    _tabsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width-self.tabViewRightSpace, self.tabHeight)];
+//    _tabsView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+//    _tabsView.backgroundColor = self.tabsViewBackgroundColor;
+//    _tabsView.showsHorizontalScrollIndicator = NO;
+//    _tabsView.showsVerticalScrollIndicator = NO;
+//
+//    
+//    
+//    [self.view insertSubview:_tabsView atIndex:0];
     
     
-    [self.view insertSubview:_tabsView atIndex:0];
+    if (!_tabsView) {
+        
+        _tabsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width-self.tabViewRightSpace, self.tabHeight)];
+        _tabsView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        _tabsView.backgroundColor = self.tabsViewBackgroundColor;
+        _tabsView.showsHorizontalScrollIndicator = NO;
+        _tabsView.showsVerticalScrollIndicator = NO;
+        [self.view insertSubview:_tabsView atIndex:0];
+    }
+    else
+    {
+        [TKUITools removeAllChildViews:_tabsView];
+    }
     
     // Add tab views to _tabsView
     CGFloat contentSizeWidth = 0;
@@ -364,6 +380,13 @@
         UIView *tabView = [self tabViewAtIndex:i];
         
         CGRect frame = tabView.frame;
+        
+        if(_tabCount <=4)
+        {
+            CGRect  defaultFrame = CGRectMake(frame.origin.x, frame.origin.y, _tabsView.frame.size.width/_tabCount, frame.size.height);
+            frame = defaultFrame;
+        }
+        
         frame.origin.x = contentSizeWidth;
         //frame.size.width = self.tabWidth;
         tabView.frame = frame;
@@ -383,7 +406,7 @@
     _contentView = [self.view viewWithTag:kPageViewTag];
     
     if (!_contentView) {
-        
+    
         _contentView = _pageViewController.view;
         UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _contentView.frame.size.width, 0.5)];
         line.backgroundColor = [UIColor hexChangeFloat:@"e3c8ae"];
@@ -395,7 +418,20 @@
         
         [self.view insertSubview:_contentView atIndex:0];
     }
-    
+//    else
+//    {
+//        [_contentView removeFromSuperview];
+//        _contentView = _pageViewController.view;
+//        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _contentView.frame.size.width, 0.5)];
+//        line.backgroundColor = [UIColor hexChangeFloat:@"e3c8ae"];
+//        [_contentView addSubview:line];
+//        _contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//        _contentView.backgroundColor = self.contentViewBackgroundColor;
+//        _contentView.bounds = self.view.bounds;
+//        _contentView.tag = kPageViewTag;
+//        [self.view insertSubview:_contentView atIndex:0];
+//    }
+
     // Set first viewController
     UIViewController *viewController;
     
@@ -417,6 +453,8 @@
     
     // Set activeTabIndex
     self.activeTabIndex = self.startFromSecondTab;
+//    [self.view layoutIfNeeded];
+//    [self.view layoutSubviews];
 }
 
 - (TabView *)tabViewAtIndex:(NSUInteger)index {
@@ -433,7 +471,7 @@
         // Create TabView and subview the content
         TabView *tabView = [[TabView alloc] initWithFrame:tabViewContent.frame];
         [tabView addSubview:tabViewContent];
-        [tabView setClipsToBounds:YES];
+        [tabView setClipsToBounds:NO];
         [tabView setIndicatorColor:self.indicatorColor];
         
         //tabViewContent.center = tabView.center;

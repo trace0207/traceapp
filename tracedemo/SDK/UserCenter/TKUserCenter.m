@@ -63,6 +63,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 
 -(void)onLoginSuccess:(TKUser *)user{
     
+    
     self.user  = user;
     self.user.isLogin = YES;
     // TODO test 下面是测试代码
@@ -80,7 +81,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 
     
     //deviceId=123&mobile=18867102687&password=123456
+    WS(weakSelf)
     [[TKProxy proxy].userProxy login:userName withValue:password withBlock:^(HF_BaseAck * ack){
+        DDLogInfo(@"LoginData init %@",ack);
         if(ack.sucess){
             TK_LoginAck * loginAck = (TK_LoginAck *)ack;
             LoginAckData * loginData = (LoginAckData *)loginAck.data;
@@ -94,7 +97,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
             user.guarantee = loginData.guarantee;
             user.vip = loginData.vip;
             [self performSelectorOnMainThread:@selector(onLoginSuccess:) withObject:user waitUntilDone:NO];
-
+            [weakSelf.userNormalVM restBuyerCateList:[loginData.beSubscribeCateList copy]];
         }
         
     }];

@@ -277,7 +277,7 @@
 //    [self addChildViewController:navc5];
     self.delegate = self;
     
-    [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
+    [self.tabBar setBackgroundColor:[UIColor tkThemeColor2]];
     
     [self.tabBar setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textDefault]];
     
@@ -343,7 +343,7 @@
 //    [self addChildViewController:navc5];
     self.delegate = self;
     
-    [self.tabBar setBackgroundColor:[UIColor TKcolorWithHexString:TK_Color_nav_background]];
+    [self.tabBar setBackgroundColor:[UIColor tkThemeColor2]];
     
     [self.tabBar setTintColor:[UIColor tkThemeColor1]];
     

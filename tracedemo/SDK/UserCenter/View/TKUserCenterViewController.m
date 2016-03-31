@@ -28,7 +28,7 @@
     self.hidDefaultBackBtn = YES;
     
     UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight/2.0f)];
-    backView.backgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
+    backView.backgroundColor = [UIColor tkThemeColor2];
     [self.view addSubview:backView];
     
     [backView mas_makeConstraints:^(MASConstraintMaker *make) {

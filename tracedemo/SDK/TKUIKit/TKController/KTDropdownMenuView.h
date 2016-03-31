@@ -36,6 +36,9 @@
 // cell height default 44
 @property (nonatomic, assign) CGFloat cellHeight;
 
+// cell height default 44
+@property (nonatomic, assign) CGFloat maxHeight;
+
 // animation duration default 0.4
 @property (nonatomic, assign) CGFloat animationDuration;
 
@@ -52,6 +55,12 @@
 // callback block
 @property (nonatomic, copy) void (^selectedAtIndex)(int index);
 
+@property (nonatomic, copy) NSArray *titles;
+
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray*)titles;
+
+
+
+
 
 @end

@@ -10,5 +10,6 @@
 
 @interface BPageViewController : ViewPagerController
 @property (nonatomic,assign)HomePageType dataType;
+-(void)reloadTitleView;
 
 @end

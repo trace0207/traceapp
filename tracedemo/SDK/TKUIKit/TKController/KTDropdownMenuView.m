@@ -13,7 +13,7 @@
 
 @interface KTDropdownMenuView()<UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, copy) NSArray *titles;
+
 @property (nonatomic, assign) BOOL isMenuShow;
 @property (nonatomic, assign) NSUInteger selectedIndex;
 @property (nonatomic, strong) UIButton *titleButton;
@@ -26,10 +26,11 @@
 @end
 
 @implementation KTDropdownMenuView
+//@synthesize titles;
 
 #pragma mark -- life cycle --
 
-- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles
+- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)inPutTitles
 {
     if (self = [super initWithFrame:frame])
     {
@@ -40,22 +41,53 @@
         _cellHeight = 44;
         _isMenuShow = NO;
         _selectedIndex = 0;
-        _titles = titles;
+        _titles = inPutTitles;
         
         [self addSubview:self.titleButton];
         [self addSubview:self.arrowImageView];
+        [self addSubview:self.line];
+        UIEdgeInsets edge = UIEdgeInsetsMake(0, 10, 0, 0);
+        [self setLayoutMargins: edge];
         [self.wrapperView addSubview:self.backgroundView];
         [self.wrapperView addSubview:self.hiddenBtn];
         [self.wrapperView addSubview:self.tableViewBackgroundImageView];
         [self.wrapperView addSubview:self.tableView];
+//        self.wrapperView.backgroundColor = [UIColor redColor];
         
         // 添加KVO监听tableView的contenOffset属性，添加上滑返回功能
 //        NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
 //        [self.tableView addObserver:self forKeyPath:@"contentOffset" options:options context:nil];
+        
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapOnTitleButton:)];
+        [self addGestureRecognizer:tap];
+        
     }
     
     return self;
 }
+
+
+-(void)setTitles:(NSArray *)newTitles
+{
+    if(newTitles == nil || newTitles.count == 0)
+    {
+        return ;
+    }
+    _titles = newTitles;
+    [self layoutSubviews];
+    [self.tableView reloadData];
+    [self.tableView layoutIfNeeded];
+    CGFloat height = self.tableView.contentSize.height;
+    if(height > TKScreenHeight - 180)
+    {
+        height = TKScreenHeight - 180;
+    }
+    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(height);
+    }];
+    [_titleButton setTitle:newTitles[0] forState:UIControlStateNormal];
+}
+
 
 - (void)setShowLine:(BOOL)showLine
 {
@@ -79,17 +111,21 @@
         [self.window addSubview:self.wrapperView];
         
         [self.titleButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self);
+//            make.center.equalTo(self);
+            make.height.mas_equalTo(self.titleButton.superview);
+            make.width.mas_equalTo(self.titleButton.superview).with.offset(-25);
+            make.top.equalTo(self.titleButton.superview);
+            make.left.equalTo(self.titleButton.superview).with.offset(5);
         }];
         if (self.showLine) {
             [self.line mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.size.mas_equalTo(CGSizeMake(1, 15));
+                make.size.mas_equalTo(CGSizeMake(1.5, 16));
                 make.centerY.equalTo(self.titleButton);
-                make.right.equalTo(self.titleButton.mas_left).with.offset(-5);
+                make.left.equalTo(self).with.offset(1);
             }];
         }
         [self.arrowImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.titleButton.mas_right).offset(4);
+            make.left.equalTo(self.titleButton.mas_right);
             make.centerY.equalTo(self.titleButton.mas_centerY);
         }];
         // 依附于导航栏下面
@@ -104,25 +140,22 @@
             make.edges.equalTo(self.wrapperView);
         }];
         CGFloat tableCellsHeight = _cellHeight * _titles.count;
+        if(tableCellsHeight > self.maxHeight)
+        {
+            tableCellsHeight = self.maxHeight;
+        }
         [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(self.titleButton.mas_centerX).with.offset(self.edgesRight);
-            if (self.width > 79.99999)
-            {
-                make.width.mas_equalTo(self.width);
-            }
-            else
-            {
-                make.width.equalTo(self.wrapperView.mas_width);
-            }
-            make.top.equalTo(self.titleButton.mas_bottom).with.offset(self.edgesTop);
+            make.top.equalTo(self.titleButton.mas_bottom).with.offset(10);
+            make.right.equalTo(self.wrapperView.mas_right).with.offset(-4);
+            make.width.mas_equalTo(self.width);
             make.height.mas_equalTo(tableCellsHeight);
-//            make.bottom.equalTo(self.wrapperView.mas_bottom).offset(tableCellsHeight + kKTDropdownMenuViewHeaderHeight);
         }];
         [self.tableViewBackgroundImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.titleButton.mas_bottom).with.offset(2);
-            make.left.equalTo(self.tableView.mas_left).with.offset(0);
+            make.top.equalTo(self.tableView).with.offset(-8);
+            make.left.equalTo(self.tableView).with.offset(-2);
             make.bottom.equalTo(self.tableView).with.offset(4);
-            make.right.equalTo(self.tableView).with.offset(4);
+            make.right.equalTo(self.tableView).with.offset(2);
+//            make.edges.equalTo(self.wrapperView);
         }];
         self.wrapperView.hidden = YES;
     }
@@ -221,12 +254,7 @@
 //    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, kKTDropdownMenuViewHeaderHeight)];
     //headerView.backgroundColor = self.cellColor;
     //self.tableView.tableHeaderView = headerView;
-    [self.tableView layoutIfNeeded];
     
-//    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.wrapperView.mas_top).offset(-kKTDropdownMenuViewHeaderHeight);
-//        //make.bottom.equalTo(self.wrapperView.mas_bottom).offset(kKTDropdownMenuViewHeaderHeight);
-//    }];
     self.wrapperView.hidden = NO;
     self.backgroundView.alpha = 0.0;
     
@@ -383,10 +411,16 @@
 {
     if (!_titleButton)
     {
+        NSString * defaultTitle = @"---";
+        if(self.titles.count >0)
+        {
+            defaultTitle = [self.titles objectAtIndex:0];
+        }
         _titleButton = [[UIButton alloc] init];
         _titleButton.backgroundColor = [UIColor clearColor];
-        [_titleButton setTitle:[self.titles objectAtIndex:0] forState:UIControlStateNormal];
-        [_titleButton addTarget:self action:@selector(handleTapOnTitleButton:) forControlEvents:UIControlEventTouchUpInside];
+        [_titleButton setTitle:defaultTitle forState:UIControlStateNormal];
+        [_titleButton setUserInteractionEnabled:NO];
+//        [_titleButton addTarget:self action:@selector(handleTapOnTitleButton:) forControlEvents:UIControlEventTouchUpInside];
         [_titleButton.titleLabel setFont:self.textFont];
         [_titleButton setTitleColor:self.textColor forState:UIControlStateNormal];
     }
@@ -457,7 +491,7 @@
     {
         _backgroundView = [[UIView alloc] init];
         _backgroundView.backgroundColor = [UIColor blackColor];
-        _backgroundView.alpha = self.backgroundAlpha;
+        _backgroundView.alpha = 0.5;
     }
     
     return _backgroundView;
@@ -513,11 +547,21 @@
     if (width < 80.0)
     {
         NSLog(@"width should be set larger than 80, otherwise it will be set to be equal to window width");
-        
+        _width = 80;
         return;
     }
     
     _width = width;
 }
+
+-(CGFloat)maxHeight
+{
+    if(_maxHeight < self.cellHeight)
+    {
+        _maxHeight = TKScreenHeight/2;
+    }
+    return _maxHeight;
+}
+
 
 @end

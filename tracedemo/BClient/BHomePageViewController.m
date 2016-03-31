@@ -66,7 +66,7 @@
 {
     if (_menuView == nil) {
          NSArray *titles = @[@"悬赏中", @"已释放"];
-        _menuView = [[KTDropdownMenuView alloc] initWithFrame:CGRectMake(0, 0,60, 44) titles:titles];
+        _menuView = [[KTDropdownMenuView alloc] initWithFrame:CGRectMake(0, 0,80, 44) titles:titles];
         _menuView.cellColor = [UIColor clearColor];
         _menuView.cellSeparatorColor = [UIColor lightGrayColor];
         _menuView.selectedAtIndex = ^(int index)
@@ -75,8 +75,8 @@
         };
         _menuView.textFont = [UIFont systemFontOfSize:15];
         _menuView.backgroundAlpha = 0.0f;
-        _menuView.width = 100;
-        _menuView.edgesRight = -10;
+        _menuView.width = 120;
+//        _menuView.edgesRight = -10;
         _menuView.textColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
         _menuView.cellAccessoryCheckmarkColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
         _menuView.cellSeparatorColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
@@ -132,14 +132,20 @@
     
     //发货时间弹窗界面
 
-    [TKAlertView showDeliveryTime:3 WithBlock:^(NSInteger buttonIndex, int deliveryTime) {
-        
-    }];
+//    [TKAlertView showDeliveryTime:3 WithBlock:^(NSInteger buttonIndex, int deliveryTime) {
+//        
+//    }];
     
     
     //HUD
 //    TKAlertView *alertView = [TKAlertView showHUDWithText:@"正在发布，请稍后..."];
 //    [self performSelector:@selector(hideHUD:) withObject:alertView afterDelay:2];
+    
+    //刷新title数据
+    
+    [self.vc1 reloadTitleView];
+    [self.vc2 reloadTitleView];
+    
 }
 
 - (void)hideHUD:(TKAlertView *)hud
@@ -205,7 +211,7 @@
         _vc2.dataType = B_MyUserReward;
         _vc2.tabViewRightSpace = 90;
         _vc2.indicatorColor = [UIColor tkThemeColor1];
-        _vc2.tabsViewBackgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
+        _vc2.tabsViewBackgroundColor = [UIColor tkThemeColor2];
         _vc2.view.backgroundColor = [UIColor tkThemeColor2];
         
     }
@@ -220,7 +226,7 @@
         _vc1.dataType = B_AllReward;
         _vc1.tabViewRightSpace = 90;
         _vc1.indicatorColor = [UIColor tkThemeColor1];
-        _vc1.tabsViewBackgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
+        _vc1.tabsViewBackgroundColor = [UIColor tkThemeColor2];
         _vc1.view.backgroundColor = [UIColor tkThemeColor2];
         
     }

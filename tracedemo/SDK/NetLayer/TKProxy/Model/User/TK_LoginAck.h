@@ -44,6 +44,20 @@
 @end
 
 
+@protocol CategoryListFromLogin <NSObject>
+
+@end
+
+@interface CategoryListFromLogin : TK_BaseJsonModel
+
+@property (nonatomic,strong)NSString * categoryName;
+@property (nonatomic,strong)NSString *createTime;
+@property (nonatomic,strong)NSString *id;
+@property (nonatomic,strong)NSString *sum;
+
+@end
+
+
 @interface LoginAckData:TK_BaseJsonModel
 
 //@property (nonatomic, copy)   NSString  *address;//
@@ -79,6 +93,8 @@
 @property (nonatomic, copy)   NSString  *inviteCode;
 
 @property (nonatomic, strong) Address  *defaultReceiver;//
+@property (nonatomic, strong) NSArray<CategoryListFromLogin>  *beSubscribeCateList;//
+
 @end
 
 @interface TK_LoginAck : HF_BaseAck

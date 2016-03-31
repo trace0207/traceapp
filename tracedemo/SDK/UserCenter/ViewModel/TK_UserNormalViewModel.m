@@ -61,6 +61,16 @@
 }
 
 
+-(void)restBuyerCateList:(NSArray< __kindof CategoryListFromLogin*> *)brands
+{
+    [self.buyerCateList removeAllObjects];
+    for(CategoryData * ca in brands)
+    {
+        [self.buyerCateList addObject:[TK_ShareCategory setTitle:ca.categoryName setId:ca.id time:ca.createTime sum:ca.sum]];
+    }
+}
+
+
 -(NSMutableArray *)shareCategorys
 {
     if(!_shareCategorys)
@@ -77,6 +87,15 @@
         _brandList = [[NSMutableArray alloc] init];
     }
     return _brandList;
+}
+
+-(NSMutableArray *)buyerCateList
+{
+    if(!_buyerCateList)
+    {
+        _buyerCateList = [[NSMutableArray alloc] init];
+    }
+    return _buyerCateList;
 }
 
 -(void)setToken:(NSString *)token1

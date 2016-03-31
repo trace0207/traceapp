@@ -14,9 +14,14 @@
 #import "TK_ShareCategory.h"
 #import "TK_Brand.h"
 #import "TKShowGoodsListVC.h"
+#import "TKUserCenter.h"
 @interface BPageViewController ()<ViewPagerDataSource,ViewPagerDelegate>
-@property (nonatomic, strong) NSMutableArray *titleArray;
-@property (nonatomic, strong) NSMutableArray *numberArray;
+{
+//    NSArray<__kindof TK_ShareCategory*> * shareCategorys;
+//    NSMutableArray<__kindof TK_Brand*> * brandList;
+}
+@property (nonatomic, strong) NSMutableArray<__kindof TK_Brand*> *brandsArray;
+@property (nonatomic, strong) NSMutableArray<__kindof TK_ShareCategory*> * shareCategorys;
 @property (nonatomic,strong)KTDropdownMenuView *menuView;
 @end
 
@@ -28,6 +33,7 @@
     self.dataSource = self;
     self.delegate = self;
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.tabViewRightSpace = 95;
     [self reloadData];
     [self.view addSubview:self.menuView];
 }
@@ -36,22 +42,58 @@
     [super viewDidAppear:animated];
     
 }
+
+
+-(void)reloadTitleView
+{
+    NSArray<__kindof TK_ShareCategory*> * shareCategorys = nil;
+    
+#if B_Client == 1
+     shareCategorys = [TKUserCenter instance].userNormalVM.buyerCateList;
+#else
+     shareCategorys = [TKUserCenter instance].userNormalVM.shareCategorys;
+#endif
+    NSMutableArray * titles = [[NSMutableArray alloc] init];
+    for (TK_ShareCategory *s in shareCategorys) {
+        [titles addObject:s.title];
+    }
+    
+    NSArray * brandList = [TKUserCenter instance].userNormalVM.brandList;
+    NSMutableArray * brands = [[NSMutableArray alloc] init];
+    
+    for (TK_Brand  * b in brandList ) {
+    
+        [brands addObject:b.brandName];
+    }
+    
+    [self.menuView setTitles:brands];
+    
+    self.brandsArray = [brandList copy];
+    self.shareCategorys = [shareCategorys copy];
+    [self reloadData];
+    
+}
+
 - (KTDropdownMenuView *)menuView
 {
     if (_menuView == nil) {
-        NSArray *titles = @[@"耐克", @"阿迪达斯", @"杰克琼斯", @"安踏", @"七匹狼", @"李宁", @"乔丹"];
+        NSArray *titles = @[];
         _menuView = [[KTDropdownMenuView alloc] initWithFrame:CGRectMake(kScreenWidth-90, 0,90, 44) titles:titles];
+        _menuView.clipsToBounds = YES;
         _menuView.showLine = YES;
-        _menuView.backgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
+        _menuView.backgroundColor = [UIColor tkThemeColor2];
         _menuView.cellColor = [UIColor clearColor];
         _menuView.cellSeparatorColor = [UIColor lightGrayColor];
+        _menuView.width = 200;
+        _menuView.maxHeight = TKScreenHeight - 64 - 44 - 49 -10;
+        WS(weakSelf)
         _menuView.selectedAtIndex = ^(int index)
         {
-            NSLog(@"selected title:%@", titles[index]);
+            [weakSelf onMenuSelect:index];
+//            NSLog(@"selected title:%@", shareCategorys[index]);
         };
         _menuView.textFont = [UIFont systemFontOfSize:15];
         _menuView.backgroundAlpha = 0.0f;
-        _menuView.width = 115;
         _menuView.edgesRight = -20;
         _menuView.textColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
         _menuView.cellAccessoryCheckmarkColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
@@ -59,43 +101,53 @@
     }
     return _menuView;
 }
+
+
+-(void)onMenuSelect:(NSInteger)index
+{
+    if(self.brandsArray.count > index)
+    {
+        DDLogInfo(@"select title %@",self.brandsArray[index].brandName);
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (NSMutableArray *)titleArray
+- (NSMutableArray *)brandsArray
 {
-    if (_titleArray == nil) {
-        _titleArray = [[NSMutableArray alloc]initWithObjects:@"全部",@"包包",@"鞋子",@"裤子",@"上衣",@"毛衣",@"外套", nil];
+    if (_brandsArray == nil) {
+        _brandsArray = [[NSMutableArray alloc]init];
     }
-    return _titleArray;
+    return _brandsArray;
 }
 
-- (NSMutableArray *)numberArray
-{
-    if (_numberArray == nil) {
-        _numberArray = [[NSMutableArray alloc]initWithObjects:@(0),@(3),@(0),@(6),@(53),@(100),@(76), nil];
-    }
-    return _numberArray;
-}
+//- (NSMutableArray *)numberArray
+//{
+//    if (_numberArray == nil) {
+//        _numberArray = [[NSMutableArray alloc]init];
+//    }
+//    return _numberArray;
+//}
 
 #pragma mark - ViewPagerDataSource
 - (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager {
-    return self.titleArray.count;
+    return self.shareCategorys.count;
 }
 - (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSUInteger)index {
     
     
     HFTitleLabel *label = [[HFTitleLabel alloc]init];
     label.backgroundColor = [UIColor clearColor];
-    NSString *title = [self.titleArray objectAtIndex:index];
+    NSString *title = [self.shareCategorys objectAtIndex:index].title;
     CGSize size = CGSizeMake(320,2000); //设置一个行高上限
     NSDictionary *attributes = @{NSFontAttributeName:label.textFont};
     size = [title boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
     
     NSInteger num = 0;
-    if (index < self.numberArray.count) {
-        NSNumber *number = [self.numberArray objectAtIndex:index];
+    if (index < self.shareCategorys.count) {
+        NSString *number = [self.shareCategorys objectAtIndex:index].sum;
         NSInteger num1 = [number integerValue];
         num = num1;
     }
@@ -131,6 +183,24 @@
         return vc;
     }
 }
+
+
+-(NSArray<__kindof TK_ShareCategory*> *)shareCategorys
+{
+    if(_shareCategorys == nil)
+    {
+        _shareCategorys = [[NSMutableArray alloc] init];
+        
+       TK_ShareCategory * s =  [[TK_ShareCategory alloc] init];
+     
+        s.sum = @"10";
+        s.title = @"测试";
+        s.categoryId = @"10";
+        [_shareCategorys addObject:s];
+    }
+    return _shareCategorys;
+}
+
 
 #pragma mark - ViewPagerDelegate
 //- (CGFloat)viewPager:(ViewPagerController *)viewPager valueForOption:(ViewPagerOption)option withDefault:(CGFloat)value {

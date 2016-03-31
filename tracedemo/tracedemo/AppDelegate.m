@@ -220,7 +220,7 @@ static AppDelegate * appDelegate;
  **/
 - (void)configNavigationBar
 {
-    UIColor * navColor = [UIColor TKcolorWithHexString:TK_Color_nav_background];
+    UIColor * navColor = [UIColor tkThemeColor2];
     [[UINavigationBar appearance] setBackgroundImage:[UIColor TKcreateImageWithColor:navColor] forBarMetrics:UIBarMetricsDefault];
     //[[UINavigationBar appearance] setBarTintColor:navColor];
    

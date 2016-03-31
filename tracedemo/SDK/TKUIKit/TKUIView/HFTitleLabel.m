@@ -43,7 +43,6 @@
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.font = self.textFont;
         [self addSubview:_titleLabel];
-        
     }
     return _titleLabel;
 }

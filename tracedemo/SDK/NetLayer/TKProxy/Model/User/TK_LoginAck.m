@@ -19,6 +19,10 @@
 @end
 
 
+@implementation CategoryListFromLogin
+
+
+@end
 
 @implementation TK_LoginAck
 

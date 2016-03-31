@@ -32,24 +32,29 @@
 {
     [super viewWillAppear:animated];
     [self TKaddNavigationTitleView:self.segmentedControl];
-//        UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
-//        [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//        [bt setTitle:@"支付" forState:UIControlStateNormal];
-//        [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
-//        [self addLeftBarItemWithCustomView:bt];
+        UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
+        [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [bt setTitle:@"刷新" forState:UIControlStateNormal];
+        [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+        [self addLeftBarItemWithCustomView:bt];
 }
 
 -(void)initView
 {
     [self addChildViewController:self.vc1];
-    [self addChildViewController:self.vc2];
+//    [self addChildViewController:self.vc2];
+//    self.vc1.view.frame = CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 49 -20 - 44);
     [self.view addSubview:self.vc1.view];
-    self.vc2.view.frame = CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 49 -20 - 44);
+   
+//    self.vc2.view.frame = CGRectMake(0, 0, TKScreenWidth, TKScreenHeight - 49 -20 - 44);
 }
 -(void)test
 {
-    self.payView.money = 1200;
-    [self.payView show];
+//    self.payView.money = 1200;
+//    [self.payView show];
+    
+    [self.vc1 reloadTitleView];
+    [self.vc2 reloadTitleView];
 }
 - (TKPayChooseView *)payView
 {
@@ -82,15 +87,30 @@
 }
 - (void)segmentedAction:(UISegmentedControl *)seg
 {
+    WS(weakSelf)
     if (seg.selectedSegmentIndex == 0) {
         [self addRightBarItemWithCustomView:nil];
+        [self addChildViewController:self.vc1];
         [self transitionFromViewController:self.vc2 toViewController:self.vc1 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
+            [weakSelf.vc1 didMoveToParentViewController:self];
+            [weakSelf.vc2 willMoveToParentViewController:nil];
+            [weakSelf.vc2 removeFromParentViewController];
+            [self.vc1.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(self.view);
+            }];
         }];
     }else {
+        [self addChildViewController:self.vc2];
         [self transitionFromViewController:self.vc1 toViewController:self.vc2 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
             
-            
+            [weakSelf.vc2 didMoveToParentViewController:self];
+            [weakSelf.vc1 willMoveToParentViewController:nil];
+            [weakSelf.vc1 removeFromParentViewController];
+            [self.vc2.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(self.view);
+            }];
         }];
+        
     }
 }
 
@@ -102,7 +122,7 @@
         _vc2.dataType = C_AllReward;
         _vc2.tabViewRightSpace = 90;
         _vc2.indicatorColor = [UIColor tkThemeColor1];
-        _vc2.tabsViewBackgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
+        _vc2.tabsViewBackgroundColor = [UIColor tkThemeColor2];
         _vc2.view.backgroundColor = [UIColor tkThemeColor2];
         
     }
@@ -117,7 +137,7 @@
         _vc1.dataType = C_showGoods;
         _vc1.tabViewRightSpace = 90;
         _vc1.indicatorColor = [UIColor tkThemeColor1];
-        _vc1.tabsViewBackgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
+        _vc1.tabsViewBackgroundColor = [UIColor tkThemeColor2];
         _vc1.view.backgroundColor = [UIColor tkThemeColor2];
         
     }

@@ -188,7 +188,7 @@
 {
     TK_SettingCell * cell =   [TK_SettingCell loadCenterImageType:self];
     //cell.backgroundColor = [UIColor clearColor];
-    cell.contentView.backgroundColor = [UIColor hexChangeFloat:TK_Color_nav_background];
+    cell.contentView.backgroundColor = [UIColor tkThemeColor2];
     TKUser * user = [[TKUserCenter instance]getUser];
     if (user.headPortraitUrl.length>0) {
         [cell.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];
