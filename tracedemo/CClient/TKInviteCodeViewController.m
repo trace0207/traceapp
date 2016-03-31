@@ -9,7 +9,9 @@
 #import "TKInviteCodeViewController.h"
 #import "UIView+Border.h"
 @interface TKInviteCodeViewController ()
-
+{
+    BOOL hasCode;
+}
 @end
 
 @implementation TKInviteCodeViewController
@@ -20,14 +22,15 @@
     [self.kcopyButton setDefaultBorder];
     self.inviteCodeLabel.text = @"邀请码未生成";
     [self.kcopyButton setTitle:@"生成邀请码" forState:UIControlStateNormal];
-    [self.kcopyButton setTitle:@"复制" forState:UIControlStateSelected];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
 - (IBAction)kCopyAction:(id)sender {
-    if (self.kcopyButton.selected == NO) {
-        self.kcopyButton.selected = YES;
+    if (hasCode == NO) {
         self.inviteCodeLabel.text = @"KSDFJE8";
+        [self.kcopyButton setTitle:@"复制" forState:UIControlStateNormal];
+        hasCode = YES;
     }else{
         UIPasteboard *generalPasteBoard = [UIPasteboard generalPasteboard];
         [generalPasteBoard setString:self.inviteCodeLabel.text];
