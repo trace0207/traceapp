@@ -110,6 +110,7 @@
             break;
         case 2:
             //[self onTableRowSelectFromSectionTwo:indexPath.row];
+            [UIKitTool callPhone:SERVER];
             break;
         default:
             break;
