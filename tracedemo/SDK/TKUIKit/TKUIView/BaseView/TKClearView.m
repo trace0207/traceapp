@@ -28,9 +28,9 @@
         {
             return  view;
         }
-        return [super hitTest:point withEvent:event];
+        return nil;
     }
-    return [super hitTest:point withEvent:event];;
+    return nil;
 }
 
 @end

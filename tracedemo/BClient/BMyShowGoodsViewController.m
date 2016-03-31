@@ -48,6 +48,12 @@
     vm = [[TKIShowGoodsVM alloc] initWithFreshAbleTable];
     [self.view addSubview:vm.pullRefreshView];
     [vm tkUpdateViewConstraint];
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:0.4];
+    
+}
+
+-(void)loadData
+{
     [vm startPullDownRefreshing];
 }
 

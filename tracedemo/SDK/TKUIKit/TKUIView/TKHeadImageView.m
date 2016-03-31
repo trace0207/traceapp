@@ -8,7 +8,7 @@
 
 #import "TKHeadImageView.h"
 
-static const CGFloat roundValue = 5.0f;
+static const CGFloat roundValue = 2.0f;
 
 @interface TKHeadImageView()
 {

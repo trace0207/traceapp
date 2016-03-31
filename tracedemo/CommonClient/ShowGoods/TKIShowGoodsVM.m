@@ -254,6 +254,7 @@
                 
             }];
             addMoreImage.tag = 999;
+            addMoreImage.userInteractionEnabled = NO;
         }
         
         

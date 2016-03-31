@@ -40,6 +40,9 @@
         if(imageViews.count >i)
         {
             photo.srcImageView = (UIImageView *)imageViews[i];
+        }else
+        {
+            photo.srcImageView = (UIImageView *)imageViews[imageViews.count -1];
         }
         photo.url = [NSURL URLWithString:rawPicUrl];
         [mjPhotos addObject:photo];

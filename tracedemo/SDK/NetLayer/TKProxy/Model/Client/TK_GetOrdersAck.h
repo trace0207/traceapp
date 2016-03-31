@@ -38,11 +38,13 @@
 @property (nonatomic,copy) NSString  *purchaserHeaderUrl;
 @property (nonatomic,copy) NSString  *purchaserNickName;
 @property (nonatomic,copy) NSString  *purchaserSignature;
+@property (nonatomic,copy) NSString  *purchaserId;
 @property (nonatomic,copy) NSString  *role;
 @property (nonatomic,copy) NSString  *showPrice;
 @property (nonatomic,copy) NSString  *userHeaderUrl;
 @property (nonatomic,copy) NSString  *userSignature;
 @property (nonatomic,copy) NSString  *userNickName;
+@property (nonatomic,copy) NSString  *userId;
 
 
 @end
