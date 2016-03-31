@@ -12,6 +12,7 @@
 #import "KTDropdownMenuView.h"
 #import "UIColor+TK_Color.h"
 #import "TKPayChooseView.h"
+#import "GlobNotifyDefine.h"
 @interface CHomePageViewController ()
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic,strong)BPageViewController * vc1;
@@ -23,10 +24,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserNormalDataReady) name:TKBrandCategoryReady object:nil];
+    
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.hidDefaultBackBtn = YES;
     [self initView];
 }
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+-(void)onUserNormalDataReady
+{
+    [self.vc1 reloadTitleViewAndData];
+//    [self.vc2 reloadTitleViewAndData];
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -130,7 +146,6 @@
         _vc2.tabViewRightSpace = 90;
         _vc2.indicatorColor = [UIColor tkThemeColor1];
         _vc2.tabsViewBackgroundColor = [UIColor tkThemeColor2];
-        _vc2.view.backgroundColor = [UIColor tkThemeColor2];
         
     }
     return _vc2;
@@ -145,8 +160,6 @@
         _vc1.tabViewRightSpace = 90;
         _vc1.indicatorColor = [UIColor tkThemeColor1];
         _vc1.tabsViewBackgroundColor = [UIColor tkThemeColor2];
-        _vc1.view.backgroundColor = [UIColor tkThemeColor2];
-        
     }
     return _vc1;
 }

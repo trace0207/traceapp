@@ -13,7 +13,7 @@
 @interface TKTableViewVM()<UITableViewDataSource,UITableViewDelegate,CLLRefreshHeadControllerDelegate>
 {
     CLLRefreshHeadController * refreshController;
-   
+    UIView * tipsView;
 }
 
 @end
@@ -119,6 +119,31 @@
 
 }
 
+
+-(void)showTipsView:(UIView *)view
+{
+    if(_pullRefreshView)
+    {
+        if(tipsView)
+        {
+            [tipsView removeFromSuperview];
+        }
+        tipsView = view;
+        [_pullRefreshView addSubview:tipsView];
+        [tipsView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(_pullRefreshView);
+        }];
+    }
+}
+
+-(void)hidTips
+{
+    if(tipsView)
+    {
+        [tipsView removeFromSuperview];
+        tipsView = nil;
+    }
+}
 
 
 -(void)tkLoadDefaultData

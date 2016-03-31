@@ -7,6 +7,7 @@
 //
 
 #import "TK_UserNormalViewModel.h"
+#import "GlobNotifyDefine.h"
 
 @implementation TK_UserNormalViewModel
 @synthesize token;
@@ -44,6 +45,7 @@
     {
         [self.shareCategorys addObject:[TK_ShareCategory setTitle:ca.categoryName setId:ca.id time:ca.createTime sum:ca.sum]];
     }
+    [self notifyDataReady];
 }
 
 -(void)resetBrandList:(TK_BrandListAck *)ack{
@@ -58,6 +60,7 @@
         [self.brandList addObject:tkbd];
         
     }
+    [self notifyDataReady];
 }
 
 
@@ -114,6 +117,15 @@
         token = [kUserDefaults objectForKey:kParmsDeviceToken];
     }
     return token;
+}
+
+-(void)notifyDataReady
+{
+    if((self.shareCategorys.count >0 || self.buyerCateList.count >0) && self.brandList.count >0 )
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:TKBrandCategoryReady object:nil];
+    }
+
 }
 
 

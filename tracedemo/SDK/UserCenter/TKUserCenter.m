@@ -149,7 +149,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
         
         if(ack.sucess)
         {
-            TK_CategoryListAck * k = (TK_CategoryListAck*)ack;
+//            TK_CategoryListAck * k = (TK_CategoryListAck*)ack;
             [self.userNormalVM resetCategorys:(TK_CategoryListAck *)ack];
 //            DDLogInfo(@"abc%@",[NSString ArrayToNSString:k.data withSeparator:@";"]);
         }

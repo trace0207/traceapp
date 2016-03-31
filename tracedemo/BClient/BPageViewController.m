@@ -75,7 +75,6 @@
     {
         self.titleReady = YES;
     }
-    
 }
 
 - (KTDropdownMenuView *)menuView

@@ -36,7 +36,7 @@
     if (_segmentedControl == nil) {
         _segmentedControl = [[UISegmentedControl alloc]initWithItems:@[@"悬赏广场",@"我的客户"]];
         _segmentedControl.frame = CGRectMake(0, 0, 170, 30);
-        _segmentedControl.selectedSegmentIndex = 1;
+        _segmentedControl.selectedSegmentIndex = 0;
         [_segmentedControl addTarget:self action:@selector(segmentedAction:) forControlEvents:UIControlEventValueChanged];
        
     }
@@ -56,6 +56,10 @@
             [weakSelf.vc1.view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.edges.equalTo(self.view);
             }];
+            if(!weakSelf.vc1.titleReady)
+            {
+                [weakSelf.vc1 reloadTitleViewAndData];
+            }
 
         }];
     }else {
@@ -69,6 +73,10 @@
             [weakSelf.vc2.view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.edges.equalTo(self.view);
             }];
+            if(!weakSelf.vc2.titleReady)
+            {
+                [weakSelf.vc2 reloadTitleViewAndData];
+            }
 
         }];
     }
@@ -232,7 +240,6 @@
         _vc2.tabViewRightSpace = 90;
         _vc2.indicatorColor = [UIColor tkThemeColor1];
         _vc2.tabsViewBackgroundColor = [UIColor tkThemeColor2];
-        _vc2.view.backgroundColor = [UIColor tkThemeColor2];
         
     }
     return _vc2;
@@ -247,7 +254,6 @@
         _vc1.tabViewRightSpace = 90;
         _vc1.indicatorColor = [UIColor tkThemeColor1];
         _vc1.tabsViewBackgroundColor = [UIColor tkThemeColor2];
-        _vc1.view.backgroundColor = [UIColor tkThemeColor2];
         
     }
     return _vc1;

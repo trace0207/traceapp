@@ -54,4 +54,6 @@
                 borderWidth:(CGFloat)width;
 
 
++(UIView *)getListViewEmptyTip;
+
 @end

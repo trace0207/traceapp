@@ -31,6 +31,7 @@
 // 用户登录成功
 #define TKUserLoginSuccess              @"tk_userLoginSuccessed"
 #define TKUserLoginBackEvent            @"tk_userLoginBackEvent"
+#define TKBrandCategoryReady            @"tk_BrandAndCategoryReady"
 #define TKPayNotify                     @"tk_pingppPayResult"
 
 #endif

@@ -20,17 +20,27 @@
 #import "NSString+HFStrUtil.h"
 
 @interface TKIShowGoodsVM()<TKShowGoodsCellDelegate>
+{
+    NSInteger nowPage;
+}
 
 @end
 
 @implementation TKIShowGoodsVM
 
 
+-(instancetype)init
+{
+    self = [super init];
+    nowPage = 0;
+    return self;
+}
+
 -(void)tkLoadDefaultData
 {
-    
+    [self hidTips];
     WS(weakSelf)
-    [[TKProxy proxy].mainProxy getShowOrders:self.category.categoryId page:0 withBlock:^(HF_BaseAck *ack) {
+    [[TKProxy proxy].mainProxy getShowOrders:self.category.categoryId page:nowPage withBlock:^(HF_BaseAck *ack) {
        
 //        DDLogInfo(@"orders list %@",ack);
         
@@ -41,13 +51,21 @@
         
         [weakSelf stopRefresh];
         
+        if(nowPage == 0 && weakSelf.defaultSection.rowsData.count == 0)
+        {
+            [weakSelf showTipsView:[TKUITools getListViewEmptyTip]];
+        }
+        
     }];
 }
+
 
 
 -(void)resetData:(TK_GetOrdersAck *)ack
 {
     DDLogInfo(@"loadDefaultData  enter   go  go go ");
+    
+    
     
     TKTableSectionM * section = [[TKTableSectionM alloc] init];
     [section.rowsData removeAllObjects];

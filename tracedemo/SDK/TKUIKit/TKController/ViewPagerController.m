@@ -363,10 +363,14 @@
         
         _tabsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width-self.tabViewRightSpace, self.tabHeight)];
         _tabsView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        _tabsView.backgroundColor = self.tabsViewBackgroundColor;
+//        _tabsView.backgroundColor = self.tabsViewBackgroundColor;
         _tabsView.showsHorizontalScrollIndicator = NO;
         _tabsView.showsVerticalScrollIndicator = NO;
         [self.view insertSubview:_tabsView atIndex:0];
+        
+        UIView *backGround = [[UIView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.tabHeight)];
+        backGround.backgroundColor = self.tabsViewBackgroundColor;
+        [self.view insertSubview:backGround atIndex:0];
     }
     else
     {
@@ -417,21 +421,12 @@
         _contentView.bounds = self.view.bounds;
         _contentView.tag = kPageViewTag;
         
+        
+        
+        
         [self.view insertSubview:_contentView atIndex:0];
     }
-//    else
-//    {
-//        [_contentView removeFromSuperview];
-//        _contentView = _pageViewController.view;
-//        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _contentView.frame.size.width, 0.5)];
-//        line.backgroundColor = [UIColor hexChangeFloat:@"e3c8ae"];
-//        [_contentView addSubview:line];
-//        _contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-//        _contentView.backgroundColor = self.contentViewBackgroundColor;
-//        _contentView.bounds = self.view.bounds;
-//        _contentView.tag = kPageViewTag;
-//        [self.view insertSubview:_contentView atIndex:0];
-//    }
+
 
     // Set first viewController
     UIViewController *viewController;

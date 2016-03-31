@@ -69,6 +69,9 @@
 // 更新约束
 -(void)tkUpdateViewConstraint;
 
+-(void)showTipsView:(UIView *)view;
+-(void)hidTips;
+
 
 #pragma  mark  UITableViewDelegate && UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;

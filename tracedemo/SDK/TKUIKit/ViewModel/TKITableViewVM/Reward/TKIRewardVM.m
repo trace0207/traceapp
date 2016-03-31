@@ -54,40 +54,43 @@
 -(void)tkLoadDefaultData
 {
     WS(weakSelf);
+    [self hidTips];
     
     [[TKProxy proxy].mainProxy getRewardList:self.category.categoryId
-                                        page:0
+                                        page:nowPage
                                         type:self.rewardPageType
                                 rewardStatus:101
                                    withBlock:^(HF_BaseAck *ack) {
-        if(ack.sucess)
-        {
-            TK_RewardListForBuyerAck * ackData = (TK_RewardListForBuyerAck *)ack;
-            for (RewardData *d in ackData.data) {
-                [section.rowsData addObject:[TKRewardCellModel transformFromRewardData:d]];
-            }
-            [weakSelf setDefaultSection:section];
-            [weakSelf.mTableView reloadData];
-        }
-        [weakSelf stopRefresh];
-    }];
+                                       if(ack.sucess)
+                                       {
+                                           TK_RewardListForBuyerAck * ackData = (TK_RewardListForBuyerAck *)ack;
+                                           for (RewardData *d in ackData.data) {
+                                               [section.rowsData addObject:[TKRewardCellModel transformFromRewardData:d]];
+                                           }
+                                           [weakSelf setDefaultSection:section];
+                                           [weakSelf.mTableView reloadData];
+                                           
+                                           
+                                       }
+                                       
+                                       
+                                       [weakSelf stopRefresh];
+                                       
+                                       if(nowPage == 0 && weakSelf.defaultSection.rowsData.count == 0)
+                                       {
+                                           [weakSelf showTipsView:[TKUITools getListViewEmptyTip]];
+                                       }
+                                   }];
     
-    
-//    
-//    [[TKProxy proxy].mainProxy getRewardList:self.category.categoryId
-//                                        page:nowPage
-//     
-//                                   withBlock:^(HF_BaseAck *ack) {
-//        
-//        
-//    }];
 }
+
+
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     TKRewardCell * cell = [tableView dequeueReusableCellWithIdentifier:@"TKRewardCell"];
+//    [cell isEqual:<#(id)#>]
 //    DDLogInfo(@"get rewardcell view  cell is nill =  %d",cell == nil);
     if(!cell)
     {
@@ -96,13 +99,15 @@
     }
     
     [self fillTableCell:cell withDataIndex:indexPath];
+    
     return  cell;
 }
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
+    TKRewardCellModel * cellData = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
     RewardData * rowData  = cellData.ackData;
     GoodsDetailViewController *vc = [[GoodsDetailViewController alloc]initWithNibName:@"GoodsDetailViewController" bundle:nil];
     vc.data = [rowData copy];

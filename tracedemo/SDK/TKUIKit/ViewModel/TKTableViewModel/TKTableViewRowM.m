@@ -11,6 +11,8 @@
 @implementation TKTableViewRowM
 
 
+static TKTableViewRowM * nullRow;
+
 -(instancetype)init
 {
     self = [super init];
@@ -23,6 +25,16 @@
     
     //
     return  _rowHeight;
+}
+
+
++(TKTableViewRowM *)null
+{
+    if(nullRow == nil)
+    {
+        nullRow = [[TKTableViewRowM alloc] init];
+    }
+    return nullRow;
 }
 
 @end

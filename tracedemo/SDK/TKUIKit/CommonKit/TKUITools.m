@@ -99,4 +99,13 @@
 }
 
 
++(UIView *)getListViewEmptyTip
+{
+    UILabel * l = [[UILabel alloc] init];
+    l.textAlignment = NSTextAlignmentCenter;
+    l.backgroundColor = [UIColor clearColor];
+    l.text = @"无数据";
+    return l;
+}
+
 @end

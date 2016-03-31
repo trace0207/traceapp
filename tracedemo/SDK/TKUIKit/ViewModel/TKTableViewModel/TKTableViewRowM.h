@@ -15,4 +15,7 @@
 @property (nonatomic,strong) NSObject * rowData;
 @property (nonatomic,assign) BOOL isEmptyData;
 
+
++(TKTableViewRowM *)null;
+
 @end
