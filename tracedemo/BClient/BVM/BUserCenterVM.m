@@ -15,6 +15,10 @@
 #import "TKEditUserInfoVC.h"
 #import "NSString+HFStrUtil.h"
 #import "AbountViewController.h"
+#import "TKBuyerCenterViewController.h"
+#import "TKSettingsViewController.h"
+#import "TKInviteCodeViewController.h"
+
 @implementation BUserCenterVM
 
 
@@ -91,6 +95,7 @@
             break;
         case 2:
             //打客服电话
+            [UIKitTool callPhone:SERVER];
             break;
         default:
             break;
@@ -241,8 +246,7 @@
 {
     if (row == 0) {
         
-        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
-        bvc.navTitle = @"我的账户";
+        TKSettingsViewController * bvc = [[TKSettingsViewController alloc] init];
         [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
     }
     if (row == 1) {
@@ -253,23 +257,24 @@
         [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     }
     else if (row == 2){
-        
-        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
-        bvc.navTitle = @"附近买手";
-        [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
-        
-    }
-    else if(row == 3)
-    {
-        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
-        bvc.navTitle = @"活动";
-        [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
-    }
-    else if (row == 4) {
-        TKAppSettingViewController * setVC = [[TKAppSettingViewController alloc] init];
-        [[AppDelegate getMainNavigation] pushViewController:setVC animated:YES];
+        TKInviteCodeViewController *vc = [[TKInviteCodeViewController alloc]initWithNibName:@"TKInviteCodeViewController" bundle:nil];
+        [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+//        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
+//        bvc.navTitle = @"附近买手";
+//        [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
         
     }
+//    else if(row == 3)
+//    {
+//        TKIBaseNavWithDefaultBackVC * bvc = [[TKIBaseNavWithDefaultBackVC alloc] init];
+//        bvc.navTitle = @"活动";
+//        [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
+//    }
+//    else if (row == 4) {
+//        TKAppSettingViewController * setVC = [[TKAppSettingViewController alloc] init];
+//        [[AppDelegate getMainNavigation] pushViewController:setVC animated:YES];
+//        
+//    }
     
 }
 

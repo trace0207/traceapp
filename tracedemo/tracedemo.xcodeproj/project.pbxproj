@@ -115,6 +115,10 @@
 		8AD4758C1C96CB9A00B44D56 /* TKPayProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4758A1C96CB9A00B44D56 /* TKPayProxy.m */; };
 		911D01431CA3C9FB00BF06AE /* TKPayChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */; };
 		911D01441CA3C9FB00BF06AE /* TKPayChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */; };
+		9120D8401CAD2D5500491F05 /* TKInviteCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9120D83E1CAD2D5500491F05 /* TKInviteCodeViewController.m */; };
+		9120D8411CAD2D5500491F05 /* TKInviteCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9120D83E1CAD2D5500491F05 /* TKInviteCodeViewController.m */; };
+		9120D8421CAD2D5500491F05 /* TKInviteCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9120D83F1CAD2D5500491F05 /* TKInviteCodeViewController.xib */; };
+		9120D8431CAD2D5500491F05 /* TKInviteCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9120D83F1CAD2D5500491F05 /* TKInviteCodeViewController.xib */; };
 		912120AD1C9F180500271605 /* TKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120AC1C9F180500271605 /* TKAlertView.m */; };
 		912120AE1C9F180500271605 /* TKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120AC1C9F180500271605 /* TKAlertView.m */; };
 		912120B41C9F941C00271605 /* UIView+Border.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120B31C9F941C00271605 /* UIView+Border.m */; };
@@ -2798,6 +2802,9 @@
 		8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserDetailInfoViewController.m; sourceTree = "<group>"; };
 		911D01411CA3C9FB00BF06AE /* TKPayChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPayChooseView.h; sourceTree = "<group>"; };
 		911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPayChooseView.m; sourceTree = "<group>"; };
+		9120D83D1CAD2D5500491F05 /* TKInviteCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKInviteCodeViewController.h; sourceTree = "<group>"; };
+		9120D83E1CAD2D5500491F05 /* TKInviteCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKInviteCodeViewController.m; sourceTree = "<group>"; };
+		9120D83F1CAD2D5500491F05 /* TKInviteCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKInviteCodeViewController.xib; sourceTree = "<group>"; };
 		912120AB1C9F180500271605 /* TKAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAlertView.h; sourceTree = "<group>"; };
 		912120AC1C9F180500271605 /* TKAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAlertView.m; sourceTree = "<group>"; };
 		912120B21C9F941C00271605 /* UIView+Border.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Border.h"; sourceTree = "<group>"; };
@@ -5477,6 +5484,9 @@
 				91F6033F1CA2C5EE00238FCE /* UserInfoViewController.m */,
 				91F603421CA2C6DC00238FCE /* TKSettingsViewController.h */,
 				91F603431CA2C6DC00238FCE /* TKSettingsViewController.m */,
+				9120D83D1CAD2D5500491F05 /* TKInviteCodeViewController.h */,
+				9120D83E1CAD2D5500491F05 /* TKInviteCodeViewController.m */,
+				9120D83F1CAD2D5500491F05 /* TKInviteCodeViewController.xib */,
 				914303221CA29998003E80F7 /* CoinViewController.h */,
 				914303231CA29998003E80F7 /* CoinViewController.m */,
 				914303241CA29998003E80F7 /* CoinViewController.xib */,
@@ -5938,6 +5948,7 @@
 				BB83FAF91C72C01C0013A6A0 /* SignOneViewController.xib in Resources */,
 				BB83FAFA1C72C01C0013A6A0 /* HFBoxTableViewCell.xib in Resources */,
 				BB83FAFB1C72C01C0013A6A0 /* ShareSDKLocalizable.strings in Resources */,
+				9120D8421CAD2D5500491F05 /* TKInviteCodeViewController.xib in Resources */,
 				BB83FAFC1C72C01C0013A6A0 /* HFLanchViewController.xib in Resources */,
 				BB83FAFD1C72C01C0013A6A0 /* TestViewController.xib in Resources */,
 				BB83FAFE1C72C01C0013A6A0 /* TKHttpAction.plist in Resources */,
@@ -6065,6 +6076,7 @@
 				BB83FDB71C72C16B0013A6A0 /* HFBoxTableViewCell.xib in Resources */,
 				8A9985991C86C684000F9CBC /* BHomeChildBVC.xib in Resources */,
 				BB83FDB81C72C16B0013A6A0 /* ShareSDKLocalizable.strings in Resources */,
+				9120D8431CAD2D5500491F05 /* TKInviteCodeViewController.xib in Resources */,
 				912120C01C9FD6FA00271605 /* DeliveryTimeView.xib in Resources */,
 				8AA7F7111C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib in Resources */,
 				BB83FDB91C72C16B0013A6A0 /* HFLanchViewController.xib in Resources */,
@@ -6750,6 +6762,7 @@
 				BB83FA541C72C01C0013A6A0 /* ModuleRes.m in Sources */,
 				BB83FA551C72C01C0013A6A0 /* HFSensitiveWordsReq.m in Sources */,
 				BB83FA561C72C01C0013A6A0 /* HFDeleteHabitReq.m in Sources */,
+				9120D8401CAD2D5500491F05 /* TKInviteCodeViewController.m in Sources */,
 				BB83FA571C72C01C0013A6A0 /* TAAbstractDotView.m in Sources */,
 				BB83FA581C72C01C0013A6A0 /* HFHabitViewController.m in Sources */,
 				BB83FA591C72C01C0013A6A0 /* TKUserProxy.m in Sources */,
@@ -7379,6 +7392,7 @@
 				BB83FD121C72C16B0013A6A0 /* HFSensitiveWordsReq.m in Sources */,
 				BB83FD131C72C16B0013A6A0 /* HFDeleteHabitReq.m in Sources */,
 				BB83FD141C72C16B0013A6A0 /* TAAbstractDotView.m in Sources */,
+				9120D8411CAD2D5500491F05 /* TKInviteCodeViewController.m in Sources */,
 				BB83FD151C72C16B0013A6A0 /* HFHabitViewController.m in Sources */,
 				BB83FD161C72C16B0013A6A0 /* TKUserProxy.m in Sources */,
 				BB83FD171C72C16B0013A6A0 /* GetSchemeDayInfoAck.m in Sources */,
