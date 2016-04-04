@@ -121,6 +121,15 @@
             cellData.payType = PayTypeAlipay;
             [self.payDataSource addObject:cellData];
         }
+        if ((payType & PayQUPAI)) {
+            CellData *cellData = [[CellData alloc]init];
+            cellData.imageName = @"tk_icon_vip";
+            cellData.title = @"大牌币支付";
+            cellData.payType = PayQUPAI;
+            [self.payDataSource addObject:cellData];
+        }
+
+        
         
         [self setViews];
         
@@ -302,10 +311,10 @@
     return _tableView;
 }
 
-- (void)setMoney:(CGFloat)money
+- (void)setMoney:(NSString *)money
 {
     _money = money;
-    NSString *moneyString = [NSString stringWithFormat:@"金额：%0.2f元",money];
+    NSString *moneyString = [NSString stringWithFormat:@"金额：%0.2f元",money.integerValue/100.0];
     NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc]initWithString:moneyString];
     NSDictionary *attri1 = @{NSFontAttributeName:[UIFont systemFontOfSize:14],NSForegroundColorAttributeName:[UIColor hexChangeFloat:TKColorBlack]};
     NSDictionary *attri2 = @{NSFontAttributeName:[UIFont systemFontOfSize:14],NSForegroundColorAttributeName:[UIColor hexChangeFloat:TKColorRed]};
@@ -314,8 +323,10 @@
     self.amountLabel.attributedText = attributedStr;
 }
 
-- (void)show
+- (void)show:(NSString *)msg money:(NSString *)money withBlock:(payChooseBlock)block
 {
+    self.block = block;
+    self.money = money;
     self.backgroundView.hidden = YES;
     CGRect rect = self.frame;
     rect.origin.y = rect.size.height;
@@ -345,6 +356,9 @@
 - (void)payAction:(UIButton *)btn
 {
     [self hidden];
+    
+    self.block(self.currentPayType);
+    
     //self.currentPayType
     //self.money
 }

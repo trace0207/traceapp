@@ -314,6 +314,7 @@
     arg.purchaserId = buyerId;
     arg.purchaserDay = days;
     arg.postrewardId = rewardId;
+    arg.showLoadingStr = @"YES";
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:^(HF_BaseAck *ack) {
     
         block(ack);
@@ -333,6 +334,7 @@
     
     arg.postrewardId = rewardId;
     arg.source = source;
+    arg.showLoadingStr = @"YES";
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:^(HF_BaseAck *ack) {
         
         block(ack);

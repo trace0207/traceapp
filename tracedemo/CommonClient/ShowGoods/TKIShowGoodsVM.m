@@ -171,6 +171,7 @@
         cell = [[NSBundle mainBundle]loadNibNamed:@"TKShowGoodsCell" owner:self options:nil].firstObject;
         cell.backgroundColor = [UIColor clearColor];
     }
+    cell.indexPath = indexPath;
     [self fillCellImages:cell indexPath:indexPath];
     return cell;
 }
@@ -320,9 +321,11 @@
         cell.contentText.text = ackData.content;
 
     }
+    cell.buyerHeadImage.roundValue = 11;
     TKSetHeadImageView(cell.buyerHeadImage, [TKUITools getRawImage:ackData.purchaserHeaderUrl])
     cell.buyerNameText.text = ackData.purchaserNickName;
     cell.zanCount.text =  ackData.praiseCount;
+    cell.buyerVipLevelText.text = @"签约买手";
     if(ackData.praiseCount.integerValue <99)
     {
         cell.zanMore.hidden = YES;
@@ -339,6 +342,10 @@
     else{
        cell.followMore.hidden = NO;
     }
+    
+    
+    UIGestureRecognizer * buyerTap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(onBuyerTap:)];
+    
     
     [cell.brandBtn setTitle:ackData.brandName forState:UIControlStateNormal];
     [cell.categoryBtn setTitle:ackData.categoryName forState:UIControlStateNormal];
@@ -372,13 +379,13 @@
         }
     }
     
-    
-    
     [TKUITools showImagesInBigScreen:rowD.showGoodsData.pics
                        withImageViews:pics
                         currentIndex:index];
 }
 
+
+#pragma  mark  TKShowGoodsCellDelegate
 
 /**
  cell 协议方法，供给 cell 回调回去数据
@@ -389,43 +396,31 @@
     return rowM.showGoodsData;
 }
 
-///**
-//  点赞
-// **/
-//-(void)likeClick:(id)sender
-//{
-//    UIButton * btn = (UIButton *)sender;
-//    NSInteger rowIndex = (btn.tag - 1)/1000;
-//    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
-//    DDLogInfo(@"I Like it %@",rowD.showGoodsData);
-//}
-//
-//
-///**
-// 评论
-// **/
-//-(void)commentClick:(id)sender
-//{
-//    UIButton * btn = (UIButton *)sender;
-//    NSInteger rowIndex = (btn.tag - 2)/1000;
-//    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
-//    DDLogInfo(@"commentClick %@",rowD.showGoodsData);
-//    TKICommentViewController *vc = [[TKICommentViewController alloc] init];
-//    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
-//}
-//
-//
-///**
-// 悬赏
-// **/
-//-(void)rewardClick:(id)sender
-//{
-//    UIButton * btn = (UIButton *)sender;
-//    NSInteger rowIndex = (btn.tag - 3)/1000;
-//    TKIShowGoodsRowM * rowD = (TKIShowGoodsRowM *)[self.defaultSection.rowsData objectAtIndex:rowIndex];
-//    DDLogInfo(@"rewardClick %@",rowD.showGoodsData);
-//}
 
+-(void)onPariseBtnClick:(NSIndexPath *)indexPath
+{
+    DDLogInfo(@"action from indexRow = %ld",indexPath.row);
+}
+
+-(void)onUserHeadFieldClick:(NSIndexPath *)indexPath
+{
+    DDLogInfo(@"action from indexRow = %ld",indexPath.row);
+
+}
+
+-(void)onBuyerHeadFiedClick:(NSIndexPath *)indexPath
+{
+    DDLogInfo(@"action from indexRow = %ld",indexPath.row);
+
+}
+-(void)onFollowBtnClick:(NSIndexPath *)indexPath
+{
+    DDLogInfo(@"action from indexRow = %ld",indexPath.row);
+
+}
+
+
+#pragma mark  event
 
 -(void)toShowGoodsDetailPage:(TKShowGoodsRowData *)data
 {
@@ -433,6 +428,10 @@
     
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     
+}
+
+-(void)onBuyerTap:(NSIndexPath *)indexPath
+{
 }
 
 

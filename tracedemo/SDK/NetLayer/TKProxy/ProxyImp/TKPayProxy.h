@@ -12,7 +12,21 @@
 #import "TKProxy.h"
 
 
-typedef void (^payAckBlock)(NSInteger result);
+
+typedef NS_ENUM(NSInteger ,PayResult)
+{
+    PaySuccess = 1,
+    PrePaying = 11,
+    PrePaySuccess = 2,
+    PrePayFailed = 3,
+    PayFailed = 4,
+    PayBigMoneySuccess =5,
+    PayCancel = 6,
+    PaySelectBack =7,
+    PayBigMoneyNotEnough =8,
+};
+
+typedef void (^payAckBlock)(PayResult result);
 
 @interface TKPayProxy : NSObject
 
@@ -25,8 +39,16 @@ withCompletion:(PingppCompletion)completionBlock;
 
 
 /**
- 支付
+ 预支付
  **/
-+(void)pay:(TK_PayArg *)arg withBlick:(payAckBlock)block;
++(void)prePay:(TK_PayArg *)arg withBlick:(payAckBlock)block;
+
+/**
+ 选择支付途径
+ **/
++(void)selectPayWay:(NSString *)money
+           rewardId:(NSString *)rewardId
+           fundType:(NSInteger)type
+          withBlock:(payAckBlock)block;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "TKHeadImageView.h"
 
-static const CGFloat roundValue = 2.0f;
+
 
 @interface TKHeadImageView()
 {
@@ -23,6 +23,7 @@ static const CGFloat roundValue = 2.0f;
 - (instancetype)init
 {
     self = [super init];
+    _roundValue =  - 1;
     self.image = IMG(@"head_default");
     self.clipsToBounds = YES;
     self.contentMode = UIViewContentModeScaleAspectFill;
@@ -33,6 +34,7 @@ static const CGFloat roundValue = 2.0f;
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    _roundValue =  - 1;
     self.clipsToBounds = YES;
     self.contentMode = UIViewContentModeScaleAspectFill;
     self.userInteractionEnabled = YES;
@@ -42,6 +44,7 @@ static const CGFloat roundValue = 2.0f;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
+    _roundValue =  - 1;
     self.clipsToBounds = YES;
     self.contentMode = UIViewContentModeScaleAspectFill;
     self.userInteractionEnabled = YES;
@@ -52,13 +55,23 @@ static const CGFloat roundValue = 2.0f;
 {
     [super setFrame:frame];
     self.clipsToBounds = YES;
-    [self.layer setCornerRadius:roundValue]; // 设置圆形头
+    [self.layer setCornerRadius:self.roundValue]; // 设置圆形头
     self.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (void)layoutSubviews
 {
-    [self.layer setCornerRadius:roundValue];
+    [self.layer setCornerRadius:self.roundValue];
+}
+
+
+-(CGFloat)roundValue
+{
+    if(_roundValue == -1)
+    {
+        _roundValue = 2.0f;
+    }
+    return _roundValue;
 }
 
 

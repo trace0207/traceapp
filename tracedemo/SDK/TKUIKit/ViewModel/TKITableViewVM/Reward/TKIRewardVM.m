@@ -175,7 +175,17 @@
         if (buttonIndex == 1) {
             [[TKProxy proxy].mainProxy accept:[[TKUserCenter instance] getUser].userId rewardId:rowData.id needDays:deliveryTime withBlock:^(HF_BaseAck * ack)
              {
-                 DDLogInfo(@"ack %@",ack);
+//                 DDLogInfo(@"ack %@",ack);
+                 
+                 if(ack.sucess)
+                 {
+                     [TKAlertView showSuccessWithTitle:@"抢单成功" withMessage:nil commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
+                 }
+                 else
+                 {
+                     [TKAlertView showFailedWithTitle:@"抢单失败" withMessage: ack.msg commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
+                 }
+                 
              }];
         }
     }];
@@ -194,7 +204,14 @@
     [TKAlertView showAltertWithTitle:@"确定不接该笔悬赏？" withMessage:@"释放后，您可以在悬赏状态切换位置找到“已释放的悬赏”。" commpleteBlock:^(NSInteger buttonIndex) {
         if (buttonIndex == 1) {
             [[TKProxy proxy].mainProxy releaseReward:rowData.id source:0 withBlock:^(HF_BaseAck *ack) {
-                DDLogInfo(@"ack %@",ack);
+                if(ack.sucess)
+                {
+                    [TKAlertView showSuccessWithTitle:@"悬赏已释放" withMessage:nil commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
+                }
+                else
+                {
+                    [TKAlertView showFailedWithTitle:@"释放失败" withMessage: ack.msg commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
+                }
             }];
         }
     } cancelTitle:@"取消" determineTitle:@"不接"];

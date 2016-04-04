@@ -727,28 +727,39 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 -(void)requestPay:(NSString *) money postrewardId:(NSString *)postId
 {
     
-    TK_PayArg * arg = [[TK_PayArg alloc] init];
-    arg.bigMoney = 0;
-    arg.payAmount = money;
-    
-    arg.postrewardId = postId;
-    arg.fundType = 0;//0 订金， 1 尾款， 2全款， 3 买手充值保证金
-    //    arg.clientIp = @"192.168.1.1";
-    
+//    
+//    
+//    
+//    
+//    TK_PayArg * arg = [[TK_PayArg alloc] init];
+//    arg.payAmount = money;
+//    
+//    arg.postrewardId = postId;
+//    arg.fundType = 0;//0 订金， 1 尾款， 2全款， 3 买手充值保证金
+//    //    arg.clientIp = @"192.168.1.1";
+//    arg.bigMoney = 0;
     WS(weakSelf)
     
-    [TKPayProxy pay:arg
-          withBlick:^(NSInteger result) {
-              if(result == 1)
-              {
-//                  weakSelf.images = nil;
-                  [weakSelf onPublishSuccess];
-              }
-              else
-              {
-                  
-              }
-          }];
+    if(alertView)
+    {
+        [alertView removeFromSuperview];
+        alertView = nil;
+    }
+    
+    [TKPayProxy selectPayWay:money rewardId:postId fundType:0 withBlock:^(PayResult result) {
+        if(result == PaySuccess || result == PayBigMoneySuccess)
+        {
+            [weakSelf onPublishSuccess];
+        }
+        else if(result == PayCancel)
+        {
+            [weakSelf payFailed];
+        }
+        else
+        {
+            [weakSelf payFailed];
+        }
+    }];
 }
 
 
@@ -757,7 +768,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 -(void)beginSend
 {
     
-    NSString * tips = self.publishType == 1? @"正在发布晒单,请稍等...":@"正在发布悬赏，请稍等";
+    NSString * tips = self.publishType == 1? @"正在发布晒单,请稍等...":@"正在发布悬赏，请稍等...";
     
     alertView = [TKAlertView showHUDWithText:tips];
     
@@ -785,13 +796,20 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 -(void)onPublishSuccess{
     
     [alertView removeFromSuperview];
-    NSString * title =  self.publishType == 1?@"发表晒单成功":@"发表悬赏成功";
+    NSString * title =  self.publishType == 1?@"晒单成功":@"悬赏成功";
+    NSString * msg = self.publishType == 1?nil:@"等待买手接单";
     WS(weakSelf)
-    [TKAlertView showSuccessWithTitle:title withMessage:nil commpleteBlock:^(NSInteger buttonIndex) {
+    [TKAlertView showSuccessWithTitle:title withMessage:msg commpleteBlock:^(NSInteger buttonIndex) {
         [weakSelf TKI_leftBarAction];
 //    [self dismissViewControllerAnimated:YES completion:nil];
     } cancelTitle:nil determineTitle:@"确定"];
     
+}
+
+-(void)payFailed
+{
+    [alertView removeFromSuperview];
+    [TKAlertView showFailedWithTitle:@"支付未完成" withMessage:@"支付被取消或者是支付异常" commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
 }
 
 #pragma mark - text view delegate

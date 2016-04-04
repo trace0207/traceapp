@@ -12,6 +12,8 @@
 
 @property (nonatomic,strong) NSString * userId;
 
+@property (nonatomic,assign) CGFloat roundValue;
+
 
 - (void)tkAddTapAction:(SEL)selector forTarget:(id)target;
 

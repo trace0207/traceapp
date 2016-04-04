@@ -10,6 +10,8 @@
 
 @interface TKAlertView : UIView
 
+@property (nonatomic, strong) UILabel *textLabel;
+
 //一般场景，message支持NSString和NSAttributedString
 + (instancetype)showAltertWithTitle:(NSString *)title withMessage:(id)message commpleteBlock:(void(^)(NSInteger buttonIndex))block cancelTitle:(NSString *)cancelTitle determineTitle:(NSString *)determineTitle;
 

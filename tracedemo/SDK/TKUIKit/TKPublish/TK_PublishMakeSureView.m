@@ -180,19 +180,19 @@
 //    arg.clientIp = @"192.168.1.1";
     
     WS(weakSelf)
-    
-    [TKPayProxy pay:arg
-          withBlick:^(NSInteger result) {
-              if(result == 1)
-              {
-                   weakSelf.images = nil;
-              }
-              else
-              {
-                  [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingError) object:nil];
-                  [weakSelf showLoadingError];
-              }
-          }];
+//    
+//    [TKPayProxy pay:arg
+//          withBlick:^(NSInteger result) {
+//              if(result == 1)
+//              {
+//                   weakSelf.images = nil;
+//              }
+//              else
+//              {
+//                  [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingError) object:nil];
+//                  [weakSelf showLoadingError];
+//              }
+//          }];
 }
 
 

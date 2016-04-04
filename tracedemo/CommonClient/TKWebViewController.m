@@ -12,6 +12,7 @@
 #import "TKProxy.h"
 #import "WebViewJavascriptBridge.h"
 #import "TKPayProxy.h"
+#import "TKAlertView.h"
 
 
 
@@ -138,19 +139,21 @@
 - (void)handleJSONString:(NSString *)actionString withData:(NSDictionary *)dataDic
 {
     DDLogInfo(@"webcallBack %@  action %@",dataDic, actionString);
-    
     if([@"pay" isEqualToString:actionString])// 支付
     {
-        TK_PayArg * arg = [[TK_PayArg alloc] init];
         NSString * str = [dataDic objectForKey:@"fundType"];
-        arg.fundType = [str integerValue];
-        arg.payAmount = [dataDic objectForKey:@"payAmount"];
-        arg.bigMoney = 0;
-        arg.postrewardId = [dataDic objectForKey:@"postrewardId"];
-        [TKPayProxy pay:arg withBlick:^(NSInteger result) {
-           
-            DDLogInfo(@"pay for web page , result = %ld",result);
+        NSInteger fundType = [str integerValue];
+        [TKPayProxy selectPayWay:[dataDic objectForKey:@"payAmount"] rewardId:[dataDic objectForKey:@"postrewardId"] fundType:fundType withBlock:^(PayResult result) {
+            if(result == PaySuccess)
+            {
+                [TKAlertView showSuccessWithTitle:@"尾款支付成功" withMessage:@"请等待买手购买发货" commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
+            }
+            else
+            {
+                [TKAlertView showFailedWithTitle:@"尾款支付失败" withMessage:@"支付异常或者是支付被取消" commpleteBlock:nil cancelTitle:nil determineTitle:@"取消"];
+            }
         }];
+
     }
     else if([@"linkToNewWindow" isEqualToString:actionString]) // 打开新窗口
     {
@@ -158,45 +161,13 @@
         [TKWebViewController showWebView:@"订单详情" url:relativeUrl];
         
     }
-    
-    
-//    //改变navigation的背景色
-//    if ([actionString isEqualToString:kColor]) {
-//        [self changeNavigationColor:[dataDic objectForKey:kColor]];
-//    }
-//    //改变navigation的title
-//    if ([actionString isEqualToString:kTitle]) {
-//        //[self addNavigationTitle:[dataDic objectForKey:kTitle]];
-//        //        [self.flashView setText:[dataDic objectForKey:kTitle]];
-//    }
-//    //是否在webview右上角添加分享按钮
-//    if ([actionString isEqualToString:kShareBtn]) {
-//        [self showShareButton:dataDic];
-//    }
-//    //load如何赚嗨豆的界面
-//    if ([actionString isEqualToString:kHowToMake]) {
-//        //        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:KGainHiBean]]];
-//    }
-//    //直接出发某个界面的更新
-//    if ([actionString isEqualToString:kBackToWhere]) {
-//        [self backToWhere:dataDic];
-//    }
-//    //点击按钮回退到某个新的url或进入iOS原生界面
-//    if ([actionString isEqualToString:kClickToWhere]) {
-//        [self clickButtonToWhere:dataDic];
-//    }
-//    //分享框弹出
-//    if ([actionString isEqualToString:kShare]) {
-//        [self showShareView:dataDic];
-//    }
-//    //友盟事件
-//    if ([actionString isEqualToString:kUmeng]) {
-//        [self doUmengEvent:[dataDic objectForKey:@"data"]];
-//    }
-//    //打开一个新的webview玩儿
-//    if ([actionString isEqualToString:kNewWeb]) {
-//        [self openNewWeb:dataDic];
-//    }
+    else if([@"service" isEqualToString:actionString]) //联系客服
+    {
+        
+    }
 }
+
+
+
 
 @end

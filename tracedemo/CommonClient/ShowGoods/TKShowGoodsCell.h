@@ -18,7 +18,10 @@
 
 @optional
 -(void)onCommentBtnClick:(NSIndexPath *) indexPath;
-
+-(void)onPariseBtnClick:(NSIndexPath *)indexPath;
+-(void)onBuyerHeadFiedClick:(NSIndexPath *)indexPath;
+-(void)onUserHeadFieldClick:(NSIndexPath *)indexPath;
+-(void)onFollowBtnClick:(NSIndexPath *)indexPath;
 @end
 
 
@@ -27,7 +30,7 @@
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *imageFiledHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textHeight;
 @property (strong, nonatomic) IBOutlet TKHeadImageView *userHeadImage;
-@property (strong, nonatomic) IBOutlet UIImageView *buyerHeadImage;
+@property (strong, nonatomic) IBOutlet TKHeadImageView *buyerHeadImage;
 @property (weak, nonatomic) IBOutlet UILabel *buyerVipLevelText;
 @property (weak, nonatomic) IBOutlet UILabel *buyerNameText;
 
@@ -52,16 +55,13 @@
 @property (weak,nonatomic) id<TKShowGoodsCellDelegate> tkShowGoodscellDelegate;
 
 
-- (IBAction)imageFieldBtn:(id)sender;
-
-
-
 //head cell
 @property (nonatomic, weak) IBOutlet UIImageView *headImage;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;;
 @property (nonatomic, weak) IBOutlet UILabel *gradeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *describleLabel;
-- (IBAction)messageAction:(id)sender;
-
+- (IBAction)buyerFieldAction:(id)sender;
+- (IBAction)pariseAction:(id)sender;
+- (IBAction)userHeadClick:(id)sender;
 - (void)setHeadViewModel:(id)model;
 @end

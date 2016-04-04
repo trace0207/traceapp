@@ -311,6 +311,7 @@
         HUD *hud = [[HUD alloc]init];
         hud.textLabel.text = text;
         [alertView addSubview:hud];
+        alertView.textLabel = hud.textLabel;
         [hud mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(alertView.mas_left).with.offset(17.5*kWidthScale);
             make.right.equalTo(alertView.mas_right).with.offset(-17.5*kWidthScale);

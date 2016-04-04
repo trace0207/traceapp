@@ -59,15 +59,36 @@
     
     
 }
-- (IBAction)followAction:(id)sender {
-}
 
-- (IBAction)messageAction:(id)sender
-{
-    
-}
 - (void)setHeadViewModel:(id)model
 {
-    
+}
+
+-(IBAction)followAction:(id)sender
+{
+    if(self.tkShowGoodscellDelegate)
+    {
+        [self.tkShowGoodscellDelegate onFollowBtnClick:self.indexPath];
+    }
+}
+
+- (IBAction)buyerFieldAction:(id)sender {
+    if(self.tkShowGoodscellDelegate)
+    {
+        [self.tkShowGoodscellDelegate onBuyerHeadFiedClick:self.indexPath];
+    }
+}
+- (IBAction)pariseAction:(id)sender {
+    if(self.tkShowGoodscellDelegate)
+    {
+        [self.tkShowGoodscellDelegate onPariseBtnClick:self.indexPath];
+    }
+}
+
+- (IBAction)userHeadClick:(id)sender {
+    if(self.tkShowGoodscellDelegate)
+    {
+        [self.tkShowGoodscellDelegate onUserHeadFieldClick:self.indexPath];
+    }
 }
 @end
