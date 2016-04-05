@@ -161,7 +161,7 @@
 
 -(BOOL)hasRefreshFooterView
 {
-    return YES;
+    return self.defaultSection.rowsData.count >= 20;
 }
 
 

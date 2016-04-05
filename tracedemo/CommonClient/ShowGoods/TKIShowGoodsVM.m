@@ -18,6 +18,8 @@
 #import "UIColor+TK_Color.h"
 #import "TK_GetOrdersAck.h"
 #import "NSString+HFStrUtil.h"
+#import "TKUserCenter.h"
+#import "NSString+HFStrUtil.h"
 
 @interface TKIShowGoodsVM()<TKShowGoodsCellDelegate>
 {
@@ -343,10 +345,6 @@
        cell.followMore.hidden = NO;
     }
     
-    
-    UIGestureRecognizer * buyerTap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(onBuyerTap:)];
-    
-    
     [cell.brandBtn setTitle:ackData.brandName forState:UIControlStateNormal];
     [cell.categoryBtn setTitle:ackData.categoryName forState:UIControlStateNormal];
     
@@ -399,6 +397,19 @@
 
 -(void)onPariseBtnClick:(NSIndexPath *)indexPath
 {
+    TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
+    [[TKProxy proxy].mainProxy  praiseShowOrders:rowM.ackData.id withUserId:[[TKUserCenter instance] getUser].userId withBlock:^(HF_BaseAck *ack) {
+       
+        DDLogInfo(@"parise %@",ack);
+        
+        TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
+        rowM.ackData.praiseCount  =   [NSString tkStringFromNumber:rowM.ackData.praiseCount.integerValue + 1];
+        
+        [self.mTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        
+    }];
+    
+    
     DDLogInfo(@"action from indexRow = %ld",indexPath.row);
 }
 
@@ -429,11 +440,5 @@
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     
 }
-
--(void)onBuyerTap:(NSIndexPath *)indexPath
-{
-}
-
-
 
 @end

@@ -19,6 +19,7 @@
 #import "TKSettingsViewController.h"
 #import "TKBuyerCenterViewController.h"
 #import "TKAlertView.h"
+#import "TKUITools.h"
 @interface TK_UserCenterVM()
 {
  
@@ -196,16 +197,13 @@
     cell.contentView.backgroundColor = [UIColor clearColor];
     TKUser * user = [[TKUserCenter instance]getUser];
     if (user.headPortraitUrl.length>0) {
-        [cell.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];
+        TKSetHeadImageView(cell.headImage, [TKUITools getRawImage:user.headPortraitUrl])
         
     }else{
         [cell.headImage setImage:IMG(@"tk_image_head_default")];
     }
     cell.label1.text = user.nickName;
-//    cell.label1.text = 
     cell.label2.text = user.signature;
-//    cell.label3.textColor = [UIColor tkThemeColor1];
-//    cell.label3.text = TKStrFromNumber(user.score);//[[NSNumber numberWithInteger:user.score]stringValue];
     return cell;
 }
 

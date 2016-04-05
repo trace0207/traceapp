@@ -84,6 +84,7 @@
     TK_PraiseOrderArg * arg = [[TK_PraiseOrderArg alloc] init];
     arg.showOrderId = orderId;
     arg.praiserId = userId;
+    arg.showLoadingStr = @"YES";
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 

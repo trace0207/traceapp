@@ -60,6 +60,9 @@
     
 }
 
+
+
+
 - (void)setHeadViewModel:(id)model
 {
 }
@@ -70,6 +73,9 @@
     {
         [self.tkShowGoodscellDelegate onFollowBtnClick:self.indexPath];
     }
+    
+//    [self.tkShowGoodscellDelegate getRowDataByIndex:self.indexPath];
+    
 }
 
 - (IBAction)buyerFieldAction:(id)sender {
