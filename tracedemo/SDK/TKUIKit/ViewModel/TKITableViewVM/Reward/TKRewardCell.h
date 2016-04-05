@@ -10,6 +10,7 @@
 #import "TKTableViewRowM.h"
 #import "TK_RewardListForBuyerAck.h"
 #import "CountDownView.h"
+#import "TKHeadImageView.h"
 
 
 
@@ -44,7 +45,7 @@
 
 @property (weak, nonatomic) IBOutlet CountDownView *timeCountView;
 
-@property (strong, nonatomic) IBOutlet UIImageView *headImageView;
+@property (strong, nonatomic) IBOutlet TKHeadImageView *headImageView;
 @property (strong, nonatomic) IBOutlet UILabel *userName;
 @property (strong, nonatomic) IBOutlet UILabel *contentInfo;
 @property (strong, nonatomic) IBOutlet UIImageView *statusIcon;

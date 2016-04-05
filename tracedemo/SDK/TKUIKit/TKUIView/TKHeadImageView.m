@@ -69,7 +69,7 @@
 {
     if(_roundValue == -1)
     {
-        _roundValue = 2.0f;
+      _roundValue =   self.frame.size.width/2;
     }
     return _roundValue;
 }

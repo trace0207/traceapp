@@ -20,6 +20,8 @@
 #import "TKInviteCodeViewController.h"
 #import "TKBuyerCenterViewController.h"
 #import "CBillViewController.h"
+#import "TKWebViewController.h"
+#import "TKUITools.h"
 @implementation BUserCenterVM
 
 
@@ -193,25 +195,22 @@
 -(TK_SettingCell *)getHeadCell
 {
     TK_SettingCell * cell =   [TK_SettingCell loadCenterImageType:self];
-    //cell.backgroundColor = [UIColor clearColor];
+    //cell.backgroundColor = [UIColor clearColor];TK_SettingCell
     cell.contentView.backgroundColor = [UIColor tkThemeColor2];
     TKUser * user = [[TKUserCenter instance]getUser];
+//    ((TKHeadImageView *)cell.headImage)
     if (user.headPortraitUrl.length>0) {
-        [cell.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];
+        TKSetHeadImageView(cell.headImage, [TKUITools getRawImage:user.headPortraitUrl])
+//        [cell.headImage sd_setImageWithURL:[NSURL URLWithString:[TKUI getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];
         
     }else{
-        [cell.headImage setImage:IMG(@"user")];
+        [cell.headImage setImage:IMG(@"tk_image_head_default")];
     }
     [cell.headImage tkAddTapAction:@selector(goToUserPage) forTarget:self];
     cell.label2.text = user.nickName;
-//    cell.label1.text = [[@"Vip:" stringByAppendingString:user.vip] stringByAppendingString:@"级"];
-    
     cell.label1.text =  [[NSString alloc] initWithFormat:@"Vip:%@级",user.vip];  // @"Vip:%级别";
     
     [cell setSelectionStyle:(UITableViewCellSelectionStyleNone)];
-    
-//    cell.label3.textColor = [UIColor tkThemeColor1];
-//    cell.label3.text = TKStrFromNumber(user.score);//[[NSNumber numberWithInteger:user.score]stringValue];
     return cell;
 }
 
@@ -219,8 +218,19 @@
 
 -(void)onTableRowSelectFromSectionOne:(NSInteger)row view:(TK_SettingCell *)cell
 {
-    
-    if (row == 2) {
+    if(row == 0)//保证金
+    {
+        [TKWebViewController showWebView:@"保证金" url:BDepositURL];
+    }
+    else if (row == 1)
+    {
+#if B_Client == 1
+        [TKWebViewController showWebView:@"账户详情" url:BaccountDetailURL];
+#else 
+        [TKWebViewController showWebView:@"账户详情" url:CaccountDetailURL];
+#endif
+    }
+    else if (row == 2) {
         TKEditUserInfoVC *vc = [[TKEditUserInfoVC alloc]init];
         [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     }else if(row == 3)

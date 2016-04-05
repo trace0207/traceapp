@@ -304,6 +304,7 @@
     GetOrderData * ackData = rowD.ackData;
     // 设置其他信息
     cell.userHeadImage.userId = ackData.id;
+    cell.userHeadImage.roundValue = 2.0;
     
     
     if([ackData.userId isEqualToString:@"0"])//匿名晒单
@@ -321,7 +322,6 @@
         cell.contentText.text = ackData.content;
 
     }
-    cell.buyerHeadImage.roundValue = 11;
     TKSetHeadImageView(cell.buyerHeadImage, [TKUITools getRawImage:ackData.purchaserHeaderUrl])
     cell.buyerNameText.text = ackData.purchaserNickName;
     cell.zanCount.text =  ackData.praiseCount;

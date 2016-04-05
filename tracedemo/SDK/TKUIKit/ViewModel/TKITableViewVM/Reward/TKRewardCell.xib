@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="311"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aqw-P0-p32" id="sQI-mY-HgF">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="310.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="311"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBR-ri-reY">
@@ -147,21 +147,21 @@
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="170"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zDS-zd-Yfv">
-                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="122"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="122"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="122" id="AD9-Jk-QUh"/>
                                                     <constraint firstAttribute="height" constant="122" id="aNh-jh-mE1"/>
                                                 </constraints>
                                             </imageView>
                                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3Q-hS-x3C">
-                                                <rect key="frame" x="0.0" y="96" width="121.5" height="26"/>
+                                                <rect key="frame" x="0.0" y="96" width="122" height="26"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="26" id="ruy-27-Bjb"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品主图" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsF-bD-eHD">
-                                                <rect key="frame" x="0.0" y="96" width="124.5" height="26"/>
+                                                <rect key="frame" x="0.0" y="96" width="125" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="26" id="39W-9C-BrM"/>
                                                 </constraints>
@@ -170,7 +170,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaZ-3d-srf">
-                                                <rect key="frame" x="0.0" y="130" width="124.5" height="35"/>
+                                                <rect key="frame" x="0.0" y="130" width="125" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="l83-nI-ay9"/>
                                                 </constraints>

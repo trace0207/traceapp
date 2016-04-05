@@ -142,6 +142,7 @@
 {
     TKBorder(cell.btnLeft);
     TKBorder(cell.btnRight);
+    cell.headImageView.roundValue = 2.0;
     
 }
 
