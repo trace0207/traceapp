@@ -18,6 +18,7 @@
 #import "AbountViewController.h"
 #import "TKSettingsViewController.h"
 #import "TKBuyerCenterViewController.h"
+#import "TKAlertView.h"
 @interface TK_UserCenterVM()
 {
  
@@ -57,14 +58,14 @@
     TKTableSectionM * section1 = [[TKTableSectionM alloc] init];
     section1.sectionHeadHeight = 0.01;
     section1.sectionFootHeight = 10;
-    section0.rowHeight = 50;
+    section1.rowHeight = 50;
     [section1 initDefaultRowData:2];
     
     
     TKTableSectionM * section2 = [[TKTableSectionM alloc] init];
     section2.sectionHeadHeight = 0.01;
     section2.sectionFootHeight = 0.01;
-    section0.rowHeight = 50;
+    section2.rowHeight = 50;
     [section2 initDefaultRowData:1];
     
     
@@ -119,9 +120,14 @@
 
 - (void)exit:(id)sender
 {
-    //退出操作
-    TKBuyerCenterViewController *vc = [[TKBuyerCenterViewController alloc]init];
-    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+//    //退出操作
+//    TKBuyerCenterViewController *vc = [[TKBuyerCenterViewController alloc]init];
+//    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    
+    [[TKUserCenter instance] logout];
+    
+    [[HFHUDView shareInstance] ShowTips:@"用户已经注销" delayTime:1.0 atView:nil];
+    
 }
 
 -(void)goToUserPage
@@ -193,7 +199,7 @@
         [cell.headImage sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];
         
     }else{
-        [cell.headImage setImage:IMG(@"user")];
+        [cell.headImage setImage:IMG(@"tk_image_head_default")];
     }
     cell.label1.text = user.nickName;
 //    cell.label1.text = 

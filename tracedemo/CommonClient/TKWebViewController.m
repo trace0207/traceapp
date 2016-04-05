@@ -163,7 +163,7 @@
     }
     else if([@"service" isEqualToString:actionString]) //联系客服
     {
-        
+        [UIKitTool callPhone:SERVER];
     }
 }
 

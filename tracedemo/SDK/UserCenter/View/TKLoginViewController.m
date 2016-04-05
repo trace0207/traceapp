@@ -16,7 +16,7 @@
 #import "HFHUDView.h"
 #import "GlobNotifyDefine.h"
 
-@interface TKLoginViewController ()<TKClearViewDelegate>
+@interface TKLoginViewController ()
 {
 
     
@@ -30,7 +30,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navTitle = @"登录";
-    _clearInputView.clearDelegate = self;
     
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     
@@ -82,13 +81,18 @@
 
 
 - (void)registerBtn:(id)sender {
+    
+    [_userNameText resignFirstResponder];
+    [_passwordText resignFirstResponder];
+    
     TKRegisterViewController * regVC = [[TKRegisterViewController alloc]initWithNibName:@"TKRegisterViewController" bundle:nil];
     regVC.navTitle = @"注册";
     [self.navigationController pushViewController:regVC animated:YES];
     
 }
 - (IBAction)loginBtn:(id)sender {
-    
+    [_userNameText resignFirstResponder];
+    [_passwordText resignFirstResponder];
     [[TKUserCenter instance] doLogin:_userNameText.text password:_passwordText.text];
 }
 
@@ -111,11 +115,5 @@
 }
 
 
--(void)onClearViewEvent
-{
-
-    [_userNameText resignFirstResponder];
-    [_passwordText resignFirstResponder];
-}
 
 @end

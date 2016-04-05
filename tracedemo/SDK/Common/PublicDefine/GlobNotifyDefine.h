@@ -33,5 +33,6 @@
 #define TKUserLoginBackEvent            @"tk_userLoginBackEvent"
 #define TKBrandCategoryReady            @"tk_BrandAndCategoryReady"
 #define TKPayNotify                     @"tk_pingppPayResult"
+#define TKUserLoginOut                  @"tk_userLoginOut"
 
 #endif

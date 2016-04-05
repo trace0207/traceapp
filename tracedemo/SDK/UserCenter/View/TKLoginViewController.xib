@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TKLoginViewController">
             <connections>
-                <outlet property="clearInputView" destination="QY1-OM-FDg" id="i9h-4T-xxy"/>
                 <outlet property="passwordText" destination="k72-7a-4a0" id="sDp-LP-6G1"/>
                 <outlet property="userNameText" destination="F82-aM-k98" id="6UB-kz-tHS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="dIV-w1-E20"/>
@@ -22,7 +21,6 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tk_icon_user_1_b" translatesAutoresizingMaskIntoConstraints="NO" id="NJc-Wo-q5i">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="1yR-uH-WB8"/>
                                 <constraint firstAttribute="width" constant="20" id="ggg-E7-lEm"/>
@@ -42,7 +40,6 @@
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的手机号码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="F82-aM-k98">
                             <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                            <animations/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="33" id="vHP-lZ-oJo"/>
@@ -62,7 +59,6 @@
                             </variation>
                         </textField>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="F82-aM-k98" secondAttribute="trailing" constant="15" id="D3y-JJ-szm"/>
@@ -125,7 +121,6 @@
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="k72-7a-4a0">
                             <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                            <animations/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="33" id="S4J-WY-IqF"/>
@@ -185,7 +180,6 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mep-Td-UA8">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                    <animations/>
                     <color key="backgroundColor" red="0.95136916039999997" green="0.090013007960000002" blue="0.36786974569999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="neb-Es-kjs"/>
@@ -211,7 +205,6 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vl8-aW-UJs">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="BFd-64-kIB"/>
                         <constraint firstAttribute="height" constant="30" id="d7K-u7-RvL"/>
@@ -237,14 +230,7 @@
                         <action selector="forgetPassword:" destination="-1" eventType="touchUpInside" id="YL4-oo-Hdg"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QY1-OM-FDg" customClass="TKClearView">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    </variation>
-                </view>
             </subviews>
-            <animations/>
             <color key="backgroundColor" red="1" green="0.80367635469999998" blue="0.6435633597" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="mep-Td-UA8" secondAttribute="trailing" constant="8" id="6vf-qe-M4b"/>
@@ -266,20 +252,19 @@
                     <exclude reference="VNe-bW-LcS"/>
                     <exclude reference="mep-Td-UA8"/>
                     <exclude reference="vl8-aW-UJs"/>
-                    <exclude reference="QY1-OM-FDg"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="M1i-qW-4qe"/>
+                    <exclude reference="i0m-Nd-C0W"/>
+                    <exclude reference="jKM-s6-0RA"/>
+                    <exclude reference="KNt-Fk-jLf"/>
+                    <exclude reference="lXS-3i-GSb"/>
+                    <exclude reference="v6p-Hd-bOT"/>
                     <exclude reference="6vf-qe-M4b"/>
                     <exclude reference="KWq-RE-dm5"/>
                     <exclude reference="LBn-YC-v5K"/>
                     <exclude reference="P1j-pa-qwu"/>
                     <exclude reference="rlh-bj-psh"/>
-                    <exclude reference="KNt-Fk-jLf"/>
-                    <exclude reference="lXS-3i-GSb"/>
-                    <exclude reference="v6p-Hd-bOT"/>
-                    <exclude reference="M1i-qW-4qe"/>
-                    <exclude reference="i0m-Nd-C0W"/>
-                    <exclude reference="jKM-s6-0RA"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -288,20 +273,19 @@
                     <include reference="VNe-bW-LcS"/>
                     <include reference="mep-Td-UA8"/>
                     <include reference="vl8-aW-UJs"/>
-                    <include reference="QY1-OM-FDg"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="M1i-qW-4qe"/>
+                    <include reference="i0m-Nd-C0W"/>
+                    <include reference="jKM-s6-0RA"/>
+                    <include reference="KNt-Fk-jLf"/>
+                    <include reference="lXS-3i-GSb"/>
+                    <include reference="v6p-Hd-bOT"/>
                     <include reference="6vf-qe-M4b"/>
                     <include reference="KWq-RE-dm5"/>
                     <include reference="LBn-YC-v5K"/>
                     <include reference="P1j-pa-qwu"/>
                     <include reference="rlh-bj-psh"/>
-                    <include reference="KNt-Fk-jLf"/>
-                    <include reference="lXS-3i-GSb"/>
-                    <include reference="v6p-Hd-bOT"/>
-                    <include reference="M1i-qW-4qe"/>
-                    <include reference="i0m-Nd-C0W"/>
-                    <include reference="jKM-s6-0RA"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="303" y="87"/>

@@ -19,6 +19,7 @@
 #import "TKSettingsViewController.h"
 #import "TKInviteCodeViewController.h"
 #import "TKBuyerCenterViewController.h"
+#import "CBillViewController.h"
 @implementation BUserCenterVM
 
 
@@ -222,7 +223,13 @@
     if (row == 2) {
         TKEditUserInfoVC *vc = [[TKEditUserInfoVC alloc]init];
         [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
-    }else{
+    }else if(row == 3)
+    {
+        CBillViewController * vc = [[CBillViewController alloc] init];
+        [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    }
+    
+    else{
         TKIBaseNavWithDefaultBackVC * normalVC = [[TKIBaseNavWithDefaultBackVC alloc] init];
         normalVC.navTitle = cell.label1.text;
         [[AppDelegate getMainNavigation] pushViewController:normalVC animated:YES];

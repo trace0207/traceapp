@@ -119,11 +119,11 @@
     if (self.segmentedControl.selectedSegmentIndex == 1) {
         [self addRightBarItemWithCustomView:self.menuView];
     }
-    UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
-    [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [bt setTitle:@"弹窗" forState:UIControlStateNormal];
-    [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
-    [self addLeftBarItemWithCustomView:bt];
+//    UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
+//    [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    [bt setTitle:@"弹窗" forState:UIControlStateNormal];
+//    [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+//    [self addLeftBarItemWithCustomView:bt];
 }
 
 - (void)test

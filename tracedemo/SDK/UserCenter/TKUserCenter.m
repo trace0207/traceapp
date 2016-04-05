@@ -76,6 +76,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 }
 
 
+-(void)logout
+{
+    self.user.isLogin = NO;
+    [[NSNotificationCenter defaultCenter] postNotificationName:TKUserLoginOut object:nil];
+}
+
+
 
 -(void)doLogin:(NSString *)userName password:(NSString *)password{
 

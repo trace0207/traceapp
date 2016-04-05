@@ -24,7 +24,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *userNameText;
 @property (strong, nonatomic) IBOutlet UITextField *passwordText;
 @property (weak,nonatomic) id<LoginDelegate> delegate;
-@property (strong, nonatomic) IBOutlet TKClearView *clearInputView;
 
 - (IBAction)loginBtn:(id)sender;
 - (IBAction)forgetPassword:(id)sender;

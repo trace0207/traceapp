@@ -591,12 +591,12 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     
     if(image1 == nil)
     {
-        DDLogInfo(@"iamge1 is nil");
+        [[HFHUDView shareInstance] ShowTips:@"商品主图不能为空" delayTime:1.0 atView:NULL];
         return;
     }
     if(image2 == nil)
     {
-        DDLogInfo(@"image2 is nil");
+        [[HFHUDView shareInstance] ShowTips:@"商品吊牌图不能为空" delayTime:1.0 atView:NULL];
         return ;
     }
     

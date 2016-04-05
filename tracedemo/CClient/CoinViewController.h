@@ -9,5 +9,6 @@
 #import "TKIBaseNavWithDefaultBackVC.h"
 
 @interface CoinViewController : TKIBaseNavWithDefaultBackVC
+@property (weak, nonatomic) IBOutlet UILabel *moneyText;
 
 @end

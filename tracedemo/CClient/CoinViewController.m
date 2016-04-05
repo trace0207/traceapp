@@ -7,6 +7,7 @@
 //
 
 #import "CoinViewController.h"
+#import "TKUserCenter.h"
 
 @interface CoinViewController ()
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.moneyText.text =  [[TKUserCenter instance] getUser].ackData.bigMoney;
+    
     // Do any additional setup after loading the view from its nib.
 }
 

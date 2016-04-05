@@ -156,6 +156,11 @@
                                      whtiBlock:^(HF_BaseAck * ack){
         
         DDLogInfo(@"--------- %@  ",ack);
+        
+    
+                                         [[AppDelegate getMainNavigation] popToRootViewControllerAnimated:YES];
+                                         
+                                         
     }];
     
 }

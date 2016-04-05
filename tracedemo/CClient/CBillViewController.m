@@ -86,7 +86,7 @@
 {
     if (_menuView == nil) {
         NSArray *titles = @[@"01月", @"02月",@"03月", @"04月",@"05月", @"06月",@"07月", @"08月",@"09月", @"10月",@"11月", @"12月"];
-        _menuView = [[KTDropdownMenuView alloc] initWithFrame:CGRectMake(0, 0,40, 44) titles:titles];
+        _menuView = [[KTDropdownMenuView alloc] initWithFrame:CGRectMake(0, 0,80, 44) titles:titles];
         _menuView.cellColor = [UIColor clearColor];
         _menuView.cellSeparatorColor = [UIColor lightGrayColor];
         WS(weakSelf)
@@ -98,8 +98,7 @@
         };
         _menuView.textFont = [UIFont systemFontOfSize:15];
         _menuView.backgroundAlpha = 0.0f;
-        _menuView.width = 90;
-        _menuView.edgesRight = -15;
+        _menuView.width = 100;
         _menuView.textColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
         _menuView.cellAccessoryCheckmarkColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
         _menuView.cellSeparatorColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
