@@ -344,7 +344,7 @@
     }
     
     
-    UIGestureRecognizer * buyerTap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(onBuyerTap:)];
+//    UIGestureRecognizer * buyerTap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(onBuyerTap:)];
     
     
     [cell.brandBtn setTitle:ackData.brandName forState:UIControlStateNormal];
