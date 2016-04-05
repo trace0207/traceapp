@@ -52,10 +52,13 @@
 // background opacity default 0.3
 @property (nonatomic, assign) CGFloat backgroundAlpha;
 
+//设置开始title
+@property (nonatomic, assign) NSUInteger selectedIndex;
+
 // callback block
 @property (nonatomic, copy) void (^selectedAtIndex)(int index);
 
-@property (nonatomic, copy) NSArray *titles;
+@property (nonatomic, copy) NSArray *titles;//重新设置菜单数组
 
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray*)titles;
 

@@ -15,7 +15,7 @@
 
 
 @property (nonatomic, assign) BOOL isMenuShow;
-@property (nonatomic, assign) NSUInteger selectedIndex;
+
 @property (nonatomic, strong) UIButton *titleButton;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIView *backgroundView;
@@ -87,7 +87,6 @@
     }];
     [_titleButton setTitle:newTitles[0] forState:UIControlStateNormal];
 }
-
 
 - (void)setShowLine:(BOOL)showLine
 {

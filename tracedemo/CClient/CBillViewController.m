@@ -12,15 +12,16 @@
 #import "TK_SettingCell.h"
 #import "WebViewJavascriptBridge.h"
 #import "TKProxy.h"
-@interface CBillViewController ()<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>
+#import "NSDate+Common.h"
+@interface CBillViewController ()<UIWebViewDelegate>
 {
     UIWebView * webView;
     WebViewJavascriptBridge * bridge;
     NSInteger role;
-    NSInteger month;
+    NSUInteger month;
 }
 
-@property (nonatomic, strong) UITableView *tableView;
+//@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic,strong)KTDropdownMenuView *menuView;
 @property (nonatomic, strong) NSMutableArray *data;
 @end
@@ -37,7 +38,7 @@
     role = 1;
 #endif
     
-    month = 3;
+    month = [[NSDate date]month];
     
     webView = [[UIWebView alloc] init];
     [self initWebView];
@@ -72,15 +73,15 @@
     [self addRightBarItemWithCustomView:self.menuView];
 }
 
-- (UITableView *)tableView
-{
-    if (_tableView == nil) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-    }
-    return _tableView;
-}
+//- (UITableView *)tableView
+//{
+//    if (_tableView == nil) {
+//        _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+//        _tableView.delegate = self;
+//        _tableView.dataSource = self;
+//    }
+//    return _tableView;
+//}
 
 - (KTDropdownMenuView *)menuView
 {
@@ -102,6 +103,7 @@
         _menuView.textColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
         _menuView.cellAccessoryCheckmarkColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
         _menuView.cellSeparatorColor = [UIColor TKcolorWithHexString:TK_Color_nav_textDefault];
+        _menuView.selectedIndex = month-1;
     }
     return _menuView;
 }
@@ -110,60 +112,60 @@
 
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if (section == 0) {
-        return 3;
-    }
-    return 4;
-}
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 2;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    TK_SettingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    if (cell == nil) {
-        cell = [TK_SettingCell loadDefaultTextType:self];
-    }
-    cell.label1.text = @"收到来自趣拍的一笔退款";
-    cell.label2.text = @"+1000";
-    return cell;
-}
-
-
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UILabel *label = [[UILabel alloc]init];
-    label.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
-    label.font = [UIFont systemFontOfSize:14];
-    label.textColor = [UIColor lightGrayColor];
-    
-    if (section == 0) {
-        label.text = @"    14日-星期三";
-    }else {
-        label.text = @"    13日-星期四";
-    }
-    return label;
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 50;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 30;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 0.01;
-}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    if (section == 0) {
+//        return 3;
+//    }
+//    return 4;
+//}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    return 2;
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    TK_SettingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+//    if (cell == nil) {
+//        cell = [TK_SettingCell loadDefaultTextType:self];
+//    }
+//    cell.label1.text = @"收到来自趣拍的一笔退款";
+//    cell.label2.text = @"+1000";
+//    return cell;
+//}
+//
+//
+//- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    UILabel *label = [[UILabel alloc]init];
+//    label.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
+//    label.font = [UIFont systemFontOfSize:14];
+//    label.textColor = [UIColor lightGrayColor];
+//    
+//    if (section == 0) {
+//        label.text = @"    14日-星期三";
+//    }else {
+//        label.text = @"    13日-星期四";
+//    }
+//    return label;
+//}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return 50;
+//}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    return 30;
+//}
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+//{
+//    return 0.01;
+//}
 
 
 
