@@ -29,6 +29,7 @@
 #import "TK_AcceptRewardArg.h"
 #import "TK_ReleaseRewardArg.h"
 #import "TK_CGetRewardListArg.h"
+#import "TK_GetInviteCodeArg.h"
 
 
 
@@ -298,6 +299,18 @@
     arg.pageSize = 20;
     arg.pageOffset = page;
     arg.categoryId = @"";
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
+
+
+
+/**
+ 生成邀请码
+ **/
+-(void)createInviteCode:(hfAckBlock)block
+{
+    TK_GetInviteCodeArg * arg = [[TK_GetInviteCodeArg alloc] init];
+    arg.role = @"0";
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 

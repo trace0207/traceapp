@@ -13,6 +13,7 @@
 #import "WebViewJavascriptBridge.h"
 #import "TKPayProxy.h"
 #import "TKAlertView.h"
+#import "GlobNotifyDefine.h"
 
 
 
@@ -56,6 +57,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    
     [super viewWillAppear:animated];
     if(load)
     {
@@ -65,6 +67,20 @@
     else
     {
         load = YES;
+    }
+}
+
+
+-(void)onPayBack:(NSNotification *)notify
+{
+    NSString * result = notify.object;
+    if([result isEqualToString:@"success"])
+    {
+        [TKAlertView showSuccessWithTitle:@"尾款支付成功" withMessage:@"请等待买手购买发货" commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
+    }
+    else
+    {
+        [TKAlertView showFailedWithTitle:@"尾款支付失败" withMessage:@"支付异常或者是支付被取消" commpleteBlock:nil cancelTitle:nil determineTitle:@"取消"];
     }
 }
 
@@ -165,6 +181,19 @@
     {
         [UIKitTool callPhone:SERVER];
     }
+}
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPayBack:) name:TKPayNotify object:nil];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:TKPayNotify object:nil];
 }
 
 

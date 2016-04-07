@@ -118,11 +118,14 @@
     cell.label2.hidden  = YES;
     switch (row) {
         case 0:
+        {
             cell.label1.text = @"保证金";
             cell.icon1.image = IMG(@"tk_icon_ deposit");
             cell.label2.hidden = NO;
-            cell.label2.text = [[TKUserCenter instance] getUser].guarantee;
+            NSString  * value = [NSString stringWithFormat:@"%0.2f元",[[TKUserCenter instance] getUser].guarantee.integerValue/100.0];
+            cell.label2.text = value;//[[TKUserCenter instance] getUser].guarantee;
             break;
+        }
         case 1:
             cell.label1.text = @"账户详情";
             cell.icon1.image = IMG(@"tk_icon_account_detail");

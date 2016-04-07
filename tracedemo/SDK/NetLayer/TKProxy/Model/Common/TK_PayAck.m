@@ -8,6 +8,10 @@
 
 #import "TK_PayAck.h"
 
+@implementation PayCharge
+
+
+@end
 @implementation TK_PayAck
 
 

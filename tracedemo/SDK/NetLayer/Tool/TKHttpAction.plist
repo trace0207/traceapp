@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>TK_GetInviteCodeArg</key>
+	<string>/apollo/login/purchaser/purchaser!inviteCode.action</string>
 	<key>TK_PraiseOrderArg</key>
 	<string>/apollo/login/social/praise!showOrderPraise.action</string>
 	<key>TK_CGetRewardListArg</key>

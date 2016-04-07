@@ -51,6 +51,12 @@
 - (void)awakeFromNib {
     // Initialization code
     
+#if B_Client == 0
+    self.btnLeft.hidden = YES;
+    self.btnRight.hidden = YES;
+#endif
+    
+    
     //self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 

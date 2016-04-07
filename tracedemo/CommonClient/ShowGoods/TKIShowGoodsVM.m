@@ -135,19 +135,11 @@
 - (void)beginPullDownRefreshing
 {
     [self tkLoadDefaultData];
-//    [self.mTableView reloadData];
-//    // tableView.separatorStyle = UITableViewCellSeparatorStyleNone
-//    self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    
-//    
-//    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:0.3];
 }
 
 - (void)beginPullUpLoading
 {
     [self tkLoadDefaultData];
-//    [self.mTableView reloadData];
-//    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:0.3];
 }
 
 -(BOOL)hasRefreshFooterView
@@ -350,6 +342,10 @@
     
     cell.tkShowGoodscellDelegate = self;
     cell.indexPath = indexPath;
+    
+#if B_Client == 1
+    cell.followBtn.hidden = YES;
+#endif
 }
 
 /**

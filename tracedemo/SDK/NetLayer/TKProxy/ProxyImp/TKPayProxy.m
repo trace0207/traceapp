@@ -81,11 +81,11 @@ withCompletion:(PingppCompletion)completionBlock
             
                 // 大牌币支付
                 
-                block(PayBigMoneySuccess);
+                block(PaySuccess);
                 
             }else
             {
-                [TKPayProxy aliPay: ((TK_PayAck*)ack).data urlScheme:@"QupaiConsumer" withCompletion:^(NSString *result, PingppError *error) {
+                [TKPayProxy aliPay: ((TK_PayAck*)ack).data.charge urlScheme:@"QupaiConsumer" withCompletion:^(NSString *result, PingppError *error) {
                     DDLogInfo(@"pay back %@",result);
                     if([@"success" isEqualToString:result])
                     {
@@ -111,7 +111,13 @@ withCompletion:(PingppCompletion)completionBlock
 
 +(void)selectPayWay:(NSString *)money rewardId:(NSString *)rewardId fundType:(NSInteger)type withBlock:(payAckBlock)block
 {
-    [[[TKPayChooseView alloc] initWithPayType:PayQUPAI|PayTypeAlipay]show:@"预付款将打入趣平台，不会直接打给买手" money:money withBlock:^(NSInteger payTpye)
+    
+    NSInteger payType = PayTypeAlipay;
+    if(type == 1)//  尾款
+    {
+        payType = PayTypeAlipay|PayQUPAI;
+    }
+    [[[TKPayChooseView alloc] initWithPayType:payType]show:@"预付款将打入趣平台，不会直接打给买手" money:money withBlock:^(NSInteger payTpye)
     {
      
         //先预支付 如果是大牌币 就直接支付了。
@@ -122,13 +128,14 @@ withCompletion:(PingppCompletion)completionBlock
         if(payTpye == PayTypeAlipay)//支付宝支付
         {
             arg.payType = 0;// 0 阿里支付
-//            block(PrePaying);
             arg.payAmount = money;
+            arg.bigMoney = 0;
            
         }else if(payTpye == PayQUPAI)
         {
             arg.payType = 0;// 0 阿里支付
             arg.bigMoney = money.integerValue;
+            arg.payAmount = money;
             // 大牌币支付不足
 //             block(PayBigMoneyNotEnough);
 //            return;

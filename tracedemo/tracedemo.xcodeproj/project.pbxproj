@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A00F9731CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A00F9721CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m */; };
+		8A00F9741CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A00F9721CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m */; };
+		8A00F9771CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A00F9761CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.m */; };
+		8A00F9781CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A00F9761CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.m */; };
 		8A0464F51C880FF200E6B1E0 /* BMyShowGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0464F31C880FF200E6B1E0 /* BMyShowGoodsViewController.m */; };
 		8A0464F61C880FF200E6B1E0 /* BMyShowGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0464F31C880FF200E6B1E0 /* BMyShowGoodsViewController.m */; };
 		8A0464F71C880FF200E6B1E0 /* BMyShowGoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0464F41C880FF200E6B1E0 /* BMyShowGoodsViewController.xib */; };
@@ -1543,6 +1547,10 @@
 /* Begin PBXFileReference section */
 		4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5B7E02E9AB012C0D49F6B86E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A00F9711CB48F2300B7E3E2 /* TK_GetInviteCodeArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetInviteCodeArg.h; sourceTree = "<group>"; };
+		8A00F9721CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetInviteCodeArg.m; sourceTree = "<group>"; };
+		8A00F9751CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetInviteCodeAck.h; sourceTree = "<group>"; };
+		8A00F9761CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetInviteCodeAck.m; sourceTree = "<group>"; };
 		8A0464F21C880FF200E6B1E0 /* BMyShowGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMyShowGoodsViewController.h; sourceTree = "<group>"; };
 		8A0464F31C880FF200E6B1E0 /* BMyShowGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMyShowGoodsViewController.m; sourceTree = "<group>"; };
 		8A0464F41C880FF200E6B1E0 /* BMyShowGoodsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMyShowGoodsViewController.xib; sourceTree = "<group>"; };
@@ -5360,6 +5368,10 @@
 				8A9D9B691C9BCC94009F877F /* TK_AcceptRewardArg.m */,
 				8A9D9B6C1C9BED7B009F877F /* TK_ReleaseRewardArg.h */,
 				8A9D9B6D1C9BED7B009F877F /* TK_ReleaseRewardArg.m */,
+				8A00F9711CB48F2300B7E3E2 /* TK_GetInviteCodeArg.h */,
+				8A00F9721CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m */,
+				8A00F9751CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.h */,
+				8A00F9761CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.m */,
 			);
 			path = BClient;
 			sourceTree = "<group>";
@@ -6324,6 +6336,7 @@
 				BB83F8C31C72C01C0013A6A0 /* TKHomePageViewController.m in Sources */,
 				BB83F8C41C72C01C0013A6A0 /* HFQuestionTestViewController.m in Sources */,
 				BB83F8C51C72C01C0013A6A0 /* HFMyDeviceCell.m in Sources */,
+				8A00F9731CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m in Sources */,
 				BB83F8C61C72C01C0013A6A0 /* HFSubmitCommentReq.m in Sources */,
 				BB83F8C71C72C01C0013A6A0 /* FriendsViewController.m in Sources */,
 				BB83F8C81C72C01C0013A6A0 /* TKEditUserInfoVC.m in Sources */,
@@ -6655,6 +6668,7 @@
 				BB83F9EA1C72C01C0013A6A0 /* MMExampleSideDrawerViewController.m in Sources */,
 				BB83F9EB1C72C01C0013A6A0 /* UIButton+MixButton.m in Sources */,
 				8A3749911C919F21003DE59E /* TK_ImageSelectBoxView.m in Sources */,
+				8A00F9771CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.m in Sources */,
 				8A9985A01C86CDF5000F9CBC /* CHomePageViewController.m in Sources */,
 				BB83F9EC1C72C01C0013A6A0 /* HFActivityDetailRes.m in Sources */,
 				BB83F9ED1C72C01C0013A6A0 /* FMDatabaseAdditions.m in Sources */,
@@ -6954,6 +6968,7 @@
 				BB83FB811C72C16B0013A6A0 /* HFQuestionTestViewController.m in Sources */,
 				BB83FB821C72C16B0013A6A0 /* HFMyDeviceCell.m in Sources */,
 				BB83FB831C72C16B0013A6A0 /* HFSubmitCommentReq.m in Sources */,
+				8A00F9741CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m in Sources */,
 				BB83FB841C72C16B0013A6A0 /* FriendsViewController.m in Sources */,
 				BB83FB851C72C16B0013A6A0 /* TKEditUserInfoVC.m in Sources */,
 				BB83FB861C72C16B0013A6A0 /* TK_BaseJsonModel.m in Sources */,
@@ -7285,6 +7300,7 @@
 				BB83FCAA1C72C16B0013A6A0 /* FMDatabaseAdditions.m in Sources */,
 				8A9985A11C86CDF5000F9CBC /* CHomePageViewController.m in Sources */,
 				8A3749921C919F21003DE59E /* TK_ImageSelectBoxView.m in Sources */,
+				8A00F9781CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.m in Sources */,
 				BB83FCAB1C72C16B0013A6A0 /* HFCollectionCell.m in Sources */,
 				BB83FCAC1C72C16B0013A6A0 /* HFAdvanceSchemeContainerViewController.m in Sources */,
 				BB83FCAD1C72C16B0013A6A0 /* TK_PraiseRewardArg.m in Sources */,

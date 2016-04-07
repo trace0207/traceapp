@@ -54,6 +54,7 @@
 @property (strong,nonatomic) NSIndexPath * indexPath;
 @property (weak,nonatomic) id<TKShowGoodsCellDelegate> tkShowGoodscellDelegate;
 
+@property (weak, nonatomic) IBOutlet UIButton *followBtn;
 
 //head cell
 @property (nonatomic, weak) IBOutlet UIImageView *headImage;

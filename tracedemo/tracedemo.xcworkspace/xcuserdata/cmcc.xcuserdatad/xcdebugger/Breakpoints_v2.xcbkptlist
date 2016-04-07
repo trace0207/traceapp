@@ -91,38 +91,6 @@
             endingLineNumber = "44"
             landmarkName = "-tkLoadDefaultData"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TKIShowGoodsVM tkLoadDefaultData]"
-                  moduleName = "B_Client"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cmcc/Documents/workSpace/%E8%B6%A3%E6%8B%8D/traceapp/tracedemo/CommonClient/ShowGoods/TKIShowGoodsVM.m"
-                  timestampString = "481537600.592492"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__35-[TKIShowGoodsVM tkLoadDefaultData]_block_invoke"
-                  moduleName = "B_Client"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cmcc/Documents/workSpace/%E8%B6%A3%E6%8B%8D/traceapp/tracedemo/CommonClient/ShowGoods/TKIShowGoodsVM.m"
-                  timestampString = "481537600.592877"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -180,45 +148,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CommonClient/ShowGoods/TKIShowGoodsVM.m"
-            timestampString = "481541415.451735"
+            timestampString = "481627325.858258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "-fillCellImages:indexPath:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TKIShowGoodsVM fillCellImages:indexPath:]"
-                  moduleName = "B_Client"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cmcc/Documents/workSpace/%E8%B6%A3%E6%8B%8D/traceapp/tracedemo/CommonClient/ShowGoods/TKIShowGoodsVM.m"
-                  timestampString = "481537600.594213"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "187"
-                  endingLineNumber = "187"
-                  offsetFromSymbolStart = "360">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TKIShowGoodsVM fillCellImages:indexPath:]"
-                  moduleName = "B_Client"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cmcc/Documents/workSpace/%E8%B6%A3%E6%8B%8D/traceapp/tracedemo/CommonClient/ShowGoods/TKIShowGoodsVM.m"
-                  timestampString = "481537600.594372"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "187"
-                  endingLineNumber = "187"
-                  offsetFromSymbolStart = "376">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -228,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CommonClient/ShowGoods/TKIShowGoodsVM.m"
-            timestampString = "481541415.451735"
+            timestampString = "481627325.858258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "-fillCellImages:indexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,6 +266,102 @@
             startingLineNumber = "148"
             endingLineNumber = "148"
             landmarkName = "-nextBtnAction:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CClient/CPublishRewardViewController.m"
+            timestampString = "481622244.226497"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "573"
+            endingLineNumber = "573"
+            landmarkName = "-TKI_rightBarAction"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CClient/CPublishRewardViewController.m"
+            timestampString = "481622244.226497"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "776"
+            endingLineNumber = "776"
+            landmarkName = "-beginSend"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CClient/CPublishRewardViewController.m"
+            timestampString = "481622244.226497"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "714"
+            endingLineNumber = "714"
+            landmarkName = "-onImageUploadSuccess:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDK/NetLayer/TKProxy/ProxyImp/TKPayProxy.m"
+            timestampString = "481621751.03611"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "+prePay:withBlick:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDK/NetLayer/TKProxy/ProxyImp/TKPayProxy.m"
+            timestampString = "481625033.167663"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "+selectPayWay:rewardId:fundType:withBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDK/NetLayer/TKProxy/ProxyImp/TKPayProxy.m"
+            timestampString = "481621768.863926"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "+prePay:withBlick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

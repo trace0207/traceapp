@@ -154,6 +154,13 @@
 
 
 /**
+ 生成邀请码
+ **/
+-(void)createInviteCode:(hfAckBlock)block;
+
+
+
+/**
  接单
  **/
 -(void)accept:(NSString *)buyerId rewardId:(NSString *)rewardId needDays:(NSInteger) days withBlock:(hfAckBlock)block;

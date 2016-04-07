@@ -86,11 +86,16 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 -(void)onPayNotify:(NSNotification *)notify
 {
     NSString * result = [notify object];
-    if(alertView)
-    {
-        [alertView removeFromSuperview];
-    }
     DDLogInfo(@"payBack result %@",result);
+    if([result isEqualToString:@"success"])
+    {
+        [self onPublishSuccess];
+    }
+    else
+    {
+        [self payFailed];
+    }
+    
 }
 
 -(void)dealloc

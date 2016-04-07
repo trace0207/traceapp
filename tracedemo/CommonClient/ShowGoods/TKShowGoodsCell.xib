@@ -347,6 +347,7 @@
                 <outlet property="categoryBtn" destination="tDz-fx-Iwo" id="Ucq-c2-g87"/>
                 <outlet property="contentText" destination="h9T-Np-ZHp" id="6Yb-Ul-lcW"/>
                 <outlet property="describleLabel" destination="2GN-m2-kCG" id="i24-sD-q9V"/>
+                <outlet property="followBtn" destination="jg4-xU-qAT" id="rIt-of-4r9"/>
                 <outlet property="followCount" destination="xIX-c3-Dhd" id="RWT-Ft-QzV"/>
                 <outlet property="followMore" destination="nR8-Kt-5UT" id="0o4-UL-vni"/>
                 <outlet property="gradeLabel" destination="rR8-sj-3n5" id="rlb-9f-pqK"/>
