@@ -2938,8 +2938,8 @@
 		BB7B632F1C27F67900568E3F /* TK_UploadImageAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_UploadImageAck.m; sourceTree = "<group>"; };
 		BB7B63311C27FD9C00568E3F /* TK_HttpFileData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_HttpFileData.h; sourceTree = "<group>"; };
 		BB7B63321C27FD9C00568E3F /* TK_HttpFileData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_HttpFileData.m; sourceTree = "<group>"; };
-		BB83FB5E1C72C01C0013A6A0 /* B_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = B_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB83FE1B1C72C16B0013A6A0 /* C_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB83FB5E1C72C01C0013A6A0 /* 赏购.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "赏购.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB83FE1B1C72C16B0013A6A0 /* 赏购.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "赏购.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8B221C1C17BDE5002B4C51 /* TKUserPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserPageViewController.h; sourceTree = "<group>"; };
 		BB8B221D1C17BDE5002B4C51 /* TKUserPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserPageViewController.m; sourceTree = "<group>"; };
 		BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKUserPageViewController.xib; sourceTree = "<group>"; };
@@ -3231,8 +3231,8 @@
 		8A508FEE1B9D5D700067B9E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB83FB5E1C72C01C0013A6A0 /* B_Client.app */,
-				BB83FE1B1C72C16B0013A6A0 /* C_Client.app */,
+				BB83FB5E1C72C01C0013A6A0 /* 赏购.app */,
+				BB83FE1B1C72C16B0013A6A0 /* 赏购.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -5888,7 +5888,7 @@
 			);
 			name = B_Client;
 			productName = tracedemo;
-			productReference = BB83FB5E1C72C01C0013A6A0 /* B_Client.app */;
+			productReference = BB83FB5E1C72C01C0013A6A0 /* 赏购.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BB83FB601C72C16B0013A6A0 /* C_Client */ = {
@@ -5908,7 +5908,7 @@
 			);
 			name = C_Client;
 			productName = tracedemo;
-			productReference = BB83FE1B1C72C16B0013A6A0 /* C_Client.app */;
+			productReference = BB83FE1B1C72C16B0013A6A0 /* 赏购.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -7685,7 +7685,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = BuyerApp;
 				CODE_SIGN_IDENTITY = "iPhone Developer: wei yu (PKE3P2425Z)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wei yu (PKE3P2425Z)";
 				ENABLE_BITCODE = NO;
@@ -7713,7 +7713,7 @@
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/WeChatSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.buyer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "赏购";
 				PROVISIONING_PROFILE = "cfbef88f-8149-48c5-b3ba-a08897cfa41f";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -7723,7 +7723,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = BuyerApp;
 				CODE_SIGN_IDENTITY = "iPhone Developer: wei yu (PKE3P2425Z)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wei yu (PKE3P2425Z)";
 				ENABLE_BITCODE = NO;
@@ -7746,7 +7746,7 @@
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/WeChatSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.buyer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "赏购";
 				PROVISIONING_PROFILE = "cfbef88f-8149-48c5-b3ba-a08897cfa41f";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -7756,7 +7756,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = CustomerApp;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: wei yu (PKE3P2425Z)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wei yu (PKE3P2425Z)";
 				ENABLE_BITCODE = NO;
@@ -7784,7 +7785,7 @@
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/WeChatSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.consumer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "赏购";
 				PROVISIONING_PROFILE = "4f30fdc1-8113-430e-af93-e27e60bc4acd";
 			};
 			name = Debug;
@@ -7793,7 +7794,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = CustomerApp;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: wei yu (PKE3P2425Z)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wei yu (PKE3P2425Z)";
 				ENABLE_BITCODE = NO;
@@ -7816,7 +7818,7 @@
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/Extend/WeChatSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.consumer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "赏购";
 				PROVISIONING_PROFILE = "4f30fdc1-8113-430e-af93-e27e60bc4acd";
 			};
 			name = Release;

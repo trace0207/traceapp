@@ -9,5 +9,6 @@
 #import "TKIBaseNavWithDefaultBackVC.h"
 
 @interface AbountViewController : TKIBaseNavWithDefaultBackVC
+- (IBAction)attentionAction:(id)sender;
 
 @end

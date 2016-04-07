@@ -188,6 +188,8 @@ typedef NS_ENUM(NSInteger,HomePageType)
 //地址
 #define AddressURL @"/web/apollo/address/list.html"
 
+//软件服务协议
+#define ServerAttentionURL @"/web/apollo/address/list.html"
 //账单
 #define  MyBillURL  @"/web/apollo/my/bill.html"
 

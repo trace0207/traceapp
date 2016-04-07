@@ -7,6 +7,7 @@
 //
 
 #import "AbountViewController.h"
+#import "TKWebViewController.h"
 
 @interface AbountViewController ()
 
@@ -16,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -25,4 +27,9 @@
     [self TKaddNavigationTitle:@"关于"];
 }
 
+- (IBAction)attentionAction:(id)sender {
+    
+    [TKWebViewController showWebView:@"" url:ServerAttentionURL];
+    
+}
 @end
