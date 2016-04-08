@@ -18,6 +18,7 @@
 #import "AbountViewController.h"
 #import "TKSettingsViewController.h"
 #import "TKBuyerCenterViewController.h"
+#import "TKAfterSalesViewController.h"
 #import "TKAlertView.h"
 #import "TKUITools.h"
 @interface TK_UserCenterVM()
@@ -122,12 +123,12 @@
 - (void)exit:(id)sender
 {
 //    //退出操作
-//    TKBuyerCenterViewController *vc = [[TKBuyerCenterViewController alloc]init];
-//    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    TKAfterSalesViewController *vc = [[TKAfterSalesViewController alloc]init];
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     
-    [[TKUserCenter instance] logout];
-    
-    [[HFHUDView shareInstance] ShowTips:@"用户已经注销" delayTime:1.0 atView:nil];
+//    [[TKUserCenter instance] logout];
+//    
+//    [[HFHUDView shareInstance] ShowTips:@"用户已经注销" delayTime:1.0 atView:nil];
     
 }
 

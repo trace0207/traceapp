@@ -133,6 +133,14 @@
 		912120BD1C9FD6E600271605 /* DeliveryTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912120BB1C9FD6E600271605 /* DeliveryTimeView.m */; };
 		912120BF1C9FD6FA00271605 /* DeliveryTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 912120BE1C9FD6FA00271605 /* DeliveryTimeView.xib */; };
 		912120C01C9FD6FA00271605 /* DeliveryTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 912120BE1C9FD6FA00271605 /* DeliveryTimeView.xib */; };
+		9128C32C1CB4B8760053893F /* TKAfterSalesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128C32A1CB4B8760053893F /* TKAfterSalesViewController.m */; };
+		9128C32D1CB4B8760053893F /* TKAfterSalesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128C32A1CB4B8760053893F /* TKAfterSalesViewController.m */; };
+		9128C32E1CB4B8760053893F /* TKAfterSalesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9128C32B1CB4B8760053893F /* TKAfterSalesViewController.xib */; };
+		9128C32F1CB4B8760053893F /* TKAfterSalesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9128C32B1CB4B8760053893F /* TKAfterSalesViewController.xib */; };
+		9128C3321CB4B9E20053893F /* TKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128C3311CB4B9E20053893F /* TKTextView.m */; };
+		9128C3331CB4B9E20053893F /* TKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128C3311CB4B9E20053893F /* TKTextView.m */; };
+		912F7E431CB653AC0057F898 /* TKSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 912F7E421CB653AC0057F898 /* TKSwitch.m */; };
+		912F7E441CB653AC0057F898 /* TKSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 912F7E421CB653AC0057F898 /* TKSwitch.m */; };
 		9135820C1C9718CD00517542 /* HFTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135820B1C9718CD00517542 /* HFTitleLabel.m */; };
 		9135820D1C9718CD00517542 /* HFTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135820B1C9718CD00517542 /* HFTitleLabel.m */; };
 		914303171CA2304B003E80F7 /* CAcountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914303161CA2304B003E80F7 /* CAcountViewController.m */; };
@@ -2822,6 +2830,13 @@
 		912120BA1C9FD6E600271605 /* DeliveryTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeliveryTimeView.h; sourceTree = "<group>"; };
 		912120BB1C9FD6E600271605 /* DeliveryTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeliveryTimeView.m; sourceTree = "<group>"; };
 		912120BE1C9FD6FA00271605 /* DeliveryTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeliveryTimeView.xib; sourceTree = "<group>"; };
+		9128C3291CB4B8760053893F /* TKAfterSalesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAfterSalesViewController.h; sourceTree = "<group>"; };
+		9128C32A1CB4B8760053893F /* TKAfterSalesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAfterSalesViewController.m; sourceTree = "<group>"; };
+		9128C32B1CB4B8760053893F /* TKAfterSalesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKAfterSalesViewController.xib; sourceTree = "<group>"; };
+		9128C3301CB4B9E20053893F /* TKTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTextView.h; sourceTree = "<group>"; };
+		9128C3311CB4B9E20053893F /* TKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTextView.m; sourceTree = "<group>"; };
+		912F7E411CB653AC0057F898 /* TKSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSwitch.h; sourceTree = "<group>"; };
+		912F7E421CB653AC0057F898 /* TKSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSwitch.m; sourceTree = "<group>"; };
 		9135820A1C9718CD00517542 /* HFTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTitleLabel.h; sourceTree = "<group>"; };
 		9135820B1C9718CD00517542 /* HFTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTitleLabel.m; sourceTree = "<group>"; };
 		914303151CA2304B003E80F7 /* CAcountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAcountViewController.h; sourceTree = "<group>"; };
@@ -5488,6 +5503,9 @@
 			children = (
 				8A99859D1C86CDF5000F9CBC /* CHomePageViewController.h */,
 				8A99859E1C86CDF5000F9CBC /* CHomePageViewController.m */,
+				9128C3291CB4B8760053893F /* TKAfterSalesViewController.h */,
+				9128C32A1CB4B8760053893F /* TKAfterSalesViewController.m */,
+				9128C32B1CB4B8760053893F /* TKAfterSalesViewController.xib */,
 				914303151CA2304B003E80F7 /* CAcountViewController.h */,
 				914303161CA2304B003E80F7 /* CAcountViewController.m */,
 				914303191CA24248003E80F7 /* CBillViewController.h */,
@@ -5765,6 +5783,10 @@
 				912120AC1C9F180500271605 /* TKAlertView.m */,
 				911D01411CA3C9FB00BF06AE /* TKPayChooseView.h */,
 				911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */,
+				9128C3301CB4B9E20053893F /* TKTextView.h */,
+				9128C3311CB4B9E20053893F /* TKTextView.m */,
+				912F7E411CB653AC0057F898 /* TKSwitch.h */,
+				912F7E421CB653AC0057F898 /* TKSwitch.m */,
 			);
 			path = TKUIView;
 			sourceTree = "<group>";
@@ -6046,6 +6068,7 @@
 				BB83FB401C72C01C0013A6A0 /* HFCollectionCell.xib in Resources */,
 				BB83FB411C72C01C0013A6A0 /* Resource.bundle in Resources */,
 				BB83FB421C72C01C0013A6A0 /* HFHabitTimeCell.xib in Resources */,
+				9128C32E1CB4B8760053893F /* TKAfterSalesViewController.xib in Resources */,
 				8A05480F1CA4C11A00AC8DD5 /* TKBrandSelectViewController.xib in Resources */,
 				BB83FB431C72C01C0013A6A0 /* HFActivityListCell.xib in Resources */,
 				BB83FB441C72C01C0013A6A0 /* HFConclusionView.xib in Resources */,
@@ -6135,6 +6158,7 @@
 				9182F2761C9EFCE800428B7F /* AbountViewController.xib in Resources */,
 				BB83FDDE1C72C16B0013A6A0 /* SetHeadViewController.xib in Resources */,
 				BB83FDDF1C72C16B0013A6A0 /* AgreementViewController.xib in Resources */,
+				9128C32F1CB4B8760053893F /* TKAfterSalesViewController.xib in Resources */,
 				BB83FDE01C72C16B0013A6A0 /* TKLeftMenu.xib in Resources */,
 				BB83FDE11C72C16B0013A6A0 /* HFAboutUsCell.xib in Resources */,
 				BB83FDE21C72C16B0013A6A0 /* HFEditHeaderView.xib in Resources */,
@@ -6333,6 +6357,7 @@
 				BB83F8BF1C72C01C0013A6A0 /* TKConstants.m in Sources */,
 				BB83F8C11C72C01C0013A6A0 /* TK_BaseNavSettingViewController.m in Sources */,
 				BB83F8C21C72C01C0013A6A0 /* RBCustomDatePickerView.m in Sources */,
+				9128C32C1CB4B8760053893F /* TKAfterSalesViewController.m in Sources */,
 				BB83F8C31C72C01C0013A6A0 /* TKHomePageViewController.m in Sources */,
 				BB83F8C41C72C01C0013A6A0 /* HFQuestionTestViewController.m in Sources */,
 				BB83F8C51C72C01C0013A6A0 /* HFMyDeviceCell.m in Sources */,
@@ -6346,6 +6371,7 @@
 				BB83F8CC1C72C01C0013A6A0 /* HFDateHeaderView.m in Sources */,
 				BB83F8CD1C72C01C0013A6A0 /* ActivitiesData.m in Sources */,
 				BB83F8CE1C72C01C0013A6A0 /* HFGifPlayer.m in Sources */,
+				9128C3321CB4B9E20053893F /* TKTextView.m in Sources */,
 				BB83F8CF1C72C01C0013A6A0 /* TK_UploadImageAck.m in Sources */,
 				BB83F8D01C72C01C0013A6A0 /* HFHealthViewController.m in Sources */,
 				BB83F8D11C72C01C0013A6A0 /* SKTagView.m in Sources */,
@@ -6587,6 +6613,7 @@
 				BB83F9A11C72C01C0013A6A0 /* MMSideDrawerTableViewCell.m in Sources */,
 				BB83F9A21C72C01C0013A6A0 /* NSDate+Common.m in Sources */,
 				BB83F9A31C72C01C0013A6A0 /* UIView+SDExtension.m in Sources */,
+				912F7E431CB653AC0057F898 /* TKSwitch.m in Sources */,
 				BB83F9A41C72C01C0013A6A0 /* BasePortraitButton.m in Sources */,
 				91F862921C9A97D0006F44BE /* BannerView.m in Sources */,
 				BB83F9A51C72C01C0013A6A0 /* MJPhotoProgressView.m in Sources */,
@@ -6965,6 +6992,7 @@
 				BB83FB7E1C72C16B0013A6A0 /* TK_BaseNavSettingViewController.m in Sources */,
 				BB83FB7F1C72C16B0013A6A0 /* RBCustomDatePickerView.m in Sources */,
 				BB83FB801C72C16B0013A6A0 /* TKHomePageViewController.m in Sources */,
+				9128C32D1CB4B8760053893F /* TKAfterSalesViewController.m in Sources */,
 				BB83FB811C72C16B0013A6A0 /* HFQuestionTestViewController.m in Sources */,
 				BB83FB821C72C16B0013A6A0 /* HFMyDeviceCell.m in Sources */,
 				BB83FB831C72C16B0013A6A0 /* HFSubmitCommentReq.m in Sources */,
@@ -6978,6 +7006,7 @@
 				BB83FB8A1C72C16B0013A6A0 /* ActivitiesData.m in Sources */,
 				BB83FB8B1C72C16B0013A6A0 /* HFGifPlayer.m in Sources */,
 				BB83FB8C1C72C16B0013A6A0 /* TK_UploadImageAck.m in Sources */,
+				9128C3331CB4B9E20053893F /* TKTextView.m in Sources */,
 				BB83FB8D1C72C16B0013A6A0 /* HFHealthViewController.m in Sources */,
 				BB83FB8E1C72C16B0013A6A0 /* SKTagView.m in Sources */,
 				BB83FB8F1C72C16B0013A6A0 /* TK_AppraiseBuyerArg.m in Sources */,
@@ -7219,6 +7248,7 @@
 				BB83FC601C72C16B0013A6A0 /* UIView+SDExtension.m in Sources */,
 				BB83FC611C72C16B0013A6A0 /* BasePortraitButton.m in Sources */,
 				BB83FC621C72C16B0013A6A0 /* MJPhotoProgressView.m in Sources */,
+				912F7E441CB653AC0057F898 /* TKSwitch.m in Sources */,
 				BB83FC631C72C16B0013A6A0 /* TKUserDetailInfoTableVM.m in Sources */,
 				91F862931C9A97D0006F44BE /* BannerView.m in Sources */,
 				BB83FC641C72C16B0013A6A0 /* HFHabitIsLatestRes.m in Sources */,

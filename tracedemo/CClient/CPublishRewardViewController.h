@@ -9,7 +9,7 @@
 #import "TKIBaseNavWithDefaultBackVC.h"
 #import "TK_ImageSelectBoxView.h"
 #import "TKClearView.h"
-
+#import "TKTextView.h"
 @interface CPublishRewardViewController : TKIBaseNavWithDefaultBackVC
 
 @property (nonatomic,assign) NSInteger publishType;
@@ -28,8 +28,7 @@
 - (IBAction)dayBtn2:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *dayBtn3;
 - (IBAction)dayBtn3:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextView *inputText;
-@property (weak, nonatomic) IBOutlet UILabel *placeholder;
+@property (weak, nonatomic) IBOutlet TKTextView *inputText;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *priceInputText;
