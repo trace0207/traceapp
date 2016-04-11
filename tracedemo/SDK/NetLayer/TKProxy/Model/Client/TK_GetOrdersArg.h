@@ -12,4 +12,5 @@
 @property (nonatomic,copy) NSString *categoryId;
 @property (nonatomic) NSInteger pageOffset;
 @property (nonatomic) NSInteger pageSize;
+@property (nonatomic,copy) NSString * brandId;
 @end

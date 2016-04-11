@@ -8,8 +8,9 @@
 
 #import "BaseView.h"
 #import "CountDownView.h"
+#import "TKHeadImageView.h"
 @interface DetailView : BaseView
-@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (weak, nonatomic) IBOutlet TKHeadImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet CountDownView *countDownView;
 @property (weak, nonatomic) IBOutlet UILabel *textView;

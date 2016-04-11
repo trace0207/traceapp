@@ -101,6 +101,30 @@
     return _buyerCateList;
 }
 
+
+-(TK_Brand *)defaultBrand
+{
+    if(_defaultBrand == nil)
+    {
+        _defaultBrand = [[TK_Brand alloc] init];
+        _defaultBrand.brandName = @"全部品牌";
+        _defaultBrand.brandId = @"";
+    }
+    return  _defaultBrand;
+}
+
+-(TK_ShareCategory *)defaultCategory
+{
+    if(_defaultCategory == nil)
+    {
+        _defaultCategory = [[TK_ShareCategory alloc] init];
+        _defaultCategory.categoryId = @"";
+        _defaultCategory.title = @"全部";
+    }
+    return _defaultCategory;
+}
+
+
 -(void)setToken:(NSString *)token1
 {
     token = token1;

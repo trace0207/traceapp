@@ -31,19 +31,34 @@
     CGFloat height = [UIKitTool caculateHeight:text sizeOfWidth:(kScreenWidth-68) withAttributes:dic];
     
     self.detailView.frame = CGRectMake(0, kScreenWidth, kScreenWidth, 91+height+300);
+    [self.view addSubview:self.scrollView];
+    [self.scrollView addSubview:self.detailView];
 //    self.detailView.countDownView.secondsUTC = 1457312501+BSDay*13;
     self.detailView.textView.text = text;
-    
-    TKSetHeadImageView(self.detailView.headImageView, self.data.userHeaderUrl);
+    self.detailView.headImageView.roundValue = 2.0f;
+
     self.detailView.nameLabel.text = self.data.userNickName;
     self.detailView.brandLabel.text = self.data.brandName;
     self.detailView.kindLabel.text = self.data.categoryName;
     [self.detailView.countDownView beginCutDownFromSeconds:self.data.clock.integerValue/1000];
-    
-    TKBorder(self.grobBtn);
-    TKBorder(self.freeBtn);
     [self.grobBtn setBackgroundImage:IMG(@"bg_purchase") forState:UIControlStateNormal];
     self.scrollView.contentSize = CGSizeMake(kScreenWidth, self.bannerView.frame.size.height+self.detailView.frame.size.height-300);
+   
+    
+    TKSetHeadImageView(self.detailView.headImageView, self.data.userHeaderUrl)
+    TKBorder(self.grobBtn)
+    TKBorder(self.freeBtn)
+    TKBorder(self.followBtn)
+#if B_Client == 1
+    self.followBtn.hidden = YES;
+#else
+    self.followBtn.hidden = NO;
+    self.grobBtn.hidden = YES;
+    self.freeBtn.hidden = YES;
+    [self.followBtn setBackgroundImage:[UIColor TKcreateImageWithColor:[UIColor tkThemeColor2]] forState:(UIControlStateNormal)];
+//    [self.followBtn setTintColor:[UIColor tkThemeColor1]];
+    [self.followBtn setTitleColor:[UIColor tkThemeColor1] forState:UIControlStateNormal];
+#endif
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -79,7 +94,6 @@
         _scrollView.alwaysBounceHorizontal = NO;
         _scrollView.alwaysBounceVertical = YES;
         _scrollView.backgroundColor = [UIColor HFColorStyle_6];
-        [self.view addSubview:_scrollView];
     }
     return _scrollView;
 }
@@ -88,7 +102,7 @@
 {
     if (_detailView == nil) {
         _detailView = [[DetailView alloc]init];
-        [self.scrollView addSubview:_detailView];
+        
     }
     return _detailView;
 }
@@ -101,9 +115,13 @@
              {
                  if(ack.sucess)
                  {
-        
+                     [TKAlertView showSuccessWithTitle:@"抢单成功" withMessage:nil commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
+                     self.grobBtn.enabled = NO;
                  }
-                 DDLogInfo(@"ack %@",ack);
+                 else
+                 {
+                     [TKAlertView showFailedWithTitle:@"抢单失败" withMessage: ack.msg commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
+                 }
              }];
         }
     }];
@@ -115,33 +133,23 @@
     [TKAlertView showAltertWithTitle:@"确定不接该笔悬赏？" withMessage:@"释放后，您可以在悬赏状态切换位置找到“已释放的悬赏”。" commpleteBlock:^(NSInteger buttonIndex) {
         if (buttonIndex == 1) {
             [[TKProxy proxy].mainProxy releaseReward:self.data.id source:0 withBlock:^(HF_BaseAck *ack) {
-                DDLogInfo(@"ack %@",ack);
-            }];
+                if(ack.sucess)
+                {
+                    [TKAlertView showSuccessWithTitle:@"悬赏已释放" withMessage:nil commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
+                    self.freeBtn.enabled = NO;
+                }
+                else
+                {
+                    [TKAlertView showFailedWithTitle:@"释放失败" withMessage: ack.msg commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
+                }            }];
         }
     } cancelTitle:@"取消" determineTitle:@"不接"];
     
 }
 
 
-//
-//-(void)onAcceptBtnClick:(NSIndexPath *)indexPath
-//{
-//    TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
-//    RewardData * rowData  = cellData.ackData;
-//    [[TKProxy proxy].mainProxy accept:[[TKUserCenter instance] getUser].userId rewardId:rowData.id needDays:3 withBlock:^(HF_BaseAck * ack)
-//     {
-//         DDLogInfo(@"ack %@",ack);
-//     }];
-//}
-//
-//-(void)onReleaseBtnClick:(NSIndexPath *)indexPath
-//{
-//    TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
-//    RewardData * rowData  = cellData.ackData;
-//    [[TKProxy proxy].mainProxy releaseReward:rowData.id source:0 withBlock:^(HF_BaseAck *ack) {
-//        DDLogInfo(@"ack %@",ack);
-//    }];
-//}
 
-
+- (IBAction)followAction:(id)sender {
+    DDLogInfo(@"follow click tap ");
+}
 @end

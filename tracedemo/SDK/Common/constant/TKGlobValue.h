@@ -200,6 +200,10 @@ typedef NS_ENUM(NSInteger,HomePageType)
               placeholderImage:[UIImage imageNamed:@"tk_image_head_default"]];
 
 #define TKSetLoadingImageView(imageView,url)  \
+[imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getSmallImage:url]]  \
+placeholderImage:[UIImage imageNamed:@"img_default"]];
+
+#define TKSetLoadingRawImageView(imageView,url)  \
 [imageView  sd_setImageWithURL:[NSURL URLWithString:[UIKitTool getRawImage:url]]  \
 placeholderImage:[UIImage imageNamed:@"img_default"]];
 

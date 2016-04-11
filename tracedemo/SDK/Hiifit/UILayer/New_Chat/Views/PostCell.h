@@ -8,6 +8,7 @@
 
 #import "BaseTableCell.h"
 #import "PostDetailData.h"
+#import "TKHeadImageView.h"
 
 #define kWidthThree ((kScreenWidth-30-10)/3)
 #define kWidthTwo   ((kScreenWidth-15-60-10)/3)
@@ -45,7 +46,7 @@ typedef NS_ENUM(NSInteger, HFOperatePostType){
 {
     BOOL bPrised;
 }
-@property (nonatomic, weak  ) IBOutlet UIImageView      *headImageView;
+@property (nonatomic, weak  ) IBOutlet TKHeadImageView      *headImageView;
 @property (nonatomic, weak  ) IBOutlet UILabel          *nameLabel;
 @property (nonatomic, weak  ) IBOutlet UILabel          *nextNameLabel;
 @property (nonatomic, weak  ) IBOutlet UILabel          *habitLabel;

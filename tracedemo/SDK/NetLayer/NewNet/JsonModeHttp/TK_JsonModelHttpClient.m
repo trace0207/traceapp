@@ -121,9 +121,9 @@
         
     }
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        NSLog(@"结束了整组的请求队列");
+    DDLogInfo(@"TKGroup结束了整组的请求队列");
         NSArray * array2 = [array sortedArrayUsingComparator:^NSComparisonResult(HF_BaseAck * obj1, HF_BaseAck * obj2) {
-            return (NSInteger)obj1.transferFromArg > (NSInteger)obj2.transferFromArg ? NSOrderedDescending:NSOrderedDescending;
+            return (NSInteger)obj1.transferFromArg > (NSInteger)obj2.transferFromArg ? NSOrderedDescending:NSOrderedAscending;
         }];
         block(array2);
     });

@@ -59,12 +59,14 @@
  *  @param block 回调block
  */
 -(void)getShowOrders:(NSString *) type
+             brandId:(NSString *) brandId
                 page:(NSInteger)page
            withBlock:(hfAckBlock)block{
     
     TK_GetOrdersArg * arg = [[TK_GetOrdersArg alloc] init];
     arg.categoryId = type;
     arg.pageSize = 20;
+    arg.brandId = brandId;
     arg.pageOffset = page;
     arg.ackClassName = NSStringFromClass([TK_GetOrdersAck class]);
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
@@ -278,6 +280,7 @@
  根据类目查询悬赏广场的悬赏
  **/
 -(void)getRewardList:(NSString *)categoryId
+             brandId:(NSString *) brandId
                 page:(NSInteger)page
                 type:(HomePageType)type
         rewardStatus:(NSInteger)status
@@ -298,7 +301,8 @@
     //默认的是查我的客户的悬赏
     arg.pageSize = 20;
     arg.pageOffset = page;
-    arg.categoryId = @"";
+    arg.categoryId = categoryId;
+    arg.brandId = brandId;
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 

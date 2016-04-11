@@ -239,37 +239,37 @@ static HFMenuControl * menu;
 
 - (void)loadPullDownRefreashData
 {
-    
-    NSInteger type = mCurrentIndex;
-    
-    [[TKProxy proxy].mainProxy getShowOrders:@"" page:1 withBlock:^(HF_BaseAck *ack){
-        HFPostDetailView * view = [mViewArray objectAtIndex:mCurrentIndex];
-        if(ack.sucess){
-            
-            
-            DDLogInfo(@"loadPullDownRefreashData  do success");
-        }else{
-            
-            DDLogInfo(@"loadPullDownRefreashData  do error %ld", (long)ack.recode);
-        }
-        
-        
-        // TODO_start
-        
-        NSArray * dataArray = [TKHomePageViewController imaginaryShowOrdersData];
-        NSMutableArray * array = [mSourceArray objectAtIndex:mCurrentIndex];
-        [array removeAllObjects];
-        [array addObjectsFromArray:dataArray];
-        //edit by shidongdong 20151015
-        [mOffsetArray replaceObjectAtIndex:mCurrentIndex withObject:[NSNumber numberWithInteger:[dataArray count]]];
-//        [view reloadData:array];
-        
-        
-        // TODO_end
-        
-        
-        [view endRefreash];
-    }];
+//    
+//    NSInteger type = mCurrentIndex;
+//    
+//    [[TKProxy proxy].mainProxy getShowOrders:@"" page:1 withBlock:^(HF_BaseAck *ack){
+//        HFPostDetailView * view = [mViewArray objectAtIndex:mCurrentIndex];
+//        if(ack.sucess){
+//            
+//            
+//            DDLogInfo(@"loadPullDownRefreashData  do success");
+//        }else{
+//            
+//            DDLogInfo(@"loadPullDownRefreashData  do error %ld", (long)ack.recode);
+//        }
+//        
+//        
+//        // TODO_start
+//        
+//        NSArray * dataArray = [TKHomePageViewController imaginaryShowOrdersData];
+//        NSMutableArray * array = [mSourceArray objectAtIndex:mCurrentIndex];
+//        [array removeAllObjects];
+//        [array addObjectsFromArray:dataArray];
+//        //edit by shidongdong 20151015
+//        [mOffsetArray replaceObjectAtIndex:mCurrentIndex withObject:[NSNumber numberWithInteger:[dataArray count]]];
+////        [view reloadData:array];
+//        
+//        
+//        // TODO_end
+//        
+//        
+//        [view endRefreash];
+//    }];
     
     
     //    HIFindType type = (HIFindType)(mCurrentIndex + 1);

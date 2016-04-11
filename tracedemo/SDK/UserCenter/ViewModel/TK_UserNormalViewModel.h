@@ -19,6 +19,10 @@
 @property (nonatomic,copy) NSMutableArray<__kindof TK_Brand*> * brandList;
 @property (nonatomic,copy) NSMutableArray<__kindof TK_ShareCategory*> * buyerCateList;
 
+@property (nonatomic,strong) TK_ShareCategory * defaultCategory;
+@property (nonatomic,strong) TK_Brand * defaultBrand;
+
+
 @property (nonatomic,strong)NSString * token;
 
 

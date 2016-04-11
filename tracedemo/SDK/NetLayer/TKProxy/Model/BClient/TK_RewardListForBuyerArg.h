@@ -15,5 +15,6 @@
 @property (nonatomic,assign)NSInteger pageOffset;
 @property (nonatomic,assign)NSInteger pageSize;
 @property (nonatomic,assign)NSInteger rewardStatus;
+@property (nonatomic,copy)NSString * brandId;
 
 @end

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB83FB601C72C16B0013A6A0"
-               BuildableName = "C_Client.app"
+               BuildableName = "&#x8d4f;&#x8d2d;.app"
                BlueprintName = "C_Client"
                ReferencedContainer = "container:tracedemo.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB83FB601C72C16B0013A6A0"
-            BuildableName = "C_Client.app"
+            BuildableName = "&#x8d4f;&#x8d2d;.app"
             BlueprintName = "C_Client"
             ReferencedContainer = "container:tracedemo.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB83FB601C72C16B0013A6A0"
-            BuildableName = "C_Client.app"
+            BuildableName = "&#x8d4f;&#x8d2d;.app"
             BlueprintName = "C_Client"
             ReferencedContainer = "container:tracedemo.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB83FB601C72C16B0013A6A0"
-            BuildableName = "C_Client.app"
+            BuildableName = "&#x8d4f;&#x8d2d;.app"
             BlueprintName = "C_Client"
             ReferencedContainer = "container:tracedemo.xcodeproj">
          </BuildableReference>

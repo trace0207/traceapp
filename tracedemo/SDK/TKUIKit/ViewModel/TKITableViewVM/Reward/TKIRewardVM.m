@@ -56,7 +56,10 @@
     WS(weakSelf);
     [self hidTips];
     
+//    [[TKProxy proxy].mainProxy getRewardList:@"" brandId:@"" page:1 type:1 rewardStatus:1 withBlock:nil];
+    
     [[TKProxy proxy].mainProxy getRewardList:self.category.categoryId
+                                        brandId:self.brand.brandId
                                         page:nowPage
                                         type:self.rewardPageType
                                 rewardStatus:101

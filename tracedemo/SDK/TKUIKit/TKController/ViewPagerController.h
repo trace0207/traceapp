@@ -60,6 +60,8 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 @property UIColor *tabsViewBackgroundColor;
 @property UIColor *contentViewBackgroundColor;
 
+@property (nonatomic,assign)NSInteger startPageIndex;
+
 #pragma mark Methods
 // Reload all tabs and contents
 - (void)reloadData;

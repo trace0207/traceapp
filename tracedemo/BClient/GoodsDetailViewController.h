@@ -18,5 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *freeBtn;
 - (IBAction)grobAction:(UIButton *)sender;
 - (IBAction)freeAction:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *followBtn;
+- (IBAction)followAction:(id)sender;
 
 @end

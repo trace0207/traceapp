@@ -19,6 +19,9 @@
 {
 //    NSArray<__kindof TK_ShareCategory*> * shareCategorys;
 //    NSMutableArray<__kindof TK_Brand*> * brandList;
+    TK_Brand *currentBrand;
+//    TK_ShareCategory *currentCategory;
+//    NSInteger currentPageIndex;
 }
 @property (nonatomic, strong) NSMutableArray<__kindof TK_Brand*> *brandsArray;
 @property (nonatomic, strong) NSMutableArray<__kindof TK_ShareCategory*> * shareCategorys;
@@ -29,6 +32,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    currentBrand = [TKUserCenter instance].userNormalVM.defaultBrand;
+//    currentCategory = [TKUserCenter instance].userNormalVM.defaultCategory;
     
     self.dataSource = self;
     self.delegate = self;
@@ -42,34 +48,51 @@
     
 }
 
+-(void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    DDLogInfo(@"Warning !!!!!!");
+    [[SDImageCache sharedImageCache] clearDisk];
+    [[SDImageCache sharedImageCache] clearMemory];
+     
+}
+
 
 -(void)reloadTitleViewAndData
 {
     DDLogInfo(@"BPageViewController loadData enter ");
-    NSArray<__kindof TK_ShareCategory*> * shareCategorys = nil;
+    NSMutableArray<__kindof TK_ShareCategory*> * shareCategorys = nil;
     
 #if B_Client == 1
      shareCategorys = [TKUserCenter instance].userNormalVM.buyerCateList;
 #else
      shareCategorys = [TKUserCenter instance].userNormalVM.shareCategorys;
 #endif
-    NSMutableArray * titles = [[NSMutableArray alloc] init];
-    for (TK_ShareCategory *s in shareCategorys) {
-        [titles addObject:s.title];
-    }
+//    NSMutableArray * titles = [[NSMutableArray alloc] init];
+//    for (TK_ShareCategory *s in shareCategorys) {
+//        [titles addObject:s.title];
+//    }
+    
+    
+//    [shareCategorys insertObject:[TKUserCenter instance].userNormalVM.defaultCategory atIndex:0];
     
     NSArray * brandList = [TKUserCenter instance].userNormalVM.brandList;
     NSMutableArray * brands = [[NSMutableArray alloc] init];
+    
+    [brands addObject:[TKUserCenter instance].userNormalVM.defaultBrand.brandName];
     
     for (TK_Brand  * b in brandList ) {
     
         [brands addObject:b.brandName];
     }
-    
     [self.menuView setTitles:brands];
     
-    self.brandsArray = [brandList copy];
-    self.shareCategorys = [shareCategorys copy];
+//    [brands insertObject:[TKUserCenter instance].userNormalVM.defaultBrand atIndex:0];
+    
+    self.brandsArray = [brandList mutableCopy];
+    self.shareCategorys = [shareCategorys mutableCopy];
+    [self.brandsArray insertObject:[TKUserCenter instance].userNormalVM.defaultBrand atIndex:0];
+    [self.shareCategorys insertObject:[TKUserCenter instance].userNormalVM.defaultCategory atIndex:0];
     [self reloadData];
     if(shareCategorys.count != 0 && brandList.count != 0)
     {
@@ -111,13 +134,12 @@
     if(self.brandsArray.count > index)
     {
         DDLogInfo(@"select title %@",self.brandsArray[index].brandName);
+        currentBrand = self.brandsArray[index];
+        [self reloadData];
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 - (NSMutableArray *)brandsArray
 {
     if (_brandsArray == nil) {
@@ -172,11 +194,8 @@
     {
         BHomeChildAVC *vc = [[BHomeChildAVC alloc]init];
         vc.vm1.rewardPageType = self.dataType;
-        TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
-        category.categoryId = @"1";
-        category.title = @"内衣";
-        vc.vm1.category =category;
-        
+        vc.vm1.category = [self.shareCategorys objectAtIndex:index];
+        vc.vm1.brand = currentBrand;
         [self performSelector:@selector(pullRefreshB:) withObject:vc afterDelay:0.4];
         
         
@@ -184,10 +203,11 @@
     }else
     {
         TKShowGoodsListVC *vc = [[TKShowGoodsListVC alloc]init];
-        TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
-        category.categoryId = @"";
-        category.title = @"内衣";
-        vc.vm.category =category;
+//        TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
+//        category.categoryId = @"";
+//        category.title = @"内衣";
+        vc.vm.category = [self.shareCategorys objectAtIndex:index];;
+        vc.vm.brand = currentBrand;
         [self performSelector:@selector(pullRefreshA:) withObject:vc afterDelay:0.4];
         return vc;
     }
@@ -221,7 +241,24 @@
 }
 
 
+-(void)onPageSelect:(NSInteger)index
+{
+    
+}
+
+
+
 #pragma mark - ViewPagerDelegate
+
+
+- (void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index
+{
+//    currentCategory = [self.shareCategorys objectAtIndex:index];
+    self.startPageIndex = index;
+    DDLogInfo(@"page change %ld",index);
+}
+
+
 //- (CGFloat)viewPager:(ViewPagerController *)viewPager valueForOption:(ViewPagerOption)option withDefault:(CGFloat)value {
 //    
 //    switch (option) {

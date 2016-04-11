@@ -31,7 +31,9 @@
 - (void)tkLoadDefaultData
 {
     WS(weakSelf)
-    [[TKProxy proxy].mainProxy getShowOrders:self.category.categoryId page:0 withBlock:^(HF_BaseAck *ack) {
+    [[TKProxy proxy].mainProxy getShowOrders:self.category.categoryId
+                                     brandId:self.brand.brandId
+                                        page:0 withBlock:^(HF_BaseAck *ack) {
         
         //        DDLogInfo(@"orders list %@",ack);
         

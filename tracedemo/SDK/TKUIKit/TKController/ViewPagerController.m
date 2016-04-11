@@ -386,7 +386,7 @@
         CGRect frame = tabView.frame;
         
         // 不足  4个item时，刚好充满view，等分
-        if(_tabCount <=4)
+        if(_tabCount <=5)
         {
             CGRect  defaultFrame = CGRectMake(frame.origin.x, frame.origin.y, _tabsView.frame.size.width/_tabCount, frame.size.height);
             frame = defaultFrame;
@@ -431,11 +431,13 @@
     // Set first viewController
     UIViewController *viewController;
     
-    if (self.startFromSecondTab) {
-        viewController = [self viewControllerAtIndex:1];
-    } else {
-        viewController = [self viewControllerAtIndex:0];
-    }
+//    if (self.startFromSecondTab) {
+//        viewController = [self viewControllerAtIndex:self.star];
+//    } else {
+//        viewController = [self viewControllerAtIndex:0];
+//    }
+    
+    viewController = [self viewControllerAtIndex:self.startPageIndex];
     
     if (viewController == nil) {
         viewController = [[UIViewController alloc] init];
@@ -448,7 +450,7 @@
                                  completion:nil];
     
     // Set activeTabIndex
-    self.activeTabIndex = self.startFromSecondTab;
+    self.activeTabIndex = self.startPageIndex;
 //    [self.view layoutIfNeeded];
 //    [self.view layoutSubviews];
 }
@@ -467,7 +469,7 @@
         // Create TabView and subview the content
         
         CGRect frame = tabViewContent.frame;
-        if(_tabCount <= 4)
+        if(_tabCount <= 5)
         {
             frame = CGRectMake(frame.origin.x, frame.origin.y, _tabsView.frame.size.width/_tabCount, frame.size.height);
         }

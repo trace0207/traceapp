@@ -90,7 +90,7 @@
 - (UISegmentedControl *)segmentedControl
 {
     if (_segmentedControl == nil) {
-        _segmentedControl = [[UISegmentedControl alloc]initWithItems:@[@"嗮单池",@"悬赏池"]];
+        _segmentedControl = [[UISegmentedControl alloc]initWithItems:@[@"晒单池",@"悬赏池"]];
         _segmentedControl.frame = CGRectMake(0, 0, 150, 30);
         _segmentedControl.selectedSegmentIndex = 0;
         [_segmentedControl addTarget:self action:@selector(segmentedAction:) forControlEvents:UIControlEventValueChanged];

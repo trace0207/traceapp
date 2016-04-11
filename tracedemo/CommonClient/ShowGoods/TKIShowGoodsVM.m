@@ -42,7 +42,9 @@
 {
     [self hidTips];
     WS(weakSelf)
-    [[TKProxy proxy].mainProxy getShowOrders:self.category.categoryId page:nowPage withBlock:^(HF_BaseAck *ack) {
+    [[TKProxy proxy].mainProxy getShowOrders:self.category.categoryId
+                                     brandId:self.brand.brandId
+                                        page:nowPage withBlock:^(HF_BaseAck *ack) {
        
 //        DDLogInfo(@"orders list %@",ack);
         
