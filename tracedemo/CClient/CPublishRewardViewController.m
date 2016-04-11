@@ -111,7 +111,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     selectPic = 0;
     otherPics = [[NSMutableArray alloc] init];
     self.clearView.clearDelegate = self;
-    
+    self.inputText.placehorderText = @"请输入颜色、尺码、尺寸等相关信息";
     picWidth = (TKScreenWidth -  (picCountInLine+1)* picWiteSpaceWidth )/ picCountInLine;
     self.hidDefaultBackBtn = YES;
     
@@ -209,7 +209,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     
     if([self.inputText pointInside:tapPoint withEvent:event])
     {
-        return self.inputText;
+        return self.inputText.textView;
     }
     [self hidKeyBord];
     return nil;
@@ -817,15 +817,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     [TKAlertView showFailedWithTitle:@"支付未完成" withMessage:@"支付被取消或者是支付异常" commpleteBlock:nil cancelTitle:nil determineTitle:@"确定"];
 }
 
-#pragma mark - text view delegate
-- (void)textViewDidChange:(UITextView *)textView;
-{
-    if (textView.text.length>0) {
-        self.placeholder.hidden = YES;
-    }else {
-        self.placeholder.hidden = NO;
-    }
-}
+#pragma mark - text field delegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];

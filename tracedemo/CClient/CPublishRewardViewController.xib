@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPublishRewardViewController">
@@ -22,10 +22,9 @@
                 <outlet property="imageFieldHeight" destination="xbQ-Z2-pDg" id="Jde-4k-D5q"/>
                 <outlet property="infoField" destination="zwd-qF-bKo" id="4ie-VQ-5LI"/>
                 <outlet property="infoFieldMarginTop" destination="cOm-JR-1NB" id="TrP-FZ-XBz"/>
-                <outlet property="inputText" destination="XtW-0P-LTk" id="sUi-Dn-epg"/>
+                <outlet property="inputText" destination="zg1-E4-Jjp" id="dLo-dJ-yQ3"/>
                 <outlet property="mainScrollView" destination="mLV-lu-fL6" id="5SC-mZ-jBW"/>
                 <outlet property="mainView" destination="nXS-GM-Off" id="J3x-cN-Sy0"/>
-                <outlet property="placeholder" destination="OZm-UA-Ozr" id="otq-04-dhT"/>
                 <outlet property="priceInputText" destination="e0p-hl-xk7" id="1pc-rl-hbA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -236,35 +235,17 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-qF-bKo">
                             <rect key="frame" x="12" y="164" width="351" height="80"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XtW-0P-LTk">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-E4-Jjp" customClass="TKTextView">
                                     <rect key="frame" x="0.0" y="0.0" width="351" height="80"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="-1" id="51e-ut-oOg"/>
-                                    </connections>
-                                </textView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入颜色、尺码、尺寸等相关信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZm-UA-Ozr">
-                                    <rect key="frame" x="5" y="6" width="230" height="21"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="230" id="U5y-pD-2NO"/>
-                                        <constraint firstAttribute="height" constant="21" id="Wia-96-AK1"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="OZm-UA-Ozr" firstAttribute="leading" secondItem="zwd-qF-bKo" secondAttribute="leading" constant="5" id="66l-io-Ke5"/>
-                                <constraint firstItem="XtW-0P-LTk" firstAttribute="top" secondItem="zwd-qF-bKo" secondAttribute="top" id="BMW-RC-XVS"/>
-                                <constraint firstItem="XtW-0P-LTk" firstAttribute="leading" secondItem="zwd-qF-bKo" secondAttribute="leading" id="OLG-IU-wCP"/>
-                                <constraint firstAttribute="bottom" secondItem="XtW-0P-LTk" secondAttribute="bottom" id="Sg5-gI-1aT"/>
-                                <constraint firstAttribute="trailing" secondItem="XtW-0P-LTk" secondAttribute="trailing" id="ceb-uP-Vn5"/>
-                                <constraint firstItem="OZm-UA-Ozr" firstAttribute="top" secondItem="zwd-qF-bKo" secondAttribute="top" constant="6" id="nRX-Qq-lde"/>
+                                <constraint firstAttribute="bottom" secondItem="zg1-E4-Jjp" secondAttribute="bottom" id="2V0-KD-PgR"/>
+                                <constraint firstItem="zg1-E4-Jjp" firstAttribute="leading" secondItem="zwd-qF-bKo" secondAttribute="leading" id="Fcl-KM-hWt"/>
+                                <constraint firstAttribute="trailing" secondItem="zg1-E4-Jjp" secondAttribute="trailing" id="QbC-tN-hGl"/>
+                                <constraint firstItem="zg1-E4-Jjp" firstAttribute="top" secondItem="zwd-qF-bKo" secondAttribute="top" id="gMC-aQ-H8A"/>
                                 <constraint firstAttribute="height" constant="80" id="sBP-E0-ahi"/>
                             </constraints>
                         </view>
