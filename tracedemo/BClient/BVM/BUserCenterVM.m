@@ -227,11 +227,7 @@
     }
     else if (row == 1)
     {
-#if B_Client == 1
         [TKWebViewController showWebView:@"账户详情" url:BaccountDetailURL];
-#else 
-        [TKWebViewController showWebView:@"账户详情" url:CaccountDetailURL];
-#endif
     }
     else if (row == 2) {
         TKEditUserInfoVC *vc = [[TKEditUserInfoVC alloc]init];
@@ -241,7 +237,10 @@
         CBillViewController * vc = [[CBillViewController alloc] init];
         [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     }
-    
+    else if (row == 4)
+    {
+        [TKWebViewController showWebView:@"我的客户管理" url:MyCustomerURL];
+    }
     else{
         TKIBaseNavWithDefaultBackVC * normalVC = [[TKIBaseNavWithDefaultBackVC alloc] init];
         normalVC.navTitle = cell.label1.text;

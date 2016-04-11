@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *centerDescText;
 @property (weak, nonatomic) IBOutlet UIImageView *smallAddIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *bigAddIcon;
+@property (nonatomic,strong) NSString * remoutURL;
 
 typedef NS_ENUM(NSInteger,ImageBoxStatus)
 {
@@ -29,5 +30,8 @@ typedef NS_ENUM(NSInteger,ImageBoxStatus)
 
 
 -(void)setStatus:(ImageBoxStatus)status;
+
+
+-(void)setURL:(NSString *)url withStatus:(ImageBoxStatus)status;
 
 @end

@@ -10,9 +10,10 @@
 #import "TK_ImageSelectBoxView.h"
 #import "TKClearView.h"
 #import "TKTextView.h"
+#import "TKIShowGoodsRowM.h"
 @interface CPublishRewardViewController : TKIBaseNavWithDefaultBackVC
 
-@property (nonatomic,assign) NSInteger publishType;
+@property (nonatomic,assign) NSInteger publishType;// 发布悬赏
 
 @property (weak, nonatomic) IBOutlet UIView *imageContaner;
 
@@ -51,5 +52,8 @@
 @property (weak, nonatomic) IBOutlet UIView *addressField;
 @property (weak, nonatomic) IBOutlet UILabel *addressText;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoFieldMarginTop;
+
+
+@property (weak,nonatomic) TKIShowGoodsRowM * showGoodsrowData;//跟单的数据原始对象
 
 @end

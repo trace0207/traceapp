@@ -43,6 +43,7 @@
         
     }
     vc.defaultURL = url;
+    vc.navTitle = title;
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
 }
 

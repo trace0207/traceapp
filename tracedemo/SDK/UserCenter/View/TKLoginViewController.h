@@ -27,4 +27,6 @@
 
 - (IBAction)loginBtn:(id)sender;
 - (IBAction)forgetPassword:(id)sender;
+
++(void)showLoginViewPage:(UIViewController *)controller;
 @end

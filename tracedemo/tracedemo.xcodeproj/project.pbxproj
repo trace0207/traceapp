@@ -15,10 +15,6 @@
 		8A0464F61C880FF200E6B1E0 /* BMyShowGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0464F31C880FF200E6B1E0 /* BMyShowGoodsViewController.m */; };
 		8A0464F71C880FF200E6B1E0 /* BMyShowGoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0464F41C880FF200E6B1E0 /* BMyShowGoodsViewController.xib */; };
 		8A0464F81C880FF200E6B1E0 /* BMyShowGoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0464F41C880FF200E6B1E0 /* BMyShowGoodsViewController.xib */; };
-		8A0465021C88113300E6B1E0 /* TKISHowGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0465001C88113300E6B1E0 /* TKISHowGoodsCell.m */; };
-		8A0465031C88113300E6B1E0 /* TKISHowGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0465001C88113300E6B1E0 /* TKISHowGoodsCell.m */; };
-		8A0465041C88113300E6B1E0 /* TKISHowGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0465011C88113300E6B1E0 /* TKISHowGoodsCell.xib */; };
-		8A0465051C88113300E6B1E0 /* TKISHowGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0465011C88113300E6B1E0 /* TKISHowGoodsCell.xib */; };
 		8A0547F81CA26C0100AC8DD5 /* TKIShowGoodsDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0547F01CA26C0100AC8DD5 /* TKIShowGoodsDetailVM.m */; };
 		8A0547F91CA26C0100AC8DD5 /* TKIShowGoodsDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0547F01CA26C0100AC8DD5 /* TKIShowGoodsDetailVM.m */; };
 		8A0547FA1CA26C0100AC8DD5 /* TKIShowGoodsRowM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0547F21CA26C0100AC8DD5 /* TKIShowGoodsRowM.m */; };
@@ -1562,9 +1558,6 @@
 		8A0464F21C880FF200E6B1E0 /* BMyShowGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMyShowGoodsViewController.h; sourceTree = "<group>"; };
 		8A0464F31C880FF200E6B1E0 /* BMyShowGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMyShowGoodsViewController.m; sourceTree = "<group>"; };
 		8A0464F41C880FF200E6B1E0 /* BMyShowGoodsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMyShowGoodsViewController.xib; sourceTree = "<group>"; };
-		8A0464FF1C88113300E6B1E0 /* TKISHowGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKISHowGoodsCell.h; sourceTree = "<group>"; };
-		8A0465001C88113300E6B1E0 /* TKISHowGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKISHowGoodsCell.m; sourceTree = "<group>"; };
-		8A0465011C88113300E6B1E0 /* TKISHowGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKISHowGoodsCell.xib; sourceTree = "<group>"; };
 		8A0547EF1CA26C0100AC8DD5 /* TKIShowGoodsDetailVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIShowGoodsDetailVM.h; sourceTree = "<group>"; };
 		8A0547F01CA26C0100AC8DD5 /* TKIShowGoodsDetailVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKIShowGoodsDetailVM.m; sourceTree = "<group>"; };
 		8A0547F11CA26C0100AC8DD5 /* TKIShowGoodsRowM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKIShowGoodsRowM.h; sourceTree = "<group>"; };
@@ -3083,9 +3076,6 @@
 		8A0464FE1C88110A00E6B1E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8A0464FF1C88113300E6B1E0 /* TKISHowGoodsCell.h */,
-				8A0465001C88113300E6B1E0 /* TKISHowGoodsCell.m */,
-				8A0465011C88113300E6B1E0 /* TKISHowGoodsCell.xib */,
 				8A37498F1C919F21003DE59E /* TK_ImageSelectBoxView.h */,
 				8A3749901C919F21003DE59E /* TK_ImageSelectBoxView.m */,
 				8A3749931C919F37003DE59E /* TK_ImageSelectBoxView.xib */,
@@ -6020,7 +6010,6 @@
 				BB83FB191C72C01C0013A6A0 /* TKRegisterViewController.xib in Resources */,
 				BBA372561C75C52E0075333E /* BHomeCHildAScrollBox.xib in Resources */,
 				BB83FB1A1C72C01C0013A6A0 /* FriendsCell.xib in Resources */,
-				8A0465041C88113300E6B1E0 /* TKISHowGoodsCell.xib in Resources */,
 				8AA7F7101C8880AE00CE0F17 /* TKPublishShowGoodsVC.xib in Resources */,
 				BB83FB1B1C72C01C0013A6A0 /* SentPostViewController.xib in Resources */,
 				BB83FB1C1C72C01C0013A6A0 /* HFBindPhoneNumViewController.xib in Resources */,
@@ -6118,7 +6107,6 @@
 				BB83FDBA1C72C16B0013A6A0 /* TestViewController.xib in Resources */,
 				BB83FDBB1C72C16B0013A6A0 /* TKHttpAction.plist in Resources */,
 				914303281CA29998003E80F7 /* CoinViewController.xib in Resources */,
-				8A0465051C88113300E6B1E0 /* TKISHowGoodsCell.xib in Resources */,
 				8A37497C1C8D5BD0003DE59E /* CHomeChildAVC.xib in Resources */,
 				BB83FDBC1C72C16B0013A6A0 /* HFFeedbackController.xib in Resources */,
 				BB83FDBD1C72C16B0013A6A0 /* TKLoginViewController.xib in Resources */,
@@ -6519,7 +6507,6 @@
 				BB83F9501C72C01C0013A6A0 /* SchemeActionsAck.m in Sources */,
 				BB83F9511C72C01C0013A6A0 /* TKHeadImageView.m in Sources */,
 				BB83F9521C72C01C0013A6A0 /* HFAnimationView.m in Sources */,
-				8A0465021C88113300E6B1E0 /* TKISHowGoodsCell.m in Sources */,
 				BB83F9531C72C01C0013A6A0 /* HFSportViewCell.m in Sources */,
 				BB83F9541C72C01C0013A6A0 /* UIColor+TK_Color.m in Sources */,
 				8A9D9B6A1C9BCC94009F877F /* TK_AcceptRewardArg.m in Sources */,
@@ -7154,7 +7141,6 @@
 				BB83FC0E1C72C16B0013A6A0 /* TKHeadImageView.m in Sources */,
 				BB83FC0F1C72C16B0013A6A0 /* HFAnimationView.m in Sources */,
 				BB83FC101C72C16B0013A6A0 /* HFSportViewCell.m in Sources */,
-				8A0465031C88113300E6B1E0 /* TKISHowGoodsCell.m in Sources */,
 				BB83FC111C72C16B0013A6A0 /* UIColor+TK_Color.m in Sources */,
 				BB83FC121C72C16B0013A6A0 /* UserViewController.m in Sources */,
 				8A9D9B6B1C9BCC94009F877F /* TK_AcceptRewardArg.m in Sources */,

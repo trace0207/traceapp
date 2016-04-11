@@ -11,7 +11,7 @@
 #import "UIColor+TK_Color.h"
 @interface TKTextView ()<UITextViewDelegate>
 
-@property (nonatomic, strong) UILabel *placehorder;
+
 @end
 
 @implementation TKTextView

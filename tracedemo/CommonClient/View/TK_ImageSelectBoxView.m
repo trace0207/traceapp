@@ -9,7 +9,13 @@
 #import "TK_ImageSelectBoxView.h"
 #import "Masonry.h"
 
+
+@interface TK_ImageSelectBoxView()
+
+@end
 @implementation TK_ImageSelectBoxView
+
+
 
 
 -(instancetype)init
@@ -35,6 +41,9 @@
     
     DDLogInfo(@"imageSelectBoxView awakeFromNib");
 }
+
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -94,6 +103,14 @@
         self.mainImage.hidden = YES;
         self.goodsDesLayer.hidden = YES;
     }
+}
+
+-(void)setURL:(NSString *)url withStatus:(ImageBoxStatus)status
+{
+    _remoutURL = url;
+    TKSetLoadingImageView(self.mainImage, _remoutURL);
+    [self setStatus:status];
+    
 }
 
 @end

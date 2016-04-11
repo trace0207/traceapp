@@ -192,6 +192,8 @@ typedef NS_ENUM(NSInteger,HomePageType)
 #define ServerAttentionURL @"/web/apollo/address/list.html"
 //账单
 #define  MyBillURL  @"/web/apollo/my/bill.html"
+//我的客户管理
+#define  MyCustomerURL @"/web/apollo/my/myClients.html"
 
 
 // 设置 image 头像

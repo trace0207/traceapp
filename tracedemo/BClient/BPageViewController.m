@@ -15,13 +15,14 @@
 #import "TK_Brand.h"
 #import "TKShowGoodsListVC.h"
 #import "TKUserCenter.h"
-@interface BPageViewController ()<ViewPagerDataSource,ViewPagerDelegate>
+#import "TKLoginViewController.h"
+#import "CPublishRewardViewController.h"
+@interface BPageViewController ()<ViewPagerDataSource,ViewPagerDelegate,TKShowGoodsVMDelegate,LoginDelegate>
 {
-//    NSArray<__kindof TK_ShareCategory*> * shareCategorys;
-//    NSMutableArray<__kindof TK_Brand*> * brandList;
-    TK_Brand *currentBrand;
-//    TK_ShareCategory *currentCategory;
-//    NSInteger currentPageIndex;
+
+    TK_Brand *currentBrand; // 当前选中的品牌
+    TKIShowGoodsRowM *rowData; // 缓存的 item 数据，用户登录回来之后跳转
+
 }
 @property (nonatomic, strong) NSMutableArray<__kindof TK_Brand*> *brandsArray;
 @property (nonatomic, strong) NSMutableArray<__kindof TK_ShareCategory*> * shareCategorys;
@@ -196,6 +197,7 @@
         vc.vm1.rewardPageType = self.dataType;
         vc.vm1.category = [self.shareCategorys objectAtIndex:index];
         vc.vm1.brand = currentBrand;
+        
         [self performSelector:@selector(pullRefreshB:) withObject:vc afterDelay:0.4];
         
         
@@ -208,6 +210,7 @@
 //        category.title = @"内衣";
         vc.vm.category = [self.shareCategorys objectAtIndex:index];;
         vc.vm.brand = currentBrand;
+        vc.vm.showGoodsDelegate = self;
         [self performSelector:@selector(pullRefreshA:) withObject:vc afterDelay:0.4];
         return vc;
     }
@@ -290,5 +293,35 @@
 //    
 //    return color;
 //}
+
+
+#pragma  mark  TKShowGoodsVMDelegate
+
+
+-(void)onFollowAction:(TKIShowGoodsRowM *)row
+{
+    if(![TKUserCenter instance].isLogin)
+    {
+        rowData = row;
+        [TKLoginViewController showLoginViewPage:self];
+    }
+    else
+    {
+        CPublishRewardViewController * vc = [[CPublishRewardViewController alloc] init];
+        vc.showGoodsrowData = rowData;
+        UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+        [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:nil];
+    }
+}
+
+#pragma  mark LoginDelegate
+
+-(void)onLoginSuccess
+{
+    CPublishRewardViewController * vc = [[CPublishRewardViewController alloc] init];
+    UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    vc.showGoodsrowData = rowData;
+    [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:nil];
+}
 
 @end

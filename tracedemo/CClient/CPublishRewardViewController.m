@@ -34,6 +34,7 @@
 #import "UIView+Border.h"
 #import "UIButton+TitleImage.h"
 #import "TKPublishShowGoodsArg.h"
+#import "NSString+HFStrUtil.h"
 
 #define PICONE 101
 #define PICSecond 102
@@ -78,6 +79,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     }
 
     [self initView];
+    
     // Do any additional setup after loading the view from its nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPayNotify:) name:TKPayNotify object:nil];
 }
@@ -149,7 +151,9 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     UIGestureRecognizer * tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onPicTap:)];
     self.secondPic.tag = PICSecond;
     [self.secondPic addGestureRecognizer:tap2];
+    [self resetFollowView];
     [self resetPicField];
+    
     if(self.publishType == 1)
     {
         self.dayBtnField.hidden = YES;
@@ -238,7 +242,13 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     [self.imageContaner addSubview:self.firstPic];
     [self.imageContaner addSubview:self.secondPic];
     
-    if(!image1)
+   
+    if(![NSString isStrEmpty:self.firstPic.remoutURL])
+    {
+        self.firstPic.bottomDescText.text = @"主图";
+
+    }
+    else if(!image1)
     {
         [self.firstPic setStatus:DescAddBtn];
         self.firstPic.centerDescText.text = @"添加商品主图";
@@ -249,7 +259,12 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         self.firstPic.bottomDescText.text = @"主图";
     }
     
-    if(!image2)
+    if(![NSString isStrEmpty:self.secondPic.remoutURL])
+    {
+        self.firstPic.bottomDescText.text = @"吊牌";
+
+    }
+    else if(!image2)
     {
         [self.secondPic setStatus:DescAddBtn];
         self.secondPic.centerDescText.text = @"添加吊牌图";
@@ -275,7 +290,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         [self.imageContaner addSubview:box];
     }
     
-    if(otherPics.count < 7)
+    if(otherPics.count < 7 && self.showGoodsrowData == nil)
     {
         TK_ImageSelectBoxView * box = [[TK_ImageSelectBoxView alloc] init];
         NSInteger count = otherPics.count;
@@ -316,6 +331,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 
 -(void)onPicTap:(UIGestureRecognizer *)tap
 {
+    
     NSInteger index = tap.view.tag;
     selectPic = index;
     if(!picTool)
@@ -561,6 +577,33 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     [[AppDelegate appRootViewController].view addSubview:vc.view];
 }
 
+/**
+ 跟单 悬赏
+ **/
+-(void)resetFollowView
+{
+    if(self.showGoodsrowData != nil)
+    {
+        GetOrderData * row =   self.showGoodsrowData.ackData;
+        self.inputText.text = row.content;
+        self.priceInputText.text = row.showPrice;
+        self.inputText.placehorder.hidden = YES;
+        self.brandText.text = row.brandName;
+        selectBrand = [[TK_Brand alloc] init];
+        selectBrand.brandName = row.brandName;
+        selectBrand.brandId = row.brandId;
+        selectCategory = [[TK_ShareCategory alloc] init];
+        selectCategory.title = row.categoryName;
+        selectCategory.categoryId = row.categoryId;
+        self.categoryText.text = row.categoryName;
+        
+        [self.firstPic setURL:row.picAddr1 withStatus:ImageStatus];
+        [self.secondPic setURL:row.picAddr1 withStatus:ImageStatus];
+        [self.firstPic setUserInteractionEnabled:NO];
+        [self.secondPic setUserInteractionEnabled:NO];
+    }
+}
+
 
 
 #pragma  mark  publish 
@@ -594,12 +637,12 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     
     // 发布请求
     
-    if(image1 == nil)
+    if(image1 == nil && [NSString isStrEmpty:self.firstPic.remoutURL])
     {
         [[HFHUDView shareInstance] ShowTips:@"商品主图不能为空" delayTime:1.0 atView:NULL];
         return;
     }
-    if(image2 == nil)
+    if(image2 == nil && [NSString isStrEmpty:self.firstPic.remoutURL])
     {
         [[HFHUDView shareInstance] ShowTips:@"商品吊牌图不能为空" delayTime:1.0 atView:NULL];
         return ;

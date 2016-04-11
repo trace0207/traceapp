@@ -20,6 +20,7 @@
 #import "NSString+HFStrUtil.h"
 #import "TKUserCenter.h"
 #import "NSString+HFStrUtil.h"
+#import "TKLoginViewController.h"
 
 @interface TKIShowGoodsVM()<TKShowGoodsCellDelegate>
 {
@@ -425,7 +426,11 @@
 -(void)onFollowBtnClick:(NSIndexPath *)indexPath
 {
     DDLogInfo(@"action from indexRow = %ld",indexPath.row);
-
+    
+    if(self.showGoodsDelegate)
+    {
+        [self.showGoodsDelegate onFollowAction:[self.defaultSection.rowsData objectAtIndex:indexPath.row]];
+    }
 }
 
 

@@ -32,7 +32,7 @@
 @property (nonatomic, strong) NSString *placehorderText;
 @property (nonatomic, strong) UIFont *placehorderFont;
 @property (nonatomic, strong) UIColor *placehorderColor;
-
+@property (nonatomic, strong) UILabel *placehorder;
 @property(nonatomic,  copy) NSString *text;
 @property (nonatomic, strong) UIFont *textViewFont;
 @property (nonatomic, strong) UIColor *textViewColor;
