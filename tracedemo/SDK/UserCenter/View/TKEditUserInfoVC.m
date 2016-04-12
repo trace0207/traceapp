@@ -20,6 +20,7 @@
 #import "MJPhotoBrowser.h"
 #import "MJPhoto.h"
 #import "TKPicSelectTool.h"
+#import "TKWebViewController.h"
 
 #define KEY_DES     @"description"
 #define KEY_TYPE    @"type"
@@ -258,11 +259,13 @@
             break;
         case 4:
         {
-            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
-            vc.inPutType = 0;
-            vc.navTitle = @"通讯地址";
-            vc.tag = indexPath.row;
-            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+//            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
+//            vc.inPutType = 0;
+//            vc.navTitle = @"通讯地址";
+//            vc.tag = indexPath.row;
+//            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+            
+            [TKWebViewController showWebView:@"我的收货地址" url:AddressURL];
         }
             break;
         case 5:
