@@ -133,6 +133,18 @@ NSString * const kURLActions[] = {@"url->",@"email->",@"phoneNumber->",@"at->",@
 
 @end
 
+@interface TTTAttributedLabel(MLEmojiLabel)
+
+@property (readwrite, nonatomic, strong) TTTAttributedLabelLink *activeLink;
+
+- (void)commonInit;
+- (NSArray *)addLinksWithTextCheckingResults:(NSArray *)results
+                                  attributes:(NSDictionary *)attributes;
+- (void)drawStrike:(CTFrameRef)frame
+            inRect:(CGRect)rect
+           context:(CGContextRef)c;
+
+@end
 
 @interface MLEmojiLabel()
 
@@ -153,7 +165,7 @@ NSString * const kURLActions[] = {@"url->",@"email->",@"phoneNumber->",@"at->",@
     static NSDictionary *emojiDictionary = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *emojiFilePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"expressionImage.plist"];
+        NSString *emojiFilePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"MLEmoji_ExpressionImage.plist"];
         emojiDictionary = [[NSDictionary alloc] initWithContentsOfFile:emojiFilePath];
     });
     return emojiDictionary;
@@ -186,18 +198,8 @@ static CGFloat widthCallback(void *refCon) {
 }
 
 #pragma mark - 初始化和TTT的一些修正
-/**
- *  下面这个方法覆盖TTT里的，因为个别设置与其不同
- *  TTT很鸡巴。commonInit是被调用了两回。如果直接init的话，因为init其中会调用initWithFrame
- *  PS.此问题已经向matt提交issue，他已经修正。
- */
 - (void)commonInit {
-    
-    //这个是用来生成plist时候用到，为了执行此方法找个地罢了
-    //    [self initPlist];
-    
-    self.userInteractionEnabled = YES;
-    self.multipleTouchEnabled = NO;
+    [super commonInit];
     
     self.numberOfLines = 0;
     self.font = [UIFont systemFontOfSize:14.0];
@@ -206,23 +208,14 @@ static CGFloat widthCallback(void *refCon) {
     
     self.lineBreakMode = NSLineBreakByCharWrapping;
     
-    self.textInsets = UIEdgeInsetsZero;
-    self.lineHeightMultiple = 1.0f;
     self.lineSpacing = kLineSpacing; //默认行间距
     
-    [self setValue:[NSArray array] forKey:@"links"];
+    //链接默认样式重新设置
+    NSMutableDictionary *mutableLinkAttributes = [@{(NSString *)kCTUnderlineStyleAttributeName:@(NO)}mutableCopy];
     
-    NSMutableDictionary *mutableLinkAttributes = [NSMutableDictionary dictionary];
-    [mutableLinkAttributes setObject:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
+    NSMutableDictionary *mutableActiveLinkAttributes = [@{(NSString *)kCTUnderlineStyleAttributeName:@(NO)}mutableCopy];
     
-    NSMutableDictionary *mutableActiveLinkAttributes = [NSMutableDictionary dictionary];
-    [mutableActiveLinkAttributes setObject:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
-    
-    NSMutableDictionary *mutableInactiveLinkAttributes = [NSMutableDictionary dictionary];
-    [mutableInactiveLinkAttributes setObject:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
-    
-    //UIColor *commonLinkColor = [UIColor colorWithRed:0.112 green:0.000 blue:0.791 alpha:1.000];
-    UIColor *commonLinkColor = [UIColor HFColorStyle_5];
+    UIColor *commonLinkColor = [UIColor colorWithRed:0.112 green:0.000 blue:0.791 alpha:1.000];
     
     //点击时候的背景色
     [mutableActiveLinkAttributes setValue:(__bridge id)[[UIColor colorWithWhite:0.631 alpha:1.000] CGColor] forKey:(NSString *)kTTTBackgroundFillColorAttributeName];
@@ -230,22 +223,13 @@ static CGFloat widthCallback(void *refCon) {
     if ([NSMutableParagraphStyle class]) {
         [mutableLinkAttributes setObject:commonLinkColor forKey:(NSString *)kCTForegroundColorAttributeName];
         [mutableActiveLinkAttributes setObject:commonLinkColor forKey:(NSString *)kCTForegroundColorAttributeName];
-        [mutableInactiveLinkAttributes setObject:[UIColor grayColor] forKey:(NSString *)kCTForegroundColorAttributeName];
-        
-        
-        //把原有TTT的NSMutableParagraphStyle设置给去掉了。会影响到整个段落的设置
     } else {
         [mutableLinkAttributes setObject:(__bridge id)[commonLinkColor CGColor] forKey:(NSString *)kCTForegroundColorAttributeName];
         [mutableActiveLinkAttributes setObject:(__bridge id)[commonLinkColor CGColor] forKey:(NSString *)kCTForegroundColorAttributeName];
-        [mutableInactiveLinkAttributes setObject:(__bridge id)[[UIColor grayColor] CGColor] forKey:(NSString *)kCTForegroundColorAttributeName];
-        
-        
-        //把原有TTT的NSMutableParagraphStyle设置给去掉了。会影响到整个段落的设置
     }
     
     self.linkAttributes = [NSDictionary dictionaryWithDictionary:mutableLinkAttributes];
     self.activeLinkAttributes = [NSDictionary dictionaryWithDictionary:mutableActiveLinkAttributes];
-    self.inactiveLinkAttributes = [NSDictionary dictionaryWithDictionary:mutableInactiveLinkAttributes];
 }
 
 /**
@@ -277,10 +261,12 @@ static inline CGFloat TTTFlushFactorForTextAlignment(NSTextAlignment textAlignme
 }
 
 #pragma mark - 绘制表情
-- (void)drawOtherForEndWithFrame:(CTFrameRef)frame
-                          inRect:(CGRect)rect
-                         context:(CGContextRef)c
+- (void)drawStrike:(CTFrameRef)frame
+            inRect:(CGRect)rect
+           context:(CGContextRef)c
 {
+    [super drawStrike:frame inRect:rect context:c];
+    
     //PS:这个是在TTT里drawFramesetter....方法最后做了修改的基础上。
     CGFloat emojiWith = self.font.lineHeight*kEmojiWidthRatioWithLineHeight;
     CGFloat emojiOriginYOffset = self.font.lineHeight*kEmojiOriginYOffsetRatioWithLineHeight;
@@ -373,7 +359,8 @@ static inline CGFloat TTTFlushFactorForTextAlignment(NSTextAlignment textAlignme
                 runBounds.origin.y = lineOrigins[lineIndex].y;
                 runBounds.origin.y -= runDescent;
                 
-                UIImage *image = [UIImage imageNamed:imageName];
+                NSString *imagePath = [self.customEmojiBundleName?:@"MLEmoji_Expression.bundle" stringByAppendingPathComponent:imageName];
+                UIImage *image = [UIImage imageNamed:imagePath];
                 runBounds.origin.y -= emojiOriginYOffset; //稍微矫正下。
                 CGContextDrawImage(c, runBounds, image.CGImage);
             }
@@ -558,12 +545,9 @@ static inline CGFloat TTTFlushFactorForTextAlignment(NSTextAlignment textAlignme
             [results addObject:aResult];
         }];
     }
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-    //这里直接调用父类私有方法，好处能内部只会setNeedDisplay一次。一次更新所有添加的链接
-    [super performSelector:@selector(addLinksWithTextCheckingResults:attributes:) withObject:results withObject:self.linkAttributes];
-#pragma clang diagnostic pop
     
+    //这里直接调用父类私有方法，好处能内部只会setNeedDisplay一次。一次更新所有添加的链接
+    [super addLinksWithTextCheckingResults:results attributes:self.linkAttributes];
 }
 
 #pragma mark - size fit result
@@ -628,6 +612,17 @@ static inline CGFloat TTTFlushFactorForTextAlignment(NSTextAlignment textAlignme
     self.text = self.emojiText; //简单重新绘制处理下
 }
 
+- (void)setCustomEmojiBundleName:(NSString *)customEmojiBundleName
+{
+    if (customEmojiBundleName&&customEmojiBundleName.length>0&&![[customEmojiBundleName lowercaseString] hasSuffix:@".bundle"]) {
+        customEmojiBundleName = [customEmojiBundleName stringByAppendingString:@".bundle"];
+    }
+    
+    _customEmojiBundleName = customEmojiBundleName;
+    
+    self.text = self.emojiText; //简单重新绘制处理下
+}
+
 - (void)setFont:(UIFont *)font
 {
     [super setFont:font];
@@ -635,24 +630,30 @@ static inline CGFloat TTTFlushFactorForTextAlignment(NSTextAlignment textAlignme
 }
 
 #pragma mark - select link override
-//PS:此处是在TTT代码里添加一个供继承的行为
-- (BOOL)didSelectLinkWithTextCheckingResult:(NSTextCheckingResult*)result
+
+- (void)touchesEnded:(NSSet *)touches
+           withEvent:(UIEvent *)event
 {
-    if (result.resultType == NSTextCheckingTypeCorrection) {
-        //判断消息类型
-        for (NSUInteger i=0; i<kURLActionCount; i++) {
-            if ([result.replacementString hasPrefix:kURLActions[i]]) {
-                NSString *content = [result.replacementString substringFromIndex:kURLActions[i].length];
-                if(self.delegate&&[self.delegate respondsToSelector:@selector(mlEmojiLabel:didSelectLink:withType:)]){
+    //如果delegate实现了mlEmojiLabel自身的选择link方法
+    if(self.delegate&&[self.delegate respondsToSelector:@selector(mlEmojiLabel:didSelectLink:withType:)]){
+        if (self.activeLink&&self.activeLink.result.resultType==NSTextCheckingTypeCorrection) {
+            NSTextCheckingResult *result = self.activeLink.result;
+            
+            //判断消息类型
+            for (NSUInteger i=0; i<kURLActionCount; i++) {
+                if ([result.replacementString hasPrefix:kURLActions[i]]) {
+                    NSString *content = [result.replacementString substringFromIndex:kURLActions[i].length];
                     //type的数组和i刚好对应
                     [self.delegate mlEmojiLabel:self didSelectLink:content withType:i];
-                    return YES;
+                    
+                    self.activeLink = nil;
+                    return;
                 }
-                return NO;
             }
         }
     }
-    return NO;
+    
+    [super touchesEnded:touches withEvent:event];
 }
 
 #pragma mark - UIResponderStandardEditActions
@@ -668,7 +669,7 @@ static inline CGFloat TTTFlushFactorForTextAlignment(NSTextAlignment textAlignme
     }
 }
 
-#pragma mark - other
+//#pragma mark - other
 //为了生成plist方便的一个方法罢了
 //- (void)initPlist
 //{

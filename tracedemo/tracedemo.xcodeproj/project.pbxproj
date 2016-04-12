@@ -137,6 +137,52 @@
 		9128C3331CB4B9E20053893F /* TKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128C3311CB4B9E20053893F /* TKTextView.m */; };
 		912F7E431CB653AC0057F898 /* TKSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 912F7E421CB653AC0057F898 /* TKSwitch.m */; };
 		912F7E441CB653AC0057F898 /* TKSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 912F7E421CB653AC0057F898 /* TKSwitch.m */; };
+		9134FA581CBCDA0E0089BE93 /* MLEmoji_Expression.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9134FA341CBCDA0E0089BE93 /* MLEmoji_Expression.bundle */; };
+		9134FA591CBCDA0E0089BE93 /* MLEmoji_Expression.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9134FA341CBCDA0E0089BE93 /* MLEmoji_Expression.bundle */; };
+		9134FA5A1CBCDA0E0089BE93 /* MLEmoji_Expression.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9134FA351CBCDA0E0089BE93 /* MLEmoji_Expression.plist */; };
+		9134FA5B1CBCDA0E0089BE93 /* MLEmoji_Expression.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9134FA351CBCDA0E0089BE93 /* MLEmoji_Expression.plist */; };
+		9134FA5C1CBCDA0E0089BE93 /* MLEmoji_ExpressionImage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9134FA361CBCDA0E0089BE93 /* MLEmoji_ExpressionImage.plist */; };
+		9134FA5D1CBCDA0E0089BE93 /* MLEmoji_ExpressionImage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9134FA361CBCDA0E0089BE93 /* MLEmoji_ExpressionImage.plist */; };
+		9134FA5E1CBCDA0E0089BE93 /* MLEmojiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA381CBCDA0E0089BE93 /* MLEmojiLabel.m */; };
+		9134FA5F1CBCDA0E0089BE93 /* MLEmojiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA381CBCDA0E0089BE93 /* MLEmojiLabel.m */; };
+		9134FA601CBCDA0E0089BE93 /* NSAttributedString+MLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA3D1CBCDA0E0089BE93 /* NSAttributedString+MLLabel.m */; };
+		9134FA611CBCDA0E0089BE93 /* NSAttributedString+MLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA3D1CBCDA0E0089BE93 /* NSAttributedString+MLLabel.m */; };
+		9134FA621CBCDA0E0089BE93 /* NSMutableAttributedString+MLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA3F1CBCDA0E0089BE93 /* NSMutableAttributedString+MLLabel.m */; };
+		9134FA631CBCDA0E0089BE93 /* NSMutableAttributedString+MLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA3F1CBCDA0E0089BE93 /* NSMutableAttributedString+MLLabel.m */; };
+		9134FA641CBCDA0E0089BE93 /* NSString+MLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA411CBCDA0E0089BE93 /* NSString+MLLabel.m */; };
+		9134FA651CBCDA0E0089BE93 /* NSString+MLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA411CBCDA0E0089BE93 /* NSString+MLLabel.m */; };
+		9134FA661CBCDA0E0089BE93 /* MLExpressionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA441CBCDA0E0089BE93 /* MLExpressionManager.m */; };
+		9134FA671CBCDA0E0089BE93 /* MLExpressionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA441CBCDA0E0089BE93 /* MLExpressionManager.m */; };
+		9134FA681CBCDA0E0089BE93 /* MLTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA461CBCDA0E0089BE93 /* MLTextAttachment.m */; };
+		9134FA691CBCDA0E0089BE93 /* MLTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA461CBCDA0E0089BE93 /* MLTextAttachment.m */; };
+		9134FA6A1CBCDA0E0089BE93 /* NSAttributedString+MLExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA481CBCDA0E0089BE93 /* NSAttributedString+MLExpression.m */; };
+		9134FA6B1CBCDA0E0089BE93 /* NSAttributedString+MLExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA481CBCDA0E0089BE93 /* NSAttributedString+MLExpression.m */; };
+		9134FA6C1CBCDA0E0089BE93 /* NSString+MLExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA4A1CBCDA0E0089BE93 /* NSString+MLExpression.m */; };
+		9134FA6D1CBCDA0E0089BE93 /* NSString+MLExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA4A1CBCDA0E0089BE93 /* NSString+MLExpression.m */; };
+		9134FA6E1CBCDA0E0089BE93 /* MLLabelLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA4E1CBCDA0E0089BE93 /* MLLabelLayoutManager.m */; };
+		9134FA6F1CBCDA0E0089BE93 /* MLLabelLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA4E1CBCDA0E0089BE93 /* MLLabelLayoutManager.m */; };
+		9134FA701CBCDA0E0089BE93 /* MLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA501CBCDA0E0089BE93 /* MLLabel.m */; };
+		9134FA711CBCDA0E0089BE93 /* MLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA501CBCDA0E0089BE93 /* MLLabel.m */; };
+		9134FA721CBCDA0E0089BE93 /* MLLinkLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA521CBCDA0E0089BE93 /* MLLinkLabel.m */; };
+		9134FA731CBCDA0E0089BE93 /* MLLinkLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA521CBCDA0E0089BE93 /* MLLinkLabel.m */; };
+		9134FA741CBCDA0E0089BE93 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9134FA531CBCDA0E0089BE93 /* LICENSE */; };
+		9134FA751CBCDA0E0089BE93 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9134FA531CBCDA0E0089BE93 /* LICENSE */; };
+		9134FA761CBCDA0E0089BE93 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA541CBCDA0E0089BE93 /* README.md */; };
+		9134FA771CBCDA0E0089BE93 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA541CBCDA0E0089BE93 /* README.md */; };
+		9134FA781CBCDA0E0089BE93 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA571CBCDA0E0089BE93 /* TTTAttributedLabel.m */; };
+		9134FA791CBCDA0E0089BE93 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA571CBCDA0E0089BE93 /* TTTAttributedLabel.m */; };
+		9134FA861CBCDA660089BE93 /* SDAnalogDataGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA7C1CBCDA660089BE93 /* SDAnalogDataGenerator.m */; };
+		9134FA871CBCDA660089BE93 /* SDAnalogDataGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA7C1CBCDA660089BE93 /* SDAnalogDataGenerator.m */; };
+		9134FA881CBCDA660089BE93 /* TKChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA7F1CBCDA660089BE93 /* TKChatViewController.m */; };
+		9134FA891CBCDA660089BE93 /* TKChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA7F1CBCDA660089BE93 /* TKChatViewController.m */; };
+		9134FA8A1CBCDA660089BE93 /* SDChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA821CBCDA660089BE93 /* SDChatModel.m */; };
+		9134FA8B1CBCDA660089BE93 /* SDChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA821CBCDA660089BE93 /* SDChatModel.m */; };
+		9134FA8C1CBCDA660089BE93 /* SDChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA851CBCDA660089BE93 /* SDChatTableViewCell.m */; };
+		9134FA8D1CBCDA660089BE93 /* SDChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA851CBCDA660089BE93 /* SDChatTableViewCell.m */; };
+		9134FA931CBCDA8E0089BE93 /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA901CBCDA8E0089BE93 /* UITableView+SDAutoTableViewCellHeight.m */; };
+		9134FA941CBCDA8E0089BE93 /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA901CBCDA8E0089BE93 /* UITableView+SDAutoTableViewCellHeight.m */; };
+		9134FA951CBCDA8E0089BE93 /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA921CBCDA8E0089BE93 /* UIView+SDAutoLayout.m */; };
+		9134FA961CBCDA8E0089BE93 /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134FA921CBCDA8E0089BE93 /* UIView+SDAutoLayout.m */; };
 		9135820C1C9718CD00517542 /* HFTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135820B1C9718CD00517542 /* HFTitleLabel.m */; };
 		9135820D1C9718CD00517542 /* HFTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135820B1C9718CD00517542 /* HFTitleLabel.m */; };
 		914303171CA2304B003E80F7 /* CAcountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914303161CA2304B003E80F7 /* CAcountViewController.m */; };
@@ -157,6 +203,28 @@
 		9182F2741C9EFCE800428B7F /* AbountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182F2711C9EFCE800428B7F /* AbountViewController.m */; };
 		9182F2751C9EFCE800428B7F /* AbountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9182F2721C9EFCE800428B7F /* AbountViewController.xib */; };
 		9182F2761C9EFCE800428B7F /* AbountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9182F2721C9EFCE800428B7F /* AbountViewController.xib */; };
+		91BF04DE1CBCE4C50062E72F /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04D81CBCE4C50062E72F /* 0.jpg */; };
+		91BF04DF1CBCE4C50062E72F /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04D91CBCE4C50062E72F /* 1.jpg */; };
+		91BF04E01CBCE4C50062E72F /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04DA1CBCE4C50062E72F /* 2.jpg */; };
+		91BF04E11CBCE4C50062E72F /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04DB1CBCE4C50062E72F /* 3.jpg */; };
+		91BF04E21CBCE4C50062E72F /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04DC1CBCE4C50062E72F /* 4.jpg */; };
+		91BF04E31CBCE4C50062E72F /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04DD1CBCE4C50062E72F /* 5.jpg */; };
+		91BF04E41CBCE4D00062E72F /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04D81CBCE4C50062E72F /* 0.jpg */; };
+		91BF04E51CBCE4D00062E72F /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04D91CBCE4C50062E72F /* 1.jpg */; };
+		91BF04E61CBCE4D00062E72F /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04DA1CBCE4C50062E72F /* 2.jpg */; };
+		91BF04E71CBCE4D00062E72F /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04DB1CBCE4C50062E72F /* 3.jpg */; };
+		91BF04E81CBCE4D00062E72F /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04DC1CBCE4C50062E72F /* 4.jpg */; };
+		91BF04E91CBCE4D00062E72F /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04DD1CBCE4C50062E72F /* 5.jpg */; };
+		91BF04EF1CBCE4DE0062E72F /* xx0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04EA1CBCE4DD0062E72F /* xx0.jpg */; };
+		91BF04F01CBCE4DE0062E72F /* xx0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04EA1CBCE4DD0062E72F /* xx0.jpg */; };
+		91BF04F11CBCE4DE0062E72F /* xx1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04EB1CBCE4DD0062E72F /* xx1.jpg */; };
+		91BF04F21CBCE4DE0062E72F /* xx1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04EB1CBCE4DD0062E72F /* xx1.jpg */; };
+		91BF04F31CBCE4DE0062E72F /* xx2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04EC1CBCE4DD0062E72F /* xx2.jpg */; };
+		91BF04F41CBCE4DE0062E72F /* xx2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04EC1CBCE4DD0062E72F /* xx2.jpg */; };
+		91BF04F51CBCE4DE0062E72F /* xx3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04ED1CBCE4DE0062E72F /* xx3.jpg */; };
+		91BF04F61CBCE4DE0062E72F /* xx3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04ED1CBCE4DE0062E72F /* xx3.jpg */; };
+		91BF04F71CBCE4DE0062E72F /* xx4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04EE1CBCE4DE0062E72F /* xx4.jpg */; };
+		91BF04F81CBCE4DE0062E72F /* xx4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91BF04EE1CBCE4DE0062E72F /* xx4.jpg */; };
 		91C109B71CACD15200BC567E /* TKBuyerCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C109B61CACD15200BC567E /* TKBuyerCenterVM.m */; };
 		91C109B81CACD15200BC567E /* TKBuyerCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C109B61CACD15200BC567E /* TKBuyerCenterVM.m */; };
 		91C109BB1CACECC800BC567E /* TKBuyerCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C109BA1CACECC800BC567E /* TKBuyerCenterViewController.m */; };
@@ -242,7 +310,6 @@
 		BB83F8E61C72C01C0013A6A0 /* HFMessageBoxReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B38251BF01B8F00E5C982 /* HFMessageBoxReq.m */; };
 		BB83F8E71C72C01C0013A6A0 /* HFStepCounterErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3A871BF01D4400E5C982 /* HFStepCounterErrorViewController.m */; };
 		BB83F8E81C72C01C0013A6A0 /* HFShareReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37D61BF01B8F00E5C982 /* HFShareReq.m */; };
-		BB83F8E91C72C01C0013A6A0 /* MLEmojiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3EA71BF01E4900E5C982 /* MLEmojiLabel.m */; };
 		BB83F8EA1C72C01C0013A6A0 /* BandHistoryAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37DD1BF01B8F00E5C982 /* BandHistoryAck.m */; };
 		BB83F8EB1C72C01C0013A6A0 /* GetAdvanceSchemeMainPageAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B38361BF01B8F00E5C982 /* GetAdvanceSchemeMainPageAck.m */; };
 		BB83F8EC1C72C01C0013A6A0 /* HFPostDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3B721BF01D4400E5C982 /* HFPostDetailView.m */; };
@@ -257,7 +324,6 @@
 		BB83F8F51C72C01C0013A6A0 /* GetSportPageDataArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B386C1BF01B8F00E5C982 /* GetSportPageDataArg.m */; };
 		BB83F8F61C72C01C0013A6A0 /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3B4B1BF01D4400E5C982 /* FindViewController.m */; };
 		BB83F8F71C72C01C0013A6A0 /* HFAboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3BCC1BF01D4400E5C982 /* HFAboutUsCell.m */; };
-		BB83F8F81C72C01C0013A6A0 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3EAA1BF01E4900E5C982 /* TTTAttributedLabel.m */; };
 		BB83F8F91C72C01C0013A6A0 /* HFDevInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3A4A1BF01D4400E5C982 /* HFDevInfoViewController.m */; };
 		BB83F8FA1C72C01C0013A6A0 /* NetHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B379A1BF01B8F00E5C982 /* NetHTTPClient.m */; };
 		BB83F8FB1C72C01C0013A6A0 /* HFDiseaseIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3A6F1BF01D4400E5C982 /* HFDiseaseIntroViewController.m */; };
@@ -922,7 +988,6 @@
 		BB83FBA31C72C16B0013A6A0 /* HFMessageBoxReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B38251BF01B8F00E5C982 /* HFMessageBoxReq.m */; };
 		BB83FBA41C72C16B0013A6A0 /* HFStepCounterErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3A871BF01D4400E5C982 /* HFStepCounterErrorViewController.m */; };
 		BB83FBA51C72C16B0013A6A0 /* HFShareReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37D61BF01B8F00E5C982 /* HFShareReq.m */; };
-		BB83FBA61C72C16B0013A6A0 /* MLEmojiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3EA71BF01E4900E5C982 /* MLEmojiLabel.m */; };
 		BB83FBA71C72C16B0013A6A0 /* BandHistoryAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B37DD1BF01B8F00E5C982 /* BandHistoryAck.m */; };
 		BB83FBA81C72C16B0013A6A0 /* GetAdvanceSchemeMainPageAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B38361BF01B8F00E5C982 /* GetAdvanceSchemeMainPageAck.m */; };
 		BB83FBA91C72C16B0013A6A0 /* HFPostDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3B721BF01D4400E5C982 /* HFPostDetailView.m */; };
@@ -937,7 +1002,6 @@
 		BB83FBB21C72C16B0013A6A0 /* GetSportPageDataArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B386C1BF01B8F00E5C982 /* GetSportPageDataArg.m */; };
 		BB83FBB31C72C16B0013A6A0 /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3B4B1BF01D4400E5C982 /* FindViewController.m */; };
 		BB83FBB41C72C16B0013A6A0 /* HFAboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3BCC1BF01D4400E5C982 /* HFAboutUsCell.m */; };
-		BB83FBB51C72C16B0013A6A0 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3EAA1BF01E4900E5C982 /* TTTAttributedLabel.m */; };
 		BB83FBB61C72C16B0013A6A0 /* HFDevInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3A4A1BF01D4400E5C982 /* HFDevInfoViewController.m */; };
 		BB83FBB71C72C16B0013A6A0 /* NetHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B379A1BF01B8F00E5C982 /* NetHTTPClient.m */; };
 		BB83FBB81C72C16B0013A6A0 /* HFDiseaseIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3A6F1BF01D4400E5C982 /* HFDiseaseIntroViewController.m */; };
@@ -2613,10 +2677,6 @@
 		8A6B3EA21BF01E4900E5C982 /* MJPhotoToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoToolbar.m; sourceTree = "<group>"; };
 		8A6B3EA31BF01E4900E5C982 /* MJPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoView.h; sourceTree = "<group>"; };
 		8A6B3EA41BF01E4900E5C982 /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
-		8A6B3EA61BF01E4900E5C982 /* MLEmojiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLEmojiLabel.h; sourceTree = "<group>"; };
-		8A6B3EA71BF01E4900E5C982 /* MLEmojiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLEmojiLabel.m; sourceTree = "<group>"; };
-		8A6B3EA91BF01E4900E5C982 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
-		8A6B3EAA1BF01E4900E5C982 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		8A6B3EAC1BF01E4900E5C982 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		8A6B3EAD1BF01E4900E5C982 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		8A6B3EAE1BF01E4900E5C982 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -2830,6 +2890,47 @@
 		9128C3311CB4B9E20053893F /* TKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTextView.m; sourceTree = "<group>"; };
 		912F7E411CB653AC0057F898 /* TKSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSwitch.h; sourceTree = "<group>"; };
 		912F7E421CB653AC0057F898 /* TKSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSwitch.m; sourceTree = "<group>"; };
+		9134FA341CBCDA0E0089BE93 /* MLEmoji_Expression.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MLEmoji_Expression.bundle; sourceTree = "<group>"; };
+		9134FA351CBCDA0E0089BE93 /* MLEmoji_Expression.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MLEmoji_Expression.plist; sourceTree = "<group>"; };
+		9134FA361CBCDA0E0089BE93 /* MLEmoji_ExpressionImage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MLEmoji_ExpressionImage.plist; sourceTree = "<group>"; };
+		9134FA371CBCDA0E0089BE93 /* MLEmojiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLEmojiLabel.h; sourceTree = "<group>"; };
+		9134FA381CBCDA0E0089BE93 /* MLEmojiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLEmojiLabel.m; sourceTree = "<group>"; };
+		9134FA3C1CBCDA0E0089BE93 /* NSAttributedString+MLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+MLLabel.h"; sourceTree = "<group>"; };
+		9134FA3D1CBCDA0E0089BE93 /* NSAttributedString+MLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+MLLabel.m"; sourceTree = "<group>"; };
+		9134FA3E1CBCDA0E0089BE93 /* NSMutableAttributedString+MLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+MLLabel.h"; sourceTree = "<group>"; };
+		9134FA3F1CBCDA0E0089BE93 /* NSMutableAttributedString+MLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+MLLabel.m"; sourceTree = "<group>"; };
+		9134FA401CBCDA0E0089BE93 /* NSString+MLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MLLabel.h"; sourceTree = "<group>"; };
+		9134FA411CBCDA0E0089BE93 /* NSString+MLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MLLabel.m"; sourceTree = "<group>"; };
+		9134FA431CBCDA0E0089BE93 /* MLExpressionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLExpressionManager.h; sourceTree = "<group>"; };
+		9134FA441CBCDA0E0089BE93 /* MLExpressionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLExpressionManager.m; sourceTree = "<group>"; };
+		9134FA451CBCDA0E0089BE93 /* MLTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTextAttachment.h; sourceTree = "<group>"; };
+		9134FA461CBCDA0E0089BE93 /* MLTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTextAttachment.m; sourceTree = "<group>"; };
+		9134FA471CBCDA0E0089BE93 /* NSAttributedString+MLExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+MLExpression.h"; sourceTree = "<group>"; };
+		9134FA481CBCDA0E0089BE93 /* NSAttributedString+MLExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+MLExpression.m"; sourceTree = "<group>"; };
+		9134FA491CBCDA0E0089BE93 /* NSString+MLExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MLExpression.h"; sourceTree = "<group>"; };
+		9134FA4A1CBCDA0E0089BE93 /* NSString+MLExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MLExpression.m"; sourceTree = "<group>"; };
+		9134FA4C1CBCDA0E0089BE93 /* MLLabel+Override.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MLLabel+Override.h"; sourceTree = "<group>"; };
+		9134FA4D1CBCDA0E0089BE93 /* MLLabelLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLabelLayoutManager.h; sourceTree = "<group>"; };
+		9134FA4E1CBCDA0E0089BE93 /* MLLabelLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLabelLayoutManager.m; sourceTree = "<group>"; };
+		9134FA4F1CBCDA0E0089BE93 /* MLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLabel.h; sourceTree = "<group>"; };
+		9134FA501CBCDA0E0089BE93 /* MLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLabel.m; sourceTree = "<group>"; };
+		9134FA511CBCDA0E0089BE93 /* MLLinkLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLinkLabel.h; sourceTree = "<group>"; };
+		9134FA521CBCDA0E0089BE93 /* MLLinkLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLinkLabel.m; sourceTree = "<group>"; };
+		9134FA531CBCDA0E0089BE93 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9134FA541CBCDA0E0089BE93 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9134FA561CBCDA0E0089BE93 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		9134FA571CBCDA0E0089BE93 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		9134FA7B1CBCDA660089BE93 /* SDAnalogDataGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAnalogDataGenerator.h; sourceTree = "<group>"; };
+		9134FA7C1CBCDA660089BE93 /* SDAnalogDataGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAnalogDataGenerator.m; sourceTree = "<group>"; };
+		9134FA7F1CBCDA660089BE93 /* TKChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKChatViewController.m; sourceTree = "<group>"; };
+		9134FA811CBCDA660089BE93 /* SDChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDChatModel.h; sourceTree = "<group>"; };
+		9134FA821CBCDA660089BE93 /* SDChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDChatModel.m; sourceTree = "<group>"; };
+		9134FA841CBCDA660089BE93 /* SDChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDChatTableViewCell.h; sourceTree = "<group>"; };
+		9134FA851CBCDA660089BE93 /* SDChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDChatTableViewCell.m; sourceTree = "<group>"; };
+		9134FA8F1CBCDA8E0089BE93 /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
+		9134FA901CBCDA8E0089BE93 /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
+		9134FA911CBCDA8E0089BE93 /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
+		9134FA921CBCDA8E0089BE93 /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
 		9135820A1C9718CD00517542 /* HFTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTitleLabel.h; sourceTree = "<group>"; };
 		9135820B1C9718CD00517542 /* HFTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTitleLabel.m; sourceTree = "<group>"; };
 		914303151CA2304B003E80F7 /* CAcountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAcountViewController.h; sourceTree = "<group>"; };
@@ -2848,6 +2949,18 @@
 		9182F2701C9EFCE800428B7F /* AbountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbountViewController.h; sourceTree = "<group>"; };
 		9182F2711C9EFCE800428B7F /* AbountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbountViewController.m; sourceTree = "<group>"; };
 		9182F2721C9EFCE800428B7F /* AbountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbountViewController.xib; sourceTree = "<group>"; };
+		91BF04D71CBCDC020062E72F /* TKChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKChatViewController.h; sourceTree = "<group>"; };
+		91BF04D81CBCE4C50062E72F /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
+		91BF04D91CBCE4C50062E72F /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		91BF04DA1CBCE4C50062E72F /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		91BF04DB1CBCE4C50062E72F /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		91BF04DC1CBCE4C50062E72F /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		91BF04DD1CBCE4C50062E72F /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		91BF04EA1CBCE4DD0062E72F /* xx0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xx0.jpg; sourceTree = "<group>"; };
+		91BF04EB1CBCE4DD0062E72F /* xx1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xx1.jpg; sourceTree = "<group>"; };
+		91BF04EC1CBCE4DD0062E72F /* xx2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xx2.jpg; sourceTree = "<group>"; };
+		91BF04ED1CBCE4DE0062E72F /* xx3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xx3.jpg; sourceTree = "<group>"; };
+		91BF04EE1CBCE4DE0062E72F /* xx4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xx4.jpg; sourceTree = "<group>"; };
 		91C109B51CACD15100BC567E /* TKBuyerCenterVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBuyerCenterVM.h; sourceTree = "<group>"; };
 		91C109B61CACD15200BC567E /* TKBuyerCenterVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBuyerCenterVM.m; sourceTree = "<group>"; };
 		91C109B91CACECC800BC567E /* TKBuyerCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBuyerCenterViewController.h; sourceTree = "<group>"; };
@@ -3290,6 +3403,7 @@
 		8A6434A51BAE9DF600820545 /* TKController */ = {
 			isa = PBXGroup;
 			children = (
+				91C8D5081CBCD44600CAB95A /* ChatVC */,
 				BB339B841BFEBA6E00680AEA /* ControllerImpl */,
 				BB53DACA1C2161EE00CF346A /* TKICommentViewController.h */,
 				BB53DACB1C2161EE00CF346A /* TKICommentViewController.m */,
@@ -4946,6 +5060,8 @@
 		8A6B3E631BF01E4900E5C982 /* ThridPart */ = {
 			isa = PBXGroup;
 			children = (
+				9134FA8E1CBCDA8E0089BE93 /* SDAutoLayout */,
+				9134FA331CBCDA0E0089BE93 /* MLEmojiLabel */,
 				8A6B3E641BF01E4900E5C982 /* AFSoundManager */,
 				8A6B3E691BF01E4900E5C982 /* BTScrollViewController */,
 				8A6B3E6C1BF01E4900E5C982 /* CycleScrollView */,
@@ -4955,7 +5071,6 @@
 				8A6B3E7E1BF01E4900E5C982 /* fmdb */,
 				8A6B3E8A1BF01E4900E5C982 /* MessageDisplay */,
 				8A6B3E971BF01E4900E5C982 /* MJPhotoBrowser */,
-				8A6B3EA51BF01E4900E5C982 /* MLEmojiLabel */,
 				8A6B3EAB1BF01E4900E5C982 /* PageControl */,
 				8A6B3EB41BF01E4900E5C982 /* QuadCurveMenu */,
 				8A6B3EB91BF01E4900E5C982 /* Reachability */,
@@ -5089,25 +5204,6 @@
 				8A6B3EA41BF01E4900E5C982 /* MJPhotoView.m */,
 			);
 			path = MJPhotoBrowser;
-			sourceTree = "<group>";
-		};
-		8A6B3EA51BF01E4900E5C982 /* MLEmojiLabel */ = {
-			isa = PBXGroup;
-			children = (
-				8A6B3EA61BF01E4900E5C982 /* MLEmojiLabel.h */,
-				8A6B3EA71BF01E4900E5C982 /* MLEmojiLabel.m */,
-				8A6B3EA81BF01E4900E5C982 /* TTTAttributedLabel */,
-			);
-			path = MLEmojiLabel;
-			sourceTree = "<group>";
-		};
-		8A6B3EA81BF01E4900E5C982 /* TTTAttributedLabel */ = {
-			isa = PBXGroup;
-			children = (
-				8A6B3EA91BF01E4900E5C982 /* TTTAttributedLabel.h */,
-				8A6B3EAA1BF01E4900E5C982 /* TTTAttributedLabel.m */,
-			);
-			path = TTTAttributedLabel;
 			sourceTree = "<group>";
 		};
 		8A6B3EAB1BF01E4900E5C982 /* PageControl */ = {
@@ -5486,6 +5582,161 @@
 				BB53DA901C211BF000CF346A /* TKTableViewModel */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9134FA331CBCDA0E0089BE93 /* MLEmojiLabel */ = {
+			isa = PBXGroup;
+			children = (
+				9134FA341CBCDA0E0089BE93 /* MLEmoji_Expression.bundle */,
+				9134FA351CBCDA0E0089BE93 /* MLEmoji_Expression.plist */,
+				9134FA361CBCDA0E0089BE93 /* MLEmoji_ExpressionImage.plist */,
+				9134FA371CBCDA0E0089BE93 /* MLEmojiLabel.h */,
+				9134FA381CBCDA0E0089BE93 /* MLEmojiLabel.m */,
+				9134FA391CBCDA0E0089BE93 /* MLLabel */,
+				9134FA551CBCDA0E0089BE93 /* TTTAttributedLabel */,
+			);
+			path = MLEmojiLabel;
+			sourceTree = "<group>";
+		};
+		9134FA391CBCDA0E0089BE93 /* MLLabel */ = {
+			isa = PBXGroup;
+			children = (
+				9134FA3A1CBCDA0E0089BE93 /* Classes */,
+				9134FA531CBCDA0E0089BE93 /* LICENSE */,
+				9134FA541CBCDA0E0089BE93 /* README.md */,
+			);
+			path = MLLabel;
+			sourceTree = "<group>";
+		};
+		9134FA3A1CBCDA0E0089BE93 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9134FA3B1CBCDA0E0089BE93 /* Category */,
+				9134FA421CBCDA0E0089BE93 /* Expression */,
+				9134FA4B1CBCDA0E0089BE93 /* Helper */,
+				9134FA4F1CBCDA0E0089BE93 /* MLLabel.h */,
+				9134FA501CBCDA0E0089BE93 /* MLLabel.m */,
+				9134FA511CBCDA0E0089BE93 /* MLLinkLabel.h */,
+				9134FA521CBCDA0E0089BE93 /* MLLinkLabel.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9134FA3B1CBCDA0E0089BE93 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9134FA3C1CBCDA0E0089BE93 /* NSAttributedString+MLLabel.h */,
+				9134FA3D1CBCDA0E0089BE93 /* NSAttributedString+MLLabel.m */,
+				9134FA3E1CBCDA0E0089BE93 /* NSMutableAttributedString+MLLabel.h */,
+				9134FA3F1CBCDA0E0089BE93 /* NSMutableAttributedString+MLLabel.m */,
+				9134FA401CBCDA0E0089BE93 /* NSString+MLLabel.h */,
+				9134FA411CBCDA0E0089BE93 /* NSString+MLLabel.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		9134FA421CBCDA0E0089BE93 /* Expression */ = {
+			isa = PBXGroup;
+			children = (
+				9134FA431CBCDA0E0089BE93 /* MLExpressionManager.h */,
+				9134FA441CBCDA0E0089BE93 /* MLExpressionManager.m */,
+				9134FA451CBCDA0E0089BE93 /* MLTextAttachment.h */,
+				9134FA461CBCDA0E0089BE93 /* MLTextAttachment.m */,
+				9134FA471CBCDA0E0089BE93 /* NSAttributedString+MLExpression.h */,
+				9134FA481CBCDA0E0089BE93 /* NSAttributedString+MLExpression.m */,
+				9134FA491CBCDA0E0089BE93 /* NSString+MLExpression.h */,
+				9134FA4A1CBCDA0E0089BE93 /* NSString+MLExpression.m */,
+			);
+			path = Expression;
+			sourceTree = "<group>";
+		};
+		9134FA4B1CBCDA0E0089BE93 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9134FA4C1CBCDA0E0089BE93 /* MLLabel+Override.h */,
+				9134FA4D1CBCDA0E0089BE93 /* MLLabelLayoutManager.h */,
+				9134FA4E1CBCDA0E0089BE93 /* MLLabelLayoutManager.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		9134FA551CBCDA0E0089BE93 /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				9134FA561CBCDA0E0089BE93 /* TTTAttributedLabel.h */,
+				9134FA571CBCDA0E0089BE93 /* TTTAttributedLabel.m */,
+			);
+			path = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
+		9134FA7A1CBCDA660089BE93 /* AnalogDataGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				9134FA7B1CBCDA660089BE93 /* SDAnalogDataGenerator.h */,
+				9134FA7C1CBCDA660089BE93 /* SDAnalogDataGenerator.m */,
+			);
+			path = AnalogDataGenerator;
+			sourceTree = "<group>";
+		};
+		9134FA7D1CBCDA660089BE93 /* ChatController */ = {
+			isa = PBXGroup;
+			children = (
+				91BF04D71CBCDC020062E72F /* TKChatViewController.h */,
+				9134FA7F1CBCDA660089BE93 /* TKChatViewController.m */,
+				9134FA801CBCDA660089BE93 /* Models */,
+				9134FA831CBCDA660089BE93 /* Views */,
+			);
+			path = ChatController;
+			sourceTree = "<group>";
+		};
+		9134FA801CBCDA660089BE93 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9134FA811CBCDA660089BE93 /* SDChatModel.h */,
+				9134FA821CBCDA660089BE93 /* SDChatModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9134FA831CBCDA660089BE93 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91BF04D81CBCE4C50062E72F /* 0.jpg */,
+				91BF04D91CBCE4C50062E72F /* 1.jpg */,
+				91BF04DA1CBCE4C50062E72F /* 2.jpg */,
+				91BF04DB1CBCE4C50062E72F /* 3.jpg */,
+				91BF04DC1CBCE4C50062E72F /* 4.jpg */,
+				91BF04DD1CBCE4C50062E72F /* 5.jpg */,
+				91BF04EA1CBCE4DD0062E72F /* xx0.jpg */,
+				91BF04EB1CBCE4DD0062E72F /* xx1.jpg */,
+				91BF04EC1CBCE4DD0062E72F /* xx2.jpg */,
+				91BF04ED1CBCE4DE0062E72F /* xx3.jpg */,
+				91BF04EE1CBCE4DE0062E72F /* xx4.jpg */,
+				9134FA841CBCDA660089BE93 /* SDChatTableViewCell.h */,
+				9134FA851CBCDA660089BE93 /* SDChatTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9134FA8E1CBCDA8E0089BE93 /* SDAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				9134FA8F1CBCDA8E0089BE93 /* UITableView+SDAutoTableViewCellHeight.h */,
+				9134FA901CBCDA8E0089BE93 /* UITableView+SDAutoTableViewCellHeight.m */,
+				9134FA911CBCDA8E0089BE93 /* UIView+SDAutoLayout.h */,
+				9134FA921CBCDA8E0089BE93 /* UIView+SDAutoLayout.m */,
+			);
+			path = SDAutoLayout;
+			sourceTree = "<group>";
+		};
+		91C8D5081CBCD44600CAB95A /* ChatVC */ = {
+			isa = PBXGroup;
+			children = (
+				9134FA7A1CBCDA660089BE93 /* AnalogDataGenerator */,
+				9134FA7D1CBCDA660089BE93 /* ChatController */,
+			);
+			name = ChatVC;
+			path = ControllerImpl;
 			sourceTree = "<group>";
 		};
 		91F862771C993E9D006F44BE /* ViewControllers */ = {
@@ -5966,13 +6217,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB83FAF51C72C01C0013A6A0 /* HFAdvanceSchemeTableViewCell.xib in Resources */,
+				9134FA5A1CBCDA0E0089BE93 /* MLEmoji_Expression.plist in Resources */,
 				BB83FAF61C72C01C0013A6A0 /* HFFoodListButtonCell.xib in Resources */,
 				BB83FAF71C72C01C0013A6A0 /* PostCell.xib in Resources */,
 				BB83FAF81C72C01C0013A6A0 /* ModifyViewController.xib in Resources */,
 				BB83FAF91C72C01C0013A6A0 /* SignOneViewController.xib in Resources */,
+				91BF04EF1CBCE4DE0062E72F /* xx0.jpg in Resources */,
 				BB83FAFA1C72C01C0013A6A0 /* HFBoxTableViewCell.xib in Resources */,
 				BB83FAFB1C72C01C0013A6A0 /* ShareSDKLocalizable.strings in Resources */,
 				9120D8421CAD2D5500491F05 /* TKInviteCodeViewController.xib in Resources */,
+				9134FA741CBCDA0E0089BE93 /* LICENSE in Resources */,
 				BB83FAFC1C72C01C0013A6A0 /* HFLanchViewController.xib in Resources */,
 				BB83FAFD1C72C01C0013A6A0 /* TestViewController.xib in Resources */,
 				BB83FAFE1C72C01C0013A6A0 /* TKHttpAction.plist in Resources */,
@@ -5988,6 +6242,7 @@
 				BB83FB061C72C01C0013A6A0 /* HFAboutUsTableViewCell.xib in Resources */,
 				BB83FB071C72C01C0013A6A0 /* HFHealthCell.xib in Resources */,
 				BB83FB081C72C01C0013A6A0 /* SignThreeViewController.xib in Resources */,
+				91BF04E31CBCE4C50062E72F /* 5.jpg in Resources */,
 				914303271CA29998003E80F7 /* CoinViewController.xib in Resources */,
 				BB83FB0A1C72C01C0013A6A0 /* HFHistoryCell.xib in Resources */,
 				BB83FB0B1C72C01C0013A6A0 /* MyBandViewController.xib in Resources */,
@@ -5998,13 +6253,20 @@
 				BB83FB0E1C72C01C0013A6A0 /* HFMyDeviceCell.xib in Resources */,
 				BBA372581C76AA100075333E /* C_Client.plist in Resources */,
 				BB83FB0F1C72C01C0013A6A0 /* SudoViewController.xib in Resources */,
+				9134FA5C1CBCDA0E0089BE93 /* MLEmoji_ExpressionImage.plist in Resources */,
+				91BF04E11CBCE4C50062E72F /* 3.jpg in Resources */,
 				BB83FB101C72C01C0013A6A0 /* HFAdvanceSchemeCell.xib in Resources */,
+				91BF04E21CBCE4C50062E72F /* 4.jpg in Resources */,
+				91BF04F11CBCE4DE0062E72F /* xx1.jpg in Resources */,
 				BB83FB111C72C01C0013A6A0 /* HFAdvanceHealthViewController.xib in Resources */,
 				BB83FB121C72C01C0013A6A0 /* HttpAction.plist in Resources */,
 				BB83FB131C72C01C0013A6A0 /* MJPhotoBrowser.bundle in Resources */,
+				91BF04F51CBCE4DE0062E72F /* xx3.jpg in Resources */,
+				9134FA581CBCDA0E0089BE93 /* MLEmoji_Expression.bundle in Resources */,
 				BB83FB141C72C01C0013A6A0 /* UserInfoCell.xib in Resources */,
 				BB83FB151C72C01C0013A6A0 /* ReadMe.strings in Resources */,
 				BB83FB161C72C01C0013A6A0 /* HFDevInfoViewController.xib in Resources */,
+				91BF04DF1CBCE4C50062E72F /* 1.jpg in Resources */,
 				BB83FB171C72C01C0013A6A0 /* MainTableViewCell.xib in Resources */,
 				BB83FB181C72C01C0013A6A0 /* HFHealthViewController.xib in Resources */,
 				BB83FB191C72C01C0013A6A0 /* TKRegisterViewController.xib in Resources */,
@@ -6059,8 +6321,11 @@
 				BB83FB421C72C01C0013A6A0 /* HFHabitTimeCell.xib in Resources */,
 				9128C32E1CB4B8760053893F /* TKAfterSalesViewController.xib in Resources */,
 				8A05480F1CA4C11A00AC8DD5 /* TKBrandSelectViewController.xib in Resources */,
+				91BF04F71CBCE4DE0062E72F /* xx4.jpg in Resources */,
 				BB83FB431C72C01C0013A6A0 /* HFActivityListCell.xib in Resources */,
+				91BF04F31CBCE4DE0062E72F /* xx2.jpg in Resources */,
 				BB83FB441C72C01C0013A6A0 /* HFConclusionView.xib in Resources */,
+				91BF04E01CBCE4C50062E72F /* 2.jpg in Resources */,
 				BB83FB451C72C01C0013A6A0 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				BBA372511C75B9B30075333E /* BHomeChildBVC.xib in Resources */,
 				8A37499C1C924D23003DE59E /* TKNotifycationViewController.xib in Resources */,
@@ -6068,6 +6333,7 @@
 				BB83FB471C72C01C0013A6A0 /* TKHomePageViewController.xib in Resources */,
 				BB83FB481C72C01C0013A6A0 /* Images.xcassets in Resources */,
 				BB83FB491C72C01C0013A6A0 /* HFMessageCell.xib in Resources */,
+				91BF04DE1CBCE4C50062E72F /* 0.jpg in Resources */,
 				8A3749941C919F37003DE59E /* TK_ImageSelectBoxView.xib in Resources */,
 				BB83FB4A1C72C01C0013A6A0 /* UserCenterViewController.xib in Resources */,
 				8A0548001CA26C0100AC8DD5 /* TKShowGoodsCell.xib in Resources */,
@@ -6099,6 +6365,7 @@
 				BB83FDB61C72C16B0013A6A0 /* SignOneViewController.xib in Resources */,
 				BB83FDB71C72C16B0013A6A0 /* HFBoxTableViewCell.xib in Resources */,
 				8A9985991C86C684000F9CBC /* BHomeChildBVC.xib in Resources */,
+				91BF04E71CBCE4D00062E72F /* 3.jpg in Resources */,
 				BB83FDB81C72C16B0013A6A0 /* ShareSDKLocalizable.strings in Resources */,
 				9120D8431CAD2D5500491F05 /* TKInviteCodeViewController.xib in Resources */,
 				912120C01C9FD6FA00271605 /* DeliveryTimeView.xib in Resources */,
@@ -6115,6 +6382,7 @@
 				BB83FDC01C72C16B0013A6A0 /* MyInfoCell.xib in Resources */,
 				BB83FDC11C72C16B0013A6A0 /* HFDevHistoryViewController.xib in Resources */,
 				BB83FDC21C72C16B0013A6A0 /* GameOverView.xib in Resources */,
+				9134FA5B1CBCDA0E0089BE93 /* MLEmoji_Expression.plist in Resources */,
 				BB83FDC31C72C16B0013A6A0 /* HFAboutUsTableViewCell.xib in Resources */,
 				BB83FDC41C72C16B0013A6A0 /* HFHealthCell.xib in Resources */,
 				BB83FDC51C72C16B0013A6A0 /* SignThreeViewController.xib in Resources */,
@@ -6136,27 +6404,34 @@
 				BB83FDD51C72C16B0013A6A0 /* HFHealthViewController.xib in Resources */,
 				BB83FDD61C72C16B0013A6A0 /* TKRegisterViewController.xib in Resources */,
 				BB83FDD71C72C16B0013A6A0 /* FriendsCell.xib in Resources */,
+				9134FA5D1CBCDA0E0089BE93 /* MLEmoji_ExpressionImage.plist in Resources */,
 				BB83FDD81C72C16B0013A6A0 /* SentPostViewController.xib in Resources */,
 				8A99859A1C86C68A000F9CBC /* BHomeCHildAScrollBox.xib in Resources */,
 				BB83FDD91C72C16B0013A6A0 /* HFBindPhoneNumViewController.xib in Resources */,
+				91BF04E61CBCE4D00062E72F /* 2.jpg in Resources */,
 				BB83FDDA1C72C16B0013A6A0 /* HFRemindCell.xib in Resources */,
 				BB83FDDB1C72C16B0013A6A0 /* SignTwoViewController.xib in Resources */,
 				BB83FDDC1C72C16B0013A6A0 /* HFHabitInfoCell.xib in Resources */,
 				BB83FDDD1C72C16B0013A6A0 /* HFUnBindingViewController.xib in Resources */,
 				9182F2761C9EFCE800428B7F /* AbountViewController.xib in Resources */,
 				BB83FDDE1C72C16B0013A6A0 /* SetHeadViewController.xib in Resources */,
+				91BF04E41CBCE4D00062E72F /* 0.jpg in Resources */,
 				BB83FDDF1C72C16B0013A6A0 /* AgreementViewController.xib in Resources */,
 				9128C32F1CB4B8760053893F /* TKAfterSalesViewController.xib in Resources */,
 				BB83FDE01C72C16B0013A6A0 /* TKLeftMenu.xib in Resources */,
 				BB83FDE11C72C16B0013A6A0 /* HFAboutUsCell.xib in Resources */,
+				91BF04F21CBCE4DE0062E72F /* xx1.jpg in Resources */,
 				BB83FDE21C72C16B0013A6A0 /* HFEditHeaderView.xib in Resources */,
+				91BF04F61CBCE4DE0062E72F /* xx3.jpg in Resources */,
 				BB83FDE31C72C16B0013A6A0 /* HFBandViewController.xib in Resources */,
 				BB83FDE41C72C16B0013A6A0 /* FriendsViewController.xib in Resources */,
 				BB83FDE51C72C16B0013A6A0 /* HFPrivacyViewController.xib in Resources */,
 				BB83FDE61C72C16B0013A6A0 /* UserViewController.xib in Resources */,
 				BB83FDE71C72C16B0013A6A0 /* LoginViewController.xib in Resources */,
+				91BF04E81CBCE4D00062E72F /* 4.jpg in Resources */,
 				BB83FDE81C72C16B0013A6A0 /* TKICommentViewController.xib in Resources */,
 				BB83FDE91C72C16B0013A6A0 /* HFReportView.xib in Resources */,
+				91BF04E51CBCE4D00062E72F /* 1.jpg in Resources */,
 				BB83FDEA1C72C16B0013A6A0 /* ForgetViewController.xib in Resources */,
 				BB83FDEC1C72C16B0013A6A0 /* HFSwitchCell.xib in Resources */,
 				BB83FDED1C72C16B0013A6A0 /* HFFoodListViewController.xib in Resources */,
@@ -6171,6 +6446,7 @@
 				BB83FDF41C72C16B0013A6A0 /* TKSetPasswordViewController.xib in Resources */,
 				BB83FDF51C72C16B0013A6A0 /* Localizable.strings in Resources */,
 				91F8628B1C9A4406006F44BE /* GoodsDetailViewController.xib in Resources */,
+				9134FA591CBCDA0E0089BE93 /* MLEmoji_Expression.bundle in Resources */,
 				8A3749841C904A65003DE59E /* CPublishRewardViewController.xib in Resources */,
 				BB83FDF61C72C16B0013A6A0 /* LaunchScreen.xib in Resources */,
 				BB83FDF71C72C16B0013A6A0 /* HFCoopViewController.xib in Resources */,
@@ -6186,13 +6462,16 @@
 				8A99859C1C86C6AC000F9CBC /* TKRewardCell.xib in Resources */,
 				BB83FDFF1C72C16B0013A6A0 /* HFHabitTimeCell.xib in Resources */,
 				8A9E8B521C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */,
+				91BF04F01CBCE4DE0062E72F /* xx0.jpg in Resources */,
 				8A3749871C905E5D003DE59E /* B_Client.plist in Resources */,
 				BB83FE001C72C16B0013A6A0 /* HFActivityListCell.xib in Resources */,
 				BB83FE011C72C16B0013A6A0 /* HFConclusionView.xib in Resources */,
 				BB83FE021C72C16B0013A6A0 /* ShareSDKFlatShareViewUI.bundle in Resources */,
+				9134FA751CBCDA0E0089BE93 /* LICENSE in Resources */,
 				BB83FE031C72C16B0013A6A0 /* ChildSchemeCell.xib in Resources */,
 				BB83FE041C72C16B0013A6A0 /* TKHomePageViewController.xib in Resources */,
 				BB83FE051C72C16B0013A6A0 /* Images.xcassets in Resources */,
+				91BF04E91CBCE4D00062E72F /* 5.jpg in Resources */,
 				BB83FE061C72C16B0013A6A0 /* HFMessageCell.xib in Resources */,
 				BB83FE071C72C16B0013A6A0 /* UserCenterViewController.xib in Resources */,
 				8A0548011CA26C0100AC8DD5 /* TKShowGoodsCell.xib in Resources */,
@@ -6207,9 +6486,11 @@
 				91F8629A1C9AA21B006F44BE /* DetailView.xib in Resources */,
 				BB83FE0F1C72C16B0013A6A0 /* HFSchemeListViewController.xib in Resources */,
 				BB83FE101C72C16B0013A6A0 /* TKMessageListIItemCell.xib in Resources */,
+				91BF04F81CBCE4DE0062E72F /* xx4.jpg in Resources */,
 				BB83FE121C72C16B0013A6A0 /* HFSchemeCell.xib in Resources */,
 				BB83FE131C72C16B0013A6A0 /* HFIntroduceCell.xib in Resources */,
 				BB83FE141C72C16B0013A6A0 /* SetPasswordViewController.xib in Resources */,
+				91BF04F41CBCE4DE0062E72F /* xx2.jpg in Resources */,
 				BB83FE151C72C16B0013A6A0 /* TK_SettingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6328,6 +6609,8 @@
 				BB83F8B11C72C01C0013A6A0 /* HFFeedbackController.m in Sources */,
 				BB83F8B21C72C01C0013A6A0 /* ModelData.m in Sources */,
 				BB83F8B31C72C01C0013A6A0 /* HFAlertView.m in Sources */,
+				9134FA931CBCDA8E0089BE93 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
+				9134FA6C1CBCDA0E0089BE93 /* NSString+MLExpression.m in Sources */,
 				BB83F8B41C72C01C0013A6A0 /* TKPicSelectViewController.m in Sources */,
 				BB83F8B51C72C01C0013A6A0 /* BaseTableView.m in Sources */,
 				915FC66F1C94030400A74704 /* ViewPagerController.m in Sources */,
@@ -6355,7 +6638,10 @@
 				BB83F8C81C72C01C0013A6A0 /* TKEditUserInfoVC.m in Sources */,
 				BB83F8C91C72C01C0013A6A0 /* TK_BaseJsonModel.m in Sources */,
 				BB83F8CA1C72C01C0013A6A0 /* QuadCurveMenuItem.m in Sources */,
+				9134FA761CBCDA0E0089BE93 /* README.md in Sources */,
 				BB83F8CB1C72C01C0013A6A0 /* TK_PicAddView.m in Sources */,
+				9134FA781CBCDA0E0089BE93 /* TTTAttributedLabel.m in Sources */,
+				9134FA621CBCDA0E0089BE93 /* NSMutableAttributedString+MLLabel.m in Sources */,
 				BB83F8CC1C72C01C0013A6A0 /* HFDateHeaderView.m in Sources */,
 				BB83F8CD1C72C01C0013A6A0 /* ActivitiesData.m in Sources */,
 				BB83F8CE1C72C01C0013A6A0 /* HFGifPlayer.m in Sources */,
@@ -6391,7 +6677,6 @@
 				BB83F8E61C72C01C0013A6A0 /* HFMessageBoxReq.m in Sources */,
 				BB83F8E71C72C01C0013A6A0 /* HFStepCounterErrorViewController.m in Sources */,
 				BB83F8E81C72C01C0013A6A0 /* HFShareReq.m in Sources */,
-				BB83F8E91C72C01C0013A6A0 /* MLEmojiLabel.m in Sources */,
 				BB83F8EA1C72C01C0013A6A0 /* BandHistoryAck.m in Sources */,
 				8A5B60E71C85C4EB00BF8E19 /* BUserCenterVM.m in Sources */,
 				BB83F8EB1C72C01C0013A6A0 /* GetAdvanceSchemeMainPageAck.m in Sources */,
@@ -6399,6 +6684,7 @@
 				BB83F8ED1C72C01C0013A6A0 /* HiModuleListData.m in Sources */,
 				8AA7F7091C88267000CE0F17 /* TKPublishShowGoodsArg.m in Sources */,
 				BB83F8EE1C72C01C0013A6A0 /* TK_JsonModelArg.m in Sources */,
+				9134FA951CBCDA8E0089BE93 /* UIView+SDAutoLayout.m in Sources */,
 				BB83F8EF1C72C01C0013A6A0 /* HFSaveDeviceTokenReq.m in Sources */,
 				BB83F8F01C72C01C0013A6A0 /* VPImageCropperViewController.m in Sources */,
 				BB83F8F11C72C01C0013A6A0 /* ModifySignatureController.m in Sources */,
@@ -6408,9 +6694,9 @@
 				BB83F8F51C72C01C0013A6A0 /* GetSportPageDataArg.m in Sources */,
 				BB83F8F61C72C01C0013A6A0 /* FindViewController.m in Sources */,
 				BB83F8F71C72C01C0013A6A0 /* HFAboutUsCell.m in Sources */,
-				BB83F8F81C72C01C0013A6A0 /* TTTAttributedLabel.m in Sources */,
 				BB83F8F91C72C01C0013A6A0 /* HFDevInfoViewController.m in Sources */,
 				BB83F8FA1C72C01C0013A6A0 /* NetHTTPClient.m in Sources */,
+				9134FA701CBCDA0E0089BE93 /* MLLabel.m in Sources */,
 				BB83F8FB1C72C01C0013A6A0 /* HFDiseaseIntroViewController.m in Sources */,
 				BB83F8FC1C72C01C0013A6A0 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				BB83F8FD1C72C01C0013A6A0 /* HFActivityWindowAck.m in Sources */,
@@ -6513,6 +6799,7 @@
 				BB83F9551C72C01C0013A6A0 /* UserViewController.m in Sources */,
 				BB83F9561C72C01C0013A6A0 /* HFModifyInfoReq.m in Sources */,
 				BB83F9571C72C01C0013A6A0 /* HFHealthCell.m in Sources */,
+				9134FA5E1CBCDA0E0089BE93 /* MLEmojiLabel.m in Sources */,
 				BB83F9581C72C01C0013A6A0 /* FMDatabaseQueue.m in Sources */,
 				BB83F9591C72C01C0013A6A0 /* HFVerifySMSReq.m in Sources */,
 				BB83F95A1C72C01C0013A6A0 /* HFNewMainHeaderView.m in Sources */,
@@ -6520,6 +6807,7 @@
 				BB83F95C1C72C01C0013A6A0 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				BB83F95D1C72C01C0013A6A0 /* HFCommentViewController.m in Sources */,
 				BB83F95E1C72C01C0013A6A0 /* HFConclusionView.m in Sources */,
+				9134FA881CBCDA660089BE93 /* TKChatViewController.m in Sources */,
 				BB83F95F1C72C01C0013A6A0 /* FriendsRes.m in Sources */,
 				BB83F9601C72C01C0013A6A0 /* TK_CommentRewardArg.m in Sources */,
 				BB83F9611C72C01C0013A6A0 /* HFSentVercodeReq.m in Sources */,
@@ -6531,6 +6819,7 @@
 				BB83F9671C72C01C0013A6A0 /* PraiseRes.m in Sources */,
 				BB83F9681C72C01C0013A6A0 /* HFGetSudoDataReq.m in Sources */,
 				BB83F9691C72C01C0013A6A0 /* HFHabitAlarmClockAddReq.m in Sources */,
+				9134FA661CBCDA0E0089BE93 /* MLExpressionManager.m in Sources */,
 				BB83F96A1C72C01C0013A6A0 /* HFReportReq.m in Sources */,
 				BB83F96C1C72C01C0013A6A0 /* PostDetailData.m in Sources */,
 				BB83F96D1C72C01C0013A6A0 /* HFHabitAlarmClockRes.m in Sources */,
@@ -6580,6 +6869,7 @@
 				BB83F9911C72C01C0013A6A0 /* SetHeadViewController.m in Sources */,
 				BB83F9921C72C01C0013A6A0 /* HFDeleteMessageReq.m in Sources */,
 				BB83F9931C72C01C0013A6A0 /* HFMessageBoxRes.m in Sources */,
+				9134FA681CBCDA0E0089BE93 /* MLTextAttachment.m in Sources */,
 				8AA7F7201C8BCA4C00CE0F17 /* TK_BrandListArg.m in Sources */,
 				BB83F9941C72C01C0013A6A0 /* TKTableSectionM.m in Sources */,
 				BB83F9951C72C01C0013A6A0 /* TKUITools.m in Sources */,
@@ -6600,6 +6890,7 @@
 				BB83F9A11C72C01C0013A6A0 /* MMSideDrawerTableViewCell.m in Sources */,
 				BB83F9A21C72C01C0013A6A0 /* NSDate+Common.m in Sources */,
 				BB83F9A31C72C01C0013A6A0 /* UIView+SDExtension.m in Sources */,
+				9134FA8A1CBCDA660089BE93 /* SDChatModel.m in Sources */,
 				912F7E431CB653AC0057F898 /* TKSwitch.m in Sources */,
 				BB83F9A41C72C01C0013A6A0 /* BasePortraitButton.m in Sources */,
 				91F862921C9A97D0006F44BE /* BannerView.m in Sources */,
@@ -6623,6 +6914,7 @@
 				BB83F9B61C72C01C0013A6A0 /* HFMessageSetReq.m in Sources */,
 				BB83F9B71C72C01C0013A6A0 /* ZBMessageTextView.m in Sources */,
 				BB83F9B81C72C01C0013A6A0 /* SentPostViewController.m in Sources */,
+				9134FA861CBCDA660089BE93 /* SDAnalogDataGenerator.m in Sources */,
 				915FC6731C94036500A74704 /* BPageViewController.m in Sources */,
 				BB83F9B91C72C01C0013A6A0 /* HFEditDiaryViewController.m in Sources */,
 				BB83F9BA1C72C01C0013A6A0 /* GrayPageControl.m in Sources */,
@@ -6664,6 +6956,7 @@
 				BB83F9DA1C72C01C0013A6A0 /* ParseResult.m in Sources */,
 				BB83F9DB1C72C01C0013A6A0 /* HFGiveUpView.m in Sources */,
 				BB83F9DC1C72C01C0013A6A0 /* LoginRes.m in Sources */,
+				9134FA6A1CBCDA0E0089BE93 /* NSAttributedString+MLExpression.m in Sources */,
 				BB83F9DD1C72C01C0013A6A0 /* HFLoadFileManager.m in Sources */,
 				BB83F9DE1C72C01C0013A6A0 /* UIImageView+TKI_ImageFill.m in Sources */,
 				BB83F9DF1C72C01C0013A6A0 /* FinishSchemeArg.m in Sources */,
@@ -6686,6 +6979,7 @@
 				8A9985A01C86CDF5000F9CBC /* CHomePageViewController.m in Sources */,
 				BB83F9EC1C72C01C0013A6A0 /* HFActivityDetailRes.m in Sources */,
 				BB83F9ED1C72C01C0013A6A0 /* FMDatabaseAdditions.m in Sources */,
+				9134FA721CBCDA0E0089BE93 /* MLLinkLabel.m in Sources */,
 				BB83F9EE1C72C01C0013A6A0 /* HFCollectionCell.m in Sources */,
 				BB83F9EF1C72C01C0013A6A0 /* HFAdvanceSchemeContainerViewController.m in Sources */,
 				BB83F9F01C72C01C0013A6A0 /* TK_PraiseRewardArg.m in Sources */,
@@ -6828,7 +7122,10 @@
 				8A9D9B6E1C9BED7B009F877F /* TK_ReleaseRewardArg.m in Sources */,
 				8A9D9B5B1C993DD3009F877F /* TKWebViewController.m in Sources */,
 				BB83FA751C72C01C0013A6A0 /* UIViewController+TKVCcategory.m in Sources */,
+				9134FA641CBCDA0E0089BE93 /* NSString+MLLabel.m in Sources */,
 				BB83FA761C72C01C0013A6A0 /* BaseNavViewController.m in Sources */,
+				9134FA8C1CBCDA660089BE93 /* SDChatTableViewCell.m in Sources */,
+				9134FA601CBCDA0E0089BE93 /* NSAttributedString+MLLabel.m in Sources */,
 				BB83FA771C72C01C0013A6A0 /* HFGetPostsReq.m in Sources */,
 				BB83FA781C72C01C0013A6A0 /* TK_menuViewVC.m in Sources */,
 				BB83FA791C72C01C0013A6A0 /* HFGoodIdeaCell.m in Sources */,
@@ -6839,6 +7136,7 @@
 				BB83FA7D1C72C01C0013A6A0 /* TKProxy.m in Sources */,
 				BB83FA7E1C72C01C0013A6A0 /* AppDelegate.m in Sources */,
 				BB83FA7F1C72C01C0013A6A0 /* HFHistoryCell.m in Sources */,
+				9134FA6E1CBCDA0E0089BE93 /* MLLabelLayoutManager.m in Sources */,
 				BB83FA801C72C01C0013A6A0 /* BaseTableViewController.m in Sources */,
 				BB83FA811C72C01C0013A6A0 /* MJPhotoView.m in Sources */,
 				BB83FA821C72C01C0013A6A0 /* AFAudioRouter.m in Sources */,
@@ -6962,6 +7260,8 @@
 				BB83FB6E1C72C16B0013A6A0 /* HFFeedbackController.m in Sources */,
 				BB83FB6F1C72C16B0013A6A0 /* ModelData.m in Sources */,
 				BB83FB701C72C16B0013A6A0 /* HFAlertView.m in Sources */,
+				9134FA941CBCDA8E0089BE93 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
+				9134FA6D1CBCDA0E0089BE93 /* NSString+MLExpression.m in Sources */,
 				BB83FB711C72C16B0013A6A0 /* TKPicSelectViewController.m in Sources */,
 				BB83FB721C72C16B0013A6A0 /* BaseTableView.m in Sources */,
 				915FC6701C94030400A74704 /* ViewPagerController.m in Sources */,
@@ -6989,7 +7289,10 @@
 				BB83FB861C72C16B0013A6A0 /* TK_BaseJsonModel.m in Sources */,
 				BB83FB871C72C16B0013A6A0 /* QuadCurveMenuItem.m in Sources */,
 				BB83FB881C72C16B0013A6A0 /* TK_PicAddView.m in Sources */,
+				9134FA771CBCDA0E0089BE93 /* README.md in Sources */,
 				BB83FB891C72C16B0013A6A0 /* HFDateHeaderView.m in Sources */,
+				9134FA791CBCDA0E0089BE93 /* TTTAttributedLabel.m in Sources */,
+				9134FA631CBCDA0E0089BE93 /* NSMutableAttributedString+MLLabel.m in Sources */,
 				BB83FB8A1C72C16B0013A6A0 /* ActivitiesData.m in Sources */,
 				BB83FB8B1C72C16B0013A6A0 /* HFGifPlayer.m in Sources */,
 				BB83FB8C1C72C16B0013A6A0 /* TK_UploadImageAck.m in Sources */,
@@ -7025,7 +7328,6 @@
 				BB83FBA31C72C16B0013A6A0 /* HFMessageBoxReq.m in Sources */,
 				BB83FBA41C72C16B0013A6A0 /* HFStepCounterErrorViewController.m in Sources */,
 				BB83FBA51C72C16B0013A6A0 /* HFShareReq.m in Sources */,
-				BB83FBA61C72C16B0013A6A0 /* MLEmojiLabel.m in Sources */,
 				BB83FBA71C72C16B0013A6A0 /* BandHistoryAck.m in Sources */,
 				BB83FBA81C72C16B0013A6A0 /* GetAdvanceSchemeMainPageAck.m in Sources */,
 				BB83FBA91C72C16B0013A6A0 /* HFPostDetailView.m in Sources */,
@@ -7033,6 +7335,7 @@
 				BB83FBAB1C72C16B0013A6A0 /* TK_JsonModelArg.m in Sources */,
 				8AA7F70A1C88267000CE0F17 /* TKPublishShowGoodsArg.m in Sources */,
 				BB83FBAC1C72C16B0013A6A0 /* HFSaveDeviceTokenReq.m in Sources */,
+				9134FA961CBCDA8E0089BE93 /* UIView+SDAutoLayout.m in Sources */,
 				BB83FBAD1C72C16B0013A6A0 /* VPImageCropperViewController.m in Sources */,
 				BB83FBAE1C72C16B0013A6A0 /* ModifySignatureController.m in Sources */,
 				BB83FBAF1C72C16B0013A6A0 /* HabitData.m in Sources */,
@@ -7041,10 +7344,10 @@
 				BB83FBB21C72C16B0013A6A0 /* GetSportPageDataArg.m in Sources */,
 				BB83FBB31C72C16B0013A6A0 /* FindViewController.m in Sources */,
 				BB83FBB41C72C16B0013A6A0 /* HFAboutUsCell.m in Sources */,
-				BB83FBB51C72C16B0013A6A0 /* TTTAttributedLabel.m in Sources */,
 				BB83FBB61C72C16B0013A6A0 /* HFDevInfoViewController.m in Sources */,
 				BB83FBB71C72C16B0013A6A0 /* NetHTTPClient.m in Sources */,
 				BB83FBB81C72C16B0013A6A0 /* HFDiseaseIntroViewController.m in Sources */,
+				9134FA711CBCDA0E0089BE93 /* MLLabel.m in Sources */,
 				BB83FBB91C72C16B0013A6A0 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				BB83FBBA1C72C16B0013A6A0 /* HFActivityWindowAck.m in Sources */,
 				BB83FBBB1C72C16B0013A6A0 /* HFPostBarReq.m in Sources */,
@@ -7147,6 +7450,7 @@
 				BB83FC131C72C16B0013A6A0 /* HFModifyInfoReq.m in Sources */,
 				BB83FC141C72C16B0013A6A0 /* HFHealthCell.m in Sources */,
 				BB83FC151C72C16B0013A6A0 /* FMDatabaseQueue.m in Sources */,
+				9134FA5F1CBCDA0E0089BE93 /* MLEmojiLabel.m in Sources */,
 				BB83FC161C72C16B0013A6A0 /* HFVerifySMSReq.m in Sources */,
 				BB83FC171C72C16B0013A6A0 /* HFNewMainHeaderView.m in Sources */,
 				BB83FC181C72C16B0013A6A0 /* FMDatabasePool.m in Sources */,
@@ -7154,6 +7458,7 @@
 				BB83FC1A1C72C16B0013A6A0 /* HFCommentViewController.m in Sources */,
 				BB83FC1B1C72C16B0013A6A0 /* HFConclusionView.m in Sources */,
 				BB83FC1C1C72C16B0013A6A0 /* FriendsRes.m in Sources */,
+				9134FA891CBCDA660089BE93 /* TKChatViewController.m in Sources */,
 				BB83FC1D1C72C16B0013A6A0 /* TK_CommentRewardArg.m in Sources */,
 				BB83FC1E1C72C16B0013A6A0 /* HFSentVercodeReq.m in Sources */,
 				BB83FC1F1C72C16B0013A6A0 /* HFHabitDeleteReq.m in Sources */,
@@ -7165,6 +7470,7 @@
 				BB83FC251C72C16B0013A6A0 /* HFGetSudoDataReq.m in Sources */,
 				BB83FC261C72C16B0013A6A0 /* HFHabitAlarmClockAddReq.m in Sources */,
 				BB83FC271C72C16B0013A6A0 /* HFReportReq.m in Sources */,
+				9134FA671CBCDA0E0089BE93 /* MLExpressionManager.m in Sources */,
 				BB83FC291C72C16B0013A6A0 /* PostDetailData.m in Sources */,
 				BB83FC2A1C72C16B0013A6A0 /* HFHabitAlarmClockRes.m in Sources */,
 				BB83FC2B1C72C16B0013A6A0 /* HFCoopViewController.m in Sources */,
@@ -7214,6 +7520,7 @@
 				BB83FC501C72C16B0013A6A0 /* HFMessageBoxRes.m in Sources */,
 				BB83FC511C72C16B0013A6A0 /* TKTableSectionM.m in Sources */,
 				BB83FC521C72C16B0013A6A0 /* TKUITools.m in Sources */,
+				9134FA691CBCDA0E0089BE93 /* MLTextAttachment.m in Sources */,
 				8AA7F7211C8BCA4C00CE0F17 /* TK_BrandListArg.m in Sources */,
 				BB83FC531C72C16B0013A6A0 /* HFActivityView.m in Sources */,
 				BB83FC541C72C16B0013A6A0 /* MyBandViewController.m in Sources */,
@@ -7234,6 +7541,7 @@
 				BB83FC601C72C16B0013A6A0 /* UIView+SDExtension.m in Sources */,
 				BB83FC611C72C16B0013A6A0 /* BasePortraitButton.m in Sources */,
 				BB83FC621C72C16B0013A6A0 /* MJPhotoProgressView.m in Sources */,
+				9134FA8B1CBCDA660089BE93 /* SDChatModel.m in Sources */,
 				912F7E441CB653AC0057F898 /* TKSwitch.m in Sources */,
 				BB83FC631C72C16B0013A6A0 /* TKUserDetailInfoTableVM.m in Sources */,
 				91F862931C9A97D0006F44BE /* BannerView.m in Sources */,
@@ -7257,6 +7565,7 @@
 				BB83FC751C72C16B0013A6A0 /* SentPostViewController.m in Sources */,
 				BB83FC761C72C16B0013A6A0 /* HFEditDiaryViewController.m in Sources */,
 				BB83FC771C72C16B0013A6A0 /* GrayPageControl.m in Sources */,
+				9134FA871CBCDA660089BE93 /* SDAnalogDataGenerator.m in Sources */,
 				915FC6741C94036500A74704 /* BPageViewController.m in Sources */,
 				BB83FC781C72C16B0013A6A0 /* WebViewJavascriptBridgeBase.m in Sources */,
 				BB83FC791C72C16B0013A6A0 /* ChildSchemeCell.m in Sources */,
@@ -7298,6 +7607,7 @@
 				BB83FC991C72C16B0013A6A0 /* LoginRes.m in Sources */,
 				BB83FC9A1C72C16B0013A6A0 /* HFLoadFileManager.m in Sources */,
 				BB83FC9B1C72C16B0013A6A0 /* UIImageView+TKI_ImageFill.m in Sources */,
+				9134FA6B1CBCDA0E0089BE93 /* NSAttributedString+MLExpression.m in Sources */,
 				BB83FC9C1C72C16B0013A6A0 /* FinishSchemeArg.m in Sources */,
 				BB83FC9D1C72C16B0013A6A0 /* GetSchemeDayInfoArg.m in Sources */,
 				BB83FC9E1C72C16B0013A6A0 /* CheckUpdateReq.m in Sources */,
@@ -7320,6 +7630,7 @@
 				BB83FCAB1C72C16B0013A6A0 /* HFCollectionCell.m in Sources */,
 				BB83FCAC1C72C16B0013A6A0 /* HFAdvanceSchemeContainerViewController.m in Sources */,
 				BB83FCAD1C72C16B0013A6A0 /* TK_PraiseRewardArg.m in Sources */,
+				9134FA731CBCDA0E0089BE93 /* MLLinkLabel.m in Sources */,
 				BB83FCAE1C72C16B0013A6A0 /* HFActivityListCell.m in Sources */,
 				BB83FCAF1C72C16B0013A6A0 /* HFMessageViewController.m in Sources */,
 				BB83FCB01C72C16B0013A6A0 /* HFSystemMSGViewController.m in Sources */,
@@ -7462,7 +7773,10 @@
 				8A9D9B6F1C9BED7B009F877F /* TK_ReleaseRewardArg.m in Sources */,
 				8A9D9B5C1C993DD3009F877F /* TKWebViewController.m in Sources */,
 				BB83FD331C72C16B0013A6A0 /* BaseNavViewController.m in Sources */,
+				9134FA651CBCDA0E0089BE93 /* NSString+MLLabel.m in Sources */,
 				BB83FD341C72C16B0013A6A0 /* HFGetPostsReq.m in Sources */,
+				9134FA8D1CBCDA660089BE93 /* SDChatTableViewCell.m in Sources */,
+				9134FA611CBCDA0E0089BE93 /* NSAttributedString+MLLabel.m in Sources */,
 				BB83FD351C72C16B0013A6A0 /* TK_menuViewVC.m in Sources */,
 				BB83FD361C72C16B0013A6A0 /* HFGoodIdeaCell.m in Sources */,
 				BB83FD371C72C16B0013A6A0 /* MJPhotoBrowser.m in Sources */,
@@ -7473,6 +7787,7 @@
 				BB83FD3B1C72C16B0013A6A0 /* AppDelegate.m in Sources */,
 				BB83FD3C1C72C16B0013A6A0 /* HFHistoryCell.m in Sources */,
 				BB83FD3D1C72C16B0013A6A0 /* BaseTableViewController.m in Sources */,
+				9134FA6F1CBCDA0E0089BE93 /* MLLabelLayoutManager.m in Sources */,
 				BB83FD3E1C72C16B0013A6A0 /* MJPhotoView.m in Sources */,
 				BB83FD3F1C72C16B0013A6A0 /* AFAudioRouter.m in Sources */,
 				BB83FD401C72C16B0013A6A0 /* HFIntroduceCell.m in Sources */,

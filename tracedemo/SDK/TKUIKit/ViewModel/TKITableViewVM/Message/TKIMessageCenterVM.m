@@ -10,7 +10,7 @@
 #import "TKMessageListIItemCell.h"
 #import "TKMessageChatViewController.h"
 #import "TKIBaseNavWithDefaultBackVC.h"
-
+#import "TKChatViewController.h"
 @implementation TKIMessageCenterVM
 
 
@@ -31,7 +31,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //TKMessageChatViewController * chat = [[TKMessageChatViewController alloc] init];
-    TKIBaseNavWithDefaultBackVC * vc = [[TKIBaseNavWithDefaultBackVC alloc] init];
+    TKChatViewController * vc = [[TKChatViewController alloc] init];
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
 }
 

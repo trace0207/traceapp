@@ -422,7 +422,7 @@
 {
     static MLEmojiLabel *protypeLabel = nil;
     if (!protypeLabel) {
-        protypeLabel = [[MLEmojiLabel alloc]init];
+        protypeLabel = [[MLEmojiLabel alloc]initWithFrame:CGRectZero];
         protypeLabel.numberOfLines = 0;
         protypeLabel.isNeedAtAndPoundSign = YES;
         protypeLabel.customEmojiRegex = @"\\[[a-zA-Z0-9\\u4e00-\\u9fa5]+\\]";
