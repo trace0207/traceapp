@@ -29,11 +29,11 @@
 
 @protocol TKRewardCellDelegate <NSObject>
 
-@required
+@optional
 
 -(void)onAcceptBtnClick:(NSIndexPath *)indexPath;
 -(void)onReleaseBtnClick:(NSIndexPath *)indexPath;
-
+-(void)onHeadImageClick:(NSIndexPath *)indexPath;
 
 @end
 

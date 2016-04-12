@@ -56,8 +56,9 @@
     self.btnRight.hidden = YES;
 #endif
     
-    
-    //self.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    UIGestureRecognizer * tap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(onHeadImageClick:)];
+    [self.headImageView addGestureRecognizer:tap];
 }
 
 
@@ -80,6 +81,13 @@
     if(self.delegate)
     {
         [self.delegate onReleaseBtnClick:self.indexPath];
+    }
+}
+-(void)onHeadImageClick:(UIGestureRecognizer *)tap
+{
+    if(self.delegate)
+    {
+        [self.delegate onHeadImageClick:self.indexPath];
     }
 }
 

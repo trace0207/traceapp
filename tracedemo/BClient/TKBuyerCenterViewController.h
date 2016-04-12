@@ -10,4 +10,7 @@
 
 @interface TKBuyerCenterViewController : TKIBaseNavWithDefaultBackVC
 
+
++(void)showUserPage:(NSString *)userId;
+
 @end

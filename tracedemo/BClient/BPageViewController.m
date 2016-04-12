@@ -308,7 +308,7 @@
     else
     {
         CPublishRewardViewController * vc = [[CPublishRewardViewController alloc] init];
-        vc.showGoodsrowData = rowData;
+        vc.showGoodsrowData = row;
         UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
         [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:nil];
     }

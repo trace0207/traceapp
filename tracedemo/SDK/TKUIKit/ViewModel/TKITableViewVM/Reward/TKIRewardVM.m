@@ -17,6 +17,7 @@
 #import "GoodsDetailViewController.h"
 #import "TKUserCenter.h"
 #import "TKAlertView.h"
+#import "TKBuyerCenterViewController.h"
 
 #define IN_REWARDING  101
 
@@ -233,6 +234,13 @@
     } cancelTitle:@"取消" determineTitle:@"不接"];
     
     
+}
+
+-(void)onHeadImageClick:(NSIndexPath *)indexPath
+{
+    TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
+    NSString * userId = cellData.ackData.userId;
+    [TKBuyerCenterViewController showUserPage:userId];
 }
 
 

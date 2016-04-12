@@ -21,6 +21,7 @@
 #import "TKUserCenter.h"
 #import "NSString+HFStrUtil.h"
 #import "TKLoginViewController.h"
+#import "TKBuyerCenterViewController.h"
 
 @interface TKIShowGoodsVM()<TKShowGoodsCellDelegate>
 {
@@ -398,14 +399,12 @@
 {
     TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
     [[TKProxy proxy].mainProxy  praiseShowOrders:rowM.ackData.id withUserId:[[TKUserCenter instance] getUser].userId withBlock:^(HF_BaseAck *ack) {
-       
-        DDLogInfo(@"parise %@",ack);
-        
-        TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
-        rowM.ackData.praiseCount  =   [NSString tkStringFromNumber:rowM.ackData.praiseCount.integerValue + 1];
-        
-        [self.mTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-        
+        if(ack.sucess)
+        {
+            TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
+            rowM.ackData.praiseCount  =   [NSString tkStringFromNumber:rowM.ackData.praiseCount.integerValue + 1];
+            [self.mTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        }
     }];
     
     
@@ -415,12 +414,18 @@
 -(void)onUserHeadFieldClick:(NSIndexPath *)indexPath
 {
     DDLogInfo(@"action from indexRow = %ld",indexPath.row);
-
+    TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
+    NSString * userid = rowM.ackData.userId;
+    [TKBuyerCenterViewController showUserPage:userid];
+    
 }
 
 -(void)onBuyerHeadFiedClick:(NSIndexPath *)indexPath
 {
     DDLogInfo(@"action from indexRow = %ld",indexPath.row);
+    TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
+    NSString * userid = rowM.ackData.purchaserId;
+    [TKBuyerCenterViewController showUserPage:userid];
 
 }
 -(void)onFollowBtnClick:(NSIndexPath *)indexPath

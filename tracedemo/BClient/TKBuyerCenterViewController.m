@@ -16,6 +16,16 @@
 
 @implementation TKBuyerCenterViewController
 
+
+
++(void)showUserPage:(NSString *)userId
+{
+    TKBuyerCenterViewController * bvc = [[TKBuyerCenterViewController alloc] init];
+    [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
