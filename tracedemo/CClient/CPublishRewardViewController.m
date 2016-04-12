@@ -41,7 +41,7 @@
 #define PIC_ADD 103
 
 @interface CPublishRewardViewController ()<TKPicSelectDelegate,CycleScrollViewDelegate,ZHPickViewDelegate,
-UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,BrandSelectDelegate>
+UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,BrandSelectDelegate,TKWebViewDelegate>
 {
     CGFloat picWidth;
     NSInteger picCountInLine;
@@ -192,6 +192,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 {
     TKWebViewController *web = [[TKWebViewController alloc] init];
     web.hidDefaultBackBtn = NO;
+    web.delegate = self;
     web.defaultURL = [[TKProxy proxy].tkBaseUrl stringByAppendingString:AddressURL];
     [self.navigationController pushViewController:web animated:YES];
 //    [TKWebViewController showWebView:@"选择地址" url:AddressURL];
@@ -928,6 +929,15 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+#pragma  mark  TKWebViewDelegate
+
+-(void)onAddressChange:(Address *)address
+{
+    ackAddress = address;
+    NSString * string =  [NSString stringWithFormat:@"%@  %@  %@",ackAddress.province,ackAddress.city,ackAddress.address];
+    self.addressText.text = string;
 }
 
 @end

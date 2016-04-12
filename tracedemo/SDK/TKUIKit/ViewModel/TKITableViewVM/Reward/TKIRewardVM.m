@@ -212,9 +212,6 @@
 
 -(void)onReleaseBtnClick:(NSIndexPath *)indexPath
 {
-   
-    
-    
     TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
     RewardData * rowData  = cellData.ackData;
     
@@ -232,8 +229,6 @@
             }];
         }
     } cancelTitle:@"取消" determineTitle:@"不接"];
-    
-    
 }
 
 -(void)onHeadImageClick:(NSIndexPath *)indexPath

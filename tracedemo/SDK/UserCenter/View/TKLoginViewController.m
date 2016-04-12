@@ -15,8 +15,10 @@
 #import "TK_LoginAck.h"
 #import "HFHUDView.h"
 #import "GlobNotifyDefine.h"
+#import "UIColor+TK_Color.h"
+#import "TKUITools.h"
 
-@interface TKLoginViewController ()
+@interface TKLoginViewController()<UITextFieldDelegate>
 {
 
     
@@ -43,6 +45,7 @@
     [controller.view.layer addAnimation:transition forKey:kCATransition];
     [controller.navigationController pushViewController:loginVC animated:NO];
     
+    
 }
 
 
@@ -58,6 +61,14 @@
     _userNameText.text = @"18867102687";
     _passwordText.text = @"123456";
     
+    self.nameLine.backgroundColor = [UIColor tkThemeColor2];
+    self.passwordLine.backgroundColor = [UIColor tkThemeColor2];
+    TKBorder(self.loginBtn)
+    self.userNameText.tintColor = [UIColor tkThemeColor1];
+    self.passwordText.tintColor = [UIColor tkThemeColor1];
+    self.userNameText.delegate = self;
+    self.passwordText.delegate = self;
+    [self.loginBtn setBackgroundImage:[UIColor tkCreateImageWithColor: [UIColor tkThemeColor2]] forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -136,4 +147,17 @@
 
 
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if([textField isEqual:self.userNameText])
+    {
+        self.nameLine.backgroundColor = [UIColor tkThemeColor1];
+        self.passwordLine.backgroundColor  = [UIColor tkThemeColor2];
+    }
+    else if([textField isEqual:self.passwordText])
+    {
+        self.nameLine.backgroundColor = [UIColor tkThemeColor2];
+        self.passwordLine.backgroundColor  = [UIColor tkThemeColor1];
+    }
+}
 @end

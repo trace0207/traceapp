@@ -319,8 +319,8 @@
 -(void)onLoginSuccess
 {
     CPublishRewardViewController * vc = [[CPublishRewardViewController alloc] init];
-    UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
     vc.showGoodsrowData = rowData;
+    UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
     [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:nil];
 }
 

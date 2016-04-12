@@ -14,6 +14,39 @@
 #import "TKPayProxy.h"
 #import "TKAlertView.h"
 #import "GlobNotifyDefine.h"
+#import "TKUserCenter.h"
+//#import "TK_LoginAck.h"
+
+
+//@interface UserAddress : JSONModel
+//
+//
+////    address = "\U6c34\U7535\U8d39\U6492\U6253\U53d1\U65af\U8482\U82ac\U68b5\U8482\U5188\U548c";
+////    city = "\U5357\U5f00\U533a";
+////    id = 33;
+////    isDefault = 0;
+////    postcode = 344343;
+////    province = "\U5929\U6d25";
+////    receiver = "\U6c34\U7535\U8d39";
+////    receiverMobile = 13000000000;
+////    userId = 1;
+//
+//@property (nonatomic,copy) NSString * address;
+//@property (nonatomic,copy) NSString * city;
+//@property (nonatomic,copy) NSString * id;
+//@property (nonatomic,copy) NSString * postcode;
+//@property (nonatomic,copy) NSString * province;
+//@property (nonatomic,copy) NSString * receiver;
+//@property (nonatomic,copy) NSString * receiverMobile;
+//@property (nonatomic,copy) NSString * userId;
+//
+//@end
+//
+//
+//@implementation UserAddress
+//
+//
+//@end
 
 
 
@@ -44,6 +77,22 @@
     }
     vc.defaultURL = url;
     vc.navTitle = title;
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+}
+
+
++(void)showWebView:(NSString *)title url:(NSString *) url withDelegate:(id<TKWebViewDelegate>)delegate
+{
+    TKWebViewController *vc = [[TKWebViewController alloc] init];
+    vc.hidDefaultBackBtn = NO;
+    if(![url containsString:@"http"])
+    {
+        url = [[TKProxy proxy].tkBaseUrl stringByAppendingString:url];
+        
+    }
+    vc.defaultURL = url;
+    vc.navTitle = title;
+    vc.delegate = delegate;
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
 }
 
@@ -182,6 +231,32 @@
     {
         [UIKitTool callPhone:SERVER];
     }
+    else if([@"addressId" isEqualToString:actionString] || [@"addressDefault" isEqualToString:actionString])
+    {
+        [self onAddressChange:actionString data:dataDic];
+    }
+}
+
+
+
+
+-(void)onAddressChange:(NSString *)action data:(NSDictionary *)data
+{
+    
+    Address * address = [[Address alloc] initWithDictionary:data error:nil];
+    
+    if([@"addressDefault" isEqualToString:action])
+    {
+        [TKUserCenter instance].getUser.ackData.defaultReceiver = address;
+    }else
+    {
+     if(self.delegate)
+     {
+         [self.delegate onAddressChange:address];
+         [self.navigationController popViewControllerAnimated:YES];
+     }
+    }
+    
 }
 
 
@@ -198,6 +273,28 @@
 }
 
 
+//2016-04-12 21:34:14:914 [5749:1540879][TKWebViewController.m:158][-[TKWebViewController handleJSONString:withData:]] webcallBack {
+//    address = "\U6c34\U7535\U8d39\U6492\U6253\U53d1\U65af\U8482\U82ac\U68b5\U8482\U5188\U548c";
+//    city = "\U5357\U5f00\U533a";
+//    id = 33;
+//    isDefault = 0;
+//    postcode = 344343;
+//    province = "\U5929\U6d25";
+//    receiver = "\U6c34\U7535\U8d39";
+//    receiverMobile = 13000000000;
+//    userId = 1;
+//}  action addressDefault
+//2016-04-12 21:34:22:151 [5749:1540879][TKWebViewController.m:158][-[TKWebViewController handleJSONString:withData:]] webcallBack {
+//    address = "Did xi lu. 550  ha0";
+//    city = "\U676d\U5dde";
+//    id = 35;
+//    isDefault = 0;
+//    postcode = 111110;
+//    province = "\U6d59\U6c5f";
+//    receiver = "Luo tian jia";
+//    receiverMobile = 18867101952;
+//    userId = 1;
+//} action addressId
 
 
 @end

@@ -27,6 +27,9 @@
 
 - (IBAction)loginBtn:(id)sender;
 - (IBAction)forgetPassword:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *nameLine;
+@property (weak, nonatomic) IBOutlet UILabel *passwordLine;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 +(void)showLoginViewPage:(UIViewController *)controller;
 @end

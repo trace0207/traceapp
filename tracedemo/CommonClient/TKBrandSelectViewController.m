@@ -36,6 +36,11 @@
     
 }
 
+-(void)defaultViewSetting
+{
+    self.defaultSection.sectionHeadHeight = 1;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TK_SettingCell * selectCell = [tableView dequeueReusableCellWithIdentifier:@"TK_SettingCell"];

@@ -30,6 +30,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     //TKMessageChatViewController * chat = [[TKMessageChatViewController alloc] init];
     TKChatViewController * vc = [[TKChatViewController alloc] init];
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
