@@ -25,7 +25,7 @@
 @property (nonatomic,strong) NSString *categoryId;
 @property (nonatomic,strong) NSString *receiverId;
 @property (nonatomic,strong) NSString *brandId;
-@property (nonatomic,strong) NSString *source;
-@property (nonatomic,strong) NSString *sourceId;
+@property (nonatomic,strong) NSString *source; //0.晒单页发起 1.自主发起 2.悬赏页跟单
+@property (nonatomic,strong) NSString *sourceId;// 晒单发起悬赏，填入晒单id；悬赏跟单，填入被跟悬赏id；自主发起传入用户id
 @property (nonatomic,strong) NSString *requireDay;
 @end

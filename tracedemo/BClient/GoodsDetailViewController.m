@@ -13,10 +13,14 @@
 #import "UIColor+TK_Color.h"
 #import "TKUserCenter.h"
 #import "TKAlertView.h"
+#import "TKLoginViewController.h"
+#import "CPublishRewardViewController.h"
+
 
 @interface GoodsDetailViewController ()
 @property (nonatomic, strong) BannerView *bannerView;
 @property (nonatomic, strong) DetailView *detailView;
+
 @end
 
 @implementation GoodsDetailViewController
@@ -151,5 +155,30 @@
 
 - (IBAction)followAction:(id)sender {
     DDLogInfo(@"follow click tap ");
+    
+    
+    if(![TKUserCenter instance].isLogin)
+    {
+        [TKLoginViewController showLoginViewPage:self];
+    }
+    else
+    {
+        CPublishRewardViewController * vc = [[CPublishRewardViewController alloc] init];
+        vc.rewardData = self.data;
+        UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+        [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:nil];
+    }
 }
+
+
+#pragma  mark LoginDelegate
+
+-(void)onLoginSuccess
+{
+    CPublishRewardViewController * vc = [[CPublishRewardViewController alloc] init];
+    UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    vc.rewardData = self.data;
+    [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:nil];
+}
+
 @end

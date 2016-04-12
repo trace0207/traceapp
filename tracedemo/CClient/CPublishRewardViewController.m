@@ -290,7 +290,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         [self.imageContaner addSubview:box];
     }
     
-    if(otherPics.count < 7 && self.showGoodsrowData == nil)
+    if(otherPics.count < 7 && self.showGoodsrowData == nil && self.rewardData == nil)
     {
         TK_ImageSelectBoxView * box = [[TK_ImageSelectBoxView alloc] init];
         NSInteger count = otherPics.count;
@@ -602,6 +602,25 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         [self.firstPic setUserInteractionEnabled:NO];
         [self.secondPic setUserInteractionEnabled:NO];
     }
+    else if(self.rewardData != nil)
+    {
+        RewardData * row = self.rewardData;
+        self.inputText.text = row.content;
+        self.priceInputText.text = row.rewardPrice;
+        self.inputText.placehorder.hidden = YES;
+        self.brandText.text = row.brandName;
+        selectBrand = [[TK_Brand alloc] init];
+        selectBrand.brandName = row.brandName;
+        selectBrand.brandId = row.brandId;
+        selectCategory = [[TK_ShareCategory alloc] init];
+        selectCategory.title = row.categoryName;
+        selectCategory.categoryId = row.categoryId;
+        self.categoryText.text = row.categoryName;
+        [self.firstPic setURL:row.picAddr1 withStatus:ImageStatus];
+        [self.secondPic setURL:row.picAddr1 withStatus:ImageStatus];
+        [self.firstPic setUserInteractionEnabled:NO];
+        [self.secondPic setUserInteractionEnabled:NO];
+    }
 }
 
 
@@ -656,8 +675,6 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
  **/
 -(void)onImageUploadSuccess:(NSArray *)acks
 {
-    
-    //        DDLogInfo(@"upload images array %@",acks);
     BOOL isAnyFailed = NO;
     NSMutableArray * picArray = [[NSMutableArray alloc] init];
     for(TK_UploadImageAck *a in acks)
@@ -673,16 +690,10 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     
     if(isAnyFailed)
     {
-        
-//        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingError) object:nil];
         [self showLoadingError:@"上传图片失败"];
-        
     }
     else
     {
-        
-//        self.images = nil;
-        
         TK_PublishRewardArg * arg = [[TK_PublishRewardArg alloc] init];
         if(picArray.count > 0)
         {
@@ -731,61 +742,62 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         arg.requireDay = requireDay;
     
         
-        
-        WS(weakSelf)
-        
         if(self.publishType == 1)
         {
             TKPublishShowGoodsArg *a = [TKPublishShowGoodsArg changeFromRrewardArg:arg];
-            [[TKProxy proxy].mainProxy publishShowGoods:a withBlock:^(HF_BaseAck *ack) {
-                
-//                DDLogInfo(@"publishshow goods result = %@",ack);
-                
-                if(ack.sucess)
-                {
-                    [weakSelf onPublishSuccess];
-                }else
-                {
-                    [weakSelf showLoadingError:ack.msg];
-                }
-            }];
+            [self publishOrder:a];
             
         }else
         {
-            
-            [[TKProxy proxy].mainProxy publishReward:arg withBlock:^(HF_BaseAck *ack) {
-                if(ack.sucess)
-                {
-                    TK_PublishRewardAck * a = (TK_PublishRewardAck*)ack;
-                    [weakSelf requestPay:a.data.deposit postrewardId:a.data.rewardId];
-                }
-                else
-                {
-                    
-                    [weakSelf showLoadingError:ack.msg];
-                }
-            }];
+            [self publishReward:arg];
         }
         
     }
 }
 
 
+/**
+ 发表晒单
+ **/
+-(void)publishOrder:( TKPublishShowGoodsArg*) arg
+{
+    WS(weakSelf)
+    [[TKProxy proxy].mainProxy publishShowGoods:arg withBlock:^(HF_BaseAck *ack) {
+        if(ack.sucess)
+        {
+            [weakSelf onPublishSuccess];
+        }else
+        {
+            [weakSelf showLoadingError:ack.msg];
+        }
+    }];
 
+}
+
+/**
+ 发布悬赏
+ **/
+
+-(void)publishReward:(TK_PublishRewardArg *) arg
+{
+    WS(weakSelf)
+    [[TKProxy proxy].mainProxy publishReward:arg withBlock:^(HF_BaseAck *ack) {
+        if(ack.sucess)
+        {
+            TK_PublishRewardAck * data = (TK_PublishRewardAck *)ack;
+            [weakSelf requestPay:data.data.deposit postrewardId:data.data.rewardId];
+        }else
+        {
+            [weakSelf showLoadingError:ack.msg];
+        }
+    }];
+}
+
+/**
+ 发起支付
+ **/
 -(void)requestPay:(NSString *) money postrewardId:(NSString *)postId
 {
-    
-//    
-//    
-//    
-//    
-//    TK_PayArg * arg = [[TK_PayArg alloc] init];
-//    arg.payAmount = money;
-//    
-//    arg.postrewardId = postId;
-//    arg.fundType = 0;//0 订金， 1 尾款， 2全款， 3 买手充值保证金
-//    //    arg.clientIp = @"192.168.1.1";
-//    arg.bigMoney = 0;
     WS(weakSelf)
     
     if(alertView)
@@ -819,6 +831,57 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     NSString * tips = self.publishType == 1? @"正在发布晒单,请稍等...":@"正在发布悬赏，请稍等...";
     
     alertView = [TKAlertView showHUDWithText:tips];
+    
+    if(self.showGoodsrowData != nil)
+    {
+        // 直接发表悬赏， 不上传图片
+    
+        TK_PublishRewardArg * arg  = [[TK_PublishRewardArg alloc] init];
+        arg.content = self.inputText.text;
+        arg.rewardPrice = self.priceInputText.text;
+        arg.categoryId = selectCategory.categoryId;
+        arg.brandId = selectBrand.brandId;
+        arg.receiverId = ackAddress.id; // 地址id
+        arg.requireDay = requireDay;
+        GetOrderData * ack = self.showGoodsrowData.ackData;
+        arg.source = @"0";// 1 晒单跟单
+        arg.sourceId = ack.id;// 晒单ID
+        arg.picAddr1 = ack.picAddr1;
+        arg.picAddr2 = ack.picAddr2;
+        arg.picAddr3 = ack.picAddr3;
+        arg.picAddr4 = ack.picAddr4;
+        arg.picAddr5 = ack.picAddr5;
+        arg.picAddr6 = ack.picAddr6;
+        arg.picAddr7 = ack.picAddr7;
+        arg.picAddr8 = ack.picAddr8;
+        arg.picAddr9 = ack.picAddr9;
+        [self publishReward:arg];
+        return;
+    }
+    else if(self.rewardData != nil)
+    {
+        TK_PublishRewardArg * arg  = [[TK_PublishRewardArg alloc] init];
+        arg.content = self.inputText.text;
+        arg.rewardPrice = self.priceInputText.text;
+        arg.categoryId = selectCategory.categoryId;
+        arg.brandId = selectBrand.brandId;
+        arg.receiverId = ackAddress.id; // 地址id
+        arg.requireDay = requireDay;
+        RewardData * ack = self.rewardData;
+        arg.source = @"2";// 1 悬赏 我也要
+        arg.sourceId = ack.id;// 悬赏ID
+        arg.picAddr1 = ack.picAddr1;
+        arg.picAddr2 = ack.picAddr2;
+        arg.picAddr3 = ack.picAddr3;
+        arg.picAddr4 = ack.picAddr4;
+        arg.picAddr5 = ack.picAddr5;
+        arg.picAddr6 = ack.picAddr6;
+        arg.picAddr7 = ack.picAddr7;
+        arg.picAddr8 = ack.picAddr8;
+        arg.picAddr9 = ack.picAddr9;
+        [self publishReward:arg];
+        return;
+    }
     
     NSMutableArray * images = [[NSMutableArray alloc] init];
     

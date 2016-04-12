@@ -11,6 +11,7 @@
 #import "TKClearView.h"
 #import "TKTextView.h"
 #import "TKIShowGoodsRowM.h"
+#import "TK_RewardListForBuyerAck.h"
 @interface CPublishRewardViewController : TKIBaseNavWithDefaultBackVC
 
 @property (nonatomic,assign) NSInteger publishType;// 发布悬赏
@@ -55,5 +56,6 @@
 
 
 @property (weak,nonatomic) TKIShowGoodsRowM * showGoodsrowData;//跟单的数据原始对象
+@property (weak,nonatomic) RewardData * rewardData;// 悬赏的原始数据
 
 @end

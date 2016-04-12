@@ -62,7 +62,7 @@
                                 <constraint firstAttribute="height" constant="40" id="vkD-05-9rf"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <state key="normal" title="跟 单">
+                            <state key="normal" title="我也要">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
