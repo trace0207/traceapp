@@ -72,7 +72,7 @@
     _onTextColor = [UIColor colorWithRed:195.0/255.0f green:195.0/255.0f blue:195.0/255.0f alpha:1];
     _offTextColor = [UIColor colorWithRed:195.0/255.0f green:195.0/255.0f blue:195.0/255.0f alpha:1];
     
-    _textFont = [UIFont systemFontOfSize:14];
+    _textFont = [UIFont systemFontOfSize:12];
     _ballSize = CGRectGetHeight(self.bounds);
     
     _containerView = [[UIView alloc] initWithFrame:self.bounds];
@@ -388,7 +388,7 @@
             break;
         }
         case UIGestureRecognizerStateEnded:
-            if (self.on) {
+            if (!self.on) {
                 if (self.thumbView.center.x > (CGRectGetWidth(self.containerView.bounds)*2.0f/3.0f)) {
                     [self setOn:YES animated:YES];
                 }else{

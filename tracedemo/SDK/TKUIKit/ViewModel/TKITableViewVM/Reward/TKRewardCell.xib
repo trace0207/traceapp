@@ -195,7 +195,7 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kc0-mG-QJw">
                                                         <rect key="frame" x="71" y="3" width="11" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                         <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -233,7 +233,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-xf-0dL">
-                                        <rect key="frame" x="130" y="0.0" width="125" height="170"/>
+                                        <rect key="frame" x="131" y="0.0" width="125" height="170"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eXo-pi-Ptl">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="122"/>
@@ -286,19 +286,19 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nhy-6c-1eg" customClass="TKSwitch">
-                                                        <rect key="frame" x="8" y="2" width="109" height="31"/>
+                                                        <rect key="frame" x="12" y="5" width="101" height="25"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="8v2-fa-paw"/>
                                                     <constraint firstAttribute="bottom" secondItem="Ql6-1u-zMA" secondAttribute="bottom" id="DEn-Pt-zd8"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Nhy-6c-1eg" secondAttribute="bottom" constant="2" id="GsT-kG-hqF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Nhy-6c-1eg" secondAttribute="bottom" constant="5" id="GsT-kG-hqF"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ql6-1u-zMA" secondAttribute="trailing" id="RG1-7U-PvS"/>
-                                                    <constraint firstItem="Nhy-6c-1eg" firstAttribute="top" secondItem="EEH-25-wh1" secondAttribute="top" constant="2" id="ZtN-ed-6Yx"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Nhy-6c-1eg" secondAttribute="trailing" constant="8" id="gGD-pq-DtA"/>
+                                                    <constraint firstItem="Nhy-6c-1eg" firstAttribute="top" secondItem="EEH-25-wh1" secondAttribute="top" constant="5" id="ZtN-ed-6Yx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Nhy-6c-1eg" secondAttribute="trailing" constant="12" id="gGD-pq-DtA"/>
                                                     <constraint firstAttribute="height" constant="35" id="hTB-HH-DBc"/>
-                                                    <constraint firstItem="Nhy-6c-1eg" firstAttribute="leading" secondItem="EEH-25-wh1" secondAttribute="leading" constant="8" id="i0c-xX-lN0"/>
+                                                    <constraint firstItem="Nhy-6c-1eg" firstAttribute="leading" secondItem="EEH-25-wh1" secondAttribute="leading" constant="12" id="i0c-xX-lN0"/>
                                                     <constraint firstItem="Ql6-1u-zMA" firstAttribute="leading" secondItem="EEH-25-wh1" secondAttribute="leading" id="xSM-NA-QI2"/>
                                                 </constraints>
                                             </view>

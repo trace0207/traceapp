@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TKIShowGoodsRowM.h"
 #import "TKHeadImageView.h"
+#import "TKSwitch.h"
 
 
 @protocol TKShowGoodsCellDelegate<NSObject>
@@ -48,13 +49,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *brandBtn;
 @property (weak, nonatomic) IBOutlet UIButton *categoryBtn;
 @property (weak, nonatomic) IBOutlet UILabel *followMore;
+@property (weak, nonatomic) IBOutlet TKSwitch *followSwitch;
 
-- (IBAction)followAction:(id)sender;
+- (void)followAction:(id)sender;
 
 @property (strong,nonatomic) NSIndexPath * indexPath;
 @property (weak,nonatomic) id<TKShowGoodsCellDelegate> tkShowGoodscellDelegate;
 
-@property (weak, nonatomic) IBOutlet UIButton *followBtn;
 
 //head cell
 @property (nonatomic, weak) IBOutlet UIImageView *headImage;

@@ -10,6 +10,7 @@
 #import "TKPublishRewardVC.h"
 #import "TKICommentViewController.h"
 #import "TKUserDetailInfoViewController.h"
+#import "UIColor+TK_Color.h"
 
 @implementation TKShowGoodsCell
 
@@ -17,6 +18,14 @@
     // Initialization code
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.followSwitch.onText = @"";
+    self.followSwitch.onTextColor = [UIColor blackColor];
+    self.followSwitch.offText = @"右滑跟单";
+    self.followSwitch.offTintColor = [UIColor TKcolorWithHexString:@"E8E8E8"];
+    self.followSwitch.onTintColor = [UIColor tkThemeColor2];
+    self.followSwitch.thumbImage = IMG(@"icon_buy");
+    self.followSwitch.ballSize = 28;
+    [self.followSwitch addTarget:self action:@selector(followAction:) forControlEvents:(UIControlEventValueChanged)];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -67,15 +76,21 @@
 {
 }
 
--(IBAction)followAction:(id)sender
+-(void)followAction:(TKSwitch *)sender
+{
+    if(sender.on)
+    {
+        [self performSelector:@selector(doFollowEvent) withObject:self afterDelay:0.5];
+    }
+}
+
+-(void)doFollowEvent
 {
     if(self.tkShowGoodscellDelegate)
     {
         [self.tkShowGoodscellDelegate onFollowBtnClick:self.indexPath];
     }
-    
-//    [self.tkShowGoodscellDelegate getRowDataByIndex:self.indexPath];
-    
+    [self.followSwitch setOn:NO animated:YES];
 }
 
 - (IBAction)buyerFieldAction:(id)sender {

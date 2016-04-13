@@ -64,8 +64,10 @@
 #endif
     
 
-    UIGestureRecognizer * tap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(onHeadImageClick:)];
-    [self.headImageView addGestureRecognizer:tap];
+//    UIGestureRecognizer * tap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(onHeadImageClick:)];
+    self.headImageView.userInteractionEnabled = YES;
+//    [self.headImageView addGestureRecognizer:tap];
+    [self.headImageView tkAddTapAction:@selector(onHeadImageClick:) forTarget:self];
 }
 
 
@@ -77,17 +79,15 @@
         
         [self performSelector:@selector(closeSwitch) withObject:self afterDelay:0.6];
         
-        if(self.delegate)
-        {
-            [self.delegate onFollowAction:self.indexPath];
-        }
-        
-        
     }
 }
 
 -(void)closeSwitch
 {
+    if(self.delegate)
+    {
+        [self.delegate onFollowAction:self.indexPath];
+    }
     [self.iWantSwitch setOn:NO animated:YES];
 }
 

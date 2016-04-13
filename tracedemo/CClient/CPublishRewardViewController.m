@@ -599,7 +599,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         self.categoryText.text = row.categoryName;
         
         [self.firstPic setURL:row.picAddr1 withStatus:ImageStatus];
-        [self.secondPic setURL:row.picAddr1 withStatus:ImageStatus];
+        [self.secondPic setURL:row.picAddr2 withStatus:ImageStatus];
         [self.firstPic setUserInteractionEnabled:NO];
         [self.secondPic setUserInteractionEnabled:NO];
     }

@@ -163,7 +163,7 @@
     cell.iWantSwitch.offTintColor = [UIColor TKcolorWithHexString:@"E8E8E8"];
     cell.iWantSwitch.onTintColor = [UIColor tkThemeColor2];
     cell.iWantSwitch.thumbImage = IMG(@"icon_buy");
-    cell.iWantSwitch.ballSize = 35;
+    cell.iWantSwitch.ballSize = 30;
 }
 
 
