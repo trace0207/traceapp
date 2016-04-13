@@ -28,11 +28,14 @@
 #define KBindBandNotication             @"kBindBandNotication"
 
 
-// 用户登录成功
-#define TKUserLoginSuccess              @"tk_userLoginSuccessed"
-#define TKUserLoginBackEvent            @"tk_userLoginBackEvent"
-#define TKBrandCategoryReady            @"tk_BrandAndCategoryReady"
-#define TKPayNotify                     @"tk_pingppPayResult"
-#define TKUserLoginOut                  @"tk_userLoginOut"
+
+#define TKUserLoginSuccess              @"tk_userLoginSuccessed"// 用户登录请求成功，或者等价登录请求成功
+#define TKUserLoginBackEvent            @"tk_userLoginBackEvent"// 班开放式登录页面登录成功后 通知响应的UI刷新
+#define TKBrandCategoryReady            @"tk_BrandAndCategoryReady"// 类目和品牌准备OK
+#define TKPayNotify                     @"tk_pingppPayResult"// 支付成功
+#define TKUserLoginOut                  @"tk_userLoginOut"// 用户退出
+
+#define TKPubishRewardSuccess           @"tk_publishrewardSuccess" //发布悬赏成功
+#define TKPublishShowGoodsSuccess       @"tk_publishShowGoodsSuccess"// 发布晒单成功
 
 #endif

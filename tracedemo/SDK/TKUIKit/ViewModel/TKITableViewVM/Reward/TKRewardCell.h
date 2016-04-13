@@ -11,6 +11,7 @@
 #import "TK_RewardListForBuyerAck.h"
 #import "CountDownView.h"
 #import "TKHeadImageView.h"
+#import "TKSwitch.h"
 
 
 
@@ -34,6 +35,7 @@
 -(void)onAcceptBtnClick:(NSIndexPath *)indexPath;
 -(void)onReleaseBtnClick:(NSIndexPath *)indexPath;
 -(void)onHeadImageClick:(NSIndexPath *)indexPath;
+-(void)onFollowAction:(NSIndexPath *)indexPath;
 
 @end
 
@@ -61,6 +63,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceText;
 - (IBAction)acceptAction:(id)sender;
 - (IBAction)discardAction:(id)sender;
+@property (weak, nonatomic) IBOutlet TKSwitch *iWantSwitch;
 
+@property (weak, nonatomic) IBOutlet UIView *cFollowCountFleld;
+@property (weak, nonatomic) IBOutlet UIView *cIwantToBuyField;
+@property (weak, nonatomic) IBOutlet UIButton *iwantBtn;
+- (IBAction)iwantAction:(id)sender;
 
 @end

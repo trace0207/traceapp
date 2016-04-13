@@ -14,7 +14,7 @@
 #import "TK_RewardListForBuyerAck.h"
 @interface CPublishRewardViewController : TKIBaseNavWithDefaultBackVC
 
-@property (nonatomic,assign) NSInteger publishType;// 发布悬赏
+@property (nonatomic,assign) NSInteger publishType;// 1发布悬赏, 0 发布晒单
 
 @property (weak, nonatomic) IBOutlet UIView *imageContaner;
 

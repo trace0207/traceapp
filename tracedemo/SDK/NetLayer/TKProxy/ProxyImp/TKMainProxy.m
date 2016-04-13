@@ -291,11 +291,14 @@
     arg.ackClassName = @"TK_RewardListForBuyerAck";
     if(type == B_AllReward)
     {
-        arg.relativeUrl = [ActionTools getRelativePathByString:@"TK_RewardListForBuyerArg"];
+        arg.relativeUrl = [ActionTools getRelativePathByString:@"TK_RewardListForBuyerArg1"];
     }
     else if(type == C_AllReward)
     {
         arg.relativeUrl = [ActionTools getRelativePathByString:@"TK_CGetRewardListArg"];
+    }else if(type == B_MyUserReward)
+    {
+        arg.relativeUrl = [ActionTools getRelativePathByString:@"TK_RewardListForBuyerArg"];
     }
     arg.rewardStatus = status;
     //默认的是查我的客户的悬赏

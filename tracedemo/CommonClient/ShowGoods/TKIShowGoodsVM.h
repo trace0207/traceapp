@@ -12,12 +12,14 @@
 #import "TK_Brand.h"
 #import "TK_ShareCategory.h"
 #import "TKSHowGoodsCell.h"
+#import "TKRewardCell.h"
 
 
 @protocol TKShowGoodsVMDelegate <NSObject>
 
 @optional
 -(void)onFollowAction:(TKIShowGoodsRowM *)row;
+-(void)onIWantAction:(TKRewardCellModel*)row;
 
 @end
 

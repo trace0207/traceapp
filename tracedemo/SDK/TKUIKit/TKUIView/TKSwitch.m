@@ -88,7 +88,7 @@
     [_containerView addSubview:_offContentView];
     
     _thumbView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.ballSize, self.ballSize)];
-    _thumbView.backgroundColor = [UIColor whiteColor];
+    _thumbView.backgroundColor = [UIColor clearColor];
     [_containerView addSubview:_thumbView];
     
     _onLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -105,14 +105,79 @@
     _offLabel.font = _textFont;
     [_offContentView addSubview:_offLabel];
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                 action:@selector(handleTapTapGestureRecognizerEvent:)];
-    [self addGestureRecognizer:tapGesture];
+//    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+//                                                                                 action:@selector(handleTapTapGestureRecognizerEvent:)];
+//    [self addGestureRecognizer:tapGesture];
     
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                                  action:@selector(handlePanGestureRecognizerEvent:)];
     [self addGestureRecognizer:panGesture];
+    
 }
+
+
+-(void)setChildViewsFrame
+{
+    self.containerView.frame = self.bounds;
+    
+    CGFloat r = CGRectGetHeight(self.containerView.bounds) / 2.0;
+    
+    self.containerView.layer.cornerRadius = r;
+    self.containerView.layer.masksToBounds = YES;
+    
+    self.thumbView.layer.cornerRadius = self.ballSize/2.0f;
+    
+    CGFloat margin = (CGRectGetHeight(self.bounds) - self.ballSize) / 2.0;
+    
+    if (!self.isOn) {
+        // frame of off status
+        self.onContentView.frame = CGRectMake(-1 * CGRectGetWidth(self.containerView.bounds),
+                                              0,
+                                              CGRectGetWidth(self.containerView.bounds),
+                                              CGRectGetHeight(self.containerView.bounds));
+        
+        self.offContentView.frame = CGRectMake(0,
+                                               0,
+                                               CGRectGetWidth(self.containerView.bounds),
+                                               CGRectGetHeight(self.containerView.bounds));
+        
+        self.thumbView.frame = CGRectMake(margin,
+                                          margin,
+                                          self.ballSize,
+                                          self.ballSize);
+    } else {
+        // frame of on status
+        self.onContentView.frame = CGRectMake(0,
+                                              0,
+                                              CGRectGetWidth(self.containerView.bounds),
+                                              CGRectGetHeight(self.containerView.bounds));
+        
+        self.offContentView.frame = CGRectMake(-1 * CGRectGetWidth(self.containerView.bounds),
+                                               0,
+                                               CGRectGetWidth(self.containerView.bounds),
+                                               CGRectGetHeight(self.containerView.bounds));
+        
+        self.thumbView.frame = CGRectMake(CGRectGetWidth(self.containerView.bounds) - margin - self.ballSize,
+                                          margin,
+                                          self.ballSize,
+                                          self.ballSize);
+    }
+    
+    CGFloat lHeight = 20.0f;
+    CGFloat lMargin = r - (sqrtf(powf(r, 2) - powf(lHeight / 2.0, 2))) + margin;
+    
+    self.onLabel.frame = CGRectMake(lMargin,
+                                    r - lHeight / 2.0,
+                                    CGRectGetWidth(self.onContentView.bounds) - lMargin - self.ballSize - 2 * margin,
+                                    lHeight);
+    
+    self.offLabel.frame = CGRectMake(self.ballSize + 2 * margin,
+                                     r - lHeight / 2.0,
+                                     CGRectGetWidth(self.onContentView.bounds) - lMargin - self.ballSize - 2 * margin,
+                                     lHeight);
+
+}
+
 
 - (void)setTextFont:(UIFont *)textFont
 {
@@ -180,64 +245,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    self.containerView.frame = self.bounds;
-    
-    CGFloat r = CGRectGetHeight(self.containerView.bounds) / 2.0;
-    
-    self.containerView.layer.cornerRadius = r;
-    self.containerView.layer.masksToBounds = YES;
-    
-    self.thumbView.layer.cornerRadius = self.ballSize/2.0f;
-    
-    CGFloat margin = (CGRectGetHeight(self.bounds) - self.ballSize) / 2.0;
-    
-    if (!self.isOn) {
-        // frame of off status
-        self.onContentView.frame = CGRectMake(-1 * CGRectGetWidth(self.containerView.bounds),
-                                              0,
-                                              CGRectGetWidth(self.containerView.bounds),
-                                              CGRectGetHeight(self.containerView.bounds));
-        
-        self.offContentView.frame = CGRectMake(0,
-                                               0,
-                                               CGRectGetWidth(self.containerView.bounds),
-                                               CGRectGetHeight(self.containerView.bounds));
-        
-        self.thumbView.frame = CGRectMake(margin,
-                                          margin,
-                                          self.ballSize,
-                                          self.ballSize);
-    } else {
-        // frame of on status
-        self.onContentView.frame = CGRectMake(0,
-                                              0,
-                                              CGRectGetWidth(self.containerView.bounds),
-                                              CGRectGetHeight(self.containerView.bounds));
-        
-        self.offContentView.frame = CGRectMake(0,
-                                               CGRectGetWidth(self.containerView.bounds),
-                                               CGRectGetWidth(self.containerView.bounds),
-                                               CGRectGetHeight(self.containerView.bounds));
-        
-        self.thumbView.frame = CGRectMake(CGRectGetWidth(self.containerView.bounds) - margin - self.ballSize,
-                                          margin,
-                                          self.ballSize,
-                                          self.ballSize);
-    }
-    
-    CGFloat lHeight = 20.0f;
-    CGFloat lMargin = r - (sqrtf(powf(r, 2) - powf(lHeight / 2.0, 2))) + margin;
-    
-    self.onLabel.frame = CGRectMake(lMargin,
-                                    r - lHeight / 2.0,
-                                    CGRectGetWidth(self.onContentView.bounds) - lMargin - self.ballSize - 2 * margin,
-                                    lHeight);
-    
-    self.offLabel.frame = CGRectMake(self.ballSize + 2 * margin,
-                                     r - lHeight / 2.0,
-                                     CGRectGetWidth(self.onContentView.bounds) - lMargin - self.ballSize - 2 * margin,
-                                     lHeight);
+    [self setChildViewsFrame];
 }
 
 - (void)setOn:(BOOL)on
@@ -275,8 +283,8 @@
                                                   CGRectGetWidth(self.containerView.bounds),
                                                   CGRectGetHeight(self.containerView.bounds));
             
-            self.offContentView.frame = CGRectMake(0,
-                                                   CGRectGetWidth(self.containerView.bounds),
+            self.offContentView.frame = CGRectMake(-1 * CGRectGetWidth(self.containerView.bounds),
+                                                   0,
                                                    CGRectGetWidth(self.containerView.bounds),
                                                    CGRectGetHeight(self.containerView.bounds));
             
@@ -300,8 +308,8 @@
                                                                        CGRectGetWidth(self.containerView.bounds),
                                                                        CGRectGetHeight(self.containerView.bounds));
                                  
-                                 self.offContentView.frame = CGRectMake(0,
-                                                                        CGRectGetWidth(self.containerView.bounds),
+                                 self.offContentView.frame = CGRectMake(-1 * CGRectGetWidth(self.containerView.bounds),
+                                                                        0,
                                                                         CGRectGetWidth(self.containerView.bounds),
                                                                         CGRectGetHeight(self.containerView.bounds));
                              }];

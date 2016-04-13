@@ -42,6 +42,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(TKUserCenter, instance);
 @property (nonatomic,strong)TK_UserNormalViewModel * userNormalVM;
 @property (nonatomic,strong)TKUser * tempUserData;
 
+
+@property (nonatomic,assign)BOOL freashReward;
+
+
 -(void)initFromLocalHistory;
 -(BOOL)isLogin;
 -(void)onLoginSuccess:(TKUser *)user;

@@ -230,8 +230,8 @@
     
     
     BHomePageViewController * subTabVC1  = [[BHomePageViewController alloc] init];
-    subTabVC1.tabBarItem.image=IMG(@"icon_tab_reward");
-    subTabVC1.tabBarItem.selectedImage = IMG(@"icon_tab_reward");
+    subTabVC1.tabBarItem.image=[IMG(@"icon_tab_reward") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    subTabVC1.tabBarItem.selectedImage = [IMG(@"icon_tab_reward_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     subTabVC1.tabBarItem.title=@"悬赏池";
     //    subTabVC1.eventDelegate = self;
     
@@ -247,21 +247,22 @@
     messages.navTitle = @"消息中心";
     messages.hidDefaultBackBtn = YES;
     messages.tabBarItem.title = @"消息";
-    messages.tabBarItem.image = IMG(@"icon_tab_message");
-    messages.tabBarItem.selectedImage = IMG(@"icon_tab_message");
+    messages.tabBarItem.image = [IMG(@"icon_tab_message") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    messages.tabBarItem.selectedImage = [IMG(@"icon_tab_message_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
     BMyShowGoodsViewController * newChat = [[BMyShowGoodsViewController alloc] init];
     newChat.tabBarItem.title = @"我要晒单";
-    newChat.tabBarItem.image = IMG(@"icon_tab_publish");
-    newChat.tabBarItem.selectedImage = IMG(@"icon_tab_publish");
+    newChat.tabBarItem.image = [IMG(@"icon_tab_publish") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    newChat.tabBarItem.selectedImage = [IMG(@"icon_tab_publish_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
     
     
     TKWebViewController * navc4 = [[TKWebViewController alloc] init];
     navc4.title = @"我的订单";
-    navc4.tabBarItem.image = [UIImage imageNamed:@"icon_tab_myorder"];
+    navc4.tabBarItem.image = [[UIImage imageNamed:@"icon_tab_myorder"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    navc4.tabBarItem.selectedImage = [IMG(@"icon_tab_myorder_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     navc4.navTitle = @"我的订单";
      navc4.hidDefaultBackBtn = YES;
     navc4.defaultURL = [[TKProxy proxy].tkBaseUrl  stringByAppendingString:BMyOrders];
@@ -269,17 +270,17 @@
     
     TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
     navc5.title = @"我的";
-    navc5.tabBarItem.image = [UIImage imageNamed:@"icon_tab_my"];
-    
+    navc5.tabBarItem.image = [[UIImage imageNamed:@"icon_tab_my"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    navc5.tabBarItem.selectedImage = [IMG(@"icon_tab_my_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.selectedIndex =0;
     self.viewControllers = @[subTabVC1,/*newMain,*/messages,newChat,navc4,navc5];
     
 //    [self addChildViewController:navc5];
     self.delegate = self;
     
-    [self.tabBar setBackgroundColor:[UIColor tkThemeColor2]];
+//    [self.tabBar setBackgroundColor:[UIColor clearColor]];
     
-    [self.tabBar setTintColor:[UIColor TKcolorWithHexString:TK_Color_nav_textDefault]];
+    [self.tabBar setTintColor:[UIColor tkThemeColor1]];
     
     [self loadEmojIcon];
     [self registerNotification];
@@ -297,7 +298,7 @@
     
     CHomePageViewController * subTabVC1  = [[CHomePageViewController alloc] init];
     subTabVC1.tabBarItem.image=IMG(@"icon_tab_chome");
-    subTabVC1.tabBarItem.selectedImage = IMG(@"icon_tab_chome");
+    subTabVC1.tabBarItem.selectedImage = [IMG(@"icon_tab_chome_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     subTabVC1.tabBarItem.title=@"首页";
     //    subTabVC1.eventDelegate = self;
     
@@ -314,13 +315,13 @@
     messages.hidDefaultBackBtn = YES;
     messages.tabBarItem.title = @"消息";
     messages.tabBarItem.image = IMG(@"icon_tab_message");
-    messages.tabBarItem.selectedImage = IMG(@"icon_tab_message");
+    messages.tabBarItem.selectedImage = [IMG(@"icon_tab_message_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
     CPublishRewardViewController * newChat = [[CPublishRewardViewController alloc] init];
     newChat.tabBarItem.title = @"发悬赏";
     newChat.tabBarItem.image = IMG(@"icon_tab_publish");
-    newChat.tabBarItem.selectedImage = IMG(@"icon_tab_publish");
+    newChat.tabBarItem.selectedImage = [IMG(@"icon_tab_publish_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     //    TKSubTabBarViewController * subTabVC5  = [[TKSubTabBarViewController alloc] init];
     
@@ -331,12 +332,12 @@
     navc4.hidDefaultBackBtn = YES;
     navc4.defaultURL = [[TKProxy proxy].tkBaseUrl  stringByAppendingString:CMyGoodsURL];
     navc4.tabBarItem.image = [UIImage imageNamed:@"icon_tab_mygoods"];
-    
+    navc4.tabBarItem.selectedImage = [IMG(@"icon_tab_mygoods_active_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
     navc5.title = @"我的";
     navc5.tabBarItem.image = [UIImage imageNamed:@"icon_tab_my"];
-    
+    navc5.tabBarItem.selectedImage = [IMG(@"icon_tab_my_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.selectedIndex =0;
     self.viewControllers = @[subTabVC1,/*newMain,*/messages,newChat,navc4,navc5];
     

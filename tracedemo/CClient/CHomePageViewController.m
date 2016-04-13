@@ -13,6 +13,7 @@
 #import "UIColor+TK_Color.h"
 #import "TKPayChooseView.h"
 #import "GlobNotifyDefine.h"
+#import "TKUserCenter.h"
 @interface CHomePageViewController ()
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic,strong)BPageViewController * vc1;
@@ -37,13 +38,14 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma  mark  notify Event
 -(void)onUserNormalDataReady
 {
     [self.vc1 reloadTitleViewAndData];
-//    [self.vc2 reloadTitleViewAndData];
 }
 
 
+#pragma private method
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -53,6 +55,14 @@
 //        [bt setTitle:@"刷新" forState:UIControlStateNormal];
 //        [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
 //        [self addLeftBarItemWithCustomView:bt];
+    
+    if([TKUserCenter instance].freashReward)
+    {
+        self.segmentedControl.selectedSegmentIndex = 1;
+        [self onSelectTabAtIndex:1];
+        [TKUserCenter instance].freashReward = NO;
+        [self.vc2 reloadTitleViewAndData];
+    }
 }
 
 -(void)initView
@@ -63,11 +73,7 @@
 }
 -(void)test
 {
-//    self.payView.money = 1200;
-//    [self.payView show];
-//    
-//    [self.vc1 reloadTitleView];
-//    [self.vc2 reloadTitleView];
+
 }
 - (TKPayChooseView *)payView
 {
@@ -80,11 +86,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//-(UIStatusBarStyle)preferredStatusBarStyle
-//{
-//    return UIStatusBarStyleLightContent;
-//}
 
 
 - (UISegmentedControl *)segmentedControl
@@ -100,14 +101,19 @@
 }
 - (void)segmentedAction:(UISegmentedControl *)seg
 {
+    [self onSelectTabAtIndex:seg.selectedSegmentIndex];
+}
+
+-(void)onSelectTabAtIndex:(NSInteger)index
+{
     WS(weakSelf)
-    if (seg.selectedSegmentIndex == 0) {
+    if (index == 0) {
         [self addRightBarItemWithCustomView:nil];
         [self addChildViewController:self.vc1];
         [self transitionFromViewController:self.vc2 toViewController:self.vc1 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
             [weakSelf.vc1 didMoveToParentViewController:self];
-            [weakSelf.vc2 willMoveToParentViewController:nil];
-            [weakSelf.vc2 removeFromParentViewController];
+//            [weakSelf.vc2 willMoveToParentViewController:nil];
+//            [weakSelf.vc2 removeFromParentViewController];
             [weakSelf.vc1.view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.edges.equalTo(self.view);
             }];
@@ -123,8 +129,8 @@
         [self transitionFromViewController:self.vc1 toViewController:self.vc2 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
             
             [weakSelf.vc2 didMoveToParentViewController:self];
-            [weakSelf.vc1 willMoveToParentViewController:nil];
-            [weakSelf.vc1 removeFromParentViewController];
+//            [weakSelf.vc1 willMoveToParentViewController:nil];
+//            [weakSelf.vc1 removeFromParentViewController];
             [weakSelf.vc2.view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.edges.equalTo(self.view);
             }];
@@ -135,6 +141,7 @@
         }];
         
     }
+ 
 }
 
 -(BPageViewController *)vc2

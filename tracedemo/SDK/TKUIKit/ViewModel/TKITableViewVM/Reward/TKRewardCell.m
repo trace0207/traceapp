@@ -7,6 +7,7 @@
 //
 
 #import "TKRewardCell.h"
+#import "UIColor+TK_Color.h"
 
 
 @implementation TKRewardCellModel
@@ -54,11 +55,40 @@
 #if B_Client == 0
     self.btnLeft.hidden = YES;
     self.btnRight.hidden = YES;
+    
+    [self.iWantSwitch addTarget:self action:@selector(onSwitchChange:) forControlEvents:UIControlEventValueChanged];
+    
+#else 
+    self.cFollowCountFleld.hidden = YES;
+    self.cIwantToBuyField.hidden = YES;
 #endif
     
 
     UIGestureRecognizer * tap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(onHeadImageClick:)];
     [self.headImageView addGestureRecognizer:tap];
+}
+
+
+-(void)onSwitchChange:(TKSwitch *)swh
+{
+    DDLogInfo(@"swith on = %d",swh.on);
+    if(swh.on)
+    {
+        
+        [self performSelector:@selector(closeSwitch) withObject:self afterDelay:0.6];
+        
+        if(self.delegate)
+        {
+            [self.delegate onFollowAction:self.indexPath];
+        }
+        
+        
+    }
+}
+
+-(void)closeSwitch
+{
+    [self.iWantSwitch setOn:NO animated:YES];
 }
 
 
@@ -91,4 +121,8 @@
     }
 }
 
+- (IBAction)iwantAction:(id)sender {
+    
+    DDLogInfo(@"i want action");
+}
 @end

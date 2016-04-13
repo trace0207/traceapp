@@ -10,10 +10,12 @@
 
 #import "TK_ShareCategory.h"
 #import "TK_Brand.h"
+#import "TKIShowGoodsVM.h"
 
 
 @interface TKIRewardVM : TKTableViewVM
 @property (nonatomic,strong)TK_Brand * brand;
 @property (nonatomic,strong)TK_ShareCategory * category;
 @property (nonatomic,assign)HomePageType rewardPageType;
+@property (weak,nonatomic) id<TKShowGoodsVMDelegate> showGoodsDelegate;
 @end

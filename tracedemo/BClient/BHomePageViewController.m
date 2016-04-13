@@ -45,8 +45,14 @@
 
 - (void)segmentedAction:(UISegmentedControl *)seg
 {
-     WS(weakSelf)
-    if (seg.selectedSegmentIndex == 0) {
+    [self selectTapAtIndex:seg.selectedSegmentIndex];
+}
+
+
+-(void)selectTapAtIndex:(NSInteger)index
+{
+    WS(weakSelf)
+    if (index == 0) {
         [self addRightBarItemWithCustomView:nil];
         [self addChildViewController:self.vc1];
         [self transitionFromViewController:self.vc2 toViewController:self.vc1 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
@@ -60,7 +66,7 @@
             {
                 [weakSelf.vc1 reloadTitleViewAndData];
             }
-
+            
         }];
     }else {
         [self addChildViewController:self.vc2];
@@ -77,10 +83,11 @@
             {
                 [weakSelf.vc2 reloadTitleViewAndData];
             }
-
+            
         }];
     }
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -88,6 +95,7 @@
     self.hidDefaultBackBtn = YES;
     [self initView];
 }
+
 
 
 - (KTDropdownMenuView *)menuView
@@ -197,41 +205,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-//-(UIStatusBarStyle)preferredStatusBarStyle
-//{
-//    return UIStatusBarStyleLightContent;
-//}
-
-//- (void)selectSegmentIndex:(NSInteger)index
-//{
-//    if (index == 0)
-//    {
-//        [self addRightBarItemWithCustomView:nil];
-//        [self transitionFromViewController:self.vc2 toViewController:self.vc1 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
-//        }];
-//    }
-//    else
-//    {
-//        [self addRightBarItemWithCustomView:self.menuView];
-//        [self transitionFromViewController:self.vc1 toViewController:self.vc2 duration:0.5 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
-//
-//            
-//        }];
-//    }
-//}
-
-//- (HFSegmentView *)mSegView
-//{
-//    if (!_mSegView)
-//    {
-//        _mSegView = [[HFSegmentView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth == 320.f?130:167, 30)];
-//        _mSegView.currentIndex = 1;
-//        _mSegView.textFont = kScreenWidth == 320?[UIFont systemFontOfSize:15]:[UIFont systemFontOfSize:17];
-//        _mSegView.delegate = self;
-//        [_mSegView setSegmentTitles:@[@"悬赏广场",@"我的客户"]];
-//    }
-//    return _mSegView;
-//}
 
 
 -(BPageViewController *)vc2
@@ -261,5 +234,7 @@
     }
     return _vc1;
 }
+
+
 
 @end

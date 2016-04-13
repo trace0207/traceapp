@@ -22,6 +22,7 @@
 
     TK_Brand *currentBrand; // 当前选中的品牌
     TKIShowGoodsRowM *rowData; // 缓存的 item 数据，用户登录回来之后跳转
+    TKRewardCellModel * iWantRowData; //缓存的 我也要跟单数据
 
 }
 @property (nonatomic, strong) NSMutableArray<__kindof TK_Brand*> *brandsArray;
@@ -76,7 +77,8 @@
     
     
 //    [shareCategorys insertObject:[TKUserCenter instance].userNormalVM.defaultCategory atIndex:0];
-    
+    currentBrand = [TKUserCenter instance].userNormalVM.defaultBrand;
+    self.startPageIndex = 0;// 归位到 全部品牌，全部品类
     NSArray * brandList = [TKUserCenter instance].userNormalVM.brandList;
     NSMutableArray * brands = [[NSMutableArray alloc] init];
     
@@ -197,17 +199,12 @@
         vc.vm1.rewardPageType = self.dataType;
         vc.vm1.category = [self.shareCategorys objectAtIndex:index];
         vc.vm1.brand = currentBrand;
-        
+        vc.vm1.showGoodsDelegate = self;
         [self performSelector:@selector(pullRefreshB:) withObject:vc afterDelay:0.4];
-        
-        
         return vc;
     }else
     {
         TKShowGoodsListVC *vc = [[TKShowGoodsListVC alloc]init];
-//        TK_ShareCategory * category = [[TK_ShareCategory alloc] init];
-//        category.categoryId = @"";
-//        category.title = @"内衣";
         vc.vm.category = [self.shareCategorys objectAtIndex:index];;
         vc.vm.brand = currentBrand;
         vc.vm.showGoodsDelegate = self;
@@ -314,14 +311,35 @@
     }
 }
 
+-(void)onIWantAction:(TKRewardCellModel *)row
+{
+    if(![TKUserCenter instance].isLogin)
+    {
+        iWantRowData = row;
+        [TKLoginViewController showLoginViewPage:self];
+    }
+    else
+    {
+        CPublishRewardViewController * vc = [[CPublishRewardViewController alloc] init];
+        vc.rewardData = row.ackData;
+        UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+        [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:nil];
+    }
+
+}
+
 #pragma  mark LoginDelegate
 
 -(void)onLoginSuccess
 {
     CPublishRewardViewController * vc = [[CPublishRewardViewController alloc] init];
     vc.showGoodsrowData = rowData;
+    vc.rewardData = iWantRowData.ackData;
     UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
     [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:nil];
+    rowData = nil;
+    iWantRowData = nil;
+    
 }
 
 @end

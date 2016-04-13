@@ -18,6 +18,7 @@
 #import "TKUserCenter.h"
 #import "TKAlertView.h"
 #import "TKBuyerCenterViewController.h"
+#import "TKLoginViewController.h"
 
 #define IN_REWARDING  101
 
@@ -25,7 +26,6 @@
 {
     
     NSInteger nowPage;
-    
     NSMutableArray <RewardData> * dataList;
     TKTableSectionM * section;
     BOOL isMore;
@@ -131,7 +131,7 @@
 
 -(void)fillTableCell:(TKRewardCell *)cell withDataIndex:(NSIndexPath *)indexPath
 {
-    
+    [cell.iWantSwitch setOn:NO animated:NO];
     TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
     RewardData * rowData  = cellData.ackData;
     cell.userName.text = rowData.userNickName;
@@ -156,7 +156,14 @@
     TKBorder(cell.btnLeft);
     TKBorder(cell.btnRight);
     cell.headImageView.roundValue = 2.0;
-    
+//    TKBorder(cell.cIwantToBuyField);
+    cell.iWantSwitch.onText = @"";
+    cell.iWantSwitch.onTextColor = [UIColor blackColor];
+    cell.iWantSwitch.offText = @"右滑跟单";
+    cell.iWantSwitch.offTintColor = [UIColor TKcolorWithHexString:@"E8E8E8"];
+    cell.iWantSwitch.onTintColor = [UIColor tkThemeColor2];
+    cell.iWantSwitch.thumbImage = IMG(@"icon_buy");
+    cell.iWantSwitch.ballSize = 35;
 }
 
 
@@ -236,6 +243,16 @@
     TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
     NSString * userId = cellData.ackData.userId;
     [TKBuyerCenterViewController showUserPage:userId];
+}
+
+
+-(void)onFollowAction:(NSIndexPath *)indexPath
+{
+    if(self.showGoodsDelegate)
+    {
+        [self.showGoodsDelegate onIWantAction:[self.defaultSection.rowsData objectAtIndex:indexPath.row]];
+    }
+   
 }
 
 

@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 //#import "TKShowGoodsListVM.h"
 #import "TKIShowGoodsVM.h"
+#import "GlobNotifyDefine.h"
 
 @interface BMyShowGoodsViewController ()
 {
@@ -25,6 +26,7 @@
     [super viewDidLoad];
     self.hidDefaultBackBtn = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPublishShowGoodsSuccess) name:TKPublishShowGoodsSuccess object:nil];
     [self initView];
     // Do any additional setup after loading the view from its nib.
 }
@@ -60,6 +62,7 @@
 -(void)dealloc
 {
     vm = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -78,6 +81,13 @@
     CPublishRewardViewController *vc = [[CPublishRewardViewController alloc] init];
     vc.publishType = 1;
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+}
+
+#pragma  mark notify event
+
+-(void)onPublishShowGoodsSuccess
+{
+    [vm startPullDownRefreshing];
 }
 
 @end

@@ -618,7 +618,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         selectCategory.categoryId = row.categoryId;
         self.categoryText.text = row.categoryName;
         [self.firstPic setURL:row.picAddr1 withStatus:ImageStatus];
-        [self.secondPic setURL:row.picAddr1 withStatus:ImageStatus];
+        [self.secondPic setURL:row.picAddr2 withStatus:ImageStatus];
         [self.firstPic setUserInteractionEnabled:NO];
         [self.secondPic setUserInteractionEnabled:NO];
     }
@@ -633,6 +633,8 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 -(void)TKI_rightBarAction
 {
     
+//    [self onPublishSuccess];
+
     if(self.publishType == 1)
     {
         [self publishShowGoods];
@@ -760,7 +762,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 /**
  发表晒单
  **/
--(void)publishOrder:( TKPublishShowGoodsArg*) arg
+-(void)publishOrder:(TKPublishShowGoodsArg*) arg
 {
     WS(weakSelf)
     [[TKProxy proxy].mainProxy publishShowGoods:arg withBlock:^(HF_BaseAck *ack) {
@@ -913,7 +915,14 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     WS(weakSelf)
     [TKAlertView showSuccessWithTitle:title withMessage:msg commpleteBlock:^(NSInteger buttonIndex) {
         [weakSelf TKI_leftBarAction];
-//    [self dismissViewControllerAnimated:YES completion:nil];
+        
+        if(weakSelf.publishType ==1)
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName:TKPublishShowGoodsSuccess object:nil];
+        }else
+        {
+            [TKUserCenter instance].freashReward = YES;
+        }
     } cancelTitle:nil determineTitle:@"确定"];
     
 }

@@ -8067,6 +8067,11 @@
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/UI",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SDK/File/TK_SDK_PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"B_Client=1",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/BClient/B_Client.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -8139,6 +8144,11 @@
 					"$(PROJECT_DIR)/SDK/Share/ThridPart/ShareSDK/UI",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SDK/File/TK_SDK_PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"B_Client=0",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/CClient/C_Client.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
