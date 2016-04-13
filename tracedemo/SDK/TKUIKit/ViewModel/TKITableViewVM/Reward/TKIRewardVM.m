@@ -164,6 +164,11 @@
     cell.iWantSwitch.onTintColor = [UIColor tkThemeColor2];
     cell.iWantSwitch.thumbImage = IMG(@"icon_buy");
     cell.iWantSwitch.ballSize = 30;
+    if(self.rewardPageType == B_AllReward)
+    {
+        cell.btnLeft.hidden = YES;
+        cell.cFollowCountFleld.hidden = NO;
+    }
 }
 
 

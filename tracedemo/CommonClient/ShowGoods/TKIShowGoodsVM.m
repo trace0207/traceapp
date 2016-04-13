@@ -348,7 +348,7 @@
     cell.indexPath = indexPath;
     
 #if B_Client == 1
-    cell.followBtn.hidden = YES;
+    cell.followSwitch.hidden = YES;
 #endif
 }
 
