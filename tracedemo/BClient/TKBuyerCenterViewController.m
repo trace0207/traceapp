@@ -19,9 +19,10 @@
 
 
 
-+(void)showUserPage:(NSString *)userId
++(void)showUserPage:(NSString *)userId isBuyer:(BOOL)isBuyer
 {
     TKBuyerCenterViewController * bvc = [[TKBuyerCenterViewController alloc] init];
+    bvc.isBuyer = isBuyer;
     [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
 }
 
@@ -33,7 +34,14 @@
     
     [self initView];
     
-    
+    if(self.isBuyer)
+    {
+        
+        self.navTitle = @"买手主页";
+    }else
+    {
+        self.navTitle = @"消费者主页";
+    }
     
     
 }
@@ -46,13 +54,14 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self TKaddNavigationTitle:@"买手主页"];
+    
 }
 
 
 -(void)initView
 {
     vm = [[TKBuyerCenterVM alloc] initWithFreshAbleTable];
+    vm.isBuyer = self.isBuyer;
     [self.view addSubview:vm.pullRefreshView];
     [vm tkUpdateViewConstraint];
     [vm startPullDownRefreshing];

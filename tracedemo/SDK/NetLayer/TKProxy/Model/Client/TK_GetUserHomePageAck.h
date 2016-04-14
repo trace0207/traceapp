@@ -32,6 +32,8 @@
 @property (nonatomic,strong) NSString * signature;
 @property (nonatomic,strong) NSString * token;
 @property (nonatomic,strong) NSString * version;
+@property (nonatomic,strong) NSString * purchaserName;
+@property (nonatomic,strong) NSString * vip;
 
 @end
 

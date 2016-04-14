@@ -54,6 +54,10 @@
 		8A37499C1C924D23003DE59E /* TKNotifycationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749991C924D23003DE59E /* TKNotifycationViewController.xib */; };
 		8A37499D1C924D23003DE59E /* TKNotifycationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749991C924D23003DE59E /* TKNotifycationViewController.xib */; };
 		8A5B60E71C85C4EB00BF8E19 /* BUserCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5B60E61C85C4EB00BF8E19 /* BUserCenterVM.m */; };
+		8A7600011CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7600001CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m */; };
+		8A7600021CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7600001CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m */; };
+		8A7600051CBF95F900CA8BCE /* TK_GetBuyerHomePageListArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7600041CBF95F900CA8BCE /* TK_GetBuyerHomePageListArg.m */; };
+		8A7600061CBF95F900CA8BCE /* TK_GetBuyerHomePageListArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7600041CBF95F900CA8BCE /* TK_GetBuyerHomePageListArg.m */; };
 		8A76FFF51CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76FFF41CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m */; };
 		8A76FFF61CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76FFF41CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m */; };
 		8A76FFF91CBF380D00CA8BCE /* TK_GetUserHomePageAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76FFF81CBF380D00CA8BCE /* TK_GetUserHomePageAck.m */; };
@@ -2799,12 +2803,16 @@
 		8A6B3FA71BF0898300E5C982 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8A6B3FA91BF08A1200E5C982 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		8A6B3FAB1BF08A2600E5C982 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		8A7600001CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetBuyerUserInfoArg.m; sourceTree = "<group>"; };
+		8A7600031CBF95F900CA8BCE /* TK_GetBuyerHomePageListArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetBuyerHomePageListArg.h; sourceTree = "<group>"; };
+		8A7600041CBF95F900CA8BCE /* TK_GetBuyerHomePageListArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetBuyerHomePageListArg.m; sourceTree = "<group>"; };
 		8A76FFF31CBF2D5500CA8BCE /* TK_GetUserHomePageArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetUserHomePageArg.h; sourceTree = "<group>"; };
 		8A76FFF41CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetUserHomePageArg.m; sourceTree = "<group>"; };
 		8A76FFF71CBF380D00CA8BCE /* TK_GetUserHomePageAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetUserHomePageAck.h; sourceTree = "<group>"; };
 		8A76FFF81CBF380D00CA8BCE /* TK_GetUserHomePageAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetUserHomePageAck.m; sourceTree = "<group>"; };
 		8A76FFFB1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetUserPageDataListArg.h; sourceTree = "<group>"; };
 		8A76FFFC1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetUserPageDataListArg.m; sourceTree = "<group>"; };
+		8A76FFFF1CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetBuyerUserInfoArg.h; sourceTree = "<group>"; };
 		8A80E1ED1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserDetailInfoTableVM.h; sourceTree = "<group>"; };
 		8A80E1EE1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserDetailInfoTableVM.m; sourceTree = "<group>"; };
 		8A978A5D1BD3C8EF00C84ED2 /* BasePortraitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePortraitView.h; sourceTree = "<group>"; };
@@ -5485,6 +5493,10 @@
 				8A00F9721CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m */,
 				8A00F9751CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.h */,
 				8A00F9761CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.m */,
+				8A76FFFF1CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.h */,
+				8A7600001CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m */,
+				8A7600031CBF95F900CA8BCE /* TK_GetBuyerHomePageListArg.h */,
+				8A7600041CBF95F900CA8BCE /* TK_GetBuyerHomePageListArg.m */,
 			);
 			path = BClient;
 			sourceTree = "<group>";
@@ -6898,6 +6910,7 @@
 				BB83F9981C72C01C0013A6A0 /* ModifySchemeStateArg.m in Sources */,
 				BB83F9991C72C01C0013A6A0 /* TK_PraiseOrderArg.m in Sources */,
 				BB83F99A1C72C01C0013A6A0 /* SIMenuConfiguration.m in Sources */,
+				8A7600011CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m in Sources */,
 				BB83F99B1C72C01C0013A6A0 /* TK_BaseAppDelegate.m in Sources */,
 				BB83F99C1C72C01C0013A6A0 /* HFMessageDetailView.m in Sources */,
 				BB83F99D1C72C01C0013A6A0 /* TAAnimatedDotView.m in Sources */,
@@ -7164,6 +7177,7 @@
 				9182F2731C9EFCE800428B7F /* AbountViewController.m in Sources */,
 				BB83FA831C72C01C0013A6A0 /* HFIntroduceCell.m in Sources */,
 				BB83FA841C72C01C0013A6A0 /* CLLRefreshHeadController.m in Sources */,
+				8A7600051CBF95F900CA8BCE /* TK_GetBuyerHomePageListArg.m in Sources */,
 				BB83FA851C72C01C0013A6A0 /* RankViewCell.m in Sources */,
 				BB83FA861C72C01C0013A6A0 /* TK_JsonModelAck.m in Sources */,
 				BB83FA871C72C01C0013A6A0 /* FHGetModulesReq.m in Sources */,
@@ -7552,6 +7566,7 @@
 				BB83FC571C72C16B0013A6A0 /* SIMenuConfiguration.m in Sources */,
 				BB83FC581C72C16B0013A6A0 /* TK_BaseAppDelegate.m in Sources */,
 				BB83FC591C72C16B0013A6A0 /* HFMessageDetailView.m in Sources */,
+				8A7600021CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m in Sources */,
 				BB83FC5A1C72C16B0013A6A0 /* TAAnimatedDotView.m in Sources */,
 				BB83FC5B1C72C16B0013A6A0 /* HFPreRegisterReq.m in Sources */,
 				BB83FC5C1C72C16B0013A6A0 /* ForgetViewController.m in Sources */,
@@ -7818,6 +7833,7 @@
 				9182F2741C9EFCE800428B7F /* AbountViewController.m in Sources */,
 				BB83FD411C72C16B0013A6A0 /* CLLRefreshHeadController.m in Sources */,
 				BB83FD421C72C16B0013A6A0 /* RankViewCell.m in Sources */,
+				8A7600061CBF95F900CA8BCE /* TK_GetBuyerHomePageListArg.m in Sources */,
 				BB83FD431C72C16B0013A6A0 /* TK_JsonModelAck.m in Sources */,
 				BB83FD441C72C16B0013A6A0 /* FHGetModulesReq.m in Sources */,
 				BB83FD451C72C16B0013A6A0 /* RegisterRes.m in Sources */,

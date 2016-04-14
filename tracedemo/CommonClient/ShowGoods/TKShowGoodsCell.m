@@ -106,6 +106,9 @@
     }
 }
 
+- (IBAction)msgAction:(id)sender {
+}
+
 - (IBAction)userHeadClick:(id)sender {
     if(self.tkShowGoodscellDelegate)
     {

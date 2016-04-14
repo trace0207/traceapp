@@ -10,5 +10,6 @@
 
 @interface TKBuyerCenterVM : TKIShowGoodsVM
 @property (assign,nonatomic) NSString * userId;
+@property (nonatomic,assign)BOOL isBuyer;
 
 @end

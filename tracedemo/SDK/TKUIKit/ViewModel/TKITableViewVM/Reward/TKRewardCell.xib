@@ -372,6 +372,8 @@
                 <outlet property="cFollowCountFleld" destination="eOj-HR-IFU" id="fhu-HD-vGB"/>
                 <outlet property="cIwantToBuyField" destination="EEH-25-wh1" id="UrQ-LM-Tpo"/>
                 <outlet property="contentInfo" destination="vFA-R2-BvD" id="cLh-at-x38"/>
+                <outlet property="followCountText" destination="NnT-Ym-mrV" id="imm-RR-nmX"/>
+                <outlet property="followMoreLabel" destination="kc0-mG-QJw" id="e4G-cb-mqa"/>
                 <outlet property="headImageView" destination="cTZ-n2-SZX" id="f06-it-CeT"/>
                 <outlet property="iWantSwitch" destination="Nhy-6c-1eg" id="B6Q-1a-JbV"/>
                 <outlet property="infoIconBtn1" destination="KZo-Fi-r2R" id="IbK-MJ-fyA"/>

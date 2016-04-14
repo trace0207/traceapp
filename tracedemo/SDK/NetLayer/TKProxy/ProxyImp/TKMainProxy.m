@@ -31,6 +31,8 @@
 #import "TK_CGetRewardListArg.h"
 #import "TK_GetInviteCodeArg.h"
 #import "TK_GetUserPageDataListArg.h"
+#import "TK_GetBuyerHomePageListArg.h"
+#import "TK_GetBuyerUserInfoArg.h"
 
 
 @implementation TKMainProxy
@@ -351,6 +353,33 @@
     arg.showLoadingStr = @"YES";
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
     
+}
+
+
+
+/**
+ 查询买手基本信息
+ **/
+-(void)getBuyerUserInfo:(NSString *)userId withBlock:(hfAckBlock)block
+{
+    TK_GetBuyerUserInfoArg * arg = [[TK_GetBuyerUserInfoArg alloc] init];
+    arg.purchaserId = userId;
+    arg.ackClassName = @"TK_GetUserHomePageAck";
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
+
+
+/**
+ 查询买手主页晒单列表
+ **/
+-(void)getBuyerHomePageOrders:(NSString *)userId  page:(NSInteger)page withBlock:(hfAckBlock)block
+{
+    TK_GetBuyerHomePageListArg * arg = [[TK_GetBuyerHomePageListArg alloc] init];
+    arg.purchaserId = userId;
+    arg.pageSize = 20;
+    arg.pageOffset = page;
+    arg.ackClassName = @"TK_GetOrdersAck";
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 
 

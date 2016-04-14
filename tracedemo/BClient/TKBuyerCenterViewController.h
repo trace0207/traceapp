@@ -9,8 +9,9 @@
 #import "TKIBaseNavWithDefaultBackVC.h"
 
 @interface TKBuyerCenterViewController : TKIBaseNavWithDefaultBackVC
+@property (nonatomic,assign)BOOL isBuyer;
 
++(void)showUserPage:(NSString *)userId isBuyer:(BOOL)isBuyer;
 
-+(void)showUserPage:(NSString *)userId;
 
 @end

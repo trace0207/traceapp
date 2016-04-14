@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>TK_GetBuyerHomePageListArg</key>
+	<string>/apollo/nologin/purchaser/purchaser!purchaserShowList.action</string>
+	<key>TK_GetBuyerUserInfoArg</key>
+	<string>/apollo/nologin/purchaser/purchaser!purchaserHomePage.action</string>
 	<key>TK_GetUserPageDataListArg</key>
 	<string>/apollo/nologin/user/user!userShowList.action</string>
 	<key>TK_GetUserHomePageArg</key>

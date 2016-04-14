@@ -324,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SDK/TKUIKit/ViewModel/TKITableViewVM/Reward/TKIRewardVM.m"
-            timestampString = "482214335.291556"
+            timestampString = "482333068.761719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "-tkLoadDefaultData"
             landmarkType = "5">
          </BreakpointContent>
@@ -404,12 +404,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CommonClient/ShowGoods/TKBuyerCenterVM.m"
-            timestampString = "482309869.843286"
+            timestampString = "482330793.353249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-resetHeadView:"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-resetCustomerHeadView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

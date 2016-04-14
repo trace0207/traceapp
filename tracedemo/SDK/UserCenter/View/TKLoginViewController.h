@@ -32,4 +32,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 +(void)showLoginViewPage:(UIViewController *)controller;
++(void)showLoginView;
+
 @end

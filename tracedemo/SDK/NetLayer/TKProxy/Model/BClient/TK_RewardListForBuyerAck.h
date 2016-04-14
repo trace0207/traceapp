@@ -95,6 +95,7 @@
 @property (nonatomic,strong)NSString * userId;
 @property (nonatomic,strong)NSString * userNickName;
 @property (nonatomic,strong)NSString * userSignature;
+@property (nonatomic,assign)NSInteger  followCount;
 
 
 

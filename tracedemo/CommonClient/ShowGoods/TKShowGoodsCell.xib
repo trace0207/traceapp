@@ -339,17 +339,13 @@
                 <outlet property="buyerVipLevelText" destination="Mzq-fh-wfQ" id="S2B-Jj-ZGB"/>
                 <outlet property="categoryBtn" destination="tDz-fx-Iwo" id="Ucq-c2-g87"/>
                 <outlet property="contentText" destination="h9T-Np-ZHp" id="6Yb-Ul-lcW"/>
-                <outlet property="describleLabel" destination="2GN-m2-kCG" id="i24-sD-q9V"/>
                 <outlet property="followCount" destination="xIX-c3-Dhd" id="RWT-Ft-QzV"/>
                 <outlet property="followMore" destination="nR8-Kt-5UT" id="0o4-UL-vni"/>
                 <outlet property="followSwitch" destination="HOv-LS-IrO" id="rg1-XK-gJF"/>
-                <outlet property="gradeLabel" destination="rR8-sj-3n5" id="rlb-9f-pqK"/>
                 <outlet property="headFirstLabel" destination="uwt-W4-NAm" id="ing-IX-Afx"/>
-                <outlet property="headImage" destination="yhC-bD-55r" id="8VK-4M-3ag"/>
                 <outlet property="headSecondLabel" destination="FoS-4y-T0A" id="sZC-20-6Uq"/>
                 <outlet property="imageContentView" destination="5B4-AT-Bsh" id="tpK-Rb-E2D"/>
                 <outlet property="imageFiledHeight" destination="cOm-h6-lpL" id="rO3-np-lLs"/>
-                <outlet property="nameLabel" destination="l06-3i-a4J" id="cxe-w2-UEj"/>
                 <outlet property="textHeight" destination="Bi9-Ge-9aU" id="qhU-dt-JQE"/>
                 <outlet property="timeText" destination="zqc-Oh-GoH" id="fJV-3r-zeU"/>
                 <outlet property="userHeadImage" destination="FM8-kW-RaX" id="P14-Zu-GV9"/>
@@ -398,6 +394,9 @@
                             <constraint firstAttribute="height" constant="40" id="pc6-cn-ee8"/>
                         </constraints>
                         <state key="normal" image="icon_tab_message"/>
+                        <connections>
+                            <action selector="msgAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="q8H-b4-j25"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B10级买手" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rR8-sj-3n5">
                         <rect key="frame" x="144" y="29" width="86" height="18"/>
@@ -424,6 +423,12 @@
                     <constraint firstItem="2GN-m2-kCG" firstAttribute="leading" secondItem="yhC-bD-55r" secondAttribute="trailing" constant="8" id="x2Y-kh-Ndk"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="describleLabel" destination="2GN-m2-kCG" id="5yP-os-utf"/>
+                <outlet property="gradeLabel" destination="rR8-sj-3n5" id="shl-2B-EH4"/>
+                <outlet property="headImage" destination="yhC-bD-55r" id="vgI-bL-WPg"/>
+                <outlet property="nameLabel" destination="l06-3i-a4J" id="jnd-Hc-RJg"/>
+            </connections>
             <point key="canvasLocation" x="204" y="456"/>
         </tableViewCell>
     </objects>

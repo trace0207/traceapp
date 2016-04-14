@@ -416,7 +416,7 @@
     DDLogInfo(@"action from indexRow = %ld",indexPath.row);
     TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
     NSString * userid = rowM.ackData.userId;
-    [TKBuyerCenterViewController showUserPage:userid];
+    [TKBuyerCenterViewController showUserPage:userid isBuyer:NO];
     
 }
 
@@ -425,7 +425,7 @@
     DDLogInfo(@"action from indexRow = %ld",indexPath.row);
     TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
     NSString * userid = rowM.ackData.purchaserId;
-    [TKBuyerCenterViewController showUserPage:userid];
+    [TKBuyerCenterViewController showUserPage:userid isBuyer:YES];
 
 }
 -(void)onFollowBtnClick:(NSIndexPath *)indexPath

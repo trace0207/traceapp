@@ -29,6 +29,7 @@
 @property (nonatomic,strong)TK_ShareCategory * category;
 @property (weak,nonatomic) id<TKShowGoodsVMDelegate> showGoodsDelegate;
 
+
 @property (nonatomic,assign) BOOL hasInitData;
 -(void)resetData:(TK_GetOrdersAck *)ack;
 @end

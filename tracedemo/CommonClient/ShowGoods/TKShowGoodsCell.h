@@ -64,6 +64,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *describleLabel;
 - (IBAction)buyerFieldAction:(id)sender;
 - (IBAction)pariseAction:(id)sender;
+- (IBAction)msgAction:(id)sender;
 - (IBAction)userHeadClick:(id)sender;
 - (void)setHeadViewModel:(id)model;
 @end

@@ -176,6 +176,18 @@
 -(void)releaseReward:(NSString *)rewardId source:(NSInteger)source withBlock:(hfAckBlock)block;
 
 
+/**
+ 查询买手基本信息
+ **/
+-(void)getBuyerUserInfo:(NSString *)userId withBlock:(hfAckBlock)block;
+
+
+/**
+ 查询买手主页晒单列表
+ **/
+-(void)getBuyerHomePageOrders:(NSString *)userId  page:(NSInteger)page withBlock:(hfAckBlock)block;
+
+
 #pragma  mark CClient
 
 /**

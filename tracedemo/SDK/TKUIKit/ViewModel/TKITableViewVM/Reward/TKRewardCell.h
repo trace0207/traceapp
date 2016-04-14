@@ -64,6 +64,8 @@
 - (IBAction)acceptAction:(id)sender;
 - (IBAction)discardAction:(id)sender;
 @property (weak, nonatomic) IBOutlet TKSwitch *iWantSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *followCountText;
+@property (weak, nonatomic) IBOutlet UILabel *followMoreLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *cFollowCountFleld;
 @property (weak, nonatomic) IBOutlet UIView *cIwantToBuyField;

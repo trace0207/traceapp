@@ -19,6 +19,7 @@
 #import "TKAlertView.h"
 #import "TKBuyerCenterViewController.h"
 #import "TKLoginViewController.h"
+#import "NSString+HFStrUtil.h"
 
 #define IN_REWARDING  101
 
@@ -147,6 +148,16 @@
     [cell.infoIconBtn2 setTitle:rowData.categoryName forState:UIControlStateNormal];
     cell.delegate = self;
     cell.indexPath = indexPath;
+    cell.followCountText.text = [NSString tkStringFromNumber:rowData.followCount];
+    if(rowData.followCount >= 99)
+    {
+        cell.followCountText.text = @"99";
+        cell.followMoreLabel.hidden = NO;
+    }
+    else
+    {
+        cell.followMoreLabel.hidden = YES;
+    }
     
 }
 
@@ -247,7 +258,7 @@
 {
     TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
     NSString * userId = cellData.ackData.userId;
-    [TKBuyerCenterViewController showUserPage:userId];
+    [TKBuyerCenterViewController showUserPage:userId isBuyer:NO];
 }
 
 
