@@ -8,6 +8,7 @@
 
 #import "TKBuyerCenterViewController.h"
 #import "TKBuyerCenterVM.h"
+
 @interface TKBuyerCenterViewController ()
 {
     TKBuyerCenterVM * vm;
@@ -31,6 +32,10 @@
     // Do any additional setup after loading the view.
     
     [self initView];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

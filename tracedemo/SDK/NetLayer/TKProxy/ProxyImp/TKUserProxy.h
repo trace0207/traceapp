@@ -39,5 +39,10 @@
             password:(NSString *)newPassword
            withBlock:(hfAckBlock)block;
 
+/**
+ 查看头像主页
+ **/
+-(void)getUserHomePage:(NSString *)userId userType:(NSInteger)type withBoloc:(hfAckBlock)block;
+
 
 @end

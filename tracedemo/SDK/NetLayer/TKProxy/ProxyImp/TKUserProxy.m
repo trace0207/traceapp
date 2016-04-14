@@ -13,6 +13,7 @@
 #import "TK_RegisterNewUserAck.h"
 #import "TK_ModifyPasswordArg.h"
 #import "TKUserCenter.h"
+#import "TK_GetUserHomePageArg.h"
 
 //TK_LoginArg,TK_RegisterNewUserArg,TK_RegisterNewUserAck;
 @implementation TKUserProxy
@@ -89,4 +90,14 @@
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
 }
 
+
+/**
+ 查看头像主页
+ **/
+-(void)getUserHomePage:(NSString *)userId userType:(NSInteger)type withBoloc:(hfAckBlock)block
+{
+    TK_GetUserHomePageArg * arg = [[TK_GetUserHomePageArg alloc] init];
+    arg.userId = userId;
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
 @end

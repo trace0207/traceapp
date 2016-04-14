@@ -30,7 +30,7 @@
 #import "TK_ReleaseRewardArg.h"
 #import "TK_CGetRewardListArg.h"
 #import "TK_GetInviteCodeArg.h"
-
+#import "TK_GetUserPageDataListArg.h"
 
 
 @implementation TKMainProxy
@@ -210,11 +210,7 @@
         arg.needCompress = 1;
         [array addObject:arg];
     }
-    [[HF_HttpClient httpClient] sendMUtableArgsForHiffit:array showLoading:NO toastError:NO withBlock:^(NSArray<__kindof HF_BaseAck *> *acks) {
-       
-//        DDLogInfo(@"ack back %@",acks);
-        block(acks);
-    }];
+    [[HF_HttpClient httpClient] sendMUtableArgsForHiffit:array showLoading:NO toastError:NO withBlock:block];
 }
 
 
@@ -336,10 +332,7 @@
     arg.purchaserDay = days;
     arg.postrewardId = rewardId;
     arg.showLoadingStr = @"YES";
-    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:^(HF_BaseAck *ack) {
-    
-        block(ack);
-    }];
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
     
     
 }
@@ -356,10 +349,7 @@
     arg.postrewardId = rewardId;
     arg.source = source;
     arg.showLoadingStr = @"YES";
-    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:^(HF_BaseAck *ack) {
-        
-        block(ack);
-    }];
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
     
 }
 
@@ -376,5 +366,18 @@
 //    }];
 //}
 
+
+/**
+ 查询用户主页的  晒单列表
+ **/
+-(void)getCustomerPageOrders:(NSString *)userId page:(NSInteger) page  withBolocl:(hfAckBlock)block
+{
+    TK_GetUserPageDataListArg * arg = [[TK_GetUserPageDataListArg alloc] init];
+    arg.ackClassName = @"TK_GetOrdersAck";
+    arg.userId = userId;
+    arg.pageSize = 20;
+    arg.pageOffset = page;
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
 
 @end

@@ -9,6 +9,7 @@
 #import "TKBuyerCenterVM.h"
 #import "TK_GetOrdersAck.h"
 #import "TKShowGoodsCell.h"
+#import "TK_GetUserHomePageAck.h"
 
 @interface TKBuyerCenterVM ()
 @property (nonatomic, strong) TKShowGoodsCell *header;
@@ -31,20 +32,38 @@
 - (void)tkLoadDefaultData
 {
     WS(weakSelf)
-    [[TKProxy proxy].mainProxy getShowOrders:self.category.categoryId
-                                     brandId:self.brand.brandId
-                                        page:0 withBlock:^(HF_BaseAck *ack) {
+    [[TKProxy proxy].userProxy getUserHomePage:@"1" userType:1 withBoloc:^(HF_BaseAck *ack) {
+       
+        if(ack.sucess)
+        {
+            [weakSelf resetHeadView:(TK_GetUserHomePageAck *)ack];
+        }
+        else
+        {
+            [[HFHUDView shareInstance] ShowTips:@"加载用户基本信息失败" delayTime:2.0 atView:nil];
+        }
         
-        //        DDLogInfo(@"orders list %@",ack);
         
-        if([ack isKindOfClass:[TK_GetOrdersAck class]])
+    }];
+    
+    [[TKProxy proxy].mainProxy getCustomerPageOrders:@"1" page:0 withBolocl:^(HF_BaseAck *ack) {
+        
+        if(ack.sucess && [ack isKindOfClass:[TK_GetOrdersAck class]])
         {
             [weakSelf resetData:(TK_GetOrdersAck *)ack];
         }
         
         [weakSelf stopRefresh];
-        
     }];
+}
+
+
+-(void)resetHeadView:(TK_GetUserHomePageAck *)ack
+{
+    TKSetHeadImageView(self.header.headImage,ack.data.headerUrl)
+    self.header.nameLabel.text = ack.data.nickName;
+    self.header.describleLabel.text = ack.data.signature;
+    self.header.gradeLabel.text = ack.data.mobile;
 }
 
 @end

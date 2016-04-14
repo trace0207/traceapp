@@ -9,5 +9,6 @@
 #import "TKIShowGoodsVM.h"
 
 @interface TKBuyerCenterVM : TKIShowGoodsVM
+@property (assign,nonatomic) NSString * userId;
 
 @end

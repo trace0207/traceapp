@@ -186,4 +186,11 @@
 //         rewardStatus:(NSInteger)status
 //            withBlock:(hfAckBlock)block;
 
+
+/**
+ 查询用户主页的  晒单列表
+ **/
+-(void)getCustomerPageOrders:(NSString *)userId page:(NSInteger) page  withBolocl:(hfAckBlock)block;
+
+
 @end

@@ -54,6 +54,12 @@
 		8A37499C1C924D23003DE59E /* TKNotifycationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749991C924D23003DE59E /* TKNotifycationViewController.xib */; };
 		8A37499D1C924D23003DE59E /* TKNotifycationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749991C924D23003DE59E /* TKNotifycationViewController.xib */; };
 		8A5B60E71C85C4EB00BF8E19 /* BUserCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5B60E61C85C4EB00BF8E19 /* BUserCenterVM.m */; };
+		8A76FFF51CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76FFF41CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m */; };
+		8A76FFF61CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76FFF41CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m */; };
+		8A76FFF91CBF380D00CA8BCE /* TK_GetUserHomePageAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76FFF81CBF380D00CA8BCE /* TK_GetUserHomePageAck.m */; };
+		8A76FFFA1CBF380D00CA8BCE /* TK_GetUserHomePageAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76FFF81CBF380D00CA8BCE /* TK_GetUserHomePageAck.m */; };
+		8A76FFFD1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76FFFC1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.m */; };
+		8A76FFFE1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76FFFC1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.m */; };
 		8A9985921C86C3A6000F9CBC /* BHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA3723F1C755EB50075333E /* BHomePageViewController.m */; };
 		8A9985931C86C514000F9CBC /* BHomeChildAVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA372441C75B9550075333E /* BHomeChildAVC.m */; };
 		8A9985941C86C519000F9CBC /* BHomeChildAScrolBox.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA372531C75C5100075333E /* BHomeChildAScrolBox.m */; };
@@ -2793,6 +2799,12 @@
 		8A6B3FA71BF0898300E5C982 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8A6B3FA91BF08A1200E5C982 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		8A6B3FAB1BF08A2600E5C982 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		8A76FFF31CBF2D5500CA8BCE /* TK_GetUserHomePageArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetUserHomePageArg.h; sourceTree = "<group>"; };
+		8A76FFF41CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetUserHomePageArg.m; sourceTree = "<group>"; };
+		8A76FFF71CBF380D00CA8BCE /* TK_GetUserHomePageAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetUserHomePageAck.h; sourceTree = "<group>"; };
+		8A76FFF81CBF380D00CA8BCE /* TK_GetUserHomePageAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetUserHomePageAck.m; sourceTree = "<group>"; };
+		8A76FFFB1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetUserPageDataListArg.h; sourceTree = "<group>"; };
+		8A76FFFC1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetUserPageDataListArg.m; sourceTree = "<group>"; };
 		8A80E1ED1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserDetailInfoTableVM.h; sourceTree = "<group>"; };
 		8A80E1EE1C1D7BB8003FF168 /* TKUserDetailInfoTableVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserDetailInfoTableVM.m; sourceTree = "<group>"; };
 		8A978A5D1BD3C8EF00C84ED2 /* BasePortraitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePortraitView.h; sourceTree = "<group>"; };
@@ -6076,6 +6088,12 @@
 				8A9D9B491C980740009F877F /* TK_PublishRewardArg.m */,
 				8A9D9B4C1C980750009F877F /* TK_PublishRewardAck.h */,
 				8A9D9B4D1C980750009F877F /* TK_PublishRewardAck.m */,
+				8A76FFF31CBF2D5500CA8BCE /* TK_GetUserHomePageArg.h */,
+				8A76FFF41CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m */,
+				8A76FFF71CBF380D00CA8BCE /* TK_GetUserHomePageAck.h */,
+				8A76FFF81CBF380D00CA8BCE /* TK_GetUserHomePageAck.m */,
+				8A76FFFB1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.h */,
+				8A76FFFC1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.m */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -6787,6 +6805,7 @@
 				BB83F94A1C72C01C0013A6A0 /* MMExampleCenterTableViewController.m in Sources */,
 				BB83F94B1C72C01C0013A6A0 /* MyModulesListRes.m in Sources */,
 				BB83F94C1C72C01C0013A6A0 /* TAPageControl.m in Sources */,
+				8A76FFFD1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.m in Sources */,
 				BB83F94D1C72C01C0013A6A0 /* HFSchemeCell.m in Sources */,
 				BB83F94E1C72C01C0013A6A0 /* LoadSchemeDataAck.m in Sources */,
 				BB83F94F1C72C01C0013A6A0 /* WebViewJavascriptBridge.m in Sources */,
@@ -6799,6 +6818,7 @@
 				BB83F9551C72C01C0013A6A0 /* UserViewController.m in Sources */,
 				BB83F9561C72C01C0013A6A0 /* HFModifyInfoReq.m in Sources */,
 				BB83F9571C72C01C0013A6A0 /* HFHealthCell.m in Sources */,
+				8A76FFF91CBF380D00CA8BCE /* TK_GetUserHomePageAck.m in Sources */,
 				9134FA5E1CBCDA0E0089BE93 /* MLEmojiLabel.m in Sources */,
 				BB83F9581C72C01C0013A6A0 /* FMDatabaseQueue.m in Sources */,
 				BB83F9591C72C01C0013A6A0 /* HFVerifySMSReq.m in Sources */,
@@ -6961,6 +6981,7 @@
 				BB83F9DE1C72C01C0013A6A0 /* UIImageView+TKI_ImageFill.m in Sources */,
 				BB83F9DF1C72C01C0013A6A0 /* FinishSchemeArg.m in Sources */,
 				BB83F9E01C72C01C0013A6A0 /* GetSchemeDayInfoArg.m in Sources */,
+				8A76FFF51CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m in Sources */,
 				BB83F9E11C72C01C0013A6A0 /* CheckUpdateReq.m in Sources */,
 				BB83F9E21C72C01C0013A6A0 /* HFDevHistoryViewController.m in Sources */,
 				BB83F9E31C72C01C0013A6A0 /* HFCupView.m in Sources */,
@@ -7438,6 +7459,7 @@
 				BB83FC081C72C16B0013A6A0 /* MyModulesListRes.m in Sources */,
 				BB83FC091C72C16B0013A6A0 /* TAPageControl.m in Sources */,
 				BB83FC0A1C72C16B0013A6A0 /* HFSchemeCell.m in Sources */,
+				8A76FFFE1CBF418E00CA8BCE /* TK_GetUserPageDataListArg.m in Sources */,
 				BB83FC0B1C72C16B0013A6A0 /* LoadSchemeDataAck.m in Sources */,
 				BB83FC0C1C72C16B0013A6A0 /* WebViewJavascriptBridge.m in Sources */,
 				BB83FC0D1C72C16B0013A6A0 /* SchemeActionsAck.m in Sources */,
@@ -7450,6 +7472,7 @@
 				BB83FC131C72C16B0013A6A0 /* HFModifyInfoReq.m in Sources */,
 				BB83FC141C72C16B0013A6A0 /* HFHealthCell.m in Sources */,
 				BB83FC151C72C16B0013A6A0 /* FMDatabaseQueue.m in Sources */,
+				8A76FFFA1CBF380D00CA8BCE /* TK_GetUserHomePageAck.m in Sources */,
 				9134FA5F1CBCDA0E0089BE93 /* MLEmojiLabel.m in Sources */,
 				BB83FC161C72C16B0013A6A0 /* HFVerifySMSReq.m in Sources */,
 				BB83FC171C72C16B0013A6A0 /* HFNewMainHeaderView.m in Sources */,
@@ -7612,6 +7635,7 @@
 				BB83FC9D1C72C16B0013A6A0 /* GetSchemeDayInfoArg.m in Sources */,
 				BB83FC9E1C72C16B0013A6A0 /* CheckUpdateReq.m in Sources */,
 				BB83FC9F1C72C16B0013A6A0 /* HFDevHistoryViewController.m in Sources */,
+				8A76FFF61CBF2D5500CA8BCE /* TK_GetUserHomePageArg.m in Sources */,
 				BB83FCA01C72C16B0013A6A0 /* HFCupView.m in Sources */,
 				BB83FCA11C72C16B0013A6A0 /* TK_SettingCell.m in Sources */,
 				BB83FCA21C72C16B0013A6A0 /* HFPrivacyViewController.m in Sources */,
