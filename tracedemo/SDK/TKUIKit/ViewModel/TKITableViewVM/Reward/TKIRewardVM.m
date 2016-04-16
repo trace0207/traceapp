@@ -77,6 +77,7 @@
                                            }
                                            else
                                            {
+                                               nowPage = nowPage + 1;
                                                isMore = false;
                                            }
                                           
@@ -144,8 +145,12 @@
     
     cell.priceText.text =  [NSString stringWithFormat:@"%0.2f",rowData.rewardPrice.floatValue/100];
     [cell.timeCountView beginCutDownFromSeconds:rowData.clock.integerValue/1000];
-    [cell.infoIconBtn1 setTitle:rowData.brandName forState:UIControlStateNormal];
-    [cell.infoIconBtn2 setTitle:rowData.categoryName forState:UIControlStateNormal];
+//    [cell.infoIconBtn1 setTitle:rowData.brandName forState:UIControlStateNormal];
+//    [cell.infoIconBtn2 setTitle:rowData.categoryName forState:UIControlStateNormal];
+    
+    cell.brandLabel.text =[NSString stringWithFormat:@"  %@  ",rowData.brandName];
+    cell.categoryLabel.text = [NSString stringWithFormat:@"  %@  ",rowData.categoryName];
+    
     cell.delegate = self;
     cell.indexPath = indexPath;
     cell.followCountText.text = [NSString tkStringFromNumber:rowData.followCount];
@@ -157,8 +162,8 @@
     else
     {
         cell.followMoreLabel.hidden = YES;
+        cell.followCountText.text = [NSString tkStringFromNumber:rowData.followCount];
     }
-    
 }
 
 

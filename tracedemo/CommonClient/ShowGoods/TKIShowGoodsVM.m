@@ -341,8 +341,11 @@
        cell.followMore.hidden = NO;
     }
     
-    [cell.brandBtn setTitle:ackData.brandName forState:UIControlStateNormal];
-    [cell.categoryBtn setTitle:ackData.categoryName forState:UIControlStateNormal];
+//    [cell.brandBtn setTitle:ackData.brandName forState:UIControlStateNormal];
+//    [cell.categoryBtn setTitle:ackData.categoryName forState:UIControlStateNormal];
+    
+    cell.brandLabel.text = [NSString stringWithFormat:@"  %@  ",ackData.brandName];
+    cell.categoryLabel.text = [NSString stringWithFormat:@"  %@  ",ackData.categoryName];
     
     cell.tkShowGoodscellDelegate = self;
     cell.indexPath = indexPath;

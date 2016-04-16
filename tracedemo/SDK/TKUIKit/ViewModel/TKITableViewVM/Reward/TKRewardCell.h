@@ -52,8 +52,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *contentInfo;
 @property (strong, nonatomic) IBOutlet UIImageView *statusIcon;
 @property (strong, nonatomic) IBOutlet UIView *timeView;
-@property (strong, nonatomic) IBOutlet UIButton *infoIconBtn1;
-@property (strong, nonatomic) IBOutlet UIButton *infoIconBtn2;
+@property (strong, nonatomic) IBOutlet UILabel *brandLabel;
+@property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *pic1;
 @property (strong, nonatomic) IBOutlet UILabel *moneyTip;
 @property (strong, nonatomic) IBOutlet UIImageView *pic2;

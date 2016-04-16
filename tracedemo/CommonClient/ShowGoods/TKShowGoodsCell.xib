@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="359.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-Ts-WWL">
@@ -129,25 +129,35 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iD2-ca-rpe">
                                         <rect key="frame" x="36" y="62" width="286" height="20"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Web-2f-P4B">
-                                                <rect key="frame" x="2" y="0.0" width="46" height="20"/>
-                                                <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="品牌" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWZ-lM-ueD">
+                                                <rect key="frame" x="0.0" y="1" width="42" height="18"/>
+                                                <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="era-zP-L4E"/>
+                                                    <constraint firstAttribute="height" constant="18" id="til-FQ-A4f"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDz-fx-Iwo">
-                                                <rect key="frame" x="57" y="0.0" width="46" height="20"/>
-                                                <color key="backgroundColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="类目" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z01-oP-jbf">
+                                                <rect key="frame" x="52" y="1" width="42" height="18"/>
+                                                <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="CAr-oG-AJm"/>
+                                                    <constraint firstAttribute="height" constant="18" id="Om1-o3-gaf"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
+                                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="Z01-oP-jbf" firstAttribute="leading" secondItem="MWZ-lM-ueD" secondAttribute="trailing" constant="10" id="0gc-nK-ZeH"/>
+                                            <constraint firstItem="MWZ-lM-ueD" firstAttribute="top" secondItem="iD2-ca-rpe" secondAttribute="top" constant="1" id="3zk-w4-cG3"/>
+                                            <constraint firstItem="MWZ-lM-ueD" firstAttribute="leading" secondItem="iD2-ca-rpe" secondAttribute="leading" id="R1Z-Ou-AxH"/>
+                                            <constraint firstItem="Z01-oP-jbf" firstAttribute="top" secondItem="iD2-ca-rpe" secondAttribute="top" constant="1" id="fXY-CW-BPr"/>
                                             <constraint firstAttribute="height" constant="20" id="gXG-Wd-HRf"/>
                                         </constraints>
                                     </view>
@@ -333,11 +343,11 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="addressText" destination="oft-hF-7N3" id="cmY-oU-63w"/>
-                <outlet property="brandBtn" destination="Web-2f-P4B" id="q9E-Mz-M3v"/>
+                <outlet property="brandLabel" destination="MWZ-lM-ueD" id="M0v-DH-scr"/>
                 <outlet property="buyerHeadImage" destination="VRh-Tn-2fs" id="sWb-qF-lso"/>
                 <outlet property="buyerNameText" destination="OYY-Fm-deq" id="bsD-ea-BdT"/>
                 <outlet property="buyerVipLevelText" destination="Mzq-fh-wfQ" id="S2B-Jj-ZGB"/>
-                <outlet property="categoryBtn" destination="tDz-fx-Iwo" id="Ucq-c2-g87"/>
+                <outlet property="categoryLabel" destination="Z01-oP-jbf" id="FTC-hc-bfv"/>
                 <outlet property="contentText" destination="h9T-Np-ZHp" id="6Yb-Ul-lcW"/>
                 <outlet property="followCount" destination="xIX-c3-Dhd" id="RWT-Ft-QzV"/>
                 <outlet property="followMore" destination="nR8-Kt-5UT" id="0o4-UL-vni"/>

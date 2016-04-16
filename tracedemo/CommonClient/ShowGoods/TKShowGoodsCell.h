@@ -46,8 +46,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *zanMore;
 @property (weak, nonatomic) IBOutlet UILabel *followCount;
 
-@property (weak, nonatomic) IBOutlet UIButton *brandBtn;
-@property (weak, nonatomic) IBOutlet UIButton *categoryBtn;
+@property (weak, nonatomic) IBOutlet UILabel *brandLabel;
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *followMore;
 @property (weak, nonatomic) IBOutlet TKSwitch *followSwitch;
 

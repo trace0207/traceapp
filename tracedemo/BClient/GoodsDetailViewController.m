@@ -42,8 +42,8 @@
     self.detailView.headImageView.roundValue = 2.0f;
 
     self.detailView.nameLabel.text = self.data.userNickName;
-    self.detailView.brandLabel.text = self.data.brandName;
-    self.detailView.kindLabel.text = self.data.categoryName;
+    self.detailView.brandLabel.text = [NSString stringWithFormat:@"  %@  ",self.data.brandName];
+    self.detailView.kindLabel.text = [NSString stringWithFormat:@"  %@  ",self.data.categoryName];
     [self.detailView.countDownView beginCutDownFromSeconds:self.data.clock.integerValue/1000];
     [self.grobBtn setBackgroundImage:IMG(@"bg_purchase") forState:UIControlStateNormal];
     self.scrollView.contentSize = CGSizeMake(kScreenWidth, self.bannerView.frame.size.height+self.detailView.frame.size.height-300);
