@@ -114,4 +114,12 @@ const int maxPicturesNumber = 3;
     }
 }
 
+
++(void)showAfterSalesView:(NSString *)orderId
+{
+    TKAfterSalesViewController * vc = [[TKAfterSalesViewController alloc] init];
+    vc.orderId = orderId;
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+}
+
 @end

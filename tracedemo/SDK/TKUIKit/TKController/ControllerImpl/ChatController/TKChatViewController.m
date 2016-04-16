@@ -47,6 +47,22 @@
 
 @implementation TKChatViewController
 
+
+
+
+/**
+ 显示聊天窗口
+ **/
++(void)showChatView:(NSString *)toId isBuyer:(BOOL)isBuyer
+{
+    TKChatViewController * vc = [[TKChatViewController alloc] init];
+    vc.toId = toId;
+    vc.isBuyer = isBuyer;
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitle:@"小猪猪"];
@@ -127,6 +143,8 @@
 {
     NSLog(@">>>>>  %@", [self.dataArray[indexPath.row] text]);
 }
+
+
 
 
 @end

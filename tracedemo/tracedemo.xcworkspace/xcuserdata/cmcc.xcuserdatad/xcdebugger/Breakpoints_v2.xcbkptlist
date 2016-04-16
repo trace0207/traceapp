@@ -324,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CClient/CPublishRewardViewController.m"
-            timestampString = "482226136.001805"
+            timestampString = "482505991.346309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "918"
-            endingLineNumber = "918"
+            startingLineNumber = "923"
+            endingLineNumber = "923"
             landmarkName = "-onPublishSuccess"
             landmarkType = "5">
          </BreakpointContent>
@@ -410,6 +410,38 @@
             startingLineNumber = "156"
             endingLineNumber = "156"
             landmarkName = "-fillTableCell:withDataIndex:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CommonClient/ShowGoods/TKIShowGoodsVM.m"
+            timestampString = "482485506.683881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "419"
+            endingLineNumber = "419"
+            landmarkName = "-onUserHeadFieldClick:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDK/Hiifit/Common/Public/PublicFunc/NSString+HFStrUtil.m"
+            timestampString = "482505980.611018"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "-tkIsNumberText"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

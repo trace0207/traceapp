@@ -26,7 +26,7 @@
 }
 - (void)defaultViewSetting
 {
-    self.userId = @"1";
+//    self.userId = @"1";
     [self.mTableView setTableHeaderView:self.header];
     
 }

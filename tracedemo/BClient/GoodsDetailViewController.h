@@ -21,4 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *followBtn;
 - (IBAction)followAction:(id)sender;
 
++(void)showDetailById:(NSString *)rewardId;
+
 @end

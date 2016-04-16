@@ -32,7 +32,7 @@
     arg.showLoadingStr = @"YES";
     arg.role = ROLE;
     arg.method = @"GET";
-    arg.token = @"trace990";
+    arg.token = [TKUserCenter instance].userNormalVM.token;
     
     
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
@@ -100,4 +100,10 @@
     arg.userId = userId;
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
+
+-(void)updateUserInfo
+{
+    
+}
+
 @end

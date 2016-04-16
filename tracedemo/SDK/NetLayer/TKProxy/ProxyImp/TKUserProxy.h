@@ -44,5 +44,7 @@
  **/
 -(void)getUserHomePage:(NSString *)userId userType:(NSInteger)type withBoloc:(hfAckBlock)block;
 
+-(void)updateUserInfo;
+
 
 @end

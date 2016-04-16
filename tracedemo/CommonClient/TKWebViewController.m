@@ -15,6 +15,9 @@
 #import "TKAlertView.h"
 #import "GlobNotifyDefine.h"
 #import "TKUserCenter.h"
+#import "GoodsDetailViewController.h"
+#import "TKAfterSalesViewController.h"
+#import "TKChatViewController.h"
 //#import "TK_LoginAck.h"
 
 
@@ -227,17 +230,30 @@
         [TKWebViewController showWebView:@"订单详情" url:relativeUrl];
         
     }
-    else if([@"service" isEqualToString:actionString]) //联系客服
+    else if([@"telservice" isEqualToString:actionString]) //联系客服
     {
         [UIKitTool callPhone:SERVER];
     }
     else if([@"addressId" isEqualToString:actionString] || [@"addressDefault" isEqualToString:actionString])
     {
         [self onAddressChange:actionString data:dataDic];
+    }else if([@"postrewardDetail" isEqualToString:actionString])
+    {
+        NSString * rewardId = [dataDic objectForKey:@"postrewardId"];
+        [GoodsDetailViewController showDetailById:rewardId];
+    }else if([@"service" isEqualToString:actionString])
+    {
+//        NSString * rewardId = [dataDic objectForKey:@"postrewardId"];
+        NSString * orderId = [dataDic objectForKey:@"orderId"];
+        [TKAfterSalesViewController showAfterSalesView:orderId];
+    }
+    else if([@"talk" isEqualToString:actionString])
+    {
+        // 联系买手
+        NSString * purchaserId = [dataDic objectForKey:@"purchaserId"];
+        [TKChatViewController showChatView:purchaserId isBuyer:YES];
     }
 }
-
-
 
 
 -(void)onAddressChange:(NSString *)action data:(NSDictionary *)data

@@ -417,7 +417,12 @@
 -(void)onUserHeadFieldClick:(NSIndexPath *)indexPath
 {
     DDLogInfo(@"action from indexRow = %ld",indexPath.row);
-    TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
+     TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
+    if([rowM.ackData.userId isEqualToString:@"0"])
+    {
+        [[HFHUDView shareInstance] ShowTips:@"匿名消费者不可以查看主页" delayTime:2.0 atView:nil];
+        return;
+    }
     NSString * userid = rowM.ackData.userId;
     [TKBuyerCenterViewController showUserPage:userid isBuyer:NO];
     

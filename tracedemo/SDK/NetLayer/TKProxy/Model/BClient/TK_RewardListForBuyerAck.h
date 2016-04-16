@@ -8,10 +8,11 @@
 
 #import "HF_BaseAck.h"
 
+
+
 @protocol RewardData <NSObject>
 
 @end
-
 
 
 @interface RewardData : TK_BaseJsonModel
@@ -99,13 +100,10 @@
 
 
 
-
 -(NSArray *)getPicsArrays;
 
-
-
-
 @end
+
 
 @interface TK_RewardListForBuyerAck : HF_BaseAck
 

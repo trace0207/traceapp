@@ -28,11 +28,11 @@
 #import "ActionTools.h"
 #import "TK_AcceptRewardArg.h"
 #import "TK_ReleaseRewardArg.h"
-#import "TK_CGetRewardListArg.h"
 #import "TK_GetInviteCodeArg.h"
 #import "TK_GetUserPageDataListArg.h"
 #import "TK_GetBuyerHomePageListArg.h"
 #import "TK_GetBuyerUserInfoArg.h"
+#import "TK_GetRewardByIdArg.h"
 
 
 @implementation TKMainProxy
@@ -254,6 +254,31 @@
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 
+
+/**
+ 获取消息盒子数据
+ **/
+-(void)getMessageCenter:(TK_MessageCenterArg *)arg withBlock:(hfAckBlock)block
+{
+    arg.role = 1;
+#if B_Client ==1
+    arg.role= 0;
+#endif
+    
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
+
+
+/**
+ 根据ID 查询悬赏详情
+ **/
+-(void)queryRewardById:(NSString *)rewardId withBlock:(hfAckBlock)block
+{
+    TK_GetRewardByIdArg * arg = [[TK_GetRewardByIdArg alloc] init];
+    arg.postrewardId = rewardId;
+    arg.showLoadingStr = @"YES";
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
 
 
 #pragma mark   BClient

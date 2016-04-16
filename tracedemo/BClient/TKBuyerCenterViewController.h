@@ -10,6 +10,7 @@
 
 @interface TKBuyerCenterViewController : TKIBaseNavWithDefaultBackVC
 @property (nonatomic,assign)BOOL isBuyer;
+@property (nonatomic,strong) NSString * userId;
 
 +(void)showUserPage:(NSString *)userId isBuyer:(BOOL)isBuyer;
 

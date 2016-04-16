@@ -23,6 +23,7 @@
 {
     TKBuyerCenterViewController * bvc = [[TKBuyerCenterViewController alloc] init];
     bvc.isBuyer = isBuyer;
+    bvc.userId = userId;
     [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
 }
 
@@ -62,6 +63,7 @@
 {
     vm = [[TKBuyerCenterVM alloc] initWithFreshAbleTable];
     vm.isBuyer = self.isBuyer;
+    vm.userId = self.userId;
     [self.view addSubview:vm.pullRefreshView];
     [vm tkUpdateViewConstraint];
     [vm startPullDownRefreshing];

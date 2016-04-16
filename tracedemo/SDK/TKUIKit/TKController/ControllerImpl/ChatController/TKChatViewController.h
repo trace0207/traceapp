@@ -25,6 +25,18 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface TKChatViewController : UITableViewController
+//@property (nonatomic,assign)
+@property (nonatomic,strong)NSString * toId;
+@property (nonatomic,assign)BOOL isBuyer;
+
+
+
+/**
+ 显示聊天窗口
+ **/
++(void)showChatView:(NSString *)toId isBuyer:(BOOL)isBuyer;
+
 
 @end

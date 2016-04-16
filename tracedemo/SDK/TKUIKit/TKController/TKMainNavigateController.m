@@ -213,6 +213,11 @@
         self.selectedIndex = 3;
         temploginEvent = TK_Default;
     }
+    else if(temploginEvent == TK_GotoMessageCenter)
+    {
+        self.selectedIndex = 1;
+        temploginEvent = TK_Default;
+    }
     
 }
 
@@ -332,7 +337,7 @@
     navc4.hidDefaultBackBtn = YES;
     navc4.defaultURL = [[TKProxy proxy].tkBaseUrl  stringByAppendingString:CMyGoodsURL];
     navc4.tabBarItem.image = [UIImage imageNamed:@"icon_tab_mygoods"];
-    navc4.tabBarItem.selectedImage = [IMG(@"icon_tab_mygoods_active_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    navc4.tabBarItem.selectedImage = [IMG(@"icon_tab_mygoods_active") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     TKUserCenterViewController * navc5 = [[TKUserCenterViewController alloc] init];
     navc5.title = @"我的";
@@ -421,6 +426,12 @@
             return NO;
         }
         return  YES;
+    }
+    else if([viewController isKindOfClass:[TKIMessageCenterViewController class]] && ![[TKUserCenter instance]isLogin])
+    {
+        [self showLoginView];
+        temploginEvent = TK_GotoMessageCenter;
+        return NO;
     }
     else
     {

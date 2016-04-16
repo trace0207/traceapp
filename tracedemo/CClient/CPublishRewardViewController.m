@@ -669,6 +669,11 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         [[HFHUDView shareInstance] ShowTips:@"商品吊牌图不能为空" delayTime:1.0 atView:NULL];
         return ;
     }
+    if(self.priceInputText.text.length == 0 )// || [self.priceInputText.text tkIsNumberText]
+    {
+       [[HFHUDView shareInstance] ShowTips:@"价格不能为空" delayTime:1.0 atView:NULL];
+        return;
+    }
     
     [self beginSend];
 }

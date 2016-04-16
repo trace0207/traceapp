@@ -15,6 +15,7 @@
 #import "TKAlertView.h"
 #import "TKLoginViewController.h"
 #import "CPublishRewardViewController.h"
+#import "TK_GetRewardByIdAck.h"
 
 
 @interface GoodsDetailViewController ()
@@ -55,6 +56,11 @@
     TKBorder(self.followBtn)
 #if B_Client == 1
     self.followBtn.hidden = YES;
+    if(![@"101" isEqualToString:self.data.rewardStatus])
+    {
+        self.grobBtn.userInteractionEnabled = NO;
+        self.freeBtn.userInteractionEnabled = NO;
+    }
 #else
     self.followBtn.hidden = NO;
     self.grobBtn.hidden = YES;
@@ -169,6 +175,33 @@
         [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:nil];
     }
 }
+
+
++(void)showDetailById:(NSString *)rewardId
+{
+    
+    [[TKProxy proxy].mainProxy queryRewardById:rewardId
+                                     withBlock:^(HF_BaseAck *ack) {
+                                         
+                                         if(ack.sucess)
+                                         {
+                                             TK_GetRewardByIdAck * ackData = (TK_GetRewardByIdAck *)ack;
+                                             NSDictionary * dataDic = ackData.data;
+                                             RewardData * rewardData = [[RewardData alloc] initWithDictionary:dataDic error:nil];
+                                             GoodsDetailViewController * vc = [[GoodsDetailViewController alloc] init];
+                                             vc.data = rewardData;
+                                             [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+                                         }
+                                         else
+                                         {
+                                             [[HFHUDView shareInstance] ShowTips:@"获取悬赏信息失败" delayTime:1.0 atView:nil];
+                                         }
+                                     }];
+    
+    
+    
+}
+
 
 
 #pragma  mark LoginDelegate

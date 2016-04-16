@@ -16,7 +16,8 @@ typedef NS_ENUM(NSInteger,TK_LoginEvent)
     TK_GoToUserCenter = 1,
     TK_GoToPublishReward = 2,
     TK_GoToOrderWebView = 3,
-    TK_GoToMyShowGoodsView = 4
+    TK_GoToMyShowGoodsView = 4,
+    TK_GotoMessageCenter = 5
     
 };
 

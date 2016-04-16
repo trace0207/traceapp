@@ -17,6 +17,15 @@ typedef NS_ENUM(NSInteger,HomePageType)
     B_AllReward = 1
 } ;
 
+
+typedef NS_ENUM(NSInteger,TKMessageType) {
+    TKMessageTypeForgive = 0,//弃单
+    TKMessageTypeStatement,//结算通知
+    TKMessageTypePraise,//点赞提醒
+    TKMessageTypeService,//客服消息
+    TKMessageTypeDefault,//默认
+};
+
 #ifndef TKGlobValue_h
 #define TKGlobValue_h
 

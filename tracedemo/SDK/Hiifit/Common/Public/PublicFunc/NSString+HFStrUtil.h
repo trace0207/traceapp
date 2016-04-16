@@ -40,4 +40,9 @@
  **/
 -(NSString *)tkStringByAppendInteger:(NSInteger)number;
 
+/**
+ 判断是否是数字 ， 包括小数点
+ **/
+-(BOOL)tkIsNumberText;
+
 @end

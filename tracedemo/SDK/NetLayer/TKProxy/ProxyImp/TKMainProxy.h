@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TK_MessageCenterArg.h"
 @class TK_PayArg,TKPublishShowGoodsArg ,TK_PublishRewardArg;
 
 
@@ -134,6 +135,15 @@
 -(void)tkPay:(TK_PayArg *)arg withBolco:(hfAckBlock)block;
 
 
+/**
+ 获取消息盒子数据
+ **/
+-(void)getMessageCenter:(TK_MessageCenterArg *)arg withBlock:(hfAckBlock)block;
+
+/**
+ 根据ID 查询悬赏详情
+ **/
+-(void)queryRewardById:(NSString *)rewardId withBlock:(hfAckBlock)block;
 
 #pragma mark   BClient
 

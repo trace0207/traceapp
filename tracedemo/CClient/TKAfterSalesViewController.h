@@ -14,6 +14,11 @@
 @property (weak, nonatomic) IBOutlet TKTextView *textView;
 @property (weak, nonatomic) IBOutlet UILabel *goOnLabel;
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+
+@property (nonatomic,strong)NSString *orderId;
+
 - (IBAction)choosePicAction:(id)sender;
 - (IBAction)submitAction:(id)sender;
+
++(void)showAfterSalesView:(NSString *)orderId;
 @end
