@@ -217,6 +217,10 @@
 		915FC6741C94036500A74704 /* BPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FC6721C94036500A74704 /* BPageViewController.m */; };
 		915FC67A1C95D5FC00A74704 /* KTDropdownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FC6791C95D5FC00A74704 /* KTDropdownMenuView.m */; };
 		915FC67B1C95D5FC00A74704 /* KTDropdownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FC6791C95D5FC00A74704 /* KTDropdownMenuView.m */; };
+		91772B181CC32FB700CEFA9E /* TKModifyNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91772B161CC32FB600CEFA9E /* TKModifyNameViewController.m */; };
+		91772B191CC32FB700CEFA9E /* TKModifyNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91772B161CC32FB600CEFA9E /* TKModifyNameViewController.m */; };
+		91772B1A1CC32FB700CEFA9E /* TKModifyNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91772B171CC32FB600CEFA9E /* TKModifyNameViewController.xib */; };
+		91772B1B1CC32FB700CEFA9E /* TKModifyNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91772B171CC32FB600CEFA9E /* TKModifyNameViewController.xib */; };
 		9182F2731C9EFCE800428B7F /* AbountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182F2711C9EFCE800428B7F /* AbountViewController.m */; };
 		9182F2741C9EFCE800428B7F /* AbountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182F2711C9EFCE800428B7F /* AbountViewController.m */; };
 		9182F2751C9EFCE800428B7F /* AbountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9182F2721C9EFCE800428B7F /* AbountViewController.xib */; };
@@ -2982,6 +2986,9 @@
 		915FC6721C94036500A74704 /* BPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPageViewController.m; sourceTree = "<group>"; };
 		915FC6781C95D5FC00A74704 /* KTDropdownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDropdownMenuView.h; sourceTree = "<group>"; };
 		915FC6791C95D5FC00A74704 /* KTDropdownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDropdownMenuView.m; sourceTree = "<group>"; };
+		91772B151CC32FB600CEFA9E /* TKModifyNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKModifyNameViewController.h; sourceTree = "<group>"; };
+		91772B161CC32FB600CEFA9E /* TKModifyNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKModifyNameViewController.m; sourceTree = "<group>"; };
+		91772B171CC32FB600CEFA9E /* TKModifyNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKModifyNameViewController.xib; sourceTree = "<group>"; };
 		9182F2701C9EFCE800428B7F /* AbountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbountViewController.h; sourceTree = "<group>"; };
 		9182F2711C9EFCE800428B7F /* AbountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbountViewController.m; sourceTree = "<group>"; };
 		9182F2721C9EFCE800428B7F /* AbountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbountViewController.xib; sourceTree = "<group>"; };
@@ -5588,6 +5595,9 @@
 				BB8B221E1C17BDE5002B4C51 /* TKUserPageViewController.xib */,
 				BB8B22241C1979F8002B4C51 /* TKEditUserInfoVC.h */,
 				BB8B22251C1979F8002B4C51 /* TKEditUserInfoVC.m */,
+				91772B151CC32FB600CEFA9E /* TKModifyNameViewController.h */,
+				91772B161CC32FB600CEFA9E /* TKModifyNameViewController.m */,
+				91772B171CC32FB600CEFA9E /* TKModifyNameViewController.xib */,
 				8AECCA7C1C1D212000CD789F /* TKUserDetailInfoViewController.h */,
 				8AECCA7D1C1D212000CD789F /* TKUserDetailInfoViewController.m */,
 				BBFD6F9B1C351CCA00E0A536 /* TKUserCenterViewController.h */,
@@ -6284,6 +6294,7 @@
 				BB83FAFC1C72C01C0013A6A0 /* HFLanchViewController.xib in Resources */,
 				BB83FAFD1C72C01C0013A6A0 /* TestViewController.xib in Resources */,
 				BB83FAFE1C72C01C0013A6A0 /* TKHttpAction.plist in Resources */,
+				91772B1A1CC32FB700CEFA9E /* TKModifyNameViewController.xib in Resources */,
 				8A3749831C904A65003DE59E /* CPublishRewardViewController.xib in Resources */,
 				BB83FAFF1C72C01C0013A6A0 /* HFFeedbackController.xib in Resources */,
 				BB83FB001C72C01C0013A6A0 /* TKLoginViewController.xib in Resources */,
@@ -6415,6 +6426,7 @@
 				BB83FDB21C72C16B0013A6A0 /* HFAdvanceSchemeTableViewCell.xib in Resources */,
 				BB83FDB31C72C16B0013A6A0 /* HFFoodListButtonCell.xib in Resources */,
 				BB83FDB41C72C16B0013A6A0 /* PostCell.xib in Resources */,
+				91772B1B1CC32FB700CEFA9E /* TKModifyNameViewController.xib in Resources */,
 				BB83FDB51C72C16B0013A6A0 /* ModifyViewController.xib in Resources */,
 				BB83FDB61C72C16B0013A6A0 /* SignOneViewController.xib in Resources */,
 				BB83FDB71C72C16B0013A6A0 /* HFBoxTableViewCell.xib in Resources */,
@@ -7241,6 +7253,7 @@
 				BB83FAA41C72C01C0013A6A0 /* HFGifView.m in Sources */,
 				BB83FAA51C72C01C0013A6A0 /* GetCommonProblemArg.m in Sources */,
 				BB83FAA61C72C01C0013A6A0 /* HFTimePickView.m in Sources */,
+				91772B181CC32FB700CEFA9E /* TKModifyNameViewController.m in Sources */,
 				BB83FAA71C72C01C0013A6A0 /* HFMessageCell.m in Sources */,
 				BB83FAA81C72C01C0013A6A0 /* GetRunningDataAck.m in Sources */,
 				9135820C1C9718CD00517542 /* HFTitleLabel.m in Sources */,
@@ -7901,6 +7914,7 @@
 				BB83FD611C72C16B0013A6A0 /* HFGifView.m in Sources */,
 				BB83FD621C72C16B0013A6A0 /* GetCommonProblemArg.m in Sources */,
 				BB83FD631C72C16B0013A6A0 /* HFTimePickView.m in Sources */,
+				91772B191CC32FB700CEFA9E /* TKModifyNameViewController.m in Sources */,
 				BB83FD641C72C16B0013A6A0 /* HFMessageCell.m in Sources */,
 				BB83FD651C72C16B0013A6A0 /* GetRunningDataAck.m in Sources */,
 				9135820D1C9718CD00517542 /* HFTitleLabel.m in Sources */,

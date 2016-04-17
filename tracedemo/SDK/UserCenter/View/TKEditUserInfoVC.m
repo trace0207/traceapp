@@ -21,7 +21,7 @@
 #import "MJPhoto.h"
 #import "TKPicSelectTool.h"
 #import "TKWebViewController.h"
-
+#import "TKModifyNameViewController.h"
 #define KEY_DES     @"description"
 #define KEY_TYPE    @"type"
 
@@ -171,7 +171,7 @@
 @end
 
 
-@interface TKEditUserInfoVC ()<TKPicSelectDelegate,TKTableViewVMDelegate>
+@interface TKEditUserInfoVC ()<TKPicSelectDelegate,TKTableViewVMDelegate,UIActionSheetDelegate>
 {
     TKEditUserInfoTableVM * vm;
     TKPicSelectTool * tool;
@@ -231,10 +231,9 @@
             break;
         case 1:
         {
-            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
-            vc.inPutType = 0;
-            vc.navTitle = @"昵称";
-            vc.tag = indexPath.row;
+            TKModifyNameViewController * vc = [[TKModifyNameViewController alloc] init];
+            vc.navTitle = @"修改昵称";
+            vc.modifyType = ModifyName;
             [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
         }
             break;
@@ -270,24 +269,39 @@
             break;
         case 5:
         {
-            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
-            vc.inPutType = 0;
-            vc.navTitle = @"性别";
-            vc.tag = indexPath.row;
-            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+//            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
+//            vc.inPutType = 0;
+//            vc.navTitle = @"性别";
+//            vc.tag = indexPath.row;
+//            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+            
+            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"修改性别" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"女",@"男", nil];
+            [sheet showInView:self.view];
+            sheet.delegate = self;
         }
             break;
         case 6:
         {
-            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
-            vc.inPutType = 0;
-            vc.navTitle = @"个性签名";
-            vc.tag = indexPath.row;
+            TKModifyNameViewController * vc = [[TKModifyNameViewController alloc] init];
+            vc.navTitle = @"修改个性签名";
+            vc.modifyType = ModifySignature;
+            
+            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
             [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
         }
             break;
         default:
             break;
+    }
+}
+
+#pragma mark - action sheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        //女
+    }else if (buttonIndex == 1) {
+        //男
     }
 }
 @end
