@@ -139,6 +139,10 @@
     if(!token)
     {
         token = [kUserDefaults objectForKey:kParmsDeviceToken];
+        if(token == nil || [token isEqualToString:@""])
+        {
+            token = @"defaultTokenForSimulator";
+        }
     }
     return token;
 }
