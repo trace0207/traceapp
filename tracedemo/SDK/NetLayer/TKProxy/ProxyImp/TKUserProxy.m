@@ -101,9 +101,15 @@
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 
--(void)updateUserInfo
+/**
+ 更新用户信息
+ **/
+-(void)updateUserInfo:(TK_SetUserInfoArg *)arg withBlock:(hfAckBlock)block;
 {
-    
+#if B_Client == 1
+    arg.role = 0;
+#endif
+    [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
 }
 
 @end

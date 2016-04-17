@@ -5,7 +5,7 @@
 	<key>TK_GetRewardByIdArg</key>
 	<string>/apollo/nologin/order/postreward!postrewardDetail.action</string>
 	<key>TK_SetUserInfoArg</key>
-	<string></string>
+	<string>/apollo/login/user/user!modify.action</string>
 	<key>TK_MessageCenterArg</key>
 	<string></string>
 	<key>TK_GetBuyerHomePageListArg</key>

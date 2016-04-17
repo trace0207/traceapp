@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TK_ModifyUserInfoArg.h"
+#import "TK_SetUserInfoArg.h"
 @class TK_LoginArg,TK_RegisterNewUserArg,TK_RegisterNewUserAck;
 @interface TKUserProxy : NSObject
 
@@ -44,7 +45,10 @@
  **/
 -(void)getUserHomePage:(NSString *)userId userType:(NSInteger)type withBoloc:(hfAckBlock)block;
 
--(void)updateUserInfo;
+/**
+ 更新用户信息
+ **/
+-(void)updateUserInfo:(TK_SetUserInfoArg *)arg withBlock:(hfAckBlock)block;
 
 
 @end

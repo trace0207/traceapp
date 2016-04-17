@@ -9,5 +9,10 @@
 #import "HF_BaseArg.h"
 
 @interface TK_SetUserInfoArg : HF_BaseArg
-
+@property (nonatomic,strong) NSString * nickName;
+@property (nonatomic,strong) NSString * headerUrl;
+@property (nonatomic,strong) NSString * address;
+@property (nonatomic,strong) NSString * signature;
+@property (nonatomic,assign) NSInteger sex;
+@property (nonatomic,assign) NSInteger role;
 @end
