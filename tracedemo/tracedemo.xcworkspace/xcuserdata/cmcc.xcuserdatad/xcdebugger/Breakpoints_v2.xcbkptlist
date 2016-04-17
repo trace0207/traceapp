@@ -233,7 +233,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "586"
             endingLineNumber = "586"
-            landmarkName = "-resetFollowView"
+            landmarkName = "-onBrandSelect:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -313,7 +313,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "923"
             endingLineNumber = "923"
-            landmarkName = "-onPublishSuccess"
+            landmarkName = "-beginSend"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -329,7 +329,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "-onPayNotify:"
+            landmarkName = "-keyboardShow:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

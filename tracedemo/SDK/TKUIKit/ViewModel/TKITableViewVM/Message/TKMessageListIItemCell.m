@@ -30,20 +30,34 @@
 }
 - (void)setContentData:(TKMessageData *)data
 {
-    if (data.type == TKMessageTypeForgive) {
-        [self.headImage setImage:IMG(@"mes_forgive")];
-    }else if (data.type == TKMessageTypeStatement) {
-        [self.headImage setImage:IMG(@"mes_statement")];
-    }else if (data.type == TKMessageTypePraise) {
-        [self.headImage setImage:IMG(@"mes_praise")];
-    }else if (data.type == TKMessageTypeService) {
-        [self.headImage setImage:IMG(@"mes_service")];
-    }else{
+    
+    if(data.msgData != nil)
+    {
         [self.headImage setImage:IMG(@"mes_default")];
+        self.nameLabel.text = @"IM对话消息";
+        self.timeLabel.text = [NSDate stringWithTimeUTC:data.msgData.createTime.integerValue];
+        self.messageLabel.text = data.msgData.content;
     }
-    self.nameLabel.text = data.name;
-    self.messageLabel.text = data.describle;
-    self.timeLabel.text = [NSDate stringWithTimeUTC:data.secondsUTC];
+    else if(data.boxItemData != nil)
+    {
+        if(data.boxItemData.boxType == 0)
+        {
+            [self.headImage setImage:IMG(@"mes_forgive")];
+            self.nameLabel.text = @"订单通知";
+        }
+        else if(data.boxItemData.boxType == 1)
+        {
+            [self.headImage setImage:IMG(@"mes_statement")];
+            self.nameLabel.text = @"支付通知";
+        }
+        else if(data.boxItemData.boxType ==2)
+        {
+            self.nameLabel.text = @"点赞通知";
+            [self.headImage setImage:IMG(@"mes_praise")];
+        }
+      self.timeLabel.text = [NSDate stringWithTimeUTC:data.secondsUTC];
+      self.messageLabel.text = data.boxItemData.boxContent;
+    }
 }
 
 @end

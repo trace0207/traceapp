@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TK_MessageCenterAck.h"
+#import "TKTableViewRowM.h"
 
 
+@interface TKMessageData : TKTableViewRowM
 
-@interface TKMessageData : NSObject
+@property (nonatomic,strong) BoxItemData * boxItemData;
+@property (nonatomic,strong) MSGData * msgData;
+
+
 @property (nonatomic, assign) TKMessageType type;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *describle;

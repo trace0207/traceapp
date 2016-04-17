@@ -8,6 +8,20 @@
 
 #import "TK_MessageCenterAck.h"
 
+@implementation MsgBoxAckData
+
+
+@end
+
+@implementation MSGData
+
+
+@end
+
+@implementation BoxItemData
+
+
+@end
 @implementation TK_MessageCenterAck
 
 @end
