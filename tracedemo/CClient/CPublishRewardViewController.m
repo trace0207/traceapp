@@ -770,7 +770,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         }
         
         arg.content = self.inputText.text;
-        arg.rewardPrice = self.priceInputText.text;
+        arg.rewardPrice = [self.priceInputText.text stringByAppendingString:@"00"];
         arg.source = @"1";// 1 自主发起
         arg.sourceId = [[TKUserCenter instance] getUser].userId;
         arg.categoryId = selectCategory.categoryId;

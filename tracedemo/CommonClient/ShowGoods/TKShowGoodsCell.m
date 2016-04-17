@@ -106,11 +106,6 @@
     }
 }
 
-- (IBAction)msgAction:(id)sender {
-    if (self.tkShowGoodscellDelegate) {
-        [self.tkShowGoodscellDelegate onChatBtnClick];
-    }
-}
 
 - (IBAction)userHeadClick:(id)sender {
     if(self.tkShowGoodscellDelegate)

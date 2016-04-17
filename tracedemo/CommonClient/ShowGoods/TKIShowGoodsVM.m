@@ -416,11 +416,7 @@
     DDLogInfo(@"action from indexRow = %ld",indexPath.row);
 }
 
-- (void)onChatBtnClick
-{
-    TKChatViewController *vc = [[TKChatViewController alloc]init];
-    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
-}
+
 
 -(void)onUserHeadFieldClick:(NSIndexPath *)indexPath
 {

@@ -404,9 +404,6 @@
                             <constraint firstAttribute="height" constant="40" id="pc6-cn-ee8"/>
                         </constraints>
                         <state key="normal" image="icon_tab_message"/>
-                        <connections>
-                            <action selector="msgAction:" destination="Cr4-ho-YEZ" eventType="touchUpInside" id="sG0-o9-Njo"/>
-                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B10级买手" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rR8-sj-3n5">
                         <rect key="frame" x="144" y="29" width="86" height="18"/>
@@ -437,6 +434,7 @@
                 <outlet property="describleLabel" destination="2GN-m2-kCG" id="5yP-os-utf"/>
                 <outlet property="gradeLabel" destination="rR8-sj-3n5" id="shl-2B-EH4"/>
                 <outlet property="headImage" destination="yhC-bD-55r" id="vgI-bL-WPg"/>
+                <outlet property="msgBtn" destination="5RJ-3A-Qa0" id="3Im-c6-0vm"/>
                 <outlet property="nameLabel" destination="l06-3i-a4J" id="jnd-Hc-RJg"/>
             </connections>
             <point key="canvasLocation" x="204" y="456"/>

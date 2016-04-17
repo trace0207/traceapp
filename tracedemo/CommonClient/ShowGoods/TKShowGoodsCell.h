@@ -23,8 +23,6 @@
 -(void)onBuyerHeadFiedClick:(NSIndexPath *)indexPath;
 -(void)onUserHeadFieldClick:(NSIndexPath *)indexPath;
 -(void)onFollowBtnClick:(NSIndexPath *)indexPath;
--(void)onChatBtnClick;
-
 @end
 
 
@@ -58,6 +56,7 @@
 @property (strong,nonatomic) NSIndexPath * indexPath;
 @property (weak,nonatomic) id<TKShowGoodsCellDelegate> tkShowGoodscellDelegate;
 
+@property (weak, nonatomic) IBOutlet UIButton *msgBtn;
 
 //head cell
 @property (nonatomic, weak) IBOutlet UIImageView *headImage;
@@ -66,7 +65,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *describleLabel;
 - (IBAction)buyerFieldAction:(id)sender;
 - (IBAction)pariseAction:(id)sender;
-- (IBAction)msgAction:(id)sender;
 - (IBAction)userHeadClick:(id)sender;
 - (void)setHeadViewModel:(id)model;
 @end

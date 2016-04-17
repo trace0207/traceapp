@@ -339,22 +339,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CommonClient/ShowGoods/TKBuyerCenterVM.m"
-            timestampString = "482561960.944503"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-resetCustomerHeadView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SDK/TKUIKit/ViewModel/TKITableViewVM/Reward/TKIRewardVM.m"
             timestampString = "482380553.576481"
             startingColumnNumber = "9223372036854775807"
@@ -362,22 +346,6 @@
             startingLineNumber = "156"
             endingLineNumber = "156"
             landmarkName = "-fillTableCell:withDataIndex:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CommonClient/ShowGoods/TKIShowGoodsVM.m"
-            timestampString = "482562304.839208"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
-            landmarkName = "-onUserHeadFieldClick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -458,22 +426,6 @@
             startingLineNumber = "406"
             endingLineNumber = "406"
             landmarkName = "-onPariseBtnClick:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CommonClient/ShowGoods/TKBuyerCenterVM.m"
-            timestampString = "482561960.944503"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-tkLoadDefaultData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

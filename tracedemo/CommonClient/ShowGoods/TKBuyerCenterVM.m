@@ -10,6 +10,7 @@
 #import "TK_GetOrdersAck.h"
 #import "TKShowGoodsCell.h"
 #import "TK_GetUserHomePageAck.h"
+#import "TKChatViewController.h"
 
 @interface TKBuyerCenterVM ()
 @property (nonatomic, strong) TKShowGoodsCell *header;
@@ -21,8 +22,8 @@
 {
     if (nil == _header) {
         _header = [[[NSBundle mainBundle]loadNibNamed:@"TKShowGoodsCell" owner:self options:nil]objectAtIndex:1];
-        _header.tkShowGoodscellDelegate = self;
-//        _header.backgroundColor = [UIColor redColor];
+        [_header.msgBtn addTarget:self action:@selector(onChatBtnClick) forControlEvents:UIControlEventTouchUpInside];
+
     }
     return _header;
 }
@@ -120,7 +121,11 @@
 }
 
 
-
+- (void)onChatBtnClick
+{
+    TKChatViewController *vc = [[TKChatViewController alloc]init];
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+}
 
 
 

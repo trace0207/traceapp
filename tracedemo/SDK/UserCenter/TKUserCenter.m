@@ -97,10 +97,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 
 
 -(void)doLogin:(NSString *)userName password:(NSString *)password{
-
-    
-    self.user.account = userName;
-    self.user.password = password;
     //deviceId=123&mobile=18867102687&password=123456
     WS(weakSelf)
     [[TKProxy proxy].userProxy login:userName withValue:password withBlock:^(HF_BaseAck * ack){
@@ -117,6 +113,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
             user.headPortraitUrl = loginData.headerUrl;
             user.guarantee = loginData.guarantee;
             user.vip = loginData.vip;
+            user.password = password;
+            user.account = userName;
             [self performSelectorOnMainThread:@selector(onLoginSuccess:) withObject:user waitUntilDone:NO];
             [weakSelf.userNormalVM restBuyerCateList:[loginData.beSubscribeCateList copy]];
         }
