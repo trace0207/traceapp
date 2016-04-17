@@ -28,7 +28,8 @@
 #import "TKChatViewController.h"
 
 //#import "GlobalDefines.h"
-
+#import "UIView+Border.h"
+#import "UIColor+TK_Color.h"
 #import "SDChatTableViewCell.h"
 #import "SDAnalogDataGenerator.h"
 //#import "SDWebViewController.h"
@@ -39,16 +40,61 @@
 
 #define kChatTableViewControllerCellId @"ChatTableViewController"
 
-@interface TKChatViewController ()
+@interface TKChatViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) UIView *keyboardView;
+@property (nonatomic, strong) UITextField *textFeild;
+@property (nonatomic, strong) UIButton *sendButton;
 
 @end
 
 @implementation TKChatViewController
 
+- (UIView *)keyboardView
+{
+    if (nil == _keyboardView) {
+        _keyboardView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 49)];
+        UIImageView *imageView = [[UIImageView alloc]initWithImage:IMG(@"input-bar-flat")];
+        [_keyboardView addSubview:imageView];
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        }];
+    }
+    return _keyboardView;
+}
 
+- (UITextField *)textFeild
+{
+    if (nil == _textFeild) {
+        _textFeild = [[UITextField alloc]init];
+        _textFeild.placeholder = @"输入信息...";
+        _textFeild.borderStyle = UITextBorderStyleRoundedRect;
+        _textFeild.returnKeyType = UIReturnKeyDone;
+        _textFeild.delegate = self;
+    }
+    return _textFeild;
+}
 
+- (UIButton *)sendButton
+{
+    if (nil == _sendButton) {
+        _sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_sendButton addTarget:self action:@selector(sendMessageAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_sendButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
+        [_sendButton setTitle:@"发送" forState:UIControlStateNormal];
+        [_sendButton setTitleColor:[UIColor hexChangeFloat:TKColorBlack] forState:UIControlStateNormal];
+        [_sendButton setDefaultBorder];
+    }
+    return _sendButton;
+}
+
+- (void)sendMessageAction:(UIButton *)button
+{
+    [self.textFeild resignFirstResponder];
+}
 
 /**
  显示聊天窗口
@@ -65,17 +111,65 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addNavigationTitle:@"小猪猪"];
+    self.navTitle = @"会话";
     [self setupDataWithCount:30];
     
     CGFloat rgb = 240;
+    self.tableView = [[UITableView alloc]init];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
     self.tableView.backgroundColor = RGBA(rgb, rgb, rgb, 1);
-    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.tableView registerClass:[SDChatTableViewCell class] forCellReuseIdentifier:kChatTableViewControllerCellId];
+    [self.view addSubview:self.keyboardView];
+    [self.keyboardView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.equalTo(self.view);
+        make.height.mas_equalTo(49);
+    }];
+    
+    [self.keyboardView addSubview:self.sendButton];
+    [self.sendButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.keyboardView);
+        make.right.equalTo(self.keyboardView).with.offset(-15);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(40);
+    }];
+    
+    [self.keyboardView addSubview:self.textFeild];
+    [self.textFeild mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.keyboardView).with.offset(8);
+        make.height.mas_equalTo(40);
+        make.centerY.equalTo(self.keyboardView);
+        make.right.equalTo(self.sendButton.mas_left).with.offset(-8);
+    }];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardWillHideNotification object:nil];
 }
-
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+-(void)keyboardShow:(NSNotification *)note
+{
+    CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat deltaY = keyBoardRect.size.height;
+    [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+        
+        self.view.transform=CGAffineTransformMakeTranslation(0, -deltaY);
+    }];
+}
+-(void)keyboardHide:(NSNotification *)note
+{
+    [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+        self.view.transform = CGAffineTransformIdentity;
+    }];
+}
 - (void)setupDataWithCount:(NSInteger)count
 {
     if (!self.dataArray) {
@@ -144,7 +238,13 @@
     NSLog(@">>>>>  %@", [self.dataArray[indexPath.row] text]);
 }
 
+#pragma mark - text feild delegate
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 
 @end

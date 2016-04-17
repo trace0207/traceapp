@@ -23,10 +23,10 @@
  */
 
 
-#import <UIKit/UIKit.h>
 
+#import "TKIBaseNavWithDefaultBackVC.h"
 
-@interface TKChatViewController : UITableViewController
+@interface TKChatViewController :TKIBaseNavWithDefaultBackVC
 //@property (nonatomic,assign)
 @property (nonatomic,strong)NSString * toId;
 @property (nonatomic,assign)BOOL isBuyer;
