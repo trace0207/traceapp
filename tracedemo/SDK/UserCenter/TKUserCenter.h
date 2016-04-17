@@ -63,6 +63,21 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(TKUserCenter, instance);
  **/
 -(void)updateHeadUrl:(NSString *)headUrl block:(tkUpdateUserInfoBlock)block;
 
+/**
+ 更新性别
+ **/
+-(void)updateSex:(NSInteger)sex block:(tkUpdateUserInfoBlock)block;
+
+/**
+ 更新昵称
+ **/
+-(void)updateNickname:(NSString *)nickname block:(tkUpdateUserInfoBlock)block;
+
+/**
+ 更新个性签名
+ **/
+-(void)updateSignature:(NSString *)signature block:(tkUpdateUserInfoBlock)block;
+
 -(void)initAppData;
 
 -(TK_SetUserInfoArg *)buildUserInfoArgFromLocal;

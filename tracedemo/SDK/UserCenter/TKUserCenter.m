@@ -143,11 +143,48 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 {
     TK_SetUserInfoArg * arg = [self buildUserInfoArgFromLocal];
     arg.headerUrl = headUrl;
+    [self updateUserInfo:arg block:block];
+}
+
+/**
+ 更新性别
+ **/
+-(void)updateSex:(NSInteger)sex block:(tkUpdateUserInfoBlock)block
+{
+    TK_SetUserInfoArg * arg = [self buildUserInfoArgFromLocal];
+    arg.sex = sex;
+    [self updateUserInfo:arg block:block];
+}
+
+/**
+ 更新昵称
+ **/
+-(void)updateNickname:(NSString *)nickname block:(tkUpdateUserInfoBlock)block
+{
+    TK_SetUserInfoArg * arg = [self buildUserInfoArgFromLocal];
+    arg.nickName = nickname;
+    [self updateUserInfo:arg block:block];
+}
+
+/**
+ 更新个性签名
+ **/
+-(void)updateSignature:(NSString *)signature block:(tkUpdateUserInfoBlock)block
+{
+    TK_SetUserInfoArg * arg = [self buildUserInfoArgFromLocal];
+    arg.signature = signature;
+    [self updateUserInfo:arg block:block];
+    
+}
+
+- (void)updateUserInfo:(TK_SetUserInfoArg *)arg block:(tkUpdateUserInfoBlock)block
+{
     [[TKProxy proxy].userProxy updateUserInfo:arg
                                     withBlock:^(HF_BaseAck *ack) {
                                         
                                         if(ack.sucess)
                                         {
+                                            [self updateLocalUserInfo:arg];
                                             block(YES);
                                         }else
                                         {
@@ -198,23 +235,28 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 {
     TK_SetUserInfoArg * arg = [[TK_SetUserInfoArg alloc] init];
     // TODO
-    
-//    TKUser *user = [[TKUserCenter instance]getUser];
-//    _nickName = user.nickName;
-//    _headerUrl = user.headPortraitUrl;
-//    _address = user.address;
-//    _signature = user.signature;
-//    _sex = user.sex;
-//#if B_Clent == 1
-//    _role = 0;
-//#else
-//    _role = 1;
-//#endif
-//    
-//}
+    arg.nickName = self.user.nickName;
+    arg.headerUrl = self.user.headPortraitUrl;
+    arg.address = self.user.address;
+    arg.signature = self.user.signature;
+    arg.sex = self.user.sex;
+#if B_Clent == 1
+    arg.role = 0;
+#else
+    arg.role = 1;
+#endif
+
     return arg;
 }
 
+- (void)updateLocalUserInfo:(TK_SetUserInfoArg *)arg
+{
+    self.user.sex = arg.sex;
+    self.user.headPortraitUrl = arg.headerUrl;
+    self.user.address = arg.address;
+    self.user.signature = arg.signature;
+    self.user.nickName = arg.nickName;
+}
 
 
 @end

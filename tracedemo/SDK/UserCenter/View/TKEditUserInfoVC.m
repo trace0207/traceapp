@@ -27,17 +27,16 @@
 
 @interface TKEditUserInfoTableVM()
 {
-    TKUser * user;
     TK_SettingCell * headView;
     UIImageView * headImageView;
     
 }
-
+@property (nonatomic, strong) TKUser * user;
 @end
 
 
 @implementation TKEditUserInfoTableVM
-
+@synthesize user;
 
 
 -(instancetype)init
@@ -50,24 +49,32 @@
 -(void)tkLoadDefaultData
 {
     
-    TKTableSectionM * m = [[TKTableSectionM alloc] init];
-    m.sectionHeadHeight = 15;
-    m.sectionFootHeight = 0.01;
-    m.rowHeight = 44;
     
+    [self.defaultSection.rowsData removeAllObjects];
     
     TKTableViewRowM * headRow = [[TKTableViewRowM alloc] init];
     headRow.rowHeight = 100;
-    [m.rowsData addObject:headRow];
-
+    [self.defaultSection.rowsData addObject:headRow];
     
+    self.defaultSection.rowHeight = 100;
+    self.defaultSection.sectionFootHeight = 0.1;
+    self.defaultSection.sectionHeadHeight = 0.1;
     for(int i =0;i<6;i++)
     {
         TKTableViewRowM * r = [[TKTableViewRowM alloc] init];
-        [m.rowsData addObject:r];
+        [self.defaultSection.rowsData addObject:r];
     }
     
-    self.defaultSection = m;
+//
+//    TKTableSectionM * m = [[TKTableSectionM alloc] init];
+//    m.sectionHeadHeight = 15;
+//    m.sectionFootHeight = 0.01;
+//    m.rowHeight = 44;
+    
+//    [m.rowsData removeAllObjects];
+
+    
+    [self.mTableView reloadData];
 }
 
 
@@ -298,19 +305,31 @@
 #pragma mark - action sheet delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    TK_SetUserInfoArg *arg = [[TK_SetUserInfoArg alloc]init];
-    if (buttonIndex == 0) {
-        //女
-        arg.sex = 0;
-    }else if (buttonIndex == 1) {
-        //男
-        arg.sex = 1;
-    }
     
-    
-    [[[TKProxy proxy]userProxy]updateUserInfo:arg withBlock:^(HF_BaseAck *ack) {
-        DDLogInfo(@"修改信息：%@",arg);
+//    
+//    if (buttonIndex == 0) {
+//        //女
+//        arg.sex = 0;
+//    }else if (buttonIndex == 1) {
+//        //男
+//        arg.sex = 1;
+//    }
+//    
+//
+    WS(weakSelf)
+    TKUserCenter *userCenter = [TKUserCenter instance];
+    [userCenter updateSex:buttonIndex block:^(BOOL result) {
+        if (result) {
+            vm.user.sex = 1;
+            [weakSelf performSelector:@selector(reloadDD) withObject:nil afterDelay:1.0];
+        }
     }];
+}
+
+- (void)reloadDD
+{
+    
+    [vm.mTableView reloadData];
 }
 @end
 
