@@ -14,7 +14,7 @@
 #import "NSString+Message.h"
 #import "TKUserCenter.h"
 #import "TKEditTextViewController.h"
-
+#import "TK_UploadImageAck.h"
 #import "TKEditUserInfoVC.h"
 #import "TK_SettingCell.h"
 #import "MJPhotoBrowser.h"
@@ -175,7 +175,7 @@
 @end
 
 
-@interface TKEditUserInfoVC ()<TKPicSelectDelegate,TKTableViewVMDelegate,UIActionSheetDelegate>
+@interface TKEditUserInfoVC ()<TKPicSelectDelegate,TKTableViewVMDelegate,ModifySuccessDelegate,UIActionSheetDelegate>
 {
     TKEditUserInfoTableVM * vm;
     TKPicSelectTool * tool;
@@ -203,8 +203,17 @@
 
 -(void)onImageSelect:(UIImage *)image
 {
-    
-    //    [headImageView setImage:image];
+    [[[TKProxy proxy]mainProxy]uploadImage:image withType:1 withBlock:^(HF_BaseAck *ack) {
+        if ([ack sucess]) {
+            TK_UploadImageAck *response = (TK_UploadImageAck *)ack;
+            TKUserCenter *userCenter = [TKUserCenter instance];
+            [userCenter updateHeadUrl:response.data.imgUrl block:^(BOOL result) {
+                if (result) {
+                    [vm.mTableView reloadData];
+                }
+            }];
+        }
+    }];
 }
 
 -(void)doSelectImage
@@ -238,6 +247,7 @@
             TKModifyNameViewController * vc = [[TKModifyNameViewController alloc] init];
             vc.navTitle = @"修改昵称";
             vc.modifyType = ModifyName;
+            vc.delegate = self;
             [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
         }
             break;
@@ -273,12 +283,6 @@
             break;
         case 5:
         {
-//            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
-//            vc.inPutType = 0;
-//            vc.navTitle = @"性别";
-//            vc.tag = indexPath.row;
-//            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
-            
             UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"修改性别" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"女",@"男", nil];
             [sheet showInView:self.view];
             sheet.delegate = self;
@@ -289,7 +293,7 @@
             TKModifyNameViewController * vc = [[TKModifyNameViewController alloc] init];
             vc.navTitle = @"修改个性签名";
             vc.modifyType = ModifySignature;
-            
+            vc.delegate = self;
             [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
             [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
         }
@@ -302,32 +306,19 @@
 #pragma mark - action sheet delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    
-//    
-//    if (buttonIndex == 0) {
-//        //女
-//        arg.sex = 0;
-//    }else if (buttonIndex == 1) {
-//        //男
-//        arg.sex = 1;
-//    }
-//    
-//
-    WS(weakSelf)
     TKUserCenter *userCenter = [TKUserCenter instance];
-    [userCenter updateSex:buttonIndex block:^(BOOL result) {
+    [userCenter updateSex:buttonIndex?0:1 block:^(BOOL result) {
         if (result) {
-            vm.user.sex = 1;
-            [weakSelf performSelector:@selector(reloadDD) withObject:nil afterDelay:1.0];
+            [vm.mTableView reloadData];
         }
     }];
 }
 
-- (void)reloadDD
+- (void)userInfoHasChanged
 {
-    
     [vm.mTableView reloadData];
 }
+
 @end
 
 

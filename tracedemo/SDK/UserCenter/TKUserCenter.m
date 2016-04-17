@@ -101,7 +101,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
             TKUser * user = [[TKUser alloc] init];
             user.ackData = loginData;
             user.userId = loginData.id;
-            user.nickName = loginData.purchaserName;
+            user.nickName = loginData.nickName;
             user.mobile = loginData.mobile;
             user.signature = loginData.signature;
             user.headPortraitUrl = loginData.headerUrl;

@@ -14,11 +14,18 @@ typedef NS_ENUM(NSUInteger, ModifyType) {
     ModifySignature,
 };
 
+@protocol ModifySuccessDelegate <NSObject>
+
+- (void)userInfoHasChanged;
+
+@end
+
 @interface TKModifyNameViewController : TKIBaseNavWithDefaultBackVC
 
 @property (weak, nonatomic) IBOutlet UITextField *nickNameTextFeild;
 @property (weak, nonatomic) IBOutlet TKTextView *textView;
 @property (assign, nonatomic) ModifyType modifyType;
+@property (weak, nonatomic) id<ModifySuccessDelegate>delegate;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 - (IBAction)saveAction:(id)sender;
 

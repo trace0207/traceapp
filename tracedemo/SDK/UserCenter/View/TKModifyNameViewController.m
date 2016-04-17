@@ -40,16 +40,31 @@
 
 - (IBAction)saveAction:(id)sender {
     //保存
-    TK_SetUserInfoArg *arg = [[TK_SetUserInfoArg alloc]init];
+    TKUserCenter *userCenter = [TKUserCenter instance];
+    
     if (self.modifyType == ModifyName) {
-        arg.nickName = self.nickNameTextFeild.text;
         [self.nickNameTextFeild resignFirstResponder];
+        [userCenter updateNickname:self.nickNameTextFeild.text block:^(BOOL result) {
+            if (result) {
+                if (self.delegate && [self.delegate respondsToSelector:@selector(userInfoHasChanged)]) {
+                    [self.delegate userInfoHasChanged];
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+            }
+        }];
+        
     }else if (self.modifyType == ModifySignature) {
         [self.textView resignFirstResponder];
-        arg.signature = self.textView.text;
+        [userCenter updateSignature:self.textView.text block:^(BOOL result) {
+            if (result) {
+                if (self.delegate && [self.delegate respondsToSelector:@selector(userInfoHasChanged)]) {
+                    [self.delegate userInfoHasChanged];
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+            }
+        }];
     }
-    [[[TKProxy proxy]userProxy]updateUserInfo:arg withBlock:^(HF_BaseAck *ack) {
-        DDLogInfo(@"修改信息：%@",arg);
-    }];
+    
+    
 }
 @end
