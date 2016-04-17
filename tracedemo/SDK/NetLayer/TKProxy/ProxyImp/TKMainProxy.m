@@ -33,6 +33,7 @@
 #import "TK_GetBuyerHomePageListArg.h"
 #import "TK_GetBuyerUserInfoArg.h"
 #import "TK_GetRewardByIdArg.h"
+#import "TK_BoxListArg.h"
 
 
 @implementation TKMainProxy
@@ -423,6 +424,18 @@
 {
 }
 
+
+/**
+ 查询通知的消息列表
+ **/
+-(void)tkGetNotifyMsgList:(NSInteger)boxId withBlock:(hfAckBlock)block
+{
+    TK_BoxListArg * arg = [[TK_BoxListArg alloc] init];
+    arg.pageSize = 100;
+    arg.pageOffset = 0;
+    arg.boxType = boxId;
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
+}
 
 
 #pragma  mark CClient

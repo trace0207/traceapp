@@ -99,11 +99,11 @@
 /**
  显示聊天窗口
  **/
-+(void)showChatView:(NSString *)toId isBuyer:(BOOL)isBuyer
++(void)showChatView:(NSString *)toId toUserRole:(NSInteger)toUserRole
 {
     TKChatViewController * vc = [[TKChatViewController alloc] init];
     vc.toId = toId;
-    vc.isBuyer = isBuyer;
+    vc.toUserRole = toUserRole;
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     
 }

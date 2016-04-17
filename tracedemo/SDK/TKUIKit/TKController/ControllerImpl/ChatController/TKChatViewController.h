@@ -29,14 +29,14 @@
 @interface TKChatViewController :TKIBaseNavWithDefaultBackVC
 //@property (nonatomic,assign)
 @property (nonatomic,strong)NSString * toId;
-@property (nonatomic,assign)BOOL isBuyer;
+@property (nonatomic,assign)NSInteger toUserRole;
 
 
 
 /**
  显示聊天窗口
  **/
-+(void)showChatView:(NSString *)toId isBuyer:(BOOL)isBuyer;
++(void)showChatView:(NSString *)toId toUserRole:(NSInteger)isBuyer;
 
 
 @end

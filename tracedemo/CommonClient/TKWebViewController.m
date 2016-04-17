@@ -251,7 +251,7 @@
     {
         // 联系买手
         NSString * purchaserId = [dataDic objectForKey:@"purchaserId"];
-        [TKChatViewController showChatView:purchaserId isBuyer:YES];
+        [TKChatViewController showChatView:purchaserId toUserRole:0];
     }
 }
 

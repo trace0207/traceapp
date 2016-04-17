@@ -210,6 +210,11 @@
  **/
 -(void)tkSendMessage:(NSString *)toId content:(NSString *)content withBlock:(hfAckBlock)block;
 
+/**
+ 查询通知的消息列表
+ **/
+-(void)tkGetNotifyMsgList:(NSInteger)boxId withBlock:(hfAckBlock)block;
+
 #pragma  mark CClient
 
 /**

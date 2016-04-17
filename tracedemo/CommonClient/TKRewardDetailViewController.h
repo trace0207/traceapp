@@ -13,4 +13,7 @@
 @property (strong, nonatomic) IBOutlet UIView *contentMainView;
 @property (weak, nonatomic) IBOutlet UIView *picsFieldView;
 
+
+
+
 @end

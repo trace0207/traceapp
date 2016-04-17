@@ -14,6 +14,8 @@
 #import "TK_MessageCenterArg.h"
 #import "TKUserCenter.h"
 #import "TK_MessageCenterAck.h"
+#import "NotifyMsgListViewController.h"
+#import "NSString+HFStrUtil.h"
 @implementation TKIMessageCenterVM
 
 
@@ -35,8 +37,27 @@
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     //TKMessageChatViewController * chat = [[TKMessageChatViewController alloc] init];
-    TKChatViewController * vc = [[TKChatViewController alloc] init];
-    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    
+    
+    TKMessageData * rowData = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
+    
+    if(rowData.msgData != nil)
+    {
+        [TKChatViewController showChatView:rowData.msgData.toUserId toUserRole:rowData.msgData.toUserRole];
+    }else if(rowData.boxItemData != nil)
+    {
+        if([NSString isStrEmpty:rowData.boxItemData.boxContent])
+        {
+            [[HFHUDView shareInstance] ShowTips:@"该类消息为空" delayTime:1.0 atView:nil];
+        }
+        else
+        {
+            [NotifyMsgListViewController showBoxList:rowData.boxItemData.boxType];
+        }
+    }
+    
+        
+   
 }
 
 

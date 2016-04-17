@@ -57,6 +57,10 @@
 		8A37499B1C924D23003DE59E /* TKNotifycationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3749981C924D23003DE59E /* TKNotifycationViewController.m */; };
 		8A37499C1C924D23003DE59E /* TKNotifycationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749991C924D23003DE59E /* TKNotifycationViewController.xib */; };
 		8A37499D1C924D23003DE59E /* TKNotifycationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3749991C924D23003DE59E /* TKNotifycationViewController.xib */; };
+		8A58F3621CC399CA00A921B9 /* NotifyMsgTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A58F3601CC399CA00A921B9 /* NotifyMsgTableCell.m */; };
+		8A58F3631CC399CA00A921B9 /* NotifyMsgTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A58F3601CC399CA00A921B9 /* NotifyMsgTableCell.m */; };
+		8A58F3641CC399CA00A921B9 /* NotifyMsgTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A58F3611CC399CA00A921B9 /* NotifyMsgTableCell.xib */; };
+		8A58F3651CC399CA00A921B9 /* NotifyMsgTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A58F3611CC399CA00A921B9 /* NotifyMsgTableCell.xib */; };
 		8A5B60E71C85C4EB00BF8E19 /* BUserCenterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5B60E61C85C4EB00BF8E19 /* BUserCenterVM.m */; };
 		8A7600011CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7600001CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m */; };
 		8A7600021CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7600001CBF953100CA8BCE /* TK_GetBuyerUserInfoArg.m */; };
@@ -135,6 +139,14 @@
 		8AF157151CC3344D0084F2EB /* TK_MessageSendArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF157131CC3344D0084F2EB /* TK_MessageSendArg.m */; };
 		8AF157181CC334640084F2EB /* TK_MessageListByTypeArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF157171CC334640084F2EB /* TK_MessageListByTypeArg.m */; };
 		8AF157191CC334640084F2EB /* TK_MessageListByTypeArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF157171CC334640084F2EB /* TK_MessageListByTypeArg.m */; };
+		8AF1571C1CC389EB0084F2EB /* TK_BoxListArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1571B1CC389EB0084F2EB /* TK_BoxListArg.m */; };
+		8AF1571D1CC389EB0084F2EB /* TK_BoxListArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1571B1CC389EB0084F2EB /* TK_BoxListArg.m */; };
+		8AF157201CC38A000084F2EB /* TK_BoxListAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1571F1CC38A000084F2EB /* TK_BoxListAck.m */; };
+		8AF157211CC38A000084F2EB /* TK_BoxListAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1571F1CC38A000084F2EB /* TK_BoxListAck.m */; };
+		8AF157241CC38C5A0084F2EB /* NotifyMsgListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF157231CC38C5A0084F2EB /* NotifyMsgListViewController.m */; };
+		8AF157251CC38C5A0084F2EB /* NotifyMsgListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF157231CC38C5A0084F2EB /* NotifyMsgListViewController.m */; };
+		8AF157281CC38C760084F2EB /* NotifyMsgListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF157271CC38C760084F2EB /* NotifyMsgListVM.m */; };
+		8AF157291CC38C760084F2EB /* NotifyMsgListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF157271CC38C760084F2EB /* NotifyMsgListVM.m */; };
 		911D01431CA3C9FB00BF06AE /* TKPayChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */; };
 		911D01441CA3C9FB00BF06AE /* TKPayChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */; };
 		9120D8401CAD2D5500491F05 /* TKInviteCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9120D83E1CAD2D5500491F05 /* TKInviteCodeViewController.m */; };
@@ -1741,6 +1753,9 @@
 		8A552D6E1BA3D8230083E87E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		8A552D6F1BA3D8230083E87E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		8A552D701BA3D8230083E87E /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		8A58F35F1CC399CA00A921B9 /* NotifyMsgTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifyMsgTableCell.h; sourceTree = "<group>"; };
+		8A58F3601CC399CA00A921B9 /* NotifyMsgTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifyMsgTableCell.m; sourceTree = "<group>"; };
+		8A58F3611CC399CA00A921B9 /* NotifyMsgTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotifyMsgTableCell.xib; sourceTree = "<group>"; };
 		8A5B60E51C85C4EB00BF8E19 /* BUserCenterVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUserCenterVM.h; sourceTree = "<group>"; };
 		8A5B60E61C85C4EB00BF8E19 /* BUserCenterVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUserCenterVM.m; sourceTree = "<group>"; };
 		8A6434A61BAE9DF600820545 /* TKMainNavigateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainNavigateController.h; sourceTree = "<group>"; };
@@ -2917,6 +2932,14 @@
 		8AF157131CC3344D0084F2EB /* TK_MessageSendArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_MessageSendArg.m; sourceTree = "<group>"; };
 		8AF157161CC334640084F2EB /* TK_MessageListByTypeArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_MessageListByTypeArg.h; sourceTree = "<group>"; };
 		8AF157171CC334640084F2EB /* TK_MessageListByTypeArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_MessageListByTypeArg.m; sourceTree = "<group>"; };
+		8AF1571A1CC389EB0084F2EB /* TK_BoxListArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BoxListArg.h; sourceTree = "<group>"; };
+		8AF1571B1CC389EB0084F2EB /* TK_BoxListArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BoxListArg.m; sourceTree = "<group>"; };
+		8AF1571E1CC38A000084F2EB /* TK_BoxListAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BoxListAck.h; sourceTree = "<group>"; };
+		8AF1571F1CC38A000084F2EB /* TK_BoxListAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BoxListAck.m; sourceTree = "<group>"; };
+		8AF157221CC38C5A0084F2EB /* NotifyMsgListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifyMsgListViewController.h; sourceTree = "<group>"; };
+		8AF157231CC38C5A0084F2EB /* NotifyMsgListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifyMsgListViewController.m; sourceTree = "<group>"; };
+		8AF157261CC38C760084F2EB /* NotifyMsgListVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifyMsgListVM.h; sourceTree = "<group>"; };
+		8AF157271CC38C760084F2EB /* NotifyMsgListVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifyMsgListVM.m; sourceTree = "<group>"; };
 		911D01411CA3C9FB00BF06AE /* TKPayChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPayChooseView.h; sourceTree = "<group>"; };
 		911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPayChooseView.m; sourceTree = "<group>"; };
 		9120D83D1CAD2D5500491F05 /* TKInviteCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKInviteCodeViewController.h; sourceTree = "<group>"; };
@@ -3233,6 +3256,11 @@
 		8A0464F91C88108000E6B1E0 /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				8AF157261CC38C760084F2EB /* NotifyMsgListVM.h */,
+				8AF157271CC38C760084F2EB /* NotifyMsgListVM.m */,
+				8A58F35F1CC399CA00A921B9 /* NotifyMsgTableCell.h */,
+				8A58F3601CC399CA00A921B9 /* NotifyMsgTableCell.m */,
+				8A58F3611CC399CA00A921B9 /* NotifyMsgTableCell.xib */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -5553,6 +5581,8 @@
 				8A05480A1CA4C11A00AC8DD5 /* TKBrandSelectViewController.h */,
 				8A05480B1CA4C11A00AC8DD5 /* TKBrandSelectViewController.m */,
 				8A05480C1CA4C11A00AC8DD5 /* TKBrandSelectViewController.xib */,
+				8AF157221CC38C5A0084F2EB /* NotifyMsgListViewController.h */,
+				8AF157231CC38C5A0084F2EB /* NotifyMsgListViewController.m */,
 			);
 			path = CommonClient;
 			sourceTree = "<group>";
@@ -6072,6 +6102,10 @@
 				8AF157131CC3344D0084F2EB /* TK_MessageSendArg.m */,
 				8AF157161CC334640084F2EB /* TK_MessageListByTypeArg.h */,
 				8AF157171CC334640084F2EB /* TK_MessageListByTypeArg.m */,
+				8AF1571A1CC389EB0084F2EB /* TK_BoxListArg.h */,
+				8AF1571B1CC389EB0084F2EB /* TK_BoxListArg.m */,
+				8AF1571E1CC38A000084F2EB /* TK_BoxListAck.h */,
+				8AF1571F1CC38A000084F2EB /* TK_BoxListAck.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -6415,6 +6449,7 @@
 				BB83FB4A1C72C01C0013A6A0 /* UserCenterViewController.xib in Resources */,
 				8A0548001CA26C0100AC8DD5 /* TKShowGoodsCell.xib in Resources */,
 				BB83FB4B1C72C01C0013A6A0 /* HFHabitViewCell.xib in Resources */,
+				8A58F3641CC399CA00A921B9 /* NotifyMsgTableCell.xib in Resources */,
 				912120BF1C9FD6FA00271605 /* DeliveryTimeView.xib in Resources */,
 				BB83FB4C1C72C01C0013A6A0 /* RankViewCell.xib in Resources */,
 				BB83FB4D1C72C01C0013A6A0 /* HFAdvanceSchemeContainerViewController.xib in Resources */,
@@ -6506,6 +6541,7 @@
 				BB83FDE51C72C16B0013A6A0 /* HFPrivacyViewController.xib in Resources */,
 				BB83FDE61C72C16B0013A6A0 /* UserViewController.xib in Resources */,
 				BB83FDE71C72C16B0013A6A0 /* LoginViewController.xib in Resources */,
+				8A58F3651CC399CA00A921B9 /* NotifyMsgTableCell.xib in Resources */,
 				91BF04E81CBCE4D00062E72F /* 4.jpg in Resources */,
 				BB83FDE81C72C16B0013A6A0 /* TKICommentViewController.xib in Resources */,
 				BB83FDE91C72C16B0013A6A0 /* HFReportView.xib in Resources */,
@@ -6800,6 +6836,7 @@
 				BB83F90E1C72C01C0013A6A0 /* HFMenuControl.m in Sources */,
 				BB83F90F1C72C01C0013A6A0 /* GetUserDietaryByDayArg.m in Sources */,
 				BB83F9101C72C01C0013A6A0 /* BandCenter.m in Sources */,
+				8AF157241CC38C5A0084F2EB /* NotifyMsgListViewController.m in Sources */,
 				BB83F9111C72C01C0013A6A0 /* UploadSportDataArg.m in Sources */,
 				BB83F9121C72C01C0013A6A0 /* HFRemindView.m in Sources */,
 				BB83F9131C72C01C0013A6A0 /* HFSchemeProxy.m in Sources */,
@@ -6836,6 +6873,7 @@
 				BB83F92F1C72C01C0013A6A0 /* HFActivityProxy.m in Sources */,
 				BB83F9301C72C01C0013A6A0 /* HFLevelView.m in Sources */,
 				BB83F9311C72C01C0013A6A0 /* BasePopAnimation.m in Sources */,
+				8A58F3621CC399CA00A921B9 /* NotifyMsgTableCell.m in Sources */,
 				BB83F9321C72C01C0013A6A0 /* HFCommentInfoView.m in Sources */,
 				BB83F9331C72C01C0013A6A0 /* HFVideoPlayer.m in Sources */,
 				BB83F9341C72C01C0013A6A0 /* SchemePunchArg.m in Sources */,
@@ -6969,6 +7007,7 @@
 				BB83F99F1C72C01C0013A6A0 /* ForgetViewController.m in Sources */,
 				8A9D9B521C9809B0009F877F /* TK_PayAck.m in Sources */,
 				BB83F9A01C72C01C0013A6A0 /* HFCommentsReq.m in Sources */,
+				8AF157201CC38A000084F2EB /* TK_BoxListAck.m in Sources */,
 				BB83F9A11C72C01C0013A6A0 /* MMSideDrawerTableViewCell.m in Sources */,
 				BB83F9A21C72C01C0013A6A0 /* NSDate+Common.m in Sources */,
 				BB83F9A31C72C01C0013A6A0 /* UIView+SDExtension.m in Sources */,
@@ -7134,6 +7173,7 @@
 				BB83FA301C72C01C0013A6A0 /* UserProxy.m in Sources */,
 				BB83FA311C72C01C0013A6A0 /* HFFaceManager.m in Sources */,
 				BB83FA321C72C01C0013A6A0 /* TKLeftMenuController.m in Sources */,
+				8AF1571C1CC389EB0084F2EB /* TK_BoxListArg.m in Sources */,
 				BB83FA331C72C01C0013A6A0 /* ResponseData.m in Sources */,
 				BB83FA341C72C01C0013A6A0 /* UIColor+Extended.m in Sources */,
 				BB83FA351C72C01C0013A6A0 /* SDCycleScrollView.m in Sources */,
@@ -7205,6 +7245,7 @@
 				BB83FA711C72C01C0013A6A0 /* HFPostDetailReq.m in Sources */,
 				BB83FA721C72C01C0013A6A0 /* HFPostArg.m in Sources */,
 				BB83FA731C72C01C0013A6A0 /* HFTitleBar.m in Sources */,
+				8AF157281CC38C760084F2EB /* NotifyMsgListVM.m in Sources */,
 				BB83FA741C72C01C0013A6A0 /* MXSCycleScrollView.m in Sources */,
 				8A9D9B6E1C9BED7B009F877F /* TK_ReleaseRewardArg.m in Sources */,
 				8A9D9B5B1C993DD3009F877F /* TKWebViewController.m in Sources */,
@@ -7463,6 +7504,7 @@
 				BB83FBCC1C72C16B0013A6A0 /* GetUserDietaryByDayArg.m in Sources */,
 				BB83FBCD1C72C16B0013A6A0 /* BandCenter.m in Sources */,
 				BB83FBCE1C72C16B0013A6A0 /* UploadSportDataArg.m in Sources */,
+				8AF157251CC38C5A0084F2EB /* NotifyMsgListViewController.m in Sources */,
 				BB83FBCF1C72C16B0013A6A0 /* HFRemindView.m in Sources */,
 				BB83FBD01C72C16B0013A6A0 /* HFSchemeProxy.m in Sources */,
 				BB83FBD11C72C16B0013A6A0 /* UploadGameRes.m in Sources */,
@@ -7499,6 +7541,7 @@
 				BB83FBEC1C72C16B0013A6A0 /* HFActivityProxy.m in Sources */,
 				BB83FBED1C72C16B0013A6A0 /* HFLevelView.m in Sources */,
 				BB83FBEE1C72C16B0013A6A0 /* BasePopAnimation.m in Sources */,
+				8A58F3631CC399CA00A921B9 /* NotifyMsgTableCell.m in Sources */,
 				BB83FBEF1C72C16B0013A6A0 /* HFCommentInfoView.m in Sources */,
 				BB83FBF01C72C16B0013A6A0 /* HFVideoPlayer.m in Sources */,
 				BB83FBF11C72C16B0013A6A0 /* SchemePunchArg.m in Sources */,
@@ -7632,6 +7675,7 @@
 				BB83FC5E1C72C16B0013A6A0 /* MMSideDrawerTableViewCell.m in Sources */,
 				8A9D9B531C9809B0009F877F /* TK_PayAck.m in Sources */,
 				BB83FC5F1C72C16B0013A6A0 /* NSDate+Common.m in Sources */,
+				8AF157211CC38A000084F2EB /* TK_BoxListAck.m in Sources */,
 				BB83FC601C72C16B0013A6A0 /* UIView+SDExtension.m in Sources */,
 				BB83FC611C72C16B0013A6A0 /* BasePortraitButton.m in Sources */,
 				BB83FC621C72C16B0013A6A0 /* MJPhotoProgressView.m in Sources */,
@@ -7797,6 +7841,7 @@
 				BB83FCEF1C72C16B0013A6A0 /* TKLeftMenuController.m in Sources */,
 				BB83FCF01C72C16B0013A6A0 /* ResponseData.m in Sources */,
 				BB83FCF11C72C16B0013A6A0 /* UIColor+Extended.m in Sources */,
+				8AF1571D1CC389EB0084F2EB /* TK_BoxListArg.m in Sources */,
 				BB83FCF21C72C16B0013A6A0 /* SDCycleScrollView.m in Sources */,
 				BB83FCF31C72C16B0013A6A0 /* GameViewController.m in Sources */,
 				BB83FCF41C72C16B0013A6A0 /* GetDiseaseIntroArg.m in Sources */,
@@ -7868,6 +7913,7 @@
 				BB83FD2F1C72C16B0013A6A0 /* HFPostArg.m in Sources */,
 				BB83FD301C72C16B0013A6A0 /* HFTitleBar.m in Sources */,
 				BB83FD311C72C16B0013A6A0 /* MXSCycleScrollView.m in Sources */,
+				8AF157291CC38C760084F2EB /* NotifyMsgListVM.m in Sources */,
 				BB83FD321C72C16B0013A6A0 /* UIViewController+TKVCcategory.m in Sources */,
 				8A9D9B6F1C9BED7B009F877F /* TK_ReleaseRewardArg.m in Sources */,
 				8A9D9B5C1C993DD3009F877F /* TKWebViewController.m in Sources */,
