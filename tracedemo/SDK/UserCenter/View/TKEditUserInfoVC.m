@@ -56,9 +56,9 @@
     headRow.rowHeight = 100;
     [self.defaultSection.rowsData addObject:headRow];
     
-    self.defaultSection.rowHeight = 100;
-    self.defaultSection.sectionFootHeight = 0.1;
-    self.defaultSection.sectionHeadHeight = 0.1;
+    self.defaultSection.rowHeight = 44;
+    self.defaultSection.sectionFootHeight = 1.0;
+    self.defaultSection.sectionHeadHeight = 1.0;
     for(int i =0;i<6;i++)
     {
         TKTableViewRowM * r = [[TKTableViewRowM alloc] init];
@@ -87,10 +87,7 @@
         return [self getHeadView];
     }else
     {
-        TK_SettingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TK_SettingCell"];
-        if (!cell) {
-            cell = [TK_SettingCell loadDefaultTextType:self];
-        }
+        TK_SettingCell *cell = [TK_SettingCell loadDefaultTextType:self];
         [self fillCellContent:indexPath.row forCell:cell];
         return cell;
     }
