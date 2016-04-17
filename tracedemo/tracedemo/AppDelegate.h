@@ -25,5 +25,6 @@ typedef void(^complete)(BOOL finished);
 +(BaseNavViewController *)getMainNavigation;
 +(AppDelegate *)getAppDelegate;
 +(UIViewController *)appRootViewController;
+-(void)logouToLoginView;
 @end
 

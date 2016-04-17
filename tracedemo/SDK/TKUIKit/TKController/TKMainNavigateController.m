@@ -195,6 +195,8 @@
 -(void)registerNotification
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doLoginBack) name:TKUserLoginBackEvent object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onLogOut) name:TKUserLoginOut object:nil];
+    
 }
 
 -(void)doLoginBack
@@ -219,6 +221,15 @@
         temploginEvent = TK_Default;
     }
     
+}
+
+-(void)onLogOut
+{
+#if B_Client == 1
+    [[AppDelegate getAppDelegate] logouToLoginView];
+#else
+    self.selectedIndex = 0;
+#endif
 }
 
 -(void)dealloc

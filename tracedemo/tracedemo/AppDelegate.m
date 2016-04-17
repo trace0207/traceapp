@@ -304,6 +304,15 @@ static AppDelegate * appDelegate;
 }
 
 
+#pragma mark  local notification
+
+-(void)logouToLoginView
+{
+    rootNavVC = nil;
+    TKLoginViewController * vc = [[TKLoginViewController alloc] init];
+    vc.delegate = self;
+    [self.window setRootViewController:vc];
+}
 
 
 @end
