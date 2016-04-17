@@ -9,6 +9,8 @@
 #import "TKModifyNameViewController.h"
 #import "UIView+Border.h"
 #import "UIColor+TK_Color.h"
+#import "TK_SetUserInfoArg.h"
+#import "TKUserCenter.h"
 @interface TKModifyNameViewController ()
 
 @end
@@ -38,7 +40,16 @@
 
 - (IBAction)saveAction:(id)sender {
     //保存
-    [self.textView resignFirstResponder];
-    [self.nickNameTextFeild resignFirstResponder];
+    TK_SetUserInfoArg *arg = [[TK_SetUserInfoArg alloc]init];
+    if (self.modifyType == ModifyName) {
+        arg.nickName = self.nickNameTextFeild.text;
+        [self.nickNameTextFeild resignFirstResponder];
+    }else if (self.modifyType == ModifySignature) {
+        [self.textView resignFirstResponder];
+        arg.signature = self.textView.text;
+    }
+    [[[TKProxy proxy]userProxy]updateUserInfo:arg withBlock:^(HF_BaseAck *ack) {
+        DDLogInfo(@"修改信息：%@",arg);
+    }];
 }
 @end

@@ -21,7 +21,14 @@
 @end
 @implementation TKUser
 
-
+- (NSString *)getSexString
+{
+    if (self.sex == 1) {
+        return @"女";
+    }else {
+        return @"男";
+    }
+}
 
 @end
 

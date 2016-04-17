@@ -116,7 +116,7 @@
             break;
         case 5:
             cell.label1.text = @"性别";
-            cell.label2.text = user.sex == 0?@"男":@"女";
+            cell.label2.text = [user getSexString];
             break;
         case 6:
             cell.label1.text = @"个性签名";
@@ -298,11 +298,19 @@
 #pragma mark - action sheet delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    TK_SetUserInfoArg *arg = [[TK_SetUserInfoArg alloc]init];
     if (buttonIndex == 0) {
         //女
+        arg.sex = 0;
     }else if (buttonIndex == 1) {
         //男
+        arg.sex = 1;
     }
+    
+    
+    [[[TKProxy proxy]userProxy]updateUserInfo:arg withBlock:^(HF_BaseAck *ack) {
+        DDLogInfo(@"修改信息：%@",arg);
+    }];
 }
 @end
 

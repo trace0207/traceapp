@@ -29,6 +29,8 @@
 @property (nonatomic,assign)NSInteger sex;
 @property (nonatomic, assign)BOOL isLogin;
 
+- (NSString *)getSexString;
+
 @property (nonatomic,strong) LoginAckData * ackData;
 @end
 
