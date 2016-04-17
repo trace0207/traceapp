@@ -193,6 +193,7 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
+    _isEditing = YES;
     if (_delegate && [_delegate respondsToSelector:@selector(textViewDidBeginEditing:)]) {
         [self.delegate textViewDidBeginEditing:self];
     }
@@ -200,6 +201,7 @@
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
+    _isEditing = NO;
     if (_delegate && [_delegate respondsToSelector:@selector(textViewDidEndEditing:)]) {
         [self.delegate textViewDidEndEditing:self];
     }

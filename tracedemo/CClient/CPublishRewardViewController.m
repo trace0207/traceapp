@@ -82,8 +82,35 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     
     // Do any additional setup after loading the view from its nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPayNotify:) name:TKPayNotify object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
+-(void)keyboardShow:(NSNotification *)note
+{
+    CGFloat space = 0.;
+    if (self.priceInputText.isEditing) {
+        CGRect rect = [self.bottomView convertRect:self.priceInputView.frame toView:self.view];
+        space = CGRectGetHeight(self.view.bounds)-CGRectGetMaxY(rect);
+    }else if (self.inputText.isEditing){
+        CGRect rect = [self.bottomView convertRect:self.infoField.frame toView:self.view];
+        space = CGRectGetHeight(self.view.bounds)-CGRectGetMaxY(rect);
+    }
+    CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat deltaY = keyBoardRect.size.height;
+    if (space < deltaY) {
+        [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+            
+            self.view.transform=CGAffineTransformMakeTranslation(0, -(deltaY-space));
+        }];
+    }
+}
+-(void)keyboardHide:(NSNotification *)note
+{
+    [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+        self.view.transform = CGAffineTransformIdentity;
+    }];
+}
 
 -(void)onPayNotify:(NSNotification *)notify
 {
@@ -103,6 +130,8 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self name:TKPayNotify object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 -(void)initView
@@ -125,7 +154,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         self.navTitle = @"发布悬赏";
     }
     
-    [self.mainScrollView setContentSize:CGSizeMake(TKScreenWidth, defaultHeight)];
+    [self.mainScrollView setContentSize:CGSizeMake(TKScreenWidth, CGRectGetHeight(self.mainView.frame))];
     self.mainView.clipsToBounds = YES;
 //    self.mainView.frame = CGRectMake(0, 0, TKScreenWidth, defaultHeight);
     [self.mainScrollView addSubview:self.mainView];
@@ -134,7 +163,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         make.top.mas_equalTo(0);
         make.left.mas_equalTo(0);
         make.width.mas_equalTo(TKScreenWidth);
-        make.height.mas_equalTo(defaultHeight);
+        make.height.mas_equalTo(CGRectGetHeight(self.mainView.frame));
         
     }];
     

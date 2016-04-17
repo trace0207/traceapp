@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPublishRewardViewController">
             <connections>
                 <outlet property="addressField" destination="WBI-tc-PkR" id="HpO-oV-wqb"/>
                 <outlet property="addressText" destination="ihn-dI-ZCh" id="ocz-zo-nGA"/>
+                <outlet property="bottomView" destination="rve-fo-ERD" id="Vbr-ce-xPa"/>
                 <outlet property="brandField" destination="8n7-HN-mku" id="ynf-aV-iKa"/>
                 <outlet property="brandSelect" destination="Ye1-VK-vtk" id="1yZ-t6-yY0"/>
                 <outlet property="brandText" destination="4zl-e1-9Lw" id="TrV-aB-fPQ"/>
@@ -26,6 +27,7 @@
                 <outlet property="mainScrollView" destination="mLV-lu-fL6" id="5SC-mZ-jBW"/>
                 <outlet property="mainView" destination="nXS-GM-Off" id="J3x-cN-Sy0"/>
                 <outlet property="priceInputText" destination="e0p-hl-xk7" id="1pc-rl-hbA"/>
+                <outlet property="priceInputView" destination="VFe-dO-fVV" id="7gM-Xm-X2B"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

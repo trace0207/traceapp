@@ -42,5 +42,5 @@
 @property (nonatomic, assign) CGFloat cornerRadius;//边框圆角角度，默认 2px
 
 @property (nonatomic, weak) id<TKTextViewDelegate>delegate;
-
+@property (nonatomic, assign, readonly) BOOL isEditing;
 @end

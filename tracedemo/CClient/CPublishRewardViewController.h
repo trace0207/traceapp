@@ -32,7 +32,8 @@
 - (IBAction)dayBtn3:(id)sender;
 @property (weak, nonatomic) IBOutlet TKTextView *inputText;
 
-
+@property (weak, nonatomic) IBOutlet UIView *priceInputView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UITextField *priceInputText;
 @property (weak, nonatomic) IBOutlet UITextField *categoryText;
 @property (weak, nonatomic) IBOutlet UIImageView *brandSelect;
