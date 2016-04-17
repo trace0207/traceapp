@@ -23,7 +23,7 @@
 
 @end
 
-@interface TKIShowGoodsVM : TKTableViewVM
+@interface TKIShowGoodsVM : TKTableViewVM<TKShowGoodsCellDelegate>
 
 @property (nonatomic,strong)TK_Brand * brand;
 @property (nonatomic,strong)TK_ShareCategory * category;

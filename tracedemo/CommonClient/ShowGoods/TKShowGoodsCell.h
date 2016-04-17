@@ -23,6 +23,8 @@
 -(void)onBuyerHeadFiedClick:(NSIndexPath *)indexPath;
 -(void)onUserHeadFieldClick:(NSIndexPath *)indexPath;
 -(void)onFollowBtnClick:(NSIndexPath *)indexPath;
+-(void)onChatBtnClick;
+
 @end
 
 

@@ -405,7 +405,7 @@
                         </constraints>
                         <state key="normal" image="icon_tab_message"/>
                         <connections>
-                            <action selector="msgAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="q8H-b4-j25"/>
+                            <action selector="msgAction:" destination="Cr4-ho-YEZ" eventType="touchUpInside" id="sG0-o9-Njo"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B10级买手" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rR8-sj-3n5">

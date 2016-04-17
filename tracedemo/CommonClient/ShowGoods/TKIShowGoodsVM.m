@@ -22,8 +22,8 @@
 #import "NSString+HFStrUtil.h"
 #import "TKLoginViewController.h"
 #import "TKBuyerCenterViewController.h"
-
-@interface TKIShowGoodsVM()<TKShowGoodsCellDelegate>
+#import "TKChatViewController.h"
+@interface TKIShowGoodsVM()
 {
     NSInteger nowPage;
 }
@@ -168,6 +168,7 @@
     {
         cell = [[NSBundle mainBundle]loadNibNamed:@"TKShowGoodsCell" owner:self options:nil].firstObject;
         cell.backgroundColor = [UIColor clearColor];
+        
     }
     cell.indexPath = indexPath;
     [self fillCellImages:cell indexPath:indexPath];
@@ -413,6 +414,12 @@
     
     
     DDLogInfo(@"action from indexRow = %ld",indexPath.row);
+}
+
+- (void)onChatBtnClick
+{
+    TKChatViewController *vc = [[TKChatViewController alloc]init];
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
 }
 
 -(void)onUserHeadFieldClick:(NSIndexPath *)indexPath

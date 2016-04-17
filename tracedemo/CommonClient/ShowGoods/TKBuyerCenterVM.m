@@ -21,6 +21,7 @@
 {
     if (nil == _header) {
         _header = [[[NSBundle mainBundle]loadNibNamed:@"TKShowGoodsCell" owner:self options:nil]objectAtIndex:1];
+        _header.tkShowGoodscellDelegate = self;
 //        _header.backgroundColor = [UIColor redColor];
     }
     return _header;
