@@ -94,6 +94,19 @@
 - (void)sendMessageAction:(UIButton *)button
 {
     [self.textFeild resignFirstResponder];
+    if (self.textFeild.text.length == 0) {
+        return;
+    }
+    NSString *message = self.textFeild.text;
+    self.textFeild.text = nil;
+    //todo 发送message
+    SDChatModel *model = [[SDChatModel alloc]init];
+    model.messageType = SDMessageTypeSendToOthers;
+    model.text = message;
+    model.iconName = @"2.jpg";
+    [self.dataArray addObject:model];
+    [self.tableView reloadData];
+//    [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentSize.height) animated:YES];
 }
 
 /**
@@ -118,7 +131,7 @@
     self.tableView = [[UITableView alloc]init];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 49, 0));
     }];
     self.tableView.backgroundColor = RGBA(rgb, rgb, rgb, 1);
     self.tableView.delegate = self;
@@ -176,23 +189,13 @@
         self.dataArray = [NSMutableArray new];
     }
     for (int i = 0; i < count; i++) {
-        SDChatModel *model = [SDChatModel new];
+        SDChatModel *model = [[SDChatModel alloc]init];
         model.messageType = arc4random_uniform(2);
         if (model.messageType) {
-            model.iconName = [SDAnalogDataGenerator randomIconImageName];
-            if (arc4random_uniform(10) > 5) {
-                int index = arc4random_uniform(5);
-                model.imageName = [NSString stringWithFormat:@"xx%d.jpg", index];
-            }
+            model.iconName = @"1.jpg";
         } else {
-            if (arc4random_uniform(10) < 5) {
-                int index = arc4random_uniform(5);
-                model.imageName = [NSString stringWithFormat:@"xx%d.jpg", index];
-            }
             model.iconName = @"2.jpg";
         }
-        
-        
         model.text = [SDAnalogDataGenerator randomMessage];
         [self.dataArray addObject:model];
     }
@@ -221,8 +224,6 @@
     
     cell.sd_tableView = tableView;
     cell.sd_indexPath = indexPath;
-    
-    ///////////////////////////////////////////////////////////////////////
     
     return cell;
 }
