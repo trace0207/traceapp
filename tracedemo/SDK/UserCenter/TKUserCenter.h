@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TK_UserNormalViewModel.h"
 #import "TK_LoginAck.h"
+#import "TK_SetUserInfoArg.h"
 
 
 @interface TKUser : NSObject
@@ -36,6 +37,8 @@
 
 
 
+typedef void(^tkUpdateUserInfoBlock)(BOOL result);
+
 @interface TKUserCenter : NSObject
 
 
@@ -55,6 +58,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(TKUserCenter, instance);
 -(void)logout;
 -(TKUser *)getUser;
 
+/**
+ 更新头像
+ **/
+-(void)updateHeadUrl:(NSString *)headUrl block:(tkUpdateUserInfoBlock)block;
+
 -(void)initAppData;
+
+-(TK_SetUserInfoArg *)buildUserInfoArgFromLocal;
 
 @end

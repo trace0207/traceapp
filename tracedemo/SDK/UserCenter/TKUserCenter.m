@@ -12,6 +12,7 @@
 #import "TK_CategoryListAck.h"
 #import "NSString+HFStrUtil.h"
 #import "Pingpp.h"
+#import "TKProxy.h"
 
 @interface TKUser(){
 
@@ -23,11 +24,7 @@
 
 - (NSString *)getSexString
 {
-    if (self.sex == 1) {
-        return @"女";
-    }else {
-        return @"男";
-    }
+    return self.sex == 1?@"女":@"男";
 }
 
 @end
@@ -139,6 +136,26 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
     
 }
 
+/**
+ 更新头像
+ **/
+-(void)updateHeadUrl:(NSString *)headUrl block:(tkUpdateUserInfoBlock)block
+{
+    TK_SetUserInfoArg * arg = [self buildUserInfoArgFromLocal];
+    arg.headerUrl = headUrl;
+    [[TKProxy proxy].userProxy updateUserInfo:arg
+                                    withBlock:^(HF_BaseAck *ack) {
+                                        
+                                        if(ack.sucess)
+                                        {
+                                            block(YES);
+                                        }else
+                                        {
+                                            block(NO);
+                                        }
+                                        
+                                    }];
+}
 
 -(void)initAppData
 {
@@ -175,6 +192,29 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
     }];
 
 }
+
+
+-(TK_SetUserInfoArg *)buildUserInfoArgFromLocal
+{
+    TK_SetUserInfoArg * arg = [[TK_SetUserInfoArg alloc] init];
+    // TODO
+    
+//    TKUser *user = [[TKUserCenter instance]getUser];
+//    _nickName = user.nickName;
+//    _headerUrl = user.headPortraitUrl;
+//    _address = user.address;
+//    _signature = user.signature;
+//    _sex = user.sex;
+//#if B_Clent == 1
+//    _role = 0;
+//#else
+//    _role = 1;
+//#endif
+//    
+//}
+    return arg;
+}
+
 
 
 @end

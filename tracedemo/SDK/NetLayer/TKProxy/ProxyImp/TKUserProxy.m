@@ -112,4 +112,7 @@
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
 }
 
+
+
+
 @end
