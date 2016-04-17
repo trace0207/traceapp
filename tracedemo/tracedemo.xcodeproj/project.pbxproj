@@ -131,6 +131,10 @@
 		8AF1570D1CC25D1A0084F2EB /* TK_GetRewardByIdArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1570B1CC25D1A0084F2EB /* TK_GetRewardByIdArg.m */; };
 		8AF157101CC25D4D0084F2EB /* TK_GetRewardByIdAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1570F1CC25D4D0084F2EB /* TK_GetRewardByIdAck.m */; };
 		8AF157111CC25D4D0084F2EB /* TK_GetRewardByIdAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1570F1CC25D4D0084F2EB /* TK_GetRewardByIdAck.m */; };
+		8AF157141CC3344D0084F2EB /* TK_MessageSendArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF157131CC3344D0084F2EB /* TK_MessageSendArg.m */; };
+		8AF157151CC3344D0084F2EB /* TK_MessageSendArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF157131CC3344D0084F2EB /* TK_MessageSendArg.m */; };
+		8AF157181CC334640084F2EB /* TK_MessageListByTypeArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF157171CC334640084F2EB /* TK_MessageListByTypeArg.m */; };
+		8AF157191CC334640084F2EB /* TK_MessageListByTypeArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF157171CC334640084F2EB /* TK_MessageListByTypeArg.m */; };
 		911D01431CA3C9FB00BF06AE /* TKPayChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */; };
 		911D01441CA3C9FB00BF06AE /* TKPayChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */; };
 		9120D8401CAD2D5500491F05 /* TKInviteCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9120D83E1CAD2D5500491F05 /* TKInviteCodeViewController.m */; };
@@ -2909,6 +2913,10 @@
 		8AF1570B1CC25D1A0084F2EB /* TK_GetRewardByIdArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetRewardByIdArg.m; sourceTree = "<group>"; };
 		8AF1570E1CC25D4D0084F2EB /* TK_GetRewardByIdAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetRewardByIdAck.h; sourceTree = "<group>"; };
 		8AF1570F1CC25D4D0084F2EB /* TK_GetRewardByIdAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetRewardByIdAck.m; sourceTree = "<group>"; };
+		8AF157121CC3344D0084F2EB /* TK_MessageSendArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_MessageSendArg.h; sourceTree = "<group>"; };
+		8AF157131CC3344D0084F2EB /* TK_MessageSendArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_MessageSendArg.m; sourceTree = "<group>"; };
+		8AF157161CC334640084F2EB /* TK_MessageListByTypeArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_MessageListByTypeArg.h; sourceTree = "<group>"; };
+		8AF157171CC334640084F2EB /* TK_MessageListByTypeArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_MessageListByTypeArg.m; sourceTree = "<group>"; };
 		911D01411CA3C9FB00BF06AE /* TKPayChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPayChooseView.h; sourceTree = "<group>"; };
 		911D01421CA3C9FB00BF06AE /* TKPayChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPayChooseView.m; sourceTree = "<group>"; };
 		9120D83D1CAD2D5500491F05 /* TKInviteCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKInviteCodeViewController.h; sourceTree = "<group>"; };
@@ -6060,6 +6068,10 @@
 				8AF1570B1CC25D1A0084F2EB /* TK_GetRewardByIdArg.m */,
 				8AF1570E1CC25D4D0084F2EB /* TK_GetRewardByIdAck.h */,
 				8AF1570F1CC25D4D0084F2EB /* TK_GetRewardByIdAck.m */,
+				8AF157121CC3344D0084F2EB /* TK_MessageSendArg.h */,
+				8AF157131CC3344D0084F2EB /* TK_MessageSendArg.m */,
+				8AF157161CC334640084F2EB /* TK_MessageListByTypeArg.h */,
+				8AF157171CC334640084F2EB /* TK_MessageListByTypeArg.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -6690,6 +6702,7 @@
 				BB83F8BC1C72C01C0013A6A0 /* HIIProxy.m in Sources */,
 				BBA372541C75C5100075333E /* BHomeChildAScrolBox.m in Sources */,
 				BB83F8BD1C72C01C0013A6A0 /* HFCheckVercodeReq.m in Sources */,
+				8AF157141CC3344D0084F2EB /* TK_MessageSendArg.m in Sources */,
 				BB83F8BE1C72C01C0013A6A0 /* BindingArg.m in Sources */,
 				BB83F8BF1C72C01C0013A6A0 /* TKConstants.m in Sources */,
 				BB83F8C11C72C01C0013A6A0 /* TK_BaseNavSettingViewController.m in Sources */,
@@ -6857,6 +6870,7 @@
 				BB83F94D1C72C01C0013A6A0 /* HFSchemeCell.m in Sources */,
 				BB83F94E1C72C01C0013A6A0 /* LoadSchemeDataAck.m in Sources */,
 				BB83F94F1C72C01C0013A6A0 /* WebViewJavascriptBridge.m in Sources */,
+				8AF157181CC334640084F2EB /* TK_MessageListByTypeArg.m in Sources */,
 				BB83F9501C72C01C0013A6A0 /* SchemeActionsAck.m in Sources */,
 				BB83F9511C72C01C0013A6A0 /* TKHeadImageView.m in Sources */,
 				BB83F9521C72C01C0013A6A0 /* HFAnimationView.m in Sources */,
@@ -7351,6 +7365,7 @@
 				BB83FB791C72C16B0013A6A0 /* HIIProxy.m in Sources */,
 				BB83FB7A1C72C16B0013A6A0 /* HFCheckVercodeReq.m in Sources */,
 				BB83FB7B1C72C16B0013A6A0 /* BindingArg.m in Sources */,
+				8AF157151CC3344D0084F2EB /* TK_MessageSendArg.m in Sources */,
 				BB83FB7C1C72C16B0013A6A0 /* TKConstants.m in Sources */,
 				BB83FB7E1C72C16B0013A6A0 /* TK_BaseNavSettingViewController.m in Sources */,
 				BB83FB7F1C72C16B0013A6A0 /* RBCustomDatePickerView.m in Sources */,
@@ -7518,6 +7533,7 @@
 				BB83FC0B1C72C16B0013A6A0 /* LoadSchemeDataAck.m in Sources */,
 				BB83FC0C1C72C16B0013A6A0 /* WebViewJavascriptBridge.m in Sources */,
 				BB83FC0D1C72C16B0013A6A0 /* SchemeActionsAck.m in Sources */,
+				8AF157191CC334640084F2EB /* TK_MessageListByTypeArg.m in Sources */,
 				BB83FC0E1C72C16B0013A6A0 /* TKHeadImageView.m in Sources */,
 				BB83FC0F1C72C16B0013A6A0 /* HFAnimationView.m in Sources */,
 				BB83FC101C72C16B0013A6A0 /* HFSportViewCell.m in Sources */,

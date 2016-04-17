@@ -136,11 +136,6 @@
 
 
 /**
- 获取消息盒子数据
- **/
--(void)getMessageCenter:(TK_MessageCenterArg *)arg withBlock:(hfAckBlock)block;
-
-/**
  根据ID 查询悬赏详情
  **/
 -(void)queryRewardById:(NSString *)rewardId withBlock:(hfAckBlock)block;
@@ -197,6 +192,23 @@
  **/
 -(void)getBuyerHomePageOrders:(NSString *)userId  page:(NSInteger)page withBlock:(hfAckBlock)block;
 
+
+#pragma  mark  MSGBox
+
+/**
+ 获取消息盒子数据
+ **/
+-(void)getMessageCenter:(TK_MessageCenterArg *)arg withBlock:(hfAckBlock)block;
+
+/**
+ 根据类目查询消息列表
+ **/
+-(void)getMesssageListById:(NSString *)toId withBolck:(hfAckBlock)block;
+
+/**
+ 发送消息
+ **/
+-(void)tkSendMessage:(NSString *)toId content:(NSString *)content withBlock:(hfAckBlock)block;
 
 #pragma  mark CClient
 

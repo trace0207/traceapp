@@ -9,6 +9,11 @@
 #import "HF_BaseArg.h"
 
 @interface TK_MessageCenterArg : HF_BaseArg
-@property (nonatomic,assign) NSInteger role;
+@property (nonatomic,strong) NSString * fromUserRole;
+@property (nonatomic,strong) NSString * fromUserId;
+@property (nonatomic,strong) NSString * toUserRole;
+@property (nonatomic,strong) NSString * toUserId;
+@property (nonatomic,assign) NSInteger pageOffset;
+@property (nonatomic,assign) NSInteger pageSize;
 
 @end

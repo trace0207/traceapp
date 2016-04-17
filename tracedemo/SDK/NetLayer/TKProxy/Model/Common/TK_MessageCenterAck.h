@@ -10,4 +10,6 @@
 
 @interface TK_MessageCenterAck : HF_BaseAck
 
+@property (nonatomic,strong)NSDictionary * data;
+
 @end

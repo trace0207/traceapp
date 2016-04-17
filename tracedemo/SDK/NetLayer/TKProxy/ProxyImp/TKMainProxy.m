@@ -255,18 +255,7 @@
 }
 
 
-/**
- 获取消息盒子数据
- **/
--(void)getMessageCenter:(TK_MessageCenterArg *)arg withBlock:(hfAckBlock)block
-{
-    arg.role = 1;
-#if B_Client ==1
-    arg.role= 0;
-#endif
-    
-    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
-}
+
 
 
 /**
@@ -406,6 +395,34 @@
     arg.ackClassName = @"TK_GetOrdersAck";
     [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
+
+
+
+#pragma  mark  MSGBox
+
+/**
+ 获取消息盒子数据
+ **/
+-(void)getMessageCenter:(TK_MessageCenterArg *)newArg withBlock:(hfAckBlock)block
+{
+//    TK_MessageCenterArg * newArg = [[TK_MessageCenterArg alloc] init];
+    [[HF_HttpClient httpClient] sendRequestForHiifit:newArg withBolck:block];
+}
+
+/**
+ 根据类目查询消息列表
+ **/
+-(void)getMesssageListById:(NSString *)toId withBolck:(hfAckBlock)block
+{
+}
+
+/**
+ 发送消息
+ **/
+-(void)tkSendMessage:(NSString *)toId content:(NSString *)content withBlock:(hfAckBlock)block
+{
+}
+
 
 
 #pragma  mark CClient

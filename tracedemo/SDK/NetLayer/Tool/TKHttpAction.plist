@@ -2,12 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>TK_MessageSendArg</key>
+	<string>/apollo/login/message/im-message!sendMsg.action</string>
+	<key>TK_MessageListByTypeArg</key>
+	<string>/apollo/login/message/im-message!msgList.action</string>
 	<key>TK_GetRewardByIdArg</key>
 	<string>/apollo/nologin/order/postreward!postrewardDetail.action</string>
 	<key>TK_SetUserInfoArg</key>
 	<string>/apollo/login/user/user!modify.action</string>
 	<key>TK_MessageCenterArg</key>
-	<string></string>
+	<string>/apollo/login/message/message-box!msgBoxIndex.action</string>
 	<key>TK_GetBuyerHomePageListArg</key>
 	<string>/apollo/nologin/purchaser/purchaser!purchaserShowList.action</string>
 	<key>TK_GetBuyerUserInfoArg</key>
