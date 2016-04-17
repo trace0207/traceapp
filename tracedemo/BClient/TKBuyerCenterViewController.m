@@ -8,10 +8,14 @@
 
 #import "TKBuyerCenterViewController.h"
 #import "TKBuyerCenterVM.h"
+#import "TKLoginViewController.h"
+#import "TKUserCenter.h"
+#import "CPublishRewardViewController.h"
 
-@interface TKBuyerCenterViewController ()
+@interface TKBuyerCenterViewController ()<TKShowGoodsVMDelegate,LoginDelegate>
 {
     TKBuyerCenterVM * vm;
+    TKIShowGoodsRowM *rowData; // 缓存的 item 数据，用户登录回来之后跳转
 }
 @end
 
@@ -64,9 +68,36 @@
     vm = [[TKBuyerCenterVM alloc] initWithFreshAbleTable];
     vm.isBuyer = self.isBuyer;
     vm.userId = self.userId;
+    vm.showGoodsDelegate = self;
     [self.view addSubview:vm.pullRefreshView];
     [vm tkUpdateViewConstraint];
     [vm startPullDownRefreshing];
+}
+
+-(void)onFollowAction:(TKIShowGoodsRowM *)row
+{
+    if(![TKUserCenter instance].isLogin)
+    {
+        rowData = row;
+        [TKLoginViewController showLoginViewPage:self];
+    }
+    else
+    {
+        CPublishRewardViewController * vc = [[CPublishRewardViewController alloc] init];
+        vc.showGoodsrowData = row;
+        UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+        [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:nil];
+    }
+
+}
+
+-(void)onLoginSuccess
+{
+    CPublishRewardViewController * vc = [[CPublishRewardViewController alloc] init];
+    vc.showGoodsrowData = rowData;
+    UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    [[AppDelegate getMainNavigation] presentViewController:nvc animated:YES completion:nil];
+    rowData = nil;
 }
 
 @end

@@ -406,7 +406,8 @@
         {
             TKIShowGoodsRowM *  rowM = [self.defaultSection.rowsData objectAtIndex:indexPath.row];
             rowM.ackData.praiseCount  =   [NSString tkStringFromNumber:rowM.ackData.praiseCount.integerValue + 1];
-            [self.mTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+//            [self.mTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            [self.mTableView reloadData];
         }
     }];
     

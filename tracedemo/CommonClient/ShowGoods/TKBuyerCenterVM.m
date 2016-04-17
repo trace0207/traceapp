@@ -21,14 +21,14 @@
 {
     if (nil == _header) {
         _header = [[[NSBundle mainBundle]loadNibNamed:@"TKShowGoodsCell" owner:self options:nil]objectAtIndex:1];
+//        _header.backgroundColor = [UIColor redColor];
     }
     return _header;
 }
 - (void)defaultViewSetting
 {
-//    self.userId = @"1";
-    [self.mTableView setTableHeaderView:self.header];
     
+    [self.mTableView setTableHeaderView:self.header];
 }
 
 - (void)tkLoadDefaultData
@@ -41,6 +41,7 @@
     {
         [self loadCustomerData];
     }
+    
 }
 
 
@@ -95,6 +96,8 @@
         if(ack.sucess)
         {
             [weakSelf resetCustomerHeadView:(TK_GetUserHomePageAck *)ack];
+            [weakSelf.mTableView setTableHeaderView:self.header];
+            [weakSelf.mTableView reloadData];
         }
         else
         {
