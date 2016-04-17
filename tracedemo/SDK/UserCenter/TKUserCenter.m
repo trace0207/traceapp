@@ -47,14 +47,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
     if(!_user){
     
         _user  = [[TKUser alloc] init];
+        _user.account = [[NSUserDefaults standardUserDefaults] objectForKey:TK_UserAccount];
+        _user.password = [[NSUserDefaults standardUserDefaults] objectForKey:TK_UserValue];
     }
     return _user;
 }
 
--(TKUser *)tempUserData{
 
-    if(!_tempUserData){
-    
+
+-(TKUser *)tempUserData
+{
+    if(!_tempUserData)
+    {
         _tempUserData = [[TKUser alloc] init];
     }
     return _tempUserData;
@@ -70,12 +74,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
     
     self.user  = user;
     self.user.isLogin = YES;
-    // TODO test 下面是测试代码
-//    self.user.address = @"浙江省杭州市西湖区西溪路555号7号楼401";
-//    self.user.signature = @"走自己的路，让别人的BB吧";
-//    self.user.headPortraitUrl = TKDefaultHead;
-//    self.user.nickName = ;
-//    self.user.score = 88;
+
+    [[NSUserDefaults standardUserDefaults]setObject:self.user.account forKey:TK_UserAccount];
+    
+    [[NSUserDefaults standardUserDefaults]setObject:self.user.password forKey:TK_UserValue];
+    
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:TKUserLoginSuccess object:nil];
 }
 
@@ -84,6 +90,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 {
     self.user.isLogin = NO;
     [[NSNotificationCenter defaultCenter] postNotificationName:TKUserLoginOut object:nil];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:TK_UserValue];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:TK_UserValue];
 }
 
 
@@ -91,6 +99,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 -(void)doLogin:(NSString *)userName password:(NSString *)password{
 
     
+    self.user.account = userName;
+    self.user.password = password;
     //deviceId=123&mobile=18867102687&password=123456
     WS(weakSelf)
     [[TKProxy proxy].userProxy login:userName withValue:password withBlock:^(HF_BaseAck * ack){

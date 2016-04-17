@@ -18,6 +18,9 @@
 @property (nonatomic, copy) NSString *mobile;
 @property (nonatomic, copy) NSString *vip;
 
+@property (nonatomic,copy) NSString *account;
+@property (nonatomic,copy) NSString *password;
+
 
 @property (nonatomic, copy) NSString *birthday;//用户生日yyyy-mm-dd
 @property (nonatomic, copy) NSString *userName;
@@ -40,6 +43,8 @@
 typedef void(^tkUpdateUserInfoBlock)(BOOL result);
 
 @interface TKUserCenter : NSObject
+
+
 
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(TKUserCenter, instance);

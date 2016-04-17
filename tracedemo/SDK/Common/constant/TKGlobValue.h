@@ -29,6 +29,10 @@ typedef NS_ENUM(NSInteger,TKMessageType) {
 #ifndef TKGlobValue_h
 #define TKGlobValue_h
 
+#define  TK_UserAccount @"tk_userAccount"
+#define  TK_UserValue   @"tk_userValue"
+
+
 
 //判定系统版本号
 #define IOS8_OR_LATER ([[[UIDevice currentDevice] systemVersion] compare:@"8.0"] != NSOrderedAscending)

@@ -74,8 +74,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onLoginSuccess) name:TKUserLoginSuccess object:nil];
     
-    _userNameText.text = @"18867102687";
-    _passwordText.text = @"123456";
+    _userNameText.text = [[TKUserCenter instance] getUser].account;
+    _passwordText.text = [[TKUserCenter instance] getUser].password;
     
     self.nameLine.backgroundColor = [UIColor tkThemeColor2];
     self.passwordLine.backgroundColor = [UIColor tkThemeColor2];
