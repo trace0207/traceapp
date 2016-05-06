@@ -17,7 +17,6 @@
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) NSString *mobile;
 @property (nonatomic, copy) NSString *vip;
-
 @property (nonatomic,copy) NSString *account;
 @property (nonatomic,copy) NSString *password;
 
@@ -34,6 +33,7 @@
 @property (nonatomic, assign)BOOL isLogin;
 
 - (NSString *)getSexString;
+- (NSString *)getRole;
 
 @property (nonatomic,strong) LoginAckData * ackData;
 @end

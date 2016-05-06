@@ -32,6 +32,8 @@
 #import "UIColor+TK_Color.h"
 #import "SDChatTableViewCell.h"
 #import "SDAnalogDataGenerator.h"
+#import "TKUserCenter.h"
+#import "TK_MessageListByTypeAck.h"
 //#import "SDWebViewController.h"
 
 #import "UITableView+SDAutoTableViewCellHeight.h"
@@ -44,7 +46,6 @@
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) UITableView *tableView;
-
 @property (nonatomic, strong) UIView *keyboardView;
 @property (nonatomic, strong) UITextField *textFeild;
 @property (nonatomic, strong) UIButton *sendButton;
@@ -104,16 +105,85 @@
     model.messageType = SDMessageTypeSendToOthers;
     model.text = message;
     model.iconName = @"2.jpg";
-    [self.dataArray addObject:model];
-    [self.tableView reloadData];
-//    [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentSize.height) animated:YES];
+    
+    WS(weakSelf)
+    [[TKProxy proxy].mainProxy tkSendMessage:self.toId
+                                      toRole:self.toUserRole
+                                     content:model.text withBlock:^(HF_BaseAck *ack) {
+                                         [weakSelf.dataArray addObject:model];
+                                         [weakSelf refresh];
+                                         [weakSelf.tableView reloadData];
+                                         [weakSelf performSelector:@selector(refresh) withObject:nil afterDelay:0.5];
+    }];
+    
+    
+    
 }
+
+/**
+ 刷新 tableView 滑动的位置
+ **/
+-(void)refresh
+{
+    CGFloat height = self.tableView.contentSize.height- self.tableView.frame.size.height;
+    if(height < 0)
+    {
+        height = 0;
+    }
+    [self.tableView setContentOffset:CGPointMake(0, height) animated:YES];
+}
+
+
+/**
+ 加载数据
+ **/
+-(void)loadData
+{
+    [[TKProxy proxy].mainProxy getMesssageListById:self.toId
+                                            toRole:self.toUserRole
+                                         withBolck:^(HF_BaseAck *ack) {
+        
+                                             if(ack.sucess)
+                                             {
+                                                 TK_MessageListByTypeAck * ackData = (TK_MessageListByTypeAck *)ack;
+                                                 for (ChatMsg * msg in ackData.data) {
+                                                     
+                                                     SDChatModel *model = [[SDChatModel alloc]init];
+                                                     model.messageType = SDMessageTypeSendToMe;
+                                                     if([msg.fromUserId isEqualToString:[TKUserCenter instance].getUser.userId])
+                                                     {
+                                                         model.messageType = SDMessageTypeSendToOthers;
+                                                         model.iconName = [TKUserCenter instance].getUser.headPortraitUrl;
+                                                     }else
+                                                     {
+                                                         model.messageType = SDMessageTypeSendToMe;
+                                                         model.iconName = msg.fromHeaderUrl;
+                                                     }
+                                                     model.text = msg.content;
+                                                     [self.dataArray addObject:model];
+                                                 }
+                                                 [self.tableView reloadData];
+                                                 
+                                             }else
+                                             {
+                                                 [[HFHUDView shareInstance] ShowTips:ack.msg delayTime:1.0 atView:nil];
+                                             }
+    } ];
+}
+
+
+
 
 /**
  显示聊天窗口
  **/
-+(void)showChatView:(NSString *)toId toUserRole:(NSInteger)toUserRole
++(void)showChatView:(NSString *)toId toUserRole:(NSString *)toUserRole
 {
+    if([toId isEqualToString:[TKUserCenter instance].getUser.userId])
+    {
+        [[HFHUDView shareInstance] ShowTips:@"不能给自己发消息" delayTime:1.0 atView:nil];
+        return;
+    }
     TKChatViewController * vc = [[TKChatViewController alloc] init];
     vc.toId = toId;
     vc.toUserRole = toUserRole;
@@ -125,15 +195,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navTitle = @"会话";
-    [self setupDataWithCount:30];
+//    [self setupDataWithCount:10];
+ 
+    self.dataArray = [[NSMutableArray alloc] init];
     
-    CGFloat rgb = 240;
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+//    CGFloat rgb = 240;
     self.tableView = [[UITableView alloc]init];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 49, 0));
     }];
-    self.tableView.backgroundColor = RGBA(rgb, rgb, rgb, 1);
+//    self.tableView.backgroundColor = RGBA(rgb, rgb, rgb, 1);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -162,6 +236,9 @@
     }];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    [self performSelector:@selector(refresh) withObject:self afterDelay:0.5];
+    [self loadData];
 }
 -(void)dealloc
 {
@@ -172,9 +249,14 @@
 {
     CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat deltaY = keyBoardRect.size.height;
-    [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+//    if(CGRectGetHeight(self.tableView.frame) - self.tableView.contentSize.height > deltaY)
+//    {
+//        deltaY = 0;
+//    }
+        [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
         
         self.view.transform=CGAffineTransformMakeTranslation(0, -deltaY);
+//            [self refresh];
     }];
 }
 -(void)keyboardHide:(NSNotification *)note

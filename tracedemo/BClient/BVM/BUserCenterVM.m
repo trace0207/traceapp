@@ -57,6 +57,7 @@
     
     NSMutableArray * sections = [[NSMutableArray alloc] initWithObjects:section1,section2,section3,nil];
     self.sectionData = sections;
+    [self.mTableView reloadData];
 }
 
 
@@ -108,6 +109,8 @@
 -(void)goToUserPage
 {
     TKBuyerCenterViewController * bvc = [[TKBuyerCenterViewController alloc] init];
+    bvc.isBuyer = YES;
+    bvc.userId = [TKUserCenter instance].getUser.userId;
     [[AppDelegate getMainNavigation] pushViewController:bvc animated:YES];
 }
 
@@ -198,21 +201,16 @@
 -(TK_SettingCell *)getHeadCell
 {
     TK_SettingCell * cell =   [TK_SettingCell loadCenterImageType:self];
-    //cell.backgroundColor = [UIColor clearColor];TK_SettingCell
     cell.contentView.backgroundColor = [UIColor tkThemeColor2];
     TKUser * user = [[TKUserCenter instance]getUser];
-//    ((TKHeadImageView *)cell.headImage)
     if (user.headPortraitUrl.length>0) {
         TKSetHeadImageView(cell.headImage, [TKUITools getRawImage:user.headPortraitUrl])
-//        [cell.headImage sd_setImageWithURL:[NSURL URLWithString:[TKUI getSmallImage:user.headPortraitUrl]] placeholderImage:[UIImage imageNamed:@"user"]];
-        
     }else{
         [cell.headImage setImage:IMG(@"tk_image_head_default")];
     }
     [cell.headImage tkAddTapAction:@selector(goToUserPage) forTarget:self];
     cell.label2.text = user.nickName;
     cell.label1.text =  [[NSString alloc] initWithFormat:@"Vip:%@级",user.vip];  // @"Vip:%级别";
-    
     [cell setSelectionStyle:(UITableViewCellSelectionStyleNone)];
     return cell;
 }

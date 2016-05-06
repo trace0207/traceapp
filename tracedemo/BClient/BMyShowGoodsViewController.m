@@ -9,13 +9,13 @@
 #import "BMyShowGoodsViewController.h"
 #import "CPublishRewardViewController.h"
 #import "AppDelegate.h"
-//#import "TKShowGoodsListVM.h"
 #import "TKIShowGoodsVM.h"
+#import "TKIBuyerShowGoodsPageVM.h"
 #import "GlobNotifyDefine.h"
 
 @interface BMyShowGoodsViewController ()
 {
-    TKIShowGoodsVM * vm;
+    TKIBuyerShowGoodsPageVM * vm;
 }
 
 @end
@@ -47,7 +47,7 @@
 
 -(void)initView
 {
-    vm = [[TKIShowGoodsVM alloc] initWithFreshAbleTable];
+    vm = [[TKIBuyerShowGoodsPageVM alloc] initWithFreshAbleTable];
     [self.view addSubview:vm.pullRefreshView];
     [vm tkUpdateViewConstraint];
     [self performSelector:@selector(loadData) withObject:nil afterDelay:0.4];

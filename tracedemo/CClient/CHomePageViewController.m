@@ -13,6 +13,7 @@
 #import "UIColor+TK_Color.h"
 #import "TKPayChooseView.h"
 #import "GlobNotifyDefine.h"
+#import "TKAfterSalesViewController.h"
 #import "TKUserCenter.h"
 @interface CHomePageViewController ()
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
@@ -52,7 +53,7 @@
     [self TKaddNavigationTitleView:self.segmentedControl];
 //        UIButton *bt = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
 //        [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//        [bt setTitle:@"刷新" forState:UIControlStateNormal];
+//        [bt setTitle:@"投诉" forState:UIControlStateNormal];
 //        [bt addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
 //        [self addLeftBarItemWithCustomView:bt];
     
@@ -74,6 +75,10 @@
 -(void)test
 {
 
+    NSString * orderId = @"123";
+    [TKAfterSalesViewController showAfterSalesView:orderId];
+    
+    
 }
 - (TKPayChooseView *)payView
 {

@@ -21,6 +21,7 @@
 #import "TKAfterSalesViewController.h"
 #import "TKAlertView.h"
 #import "TKUITools.h"
+#import "TKBuyerCenterViewController.h"
 @interface TK_UserCenterVM()
 {
  
@@ -206,6 +207,7 @@
     }
     cell.label1.text = user.nickName;
     cell.label2.text = user.signature;
+    [cell.headImage tkAddTapAction:@selector(onHeadTap:) forTarget:self];
     return cell;
 }
 
@@ -268,6 +270,10 @@
 }
 
 
+-(void)onHeadTap:(UIGestureRecognizer *)tap
+{
+    [TKBuyerCenterViewController showUserPage:[TKUserCenter instance].getUser.userId isBuyer:NO];
+}
 
 
 @end

@@ -25,7 +25,7 @@
 #import "TKChatViewController.h"
 @interface TKIShowGoodsVM()
 {
-    NSInteger nowPage;
+    
 }
 
 @end
@@ -36,7 +36,6 @@
 -(instancetype)init
 {
     self = [super init];
-    nowPage = 0;
     return self;
 }
 
@@ -44,20 +43,22 @@
 {
     [self hidTips];
     WS(weakSelf)
+    NSInteger page = self.nowPage;
+    if(self.isFromBottom)
+    {
+        page = page +1;
+    }
     [[TKProxy proxy].mainProxy getShowOrders:self.category.categoryId
                                      brandId:self.brand.brandId
-                                        page:nowPage withBlock:^(HF_BaseAck *ack) {
-       
-//        DDLogInfo(@"orders list %@",ack);
-        
-        if([ack isKindOfClass:[TK_GetOrdersAck class]])
+                                        page:page withBlock:^(HF_BaseAck *ack) {
+        if([ack isKindOfClass:[TK_GetOrdersAck class]] && ack.sucess)
         {
             [weakSelf resetData:(TK_GetOrdersAck *)ack];
         }
         
         [weakSelf stopRefresh];
         
-        if(nowPage == 0 && weakSelf.defaultSection.rowsData.count == 0)
+        if(self.nowPage == 0 && weakSelf.defaultSection.rowsData.count == 0)
         {
             [weakSelf showTipsView:[TKUITools getListViewEmptyTip]];
         }
@@ -69,14 +70,20 @@
 
 -(void)resetData:(TK_GetOrdersAck *)ack
 {
-    DDLogInfo(@"loadDefaultData  enter   go  go go ");
+   
     
-    
-    
-    TKTableSectionM * section = [[TKTableSectionM alloc] init];
-    [section.rowsData removeAllObjects];
+    TKTableSectionM * section = self.defaultSection;
+    if(self.nowPage == 0 && !self.isFromBottom)// 从顶部刷
+    {
+        [section.rowsData removeAllObjects];
+    }
     section.sectionHeadHeight = 0.1;
     section.sectionFootHeight = 0.1;
+    
+    if(self.isFromBottom && ack.data.count >0)
+    {
+        self.nowPage = self.nowPage +1;
+    }
     
     for (GetOrderData * data in ack.data) {
         
@@ -125,7 +132,8 @@
         [section.rowsData addObject:row];
         
     }
-    [self setDefaultSection:section];
+    
+     DDLogInfo(@"loadDefaultData  enter   go  go go  rowsCount =  %ld ",self.defaultSection.rowsData.count);
     [self.mTableView reloadData];
 }
 
@@ -138,17 +146,21 @@
 
 - (void)beginPullDownRefreshing
 {
+    self.isFromBottom = NO;
+    self.nowPage = 0;
     [self tkLoadDefaultData];
 }
 
 - (void)beginPullUpLoading
 {
+     self.isFromBottom = YES;
     [self tkLoadDefaultData];
 }
 
 -(BOOL)hasRefreshFooterView
 {
-    return YES;
+    return self.sectionData.count >=20;
+//    return YES;
 }
 
 
@@ -315,6 +327,10 @@
     }
     else // 正常显示
     {
+        if(ackData.userNickName == nil || ackData.userNickName.length == 0)
+        {
+            ackData.userNickName = _T(@"HF_DefaultCustomerName");
+        }
         TKSetHeadImageView(cell.userHeadImage,  ackData.userHeaderUrl)
         cell.headFirstLabel.text =  ackData.userNickName;
         cell.headSecondLabel.text = ackData.userSignature;
@@ -350,6 +366,8 @@
     
     cell.tkShowGoodscellDelegate = self;
     cell.indexPath = indexPath;
+    cell.addressText.text = @"暂时无法获取地址";
+    cell.timeText.text = [NSDate stringWithTimeUTC:ackData.createTime/1000];
     
 #if B_Client == 1
     cell.followSwitch.hidden = YES;

@@ -104,7 +104,9 @@
     _model = model;
     
     _label.text = model.text;
-    self.iconImageView.image = [UIImage imageNamed:model.iconName];
+//    self.iconImageView.image = [UIImage imageNamed:model.iconName];
+    
+    TKSetHeadImageView(self.iconImageView, model.iconName)
     
     // 根据model设置cell左浮动或者右浮动样式
     [self setMessageOriginWithModel:model];

@@ -64,16 +64,6 @@
         TKTableViewRowM * r = [[TKTableViewRowM alloc] init];
         [self.defaultSection.rowsData addObject:r];
     }
-    
-//
-//    TKTableSectionM * m = [[TKTableSectionM alloc] init];
-//    m.sectionHeadHeight = 15;
-//    m.sectionFootHeight = 0.01;
-//    m.rowHeight = 44;
-    
-//    [m.rowsData removeAllObjects];
-
-    
     [self.mTableView reloadData];
 }
 
@@ -104,7 +94,7 @@
             cell.label2.text = user.nickName;
             break;
         case 2:
-            cell.label1.text = @"神器账号";
+            cell.label1.text = @"趣拍账号";
             cell.label2.text = user.mobile;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell setAccessoryType:UITableViewCellAccessoryNone];
@@ -252,32 +242,26 @@
         }
             break;
            
-        case 2:
-        {
-            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
-            vc.inPutType = 0;
-            vc.navTitle = @"神器账号";
-            vc.tag = indexPath.row;
-            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
-        }
-            break;
-        case 3:
-        {
-            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
-            vc.inPutType = 0;
-            vc.navTitle = @"手机号码";
-            vc.tag = indexPath.row;
-            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
-        }
-            break;
-        case 4:
-        {
+//        case 2:
+//        {
 //            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
 //            vc.inPutType = 0;
-//            vc.navTitle = @"通讯地址";
+//            vc.navTitle = @"神器账号";
 //            vc.tag = indexPath.row;
 //            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
-            
+//        }
+//            break;
+//        case 3:
+//        {
+//            TKEditTextViewController * vc = [[TKEditTextViewController alloc] init];
+//            vc.inPutType = 0;
+//            vc.navTitle = @"手机号码";
+//            vc.tag = indexPath.row;
+//            [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+//        }
+//            break;
+        case 4:
+        {
             [TKWebViewController showWebView:@"我的收货地址" url:AddressURL];
         }
             break;

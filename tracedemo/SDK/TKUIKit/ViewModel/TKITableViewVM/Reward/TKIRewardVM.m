@@ -126,6 +126,7 @@
     RewardData * rowData  = cellData.ackData;
     GoodsDetailViewController *vc = [[GoodsDetailViewController alloc]initWithNibName:@"GoodsDetailViewController" bundle:nil];
     vc.data = [rowData copy];
+    
     [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
     
 }
@@ -136,7 +137,12 @@
     [cell.iWantSwitch setOn:NO animated:NO];
     TKRewardCellModel * cellData = (TKRewardCellModel *)[self.defaultSection.rowsData objectAtIndex:indexPath.row];
     RewardData * rowData  = cellData.ackData;
-    cell.userName.text = rowData.userNickName;
+    NSString *nickName = rowData.userNickName;
+    if([nickName isEqualToString:@""])
+    {
+        nickName = _T(@"HF_DefaultCustomerName");
+    }
+    cell.userName.text = nickName;
     TKSetLoadingImageView(cell.pic1, rowData.picAddr1);
     TKSetLoadingImageView(cell.pic2, rowData.picAddr2);
     TKSetHeadImageView(cell.headImageView,rowData.userHeaderUrl);

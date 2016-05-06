@@ -108,6 +108,7 @@
 {
 #if B_Client == 1
     arg.role = 0;
+    arg.relativeUrl = @"/apollo/login/purchaser/purchaser!modify.action";
 #endif
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];
 }

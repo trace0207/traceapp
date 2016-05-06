@@ -27,6 +27,15 @@
     return self.sex == 1?@"女":@"男";
 }
 
+-(NSString *)getRole
+{
+#if B_Client == 1
+    return BClientValue;
+#else
+    return CClientValue;
+#endif
+}
+
 @end
 
 @interface TKUserCenter(){
@@ -108,6 +117,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
             user.ackData = loginData;
             user.userId = loginData.id;
             user.nickName = loginData.nickName;
+#if B_Client == 1
+            user.nickName = loginData.purchaserName;
+#endif
             user.mobile = loginData.mobile;
             user.signature = loginData.signature;
             user.headPortraitUrl = loginData.headerUrl;
@@ -171,6 +183,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 {
     TK_SetUserInfoArg * arg = [self buildUserInfoArgFromLocal];
     arg.nickName = nickname;
+    arg.purchaserName = nickname;
     [self updateUserInfo:arg block:block];
 }
 
@@ -187,6 +200,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
 
 - (void)updateUserInfo:(TK_SetUserInfoArg *)arg block:(tkUpdateUserInfoBlock)block
 {
+    arg.showLoadingStr = @"YES";
     [[TKProxy proxy].userProxy updateUserInfo:arg
                                     withBlock:^(HF_BaseAck *ack) {
                                         
@@ -264,6 +278,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(TKUserCenter,instance);
     self.user.address = arg.address;
     self.user.signature = arg.signature;
     self.user.nickName = arg.nickName;
+    [[NSNotificationCenter defaultCenter] postNotificationName:TKUserInfoChange object:nil];
 }
 
 

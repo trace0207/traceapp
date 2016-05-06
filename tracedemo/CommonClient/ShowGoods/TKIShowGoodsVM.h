@@ -28,6 +28,8 @@
 @property (nonatomic,strong)TK_Brand * brand;
 @property (nonatomic,strong)TK_ShareCategory * category;
 @property (weak,nonatomic) id<TKShowGoodsVMDelegate> showGoodsDelegate;
+@property (nonatomic,assign)NSInteger nowPage;// 当前的page
+@property (nonatomic,assign)BOOL isFromBottom; // 底部上拉刷新标记
 
 
 @property (nonatomic,assign) BOOL hasInitData;

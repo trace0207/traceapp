@@ -15,4 +15,5 @@
 @property (nonatomic,strong) NSString * signature;
 @property (nonatomic,assign) NSInteger sex;
 @property (nonatomic,assign) NSInteger role;
+@property (nonatomic,strong) NSString * purchaserName;
 @end

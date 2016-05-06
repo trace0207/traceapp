@@ -237,3 +237,8 @@ tableView.delegate = d2;
 
 
 
+#pragma  mark  defaultValue
+
+#define  BClientValue  @"0"
+#define  CClientValue  @"1"
+

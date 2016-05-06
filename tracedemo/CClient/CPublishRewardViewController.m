@@ -98,6 +98,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     }
     CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat deltaY = keyBoardRect.size.height;
+    
     if (space < deltaY) {
         [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
             
@@ -616,7 +617,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     {
         GetOrderData * row =   self.showGoodsrowData.ackData;
         self.inputText.text = row.content;
-        self.priceInputText.text = row.showPrice;
+        self.priceInputText.text = [self cutPrice:row.showPrice];
         self.inputText.placehorder.hidden = YES;
         self.brandText.text = row.brandName;
         selectBrand = [[TK_Brand alloc] init];
@@ -636,7 +637,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     {
         RewardData * row = self.rewardData;
         self.inputText.text = row.content;
-        self.priceInputText.text = row.rewardPrice;
+        self.priceInputText.text = [self cutPrice:row.rewardPrice ];
         self.inputText.placehorder.hidden = YES;
         self.brandText.text = row.brandName;
         selectBrand = [[TK_Brand alloc] init];
@@ -651,6 +652,17 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         [self.firstPic setUserInteractionEnabled:NO];
         [self.secondPic setUserInteractionEnabled:NO];
     }
+}
+
+-(NSString *)cutPrice:(NSString *)priceStrValue
+{
+    NSInteger value = [priceStrValue integerValue];
+    value  = value/100;
+    return [NSString stringWithFormat:@"%ld",value];
+}
+-(NSString *)getSendPrice:(NSString *)inputText
+{
+    return [inputText stringByAppendingString:@"00"];
 }
 
 
@@ -770,7 +782,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
         }
         
         arg.content = self.inputText.text;
-        arg.rewardPrice = [self.priceInputText.text stringByAppendingString:@"00"];
+        arg.rewardPrice = [self getSendPrice:self.priceInputText.text]; //[self.priceInputText.text stringByAppendingString:@"00"];
         arg.source = @"1";// 1 自主发起
         arg.sourceId = [[TKUserCenter instance] getUser].userId;
         arg.categoryId = selectCategory.categoryId;
@@ -875,7 +887,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     
         TK_PublishRewardArg * arg  = [[TK_PublishRewardArg alloc] init];
         arg.content = self.inputText.text;
-        arg.rewardPrice = self.priceInputText.text;
+        arg.rewardPrice = [self getSendPrice:self.priceInputText.text];
         arg.categoryId = selectCategory.categoryId;
         arg.brandId = selectBrand.brandId;
         arg.receiverId = ackAddress.id; // 地址id
@@ -899,7 +911,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     {
         TK_PublishRewardArg * arg  = [[TK_PublishRewardArg alloc] init];
         arg.content = self.inputText.text;
-        arg.rewardPrice = self.priceInputText.text;
+        arg.rewardPrice = [self getSendPrice:self.priceInputText.text];
         arg.categoryId = selectCategory.categoryId;
         arg.brandId = selectBrand.brandId;
         arg.receiverId = ackAddress.id; // 地址id
@@ -926,7 +938,11 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     [images addObject:image2];
     [images addObjectsFromArray:otherPics];
     WS(weakSelf)
-    [[TKProxy proxy].mainProxy uploadMutableImages:images withtype:1 withBlock:^(NSArray * acks) {
+    NSInteger type = 2;
+#if B_Clent ==1
+    type = 1;
+#endif
+    [[TKProxy proxy].mainProxy uploadMutableImages:images withtype:type withBlock:^(NSArray * acks) {
         
         [weakSelf onImageUploadSuccess:acks];
     } ];

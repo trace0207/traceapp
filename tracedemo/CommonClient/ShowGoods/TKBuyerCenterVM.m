@@ -123,8 +123,7 @@
 
 - (void)onChatBtnClick
 {
-    TKChatViewController *vc = [[TKChatViewController alloc]init];
-    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    [TKChatViewController showChatView:self.userId toUserRole:self.isBuyer?BClientValue:CClientValue];
 }
 
 

@@ -37,7 +37,7 @@ const int wordsNum = 200;
     
     self.placehorderLabel = [[UILabel alloc]initWithFrame:CGRectMake(16, 16+2, 200, 30)];
     self.placehorderLabel.textColor = [UIColor lightGrayColor];
-    self.placehorderLabel.text = _T(@"HF_Common_give_Suggest");
+    self.placehorderLabel.text = @"请输入反馈信息";
     self.placehorderLabel.font = [UIFont systemFontOfSize:16.0f];
     [self.scrollView addSubview:self.placehorderLabel];
     

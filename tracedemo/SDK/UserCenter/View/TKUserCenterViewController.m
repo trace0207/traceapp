@@ -9,6 +9,7 @@
 #import "TKUserCenterViewController.h"
 #import "TK_UserCenterVM.h"
 #import "UIColor+TK_Color.h"
+#import "GlobNotifyDefine.h"
 #if B_Client == 1
 #import "BUserCenterVM.h"
 #endif
@@ -24,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserInfoChange) name:TKUserInfoChange object:nil];
     
     self.hidDefaultBackBtn = YES;
     
@@ -71,6 +74,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)onUserInfoChange
+{
+    [vm tkLoadDefaultData];
+}
 
 
 @end

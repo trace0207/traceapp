@@ -24,7 +24,7 @@
 @property (nonatomic,strong) NSString * toHeaderUrl;
 @property (nonatomic,strong) NSString * toNickName;
 @property (nonatomic,strong) NSString * toUserId;
-@property (nonatomic,assign) NSInteger  toUserRole;
+@property (nonatomic,strong) NSString * toUserRole;
 @end
 
 @interface BoxItemData : TK_BaseJsonModel

@@ -1,10 +1,12 @@
-/*
- Localizable.strings
- GuanHealth
- 
- Created by hermit on 15/3/11.
- Copyright (c) 2015年 wensihaihui. All rights reserved.
- */
+/* 
+  Localizable.strings
+  tracedemo
+
+  Created by cmcc on 16/4/20.
+  Copyright © 2016年 trace. All rights reserved.
+*/
+
+"HF_DefaultCustomerName" = "无名用户";
 
 "HF_Common_App" = "嗨健康";
 "HF_Common_OK" = "确定";

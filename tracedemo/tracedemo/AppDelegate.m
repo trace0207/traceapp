@@ -47,17 +47,16 @@ static AppDelegate * appDelegate;
 
 -(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     
-    
-    //    [self showNavigateView];
     return YES;
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [super application:application didFinishLaunchingWithOptions:launchOptions];
-    // Override point for customization after application launch.
-//    [self showSlideMenuController];
-    
-     appDelegate = self;
-      [self initAppData];
+    if([launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]!= nil)
+    {
+        application.applicationIconBadgeNumber = 0;
+    }
+    appDelegate = self;
+    [self initAppData];
 
 #if B_Client == 1
 
@@ -286,7 +285,7 @@ static AppDelegate * appDelegate;
     return topVC;
 }
 
-#pragma  mark   notification
+#pragma  mark   UIApplicationDelegate
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken
 {
@@ -312,6 +311,21 @@ static AppDelegate * appDelegate;
     TKLoginViewController * vc = [[TKLoginViewController alloc] init];
     vc.delegate = self;
     [self.window setRootViewController:vc];
+}
+
+
+
+#pragma mark  Notification
+
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    
+}
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    application.applicationIconBadgeNumber = 0;
 }
 
 

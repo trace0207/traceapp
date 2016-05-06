@@ -19,7 +19,7 @@
 @property (nonatomic,copy) NSString  *categoryId;
 @property (nonatomic,copy) NSString  *categoryName;
 @property (nonatomic,copy) NSString  *content;
-@property (nonatomic,copy) NSString  *createTime;
+@property (nonatomic, assign) NSInteger createTime;
 @property (nonatomic,copy) NSString  *followCount;
 @property (nonatomic,copy) NSString  *id;
 @property (nonatomic,copy) NSString  *modifyTime;

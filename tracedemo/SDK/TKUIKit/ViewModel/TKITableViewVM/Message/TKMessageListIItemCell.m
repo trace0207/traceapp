@@ -35,7 +35,12 @@
     if(data.msgData != nil)
     {
         [self.headImage setImage:IMG(@"mes_default")];
-        self.nameLabel.text = @"IM对话消息";
+        NSString * nickName = data.msgData.toNickName;
+        if(nickName == nil || nickName.length == 0)
+        {
+            nickName = @"IM对话消息";
+        }
+        self.nameLabel.text = nickName;
         self.timeLabel.text = [NSDate stringWithTimeUTC:data.msgData.createTime.integerValue/1000];
         self.messageLabel.text = data.msgData.content;
     }

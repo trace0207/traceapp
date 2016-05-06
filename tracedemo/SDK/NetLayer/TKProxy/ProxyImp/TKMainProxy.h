@@ -92,7 +92,11 @@
 
 /**
  *  上传图片
- *
+ *    PICTURE_HEADER(0, "个人头像", "/header/"),
+ PICTURE_SHOWORDER(1, "晒单传图", "/showorder/"),
+ PICTURE_POSTREWAED(2, "悬赏传图", "/postreward/"),
+ PICTURE_RIGHTS(3, "售后维权", "/rights/"),
+ PURCHASER_INFO(4, "买手资料", "/information/"),
  *  @param image <#image description#>
  *  @param block <#block description#>
  */
@@ -203,17 +207,18 @@
 /**
  根据类目查询消息列表
  **/
--(void)getMesssageListById:(NSString *)toId withBolck:(hfAckBlock)block;
+-(void)getMesssageListById:(NSString *)toId toRole:(NSString *)toUserRole withBolck:(hfAckBlock)block;
 
 /**
  发送消息
  **/
--(void)tkSendMessage:(NSString *)toId content:(NSString *)content withBlock:(hfAckBlock)block;
+-(void)tkSendMessage:(NSString *)toId toRole:(NSString *)toRole content:(NSString *)content withBlock:(hfAckBlock)block;
 
 /**
  查询通知的消息列表
  **/
 -(void)tkGetNotifyMsgList:(NSInteger)boxId withBlock:(hfAckBlock)block;
+
 
 #pragma  mark CClient
 

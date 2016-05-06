@@ -30,6 +30,7 @@
 
 
 #define TKUserLoginSuccess              @"tk_userLoginSuccessed"// 用户登录请求成功，或者等价登录请求成功
+#define TKUserInfoChange                @"tk_userInfoChanged" //用户信息更新
 #define TKUserLoginBackEvent            @"tk_userLoginBackEvent"// 班开放式登录页面登录成功后 通知响应的UI刷新
 #define TKBrandCategoryReady            @"tk_BrandAndCategoryReady"// 类目和品牌准备OK
 #define TKPayNotify                     @"tk_pingppPayResult"// 支付成功

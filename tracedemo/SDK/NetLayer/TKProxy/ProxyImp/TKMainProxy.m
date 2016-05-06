@@ -34,6 +34,10 @@
 #import "TK_GetBuyerUserInfoArg.h"
 #import "TK_GetRewardByIdArg.h"
 #import "TK_BoxListArg.h"
+#import "TK_MessageCenterArg.h"
+#import "TKUserCenter.h"
+#import "TK_MessageSendArg.h"
+#import "TK_MessageListByTypeArg.h"
 
 
 @implementation TKMainProxy
@@ -404,24 +408,39 @@
 /**
  获取消息盒子数据
  **/
--(void)getMessageCenter:(TK_MessageCenterArg *)newArg withBlock:(hfAckBlock)block
+-(void)getMessageCenter:(TK_MessageCenterArg *)arg withBlock:(hfAckBlock)block
 {
 //    TK_MessageCenterArg * newArg = [[TK_MessageCenterArg alloc] init];
-    [[HF_HttpClient httpClient] sendRequestForHiifit:newArg withBolck:block];
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 
 /**
  根据类目查询消息列表
  **/
--(void)getMesssageListById:(NSString *)toId withBolck:(hfAckBlock)block
+-(void)getMesssageListById:(NSString *)toId toRole:(NSString *)toUserRole withBolck:(hfAckBlock)block
 {
+    TK_MessageListByTypeArg * arg = [[TK_MessageListByTypeArg alloc] init];
+    arg.fromUserId = [TKUserCenter instance].getUser.userId;
+    arg.fromUserRole = [[TKUserCenter instance].getUser getRole];
+    arg.toUserId = toId;
+    arg.toUserRole = toUserRole;
+    arg.pageOffset = 0;
+    arg.pageSize = 20;
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 
 /**
  发送消息
  **/
--(void)tkSendMessage:(NSString *)toId content:(NSString *)content withBlock:(hfAckBlock)block
+-(void)tkSendMessage:(NSString *)toId toRole:(NSString *)toRole content:(NSString *)content withBlock:(hfAckBlock)block;
 {
+    TK_MessageSendArg * arg = [[TK_MessageSendArg alloc] init];
+    arg.fromUserRole = [[TKUserCenter instance].getUser getRole];
+    arg.fromUserId = [TKUserCenter instance].getUser.userId;
+    arg.toUserId = toId;
+    arg.toUserRole = toRole;
+    arg.content = content;
+    [[HF_HttpClient httpClient] sendRequestForHiifit:arg withBolck:block];
 }
 
 

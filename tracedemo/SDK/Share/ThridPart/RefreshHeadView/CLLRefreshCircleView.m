@@ -7,6 +7,7 @@
 //
 
 #import "CLLRefreshCircleView.h"
+#import "UIColor+TK_Color.h"
 
 @implementation CLLRefreshCircleView
 
@@ -38,7 +39,7 @@
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:173 / 255.0 green:53 / 255.0 blue:60 / 255.0 alpha:1].CGColor);
+    CGContextSetStrokeColorWithColor(context, [UIColor tkThemeColor1].CGColor);
     CGContextSetLineWidth(context, 1.f);
     
     static CGFloat radius = 9;
