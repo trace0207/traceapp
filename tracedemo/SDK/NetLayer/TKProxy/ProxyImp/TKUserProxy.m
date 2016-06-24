@@ -85,6 +85,8 @@
     arg.smsCode = smsCode;
 #if B_Client == 1
     arg.role = 0;
+#else 
+    arg.role = 1;
 #endif
     arg.mobile = mobile;
     [[HF_HttpClient httpClient]sendRequestForHiifit:arg withBolck:block];

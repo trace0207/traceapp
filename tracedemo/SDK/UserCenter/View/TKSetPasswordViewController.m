@@ -27,14 +27,19 @@
 
 @implementation TKSetPasswordViewController
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navTitle = @"设置密码";
     
     if(self.isForgetPassword)
     {
-        self.bottomBtn.hidden = YES;
-        self.bottomLabel.hidden = YES;
+        self.bottomView.hidden = YES;
+        self.keyKabel.text = @"新密码";
+        self.inviteCodeFiled.hidden = YES;
+        _passwordMarginTop.constant -= 53;
     }
 
     
@@ -51,6 +56,20 @@
     [self.verifyWaitTimeTipsText addGestureRecognizer:tap];
     
     
+}
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+//    if(self.isForgetPassword)
+//    {
+//        [self.setPasswordField mas_updateConstraints:^(MASConstraintMaker *make) {
+//            
+//            make.top.equalTo(self.inviteCodeFiled).with.offset(10);
+//            
+//        }];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,11 +97,23 @@
  //  codeType   17：消费者注册短信验证码，19：消费者找回密码短信验证码，18：买手注册短信，20：买手找回密码短信验证码
     NSInteger type = 17;
     
+    if(self.isForgetPassword)
+    {
+        type = 19;
+    }
+    
 #if B_Client == 1
     type = 18;
+    if(self.isForgetPassword)
+    {
+        type = 20;
+    }
 #endif
     
-    [[TKProxy proxy].userProxy getVerifyCode:[TKUserCenter instance].tempUserData.mobile type:type whtiBlock:^(HF_BaseAck * ack){
+    NSString * mobile = [NSString stringWithFormat:@"%@%@",[TKUserCenter instance].tempUserData.countryCode,
+                         [TKUserCenter instance].tempUserData.mobile];
+    
+    [[TKProxy proxy].userProxy getVerifyCode:mobile type:type whtiBlock:^(HF_BaseAck * ack){
         [self startTimeCount];
     }];
     
@@ -97,7 +128,7 @@
         timer = nil;
     }
     timeOut = false;
-    seconds = 5;
+    seconds = 30;
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(cutdown:) userInfo:nil repeats:YES];
     [timer fire];
 }
@@ -149,6 +180,33 @@
     NSString * inviteCode = self.inviteCodeInput.text;
     NSString * password = self.passwordInput.text;
     
+    NSString * mobile = [TKUserCenter instance].tempUserData.mobile;
+    
+    if(self.isForgetPassword)
+    {
+        [[TKProxy proxy].userProxy resetPassword:mobile smsCode:verifyCode password:password withBlock:^(HF_BaseAck *ack) {
+            
+            if(ack.sucess)
+            {
+                [[HFHUDView shareInstance] ShowTips:@"密码修改成功，请重新登录" delayTime:1.0 atView:nil];
+                [[TKUserCenter instance] getUser].account = [[TKUserCenter instance] tempUserData].mobile;
+                [[AppDelegate getMainNavigation] popToRootViewControllerAnimated:YES];
+            }
+            else
+            {
+                NSString * msg = [NSString stringWithFormat:@"%@:%@",@"密码修改失败",ack.msg];
+                [[HFHUDView shareInstance] ShowTips:msg  delayTime:2.0 atView:nil];
+            }
+            
+        }];
+        
+        
+        
+        return ;
+    }
+    
+    
+    
     [[TKProxy proxy].userProxy registerNewUser:verifyCode
                                     inviteCode:inviteCode
                                      userValue:password
@@ -156,9 +214,22 @@
                                      whtiBlock:^(HF_BaseAck * ack){
         
         DDLogInfo(@"--------- %@  ",ack);
-        
-    
-                                         [[AppDelegate getMainNavigation] popToRootViewControllerAnimated:YES];
+                                         
+                                         if([ack sucess])
+                                         {
+                                             [[HFHUDView shareInstance] ShowTips:@"注册成功，请重新登录" delayTime:1.0 atView:nil];
+                                             
+                                             [[TKUserCenter instance] getUser].account = [[TKUserCenter instance] tempUserData].mobile;
+                                             
+//                                             [TKUserCenter instance] getUser].account =  [[TKUserCenter instance] tempUserData].mobile;
+                                             
+                                             [[AppDelegate getMainNavigation] popToRootViewControllerAnimated:YES];
+                                             
+                                         }
+                                         else
+                                         {
+                                             [[HFHUDView shareInstance] ShowTips:ack.msg delayTime:1.0 atView:nil];
+                                         }
                                          
                                          
     }];

@@ -95,4 +95,9 @@
  **/
 +(TK_SettingCell *)loadSelectType:(id)ower;
 
+/**
+ 加载 左右 label的
+ **/
++(TK_SettingCell *)loadLeftAndRightLabelType:(id)ower;
+
 @end

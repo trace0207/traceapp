@@ -10,13 +10,6 @@
 
 @implementation TKClearView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 -(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
@@ -25,17 +18,25 @@
     {
         return nil;
     }
-    
-    if(_clearDelegate && [_clearDelegate respondsToSelector:@selector(onClearViewEvent:withEvent:)])
+    if(_clearDelegate && [_clearDelegate respondsToSelector:@selector(hideKeyboardExcludeViews)])
     {
-        UIView * view = [_clearDelegate onClearViewEvent:point withEvent:event];
-        if(view != nil)
-        {
-            return  view;
+        NSArray * views = [_clearDelegate hideKeyboardExcludeViews];
+        BOOL hide = YES;
+        for (UIView * view in views) {
+            
+            CGPoint tapPoint = [view convertPoint:point fromView:self];
+            
+            if([view pointInside:tapPoint withEvent:event])
+            {
+                hide = NO;
+            }
         }
-        return nil;
+        if(hide)
+        {
+            [self endEditing:YES];
+        }
     }
-    return nil;
+    return [super hitTest:point withEvent:event];
 }
 
 @end

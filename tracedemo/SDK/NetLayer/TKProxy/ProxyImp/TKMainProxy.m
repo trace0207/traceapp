@@ -201,7 +201,13 @@
 
 
 
-
+/**
+ *  上传多张图片
+ *
+ *  @param images <#images description#>
+ *  @param type   <#type description#>
+ *  @param block  <#block description#>
+ */
 -(void)uploadMutableImages:(NSArray *)images
                   withtype:(NSInteger)type
                  withBlock:(tkMutableArgBlock)block

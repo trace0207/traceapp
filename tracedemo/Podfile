@@ -1,8 +1,8 @@
-platform :ios, "7.0"
+platform :ios, "8.0"
 
 #pod "tracedemo"
 
-#target :<#TargetName#>Tests, :exclusive => true do
+target "B_Client" do
 pod 'AFNetworking', '~> 2.5.4'
 pod 'SDWebImage', '~> 3.7.1'
 pod 'Base64', '~> 1.0.1'
@@ -21,4 +21,25 @@ pod 'MJRefresh', '~> 2.3.2'
 pod 'MMDrawerController', '~> 0.5.7'
 pod 'JSQMessagesViewController','~> 7.1.0'
 pod 'Pingpp/Alipay', '~> 2.2.0'
-#pod 'JSQMessagesViewController', :git => 'https://github.com/jessesquires/JSQMessagesViewController.git', :branch => 'develop'
+end
+
+target "C_Client" do
+pod 'AFNetworking', '~> 2.5.4'
+pod 'SDWebImage', '~> 3.7.1'
+pod 'Base64', '~> 1.0.1'
+pod 'JSONModel', '~> 1.0.2'
+pod 'WCAlertView', '~> 1.0.1'
+pod 'Masonry', '~> 0.6.1'
+pod 'MD5Digest', '~> 0.1.0'
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'SSKeychain', '~> 1.2.2'
+pod 'DACircularProgress', '~> 2.2.0'
+pod 'UMengAnalytics-NO-IDFA', '~> 3.6.5’
+pod 'GDataXML-HTML', '~> 1.2.0'
+pod 'NSDate+Helpers', '~> 1.2.0'
+pod 'CocoaLumberjack', '~> 2.0.0'
+pod 'MJRefresh', '~> 2.3.2'
+pod 'MMDrawerController', '~> 0.5.7'
+pod 'JSQMessagesViewController','~> 7.1.0'
+pod 'Pingpp/Alipay', '~> 2.2.0'
+end

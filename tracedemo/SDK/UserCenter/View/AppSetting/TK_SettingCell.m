@@ -103,6 +103,14 @@ const NSInteger kSwitch = 9910;
 }
 
 
+/**
+ 加载 左右 label的
+ **/
++(TK_SettingCell *)loadLeftAndRightLabelType:(id)ower
+{
+    return  [[[NSBundle mainBundle]loadNibNamed:@"TK_SettingCell" owner:ower options:nil]objectAtIndex:8];
+}
+
 
 
 

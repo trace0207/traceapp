@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57B0513D63E7E07E16544DBC /* libPods-C_Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F524BB1750CFDAB09C5ECD /* libPods-C_Client.a */; };
 		8A00F9731CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A00F9721CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m */; };
 		8A00F9741CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A00F9721CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m */; };
 		8A00F9771CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A00F9761CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.m */; };
@@ -295,6 +296,11 @@
 		91F862971C9AA208006F44BE /* DetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F862951C9AA208006F44BE /* DetailView.m */; };
 		91F862991C9AA21B006F44BE /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F862981C9AA21B006F44BE /* DetailView.xib */; };
 		91F8629A1C9AA21B006F44BE /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F862981C9AA21B006F44BE /* DetailView.xib */; };
+		A223E996F8437CEB782FD13D /* libPods-B_Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6B4540F9DB4976F88D216A /* libPods-B_Client.a */; };
+		BB166A6F1D0E9A420013D700 /* TKCountrySelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB166A6D1D0E9A420013D700 /* TKCountrySelectVC.m */; };
+		BB166A701D0E9A420013D700 /* TKCountrySelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB166A6D1D0E9A420013D700 /* TKCountrySelectVC.m */; };
+		BB166A711D0E9A420013D700 /* TKCountrySelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB166A6E1D0E9A420013D700 /* TKCountrySelectVC.xib */; };
+		BB166A721D0E9A420013D700 /* TKCountrySelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB166A6E1D0E9A420013D700 /* TKCountrySelectVC.xib */; };
 		BB83F8A61C72C01C0013A6A0 /* GlobInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B39F81BF01D4400E5C982 /* GlobInfo.m */; };
 		BB83F8A71C72C01C0013A6A0 /* HFNoInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3B701BF01D4400E5C982 /* HFNoInfoView.m */; };
 		BB83F8A81C72C01C0013A6A0 /* UIViewController+Customize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B3E4E1BF01E4900E5C982 /* UIViewController+Customize.m */; };
@@ -874,7 +880,6 @@
 		BB83FAF01C72C01C0013A6A0 /* QZoneConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6B3ED21BF01E4900E5C982 /* QZoneConnection.framework */; };
 		BB83FAF11C72C01C0013A6A0 /* SinaWeiboConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6B3ED31BF01E4900E5C982 /* SinaWeiboConnection.framework */; };
 		BB83FAF21C72C01C0013A6A0 /* ShareSDKCoreService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6B3EDB1BF01E4900E5C982 /* ShareSDKCoreService.framework */; };
-		BB83FAF31C72C01C0013A6A0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7E02E9AB012C0D49F6B86E /* libPods.a */; };
 		BB83FAF51C72C01C0013A6A0 /* HFAdvanceSchemeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3A971BF01D4400E5C982 /* HFAdvanceSchemeTableViewCell.xib */; };
 		BB83FAF61C72C01C0013A6A0 /* HFFoodListButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3AA81BF01D4400E5C982 /* HFFoodListButtonCell.xib */; };
 		BB83FAF71C72C01C0013A6A0 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B7C1BF01D4400E5C982 /* PostCell.xib */; };
@@ -1548,7 +1553,6 @@
 		BB83FDAD1C72C16B0013A6A0 /* QZoneConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6B3ED21BF01E4900E5C982 /* QZoneConnection.framework */; };
 		BB83FDAE1C72C16B0013A6A0 /* SinaWeiboConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6B3ED31BF01E4900E5C982 /* SinaWeiboConnection.framework */; };
 		BB83FDAF1C72C16B0013A6A0 /* ShareSDKCoreService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6B3EDB1BF01E4900E5C982 /* ShareSDKCoreService.framework */; };
-		BB83FDB01C72C16B0013A6A0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7E02E9AB012C0D49F6B86E /* libPods.a */; };
 		BB83FDB21C72C16B0013A6A0 /* HFAdvanceSchemeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3A971BF01D4400E5C982 /* HFAdvanceSchemeTableViewCell.xib */; };
 		BB83FDB31C72C16B0013A6A0 /* HFFoodListButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3AA81BF01D4400E5C982 /* HFFoodListButtonCell.xib */; };
 		BB83FDB41C72C16B0013A6A0 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B3B7C1BF01D4400E5C982 /* PostCell.xib */; };
@@ -1655,8 +1659,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		5B7E02E9AB012C0D49F6B86E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		17B031CF6B48E03A4DDBEC39 /* Pods-C_Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C_Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-C_Client/Pods-C_Client.debug.xcconfig"; sourceTree = "<group>"; };
+		1E65EC03DE0CBBD8C2ECF507 /* Pods-B_Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B_Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-B_Client/Pods-B_Client.debug.xcconfig"; sourceTree = "<group>"; };
+		6C6B4540F9DB4976F88D216A /* libPods-B_Client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-B_Client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CCBF6F74029CFB220C798D7 /* Pods-C_Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C_Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-C_Client/Pods-C_Client.release.xcconfig"; sourceTree = "<group>"; };
 		8A00F9711CB48F2300B7E3E2 /* TK_GetInviteCodeArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetInviteCodeArg.h; sourceTree = "<group>"; };
 		8A00F9721CB48F2300B7E3E2 /* TK_GetInviteCodeArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_GetInviteCodeArg.m; sourceTree = "<group>"; };
 		8A00F9751CB48F6C00B7E3E2 /* TK_GetInviteCodeAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_GetInviteCodeAck.h; sourceTree = "<group>"; };
@@ -3066,7 +3072,6 @@
 		91F862941C9AA208006F44BE /* DetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailView.h; sourceTree = "<group>"; };
 		91F862951C9AA208006F44BE /* DetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailView.m; sourceTree = "<group>"; };
 		91F862981C9AA21B006F44BE /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
-		B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BB15064B1C0876E500F97A7B /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		BB15064C1C0876E500F97A7B /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		BB15064D1C0876E500F97A7B /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
@@ -3074,6 +3079,9 @@
 		BB1506511C0A935D00F97A7B /* TK_PicAddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PicAddView.m; sourceTree = "<group>"; };
 		BB1506531C0AD1F100F97A7B /* TKClearView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKClearView.h; sourceTree = "<group>"; };
 		BB1506541C0AD1F100F97A7B /* TKClearView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKClearView.m; sourceTree = "<group>"; };
+		BB166A6C1D0E9A420013D700 /* TKCountrySelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCountrySelectVC.h; sourceTree = "<group>"; };
+		BB166A6D1D0E9A420013D700 /* TKCountrySelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCountrySelectVC.m; sourceTree = "<group>"; };
+		BB166A6E1D0E9A420013D700 /* TKCountrySelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKCountrySelectVC.xib; sourceTree = "<group>"; };
 		BB1A03151BE211720035770A /* TKHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKHomePageViewController.h; sourceTree = "<group>"; };
 		BB1A03161BE211720035770A /* TKHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKHomePageViewController.m; sourceTree = "<group>"; };
 		BB1A03171BE211720035770A /* TKHomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKHomePageViewController.xib; sourceTree = "<group>"; };
@@ -3188,6 +3196,8 @@
 		BBE32BB91C0EDE6E0094ACEE /* TK_AppraiseBuyerArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_AppraiseBuyerArg.m; sourceTree = "<group>"; };
 		BBFD6F9B1C351CCA00E0A536 /* TKUserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserCenterViewController.h; sourceTree = "<group>"; };
 		BBFD6F9C1C351CCA00E0A536 /* TKUserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserCenterViewController.m; sourceTree = "<group>"; };
+		C4F524BB1750CFDAB09C5ECD /* libPods-C_Client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-C_Client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C776EDCC56CA0949184BC52A /* Pods-B_Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B_Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-B_Client/Pods-B_Client.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3217,7 +3227,7 @@
 				BB83FAF01C72C01C0013A6A0 /* QZoneConnection.framework in Frameworks */,
 				BB83FAF11C72C01C0013A6A0 /* SinaWeiboConnection.framework in Frameworks */,
 				BB83FAF21C72C01C0013A6A0 /* ShareSDKCoreService.framework in Frameworks */,
-				BB83FAF31C72C01C0013A6A0 /* libPods.a in Frameworks */,
+				A223E996F8437CEB782FD13D /* libPods-B_Client.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3247,18 +3257,20 @@
 				BB83FDAD1C72C16B0013A6A0 /* QZoneConnection.framework in Frameworks */,
 				BB83FDAE1C72C16B0013A6A0 /* SinaWeiboConnection.framework in Frameworks */,
 				BB83FDAF1C72C16B0013A6A0 /* ShareSDKCoreService.framework in Frameworks */,
-				BB83FDB01C72C16B0013A6A0 /* libPods.a in Frameworks */,
+				57B0513D63E7E07E16544DBC /* libPods-C_Client.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		624505390D41B06D57CFEB1B /* Pods */ = {
+		2C3A0A723F49B8A5F3BFA71A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */,
-				B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */,
+				1E65EC03DE0CBBD8C2ECF507 /* Pods-B_Client.debug.xcconfig */,
+				C776EDCC56CA0949184BC52A /* Pods-B_Client.release.xcconfig */,
+				17B031CF6B48E03A4DDBEC39 /* Pods-C_Client.debug.xcconfig */,
+				6CCBF6F74029CFB220C798D7 /* Pods-C_Client.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -3430,8 +3442,8 @@
 				8A17B0E21BA46CF500548CA7 /* SDK */,
 				8A508FEF1B9D5D700067B9E9 /* tracedemo */,
 				8A508FEE1B9D5D700067B9E9 /* Products */,
-				624505390D41B06D57CFEB1B /* Pods */,
 				D2F8907D64CFFB14B8C31520 /* Frameworks */,
+				2C3A0A723F49B8A5F3BFA71A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -5649,6 +5661,9 @@
 				BBFD6F9C1C351CCA00E0A536 /* TKUserCenterViewController.m */,
 				BBB3198D1C3B5DBD0035DC17 /* TKEditTextViewController.h */,
 				BBB3198E1C3B5DBD0035DC17 /* TKEditTextViewController.m */,
+				BB166A6C1D0E9A420013D700 /* TKCountrySelectVC.h */,
+				BB166A6D1D0E9A420013D700 /* TKCountrySelectVC.m */,
+				BB166A6E1D0E9A420013D700 /* TKCountrySelectVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -6235,7 +6250,8 @@
 				8A6B3F8B1BF0834000E5C982 /* libSDWebImage.a */,
 				8A6B3F8C1BF0834000E5C982 /* libSSKeychain.a */,
 				8A6B3F8D1BF0834000E5C982 /* libWCAlertView.a */,
-				5B7E02E9AB012C0D49F6B86E /* libPods.a */,
+				6C6B4540F9DB4976F88D216A /* libPods-B_Client.a */,
+				C4F524BB1750CFDAB09C5ECD /* libPods-C_Client.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -6247,12 +6263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB83FB5B1C72C01C0013A6A0 /* Build configuration list for PBXNativeTarget "B_Client" */;
 			buildPhases = (
-				BB83F8A41C72C01C0013A6A0 /* Check Pods Manifest.lock */,
+				C708FA14770D3FE97E3E54D3 /* [CP] Check Pods Manifest.lock */,
 				BB83F8A51C72C01C0013A6A0 /* Sources */,
 				BB83FADC1C72C01C0013A6A0 /* Frameworks */,
 				BB83FAF41C72C01C0013A6A0 /* Resources */,
-				BB83FB591C72C01C0013A6A0 /* Copy Pods Resources */,
-				BB83FB5A1C72C01C0013A6A0 /* Embed Pods Frameworks */,
+				511241937DDBB61D6D80C6A3 /* [CP] Embed Pods Frameworks */,
+				446FFB00FDF0163AC267D947 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -6267,12 +6283,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB83FE181C72C16B0013A6A0 /* Build configuration list for PBXNativeTarget "C_Client" */;
 			buildPhases = (
-				BB83FB611C72C16B0013A6A0 /* Check Pods Manifest.lock */,
+				2E61CB0B45BBBF1C9255A1F3 /* [CP] Check Pods Manifest.lock */,
 				BB83FB621C72C16B0013A6A0 /* Sources */,
 				BB83FD991C72C16B0013A6A0 /* Frameworks */,
 				BB83FDB11C72C16B0013A6A0 /* Resources */,
-				BB83FE161C72C16B0013A6A0 /* Copy Pods Resources */,
-				BB83FE171C72C16B0013A6A0 /* Embed Pods Frameworks */,
+				F4631590E01256A48E05D608 /* [CP] Embed Pods Frameworks */,
+				23326F9BAEFB1FE418CFF600 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -6357,6 +6373,7 @@
 				BB83FB0A1C72C01C0013A6A0 /* HFHistoryCell.xib in Resources */,
 				BB83FB0B1C72C01C0013A6A0 /* MyBandViewController.xib in Resources */,
 				8A37498D1C911937003DE59E /* HiiBeanWebViewController.xib in Resources */,
+				BB166A711D0E9A420013D700 /* TKCountrySelectVC.xib in Resources */,
 				BB83FB0C1C72C01C0013A6A0 /* WebViewJavascriptBridge.js.txt in Resources */,
 				8A9E8B511C86DD3600F84BB7 /* TKRewardDetailViewController.xib in Resources */,
 				BB83FB0D1C72C01C0013A6A0 /* HFUnlockCell.xib in Resources */,
@@ -6518,6 +6535,7 @@
 				9134FA5D1CBCDA0E0089BE93 /* MLEmoji_ExpressionImage.plist in Resources */,
 				BB83FDD81C72C16B0013A6A0 /* SentPostViewController.xib in Resources */,
 				8A99859A1C86C68A000F9CBC /* BHomeCHildAScrollBox.xib in Resources */,
+				BB166A721D0E9A420013D700 /* TKCountrySelectVC.xib in Resources */,
 				BB83FDD91C72C16B0013A6A0 /* HFBindPhoneNumViewController.xib in Resources */,
 				91BF04E61CBCE4D00062E72F /* 2.jpg in Resources */,
 				BB83FDDA1C72C16B0013A6A0 /* HFRemindCell.xib in Resources */,
@@ -6609,14 +6627,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BB83F8A41C72C01C0013A6A0 /* Check Pods Manifest.lock */ = {
+		23326F9BAEFB1FE418CFF600 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-C_Client/Pods-C_Client-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E61CB0B45BBBF1C9255A1F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6624,44 +6657,44 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BB83FB591C72C01C0013A6A0 /* Copy Pods Resources */ = {
+		446FFB00FDF0163AC267D947 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-B_Client/Pods-B_Client-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BB83FB5A1C72C01C0013A6A0 /* Embed Pods Frameworks */ = {
+		511241937DDBB61D6D80C6A3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-B_Client/Pods-B_Client-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BB83FB611C72C16B0013A6A0 /* Check Pods Manifest.lock */ = {
+		C708FA14770D3FE97E3E54D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6669,34 +6702,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BB83FE161C72C16B0013A6A0 /* Copy Pods Resources */ = {
+		F4631590E01256A48E05D608 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BB83FE171C72C16B0013A6A0 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-C_Client/Pods-C_Client-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -6796,6 +6814,7 @@
 				BB83F8EB1C72C01C0013A6A0 /* GetAdvanceSchemeMainPageAck.m in Sources */,
 				BB83F8EC1C72C01C0013A6A0 /* HFPostDetailView.m in Sources */,
 				BB83F8ED1C72C01C0013A6A0 /* HiModuleListData.m in Sources */,
+				BB166A6F1D0E9A420013D700 /* TKCountrySelectVC.m in Sources */,
 				8AA7F7091C88267000CE0F17 /* TKPublishShowGoodsArg.m in Sources */,
 				BB83F8EE1C72C01C0013A6A0 /* TK_JsonModelArg.m in Sources */,
 				9134FA951CBCDA8E0089BE93 /* UIView+SDAutoLayout.m in Sources */,
@@ -7467,6 +7486,7 @@
 				BB83FBA91C72C16B0013A6A0 /* HFPostDetailView.m in Sources */,
 				BB83FBAA1C72C16B0013A6A0 /* HiModuleListData.m in Sources */,
 				BB83FBAB1C72C16B0013A6A0 /* TK_JsonModelArg.m in Sources */,
+				BB166A701D0E9A420013D700 /* TKCountrySelectVC.m in Sources */,
 				8AA7F70A1C88267000CE0F17 /* TKPublishShowGoodsArg.m in Sources */,
 				BB83FBAC1C72C16B0013A6A0 /* HFSaveDeviceTokenReq.m in Sources */,
 				9134FA961CBCDA8E0089BE93 /* UIView+SDAutoLayout.m in Sources */,
@@ -8158,7 +8178,7 @@
 		};
 		BB83FB5C1C72C01C0013A6A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 1E65EC03DE0CBBD8C2ECF507 /* Pods-B_Client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = BuyerApp;
 				CODE_SIGN_IDENTITY = "iPhone Developer: wei yu (PKE3P2425Z)";
@@ -8189,14 +8209,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.buyer;
 				PRODUCT_NAME = "赏购";
-				PROVISIONING_PROFILE = "acab7839-feab-4f49-a28f-aeeef64eb69e";
+				PROVISIONING_PROFILE = "50ff9e66-034b-48c6-8c84-6b18eed0020c";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		BB83FB5D1C72C01C0013A6A0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
+			baseConfigurationReference = C776EDCC56CA0949184BC52A /* Pods-B_Client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = BuyerApp;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Cute Pai Technology Co., Ltd. (Q4J2EKN3EJ)";
@@ -8227,14 +8247,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.buyer;
 				PRODUCT_NAME = "赏购";
-				PROVISIONING_PROFILE = "585e0a77-2730-4a01-a12b-7036ae9f94de";
+				PROVISIONING_PROFILE = "533b0326-16a3-4afc-8755-823847d9aa5e";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		BB83FE191C72C16B0013A6A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4212CB7CA1A2669F077947F9 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 17B031CF6B48E03A4DDBEC39 /* Pods-C_Client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = CustomerApp;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -8266,14 +8286,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.consumer;
 				PRODUCT_NAME = "赏购";
-				PROVISIONING_PROFILE = "48edb671-040e-442f-be8f-3e8d78a9b776";
+				PROVISIONING_PROFILE = "4f0297ff-83a7-473e-b536-f15094b0bef6";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		BB83FE1A1C72C16B0013A6A0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B82C1CD9D75BF9C0D03CF0FF /* Pods.release.xcconfig */;
+			baseConfigurationReference = 6CCBF6F74029CFB220C798D7 /* Pods-C_Client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = CustomerApp;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -8305,7 +8325,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qupai.consumer;
 				PRODUCT_NAME = "赏购";
-				PROVISIONING_PROFILE = "4cec25cf-c073-4ac2-94df-d80ad231bf8c";
+				PROVISIONING_PROFILE = "cc228a32-e282-421f-ab4a-5a7dcc45c308";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

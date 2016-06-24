@@ -59,12 +59,17 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     TK_ShareCategory * selectCategory;
     TKAlertView * alertView;
     Address * ackAddress;
+    BOOL responseKeyBoard;
     
 }
 
 @end
 
 @implementation CPublishRewardViewController
+
+
+#pragma mark -----------
+#pragma mark System Method
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -86,8 +91,50 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:TKPayNotify object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self TKsetLeftBarItemText:@"取消" withTextColor:[UIColor tkThemeColor1] addTarget:self action:@selector(TKI_leftBarAction) forControlEvents:UIControlEventTouchUpInside];
+    [self TKsetRightBarItemText:@"发布" withTextColor:[UIColor tkThemeColor1] addTarget:self action:@selector(TKI_rightBarAction) forControlEvents:UIControlEventTouchUpInside];
+}
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    responseKeyBoard = YES;
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    responseKeyBoard = NO;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark --------------
+#pragma mark  KeyBoard Event
 -(void)keyboardShow:(NSNotification *)note
 {
+    if(!responseKeyBoard)
+    {
+        return;
+    }
     CGFloat space = 0.;
     if (self.priceInputText.isEditing) {
         CGRect rect = [self.bottomView convertRect:self.priceInputView.frame toView:self.view];
@@ -108,11 +155,37 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 }
 -(void)keyboardHide:(NSNotification *)note
 {
+    if(!responseKeyBoard)
+    {
+        return;
+    }
+    [self performSelector:@selector(resetViewTransform:) withObject:note afterDelay:0.15];
+}
+
+
+-(void)resetViewTransform:(NSNotification *)note
+{
     [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
         self.view.transform = CGAffineTransformIdentity;
     }];
 }
 
+
+-(NSArray *)hideKeyboardExcludeViews
+{
+    return @[self.priceInputText,self.inputText];
+}
+
+
+-(void)hidKeyBord
+{
+    [self.inputText resignFirstResponder];
+    [self.priceInputText resignFirstResponder];
+    
+}
+
+#pragma mark --- 
+#pragma mark Pay
 -(void)onPayNotify:(NSNotification *)notify
 {
     NSString * result = [notify object];
@@ -128,13 +201,8 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     
 }
 
--(void)dealloc
-{
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:TKPayNotify object:nil];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-}
 
+#pragma mark  initView
 -(void)initView
 {
     picCountInLine = 4;
@@ -142,7 +210,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     picTopAndBtomPadding = 12;
     selectPic = 0;
     otherPics = [[NSMutableArray alloc] init];
-    self.clearView.clearDelegate = self;
+//    self.clearView.clearDelegate = self;
     self.inputText.placehorderText = @"请输入颜色、尺码、尺寸等相关信息";
     picWidth = (TKScreenWidth -  (picCountInLine+1)* picWiteSpaceWidth )/ picCountInLine;
     self.hidDefaultBackBtn = YES;
@@ -157,6 +225,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     
     [self.mainScrollView setContentSize:CGSizeMake(TKScreenWidth, CGRectGetHeight(self.mainView.frame))];
     self.mainView.clipsToBounds = YES;
+    ((TKClearView *)self.mainView).clearDelegate = self;
 //    self.mainView.frame = CGRectMake(0, 0, TKScreenWidth, defaultHeight);
     [self.mainScrollView addSubview:self.mainView];
     [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -214,12 +283,18 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
     ackAddress =  [TKUserCenter instance].getUser.ackData.defaultReceiver;
     
     NSString * address =  [NSString stringWithFormat:@"%@  %@  %@",ackAddress.province,ackAddress.city,ackAddress.address];
+    
+    if(ackAddress == nil)
+    {
+        address = @"收货地址为空";
+    }
     self.addressText.text = address;
 }
 
 
 -(void)showAddress
 {
+    [self hidKeyBord];
     TKWebViewController *web = [[TKWebViewController alloc] init];
     web.hidDefaultBackBtn = NO;
     web.delegate = self;
@@ -228,37 +303,6 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 //    [TKWebViewController showWebView:@"选择地址" url:AddressURL];
     
 }
-
-
--(UIView *)onClearViewEvent:(CGPoint)point withEvent:(UIEvent *)event
-{
- 
-    
-    CGPoint tapPoint = [self.priceInputText convertPoint:point fromView:self.clearView];
-    if([self.priceInputText pointInside:tapPoint withEvent:event])
-    {
-        return self.priceInputText;
-    }
-    
-    tapPoint = [self.inputText convertPoint:point fromView:self.clearView];
-    
-    if([self.inputText pointInside:tapPoint withEvent:event])
-    {
-        return self.inputText.textView;
-    }
-    [self hidKeyBord];
-    return nil;
-}
-
-
--(void)hidKeyBord
-{
-    [self.inputText resignFirstResponder];
-    [self.priceInputText resignFirstResponder];
-
-}
-
-
 
 
 #pragma mark  pic event
@@ -425,17 +469,7 @@ UITextFieldDelegate,UITextViewDelegate,TKClearViewDelegate,HFKeyBoardDelegate,Br
 
 
 #pragma  mark  privete Method
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self TKsetLeftBarItemText:@"取消" withTextColor:[UIColor tkThemeColor1] addTarget:self action:@selector(TKI_leftBarAction) forControlEvents:UIControlEventTouchUpInside];
-    [self TKsetRightBarItemText:@"发布" withTextColor:[UIColor tkThemeColor1] addTarget:self action:@selector(TKI_rightBarAction) forControlEvents:UIControlEventTouchUpInside];
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation

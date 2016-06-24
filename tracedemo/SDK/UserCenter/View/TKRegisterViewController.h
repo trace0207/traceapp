@@ -21,5 +21,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *phoneNumberInputText;
 @property (strong, nonatomic) IBOutlet UILabel *bottomLabel;
 @property (strong, nonatomic) IBOutlet UIButton *bottomBtn;
+@property (strong, nonatomic) IBOutlet UILabel *countryLabel;
+@property (strong, nonatomic) IBOutlet UILabel *countryCodeLabel;
+- (IBAction)countryBtnAction:(id)sender;
 
 @end

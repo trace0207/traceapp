@@ -16,6 +16,7 @@
 @property (nonatomic, assign)CGFloat score;
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) NSString *mobile;
+@property (nonatomic, copy) NSString *countryCode;
 @property (nonatomic, copy) NSString *vip;
 @property (nonatomic,copy) NSString *account;
 @property (nonatomic,copy) NSString *password;

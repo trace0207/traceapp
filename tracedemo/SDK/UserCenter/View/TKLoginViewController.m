@@ -18,7 +18,7 @@
 #import "UIColor+TK_Color.h"
 #import "TKUITools.h"
 
-@interface TKLoginViewController()<UITextFieldDelegate>
+@interface TKLoginViewController()<UITextFieldDelegate,TKClearViewDelegate>
 {
 
     
@@ -85,6 +85,10 @@
     self.userNameText.delegate = self;
     self.passwordText.delegate = self;
     [self.loginBtn setBackgroundImage:[UIColor tkCreateImageWithColor: [UIColor tkThemeColor2]] forState:UIControlStateHighlighted];
+    
+    TKClearView * view = (TKClearView *)self.view;
+    view.clearDelegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -176,4 +180,11 @@
         self.passwordLine.backgroundColor  = [UIColor tkThemeColor1];
     }
 }
+
+
+-(NSArray *)hideKeyboardExcludeViews
+{
+    return @[_userNameText,_passwordText];
+}
+
 @end

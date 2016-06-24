@@ -20,9 +20,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *verifyWaitTimeTipsText;
 @property (weak, nonatomic) IBOutlet UILabel *registerPhoneNumber;
 - (IBAction)sortwareProtocol:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *bottomView;
 @property (strong, nonatomic) IBOutlet UIButton *bottomBtn;
-@property (strong, nonatomic) IBOutlet UILabel *bottomLabel;
 
-
+@property (strong, nonatomic) IBOutlet UILabel *keyKabel;
+@property (strong, nonatomic) IBOutlet UIView *inviteCodeFiled;
+@property (strong, nonatomic) IBOutlet UIView *setPasswordAllFiled;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *passwordMarginTop;
 
 @end

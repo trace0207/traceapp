@@ -13,9 +13,9 @@
 #import "TKUserCenter.h"
 #import "TKClearView.h"
 #import "HFHUDView.h"
+#import "TKCountrySelectVC.h"
 
-@interface TKRegisterViewController ()<TKClearViewDelegate>
-@property (strong, nonatomic) IBOutlet TKClearView *clearInputText;
+@interface TKRegisterViewController ()<TKClearViewDelegate,CountrySelectDelegate>
 
 @end
 
@@ -23,12 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _clearInputText.clearDelegate = self;
     if(self.isForgetPassword)
     {
         self.bottomBtn.hidden = YES;
         self.bottomLabel.hidden = YES;
     }
+    TKClearView * clearView = (TKClearView *)self.view;
+    clearView.clearDelegate = self;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -62,14 +63,16 @@
     
     NSString * phone = _phoneNumberInputText.text;
     
-    if(!phone || phone.length !=11)
+    if(!phone || phone.length <7)
     {
         [[HFHUDView shareInstance] ShowTips:@"请输入正确的手机号码" delayTime:1.0 atView:NULL];
         return;
     }
     
-    [TKUserCenter instance].tempUserData.mobile = phone;
+    [TKUserCenter instance].tempUserData.mobile = phone; // phone;
+    [TKUserCenter instance].tempUserData.countryCode = _countryCodeLabel.text;
     TKSetPasswordViewController * passwordVC =
+//    [[NSBundle mainBundle] loadNibNamed:@"TKSetPasswordViewController" owner:nil options:nil].firstObject;
     [[TKSetPasswordViewController alloc] initWithNibName:@"TKSetPasswordViewController" bundle:nil];
     passwordVC.isForgetPassword = self.isForgetPassword;
     [self.navigationController pushViewController:passwordVC animated:YES];
@@ -87,4 +90,24 @@
 {
     [_phoneNumberInputText resignFirstResponder];
 }
+- (IBAction)countryBtnAction:(id)sender {
+    
+    TKCountrySelectVC * vc = [[TKCountrySelectVC alloc] init];
+    vc.delegate = self;
+    [[AppDelegate getMainNavigation] pushViewController:vc animated:YES];
+    
+    
+}
+
+-(void)onCountrySelect:(NSString *)country countryCode:(NSString *)code
+{
+    self.countryLabel.text = country;
+    self.countryCodeLabel.text = code;
+}
+
+-(NSArray *)hideKeyboardExcludeViews
+{
+    return @[_phoneNumberInputText];
+}
+
 @end
